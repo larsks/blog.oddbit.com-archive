@@ -1,0 +1,19 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>containers on The Odd Bit</title>
+
+  <link rel="self" href="/tags/containers/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2016-02-07T00:00:00+0000</updated>
+  <id>/tags/containers/</id>
+  
+  <entry>
+    <title>Systemd-nspawn for fun and...well, mostly for fun</title>
+    <link rel="alternate" href="/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/"/>
+    <id>/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</id>
+    <published>2016-02-07T00:00:00+0000</published>
+    <updated>2016-02-07T00:00:00+0000</updated>
+    <summary>systemd-nspawn has been called &amp;ldquo;chroot on steroids&amp;rdquo;, but if you think of it as Docker with a slightly different target you wouldn&amp;rsquo;t be far wrong, either. It can be used to spawn containers on your host, and has a variety of options for configuring the containerized environment through the use of private networking, bind mounts, capability controls, and a variety of other facilities that give you flexible container management.</summary>
+  </entry>
+  
+</feed>

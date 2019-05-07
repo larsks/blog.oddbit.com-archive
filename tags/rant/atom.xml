@@ -1,0 +1,26 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>rant on The Odd Bit</title>
+
+  <link rel="self" href="/tags/rant/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2015-07-26T00:00:00+0000</updated>
+  <id>/tags/rant/</id>
+  
+  <entry>
+    <title>In which we are amazed it doesn&#39;t all fall apart</title>
+    <link rel="alternate" href="/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/"/>
+    <id>/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</id>
+    <published>2015-07-26T00:00:00+0000</published>
+    <updated>2015-07-26T00:00:00+0000</updated>
+    <summary>So, the Kilo release notes say:
+nova-manage migrate-flavor-data  But nova-manage says:
+nova-manage db migrate_flavor_data  But that says:
+Missing arguments: max_number  And the help says:
+usage: nova-manage db migrate_flavor_data [-h] [--max-number &amp;lt;number&amp;gt;]  Which indicates that &amp;ndash;max-number is optional, but whatever, so you try:
+nova-manage db migrate_flavor_data --max-number 100  And that says:
+Missing arguments: max_number  So just for kicks you try:
+nova-manage db migrate_flavor_data --max_number 100  And that says:</summary>
+  </entry>
+  
+</feed>

@@ -1,0 +1,20 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>avr-gcc on The Odd Bit</title>
+
+  <link rel="self" href="/tags/avr-gcc/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2019-01-28T00:00:00+0000</updated>
+  <id>/tags/avr-gcc/</id>
+  
+  <entry>
+    <title>AVR micro-optimization: Avr-gcc and --short-enums</title>
+    <link rel="alternate" href="/post/2019-01-28-avr-gcc-short-enums/"/>
+    <id>/post/2019-01-28-avr-gcc-short-enums/</id>
+    <published>2019-01-28T00:00:00+0000</published>
+    <updated>2019-01-28T00:00:00+0000</updated>
+    <summary>How big is an enum? I noticed something odd while browsing through the assembly output of some AVR C code I wrote recently. In the code, I have the following expression:
+int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&amp;rsquo;t want to clutter this post with unnecessary code listings):</summary>
+  </entry>
+  
+</feed>

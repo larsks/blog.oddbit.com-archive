@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Enphase Envoy XML Data Format &middot; The Odd Bit</title>
+        <meta name="description" content="We recently installed a (photovoltaic) solar array on our house. The system uses Enphase microinverters, and includes a monitoring device called the &ldquo;Envoy&rdquo;. The Envoy collects data from the microinverters and sends it back to Enphase. Enphase performs monitoring services for the array and also provides access to the data collected by the Envoy product.
+I&rsquo;m interested in getting direct access to the data provided by the Envoy. In pursuit of that goal, I set up a man-in-the-middle proxy server on my home network to intercept the communication from the Envoy to the Enphase servers.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Enphase Envoy XML Data Format</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2012-02-13" itemprop="datePublished">Mon, Feb 13, 2012</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>We recently installed a (photovoltaic) solar array on our house.  The system uses <a href="http://enphase.com/">Enphase</a> microinverters, and includes a monitoring device called the &ldquo;<a href="http://enphase.com/products/envoy/">Envoy</a>&rdquo;.  The Envoy collects data from the microinverters and sends it back to Enphase.  Enphase performs monitoring services for the array and also provides access to the data collected by the Envoy product.</p>
+
+<p>I&rsquo;m interested in getting direct access to the data provided by the Envoy.  In pursuit of that goal, I set up a man-in-the-middle proxy server on my home network to intercept the communication from the Envoy to the Enphase servers.  I&rsquo;m documenting the results of my exploration here in case somebody else finds the information useful.</p>
+
+<p>The Envoy sends deflate-encoded XML data to the Enphase servers. You can decompress the data using Python&rsquo;s <code>zlib</code> module like this:</p>
+
+<pre><code>import zlib
+xml_data = zlib.decompress(deflate_compressed_data)
+</code></pre>
+
+<p>The request is an http <code>POST</code> to <a href="https://reports.enphaseenergy.com/emu_reports/performance_report?webcomm_version=3.0">https://reports.enphaseenergy.com/emu_reports/performance_report?webcomm_version=3.0</a>. The request headers look like this:</p>
+
+<pre><code>POST /emu_reports/performance_report?webcomm_version=3.0 HTTP/1.1
+Accept: */*
+Connection: close
+Content-Type: application/x-deflate
+Content-Length: 729
+Host: reports.enphaseenergy.com:443
+</code></pre>
+
+<p>The request body &ndash; after inflating it &ndash; looks something like this:</p>
+
+<pre><code>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;perf_report report_timestamp='1329134202'&gt;
+  &lt;envoy ip_addr='192.168.1.166' mac_addr='00:11:22:33:44:55'
+  timezone='US/Eastern' part_num='800-00024-r04'
+  sw_version='R3.0.0 (9720d7)' serial_num='123456115374' /&gt;
+  &lt;event correlation_id='161' event_state='1' id='221'
+  event_code='10009' eqid='123456102635' serial_num='123456102635'
+  event_date='1329134118' /&gt;
+  &lt;event correlation_id='194' event_state='1' id='222'
+  event_code='101' eqid='123456103685.1' serial_num='123456103685'
+  event_date='1329134119' /&gt;
+  &lt;event correlation_id='196' event_state='1' id='223'
+  event_code='101' eqid='123456105331.1' serial_num='123456105331'
+  event_date='1329134120' /&gt;
+  &lt;event correlation_id='202' event_state='1' id='224'
+  event_code='101' eqid='123456103294.1' serial_num='123456103294'
+  event_date='1329134130' /&gt;
+  &lt;event correlation_id='206' event_state='1' id='225'
+  event_code='101' eqid='123456105321.1' serial_num='123456105321'
+  event_date='1329134139' /&gt;
+  &lt;event event_state='2' id='226' event_code='101'
+  eqid='123456104335.1' serial_num='123456104335'
+  event_date='1329134152' /&gt;
+  &lt;event event_state='0' id='227' event_code='509'
+  eqid='123456104335' serial_num='123456104335'
+  event_date='1329134152' /&gt;
+  &lt;event correlation_id='213' event_state='1' id='228'
+  event_code='101' eqid='123456105296.1' serial_num='123456105296'
+  event_date='1329134153' /&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456105041' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456105041.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456104335' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456104335.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456104246' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456104246.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456104224' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456104224.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456102776' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456102776.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456103271' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456103271.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456105190' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456105190.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2097152' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456105321' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='0'
+    observed_flags='0' eqid='123456105321.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456105178' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456105178.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456104988' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456104988.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2097152' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456103294' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='0'
+    observed_flags='0' eqid='123456103294.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456105346' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456105346.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456105297' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456105297.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456104896' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456104896.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2097152' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456105331' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='0'
+    observed_flags='0' eqid='123456105331.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456103546' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456103546.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2097152' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456103685' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='0'
+    observed_flags='0' eqid='123456103685.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2359296' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456103215' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='16'
+    observed_flags='0' eqid='123456103215.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2097152' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456102635' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='0'
+    observed_flags='0' eqid='123456102635.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+  &lt;device image_bits='131072' device_type='1' admin_state='1'
+  condition_flags='2097152' part_num='800-00103-r05'
+  observed_flags='0' eqid='123456105296' control_bits='0'&gt;
+    &lt;channel channel_type='1' condition_flags='0'
+    observed_flags='0' eqid='123456105296.1' control_bits='0' /&gt;
+  &lt;/device&gt;
+&lt;/perf_report&gt;
+</code></pre>
+
+<p>The response headers look like this:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2012 11:56:48 GMT
+Server: Apache
+X-Powered-By: Phusion Passenger (mod_rails/mod_rack) 3.0.11
+ETag: &quot;95bc2eaddfac613540f469946f28af4b&quot;
+X-Runtime: 297
+Cache-Control: private, max-age=0, must-revalidate
+Content-Length: 142
+Status: 200
+Cache-Control: max-age=31536000
+Expires: Tue, 12 Feb 2013 11:56:48 GMT
+Connection: close
+Content-Type: application/x-deflate; charset=utf-8
+</code></pre>
+
+<p>And the response body &ndash; after inflating it &ndash; looks something like this:</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;perf_report_response status=&quot;success&quot;&gt;
+  &lt;events_processed&gt;
+    &lt;event id=&quot;221&quot;/&gt;
+    &lt;event id=&quot;222&quot;/&gt;
+    &lt;event id=&quot;223&quot;/&gt;
+    &lt;event id=&quot;224&quot;/&gt;
+    &lt;event id=&quot;225&quot;/&gt;
+    &lt;event id=&quot;226&quot;/&gt;
+    &lt;event id=&quot;227&quot;/&gt;
+    &lt;event id=&quot;228&quot;/&gt;
+  &lt;/events_processed&gt;
+&lt;/perf_report_response&gt;
+</code></pre>
+
+<p>My goal is to set up a simple proxy that in addition to passing the information along to Enphase will also collect it locally. I&rsquo;ll update the blog if I make progress on that front.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Enphase%20Envoy%20XML%20Data%20Format&url=%2fpost%2f2012-02-13-enphase-envoy-xml-data-format%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2f2012-02-13-enphase-envoy-xml-data-format%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fpost%2f2012-02-13-enphase-envoy-xml-data-format%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

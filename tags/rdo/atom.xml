@@ -1,0 +1,53 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>rdo on The Odd Bit</title>
+
+  <link rel="self" href="/tags/rdo/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2016-02-19T00:00:00+0000</updated>
+  <id>/tags/rdo/</id>
+  
+  <entry>
+    <title>Deploying an HA OpenStack development environment with tripleo-quickstart
+</title>
+    <link rel="alternate" href="/post/2016-02-19-deploy-an-ha-openstack-development-envir/"/>
+    <id>/post/2016-02-19-deploy-an-ha-openstack-development-envir/</id>
+    <published>2016-02-19T00:00:00+0000</published>
+    <updated>2016-02-19T00:00:00+0000</updated>
+    <summary>In this article I would like to introduce tripleo-quickstart, a tool that will automatically provision a virtual environment and then use TripleO to deploy an HA OpenStack on top of it.
+Introducing Tripleo-Quickstart The goal of the Tripleo-Quickstart project is to replace the instack-virt-setup tool for quickly setting up virtual TripleO environments, and to ultimately become the tool used by both developers and upstream CI for this purpose. The project is a set of Ansible playbooks that will take care of:</summary>
+  </entry>
+  
+  <entry>
+    <title>Cloud-init and the case of the changing hostname</title>
+    <link rel="alternate" href="/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/"/>
+    <id>/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</id>
+    <published>2014-12-10T00:00:00+0000</published>
+    <updated>2014-12-10T00:00:00+0000</updated>
+    <summary>Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.</summary>
+  </entry>
+  
+  <entry>
+    <title>Heat Hangout</title>
+    <link rel="alternate" href="/post/2014-09-05-heat-hangout/"/>
+    <id>/post/2014-09-05-heat-hangout/</id>
+    <published>2014-09-05T00:00:00+0000</published>
+    <updated>2014-09-05T00:00:00+0000</updated>
+    <summary>I ran a Google Hangout this morning on Deploying with Heat. You can find the slides for the presentation on line here, and the Heat templates (as well as slide sources) are available on github.
+If you have any questions about the presentation, please feel free to ping me on irc (larsks).
+ </summary>
+  </entry>
+  
+  <entry>
+    <title>Multinode OpenStack with Packstack</title>
+    <link rel="alternate" href="/post/2014-02-27-multinode/"/>
+    <id>/post/2014-02-27-multinode/</id>
+    <published>2014-02-27T00:00:00+0000</published>
+    <updated>2014-02-27T00:00:00+0000</updated>
+    <summary>I was the presenter for this morning&amp;rsquo;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
+The slides are online here.
+Here&amp;rsquo;s the video (also available on the event page):
+ </summary>
+  </entry>
+  
+</feed>

@@ -1,0 +1,19 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>administrivia on The Odd Bit</title>
+
+  <link rel="self" href="/tags/administrivia/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2018-01-26T00:00:00+0000</updated>
+  <id>/tags/administrivia/</id>
+  
+  <entry>
+    <title>Administrivia: Pelican and theme update</title>
+    <link rel="alternate" href="/post/2018-01-26-administrivia/"/>
+    <id>/post/2018-01-26-administrivia/</id>
+    <published>2018-01-26T00:00:00+0000</published>
+    <updated>2018-01-26T00:00:00+0000</updated>
+    <summary>I&amp;rsquo;ve just refreshed the version of Pelican used to generate this blog, along with the associated themes and plugins. It all seems to be working, but if you spot a problem feel free to drop me a line.</summary>
+  </entry>
+  
+</feed>

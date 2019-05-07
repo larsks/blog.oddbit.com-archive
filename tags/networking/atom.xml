@@ -1,0 +1,170 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>networking on The Odd Bit</title>
+
+  <link rel="self" href="/tags/networking/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2018-06-14T00:00:00+0000</updated>
+  <id>/tags/networking/</id>
+  
+  <entry>
+    <title>Configuring a static address for wlan0 on Raspbian Stretch</title>
+    <link rel="alternate" href="/post/2018-06-14-configuring-a-static-address-f/"/>
+    <id>/post/2018-06-14-configuring-a-static-address-f/</id>
+    <published>2018-06-14T00:00:00+0000</published>
+    <updated>2018-06-14T00:00:00+0000</updated>
+    <summary>Recent releases of Raspbian have adopted the use of dhcpcd to manage both dynamic and static interface configuration. If you would prefer to use the traditional /etc/network/interfaces mechanism instead, follow these steps.
+ First, disable dhcpcd and wpa_supplicant.
+systemctl disable --now dhdpcd wpa_supplicant  You will need a wpa_supplicant configuration for wlan0 in /etc/wpa_supplicant/wpa_supplicant-wlan0.conf.
+If you already have an appropriate configuration in /etc/wpa_supplicant/wpa_supplicant.conf, you can just symlink the file:
+ cd /etc/wpa_supplicant ln -s wpa_supplicant.</summary>
+  </entry>
+  
+  <entry>
+    <title>Using Docker macvlan networks</title>
+    <link rel="alternate" href="/post/2018-03-12-using-docker-macvlan-networks/"/>
+    <id>/post/2018-03-12-using-docker-macvlan-networks/</id>
+    <published>2018-03-12T00:00:00+0000</published>
+    <updated>2018-03-12T00:00:00+0000</updated>
+    <summary>A question that crops up regularly on #docker is &amp;ldquo;How do I attach a container directly to my local network?&amp;rdquo; One possible answer to that question is the macvlan network type, which lets you create &amp;ldquo;clones&amp;rdquo; of a physical interface on your host and use that to attach containers directly to your local network. For the most part it works great, but it does come with some minor caveats and limitations.</summary>
+  </entry>
+  
+  <entry>
+    <title>Listening for connections on all ports/any port</title>
+    <link rel="alternate" href="/post/2018-02-27-listening-for-connections-on-a/"/>
+    <id>/post/2018-02-27-listening-for-connections-on-a/</id>
+    <published>2018-02-27T00:00:00+0000</published>
+    <updated>2018-02-27T00:00:00+0000</updated>
+    <summary>On IRC &amp;ndash; and other online communities &amp;ndash; it is common to use a &amp;ldquo;pastebin&amp;rdquo; service to share snippets of code, logs, and other material, rather than pasting them directly into a conversation. These services will typically return a URL that you can share with others so that they can see the content in their browser.
+One of my favorite pastebin services is termbin.com, because it works from the command line using tools you probably already have installed.</summary>
+  </entry>
+  
+  <entry>
+    <title>Provider external networks (in an appropriate amount of detail)</title>
+    <link rel="alternate" href="/post/2015-08-13-provider-external-networks-details/"/>
+    <id>/post/2015-08-13-provider-external-networks-details/</id>
+    <published>2015-08-13T00:00:00+0000</published>
+    <updated>2015-08-13T00:00:00+0000</updated>
+    <summary>In Quantum in Too Much Detail, I discussed the architecture of a Neutron deployment in detail. Since that article was published, Neutron gained the ability to handle multiple external networks with a single L3 agent. While I wrote about that back in 2014, I covered the configuration side of it in much more detail than I discussed the underlying network architecture. This post addresses the architecture side.
+The players This document describes the architecture that results from a particular OpenStack configuration, specifically:</summary>
+  </entry>
+  
+  <entry>
+    <title>Docker networking with dedicated network containers</title>
+    <link rel="alternate" href="/post/2014-10-06-docker-networking-with-dedicat/"/>
+    <id>/post/2014-10-06-docker-networking-with-dedicat/</id>
+    <published>2014-10-06T00:00:00+0000</published>
+    <updated>2014-10-06T00:00:00+0000</updated>
+    <summary>The current version of Docker has a very limited set of networking options:
+ bridge &amp;ndash; connect a container to the Docker bridge host &amp;ndash; run the container in the global network namespace container:xxx &amp;ndash; connect a container to the network namespace of another container none &amp;ndash; do not configure any networking  If you need something more than that, you can use a tool like pipework to provision additional network interfaces inside the container, but this leads to a synchronization problem: pipework can only be used after your container is running.</summary>
+  </entry>
+  
+  <entry>
+    <title>Four ways to connect a docker container to a local network</title>
+    <link rel="alternate" href="/post/2014-08-11-four-ways-to-connect-a-docker/"/>
+    <id>/post/2014-08-11-four-ways-to-connect-a-docker/</id>
+    <published>2014-08-11T00:00:00+0000</published>
+    <updated>2014-08-11T00:00:00+0000</updated>
+    <summary>Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&amp;rsquo;ve written an article about working with the macvlan driver.
+This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.</summary>
+  </entry>
+  
+  <entry>
+    <title>Booting an instance with multiple fixed addresses</title>
+    <link rel="alternate" href="/post/2014-05-28-booting-an-instance-with-multi/"/>
+    <id>/post/2014-05-28-booting-an-instance-with-multi/</id>
+    <published>2014-05-28T00:00:00+0000</published>
+    <updated>2014-05-28T00:00:00+0000</updated>
+    <summary>This article expands on my answer to Add multiple specific IPs to instance, a question posted to ask.openstack.org.
+In order to serve out SSL services from an OpenStack instance, you will generally want one local ip address for each SSL virtual host you support. It is possible to create an instance with multiple fixed addresses, but there are a few complications to watch out for.
+Assumptions This article assumes that the following resources exist:</summary>
+  </entry>
+  
+  <entry>
+    <title>Multiple external networks with a single L3 agent</title>
+    <link rel="alternate" href="/post/2014-05-28-multiple-external-networks-wit/"/>
+    <id>/post/2014-05-28-multiple-external-networks-wit/</id>
+    <published>2014-05-28T00:00:00+0000</published>
+    <updated>2014-05-28T00:00:00+0000</updated>
+    <summary>In the old days (so, like, last year), Neutron supported a single external network per L3 agent. You would run something like this&amp;hellip;
+$ neutron net-create external --router:external=true  &amp;hellip;and neutron would map this to the bridge defined in external_network_bridge in /etc/neutron/l3_agent.ini. If you wanted to support more than a single external network, you would need to run multiple L3 agents, each with a unique value for external_network_bridge.
+There is now a better option available.</summary>
+  </entry>
+  
+  <entry>
+    <title>Video: Configuring OpenStack&#39;s external bridge on a single-interface system</title>
+    <link rel="alternate" href="/post/2014-05-27-configuring-openstacks-externa/"/>
+    <id>/post/2014-05-27-configuring-openstacks-externa/</id>
+    <published>2014-05-27T00:00:00+0000</published>
+    <updated>2014-05-27T00:00:00+0000</updated>
+    <summary>I&amp;rsquo;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
+ </summary>
+  </entry>
+  
+  <entry>
+    <title>Open vSwitch and persistent MAC addresses</title>
+    <link rel="alternate" href="/post/2014-05-23-open-vswitch-and-persistent-ma/"/>
+    <id>/post/2014-05-23-open-vswitch-and-persistent-ma/</id>
+    <published>2014-05-23T00:00:00+0000</published>
+    <updated>2014-05-23T00:00:00+0000</updated>
+    <summary>Normally I like to post solutions, but today&amp;rsquo;s post is about a vexing problem to which I have not been able to find a solution.
+This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.</summary>
+  </entry>
+  
+  <entry>
+    <title>Solved: Open vSwitch and persistent MAC addresses</title>
+    <link rel="alternate" href="/post/2014-05-23-solved-open-vswitch-and-persis/"/>
+    <id>/post/2014-05-23-solved-open-vswitch-and-persis/</id>
+    <published>2014-05-23T00:00:00+0000</published>
+    <updated>2014-05-23T00:00:00+0000</updated>
+    <summary>In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &amp;ldquo;don&amp;rsquo;t use ip link set ...&amp;rdquo; for this purpose.
+You can set the bridge MAC address via ovs-vsctl like this:
+ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&amp;rsquo;ve updated my ifconfig-br-ex to look like this:
+DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPINTERFACES=eth0 MACADDR=fa:16:3e:ef:91:ec OVS_EXTRA=&amp;quot;set bridge br-ex other-config:hwaddr=$MACADDR&amp;quot;  The OVS_EXTRA parameter gets passed to the add-br call like this:</summary>
+  </entry>
+  
+  <entry>
+    <title>Fedora and OVS Bridge Interfaces</title>
+    <link rel="alternate" href="/post/2014-05-20-fedora-and-ovs-bridge-interfac/"/>
+    <id>/post/2014-05-20-fedora-and-ovs-bridge-interfac/</id>
+    <published>2014-05-20T00:00:00+0000</published>
+    <updated>2014-05-20T00:00:00+0000</updated>
+    <summary>I run OpenStack on my laptop, and I&amp;rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
+This is the network configuration file for br-ex on my system:
+DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</summary>
+  </entry>
+  
+  <entry>
+    <title>Firewalld, NetworkManager, and OpenStack</title>
+    <link rel="alternate" href="/post/2014-05-20-firewalld-and-openstack/"/>
+    <id>/post/2014-05-20-firewalld-and-openstack/</id>
+    <published>2014-05-20T00:00:00+0000</published>
+    <updated>2014-05-20T00:00:00+0000</updated>
+    <summary>These are my notes on making OpenStack play well with firewalld and NetworkManager.
+NetworkManager By default, NetworkManager attempts to start a DHCP client on every new available interface. Since booting a single instance in OpenStack can result in the creation of several virtual interfaces, this results in a lot of:
+May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &amp;lt;info&amp;gt; Activation (qvb512640bd-ee) starting connection &#39;Wired connection 2&#39;  You can disable this behavior by adding the following to /etc/NetworkManager/NetworkManager.</summary>
+  </entry>
+  
+  <entry>
+    <title>Visualizing Neutron Networking with GraphViz</title>
+    <link rel="alternate" href="/post/2013-12-23-visualizing-network-with-graphviz/"/>
+    <id>/post/2013-12-23-visualizing-network-with-graphviz/</id>
+    <published>2013-12-23T00:00:00+0000</published>
+    <updated>2013-12-23T00:00:00+0000</updated>
+    <summary>I&amp;rsquo;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
+In this post I&amp;rsquo;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
+mk-network-dot There are a lot of devices involved in your Neutron network configuration.</summary>
+  </entry>
+  
+  <entry>
+    <title>Quantum in Too Much Detail</title>
+    <link rel="alternate" href="/post/2013-11-14-quantum-in-too-much-detail/"/>
+    <id>/post/2013-11-14-quantum-in-too-much-detail/</id>
+    <published>2013-11-14T00:00:00+0000</published>
+    <updated>2013-11-14T00:00:00+0000</updated>
+    <summary>I originally posted this article on the RDO website.
+ The players This document describes the architecture that results from a particular OpenStack configuration, specifically:
+ Quantum networking using GRE tunnels; A dedicated network controller; A single instance running on a compute host  Much of the document will be relevant to other configurations, but details will vary based on your choice of layer 2 connectivity, number of running instances, and so forth.</summary>
+  </entry>
+  
+</feed>

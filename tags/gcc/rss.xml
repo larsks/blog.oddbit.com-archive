@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gcc on The Odd Bit</title>
+    <link>/tags/gcc/</link>
+    <description>Recent content in gcc on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/gcc/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>In which I PEBKAC so you don&#39;t have to</title>
+      <link>/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</guid>
+      <description>Say you have a simple bit of code:
+#include &amp;lt;avr/io.h&amp;gt; #include &amp;lt;util/delay.h&amp;gt; #define LED_BUILTIN _BV(PORTB5) int main(void) { DDRB |= LED_BUILTIN; while (1) { PORTB |= LED_BUILTIN; // turn on led _delay_ms(1000); // delay 1s PORTB &amp;amp;= ~LED_BUILTIN; // turn off led _delay_ms(1000); // delay 1s } }  You have a Makefile that compiles that into an object (.o) file like this:
+avr-gcc -mmcu=atmega328p -DF_CPU=16000000 -Os -c blink.c  If you were to forget to set the device type when compiling your .</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>cinder on The Odd Bit</title>
+
+  <link rel="self" href="/tags/cinder/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2015-09-29T00:00:00+0000</updated>
+  <id>/tags/cinder/</id>
+  
+  <entry>
+    <title>Migrating Cinder volumes between OpenStack environments using shared NFS storage</title>
+    <link rel="alternate" href="/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/"/>
+    <id>/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/</id>
+    <published>2015-09-29T00:00:00+0000</published>
+    <updated>2015-09-29T00:00:00+0000</updated>
+    <summary>Many of the upgrade guides for OpenStack focus on in-place upgrades to your OpenStack environment. Some organizations may opt for a less risky (but more hardware intensive) option of setting up a parallel environment, and then migrating data into the new environment. In this article, we look at how to use Cinder backups with a shared NFS volume to facilitate the migration of Cinder volumes between two different OpenStack environments.</summary>
+  </entry>
+  
+</feed>

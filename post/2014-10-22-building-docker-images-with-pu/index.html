@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Building Docker images with Puppet &middot; The Odd Bit</title>
+        <meta name="description" content="I like Docker, but I&rsquo;m not a huge fan of using shell scripts for complex system configuration&hellip;and Dockerfiles are basically giant shell scripts.
+I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
+I started with a manifest like this (in puppet/node.pp):
+class { &#39;ssh&#39;: }  And a Dockerfile like this:">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Building Docker images with Puppet</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2014-10-22" itemprop="datePublished">Wed, Oct 22, 2014</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>I like <a href="http://docker.com/">Docker</a>, but I&rsquo;m not a huge fan of using shell scripts for
+complex system configuration&hellip;and Dockerfiles are basically giant
+shell scripts.</p>
+
+<p>I was curious whether or not it would be possible to use Puppet during
+the <code>docker build</code> process.  As a test case, I used the
+<a href="https://github.com/saz/puppet-ssh">ssh</a> module included in the openstack-puppet-modules package.</p>
+
+<p>I started with a manifest like this (in <code>puppet/node.pp</code>):</p>
+
+<pre><code>class { 'ssh': }
+</code></pre>
+
+<p>And a Dockerfile like this:</p>
+
+<pre><code>FROM larsks/rdo-puppet-base
+
+COPY puppet /puppet
+RUN cd /puppet; puppet apply \
+  --modulepath /usr/share/openstack-puppet/modules \
+  node.pp
+</code></pre>
+
+<p>The <code>larsks/rdo-puppet-base</code> module includes &ldquo;puppet&rdquo; and all the Puppet
+modules required by RDO (installed in
+<code>/usr/share/openstack-puppet/modules</code>).</p>
+
+<p>Running <code>docker build</code> with this <code>Dockerfile</code> results in:</p>
+
+<pre><code>Error: Could not run: Could not retrieve facts for
+a9cde05eb735.example.com: no address for
+a9cde05eb735.example.com
+</code></pre>
+
+<p>Puppet is trying to determine the FQDN of the container, and is then
+trying to determine the canonical ip address of the container.  This is
+never going to work, absent some mechanism that automatically
+registers DNS entries when you boot containers (e.g., <a href="https://github.com/crosbymichael/skydock">skydock</a>).</p>
+
+<p>The obvious way to fix this would be to modify <code>/etc/hosts</code> and add
+the calculated fqdn to the entry for <code>localhost</code>, but <code>/etc/hosts</code>
+inside Docker containers is read-only.</p>
+
+<p>Since Puppet is using Facter to get information about the host, I
+looked into whether or not it would be possible (and convenient) to
+override Facter generated facts.  It turns out that it <a href="http://www.puppetcookbook.com/posts/override-a-facter-fact.html">is relatively
+easy</a>; just set <code>FACTER_&lt;fact_name&gt;</code> in the environment.
+For example:</p>
+
+<pre><code>FACTER_fqdn=localhost
+</code></pre>
+
+<p>I modified the Dockerfile to look like this:</p>
+
+<pre><code>FROM larsks/rdo-puppet-base
+
+COPY puppet /puppet
+RUN cd /puppet; FACTER_fqdn=localhost puppet apply \
+  --modulepath=/usr/share/openstack-puppet/modules \
+  node.pp
+</code></pre>
+
+<p>Running this yields:</p>
+
+<pre><code>Error: Could not start Service[sshd]: Execution of '/sbin/service
+  sshd start' returned 1: Redirecting to /bin/systemctl start  sshd.service
+Failed to get D-Bus connection: No connection to service manager.
+Wrapped exception:
+Execution of '/sbin/service sshd start' returned 1: Redirecting to
+  /bin/systemctl start  sshd.service
+Failed to get D-Bus connection: No connection to service manager.
+</code></pre>
+
+<p>This is happening because the Puppet module is trying to manipulate
+the corresponding service resource, but there is no service manager
+(e.g., &ldquo;systemd&rdquo; or &ldquo;upstart&rdquo;, etc) inside the container.</p>
+
+<p>Some modules provide a module parameter to disable service management,
+but that solution isn&rsquo;t available in this module.  Instead, I created
+a &ldquo;dummy&rdquo; service provider.  The &ldquo;code&rdquo; (or lack thereof) looks like
+this:</p>
+
+<pre><code>Puppet::Type.type(:service).provide :dummy, :parent =&gt; :base do
+  desc &quot;Dummy service provider&quot;
+
+  def startcmd
+      true;
+  end
+
+  def stopcmd
+      true;
+  end
+
+  def restartcmd
+    true
+  end
+
+  def statuscmd
+    true
+  end
+end
+</code></pre>
+
+<p>I dropped this into a <code>dummy_service</code> puppet module with the
+following structure:</p>
+
+<pre><code>dummy_service/
+  lib/
+    puppet/
+      provider/
+        service/
+          dummy.rb
+</code></pre>
+
+<p>I installed the whole thing into <code>/usr/share/puppet/modules</code> in the
+base image (<code>larsks/rdo-puppet-base</code>) by adding the following to the
+relevant <code>Dockerfile</code>:</p>
+
+<pre><code>COPY dummy_service /usr/share/puppet/modules/dummy_service
+</code></pre>
+
+<p>I modified the <code>Dockerfile</code> for my ssh image to look like this:</p>
+
+<pre><code>FROM larsks/rdo-puppet-base
+
+COPY puppet /puppet
+RUN cd /puppet; \
+  FACTER_fqdn=localhost \
+  puppet apply \
+    --modulepath=/usr/share/openstack-puppet/modules:/usr/share/puppet/modules \
+    node.pp
+</code></pre>
+
+<p>And finally I modified <code>node.pp</code> to look like this:</p>
+
+<pre><code>Service {
+  provider =&gt; dummy,
+}
+
+class { 'ssh': }
+</code></pre>
+
+<p>This sets the default <code>provider</code> for <code>service</code> resources to <code>dummy</code>.</p>
+
+<p>With these changes, the <code>docker build</code> operation completes
+successfully:</p>
+
+<pre><code>Sending build context to Docker daemon 49.15 kB
+Sending build context to Docker daemon 
+Step 0 : FROM larsks/rdo-puppet-base
+ ---&gt; 2554b6fb47bb
+Step 1 : COPY puppet /puppet
+ ---&gt; Using cache
+ ---&gt; bf867271fd0f
+Step 2 : RUN cd /puppet;    FACTER_fqdn=localhost   puppet apply        --modulepath=/usr/share/openstack-puppet/modules:/usr/share/puppet/modules      node.pp
+ ---&gt; Running in 91b08a7a0ff5
+Notice: Compiled catalog for c6f07ae86c40.redhat.com in environment production in 0.58 seconds
+Notice: /Stage[main]/Ssh::Server::Install/Package[openssh-server]/ensure: created
+Notice: /Stage[main]/Ssh::Client::Config/File[/etc/ssh/ssh_config]/content: content changed '{md5}e233b9bb27ac15b968d8016d7be7d7ce' to '{md5}34815c31785be0c717f766e8d2c8d4d7'
+Notice: Finished catalog run in 47.61 seconds
+ ---&gt; e830e6adce26
+Removing intermediate container 91b08a7a0ff5
+Successfully built e830e6adce26
+</code></pre>
+
+<p>Obviously, in order to turn this into a functional module you would
+need to add an appropriate <code>CMD</code> or <code>ENTRYPOINT</code> script to make it
+generate host keys and start <code>sshd</code>, but I think this successfully
+demonstrates what is necessary to make a stock Puppet module run
+as part of the <code>docker build</code> process.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/puppet/">puppet</a>, 
+            
+                <a href="/tags/docker/">docker</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Building%20Docker%20images%20with%20Puppet&url=%2fpost%2f2014-10-22-building-docker-images-with-pu%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2f2014-10-22-building-docker-images-with-pu%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fpost%2f2014-10-22-building-docker-images-with-pu%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

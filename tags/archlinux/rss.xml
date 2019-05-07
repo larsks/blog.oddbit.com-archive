@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>archlinux on The Odd Bit</title>
+    <link>/tags/archlinux/</link>
+    <description>Recent content in archlinux on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Apr 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/archlinux/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Did Arch Linux eat your KVM?</title>
+      <link>/post/2013-04-08-did-archlinux-eat-yo/</link>
+      <pubDate>Mon, 08 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2013-04-08-did-archlinux-eat-yo/</guid>
+      <description>A recent update to Arch Linux replaced the qemu-kvm package with an updated version of qemu. A side effect of this change is that the qemu-kvm binary is no longer available, and any libvirt guests on your system utilizing that binary will no longer operate. As is typical with Arch, there is no announcement about this incompatible change, and queries to #archlinux will be met with the knowledge, grace and decorum you would expect of that channel:</description>
+    </item>
+    
+  </channel>
+</rss>

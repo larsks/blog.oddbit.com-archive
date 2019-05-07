@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Capturing Envoy Data &middot; The Odd Bit</title>
+        <meta name="description" content="Pursuant to my last post, I&rsquo;ve written a simple man-in-the-middle proxy to intercept communication between the Envoy and the Enphase servers. The code is available here.
+What it does As I detailed in my previous post, the Envoy sends data to Enphase via http POST requests. The proxy intercepts these requests, extracts the XML data from the request, and writes it to a local file (by default in /var/spool/envoy). It then forwards the request on to Enphase, and returns the reply to your Envoy.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Capturing Envoy Data</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2012-02-22" itemprop="datePublished">Wed, Feb 22, 2012</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>Pursuant to my <a href="http://blog.oddbit.com/2012/02/13/enphase-envoy-xml-data-format/">last post</a>, I&rsquo;ve written a simple man-in-the-middle proxy to intercept communication between the Envoy and the Enphase servers. The code is available <a href="https://github.com/larsks/envoy-tools">here</a>.</p>
+
+<h2 id="what-it-does">What it does</h2>
+
+<p>As I detailed in my previous post, the Envoy sends data to Enphase via http <code>POST</code> requests. The proxy intercepts these requests, extracts the XML data from the request, and writes it to a local file (by default in <code>/var/spool/envoy</code>). It then forwards the request on to Enphase, and returns the reply to your Envoy.</p>
+
+<p>In addition to extracting the XML data, the proxy also logs the complete contents (headers and message content) of the request and the reply to files.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>Out of the box, your Envoy configures itself automatically using DHCP. Possibly, you&rsquo;ve configured it statically. In either case, it will typically be configured to connect via your default gateway &ndash; generally, your home router, cable modem, etc. In order to intercept the communication between the Envoy and Enphase, we insert another server between the Envoy and your network gateway. In the foollowing diagram, the dotted line represents the original communication path, while the solid lines represent the new communication path:</p>
+
+<p><img src="/assets/2013/02/22/envoy-capture.png" alt="envoy communication" /></p>
+
+<p>The intermediate system &ndash; which we&rsquo;ll call the interceptor &ndash; will use a few tricks to redirect traffic destined for Enphase to the local proxy (which will log the data locally and then forward it on to Enphase).</p>
+
+<h2 id="assumptions">Assumptions</h2>
+
+<p>For the purposes of this article, we&rsquo;ll assume that your Envoy is at address 192.168.1.100, and the address of the interceptor is 192.168.1.200.</p>
+
+<p>I&rsquo;m assuming that your interceptor is running Linux. It may be possible to accomplish the same thing with other tools, but I&rsquo;m relying on the Linux netfilter subsystem (aka &ldquo;iptables&rdquo;) to perform certain key tasks.</p>
+
+<h2 id="configuring-the-envoy">Configuring the Envoy</h2>
+
+<p>You will need to congfigure the Envoy to use your interceptor host as its default gateway.</p>
+
+<ol>
+<li>Go to the <a href="http://192.168.1.100/admin/lib/network_display?locale=en">network connectivity</a> page on your Envoy.</li>
+<li>If it&rsquo;s checked, uncheck the &ldquo;Use DHCP&rdquo; setting and select the &ldquo;Updating DHCP setting&rdquo; button.</li>
+<li>Set the &ldquo;Gateway IP&rdquo; field to the address of your interceptor (192.168.1.200 in this example).</li>
+<li>Select the &ldquo;Update Interface 0&rdquo; button.</li>
+</ol>
+
+<h2 id="configuring-the-interceptor">Configuring the interceptor</h2>
+
+<h3 id="redirecting-requests">Redirecting requests</h3>
+
+<p>We need to configure the interceptor to redirect requests to the Enphase servers to a local application. We&rsquo;ll add the following firewall rule:</p>
+
+<pre><code>iptables -t nat -A PREROUTING -s 192.168.1.100 -p tcp \
+  --dport 443 -j REDIRECT --to-ports 4430
+</code></pre>
+
+<p>This rule matches https (port 443) requests from your Envoy (192.168.1.100) and redirects them to port 4430 on the interceptor.<br />
+Note that this rule will be lost if you reboot your system. Making firewall rules persistent is beyond the scope of this article; consult the documentation for your distribution of choice.</p>
+
+<h3 id="handling-ssl">Handling SSL</h3>
+
+<p>My simple Python proxy doesn&rsquo;t speak SSL, so we need to create a plain http request from the https request. Normally this would be difficult, but Enphase has made our life easier by not checking the validity of the SSL certificate. We&rsquo;re going to use <a href="http://www.stunnel.org/">stunnel</a> as an https-to-http proxy. Create a file called /etc/stunnel/envoy-ssl.conf with the following contents:</p>
+
+<pre><code>[https_in]
+accept = 4430
+cert = /etc/pki/tls/certs/localhost.crt
+connect = 127.0.0.1:8080
+</code></pre>
+
+<p>Run stunnel with this configuration:</p>
+
+<pre><code>stunnel /etc/stunnel/envoy-ssl.conf
+</code></pre>
+
+<p>This assumes you have an SSL certificate in /etc/pki/tls/certs/localhost.crt. You will probably need to generate one, which again is left as an exercise to the reader.</p>
+
+<h3 id="installing-bottle">Installing bottle</h3>
+
+<p>The proxy relies on the <a href="http://bottlepy.org/">bottle</a> Python web framework, which is probably not installed on your system. The easiest way to get things going is to install a Python &ldquo;virtual environment&rdquo; with the appropriate modules. Create a new virtual environment:</p>
+
+<pre><code>virtualenv ~/env/envoy
+</code></pre>
+
+<p>And install bottle:</p>
+
+<pre><code>~/env/envoy/bin/pip install bottle
+</code></pre>
+
+<h3 id="creating-directories">Creating directories</h3>
+
+<p>By default the proxy will write data to /var/spool/envoy. You&rsquo;ll need to make sure this directory exists and is writable by whatever account you&rsquo;re using to run the proxy.</p>
+
+<h2 id="running-the-proxy">Running the proxy</h2>
+
+<p>Now that you&rsquo;ve got all the prerequisites in place, you should be able to start the proxy by running:</p>
+
+<pre><code>~/env/envoy/bin/python proxy.py
+</code></pre>
+
+<p>You should see something like this:</p>
+
+<pre><code>Bottle server starting up (using WSGIRefServer())...
+Listening on http://127.0.0.1:8080/
+Hit Ctrl-C to quit.
+</code></pre>
+
+<p>Assuming that everything else went as planned, sometime within the next five minutes you should see the proxy service a request from your Envoy:</p>
+
+<pre><code>localhost.localdomain - - [22/Feb/2012 09:03:57] &quot;POST /emu_reports/
+performance_report?webcomm_version=3.0 HTTP/1.1&quot; 200 103
+</code></pre>
+
+<p>From this request you will end up with three files in /var/spool/envoy:</p>
+
+<ul>
+<li><p><code>2012-02-22T09:03:01-0j1FFs.xml</code><br />
+This is the XML data from the Envoy and is probably the most interesting file.</p></li>
+
+<li><p><code>2012-02-22T09:03:01-ZMxw6b.request</code><br />
+This is the raw request from the Envoy.</p></li>
+
+<li><p><code>2012-02-22T09:03:02-NB4DbR.response</code><br />
+This is the response from the Enphase servers.</p></li>
+</ul>
+
+<p>If you find some bugs, please let me know by creating a new issue <a href="https://github.com/larsks/envoy-tools/issues">here</a>. Note that this is only for bugs in the code; if you need basic networking tutorials and so forth the Google has lots of help for you.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Capturing%20Envoy%20Data&url=%2fpost%2f2012-02-22-capturing-envoy-data%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2f2012-02-22-capturing-envoy-data%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fpost%2f2012-02-22-capturing-envoy-data%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,32 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>pacemaker on The Odd Bit</title>
+
+  <link rel="self" href="/tags/pacemaker/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2015-02-24T00:00:00+0000</updated>
+  <id>/tags/pacemaker/</id>
+  
+  <entry>
+    <title>Visualizing Pacemaker resource constraints</title>
+    <link rel="alternate" href="/post/2015-02-24-visualizing-pacemaker-constraints/"/>
+    <id>/post/2015-02-24-visualizing-pacemaker-constraints/</id>
+    <published>2015-02-24T00:00:00+0000</published>
+    <updated>2015-02-24T00:00:00+0000</updated>
+    <summary>If a picture is worth a thousand words, then code that generates pictures from words is worth&amp;hellip;uh, anyway, I wrote a script that produces dot output from Pacemaker start and colocation constraints:
+https://github.com/larsks/pacemaker-tools/
+You can pass this output to graphviz to create visualizations of your Pacemaker resource constraints.
+The graph-constraints.py script in that repository consumes the output of cibadmin -Q and can produce output for either start constraints (-S, the default) or colocation constraints (-C).</summary>
+  </entry>
+  
+  <entry>
+    <title>Stupid Pacemaker XML tricks</title>
+    <link rel="alternate" href="/post/2015-02-19-stupid-pacemaker-xml-tricks/"/>
+    <id>/post/2015-02-19-stupid-pacemaker-xml-tricks/</id>
+    <published>2015-02-19T00:00:00+0000</published>
+    <updated>2015-02-19T00:00:00+0000</updated>
+    <summary>I&amp;rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
+Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;//resource[@active=&amp;quot;false&amp;quot;]&#39; - &amp;gt;&amp;amp;/dev/null &amp;amp;&amp;amp; echo &amp;quot;There are inactive resources&amp;quot;  This selects any resource (//resource) in the output of pcs status xml that has the attribute active set to false.</summary>
+  </entry>
+  
+</feed>

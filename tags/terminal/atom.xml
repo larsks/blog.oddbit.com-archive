@@ -1,0 +1,20 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>terminal on The Odd Bit</title>
+
+  <link rel="self" href="/tags/terminal/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2014-05-21T00:00:00+0000</updated>
+  <id>/tags/terminal/</id>
+  
+  <entry>
+    <title>Sharing a terminal session with termshare</title>
+    <link rel="alternate" href="/post/2014-05-21-sharing-a-terminal-session-wit/"/>
+    <id>/post/2014-05-21-sharing-a-terminal-session-wit/</id>
+    <published>2014-05-21T00:00:00+0000</published>
+    <updated>2014-05-21T00:00:00+0000</updated>
+    <summary>Termshare is a tool for sharing your terminal in a browser session. It supports both read-only and read-write sessions, and unlike many other tools it does not require any software installation on the remote side. This makes it tremendously handy for:
+ Streaming terminal demonstrations to a diverse audience, or Sharing a terminal session with someone without needing to much about with ssh, tmux, screen, etc.  I&amp;rsquo;ve successfully used Termshare under both Fedora (19 and 20) and CentOS.</summary>
+  </entry>
+  
+</feed>

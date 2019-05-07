@@ -1,0 +1,21 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>devicemapper on The Odd Bit</title>
+
+  <link rel="self" href="/tags/devicemapper/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2018-01-25T00:00:00+0000</updated>
+  <id>/tags/devicemapper/</id>
+  
+  <entry>
+    <title>Fun with devicemapper snapshots</title>
+    <link rel="alternate" href="/post/2018-01-25-fun-with-devicemapper-snapshots/"/>
+    <id>/post/2018-01-25-fun-with-devicemapper-snapshots/</id>
+    <published>2018-01-25T00:00:00+0000</published>
+    <updated>2018-01-25T00:00:00+0000</updated>
+    <summary>I find myself working with Raspbian disk images fairly often. A typical workflow is:
+ Download the disk image. Mount the filesystem somewhere to check something. Make some changes or install packages just to check something else. Crap I&amp;rsquo;ve made changes.  &amp;hellip;at which point I need to fetch a new copy of the image next time I want to start fresh.
+Sure, I could just make a copy of the image and work from there, but what fun is that?</summary>
+  </entry>
+  
+</feed>

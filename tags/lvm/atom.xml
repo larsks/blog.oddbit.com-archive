@@ -1,0 +1,20 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>lvm on The Odd Bit</title>
+
+  <link rel="self" href="/tags/lvm/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2014-08-16T00:00:00+0000</updated>
+  <id>/tags/lvm/</id>
+  
+  <entry>
+    <title>lvcache: a tool for managing LVM caches</title>
+    <link rel="alternate" href="/post/2014-08-16-lvcache-a-tool-for-managing-lv/"/>
+    <id>/post/2014-08-16-lvcache-a-tool-for-managing-lv/</id>
+    <published>2014-08-16T00:00:00+0000</published>
+    <updated>2014-08-16T00:00:00+0000</updated>
+    <summary>Until recently I had a bcache based setup on my laptop, but when forced by circumstance to reinstall everything I spent some time looking for alternatives that were less disruptive to configure on an existing system.
+I came across Richard Jones&amp;rsquo; article discussing the recent work to integrate dm-cache into LVM. Unlike bcache and unlike using dm-cache directly, the integration with LVM makes it easy to associate devices with an existing logical volume.</summary>
+  </entry>
+  
+</feed>

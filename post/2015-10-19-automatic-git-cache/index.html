@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Automatic git cache &middot; The Odd Bit</title>
+        <meta name="description" content="This post is in response to a comment someone made on irc earlier today:
+ [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&rsquo;re available
+ In this post I present a proof-of-concept solution to this request. Please note that thisand isn&rsquo;t something that has actually been used or tested anywhere!
+If you access a git repository via ssh, it&rsquo;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Automatic git cache</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2015-10-19" itemprop="datePublished">Mon, Oct 19, 2015</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>This post is in response to a comment someone made on irc earlier
+today:</p>
+
+<blockquote>
+<p>[I] would really like a git lookaside cache which operated on an upstream
+repo, but pulled objects locally when they&rsquo;re available</p>
+</blockquote>
+
+<p>In this post I present a proof-of-concept solution to this request.
+Please note that thisand isn&rsquo;t something that has actually been used
+or tested anywhere!</p>
+
+<p>If you access a git repository via <code>ssh</code>, it&rsquo;s easy to provide a
+wrapper for git operations via the <code>command=</code> option in an
+<code>authorized_keys</code> file.  We can take advantage of this to update a a
+local &ldquo;cache&rdquo; repository prior to responding to a <code>clone</code>/<code>pull</code>/etc.
+operation.</p>
+
+<p>A simple wrapper might look like this:</p>
+
+<pre><code>#!/bin/bash
+
+[ &quot;$SSH_ORIGINAL_COMMAND&quot; ] || exit 1
+
+eval set -- $SSH_ORIGINAL_COMMAND
+
+cd repos
+
+case $1 in
+  (git-receive-pack|git-upload-pack)
+    :;;
+  (*)   echo &quot;*** Unrecognized command.&quot; &gt;&amp;2
+    exit 1
+    ;;
+esac
+
+if [ &quot;$1&quot; = &quot;git-upload-pack&quot; ]; then
+  (
+  # Update the local repository cache if the file 
+  # 'git-auto-update' exists.
+  cd &quot;$2&quot;
+  [ -f git-auto-update ] &amp;&amp;
+    git remote update &gt;&amp;2
+  )
+fi
+
+exec &quot;$@&quot;
+</code></pre>
+
+<p>If we have a <code>git</code> user locally, we can place the above script into
+<code>/home/git/bin/gitwrapper</code>, and then set up a <code>.ssh/authorized_keys</code>
+file that looks something like this:</p>
+
+<pre><code>command=&quot;/home/git/bin/gitwrapper&quot; ssh-rsa AAAAB3NzaC...
+</code></pre>
+
+<p>Let&rsquo;s set up a local repository mirror:</p>
+
+<pre><code># su - git
+git$ mkdir repos
+git$ cd repos
+git$ git clone --mirror http://github.com/openstack-dev/devstack.git
+</code></pre>
+
+<p>In order to tell the wrapper script that it should perform the
+automatic update logic on this repository, we need to touch the
+appropriate flag file:</p>
+
+<pre><code>git$ touch devstack.git/git-auto-update
+</code></pre>
+
+<p>If we then attempt to clone that repository:</p>
+
+<pre><code>lars$ git clone git@localhost:devstack.git
+</code></pre>
+
+<p>The wrapper script will check for the presence of that flag file, and
+if it exists it will first perform a <code>git remote update</code> before
+responding to the <code>clone</code> operation.  This ensures that any new
+objects are fetched, while ensuring fast transfer of objects that are
+already available locally.  The output we see after running the above
+<code>git clone</code> looks something like:</p>
+
+<pre><code>Fetching origin
+From http://github.com/openstack-dev/devstack
+   8ce00ac..0ba1848  master     -&gt; master
+First, rewinding head to replay your work on top of it...
+Fast-forwarded master to 0ba18481672964808bbbc4160643387dc931c654.
+</code></pre>
+
+<p>The first three lines are the result <code>git remote update</code> operation in
+our cache repository.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/git/">git</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Automatic%20git%20cache&url=%2fpost%2f2015-10-19-automatic-git-cache%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2f2015-10-19-automatic-git-cache%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fpost%2f2015-10-19-automatic-git-cache%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

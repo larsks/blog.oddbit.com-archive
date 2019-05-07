@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ATOMIC_BLOCK magic in avr-libc &middot; The Odd Bit</title>
+        <meta name="description" content="The AVR C library, avr-libc, provide an ATOMIC_BLOCK macro that you can use to wrap critical sections of your code to ensure that interrupts are disabled while the code executes. At high level, the ATOMIC_BLOCK macro (when called using ATOMIC_FORCEON) does something like this:
+cli(); ...your code here... seti();  But it&rsquo;s more than that. If you read the documentation for the macro, it says:
+ Creates a block of code that is guaranteed to be executed atomically.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">ATOMIC_BLOCK magic in avr-libc</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2019-02-01" itemprop="datePublished">Fri, Feb 1, 2019</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>The AVR C library, <a href="https://www.nongnu.org/avr-libc/">avr-libc</a>, provide an <code>ATOMIC_BLOCK</code> macro that you can use to wrap critical sections of your code to ensure that interrupts are disabled while the code executes.  At high level, the <code>ATOMIC_BLOCK</code> macro (when called using <code>ATOMIC_FORCEON</code>) does something like this:</p>
+
+<pre><code>cli();
+
+...your code here...
+
+seti();
+</code></pre>
+
+<p>But it&rsquo;s more than that.  If you read <a href="https://www.nongnu.org/avr-libc/user-manual/group__util__atomic.html#gaaaea265b31dabcfb3098bec7685c39e4">the documentation</a> for the macro, it says:</p>
+
+<blockquote>
+<p>Creates a block of code that is guaranteed to be executed atomically. Upon entering the block the Global Interrupt Status flag in SREG is disabled, and re-enabled upon exiting the block <strong>from any exit path</strong>.</p>
+</blockquote>
+
+<p>I didn&rsquo;t really think much about the bit that I&rsquo;ve highlighted until I wrote some code that looked something like this:</p>
+
+<pre><code>ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
+      while(some_condition) {
+        if (something_failed)
+          goto fail;
+
+        do_something_else();
+      }
+}
+
+fail:
+  return false;
+</code></pre>
+
+<p>There&rsquo;s a <code>goto</code> statement there; that&rsquo;s an unconditional jump to the <code>fail</code> label outside the <code>ATOMIC_BLOCK</code> block. There isn&rsquo;t really any opportunity there for anything to re-enable interrupts, and yet, my code worked just fine. What&rsquo;s going on?</p>
+
+<p>It turns out that this is due to GCC magic.  If you look at the expansion of the <code>ATOMIC_BLOCK</code> macro, it looks like this:</p>
+
+<pre><code>#define ATOMIC_BLOCK(type) for ( type, __ToDo = __iCliRetVal(); \
+                           __ToDo ; __ToDo = 0 )
+</code></pre>
+
+<p>It accepts a <code>type</code> parameter which can be one of <code>ATOMIC_RESTORESTATE</code> or <code>ATOMIC_FORCEON</code>, which look like this:</p>
+
+<pre><code>#define ATOMIC_RESTORESTATE uint8_t sreg_save \
+    __attribute__((__cleanup__(__iRestore))) = SREG
+</code></pre>
+
+<p>And this:</p>
+
+<pre><code>#define ATOMIC_FORCEON uint8_t sreg_save \
+    __attribute__((__cleanup__(__iSeiParam))) = 0
+</code></pre>
+
+<p>The magic is the <code>__attribute__</code> keyword: GCC supports <a href="https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html">custom attributes</a> on variables that can change the way the variable is stored or used.  In this case, the code is using the <code>__cleanup__</code> attribute, which:</p>
+
+<blockquote>
+<p>&hellip;runs a function when the variable goes out of scope.</p>
+</blockquote>
+
+<p>So when we write:</p>
+
+<pre><code>ATOMIC_BLOCK(ATOMIC_FORCEON) {
+  do_something_here();
+}
+</code></pre>
+
+<p>That becomes:</p>
+
+<pre><code>for ( uint8_t sreg_save __attribute__((__cleanup__(__iSeiParam))) = 0, __ToDo = __iCliRetVal(); __ToDo ; __ToDo = 0 ) {
+    do_something_here();
+}
+</code></pre>
+
+<p>Which instructs GCC to ensure that the <code>iSeiParam</code> function is run whenever the <code>sreg_save</code> variable goes out of scope.  The <code>iSeiParam()</code> method looks like:</p>
+
+<pre><code>static __inline__ void __iSeiParam(const uint8_t *__s)
+{
+  __asm__ __volatile__ (&quot;sei&quot; ::: &quot;memory&quot;);
+  __asm__ volatile (&quot;&quot; ::: &quot;memory&quot;);
+  (void)__s;
+}
+</code></pre>
+
+<p>In other words, this is very much like a <code>try</code>/<code>finally</code> block in Python, although the cleanup action is attached to a particular variable rather than to the block of code itself.  I think that&rsquo;s pretty neat.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/avr/">avr</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=ATOMIC_BLOCK%20magic%20in%20avr-libc&url=%2fpost%2f2019-02-01-atomicblock-magic-in-avrlibc%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2f2019-02-01-atomicblock-magic-in-avrlibc%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fpost%2f2019-02-01-atomicblock-magic-in-avrlibc%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

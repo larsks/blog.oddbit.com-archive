@@ -1,0 +1,20 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>adafruit on The Odd Bit</title>
+
+  <link rel="self" href="/tags/adafruit/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2018-05-03T00:00:00+0000</updated>
+  <id>/tags/adafruit/</id>
+  
+  <entry>
+    <title>Using a TM1637 LED module with CircuitPython</title>
+    <link rel="alternate" href="/post/2018-05-03-using-a-tm-led-module-with-cir/"/>
+    <id>/post/2018-05-03-using-a-tm-led-module-with-cir/</id>
+    <published>2018-05-03T00:00:00+0000</published>
+    <updated>2018-05-03T00:00:00+0000</updated>
+    <summary>CircuitPython is &amp;ldquo;an education friendly open source derivative of MicroPython&amp;rdquo;. MicroPython is a port of Python to microcontroller environments; it can run on boards with very few resources such as the ESP8266. I&amp;rsquo;ve recently started experimenting with CircuitPython on a Wemos D1 mini, which is a small form-factor ESP8266 board.
+I had previously been using Mike Causer&amp;rsquo;s micropython-tm1637 for MicroPython to drive a 4 digit LED display. I was hoping to get the same code working under CircuitPython, but when I tried to build an image that included the tm1637 module I ran into:</summary>
+  </entry>
+  
+</feed>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rpm on The Odd Bit</title>
+    <link>/tags/rpm/</link>
+    <description>Recent content in rpm on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Jul 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/rpm/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fixing RPM with evil magic</title>
+      <link>/post/2011-07-26-fixing-rpm-with-evil-magic/</link>
+      <pubDate>Tue, 26 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2011-07-26-fixing-rpm-with-evil-magic/</guid>
+      <description>Fixing rpmsign with evil magic At my office we are developing a deployment mechanism for RPM packages. The general workflow looks like this:
+ You build a source rpm on your own machine. You sign the rpm with your GPG key. You submit the source RPM to our buildserver. The buildserver validates your signature and then builds the package. The buildserver signs the package using a master signing key.  The last step in that sequence represents a problem, because the rpmsign command will always, always prompt for a password and read the response from /dev/tty.</description>
+    </item>
+    
+  </channel>
+</rss>

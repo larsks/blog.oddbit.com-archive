@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Controlling a servo with your Arduino &middot; The Odd Bit</title>
+        <meta name="description" content="I&rsquo;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
+I was fiddling around with this exercise, which uses the SoftwareServo library to control a servo. Using this library, you just pass it an angle and the library takes care of everything else, e.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Controlling a servo with your Arduino</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2013-03-07" itemprop="datePublished">Thu, Mar 7, 2013</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>I&rsquo;ve recently started playing with an <a href="http://arduino.cc/">Arduino</a> kit I purchased a year
+ago (and only just now got around to unboxing).  I purchased the kit
+from <a href="https://www.sparkfun.com/">SparkFun</a>, and it includes a motley collection of resistors,
+LEDs, a motor, a servo, and more.</p>
+
+<p>I was fiddling around with <a href="http://oomlout.com/a/products/ardx/circ-04/">this exercise</a>, which uses the
+<code>SoftwareServo</code> library to control a servo.  Using this library,
+you just pass it an angle and the library takes care of everything
+else, e.g. to rotate to 90 degrees you would do this:</p>
+
+<pre><code>myservo.write(90);
+</code></pre>
+
+<p>The exercise suggests trying to control the servo without using the
+library:</p>
+
+<blockquote>
+<p>While it is easy to control a servo using the Arduino’s included
+library sometimes it is fun to figure out how to program something
+yourself. Try it. We’re controlling the pulse directly so you could
+use this method to control servos on any of the Arduino’s 20
+available pins (you need to highly optimize this code before doing
+that).</p>
+</blockquote>
+
+<p>It took me a few tries, and it looks as if the upper and lower limits
+for the servo pulses given in that documentation may not be 100%
+accurate.  This is what I finally came with.  As an added bonus, it
+writes position information to the serial port:</p>
+
+<pre><code>int incomingByte = 0;
+int servo0 = 600;
+int servo180 = 2100;
+int inc = 20;
+int pos = servo0;
+int servoPin = 9;
+int pulseInterval=2000;
+
+void setup() {
+  Serial.begin(9600);     // opens serial port, sets data rate to 9600 bps
+  pinMode(servoPin, OUTPUT);
+}
+
+void loop() {
+  int i;
+
+  pos += inc;
+
+  if (pos &gt; servo180) {
+    Serial.println(&quot;REVERSE!&quot;);
+    pos = servo180;
+    inc *= -1;
+    delay(500);
+  } else if (pos &lt; servo0) {
+    Serial.println(&quot;FORWARD!&quot;);
+    pos = servo0;
+    inc *= -1;
+    delay(500);
+  }
+
+  Serial.print(&quot;pos = &quot;);
+  Serial.println(pos, DEC);
+
+  digitalWrite(servoPin, HIGH);
+  delayMicroseconds(pos);
+  digitalWrite(servoPin, LOW);
+  delay(20);
+}
+</code></pre>
+
+<p>Under Linux or OS X, you could view the serial output using <code>screen</code>
+like this:</p>
+
+<pre><code>screen /dev/tty.usbmodemfd12441 9600
+</code></pre>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/arduino/">arduino</a>, 
+            
+                <a href="/tags/hardware/">hardware</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Controlling%20a%20servo%20with%20your%20Arduino&url=%2fpost%2f2013-03-07-controlling-a-servo%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2f2013-03-07-controlling-a-servo%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fpost%2f2013-03-07-controlling-a-servo%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

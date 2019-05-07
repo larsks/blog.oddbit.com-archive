@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cleaning up Subversion with Git &middot; The Odd Bit</title>
+        <meta name="description" content="Overview At my office, we have a crufty Subversion repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.
+What we want to do is move a project from a path that looks like this:
+.../projects/some-project-name  To a new repository using the recommended Subversion repository layout, like this:">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Cleaning up Subversion with Git</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2010-01-29" itemprop="datePublished">Fri, Jan 29, 2010</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<h1 id="overview">Overview</h1>
+
+<p>At my office, we have a crufty <a href="http://subversion.tigris.org/">Subversion</a> repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.</p>
+
+<p>What we want to do is move a project from a path that looks like this:</p>
+
+<pre><code>.../projects/some-project-name
+</code></pre>
+
+<p>To a new repository using the recommended Subversion repository layout, like this:</p>
+
+<pre><code>.../some-project-name/trunk
+</code></pre>
+
+<p>Our lives are complicated by the fact that there has been a lot of mobility (renames/moves) of projects within the repository.</p>
+
+<h1 id="setup">Setup</h1>
+
+<p>We&rsquo;ll set up a test environment that will demonstrate the problem and our solution.</p>
+
+<ol>
+<li><p>Create the empty repositories:</p>
+
+<pre><code>set -x
+rm -rf work &amp;&amp; mkdir work
+cd work
+WORKDIR=$(pwd)
+mkdir repos
+
+# create source repository
+svnadmin create repos/src
+
+# create destination reposiory
+svnadmin create repos/dst
+</code></pre></li>
+
+<li><p>Create our desired repository structure in the destination repository:</p>
+
+<pre><code>svn mkdir -m 'create trunk' file://$WORKDIR/repos/dst/trunk
+svn mkdir -m 'create branches' file://$WORKDIR/repos/dst/branches
+svn mkdir -m 'create tags' file://$WORKDIR/repos/dst/tags
+</code></pre></li>
+
+<li><p>Create a simple revision history:</p>
+
+<pre><code>svn co file://$WORKDIR/repos/src src
+(
+cd src
+
+# Create our initial set of projects.
+mkdir projects
+mkdir projects/{project1,project2}
+touch projects/project1/{file11,file12}
+touch projects/project2/{file21,file22}
+svn add *
+svn ci -m 'initial commit'
+
+# Relocate a file between projects.
+svn mv projects/project1/file11 projects/project2/
+svn ci -m 'moved file11'
+
+# Rename a project.
+svn mv projects/project2 projects/project3
+svn update
+svn ci -m 'renamed project2 to project3'
+)
+</code></pre></li>
+
+<li><p>We can see the structure of the source repository like this:</p>
+
+<pre><code>echo &quot;Contents of source reposiory:&quot;
+svn ls -R file://$WORKDIR/repos/src
+</code></pre></li>
+</ol>
+
+<p>Your output should look something like this:</p>
+
+<pre><code>projects/
+projects/project1/
+projects/project1/file12
+projects/project3/
+projects/project3/file11
+projects/project3/file21
+projects/project3/file22
+</code></pre>
+
+<p>In this example, we&rsquo;ll try to import <em>project3</em> into a new repository.</p>
+
+<h1 id="using-subversion">Using Subversion</h1>
+
+<p>With Subversion, it&rsquo;s easy to extract a single project from the repository:</p>
+
+<pre><code>svn co file://$WORKDIR/repos/src/projects/project3
+</code></pre>
+
+<p>This gives us a directory called project3 containing the contents of the project. Unfortunately, there are no tools that will allow us to take this working copy and move it into another repository.</p>
+
+<p>Subversion includes a tool called svnadmin that allows on to perform a number of operations on a Subversion repository, but it requires access to the filesystem instance of the repository (it will not work over the network). This is a substantial limitation if you are working with a repository that is maintained by someone else, but we have the necessary access to our repository.</p>
+
+<p>The svnadmin command includes a dump operation that serializes a repository &ndash; and its entire revision history &ndash; into a text stream that can be loaded into another repository with a corresponding load operation. We don&rsquo;t want the entire repository, so we&rsquo;ll make use of the svndumpfilter command which, as you might expect, can apply certain filters to the output of svnadmin dump.</p>
+
+<p>We might try something like this:</p>
+
+<pre><code>svnadmin dump repos/src |
+  svndumpfilter include projects/project3/ |
+  svnadmin load repos/dst
+</code></pre>
+
+<p>Unforunately, this will fail with an error along the lines of:</p>
+
+<pre><code>svndumpfilter: Invalid copy source path '/projects/project2'
+svnadmin: Can't write to stream: Broken pipe
+</code></pre>
+
+<p>And if you were to look at the destination repository, you would find projec3 entirely absent:</p>
+
+<pre><code>echo &quot;Contents of destination repository (after dump/filter/load):&quot;
+svn ls -R file://$WORKDIR/repos/dst
+</code></pre>
+
+<p>And even if it worked we would still have to muck about in the destination repository to create our desired repository layout.</p>
+
+<h1 id="using-git">Using Git</h1>
+
+<p><a href="http://git-scm.com/">Git</a> is another version control system, similar in some ways to <a href="http://subversion.tigris.org/">Subversion</a> but designed for distributed operation. If you&rsquo;re not familiar with git there is lots of documentation available online.</p>
+
+<p>We&rsquo;ll start by checking out <em>project3</em> from the Subversion repository:</p>
+
+<pre><code>rm -rf project3
+git svn clone file://$WORKDIR/repos/src/projects/project3
+cd project3
+</code></pre>
+
+<p>Because we&rsquo;re going to import this code into a new repository we need to erase all references to the source repository:</p>
+
+<pre><code>git branch -rD git-svn
+git config --remove-section svn-remote.svn
+rm -rf .git/svn
+</code></pre>
+
+<p>And now we associate this git repository with the destination Subversion repository:</p>
+
+<pre><code>git svn init -s file://$WORKDIR/repos/dst
+git svn fetch
+</code></pre>
+
+<p>We now apply the revision history to the trunk of the destination repository and commit the changes:</p>
+
+<pre><code>git rebase trunk
+git svn dcommit
+</code></pre>
+
+<p>After all of this, we have exactly what we want &ndash; our project hosted in a new repository with our desired layout. The following commands show the contents of the repository:</p>
+
+<pre><code>echo &quot;Contents of destination repository (after git):&quot;
+svn ls -R file://$WORKDIR/repos/dst
+</code></pre>
+
+<p>And produce output like this:</p>
+
+<pre><code>branches/
+tags/
+trunk/
+trunk/file11
+trunk/file21
+trunk/file22
+</code></pre>
+
+<p>And the revision history of the project is available in the destination repository:</p>
+
+<pre><code>echo &quot;Revision history in destination repository:&quot;
+svn log file://$WORKDIR/repos/dst
+</code></pre>
+
+<p>The output will look something like:</p>
+
+<pre><code>Revision history in destination repository:
++ svn log file:///home/lars/projects/svn-to-svn-via-git/work/repos/dst
+------------------------------------------------------------------------
+r7 | lars | 2009-06-03 14:46:02 -0400 (Wed, 03 Jun 2009) | 1 line
+
+renamed project2 to project3
+------------------------------------------------------------------------
+r6 | lars | 2009-06-03 14:46:02 -0400 (Wed, 03 Jun 2009) | 1 line
+
+initial commit
+------------------------------------------------------------------------
+r5 | (no author) | 2009-06-03 14:45:55 -0400 (Wed, 03 Jun 2009) | 1 line
+
+This is an empty revision for padding.
+------------------------------------------------------------------------
+r4 | (no author) | 2009-06-03 14:45:53 -0400 (Wed, 03 Jun 2009) | 1 line
+
+This is an empty revision for padding.
+------------------------------------------------------------------------
+r3 | lars | 2009-06-03 14:45:52 -0400 (Wed, 03 Jun 2009) | 1 line
+
+create tags
+------------------------------------------------------------------------
+r2 | lars | 2009-06-03 14:45:52 -0400 (Wed, 03 Jun 2009) | 1 line
+
+create branches
+------------------------------------------------------------------------
+r1 | lars | 2009-06-03 14:45:52 -0400 (Wed, 03 Jun 2009) | 1 line
+
+create trunk
+------------------------------------------------------------------------
+</code></pre>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/svn/">svn</a>, 
+            
+                <a href="/tags/versioncontrol/">versioncontrol</a>, 
+            
+                <a href="/tags/git/">git</a>, 
+            
+                <a href="/tags/subversion/">subversion</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Cleaning%20up%20Subversion%20with%20Git&url=%2fpost%2f2010-01-29-cleaning-up-subversion-with-git%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2f2010-01-29-cleaning-up-subversion-with-git%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fpost%2f2010-01-29-cleaning-up-subversion-with-git%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

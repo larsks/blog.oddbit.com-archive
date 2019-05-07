@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exploring YAQL Expressions &middot; The Odd Bit</title>
+        <meta name="description" content="The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&rsquo;s more advanced features.
+I am working on a Fluentd composable service for TripleO. I want to allow each service to specify a logging source configuration fragment, for example:
+parameters: NovaAPILoggingSource: type: json description: Fluentd logging configuration for nova-api.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Exploring YAQL Expressions</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2016-08-11" itemprop="datePublished">Thu, Aug 11, 2016</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>The Newton release of <a href="https://wiki.openstack.org/wiki/Heat">Heat</a> adds support for a <a href="http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#yaql">yaql</a>
+intrinsic function, which allows you to evaluate <a href="https://yaql.readthedocs.io/en/latest/">yaql</a> expressions
+in your Heat templates.  Unfortunately, the existing yaql
+documentation is somewhat limited, and does not offer examples of many
+of yaql&rsquo;s more advanced features.</p>
+
+<p>I am working on a <a href="http://www.fluentd.org/">Fluentd</a> composable service for <a href="https://wiki.openstack.org/wiki/TripleO">TripleO</a>.  I
+want to allow each service to specify a logging source configuration
+fragment, for example:</p>
+
+<pre><code>parameters:
+  NovaAPILoggingSource:
+    type: json
+    description: Fluentd logging configuration for nova-api.
+    default:
+      tag: openstack.nova.api
+      type: tail
+      format: |
+        /(?&lt;time&gt;\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d+) (?&lt;pid&gt;\d+) (?&lt;priority&gt;\S+) (?&lt;message&gt;.*)/
+      path: /var/log/nova/nova-api.log
+      pos_file: /var/run/fluentd/openstack.nova.api.pos
+</code></pre>
+
+<p>This generally works, but several parts of this fragment are going to
+be the same across all OpenStack services.  I wanted to reduce the
+above to just the unique attributes, which would look something like:</p>
+
+<pre><code>parameters:
+  NovaAPILoggingSource:
+    type: json
+    description: Fluentd logging configuration for nova-api.
+    default:
+      tag: openstack.nova.api
+      path: /var/log/nova/nova-api.log
+</code></pre>
+
+<p>This would ultimately give me a list of dictionaries of the form:</p>
+
+<pre><code>[
+  {
+    &quot;tag&quot;: &quot;openstack.nova.api&quot;,
+    &quot;path&quot;: &quot;/var/log/nova/nova-api.log&quot;
+  },
+  {
+    &quot;tag&quot;: &quot;openstack.nova.scheduler&quot;,
+    &quot;path&quot;: &quot;/var/log/nova/nova-scheduler.log&quot;
+  }
+]
+</code></pre>
+
+<p>I want to iterate over this list, adding default values for attributes
+that are not explicitly provided.</p>
+
+<p>The yaql language has a <code>select</code> function, somewhat analagous to the
+SQL <code>select</code> statement, that can be used to construct a new data
+structure from an existing one.  For example, given the above data in
+a parameter called <code>sources</code>, I could write:</p>
+
+<pre><code>outputs:
+  sources:
+    yaql:
+      data:
+        sources: {get_param: sources}
+      expression: &gt;
+        $.data.sources.select({
+          'path' =&gt; $.path,
+          'tag' =&gt; $.tag,
+          'type' =&gt; $.get('type', 'tail')})
+</code></pre>
+
+<p>This makes use of the <code>.get</code> method to insert a default value of
+<code>tail</code> for the <code>type</code> attribute for items that don&rsquo;t specify it
+explicitly.  This would produce a list that looks like:</p>
+
+<pre><code>[
+    {
+        &quot;path&quot;: &quot;/var/log/nova/nova-api.log&quot;,
+        &quot;tag&quot;: &quot;openstack.nova.api&quot;,
+        &quot;type&quot;: &quot;tail&quot;
+    },
+    {
+        &quot;path&quot;: &quot;/var/log/nova/nova-scheduler.log&quot;,
+        &quot;tag&quot;: &quot;openstack.nova.scheduler&quot;,
+        &quot;type&quot;: &quot;tail&quot;
+    }
+]
+</code></pre>
+
+<p>That works fine, but what if I want to parameterize the default value
+such that it can be provided as part of the template?  I wanted to be
+able to pass the yaql expression something like this&hellip;</p>
+
+<pre><code>outputs:
+  sources:
+    yaql:
+      data:
+        sources: {get_param: sources}
+        default_type: tail
+</code></pre>
+
+<p>&hellip;and then within the yaql expression, insert the value of
+<code>default_type</code> into items that don&rsquo;t provide an explicit value for the
+<code>type</code> attribute.</p>
+
+<p>This is trickier than it might sound at first because within the
+context of the <code>select</code> method, <code>$</code> is bound to the <em>local</em> context,
+which will be an individual item from the list.  So while I can ask
+for <code>$.path</code>, there&rsquo;s no way to refer to items from the top-level
+context.  Or is there?</p>
+
+<p>The <a href="https://yaql.readthedocs.io/en/latest/getting_started.html#operators">operators</a> documentation for yaql mentions the &ldquo;context pass&rdquo;
+operator, <code>-&gt;</code>, but doesn&rsquo;t provide any examples of how it can be
+used. It turns out that this operator will be the key to our solution.
+But before we look at that in more detail, we need to introduce the
+<code>let</code> statement, which can be used to define variables.  The <code>let</code>
+statement isn&rsquo;t mentioned in the documentation at all, but it looks
+like this:</p>
+
+<pre><code>let(var =&gt; value, ...)
+</code></pre>
+
+<p>By itself, this isn&rsquo;t particularly useful.  In fact, if you were to
+type a bare <code>let</code> statement in a yaql evaluator, you would get an
+error:</p>
+
+<pre><code>yaql&gt; let(foo =&gt; 10, bar =&gt; 20)
+Execution exception: &lt;yaql.language.contexts.Context object at 0x7fbaf9772e50&gt; is not JSON serializable
+</code></pre>
+
+<p>This is where the <code>-&gt;</code> operator comes into play.  We use that to pass
+the context created by the <code>let</code> statement into a yaql expression. For
+example:</p>
+
+<pre><code>yaql&gt; let(foo =&gt; 10, bar =&gt; 20) -&gt; $foo
+10
+yaql&gt; let(foo =&gt; 10, bar =&gt; 20) -&gt; $bar
+20
+</code></pre>
+
+<p>With that in mind, we can return to our earlier task, and rewrite the
+yaql expression like this:</p>
+
+<pre><code>outputs:
+  sources:
+    yaql:
+      data:
+        sources: {get_param: sources}
+        default_type: tail
+      expression: &gt;
+        let(default_type =&gt; $.data.default_type) -&gt;
+        $.data.sources.select({
+          'path' =&gt; $.path,
+          'tag' =&gt; $.tag,
+          'type' =&gt; $.get('type', $default_type)})
+</code></pre>
+
+<p>Which will give us exactly what we want.  This can of course be
+extended to support additional default values:</p>
+
+<pre><code>outputs:
+  sources:
+    yaql:
+      data:
+        sources: {get_param: sources}
+        default_type: tail
+        default_format: &gt;
+          /some regular expression/
+      expression: &gt;
+        let(
+          default_type =&gt; $.data.default_type,
+          default_format =&gt; $.data.default_format
+        ) -&gt;
+        $.data.sources.select({
+          'path' =&gt; $.path,
+          'tag' =&gt; $.tag,
+          'type' =&gt; $.get('type', $default_type),
+          'format' =&gt; $.get('format', $default_format)
+        })
+</code></pre>
+
+<p>Going out on a bit of a tangent, there is another statement not
+mentioned in the documentation: the <code>def</code> statement lets you defined a
+yaql function.  The general format is:</p>
+
+<pre><code>def(func_name, func_body)
+</code></pre>
+
+<p>Where <code>func_body</code> is a yaql expresion.  For example:</p>
+
+<pre><code>def(upperpath, $.path.toUpper()) -&gt;
+$.data.sources.select(upperpath($))
+</code></pre>
+
+<p>Which would generate:</p>
+
+<pre><code>[
+    &quot;/VAR/LOG/NOVA/NOVA-API.LOG&quot;, 
+    &quot;/VAR/LOG/NOVA/NOVA-SCHEDULER.LOG&quot;
+]
+</code></pre>
+
+<p>This obviously becomes more useful as you use user-defined functions
+to encapsulate more complex yaql expressions for re-use.</p>
+
+<p>Thanks to <a href="https://github.com/sergmelikyan">sergmelikyan</a> for his help figuring this out.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/openstack/">openstack</a>, 
+            
+                <a href="/tags/heat/">heat</a>, 
+            
+                <a href="/tags/hot/">hot</a>, 
+            
+                <a href="/tags/yaql/">yaql</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Exploring%20YAQL%20Expressions&url=%2fpost%2f2016-08-11-exploring-yaql-expressions%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2f2016-08-11-exploring-yaql-expressions%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fpost%2f2016-08-11-exploring-yaql-expressions%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,21 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>openshift on The Odd Bit</title>
+
+  <link rel="self" href="/tags/openshift/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2013-11-23T00:00:00+0000</updated>
+  <id>/tags/openshift/</id>
+  
+  <entry>
+    <title>Sockets on OpenShift</title>
+    <link rel="alternate" href="/post/2013-11-23-openshift-socket-pro/"/>
+    <id>/post/2013-11-23-openshift-socket-pro/</id>
+    <published>2013-11-23T00:00:00+0000</published>
+    <updated>2013-11-23T00:00:00+0000</updated>
+    <summary>In this article, a followup to my previous post regarding long-poll servers and Python, we investigate the code changes that were necessary to make the code work when deployed on OpenShift.
+In the previous post, we implemented IO polling to watch for client disconnects at the same time we were waiting for messages on a message bus:
+poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.POLLIN) events = dict(poll.poll()) . . .</summary>
+  </entry>
+  
+</feed>

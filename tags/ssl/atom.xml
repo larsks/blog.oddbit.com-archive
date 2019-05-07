@@ -1,0 +1,31 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ssl on The Odd Bit</title>
+
+  <link rel="self" href="/tags/ssl/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2011-05-09T00:00:00+0000</updated>
+  <id>/tags/ssl/</id>
+  
+  <entry>
+    <title>Signing data with ssh-agent</title>
+    <link rel="alternate" href="/post/2011-05-09-signing-data-with-ssh-agent/"/>
+    <id>/post/2011-05-09-signing-data-with-ssh-agent/</id>
+    <published>2011-05-09T00:00:00+0000</published>
+    <updated>2011-05-09T00:00:00+0000</updated>
+    <summary>This is follow-up to my previous post, Converting OpenSSH public keys.
+OpenSSH allows one to use an agent that acts as a proxy to your private key. When using an agent &amp;ndash; particularly with agent forwarding enabled &amp;ndash; this allows you to authenticate to a remote host without having to (a) repeatedly type in your password or (b) expose an unencrypted private key to remote systems.
+If one is temtped to use SSH keys as authentication credentials outside of ssh, one would ideally be able to take advantage of the ssh agent for these same reasons.</summary>
+  </entry>
+  
+  <entry>
+    <title>LDAP redundancy through proxy servers</title>
+    <link rel="alternate" href="/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
+    <id>/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
+    <published>2010-02-24T00:00:00+0000</published>
+    <updated>2010-02-24T00:00:00+0000</updated>
+    <summary>Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.
+A solution We can provide a level of redundancy by passing the LDAP connections through a load balancing proxy. While this makes the proxy a single point of failure, it is (a) a very simple tool and thus less prone to complex failure modes, (b) running on the same host as the web application, and &amp;copy; is completely under our control.</summary>
+  </entry>
+  
+</feed>

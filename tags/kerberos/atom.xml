@@ -1,0 +1,29 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>kerberos on The Odd Bit</title>
+
+  <link rel="self" href="/tags/kerberos/"/>
+  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+
+  <updated>2015-07-16T00:00:00+0000</updated>
+  <id>/tags/kerberos/</id>
+  
+  <entry>
+    <title>Mapping local users to Kerberos principals with SSSD</title>
+    <link rel="alternate" href="/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/"/>
+    <id>/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/</id>
+    <published>2015-07-16T00:00:00+0000</published>
+    <updated>2015-07-16T00:00:00+0000</updated>
+    <summary>I work for an organization that follows the common model of assigning people systematically generated user ids. Like most technically inclined employees of this organization, I have local accounts on my workstation that don&amp;rsquo;t bear any relation to the generated account ids. For the most part this isn&amp;rsquo;t a problem, except that our organization uses Kerberos to authenticate access to a variety of resources (such as the mailserver and a variety of web applications).</summary>
+  </entry>
+  
+  <entry>
+    <title>Kerberos authenticated queries to Active Directory</title>
+    <link rel="alternate" href="/post/2010-06-29-linux-kerberos-ad/"/>
+    <id>/post/2010-06-29-linux-kerberos-ad/</id>
+    <published>2010-06-29T00:00:00+0000</published>
+    <updated>2010-06-29T00:00:00+0000</updated>
+    <summary>There are many guides out there to help you configure your Linux system as an LDAP and Kerberos client to an Active Directory server. Most of these guides solve the problem of authentication by embedding a username and password into a configuration file somewhere on your system. While this works, it presents some problems:
+ If you use a common account for authentication from all of your Linux systems, a compromise on one system means updating the configuration of all of your systems.</summary>
+  </entry>
+  
+</feed>

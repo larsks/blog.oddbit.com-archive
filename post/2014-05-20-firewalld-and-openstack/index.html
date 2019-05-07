@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Firewalld, NetworkManager, and OpenStack &middot; The Odd Bit</title>
+        <meta name="description" content="These are my notes on making OpenStack play well with firewalld and NetworkManager.
+NetworkManager By default, NetworkManager attempts to start a DHCP client on every new available interface. Since booting a single instance in OpenStack can result in the creation of several virtual interfaces, this results in a lot of:
+May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &lt;info&gt; Activation (qvb512640bd-ee) starting connection &#39;Wired connection 2&#39;  You can disable this behavior by adding the following to /etc/NetworkManager/NetworkManager.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Firewalld, NetworkManager, and OpenStack</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2014-05-20" itemprop="datePublished">Tue, May 20, 2014</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>These are my notes on making OpenStack play well with <a href="https://fedoraproject.org/wiki/FirewallD">firewalld</a>
+and <a href="https://wiki.gnome.org/Projects/NetworkManager">NetworkManager</a>.</p>
+
+<h2 id="networkmanager">NetworkManager</h2>
+
+<p>By default, NetworkManager attempts to start a DHCP client on every
+new available interface.  Since booting a single instance in OpenStack
+can result in the creation of several virtual interfaces, this results
+in a lot of:</p>
+
+<pre><code>May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &lt;info&gt;
+  Activation (qvb512640bd-ee) starting connection 'Wired connection 2'
+</code></pre>
+
+<p>You can disable this behavior by adding the following to
+<code>/etc/NetworkManager/NetworkManager.conf</code>:</p>
+
+<pre><code>[main]
+no-auto-default=*
+</code></pre>
+
+<p>From <code>NetworkManager.conf(5)</code>:</p>
+
+<blockquote>
+<p>Comma-separated list of devices for which NetworkManager shouldn&rsquo;t
+ create default wired connection (Auto eth0). By default,
+ NetworkManager creates a temporary wired connection for any
+ Ethernet device that is managed and doesn&rsquo;t have a connection
+ configured. List a device in this option to inhibit creating the
+ default connection for the device. May have the special value * to
+ apply to all devices.</p>
+</blockquote>
+
+<h2 id="firewalld">FirewallD</h2>
+
+<p><a href="https://fedoraproject.org/wiki/FirewallD">FirewallD</a> is the firewall manager recently introduced in Fedora
+(and soon to be appearing in RHEL 7).</p>
+
+<p>I start by creating a new zone named <code>openstack</code> by creating the file
+<code>/etc/firewalld/zones/openstack.xml</code> with the following content:</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;zone&gt;
+  &lt;short&gt;OpenStack&lt;/short&gt;
+  &lt;description&gt;For OpenStack services&lt;/description&gt;
+&lt;/zone&gt;
+</code></pre>
+
+<p>After populating this file, you need to run <code>firewall-cmd --reload</code>
+to make the zone available.  Note that if you&rsquo;re already running
+OpenStack this will hose any rules set up by Neutron or Nova, so
+you&rsquo;ll probably want to restart those services:</p>
+
+<pre><code># openstack-service restart nova neutron
+</code></pre>
+
+<p>I then add <code>br-ex</code> to this zone, where <code>br-ex</code> is the OVS bridge my
+OpenStack environment uses for external connectivity:</p>
+
+<pre><code># echo ZONE=openstack &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-br-ex
+</code></pre>
+
+<p>I run a <code>dnsmasq</code> instance on my laptop to which I expect OpenStack
+instances to connect, so I need to add the <code>dns</code> service to this zone:</p>
+
+<pre><code># firewall-cmd --zone openstack --add-service dns
+# firewall-cmd --zone openstack --add-service dns --permanent
+</code></pre>
+
+<p>I&rsquo;m running <code>firewall-cmd</code> twice here: the first time modifies the
+currently running configuration, while the second makes the change
+persistent across reboots.</p>
+
+<p>On my laptop, I handle external connectivity through NAT rather than
+placing floating ips on a &ldquo;real&rdquo; network.  To make this work, I add my
+ethernet and wireless interfaces to the <code>external</code> zone, which already
+has ip masquerading enabled, by adding a <code>ZONE</code> directive to the
+appropriate interface configuration file:</p>
+
+<pre><code># echo ZONE=external &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-em1
+</code></pre>
+
+<p>After a reboot, things look like this:</p>
+
+<pre><code># firewall-cmd --get-active-zones
+openstack
+  interfaces: br-ex
+external
+  interfaces: em1
+public
+  interfaces: int-br-ex phy-br-ex qvb58cc67ca-06 qvo58cc67ca-06
+# firewall-cmd --zone openstack --list-services
+dns
+</code></pre>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/openstack/">openstack</a>, 
+            
+                <a href="/tags/networking/">networking</a>, 
+            
+                <a href="/tags/firewalld/">firewalld</a>, 
+            
+                <a href="/tags/networkmanager/">NetworkManager</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Firewalld%2c%20NetworkManager%2c%20and%20OpenStack&url=%2fpost%2f2014-05-20-firewalld-and-openstack%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2f2014-05-20-firewalld-and-openstack%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fpost%2f2014-05-20-firewalld-and-openstack%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+
