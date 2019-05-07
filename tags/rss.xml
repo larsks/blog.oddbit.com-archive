@@ -6,7 +6,7 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/rss.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,45 @@
     <item>
       <title>administrivia</title>
       <link>/tags/administrivia/</link>
-      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/administrivia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>comments</title>
+      <link>/tags/comments/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/comments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>disqus</title>
+      <link>/tags/disqus/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/disqus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>/tags/github/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>utterances</title>
+      <link>/tags/utterances/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/utterances/</guid>
       <description></description>
     </item>
     

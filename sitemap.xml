@@ -3,32 +3,61 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/2019-05-06-new-static-site-generator/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <loc>/post/2019-05-07-new-comment-system/</loc>
+    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/administrivia/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/comments/</loc>
+    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/disqus/</loc>
+    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/github/</loc>
+    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/utterances/</loc>
+    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2019-05-06-new-static-site-generator/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
