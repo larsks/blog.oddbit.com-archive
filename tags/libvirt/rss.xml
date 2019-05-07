@@ -13,10 +13,10 @@
     
     <item>
       <title>Automatic hostname entries for libvirt domains</title>
-      <link>http://blog.oddbit.com/post/automatic-dns-entries-for-libvirt-domains/</link>
+      <link>http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</link>
       <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/automatic-dns-entries-for-libvirt-domains/</guid>
+      <guid>http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</guid>
       <description>Have you ever wished that you could use libvirt domain names as hostnames? So that you could do something like this:
 $ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something that would certainly make my life convenient, I put together a small script called virt-hosts that makes this possible. You can find virt-hosts in my virt-utils GitHub repository:
  https://raw.github.com/larsks/virt-utils/master/virt-hosts  Run by itself, with no options, virt-hosts will scan through your running domains for interfaces on the libvirt default network, look up those MAC addresses up in the corresponding default.</description>

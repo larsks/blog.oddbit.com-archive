@@ -570,11 +570,11 @@ Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Inst
     
     <item>
       <title>Automatic configuration of Windows instances in OpenStack, part 1</title>
-      <link>http://blog.oddbit.com/post/openstack-windows-1/</link>
+      <link>http://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</link>
       <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/openstack-windows-1/</guid>
-      <description>This is the first of two articles in which I discuss my work in getting some Windows instances up and running in our OpenStack environment. This article is primarily about problems I encountered along the way, while the second article focuses on the mechanism I eventually put in place.
+      <guid>http://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</guid>
+      <description>This is the first of two articles in which I discuss my work in getting some Windows instances up and running in our OpenStack environment. This article is primarily about problems I encountered along the way.
 Motivations Like many organizations, we have a mix of Linux and Windows in our environment. Some folks in my group felt that it would be nice to let our Windows admins take advantage of OpenStack for prototyping and sandboxing in the same ways our Linux admins can use it.</description>
     </item>
     

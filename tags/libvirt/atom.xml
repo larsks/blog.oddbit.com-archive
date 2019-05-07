@@ -14,8 +14,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/automatic-dns-entries-for-libvirt-domains/"/>
-    <id>http://blog.oddbit.com/post/automatic-dns-entries-for-libvirt-domains/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/"/>
+    <id>http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</id>
     <published>2013-10-04T00:00:00Z</published>
     <updated>2013-10-04T00:00:00Z</updated>
     <summary type="html">Have you ever wished that you could use libvirt domain names as hostnames? So that you could do something like this:

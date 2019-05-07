@@ -28,11 +28,11 @@ The CloudBase repository is an excellent source of information, but I wanted to 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/openstack-windows-1/"/>
-    <id>http://blog.oddbit.com/post/openstack-windows-1/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/"/>
+    <id>http://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</id>
     <published>2012-11-04T00:00:00Z</published>
     <updated>2012-11-04T00:00:00Z</updated>
-    <summary type="html">This is the first of two articles in which I discuss my work in getting some Windows instances up and running in our OpenStack environment. This article is primarily about problems I encountered along the way, while the second article focuses on the mechanism I eventually put in place.
+    <summary type="html">This is the first of two articles in which I discuss my work in getting some Windows instances up and running in our OpenStack environment. This article is primarily about problems I encountered along the way.
 Motivations Like many organizations, we have a mix of Linux and Windows in our environment. Some folks in my group felt that it would be nice to let our Windows admins take advantage of OpenStack for prototyping and sandboxing in the same ways our Linux admins can use it.</summary>
   </entry>
   

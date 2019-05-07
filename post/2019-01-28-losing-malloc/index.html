@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>AVR micro-optimization: Losing malloc &middot; The Odd Bit</title>
         <meta name="description" content="Pssst! Hey&hellip;hey, buddy, wanna get an extra KB for cheap?
-When write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
+When I write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
 Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&rsquo;s exactly what I did.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
@@ -102,7 +102,7 @@ Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)
 
 <p>Pssst! Hey&hellip;hey, buddy, wanna get an extra KB for cheap?</p>
 
-<p>When write OO-style code in C, I usually start with something like the following, in which I use <code>malloc()</code> to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:</p>
+<p>When I write OO-style code in C, I usually start with something like the following, in which I use <code>malloc()</code> to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:</p>
 
 <pre><code>Button *button_new(uint8_t pin, uint8_t poll_freq) {
     Button *button = (Button *)malloc(sizeof(Button));
