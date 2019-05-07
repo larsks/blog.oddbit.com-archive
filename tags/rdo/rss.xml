@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rdo on The Odd Bit</title>
-    <link>/tags/rdo/</link>
+    <link>http://blog.oddbit.com/tags/rdo/</link>
     <description>Recent content in rdo on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 19 Feb 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/rdo/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.oddbit.com/tags/rdo/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Deploying an HA OpenStack development environment with tripleo-quickstart
 </title>
-      <link>/post/2016-02-19-deploy-an-ha-openstack-development-envir/</link>
+      <link>http://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</link>
       <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-02-19-deploy-an-ha-openstack-development-envir/</guid>
+      <guid>http://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</guid>
       <description>In this article I would like to introduce tripleo-quickstart, a tool that will automatically provision a virtual environment and then use TripleO to deploy an HA OpenStack on top of it.
 Introducing Tripleo-Quickstart The goal of the Tripleo-Quickstart project is to replace the instack-virt-setup tool for quickly setting up virtual TripleO environments, and to ultimately become the tool used by both developers and upstream CI for this purpose. The project is a set of Ansible playbooks that will take care of:</description>
     </item>
     
     <item>
       <title>Cloud-init and the case of the changing hostname</title>
-      <link>/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</link>
+      <link>http://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</link>
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</guid>
+      <guid>http://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</guid>
       <description>Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.</description>
     </item>
     
     <item>
       <title>Heat Hangout</title>
-      <link>/post/2014-09-05-heat-hangout/</link>
+      <link>http://blog.oddbit.com/post/2014-09-05-heat-hangout/</link>
       <pubDate>Fri, 05 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-09-05-heat-hangout/</guid>
+      <guid>http://blog.oddbit.com/post/2014-09-05-heat-hangout/</guid>
       <description>I ran a Google Hangout this morning on Deploying with Heat. You can find the slides for the presentation on line here, and the Heat templates (as well as slide sources) are available on github.
 If you have any questions about the presentation, please feel free to ping me on irc (larsks).
  </description>
@@ -44,10 +44,10 @@ If you have any questions about the presentation, please feel free to ping me on
     
     <item>
       <title>Multinode OpenStack with Packstack</title>
-      <link>/post/2014-02-27-multinode/</link>
+      <link>http://blog.oddbit.com/post/2014-02-27-multinode/</link>
       <pubDate>Thu, 27 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-02-27-multinode/</guid>
+      <guid>http://blog.oddbit.com/post/2014-02-27-multinode/</guid>
       <description>I was the presenter for this morning&amp;rsquo;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
 The slides are online here.
 Here&amp;rsquo;s the video (also available on the event page):

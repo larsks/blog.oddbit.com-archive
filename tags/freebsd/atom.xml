@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>freebsd on The Odd Bit</title>
 
-  <link rel="self" href="/tags/freebsd/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/freebsd/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2011-05-22T00:00:00+0000</updated>
-  <id>/tags/freebsd/</id>
+  <id>http://blog.oddbit.com/tags/freebsd/</id>
   
   <entry>
     <title>Installing CrashPlan under FreeBSD 8</title>
-    <link rel="alternate" href="/post/2011-05-22-installing-crashplan-under-freebsd-8/"/>
-    <id>/post/2011-05-22-installing-crashplan-under-freebsd-8/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/"/>
+    <id>http://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</id>
     <published>2011-05-22T00:00:00+0000</published>
     <updated>2011-05-22T00:00:00+0000</updated>
     <summary>This articles describes how I got CrashPlan running on my FreeBSD 8(-STABLE) system. These instructions by Kim Scarborough were my starting point, but as these were for FreeBSD 7 there were some additional steps necessary to get things working.

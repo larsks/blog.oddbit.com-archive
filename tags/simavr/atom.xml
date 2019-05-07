@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>simavr on The Odd Bit</title>
 
-  <link rel="self" href="/tags/simavr/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/simavr/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2019-01-22T00:00:00+0000</updated>
-  <id>/tags/simavr/</id>
+  <id>http://blog.oddbit.com/tags/simavr/</id>
   
   <entry>
     <title>Debugging attiny85 code, part 1: simavr and gdb</title>
-    <link rel="alternate" href="/post/2019-01-22-debugging-attiny-code-pt-1/"/>
-    <id>/post/2019-01-22-debugging-attiny-code-pt-1/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/"/>
+    <id>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</id>
     <published>2019-01-22T00:00:00+0000</published>
     <updated>2019-01-22T00:00:00+0000</updated>
     <summary>In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
@@ -19,8 +19,8 @@ I&amp;rsquo;ve split this into three posts:</summary>
   
   <entry>
     <title>Debugging attiny85 code, part 2: Automating GDB with scripts</title>
-    <link rel="alternate" href="/post/2019-01-22-debugging-attiny-code-pt-2/"/>
-    <id>/post/2019-01-22-debugging-attiny-code-pt-2/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/"/>
+    <id>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</id>
     <published>2019-01-22T00:00:00+0000</published>
     <updated>2019-01-22T00:00:00+0000</updated>
     <summary>This is the second of three posts about using gdb and simavr to debug AVR code. The complete series is:
@@ -34,8 +34,8 @@ Using simavr to collect information about the state of microcontroller pins whil
   
   <entry>
     <title>Debugging attiny85 code, part 3: Tracing with simavr</title>
-    <link rel="alternate" href="/post/2019-01-22-debugging-attiny-code-pt-3/"/>
-    <id>/post/2019-01-22-debugging-attiny-code-pt-3/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/"/>
+    <id>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</id>
     <published>2019-01-22T00:00:00+0000</published>
     <updated>2019-01-22T00:00:00+0000</updated>
     <summary>This is the third of three posts about using gdb and simavr to debug AVR code. The complete series is:

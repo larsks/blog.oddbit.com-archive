@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tricks on The Odd Bit</title>
-    <link>/tags/tricks/</link>
+    <link>http://blog.oddbit.com/tags/tricks/</link>
     <description>Recent content in tricks on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 16 Jan 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/tricks/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.oddbit.com/tags/tricks/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Stupid OpenStack Tricks</title>
-      <link>/post/2014-01-16-stupid-openstack-tricks/</link>
+      <link>http://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</link>
       <pubDate>Thu, 16 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-01-16-stupid-openstack-tricks/</guid>
+      <guid>http://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</guid>
       <description>I work with several different OpenStack installations. I usually work on the command line, sourcing in an appropriate stackrc with credentials as necessary, but occasionally I want to use the dashboard for something.
 For all of the deployments with which I work, the keystone endpoint is on the same host as the dashboard. So rather than trying to remember which dashboard url I want for the environment I&amp;rsquo;m currently using on the command line, I put together this shell script:</description>
     </item>

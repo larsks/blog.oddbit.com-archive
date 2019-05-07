@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>gcc on The Odd Bit</title>
 
-  <link rel="self" href="/tags/gcc/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/gcc/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2019-02-11T00:00:00+0000</updated>
-  <id>/tags/gcc/</id>
+  <id>http://blog.oddbit.com/tags/gcc/</id>
   
   <entry>
     <title>In which I PEBKAC so you don&#39;t have to</title>
-    <link rel="alternate" href="/post/2019-02-11-in-which-i-pebkac-so-you-dont-/"/>
-    <id>/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/"/>
+    <id>http://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</id>
     <published>2019-02-11T00:00:00+0000</published>
     <updated>2019-02-11T00:00:00+0000</updated>
     <summary>Say you have a simple bit of code:

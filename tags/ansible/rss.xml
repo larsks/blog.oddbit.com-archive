@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ansible on The Odd Bit</title>
-    <link>/tags/ansible/</link>
+    <link>http://blog.oddbit.com/tags/ansible/</link>
     <description>Recent content in ansible on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/ansible/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.oddbit.com/tags/ansible/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Adding support for privilege escalation to Ansible&#39;s docker connection driver</title>
-      <link>/post/2019-04-26-adding-support-for-privilege-e/</link>
+      <link>http://blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-04-26-adding-support-for-privilege-e/</guid>
+      <guid>http://blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/</guid>
       <description>I often use Docker to test out Ansible playbooks. While normally that works great, I recently ran into an unexpected problem with privilege escalation. Given a simple playbook like this:
 --- - hosts: all gather_facts: false become: true tasks: - ping:  And an inventory like this:
 all: vars: ansible_user: example ansible_connection: docker hosts: server1: ansible_host: sudostuff_server1_1 server2: ansible_host: sudostuff_server2_1 server3: ansible_host: sudostuff_server3_1  And containers with sudo configured to require a password, Ansible would fail like this (note that I&amp;rsquo;ve configured Ansible to use the debug plugin for stdout_callback):</description>
@@ -24,29 +24,29 @@ all: vars: ansible_user: example ansible_connection: docker hosts: server1: ansi
     
     <item>
       <title>Writing Ansible filter plugins</title>
-      <link>/post/2019-04-25-writing-ansible-filter-plugins/</link>
+      <link>http://blog.oddbit.com/post/2019-04-25-writing-ansible-filter-plugins/</link>
       <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-04-25-writing-ansible-filter-plugins/</guid>
+      <guid>http://blog.oddbit.com/post/2019-04-25-writing-ansible-filter-plugins/</guid>
       <description>I often see questions from people who are attemping to perform complex text transformations in their Ansible playbooks. While I am a huge fan of Ansible, data transformation is not one of its strong points. For example, this past week someone asked a question on Stack Overflow in which they were attempting to convert the output of the keytool command into a list of dictionaries. The output of the keytool -list -v command looks something like this:</description>
     </item>
     
     <item>
       <title>Integrating Bitwarden with Ansible</title>
-      <link>/post/2018-10-19-integrating-bitwarden-with-ans/</link>
+      <link>http://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</link>
       <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-10-19-integrating-bitwarden-with-ans/</guid>
+      <guid>http://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</guid>
       <description>Bitwarden is a password management service (like LastPass or 1Password). It&amp;rsquo;s unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.
 At $WORK(-ish) we&amp;rsquo;re looking into Bitwarden because we want a password sharing and management solution that was better than dropping files into directories on remote hosts or sharing things over Slack.</description>
     </item>
     
     <item>
       <title>Safely restarting an OpenStack server with Ansible</title>
-      <link>/post/2018-01-24-safely-restarting-an-openstack-server-wi/</link>
+      <link>http://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/</link>
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-01-24-safely-restarting-an-openstack-server-wi/</guid>
+      <guid>http://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/</guid>
       <description>The other day on #ansible, someone was looking for a way to safely shut down a Nova server, wait for it to stop, and then start it up again using the openstack cli. The first part seemed easy:
 - hosts: myserver tasks: - name: shut down the server command: poweroff become: true  &amp;hellip;but that will actually fail with the following result:
 TASK [shut down server] ************************************* fatal: [myserver]: UNREACHABLE! =&amp;gt; {&amp;quot;changed&amp;quot;: false, &amp;quot;msg&amp;quot;: &amp;quot;Failed to connect to the host via ssh: Shared connection to 10.</description>
@@ -54,60 +54,60 @@ TASK [shut down server] ************************************* fatal: [myserver]:
     
     <item>
       <title>Ansible for Infrastructure Testing</title>
-      <link>/post/2017-08-02-ansible-for-infrastructure-testing/</link>
+      <link>http://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</link>
       <pubDate>Wed, 02 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-08-02-ansible-for-infrastructure-testing/</guid>
+      <guid>http://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</guid>
       <description>At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&amp;ldquo;your clocks aren&amp;rsquo;t in sync&amp;rdquo; or &amp;ldquo;your filesystem is full&amp;rdquo; or &amp;ldquo;you haven&amp;rsquo;t installed a critical update&amp;rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues.</description>
     </item>
     
     <item>
       <title>Deploying an HA OpenStack development environment with tripleo-quickstart
 </title>
-      <link>/post/2016-02-19-deploy-an-ha-openstack-development-envir/</link>
+      <link>http://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</link>
       <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-02-19-deploy-an-ha-openstack-development-envir/</guid>
+      <guid>http://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</guid>
       <description>In this article I would like to introduce tripleo-quickstart, a tool that will automatically provision a virtual environment and then use TripleO to deploy an HA OpenStack on top of it.
 Introducing Tripleo-Quickstart The goal of the Tripleo-Quickstart project is to replace the instack-virt-setup tool for quickly setting up virtual TripleO environments, and to ultimately become the tool used by both developers and upstream CI for this purpose. The project is a set of Ansible playbooks that will take care of:</description>
     </item>
     
     <item>
       <title>A systemd-nspawn connection driver for Ansible</title>
-      <link>/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</link>
+      <link>http://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</link>
       <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</guid>
+      <guid>http://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</guid>
       <description>I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I&amp;rsquo;m a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
 Ansible already has a chroot module, of course, but for some situations &amp;ndash; such as targeting an emulated chroot environment &amp;ndash; that just means a lot of extra work.</description>
     </item>
     
     <item>
       <title>Folding long lines in Ansible inventory files</title>
-      <link>/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</link>
+      <link>http://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</link>
       <pubDate>Sun, 07 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</guid>
+      <guid>http://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</guid>
       <description>If you have an Ansible inventory file that includes lots of per host variables, it&amp;rsquo;s not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
 I&amp;rsquo;ve just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.</description>
     </item>
     
     <item>
       <title>Ansible 2.0: New OpenStack modules</title>
-      <link>/post/2015-10-26-ansible-20-new-openstack-modules/</link>
+      <link>http://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</link>
       <pubDate>Mon, 26 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-10-26-ansible-20-new-openstack-modules/</guid>
+      <guid>http://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</guid>
       <description>This is the second in a loose sequence of articles looking at new features in Ansible 2.0. In the previous article I looked at the Docker connection driver. In this article, I would like to provide an overview of the new-and-much-improved suite of modules for interacting with an OpenStack environment, and provide a few examples of their use.
 In versions of Ansible prior to 2.0, there was a small collection of OpenStack modules.</description>
     </item>
     
     <item>
       <title>Stupid Ansible Tricks: Running a role from the command line</title>
-      <link>/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/</link>
+      <link>http://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/</guid>
+      <guid>http://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/</guid>
       <description>When writing Ansible roles I occasionally want a way to just run a role from the command line, without having to muck about with a playbook. I&amp;rsquo;ve seen similar requests on the mailing lists and on irc.
 I&amp;rsquo;ve thrown together a quick wrapper that will allow you (and me!) to do exactly that, called ansible-role. The --help output looks like this:
 usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTRA_VARS] [-i INVENTORY] [--hosts HOSTS] [--sudo] [--become] [--user USER] role positional arguments: role optional arguments: -h, --help show this help message and exit --verbose, -v --gather, -g --no-gather, -G --extra-vars EXTRA_VARS, -e EXTRA_VARS Inventory: -i INVENTORY, --inventory INVENTORY --hosts HOSTS, -H HOSTS Identity: --sudo, -s --become, -b --user USER, -u USER  Example If you have a role roles/testrole that contains the following in tasks/main.</description>
@@ -115,20 +115,20 @@ usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTR
     
     <item>
       <title>Bootstrapping Ansible on Fedora 23</title>
-      <link>/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</link>
+      <link>http://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</link>
       <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</guid>
+      <guid>http://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</guid>
       <description>If you&amp;rsquo;ve tried running Ansible against a Fedora 23 system, you may have run into the following problem:
 fatal: [myserver]: FAILED! =&amp;gt; {&amp;quot;changed&amp;quot;: false, &amp;quot;failed&amp;quot;: true, &amp;quot;msg&amp;quot;: &amp;quot;/bin/sh: /usr/bin/python: No such file or directory\r\n&amp;quot;, &amp;quot;parsed&amp;quot;: false}  Fedora has recently made the switch to only including Python 3 on the base system (at least for the cloud variant), while Ansible still requires Python 2. With Fedora 23, Python 3 is available as /usr/bin/python3, and /usr/bin/python is only available if you have installed the Python 2 interpreter.</description>
     </item>
     
     <item>
       <title>Ansible 2.0: The Docker connection driver</title>
-      <link>/post/2015-10-13-ansible-20-the-docker-connection-driver/</link>
+      <link>http://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</link>
       <pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-10-13-ansible-20-the-docker-connection-driver/</guid>
+      <guid>http://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</guid>
       <description>As the release of Ansible 2.0 draws closer, I&amp;rsquo;d like to take a look at some of the new features that are coming down the pipe. In this post, we&amp;rsquo;ll look at the docker connection driver.
 A &amp;ldquo;connection driver&amp;rdquo; is the mechanism by which Ansible connects to your target hosts. These days it uses ssh by default (which relies on the OpenSSH command line client for connectivity), and it also offers the Paramiko library as an alternative ssh implementation (this was in fact the default driver in earlier versions of Ansible).</description>
     </item>

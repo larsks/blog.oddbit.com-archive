@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>rant on The Odd Bit</title>
 
-  <link rel="self" href="/tags/rant/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/rant/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2015-07-26T00:00:00+0000</updated>
-  <id>/tags/rant/</id>
+  <id>http://blog.oddbit.com/tags/rant/</id>
   
   <entry>
     <title>In which we are amazed it doesn&#39;t all fall apart</title>
-    <link rel="alternate" href="/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/"/>
-    <id>/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/"/>
+    <id>http://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</id>
     <published>2015-07-26T00:00:00+0000</published>
     <updated>2015-07-26T00:00:00+0000</updated>
     <summary>So, the Kilo release notes say:

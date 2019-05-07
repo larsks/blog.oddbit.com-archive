@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>usb on The Odd Bit</title>
 
-  <link rel="self" href="/tags/usb/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/usb/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2018-10-19T00:00:00+0000</updated>
-  <id>/tags/usb/</id>
+  <id>http://blog.oddbit.com/tags/usb/</id>
   
   <entry>
     <title>Systemd unit for managing USB gadgets</title>
-    <link rel="alternate" href="/post/2018-10-19-systemd-unit-for-managing-usb-/"/>
-    <id>/post/2018-10-19-systemd-unit-for-managing-usb-/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/"/>
+    <id>http://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</id>
     <published>2018-10-19T00:00:00+0000</published>
     <updated>2018-10-19T00:00:00+0000</updated>
     <summary>The Pi Zero (and Zero W) have support for acting as a USB gadget: that means that they can be configured to act as a USB device &amp;ndash; like a serial port, an ethernet interface, a mass storage device, etc.

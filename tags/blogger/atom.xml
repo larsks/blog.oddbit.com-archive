@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>blogger on The Odd Bit</title>
 
-  <link rel="self" href="/tags/blogger/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/blogger/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2010-02-10T00:00:00+0000</updated>
-  <id>/tags/blogger/</id>
+  <id>http://blog.oddbit.com/tags/blogger/</id>
   
   <entry>
     <title>Filtering Blogger feeds</title>
-    <link rel="alternate" href="/post/2010-02-10-filtering-blogger-feeds/"/>
-    <id>/post/2010-02-10-filtering-blogger-feeds/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/"/>
+    <id>http://blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/</id>
     <published>2010-02-10T00:00:00+0000</published>
     <updated>2010-02-10T00:00:00+0000</updated>
     <summary>After encountering a number of problems trying to filter Blogger feeds by tag (using services like Feedrinse and Yahoo Pipes), I&amp;rsquo;ve finally put together a solution that works:
@@ -19,8 +19,8 @@
   
   <entry>
     <title>Retrieving Blogger posts by post id</title>
-    <link rel="alternate" href="/post/2010-01-29-retrieving-blogger-posts-by-post-id/"/>
-    <id>/post/2010-01-29-retrieving-blogger-posts-by-post-id/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-01-29-retrieving-blogger-posts-by-post-id/"/>
+    <id>http://blog.oddbit.com/post/2010-01-29-retrieving-blogger-posts-by-post-id/</id>
     <published>2010-01-29T00:00:00+0000</published>
     <updated>2010-01-29T00:00:00+0000</updated>
     <summary>I spent some time recently trying to figure out, using Google&amp;rsquo;s gdata API, how to retrieve a post from a Blogger blog if I know corresponding post id. As far as I can tell there is no obvious way of doing this, at least not using the gdata.blogger.client api, but after much nashing of teeth I came up with the following solution.

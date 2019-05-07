@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>gpxe on The Odd Bit</title>
 
-  <link rel="self" href="/tags/gpxe/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/gpxe/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2010-07-22T00:00:00+0000</updated>
-  <id>/tags/gpxe/</id>
+  <id>http://blog.oddbit.com/tags/gpxe/</id>
   
   <entry>
     <title>Patch to gPXE dhcp command</title>
-    <link rel="alternate" href="/post/2010-07-22-patch-to-gpxe-dhcp-command/"/>
-    <id>/post/2010-07-22-patch-to-gpxe-dhcp-command/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/"/>
+    <id>http://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</id>
     <published>2010-07-22T00:00:00+0000</published>
     <updated>2010-07-22T00:00:00+0000</updated>
     <summary>Update: This patch has been accepted into gPXE.

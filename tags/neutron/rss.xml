@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>neutron on The Odd Bit</title>
-    <link>/tags/neutron/</link>
+    <link>http://blog.oddbit.com/tags/neutron/</link>
     <description>Recent content in neutron on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 13 Aug 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/neutron/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.oddbit.com/tags/neutron/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Provider external networks (in an appropriate amount of detail)</title>
-      <link>/post/2015-08-13-provider-external-networks-details/</link>
+      <link>http://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</link>
       <pubDate>Thu, 13 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-08-13-provider-external-networks-details/</guid>
+      <guid>http://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</guid>
       <description>In Quantum in Too Much Detail, I discussed the architecture of a Neutron deployment in detail. Since that article was published, Neutron gained the ability to handle multiple external networks with a single L3 agent. While I wrote about that back in 2014, I covered the configuration side of it in much more detail than I discussed the underlying network architecture. This post addresses the architecture side.
 The players This document describes the architecture that results from a particular OpenStack configuration, specifically:</description>
     </item>
     
     <item>
       <title>OpenStack Networking without DHCP</title>
-      <link>/post/2015-06-26-openstack-networking-without-dhcp/</link>
+      <link>http://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</link>
       <pubDate>Fri, 26 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-06-26-openstack-networking-without-dhcp/</guid>
+      <guid>http://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</guid>
       <description>In an OpenStack environment, cloud-init generally fetches information from the metadata service provided by Nova. It also has support for reading this information from a configuration drive, which under OpenStack means a virtual CD-ROM device attached to your instance containing the same information that would normally be available via the metadata service.
 It is possible to generate your network configuration from this configuration drive, rather than relying on the DHCP server provided by your OpenStack environment.</description>
     </item>
     
     <item>
       <title>Cloud-init and the case of the changing hostname</title>
-      <link>/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</link>
+      <link>http://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</link>
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</guid>
+      <guid>http://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</guid>
       <description>Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.</description>
     </item>
     
     <item>
       <title>Booting an instance with multiple fixed addresses</title>
-      <link>/post/2014-05-28-booting-an-instance-with-multi/</link>
+      <link>http://blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/</link>
       <pubDate>Wed, 28 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-05-28-booting-an-instance-with-multi/</guid>
+      <guid>http://blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/</guid>
       <description>This article expands on my answer to Add multiple specific IPs to instance, a question posted to ask.openstack.org.
 In order to serve out SSL services from an OpenStack instance, you will generally want one local ip address for each SSL virtual host you support. It is possible to create an instance with multiple fixed addresses, but there are a few complications to watch out for.
 Assumptions This article assumes that the following resources exist:</description>
@@ -53,10 +53,10 @@ Assumptions This article assumes that the following resources exist:</descriptio
     
     <item>
       <title>Multiple external networks with a single L3 agent</title>
-      <link>/post/2014-05-28-multiple-external-networks-wit/</link>
+      <link>http://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/</link>
       <pubDate>Wed, 28 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-05-28-multiple-external-networks-wit/</guid>
+      <guid>http://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/</guid>
       <description>In the old days (so, like, last year), Neutron supported a single external network per L3 agent. You would run something like this&amp;hellip;
 $ neutron net-create external --router:external=true  &amp;hellip;and neutron would map this to the bridge defined in external_network_bridge in /etc/neutron/l3_agent.ini. If you wanted to support more than a single external network, you would need to run multiple L3 agents, each with a unique value for external_network_bridge.
 There is now a better option available.</description>
@@ -64,10 +64,10 @@ There is now a better option available.</description>
     
     <item>
       <title>Flat networks with ML2 and OpenVSwitch</title>
-      <link>/post/2014-05-19-flat-networks-with-ml-and-open/</link>
+      <link>http://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</link>
       <pubDate>Mon, 19 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-05-19-flat-networks-with-ml-and-open/</guid>
+      <guid>http://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</guid>
       <description>Due to an unfortunate incident involving sleep mode and an overheated backpack I had the &amp;ldquo;opportunity&amp;rdquo; to rebuild my laptop. Since this meant reinstalling OpenStack I used this as an excuse to finally move to the ML2 network plugin for Neutron.
 I was attempting to add an external network using the normal incantation:
 neutron net-create external -- --router:external=true \ --provider:network_type=flat \ --provider:physical_network=physnet1  While this command completed successfully, I was left without any connectivity between br-int and br-ex, despite having in my /etc/neutron/plugins/ml2/ml2_conf.</description>
@@ -75,10 +75,10 @@ neutron net-create external -- --router:external=true \ --provider:network_type=
     
     <item>
       <title>Visualizing Neutron Networking with GraphViz</title>
-      <link>/post/2013-12-23-visualizing-network-with-graphviz/</link>
+      <link>http://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</link>
       <pubDate>Mon, 23 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/2013-12-23-visualizing-network-with-graphviz/</guid>
+      <guid>http://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</guid>
       <description>I&amp;rsquo;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
 In this post I&amp;rsquo;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
 mk-network-dot There are a lot of devices involved in your Neutron network configuration.</description>
@@ -86,10 +86,10 @@ mk-network-dot There are a lot of devices involved in your Neutron network confi
     
     <item>
       <title>An introduction to OpenStack Heat</title>
-      <link>/post/2013-12-06-an-introduction-to-openstack-heat/</link>
+      <link>http://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</link>
       <pubDate>Fri, 06 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/2013-12-06-an-introduction-to-openstack-heat/</guid>
+      <guid>http://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</guid>
       <description>Heat is a template-based orchestration mechanism for use with OpenStack. With Heat, you can deploy collections of resources &amp;ndash; networks, servers, storage, and more &amp;ndash; all from a single, parameterized template.
 In this article I will introduce Heat templates and the heat command line client.
 Writing templates Because Heat began life as an analog of AWS CloudFormation, it supports the template formats used by the CloudFormation (CFN) tools. It also supports its own native template format, called HOT (&amp;ldquo;Heat Orchestration Templates&amp;rdquo;).</description>
@@ -97,10 +97,10 @@ Writing templates Because Heat began life as an analog of AWS CloudFormation, it
     
     <item>
       <title>Why does the Neutron documentation recommend three interfaces?</title>
-      <link>/post/2013-10-28-why-does-the-neutron/</link>
+      <link>http://blog.oddbit.com/post/2013-10-28-why-does-the-neutron/</link>
       <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/2013-10-28-why-does-the-neutron/</guid>
+      <guid>http://blog.oddbit.com/post/2013-10-28-why-does-the-neutron/</guid>
       <description>The documentation for configuring Neutron recommends that a network controller has three physical interfaces:
  Before you start, set up a machine to be a dedicated network node. Dedicated network nodes should have the following NICs: the management NIC (called MGMT_INTERFACE), the data NIC (called DATA_INTERFACE), and the external NIC (called EXTERNAL_INTERFACE).
  People occasionally ask, &amp;ldquo;why three interfaces? What if I only have two?&amp;ldquo;, so I wanted to provide an extended answer that might help people understand what the interfaces are for and what trade-offs are involved in using fewer interfaces.</description>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cloud-init on The Odd Bit</title>
-    <link>/tags/cloud-init/</link>
+    <link>http://blog.oddbit.com/tags/cloud-init/</link>
     <description>Recent content in cloud-init on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Jun 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/cloud-init/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.oddbit.com/tags/cloud-init/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OpenStack Networking without DHCP</title>
-      <link>/post/2015-06-26-openstack-networking-without-dhcp/</link>
+      <link>http://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</link>
       <pubDate>Fri, 26 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-06-26-openstack-networking-without-dhcp/</guid>
+      <guid>http://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</guid>
       <description>In an OpenStack environment, cloud-init generally fetches information from the metadata service provided by Nova. It also has support for reading this information from a configuration drive, which under OpenStack means a virtual CD-ROM device attached to your instance containing the same information that would normally be available via the metadata service.
 It is possible to generate your network configuration from this configuration drive, rather than relying on the DHCP server provided by your OpenStack environment.</description>
     </item>
     
     <item>
       <title>Booting cloud images with libvirt</title>
-      <link>/post/2015-03-10-booting-cloud-images-with-libvirt/</link>
+      <link>http://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/</link>
       <pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-03-10-booting-cloud-images-with-libvirt/</guid>
+      <guid>http://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/</guid>
       <description>Most major distributions now provide &amp;ldquo;cloud-enabled&amp;rdquo; images designed for use in cloud environments like OpenStack and AWS. These images are usually differentiated by (a) being relatively small, and (b) running cloud-init at boot to perform initial system configuration tasks using metadata provided by the cloud environment.
 Because of their small size and support for automatic configuration (including such useful tasks as provisioning ssh keys), these images are attractive for use outside of a cloud environment.</description>
     </item>

@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>hot on The Odd Bit</title>
 
-  <link rel="self" href="/tags/hot/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/hot/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2016-08-11T00:00:00+0000</updated>
-  <id>/tags/hot/</id>
+  <id>http://blog.oddbit.com/tags/hot/</id>
   
   <entry>
     <title>Exploring YAQL Expressions</title>
-    <link rel="alternate" href="/post/2016-08-11-exploring-yaql-expressions/"/>
-    <id>/post/2016-08-11-exploring-yaql-expressions/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/"/>
+    <id>http://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</id>
     <published>2016-08-11T00:00:00+0000</published>
     <updated>2016-08-11T00:00:00+0000</updated>
     <summary>The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&amp;rsquo;s more advanced features.

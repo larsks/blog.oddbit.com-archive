@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gruf on The Odd Bit</title>
-    <link>/tags/gruf/</link>
+    <link>http://blog.oddbit.com/tags/gruf/</link>
     <description>Recent content in gruf on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 19 Feb 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/gruf/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.oddbit.com/tags/gruf/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gruf gets superpowers</title>
-      <link>/post/2016-02-19-gruf-gets-superpowers/</link>
+      <link>http://blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/</link>
       <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-02-19-gruf-gets-superpowers/</guid>
+      <guid>http://blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/</guid>
       <description>In my last article article I introduced Gruf, a command line tool for interacting with Gerrit. Since then, Gruf has gained a few important new features.
 Caching Gruf will now by default cache results for five minutes. This avoids repeatedly querying the server for the same information when you&amp;rsquo;re just displaying it with different templates (for example, if you run a gruf query open here followed by a gruf -t patches query open here).</description>
     </item>
     
     <item>
       <title>Gruf, a Gerrit command line utility</title>
-      <link>/post/2016-02-16-gruf-a-gerrit-command-line-utility/</link>
+      <link>http://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</link>
       <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-02-16-gruf-a-gerrit-command-line-utility/</guid>
+      <guid>http://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</guid>
       <description>(See also the followup to this article.)
 I&amp;rsquo;ve recently started spending more time interacting with Gerrit, the code review tool used both by OpenStack, at review.openstack.org, and by a variety of other open source projects at GerritForge&amp;rsquo;s GitHub-linked review.gerrithub.io. I went looking for command line tools and was largely disappointed with what I found. Many of the solutions out there assume that you&amp;rsquo;re regularly interacting with a single Gerrit instance, and that&amp;rsquo;s seldom the case: more often, the Gerrit server in use varies from project to project.</description>
     </item>

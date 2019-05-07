@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>nfs on The Odd Bit</title>
 
-  <link rel="self" href="/tags/nfs/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/nfs/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2010-02-02T00:00:00+0000</updated>
-  <id>/tags/nfs/</id>
+  <id>http://blog.oddbit.com/tags/nfs/</id>
   
   <entry>
     <title>NFS and the 16-group limit</title>
-    <link rel="alternate" href="/post/2010-02-02-nfs-and-16-group-limit/"/>
-    <id>/post/2010-02-02-nfs-and-16-group-limit/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/"/>
+    <id>http://blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/</id>
     <published>2010-02-02T00:00:00+0000</published>
     <updated>2010-02-02T00:00:00+0000</updated>
     <summary>I learned something new today: it appears that the underlying authorization mechanism used by NFS limits your group membership to 16 groups. From http://bit.ly/cBhU8N:

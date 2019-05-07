@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>NetworkManager on The Odd Bit</title>
 
-  <link rel="self" href="/tags/networkmanager/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/networkmanager/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2014-05-20T00:00:00+0000</updated>
-  <id>/tags/networkmanager/</id>
+  <id>http://blog.oddbit.com/tags/networkmanager/</id>
   
   <entry>
     <title>Firewalld, NetworkManager, and OpenStack</title>
-    <link rel="alternate" href="/post/2014-05-20-firewalld-and-openstack/"/>
-    <id>/post/2014-05-20-firewalld-and-openstack/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/"/>
+    <id>http://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/</id>
     <published>2014-05-20T00:00:00+0000</published>
     <updated>2014-05-20T00:00:00+0000</updated>
     <summary>These are my notes on making OpenStack play well with firewalld and NetworkManager.

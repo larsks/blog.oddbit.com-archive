@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>subversion on The Odd Bit</title>
 
-  <link rel="self" href="/tags/subversion/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/subversion/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2010-05-11T00:00:00+0000</updated>
-  <id>/tags/subversion/</id>
+  <id>http://blog.oddbit.com/tags/subversion/</id>
   
   <entry>
     <title>Pushing a Git repository to Subversion</title>
-    <link rel="alternate" href="/post/2010-05-11-pushing-git-repository-to-subversion/"/>
-    <id>/post/2010-05-11-pushing-git-repository-to-subversion/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/"/>
+    <id>http://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</id>
     <published>2010-05-11T00:00:00+0000</published>
     <updated>2010-05-11T00:00:00+0000</updated>
     <summary>I recently set up a git repository server (using gitosis and gitweb). Among the required features of the system was the ability to publish the git repository to a read-only Subversion repository. This sounds simple in principle but in practice proved to be a bit tricky.
@@ -19,8 +19,8 @@ Git makes an excellent Subversion client. You can use the git svn &amp;hellip; s
   
   <entry>
     <title>Cleaning up Subversion with Git</title>
-    <link rel="alternate" href="/post/2010-01-29-cleaning-up-subversion-with-git/"/>
-    <id>/post/2010-01-29-cleaning-up-subversion-with-git/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/"/>
+    <id>http://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</id>
     <published>2010-01-29T00:00:00+0000</published>
     <updated>2010-01-29T00:00:00+0000</updated>
     <summary>Overview At my office, we have a crufty Subversion repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.

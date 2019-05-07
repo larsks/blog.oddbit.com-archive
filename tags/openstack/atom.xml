@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>openstack on The Odd Bit</title>
 
-  <link rel="self" href="/tags/openstack/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/openstack/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2018-02-26T00:00:00+0000</updated>
-  <id>/tags/openstack/</id>
+  <id>http://blog.oddbit.com/tags/openstack/</id>
   
   <entry>
     <title>Grouping aggregation queries in Gnocchi 4.0.x</title>
-    <link rel="alternate" href="/post/2018-02-26-grouping-aggregation-queries-i/"/>
-    <id>/post/2018-02-26-grouping-aggregation-queries-i/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/"/>
+    <id>http://blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/</id>
     <published>2018-02-26T00:00:00+0000</published>
     <updated>2018-02-26T00:00:00+0000</updated>
     <summary>In this article, we&amp;rsquo;re going to ask Gnocchi (the OpenStack telemetry storage service) how much memory was used, on average, over the course of each day by each project in an OpenStack environment.
@@ -19,8 +19,8 @@ Environment I&amp;rsquo;m working with an OpenStack &amp;ldquo;Pike&amp;rdquo; d
   
   <entry>
     <title>Safely restarting an OpenStack server with Ansible</title>
-    <link rel="alternate" href="/post/2018-01-24-safely-restarting-an-openstack-server-wi/"/>
-    <id>/post/2018-01-24-safely-restarting-an-openstack-server-wi/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/"/>
+    <id>http://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/</id>
     <published>2018-01-24T00:00:00+0000</published>
     <updated>2018-01-24T00:00:00+0000</updated>
     <summary>The other day on #ansible, someone was looking for a way to safely shut down a Nova server, wait for it to stop, and then start it up again using the openstack cli. The first part seemed easy:
@@ -30,8 +30,8 @@ TASK [shut down server] ************************************* fatal: [myserver]:
   
   <entry>
     <title>Ansible for Infrastructure Testing</title>
-    <link rel="alternate" href="/post/2017-08-02-ansible-for-infrastructure-testing/"/>
-    <id>/post/2017-08-02-ansible-for-infrastructure-testing/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/"/>
+    <id>http://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</id>
     <published>2017-08-02T00:00:00+0000</published>
     <updated>2017-08-02T00:00:00+0000</updated>
     <summary>At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&amp;ldquo;your clocks aren&amp;rsquo;t in sync&amp;rdquo; or &amp;ldquo;your filesystem is full&amp;rdquo; or &amp;ldquo;you haven&amp;rsquo;t installed a critical update&amp;rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues.</summary>
@@ -39,8 +39,8 @@ TASK [shut down server] ************************************* fatal: [myserver]:
   
   <entry>
     <title>OpenStack, Containers, and Logging</title>
-    <link rel="alternate" href="/post/2017-06-14-openstack-containers-and-logging/"/>
-    <id>/post/2017-06-14-openstack-containers-and-logging/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/"/>
+    <id>http://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</id>
     <published>2017-06-14T00:00:00+0000</published>
     <updated>2017-06-14T00:00:00+0000</updated>
     <summary>I&amp;rsquo;ve been thinking about logging in the context of OpenStack and containerized service deployments. I&amp;rsquo;d like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.
@@ -50,8 +50,8 @@ There are effectively three different mechanisms that an application can use to 
   
   <entry>
     <title>Making sure your Gerrit changes aren&#39;t broken</title>
-    <link rel="alternate" href="/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/"/>
-    <id>/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/"/>
+    <id>http://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</id>
     <published>2017-01-22T00:00:00+0000</published>
     <updated>2017-01-22T00:00:00+0000</updated>
     <summary>It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
@@ -60,8 +60,8 @@ In many cases you can alleviate this through the use of the git pre-commit hook,
   
   <entry>
     <title>Exploring YAQL Expressions</title>
-    <link rel="alternate" href="/post/2016-08-11-exploring-yaql-expressions/"/>
-    <id>/post/2016-08-11-exploring-yaql-expressions/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/"/>
+    <id>http://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</id>
     <published>2016-08-11T00:00:00+0000</published>
     <updated>2016-08-11T00:00:00+0000</updated>
     <summary>The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&amp;rsquo;s more advanced features.
@@ -71,8 +71,8 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
   
   <entry>
     <title>Connecting another vm to your tripleo-quickstart deployment</title>
-    <link rel="alternate" href="/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/"/>
-    <id>/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/"/>
+    <id>http://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</id>
     <published>2016-05-19T00:00:00+0000</published>
     <updated>2016-05-19T00:00:00+0000</updated>
     <summary>Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
@@ -82,8 +82,8 @@ For a concrete example, let&amp;rsquo;s presume you have deployed an environment
   <entry>
     <title>Deploying an HA OpenStack development environment with tripleo-quickstart
 </title>
-    <link rel="alternate" href="/post/2016-02-19-deploy-an-ha-openstack-development-envir/"/>
-    <id>/post/2016-02-19-deploy-an-ha-openstack-development-envir/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/"/>
+    <id>http://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</id>
     <published>2016-02-19T00:00:00+0000</published>
     <updated>2016-02-19T00:00:00+0000</updated>
     <summary>In this article I would like to introduce tripleo-quickstart, a tool that will automatically provision a virtual environment and then use TripleO to deploy an HA OpenStack on top of it.
@@ -92,8 +92,8 @@ Introducing Tripleo-Quickstart The goal of the Tripleo-Quickstart project is to 
   
   <entry>
     <title>Ansible 2.0: New OpenStack modules</title>
-    <link rel="alternate" href="/post/2015-10-26-ansible-20-new-openstack-modules/"/>
-    <id>/post/2015-10-26-ansible-20-new-openstack-modules/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/"/>
+    <id>http://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</id>
     <published>2015-10-26T00:00:00+0000</published>
     <updated>2015-10-26T00:00:00+0000</updated>
     <summary>This is the second in a loose sequence of articles looking at new features in Ansible 2.0. In the previous article I looked at the Docker connection driver. In this article, I would like to provide an overview of the new-and-much-improved suite of modules for interacting with an OpenStack environment, and provide a few examples of their use.
@@ -102,8 +102,8 @@ In versions of Ansible prior to 2.0, there was a small collection of OpenStack m
   
   <entry>
     <title>Migrating Cinder volumes between OpenStack environments using shared NFS storage</title>
-    <link rel="alternate" href="/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/"/>
-    <id>/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/"/>
+    <id>http://blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/</id>
     <published>2015-09-29T00:00:00+0000</published>
     <updated>2015-09-29T00:00:00+0000</updated>
     <summary>Many of the upgrade guides for OpenStack focus on in-place upgrades to your OpenStack environment. Some organizations may opt for a less risky (but more hardware intensive) option of setting up a parallel environment, and then migrating data into the new environment. In this article, we look at how to use Cinder backups with a shared NFS volume to facilitate the migration of Cinder volumes between two different OpenStack environments.</summary>
@@ -111,8 +111,8 @@ In versions of Ansible prior to 2.0, there was a small collection of OpenStack m
   
   <entry>
     <title>Provider external networks (in an appropriate amount of detail)</title>
-    <link rel="alternate" href="/post/2015-08-13-provider-external-networks-details/"/>
-    <id>/post/2015-08-13-provider-external-networks-details/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/"/>
+    <id>http://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</id>
     <published>2015-08-13T00:00:00+0000</published>
     <updated>2015-08-13T00:00:00+0000</updated>
     <summary>In Quantum in Too Much Detail, I discussed the architecture of a Neutron deployment in detail. Since that article was published, Neutron gained the ability to handle multiple external networks with a single L3 agent. While I wrote about that back in 2014, I covered the configuration side of it in much more detail than I discussed the underlying network architecture. This post addresses the architecture side.
@@ -121,8 +121,8 @@ The players This document describes the architecture that results from a particu
   
   <entry>
     <title>In which we are amazed it doesn&#39;t all fall apart</title>
-    <link rel="alternate" href="/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/"/>
-    <id>/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/"/>
+    <id>http://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</id>
     <published>2015-07-26T00:00:00+0000</published>
     <updated>2015-07-26T00:00:00+0000</updated>
     <summary>So, the Kilo release notes say:
@@ -137,8 +137,8 @@ nova-manage db migrate_flavor_data --max_number 100  And that says:</summary>
   
   <entry>
     <title>OpenStack Networking without DHCP</title>
-    <link rel="alternate" href="/post/2015-06-26-openstack-networking-without-dhcp/"/>
-    <id>/post/2015-06-26-openstack-networking-without-dhcp/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/"/>
+    <id>http://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</id>
     <published>2015-06-26T00:00:00+0000</published>
     <updated>2015-06-26T00:00:00+0000</updated>
     <summary>In an OpenStack environment, cloud-init generally fetches information from the metadata service provided by Nova. It also has support for reading this information from a configuration drive, which under OpenStack means a virtual CD-ROM device attached to your instance containing the same information that would normally be available via the metadata service.
@@ -147,8 +147,8 @@ It is possible to generate your network configuration from this configuration dr
   
   <entry>
     <title>Heat-kubernetes Demo with Autoscaling</title>
-    <link rel="alternate" href="/post/2015-06-19-heatkubernetes-demo-with-autoscaling/"/>
-    <id>/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/"/>
+    <id>http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
     <published>2015-06-19T00:00:00+0000</published>
     <updated>2015-06-19T00:00:00+0000</updated>
     <summary>Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
@@ -158,8 +158,8 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
   
   <entry>
     <title>Diagnosing problems with an OpenStack deployment</title>
-    <link rel="alternate" href="/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/"/>
-    <id>/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/"/>
+    <id>http://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/</id>
     <published>2015-03-09T00:00:00+0000</published>
     <updated>2015-03-09T00:00:00+0000</updated>
     <summary>I recently had the chance to help a colleague debug some problems in his OpenStack installation. The environment was unique because it was booting virtualized aarch64 instances, which at the time did not have any PCI bus support&amp;hellip;which in turn precluded things like graphic consoles (i.e., VNC or SPICE consoles) for the Nova instances.

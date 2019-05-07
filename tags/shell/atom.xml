@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>shell on The Odd Bit</title>
 
-  <link rel="self" href="/tags/shell/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/shell/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2018-02-08T00:00:00+0000</updated>
-  <id>/tags/shell/</id>
+  <id>http://blog.oddbit.com/tags/shell/</id>
   
   <entry>
     <title>Listing iptables rules with line numbers</title>
-    <link rel="alternate" href="/post/2018-02-08-listing-iptables-rules-with-li/"/>
-    <id>/post/2018-02-08-listing-iptables-rules-with-li/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/"/>
+    <id>http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</id>
     <published>2018-02-08T00:00:00+0000</published>
     <updated>2018-02-08T00:00:00+0000</updated>
     <summary>You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.

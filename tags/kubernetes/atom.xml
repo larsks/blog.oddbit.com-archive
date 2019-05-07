@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>kubernetes on The Odd Bit</title>
 
-  <link rel="self" href="/tags/kubernetes/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/kubernetes/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2015-06-19T00:00:00+0000</updated>
-  <id>/tags/kubernetes/</id>
+  <id>http://blog.oddbit.com/tags/kubernetes/</id>
   
   <entry>
     <title>Heat-kubernetes Demo with Autoscaling</title>
-    <link rel="alternate" href="/post/2015-06-19-heatkubernetes-demo-with-autoscaling/"/>
-    <id>/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/"/>
+    <id>http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
     <published>2015-06-19T00:00:00+0000</published>
     <updated>2015-06-19T00:00:00+0000</updated>
     <summary>Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
@@ -20,8 +20,8 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
   
   <entry>
     <title>External networking for Kubernetes services</title>
-    <link rel="alternate" href="/post/2015-02-10-external-networking-for-kubernetes-services/"/>
-    <id>/post/2015-02-10-external-networking-for-kubernetes-services/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/"/>
+    <id>http://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/</id>
     <published>2015-02-10T00:00:00+0000</published>
     <updated>2015-02-10T00:00:00+0000</updated>
     <summary>I have recently started running some &amp;ldquo;real&amp;rdquo; services (that is, &amp;ldquo;services being consumed by someone other than myself&amp;rdquo;) on top of Kubernetes (running on bare metal), which means I suddenly had to confront the question of how to provide external access to Kubernetes hosted services. Kubernetes provides two solutions to this problem, neither of which is particularly attractive out of the box:
@@ -30,8 +30,8 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
   
   <entry>
     <title>Building a minimal web server for testing Kubernetes</title>
-    <link rel="alternate" href="/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/"/>
-    <id>/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/"/>
+    <id>http://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</id>
     <published>2015-01-04T00:00:00+0000</published>
     <updated>2015-01-04T00:00:00+0000</updated>
     <summary>I have recently been doing some work with Kubernetes, and wanted to put together a minimal image with which I could test service and pod deployment. Size in this case was critical: I wanted something that would download quickly when initially deployed, because I am often setting up and tearing down Kubernetes as part of my testing (and some of my test environments have poor external bandwidth).
@@ -40,8 +40,8 @@ Building thttpd My go-to minimal webserver is thttpd.</summary>
   
   <entry>
     <title>Fedora Atomic, OpenStack, and Kubernetes (oh my)</title>
-    <link rel="alternate" href="/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/"/>
-    <id>/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/"/>
+    <id>http://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</id>
     <published>2014-11-24T00:00:00+0000</published>
     <updated>2014-11-24T00:00:00+0000</updated>
     <summary>While experimenting with Fedora Atomic, I was looking for an elegant way to automatically deploy Atomic into an OpenStack environment and then automatically schedule some Docker containers on the Atomic host. This post describes my solution.
@@ -50,8 +50,8 @@ Like many other cloud-targeted distributions, Fedora Atomic runs cloud-init when
   
   <entry>
     <title>Docker networking with dedicated network containers</title>
-    <link rel="alternate" href="/post/2014-10-06-docker-networking-with-dedicat/"/>
-    <id>/post/2014-10-06-docker-networking-with-dedicat/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/"/>
+    <id>http://blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/</id>
     <published>2014-10-06T00:00:00+0000</published>
     <updated>2014-10-06T00:00:00+0000</updated>
     <summary>The current version of Docker has a very limited set of networking options:

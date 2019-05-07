@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>netfilter on The Odd Bit</title>
 
-  <link rel="self" href="/tags/netfilter/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/netfilter/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2010-02-04T00:00:00+0000</updated>
-  <id>/tags/netfilter/</id>
+  <id>http://blog.oddbit.com/tags/netfilter/</id>
   
   <entry>
     <title>Blocking VNC with iptables</title>
-    <link rel="alternate" href="/post/2010-02-04-vnc-blockingrst/"/>
-    <id>/post/2010-02-04-vnc-blockingrst/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/"/>
+    <id>http://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</id>
     <published>2010-02-04T00:00:00+0000</published>
     <updated>2010-02-04T00:00:00+0000</updated>
     <summary>VNC clients use the RFB protocol to provide virtual display capabilities. The RFB protocol, as implemented by most clients, provides very poor authentication options. While passwords are not actually sent &amp;ldquo;in the clear&amp;rdquo;, it is possible to brute force them based on information available on the wire. The RFB 3.x protocol limits passwords to a maximum of eight characters, so the potential key space is relatively small.

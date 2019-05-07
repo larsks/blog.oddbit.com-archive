@@ -11,14 +11,14 @@
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
 <!-- alternate output formats -->
 
-<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="The Odd Bit" />
-<link rel="alternate" type="application/atom+xml" href="/atom.xml" title="The Odd Bit" />
+<link rel="alternate" type="application/rss+xml" href="http://blog.oddbit.com/rss.xml" title="The Odd Bit" />
+<link rel="alternate" type="application/atom+xml" href="http://blog.oddbit.com/atom.xml" title="The Odd Bit" />
 
         
         
@@ -32,10 +32,10 @@
                     <div class="site-title-wrapper">
                         
                             <h1 class="site-title">
-                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
                             </h1>
                         
-                        <a class="button-square" href="/rss.xml"><i class="fa fa-rss"></i></a>
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
                         
                             <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
                                 <i class="fa fa-twitter"></i>
@@ -86,7 +86,7 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-01-28-how-do-i-lxc-console/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">How do I LXC console?</h4>
         <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
         
@@ -97,7 +97,7 @@
     It took me an unreasonably long time to boot an LXC container with working console access. For the record:
 When you boot an LXC container, the console appears to be attached to a pts device. For example, when booting with the console attached to your current terminal:
 # lxc-start -n node0 ... node0 login: root Last login: Mon Jan 28 16:35:19 on tty1 [root@node0 ~]# tty /dev/console [root@node0 ~]# ls -l /dev/console crw------- 1 root tty 136, 12 Jan 28 16:36 /dev/console  This is also true when you attach to a container using lxc-console:
-    <span class="post-stub-more"><a href="/post/2013-01-28-how-do-i-lxc-console/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/">(more)</a></span>
     </p>
     
 </li>
@@ -105,7 +105,7 @@ When you boot an LXC container, the console appears to be attached to a pts devi
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-01-28-net-with-no-net/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-01-28-net-with-no-net/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Systemd and the case of the missing network</h4>
         <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
         
@@ -115,7 +115,7 @@ When you boot an LXC container, the console appears to be attached to a pts devi
     <p class="post-stub-summary">
     I was intrigued by this post on socket activated containers with systemd. The basic premise is:
  systemd opens a socket on the host and listens for connections. When a client connections, systemd spawns a new container. The host systemd passes the connected socket to the container systemd. Services in the container receive these sockets from the container systemd.  This is a very neat idea, since it delegates all the socket listening to the host and only spins up container and service resources when necessary.
-    <span class="post-stub-more"><a href="/post/2013-01-28-net-with-no-net/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-01-28-net-with-no-net/">(more)</a></span>
     </p>
     
 </li>
@@ -123,7 +123,7 @@ When you boot an LXC container, the console appears to be attached to a pts devi
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-01-25-archlinux-second-look/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-01-25-archlinux-second-look/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">A second look at Arch Linux</h4>
         <time class="post-stub-date" datetime="2013-01-25">Published Fri, Jan 25, 2013</time>
         
@@ -134,7 +134,7 @@ When you boot an LXC container, the console appears to be attached to a pts devi
     This is a followup to an earlier post about Arch Linux.
 I&rsquo;ve since spent a little more time working with Arch, and these are the things I like:
  The base system is very small and has a very short boot time. I replaced Ubuntu on my old Eee PC with Arch and suddenly the boot time is reasonable (&lt; 10 seconds to a text prompt, &lt; 30 seconds to a full GUI login).
-    <span class="post-stub-more"><a href="/post/2013-01-25-archlinux-second-look/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-01-25-archlinux-second-look/">(more)</a></span>
     </p>
     
 </li>
@@ -142,7 +142,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2012-12-21-parsing-libvirt-xml/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Parsing Libvirt XML with xmllint</h4>
         <time class="post-stub-date" datetime="2012-12-21">Published Fri, Dec 21, 2012</time>
         
@@ -152,7 +152,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
     <p class="post-stub-summary">
     I&rsquo;ve been playing around with the LXC support in libvirt recently, and I&rsquo;m trying to use a model where each LXC instance is backed by a dedicated LVM volume. This means that the process of starting an instance is:
  mount the instance root filesystem if necessary start the instance  It&rsquo;s annoying to have to do this by hand. I could simply add all the LXC filesystems to /etc/fstab, but this would mean and extra step when creating and deleting each instance.
-    <span class="post-stub-more"><a href="/post/2012-12-21-parsing-libvirt-xml/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/">(more)</a></span>
     </p>
     
 </li>
@@ -160,7 +160,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2012-12-15-get-vm-ip/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2012-12-15-get-vm-ip/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Getting the IP address of a libvirt domain</h4>
         <time class="post-stub-date" datetime="2012-12-15">Published Sat, Dec 15, 2012</time>
         
@@ -170,7 +170,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
     <p class="post-stub-summary">
     If you are starting virtual machines via libvirt, and you have attached them to the default network, there is a very simple method you can use to determine the address assigned to your running instance:
  Libvirt runs dnsmasq for the default network, and saves leases in a local file (/var/lib/libvirt/dnsmasq/default.leases under RHEL). You can get the MAC address assigned to a virtual machine by querying the domain XML description.  Putting this together gets us something along the lines of:
-    <span class="post-stub-more"><a href="/post/2012-12-15-get-vm-ip/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-12-15-get-vm-ip/">(more)</a></span>
     </p>
     
 </li>
@@ -178,7 +178,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2012-12-10-archlinux/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2012-12-10-archlinux/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">A first look at Arch Linux</h4>
         <time class="post-stub-date" datetime="2012-12-10">Published Mon, Dec 10, 2012</time>
         
@@ -189,7 +189,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
     I decided to take a look at Arch Linux this evening. It&rsquo;s an interesting idea, but has a long way to go:
  The installer configured the wrong root= command line into my syslinux configuration, resulting in a system that wouldn&rsquo;t boot.  Update: As far as I can tell, the syslinux-install_update command doesn&rsquo;t actually make any attempt to configure syslinux.cfg at all.
  I tried to install libvirt and lxc, but there are unresolved library dependencies&hellip;the virsh command apparently requires libX11.
-    <span class="post-stub-more"><a href="/post/2012-12-10-archlinux/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-12-10-archlinux/">(more)</a></span>
     </p>
     
 </li>
@@ -197,7 +197,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2012-11-27-avahi-service-discovery/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2012-11-27-avahi-service-discovery/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Service discovery in the cloud using Avahi</h4>
         <time class="post-stub-date" datetime="2012-11-27">Published Tue, Nov 27, 2012</time>
         
@@ -206,7 +206,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
     
     <p class="post-stub-summary">
     I&rsquo;m been writing a provisioning tool for OpenStack recently, and I&rsquo;ve put together a demo configuration that installs a simple cluster consisting of three backend nodes and a front-end http proxy. I needed a way for the backend servers to discover the ip address of the frontend server. Since in my target environment everything would be on the same layer-2 network segment, service discovery with multicast DNS (mDNS) seemed like the way to go.
-    <span class="post-stub-more"><a href="/post/2012-11-27-avahi-service-discovery/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-11-27-avahi-service-discovery/">(more)</a></span>
     </p>
     
 </li>
@@ -214,7 +214,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2012-11-26-using-oracle-jdk/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2012-11-26-using-oracle-jdk/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Using Oracle JDK under CentOS</h4>
         <time class="post-stub-date" datetime="2012-11-26">Published Mon, Nov 26, 2012</time>
         
@@ -225,7 +225,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
     I needed to replace the native OpenJDK based Java VM with the Oracle Java distribution on one of our CentOS servers. In order to do it cleanly I wanted to set up the alternatives system to handle it, but it took a while to figure out the exact syntax.
 For the record (and because I will probably forget):
 alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --slave /usr/bin/keytool keytool /usr/java/latest/bin/keytool \ --slave /usr/bin/rmiregistry rmiregistry /usr/java/latest/bin/rmiregistry  
-    <span class="post-stub-more"><a href="/post/2012-11-26-using-oracle-jdk/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-11-26-using-oracle-jdk/">(more)</a></span>
     </p>
     
 </li>
@@ -233,7 +233,7 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2012-11-08-popfile-document-classification/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2012-11-08-popfile-document-classification/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Document classification with POPFile</h4>
         <time class="post-stub-date" datetime="2012-11-08">Published Thu, Nov 8, 2012</time>
         
@@ -242,7 +242,7 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
     
     <p class="post-stub-summary">
     I recently embarked upon a quest to categorize a year&rsquo;s worth of trouble tickets (around 15000 documents total). We wanted to see what sort of things are generating the most work for our helpdesk staff so that we can identify areas in which improvements would have the biggest impact. One of my colleagues took a first pass at the data by manually categorizing the tickets based on their subject. This resulted in some useful data, but in the end just over 40% of the tickets are still uncategorized.
-    <span class="post-stub-more"><a href="/post/2012-11-08-popfile-document-classification/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-11-08-popfile-document-classification/">(more)</a></span>
     </p>
     
 </li>
@@ -250,7 +250,7 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2012-11-06-convert-html-to-markdown/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Converting HTML to Markdown</h4>
         <time class="post-stub-date" datetime="2012-11-06">Published Tue, Nov 6, 2012</time>
         
@@ -260,7 +260,7 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
     <p class="post-stub-summary">
     In order to import posts from Blogger into Scriptogr.am I needed to convert all the HTML formatting into Markdown. Thankfully there are a number of tools out there that can help with this task.
  MarkdownRules. This is an online service build around Markdownify. It&rsquo;s a slick site with a nice API, but the backend wasn&rsquo;t able to correctly render &lt;pre&gt; blocks. Since I&rsquo;m often writing about code, my posts are filled with things like embedded XML and #include &lt;stdio.
-    <span class="post-stub-more"><a href="/post/2012-11-06-convert-html-to-markdown/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/">(more)</a></span>
     </p>
     
 </li>
@@ -292,7 +292,7 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
             <div class="container">
                 <div class="site-title-wrapper">
                     <h1 class="site-title">
-                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
                     </h1>
                     <a class="button-square button-jump-top js-jump-top" href="#">
                         <i class="fa fa-angle-up"></i>
@@ -309,14 +309,14 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
             </div>
         </footer>
 
-        <script src="/js/jquery-1.11.3.min.js"></script>
-        <script src="/js/jquery.fitvids.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
         
         
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         
         
-        <script src="/js/scripts.js"></script>
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
     </body>
 </html>
 

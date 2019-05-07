@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>sync on The Odd Bit</title>
 
-  <link rel="self" href="/tags/sync/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/sync/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2010-08-06T00:00:00+0000</updated>
-  <id>/tags/sync/</id>
+  <id>http://blog.oddbit.com/tags/sync/</id>
   
   <entry>
     <title>Importing vCard contacts into an LG 420G</title>
-    <link rel="alternate" href="/post/2010-08-06-importing-vcard-contacts-into-lg-420g/"/>
-    <id>/post/2010-08-06-importing-vcard-contacts-into-lg-420g/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into-lg-420g/"/>
+    <id>http://blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into-lg-420g/</id>
     <published>2010-08-06T00:00:00+0000</published>
     <updated>2010-08-06T00:00:00+0000</updated>
     <summary>Alix recently acquired an LG 420G from TracFone. She was interested in getting all of her contacts onto the phone, which at first seemed like a simple task &amp;ndash; transfer a vCard (.vcf) file to the phone via Bluetooth, and the phone would import all the contacts. This turned out to be a great idea in theory, but in practice there was a fatal flaw &amp;ndash; while the phone did indeed import the contacts, it only imported names and the occasional note or email address.</summary>

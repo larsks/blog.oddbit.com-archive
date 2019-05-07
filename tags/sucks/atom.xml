@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>sucks on The Odd Bit</title>
 
-  <link rel="self" href="/tags/sucks/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/sucks/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2010-01-24T00:00:00+0000</updated>
-  <id>/tags/sucks/</id>
+  <id>http://blog.oddbit.com/tags/sucks/</id>
   
   <entry>
     <title>Fring: How not to handle registration</title>
-    <link rel="alternate" href="/post/2010-01-24-fring-how-not-to-handle-registration/"/>
-    <id>/post/2010-01-24-fring-how-not-to-handle-registration/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/"/>
+    <id>http://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</id>
     <published>2010-01-24T00:00:00+0000</published>
     <updated>2010-01-24T00:00:00+0000</updated>
     <summary>I thought I&amp;rsquo;d give Fring a try after seeing some favorable reviews on other sites. If you haven&amp;rsquo;t previously heard of Fring, the following blurb from their website might be helpful:

@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>markdown on The Odd Bit</title>
 
-  <link rel="self" href="/tags/markdown/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/markdown/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2012-11-06T00:00:00+0000</updated>
-  <id>/tags/markdown/</id>
+  <id>http://blog.oddbit.com/tags/markdown/</id>
   
   <entry>
     <title>Converting HTML to Markdown</title>
-    <link rel="alternate" href="/post/2012-11-06-convert-html-to-markdown/"/>
-    <id>/post/2012-11-06-convert-html-to-markdown/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/"/>
+    <id>http://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/</id>
     <published>2012-11-06T00:00:00+0000</published>
     <updated>2012-11-06T00:00:00+0000</updated>
     <summary>In order to import posts from Blogger into Scriptogr.am I needed to convert all the HTML formatting into Markdown. Thankfully there are a number of tools out there that can help with this task.

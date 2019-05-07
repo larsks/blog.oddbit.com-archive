@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>ssl on The Odd Bit</title>
 
-  <link rel="self" href="/tags/ssl/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/ssl/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2011-05-09T00:00:00+0000</updated>
-  <id>/tags/ssl/</id>
+  <id>http://blog.oddbit.com/tags/ssl/</id>
   
   <entry>
     <title>Signing data with ssh-agent</title>
-    <link rel="alternate" href="/post/2011-05-09-signing-data-with-ssh-agent/"/>
-    <id>/post/2011-05-09-signing-data-with-ssh-agent/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/"/>
+    <id>http://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</id>
     <published>2011-05-09T00:00:00+0000</published>
     <updated>2011-05-09T00:00:00+0000</updated>
     <summary>This is follow-up to my previous post, Converting OpenSSH public keys.
@@ -20,8 +20,8 @@ If one is temtped to use SSH keys as authentication credentials outside of ssh, 
   
   <entry>
     <title>LDAP redundancy through proxy servers</title>
-    <link rel="alternate" href="/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
-    <id>/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
+    <id>http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
     <published>2010-02-24T00:00:00+0000</published>
     <updated>2010-02-24T00:00:00+0000</updated>
     <summary>Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.

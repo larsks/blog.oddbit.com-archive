@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>orchestration on The Odd Bit</title>
 
-  <link rel="self" href="/tags/orchestration/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/orchestration/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2014-08-30T00:00:00+0000</updated>
-  <id>/tags/orchestration/</id>
+  <id>http://blog.oddbit.com/tags/orchestration/</id>
   
   <entry>
     <title>Annotated documentation for DockerInc::Docker::Container</title>
-    <link rel="alternate" href="/post/2014-08-31-docker-contain-doc/"/>
-    <id>/post/2014-08-31-docker-contain-doc/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/"/>
+    <id>http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</id>
     <published>2014-08-30T00:00:00+0000</published>
     <updated>2014-08-30T00:00:00+0000</updated>
     <summary>This is a companion to my article on the Docker plugin for Heat.
@@ -29,8 +29,8 @@ docker_endpoint: tcp://192.</summary>
   
   <entry>
     <title>Docker plugin for OpenStack Heat</title>
-    <link rel="alternate" href="/post/2014-08-30-docker-plugin-for-openstack-he/"/>
-    <id>/post/2014-08-30-docker-plugin-for-openstack-he/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/"/>
+    <id>http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</id>
     <published>2014-08-30T00:00:00+0000</published>
     <updated>2014-08-30T00:00:00+0000</updated>
     <summary>I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&amp;rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.

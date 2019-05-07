@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>utterances on The Odd Bit</title>
 
-  <link rel="self" href="/tags/utterances/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/utterances/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2019-05-07T00:00:00+0000</updated>
-  <id>/tags/utterances/</id>
+  <id>http://blog.oddbit.com/tags/utterances/</id>
   
   <entry>
     <title>New comment system</title>
-    <link rel="alternate" href="/post/2019-05-07-new-comment-system/"/>
-    <id>/post/2019-05-07-new-comment-system/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2019-05-07-new-comment-system/"/>
+    <id>http://blog.oddbit.com/post/2019-05-07-new-comment-system/</id>
     <published>2019-05-07T00:00:00+0000</published>
     <updated>2019-05-07T00:00:00+0000</updated>
     <summary>As long as I&amp;rsquo;m switching site generators, it seems like a good idea to refresh the comment system as well. I&amp;rsquo;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.

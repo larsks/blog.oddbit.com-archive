@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>systemd on The Odd Bit</title>
-    <link>/tags/systemd/</link>
+    <link>http://blog.oddbit.com/tags/systemd/</link>
     <description>Recent content in systemd on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Feb 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/systemd/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.oddbit.com/tags/systemd/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A systemd-nspawn connection driver for Ansible</title>
-      <link>/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</link>
+      <link>http://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</link>
       <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</guid>
+      <guid>http://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</guid>
       <description>I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I&amp;rsquo;m a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
 Ansible already has a chroot module, of course, but for some situations &amp;ndash; such as targeting an emulated chroot environment &amp;ndash; that just means a lot of extra work.</description>
     </item>
     
     <item>
       <title>Systemd-nspawn for fun and...well, mostly for fun</title>
-      <link>/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</link>
+      <link>http://blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</link>
       <pubDate>Sun, 07 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</guid>
+      <guid>http://blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</guid>
       <description>systemd-nspawn has been called &amp;ldquo;chroot on steroids&amp;rdquo;, but if you think of it as Docker with a slightly different target you wouldn&amp;rsquo;t be far wrong, either. It can be used to spawn containers on your host, and has a variety of options for configuring the containerized environment through the use of private networking, bind mounts, capability controls, and a variety of other facilities that give you flexible container management.</description>
     </item>
     
     <item>
       <title>Docker vs. PrivateTmp</title>
-      <link>/post/2015-01-18-docker-vs-privatetmp/</link>
+      <link>http://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</link>
       <pubDate>Sun, 18 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-01-18-docker-vs-privatetmp/</guid>
+      <guid>http://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</guid>
       <description>While working with Docker the other day, I ran into an undesirable interaction between Docker and systemd services that utilize the PrivateTmp directive.
 The PrivateTmp directive, if true, &amp;ldquo;sets up a new file system namespace for the executed processes and mounts private /tmp and /var/tmp directories inside it that is not shared by processes outside of the namespace&amp;rdquo;. This is a great idea from a security perspective, but can cause some unanticipated consequences.</description>
     </item>
     
     <item>
       <title>Starting systemd services without blocking</title>
-      <link>/post/2014-12-02-starting-systemd-services-without-blocking/</link>
+      <link>http://blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/</link>
       <pubDate>Tue, 02 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-12-02-starting-systemd-services-without-blocking/</guid>
+      <guid>http://blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/</guid>
       <description>Recently, I&amp;rsquo;ve been playing around with Fedora Atomic and Kubernetes. I ran into a frustrating problem in which I would attempt to start a service from within a script launched by cloud-init, only to have have systemctl block indefinitely because the service I was attempting to start was dependent on cloud-init finishing first.
 It turns out that systemctl has a flag meant exactly for this situation:
  --no-block Do not synchronously wait for the requested operation to finish.</description>
@@ -53,10 +53,10 @@ It turns out that systemctl has a flag meant exactly for this situation:
     
     <item>
       <title>Private /tmp directories in Fedora</title>
-      <link>/post/2012-11-05-fedora-private-tmp/</link>
+      <link>http://blog.oddbit.com/post/2012-11-05-fedora-private-tmp/</link>
       <pubDate>Mon, 05 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>/post/2012-11-05-fedora-private-tmp/</guid>
+      <guid>http://blog.oddbit.com/post/2012-11-05-fedora-private-tmp/</guid>
       <description>I ran into an odd problem the other day: I was testing out some configuration changes for a web application by dropping files into /tmp and pointing the application configuration at the appropriate directory. Everything worked out great when testing it by hand&amp;hellip;but when starting up the httpd service, the application behaved as if it was unable to find any of the files in /tmp.
 My first assumption was that had simply missed something obvious like file permissions or that I had a typo in my configuration, but after repeated checks and lots of testing it was obvious that something else was going on.</description>
     </item>

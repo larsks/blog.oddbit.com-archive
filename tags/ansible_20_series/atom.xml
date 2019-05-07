@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>ansible_20_series on The Odd Bit</title>
 
-  <link rel="self" href="/tags/ansible_20_series/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/ansible_20_series/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2015-10-26T00:00:00+0000</updated>
-  <id>/tags/ansible_20_series/</id>
+  <id>http://blog.oddbit.com/tags/ansible_20_series/</id>
   
   <entry>
     <title>Ansible 2.0: New OpenStack modules</title>
-    <link rel="alternate" href="/post/2015-10-26-ansible-20-new-openstack-modules/"/>
-    <id>/post/2015-10-26-ansible-20-new-openstack-modules/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/"/>
+    <id>http://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</id>
     <published>2015-10-26T00:00:00+0000</published>
     <updated>2015-10-26T00:00:00+0000</updated>
     <summary>This is the second in a loose sequence of articles looking at new features in Ansible 2.0. In the previous article I looked at the Docker connection driver. In this article, I would like to provide an overview of the new-and-much-improved suite of modules for interacting with an OpenStack environment, and provide a few examples of their use.
@@ -19,8 +19,8 @@ In versions of Ansible prior to 2.0, there was a small collection of OpenStack m
   
   <entry>
     <title>Ansible 2.0: The Docker connection driver</title>
-    <link rel="alternate" href="/post/2015-10-13-ansible-20-the-docker-connection-driver/"/>
-    <id>/post/2015-10-13-ansible-20-the-docker-connection-driver/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/"/>
+    <id>http://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</id>
     <published>2015-10-13T00:00:00+0000</published>
     <updated>2015-10-13T00:00:00+0000</updated>
     <summary>As the release of Ansible 2.0 draws closer, I&amp;rsquo;d like to take a look at some of the new features that are coming down the pipe. In this post, we&amp;rsquo;ll look at the docker connection driver.

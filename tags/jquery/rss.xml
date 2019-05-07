@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jquery on The Odd Bit</title>
-    <link>/tags/jquery/</link>
+    <link>http://blog.oddbit.com/tags/jquery/</link>
     <description>Recent content in jquery on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 23 Nov 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/jquery/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.oddbit.com/tags/jquery/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Long polling with Javascript and Python</title>
-      <link>/post/2013-11-23-long-polling-with-ja/</link>
+      <link>http://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/2013-11-23-long-polling-with-ja/</guid>
+      <guid>http://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</guid>
       <description>In this post I&amp;rsquo;m going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.
 My pubsub_example repository on GitHub has a complete project that implements the ideas discussed in this article. This project can be deployed directly on OpenShift if you want to try things out on your own.</description>
     </item>

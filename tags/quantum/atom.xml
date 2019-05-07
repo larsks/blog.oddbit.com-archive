@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>quantum on The Odd Bit</title>
 
-  <link rel="self" href="/tags/quantum/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/quantum/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2013-11-14T00:00:00+0000</updated>
-  <id>/tags/quantum/</id>
+  <id>http://blog.oddbit.com/tags/quantum/</id>
   
   <entry>
     <title>Quantum in Too Much Detail</title>
-    <link rel="alternate" href="/post/2013-11-14-quantum-in-too-much-detail/"/>
-    <id>/post/2013-11-14-quantum-in-too-much-detail/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/"/>
+    <id>http://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/</id>
     <published>2013-11-14T00:00:00+0000</published>
     <updated>2013-11-14T00:00:00+0000</updated>
     <summary>I originally posted this article on the RDO website.

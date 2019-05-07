@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>tricks on The Odd Bit</title>
 
-  <link rel="self" href="/tags/tricks/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/tricks/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2014-01-16T00:00:00+0000</updated>
-  <id>/tags/tricks/</id>
+  <id>http://blog.oddbit.com/tags/tricks/</id>
   
   <entry>
     <title>Stupid OpenStack Tricks</title>
-    <link rel="alternate" href="/post/2014-01-16-stupid-openstack-tricks/"/>
-    <id>/post/2014-01-16-stupid-openstack-tricks/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/"/>
+    <id>http://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</id>
     <published>2014-01-16T00:00:00+0000</published>
     <updated>2014-01-16T00:00:00+0000</updated>
     <summary>I work with several different OpenStack installations. I usually work on the command line, sourcing in an appropriate stackrc with credentials as necessary, but occasionally I want to use the dashboard for something.

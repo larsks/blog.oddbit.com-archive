@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>security on The Odd Bit</title>
 
-  <link rel="self" href="/tags/security/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/security/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2018-10-19T00:00:00+0000</updated>
-  <id>/tags/security/</id>
+  <id>http://blog.oddbit.com/tags/security/</id>
   
   <entry>
     <title>Integrating Bitwarden with Ansible</title>
-    <link rel="alternate" href="/post/2018-10-19-integrating-bitwarden-with-ans/"/>
-    <id>/post/2018-10-19-integrating-bitwarden-with-ans/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/"/>
+    <id>http://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</id>
     <published>2018-10-19T00:00:00+0000</published>
     <updated>2018-10-19T00:00:00+0000</updated>
     <summary>Bitwarden is a password management service (like LastPass or 1Password). It&amp;rsquo;s unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.

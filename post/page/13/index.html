@@ -11,13 +11,13 @@
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
 <!-- alternate output formats -->
 
-<link rel="alternate" type="application/rss+xml" href="/post/rss.xml" title="Posts" />
+<link rel="alternate" type="application/rss+xml" href="http://blog.oddbit.com/post/rss.xml" title="Posts" />
 
         
         
@@ -31,10 +31,10 @@
                     <div class="site-title-wrapper">
                         
                             <h1 class="site-title">
-                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
                             </h1>
                         
-                        <a class="button-square" href="/rss.xml"><i class="fa fa-rss"></i></a>
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
                         
                             <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
                                 <i class="fa fa-twitter"></i>
@@ -85,7 +85,7 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-07-22-generating-a-membero/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-07-22-generating-a-membero/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Generating a memberOf attribute for posixGroups</h4>
         <time class="post-stub-date" datetime="2013-07-22">Published Mon, Jul 22, 2013</time>
         
@@ -95,7 +95,7 @@
     <p class="post-stub-summary">
     This showed up on #openstack earlier today:
 2013-07-22T13:56:10 &lt;m0zes&gt; hello, all. I am looking to setup keystone with an ldap backend. I need to filter users based on group membership, in this case a non-rfc2307 posixGroup. This means that memberOf doesn't show up, and that the memberUid in the group is not a dn. any thoughts on how to accomplish this?  It turns out that this is a not uncommon question, so I spent some time today working out a solution using the dynlist overlay for OpenLDAP.
-    <span class="post-stub-more"><a href="/post/2013-07-22-generating-a-membero/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-07-22-generating-a-membero/">(more)</a></span>
     </p>
     
 </li>
@@ -103,7 +103,7 @@
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-07-16-split-concatenated-c/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-07-16-split-concatenated-c/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Split concatenated certificates with awk</h4>
         <time class="post-stub-date" datetime="2013-07-16">Published Tue, Jul 16, 2013</time>
         
@@ -113,7 +113,7 @@
     <p class="post-stub-summary">
     This is a short script that takes a list of concatenated certificates as input (such as a collection of CA certificates) and produces a collection of numbered files, each containing a single certificate.
 #!/bin/awk -f # This script expects a list of concatenated certificates on input and # produces a collection of individual numbered files each containing # a single certificate. BEGIN {incert=0} /-----BEGIN( TRUSTED)? CERTIFICATE-----/ { certno++ certfile=sprintf(&quot;cert-%d.crt&quot;, certno) incert=1 } /-----END( TRUSTED)?
-    <span class="post-stub-more"><a href="/post/2013-07-16-split-concatenated-c/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-07-16-split-concatenated-c/">(more)</a></span>
     </p>
     
 </li>
@@ -121,7 +121,7 @@
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-04-08-did-archlinux-eat-yo/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Did Arch Linux eat your KVM?</h4>
         <time class="post-stub-date" datetime="2013-04-08">Published Mon, Apr 8, 2013</time>
         
@@ -130,7 +130,7 @@
     
     <p class="post-stub-summary">
     A recent update to Arch Linux replaced the qemu-kvm package with an updated version of qemu. A side effect of this change is that the qemu-kvm binary is no longer available, and any libvirt guests on your system utilizing that binary will no longer operate. As is typical with Arch, there is no announcement about this incompatible change, and queries to #archlinux will be met with the knowledge, grace and decorum you would expect of that channel:
-    <span class="post-stub-more"><a href="/post/2013-04-08-did-archlinux-eat-yo/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/">(more)</a></span>
     </p>
     
 </li>
@@ -138,7 +138,7 @@
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-03-12-i2c-on-the-raspberry/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">I2C on the Raspberry Pi</h4>
         <time class="post-stub-date" datetime="2013-03-12">Published Tue, Mar 12, 2013</time>
         
@@ -148,7 +148,7 @@
     <p class="post-stub-summary">
     I&rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
 The design of the I2C bus is such that the only device driving a voltage on the bus is the master (in this case, the Raspberry Pi), via pull-up resistors.
-    <span class="post-stub-more"><a href="/post/2013-03-12-i2c-on-the-raspberry/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/">(more)</a></span>
     </p>
     
 </li>
@@ -156,7 +156,7 @@ The design of the I2C bus is such that the only device driving a voltage on the 
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-03-08-interrupt-driven-gpi/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Interrupt driven GPIO with Python</h4>
         <time class="post-stub-date" datetime="2013-03-08">Published Fri, Mar 8, 2013</time>
         
@@ -166,7 +166,7 @@ The design of the I2C bus is such that the only device driving a voltage on the 
     <p class="post-stub-summary">
     There are several Python libraries out there for interacting with the GPIO pins on a Raspberry Pi:
  RPi.GPIO The WiringPi bindings for Python, and The Quick2Wire Python API (which depends on Python 3)  All of them are reasonably easy to use, but the Quick2Wire API provides a uniquely useful feature: epoll-enabled GPIO interrupts. This makes it trivial to write code that efficiently waits for and responds to things like button presses.
-    <span class="post-stub-more"><a href="/post/2013-03-08-interrupt-driven-gpi/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/">(more)</a></span>
     </p>
     
 </li>
@@ -174,7 +174,7 @@ The design of the I2C bus is such that the only device driving a voltage on the 
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-03-07-controlling-a-servo/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-03-07-controlling-a-servo/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Controlling a servo with your Arduino</h4>
         <time class="post-stub-date" datetime="2013-03-07">Published Thu, Mar 7, 2013</time>
         
@@ -184,7 +184,7 @@ The design of the I2C bus is such that the only device driving a voltage on the 
     <p class="post-stub-summary">
     I&rsquo;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
 I was fiddling around with this exercise, which uses the SoftwareServo library to control a servo. Using this library, you just pass it an angle and the library takes care of everything else, e.
-    <span class="post-stub-more"><a href="/post/2013-03-07-controlling-a-servo/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-03-07-controlling-a-servo/">(more)</a></span>
     </p>
     
 </li>
@@ -192,7 +192,7 @@ I was fiddling around with this exercise, which uses the SoftwareServo library t
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-02-25-puppet-xmlrpc-quote/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">A quote about XMLRPC</h4>
         <time class="post-stub-date" datetime="2013-02-25">Published Mon, Feb 25, 2013</time>
         
@@ -204,7 +204,7 @@ I was fiddling around with this exercise, which uses the SoftwareServo library t
  XMLRPC was the new hotness when development on Puppet started. Now, XMLRPC is that horrible thing with the XML and the angle brackets and the pain and sad.
  (from http://somethingsinistral.net/blog/the-angry-guide-to-puppet-3/)
 &hellip;which also accurately sums up my feelings when I come across yet another piece of software where someone has decided that XML (or even JSON) is a good user-facing configuration syntax.
-    <span class="post-stub-more"><a href="/post/2013-02-25-puppet-xmlrpc-quote/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/">(more)</a></span>
     </p>
     
 </li>
@@ -212,7 +212,7 @@ I was fiddling around with this exercise, which uses the SoftwareServo library t
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-02-21-ucarp-unit-for-systemd/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-02-21-ucarp-unit-for-systemd/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">A systemd unit for ucarp</h4>
         <time class="post-stub-date" datetime="2013-02-21">Published Thu, Feb 21, 2013</time>
         
@@ -223,7 +223,7 @@ I was fiddling around with this exercise, which uses the SoftwareServo library t
     In Fedora 17 there are still a number of services that either have not been ported over to systemd or that do not take full advantage of systemd. I&rsquo;ve been investigating some IP failover solutions recently, including ucarp, which includes only a System-V style init script.
 I&rsquo;ve created a template service for ucarp that will let you start a specific virtual ip like this:
 systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/vip-001.
-    <span class="post-stub-more"><a href="/post/2013-02-21-ucarp-unit-for-systemd/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-02-21-ucarp-unit-for-systemd/">(more)</a></span>
     </p>
     
 </li>
@@ -231,7 +231,7 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-02-01-dhcpcd-under-lxc/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Running dhcpcd under LXC</h4>
         <time class="post-stub-date" datetime="2013-02-01">Published Fri, Feb 1, 2013</time>
         
@@ -241,7 +241,7 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
     <p class="post-stub-summary">
     I&rsquo;ve been working with Arch Linux recently, which uses dhcpcd as its default DHCP agent. If you try booting Arch inside an LXC container, you will find that dhcpcd is unable to configure your network interfaces. Running it by hand you will first see the following error:
 # dhcpcd eth0 dhcpcd[492]: version 5.6.4 starting dhcpcd[492]: eth0: if_init: Read-only file system dhcpcd[492]: eth0: interface not found or invalid  This happens because dhcpcd is trying to modify a sysctl value.
-    <span class="post-stub-more"><a href="/post/2013-02-01-dhcpcd-under-lxc/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/">(more)</a></span>
     </p>
     
 </li>
@@ -249,7 +249,7 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="/post/2013-01-28-lxc-cant-remove-cgroup/" itemprop="url" title="Go to post detail">
+    <a href="http://blog.oddbit.com/post/2013-01-28-lxc-cant-remove-cgroup/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Cleaning up LXC cgroups</h4>
         <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
         
@@ -260,7 +260,7 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
     I spent some time today looking at systemd (44) under Fedora (17). When stopping an LXC container using lxc-stop, I would always encounter this problem:
 # lxc-stop -n node0 lxc-start: Device or resource busy - failed to remove cgroup '/sys/fs/cgroup/systemd/node0  This prevents one from starting a new container with the same name:
 # lxc-start -n node0 lxc-start: Device or resource busy - failed to remove previous cgroup '/sys/fs/cgroup/systemd/node0' lxc-start: failed to spawn 'node0' lxc-start: Device or resource busy - failed to remove cgroup '/sys/fs/cgroup/systemd/node0'  You can correct the problem manually by removing all the child cgroups underneath /sys/fs/cgroup/systemd/&lt;container&gt;, like this:
-    <span class="post-stub-more"><a href="/post/2013-01-28-lxc-cant-remove-cgroup/">(more)</a></span>
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-01-28-lxc-cant-remove-cgroup/">(more)</a></span>
     </p>
     
 </li>
@@ -292,7 +292,7 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
             <div class="container">
                 <div class="site-title-wrapper">
                     <h1 class="site-title">
-                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
                     </h1>
                     <a class="button-square button-jump-top js-jump-top" href="#">
                         <i class="fa fa-angle-up"></i>
@@ -309,13 +309,13 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
             </div>
         </footer>
 
-        <script src="/js/jquery-1.11.3.min.js"></script>
-        <script src="/js/jquery.fitvids.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
         
         
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         
         
-        <script src="/js/scripts.js"></script>
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
     </body>
 </html>

@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>libvirt on The Odd Bit</title>
 
-  <link rel="self" href="/tags/libvirt/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/libvirt/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2013-10-04T00:00:00+0000</updated>
-  <id>/tags/libvirt/</id>
+  <id>http://blog.oddbit.com/tags/libvirt/</id>
   
   <entry>
     <title>Automatic hostname entries for libvirt domains</title>
-    <link rel="alternate" href="/post/automatic-dns-entries-for-libvirt-domains/"/>
-    <id>/post/automatic-dns-entries-for-libvirt-domains/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/automatic-dns-entries-for-libvirt-domains/"/>
+    <id>http://blog.oddbit.com/post/automatic-dns-entries-for-libvirt-domains/</id>
     <published>2013-10-04T00:00:00+0000</published>
     <updated>2013-10-04T00:00:00+0000</updated>
     <summary>Have you ever wished that you could use libvirt domain names as hostnames? So that you could do something like this:

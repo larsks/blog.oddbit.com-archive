@@ -1,17 +1,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>hack on The Odd Bit</title>
 
-  <link rel="self" href="/tags/hack/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/hack/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2015-04-10T00:00:00+0000</updated>
-  <id>/tags/hack/</id>
+  <id>http://blog.oddbit.com/tags/hack/</id>
   
   <entry>
     <title>Using tools badly: time shifting git commits with Workinghours
 </title>
-    <link rel="alternate" href="/post/2015-04-10-workinghours-time-shifting-git-commits/"/>
-    <id>/post/2015-04-10-workinghours-time-shifting-git-commits/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/"/>
+    <id>http://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</id>
     <published>2015-04-10T00:00:00+0000</published>
     <updated>2015-04-10T00:00:00+0000</updated>
     <summary>This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!

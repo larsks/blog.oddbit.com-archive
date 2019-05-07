@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pull-request on The Odd Bit</title>
-    <link>/tags/pull-request/</link>
+    <link>http://blog.oddbit.com/tags/pull-request/</link>
     <description>Recent content in pull-request on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/pull-request/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.oddbit.com/tags/pull-request/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Adding support for privilege escalation to Ansible&#39;s docker connection driver</title>
-      <link>/post/2019-04-26-adding-support-for-privilege-e/</link>
+      <link>http://blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-04-26-adding-support-for-privilege-e/</guid>
+      <guid>http://blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/</guid>
       <description>I often use Docker to test out Ansible playbooks. While normally that works great, I recently ran into an unexpected problem with privilege escalation. Given a simple playbook like this:
 --- - hosts: all gather_facts: false become: true tasks: - ping:  And an inventory like this:
 all: vars: ansible_user: example ansible_connection: docker hosts: server1: ansible_host: sudostuff_server1_1 server2: ansible_host: sudostuff_server2_1 server3: ansible_host: sudostuff_server3_1  And containers with sudo configured to require a password, Ansible would fail like this (note that I&amp;rsquo;ve configured Ansible to use the debug plugin for stdout_callback):</description>
@@ -24,50 +24,50 @@ all: vars: ansible_user: example ansible_connection: docker hosts: server1: ansi
     
     <item>
       <title>Integrating Bitwarden with Ansible</title>
-      <link>/post/2018-10-19-integrating-bitwarden-with-ans/</link>
+      <link>http://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</link>
       <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-10-19-integrating-bitwarden-with-ans/</guid>
+      <guid>http://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</guid>
       <description>Bitwarden is a password management service (like LastPass or 1Password). It&amp;rsquo;s unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.
 At $WORK(-ish) we&amp;rsquo;re looking into Bitwarden because we want a password sharing and management solution that was better than dropping files into directories on remote hosts or sharing things over Slack.</description>
     </item>
     
     <item>
       <title>A systemd-nspawn connection driver for Ansible</title>
-      <link>/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</link>
+      <link>http://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</link>
       <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</guid>
+      <guid>http://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</guid>
       <description>I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I&amp;rsquo;m a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
 Ansible already has a chroot module, of course, but for some situations &amp;ndash; such as targeting an emulated chroot environment &amp;ndash; that just means a lot of extra work.</description>
     </item>
     
     <item>
       <title>Folding long lines in Ansible inventory files</title>
-      <link>/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</link>
+      <link>http://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</link>
       <pubDate>Sun, 07 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</guid>
+      <guid>http://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</guid>
       <description>If you have an Ansible inventory file that includes lots of per host variables, it&amp;rsquo;s not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
 I&amp;rsquo;ve just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.</description>
     </item>
     
     <item>
       <title>Ansible 2.0: New OpenStack modules</title>
-      <link>/post/2015-10-26-ansible-20-new-openstack-modules/</link>
+      <link>http://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</link>
       <pubDate>Mon, 26 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-10-26-ansible-20-new-openstack-modules/</guid>
+      <guid>http://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</guid>
       <description>This is the second in a loose sequence of articles looking at new features in Ansible 2.0. In the previous article I looked at the Docker connection driver. In this article, I would like to provide an overview of the new-and-much-improved suite of modules for interacting with an OpenStack environment, and provide a few examples of their use.
 In versions of Ansible prior to 2.0, there was a small collection of OpenStack modules.</description>
     </item>
     
     <item>
       <title>Docker plugin bugs</title>
-      <link>/post/2014-09-01-docker-plugin-bugs/</link>
+      <link>http://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</link>
       <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-09-01-docker-plugin-bugs/</guid>
+      <guid>http://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</guid>
       <description>This is a companion to my article on the Docker plugin for Heat.
 While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&amp;rsquo;ve submitted patches for most of the issues I encountered:
 Bugs in the Heat plugin  https://bugs.launchpad.net/heat/+bug/1364017
@@ -79,10 +79,10 @@ docker plugin volumes_from parameter should be a list.
     
     <item>
       <title>Docker plugin for OpenStack Heat</title>
-      <link>/post/2014-08-30-docker-plugin-for-openstack-he/</link>
+      <link>http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</link>
       <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014-08-30-docker-plugin-for-openstack-he/</guid>
+      <guid>http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</guid>
       <description>I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&amp;rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
 The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.</description>
     </item>

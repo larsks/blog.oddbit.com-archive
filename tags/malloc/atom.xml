@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>malloc on The Odd Bit</title>
 
-  <link rel="self" href="/tags/malloc/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/malloc/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2019-01-28T00:00:00+0000</updated>
-  <id>/tags/malloc/</id>
+  <id>http://blog.oddbit.com/tags/malloc/</id>
   
   <entry>
     <title>AVR micro-optimization: Losing malloc</title>
-    <link rel="alternate" href="/post/2019-01-28-losing-malloc/"/>
-    <id>/post/2019-01-28-losing-malloc/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2019-01-28-losing-malloc/"/>
+    <id>http://blog.oddbit.com/post/2019-01-28-losing-malloc/</id>
     <published>2019-01-28T00:00:00+0000</published>
     <updated>2019-01-28T00:00:00+0000</updated>
     <summary>Pssst! Hey&amp;hellip;hey, buddy, wanna get an extra KB for cheap?

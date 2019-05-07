@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>balance on The Odd Bit</title>
-    <link>/tags/balance/</link>
+    <link>http://blog.oddbit.com/tags/balance/</link>
     <description>Recent content in balance on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 24 Feb 2010 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/balance/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.oddbit.com/tags/balance/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LDAP redundancy through proxy servers</title>
-      <link>/post/2010-02-24-ldap-redundancy-through-proxy-servers/</link>
+      <link>http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</link>
       <pubDate>Wed, 24 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>/post/2010-02-24-ldap-redundancy-through-proxy-servers/</guid>
+      <guid>http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</guid>
       <description>Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.
 A solution We can provide a level of redundancy by passing the LDAP connections through a load balancing proxy. While this makes the proxy a single point of failure, it is (a) a very simple tool and thus less prone to complex failure modes, (b) running on the same host as the web application, and &amp;copy; is completely under our control.</description>
     </item>

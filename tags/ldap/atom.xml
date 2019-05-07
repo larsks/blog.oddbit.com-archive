@@ -1,16 +1,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>ldap on The Odd Bit</title>
 
-  <link rel="self" href="/tags/ldap/"/>
+  <link rel="self" href="http://blog.oddbit.com/tags/ldap/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
   <updated>2013-07-22T00:00:00+0000</updated>
-  <id>/tags/ldap/</id>
+  <id>http://blog.oddbit.com/tags/ldap/</id>
   
   <entry>
     <title>Generating a memberOf attribute for posixGroups</title>
-    <link rel="alternate" href="/post/2013-07-22-generating-a-membero/"/>
-    <id>/post/2013-07-22-generating-a-membero/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2013-07-22-generating-a-membero/"/>
+    <id>http://blog.oddbit.com/post/2013-07-22-generating-a-membero/</id>
     <published>2013-07-22T00:00:00+0000</published>
     <updated>2013-07-22T00:00:00+0000</updated>
     <summary>This showed up on #openstack earlier today:
@@ -19,8 +19,8 @@
   
   <entry>
     <title>Kerberos authenticated queries to Active Directory</title>
-    <link rel="alternate" href="/post/2010-06-29-linux-kerberos-ad/"/>
-    <id>/post/2010-06-29-linux-kerberos-ad/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/"/>
+    <id>http://blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/</id>
     <published>2010-06-29T00:00:00+0000</published>
     <updated>2010-06-29T00:00:00+0000</updated>
     <summary>There are many guides out there to help you configure your Linux system as an LDAP and Kerberos client to an Active Directory server. Most of these guides solve the problem of authentication by embedding a username and password into a configuration file somewhere on your system. While this works, it presents some problems:
@@ -29,8 +29,8 @@
   
   <entry>
     <title>LDAP redundancy through proxy servers</title>
-    <link rel="alternate" href="/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
-    <id>/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
+    <id>http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
     <published>2010-02-24T00:00:00+0000</published>
     <updated>2010-02-24T00:00:00+0000</updated>
     <summary>Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.
@@ -39,8 +39,8 @@ A solution We can provide a level of redundancy by passing the LDAP connections 
   
   <entry>
     <title>Merging directories with OpenLDAP&#39;s Meta backend</title>
-    <link rel="alternate" href="/post/2010-02-16-merging-directories-with-openldap-meta/"/>
-    <id>/post/2010-02-16-merging-directories-with-openldap-meta/</id>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/"/>
+    <id>http://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</id>
     <published>2010-02-16T00:00:00+0000</published>
     <updated>2010-02-16T00:00:00+0000</updated>
     <summary>This document provides an example of using OpenLDAP&amp;rsquo;s meta backend to provide a unified view of two distinct LDAP directory trees. I was frustrated by the lack of simple examples available when I went looking for information on this topic, so this is my attempt to make life easier for the next person looking to do the same thing.
