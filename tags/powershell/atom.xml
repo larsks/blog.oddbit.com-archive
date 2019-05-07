@@ -1,28 +1,32 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>powershell on The Odd Bit</title>
 
-  <link rel="self" href="http://blog.oddbit.com/tags/powershell/"/>
-  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+  
+  <link rel="self" href="http://blog.oddbit.com/tags/powershell/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tags/powershell/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
-  <updated>2012-11-04T00:00:00+0000</updated>
+  <updated>2012-11-04T00:00:00Z</updated>
   <id>http://blog.oddbit.com/tags/powershell/</id>
   
   <entry>
     <title>Generating random passwords in PowerShell</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/"/>
     <id>http://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</id>
-    <published>2012-11-04T00:00:00+0000</published>
-    <updated>2012-11-04T00:00:00+0000</updated>
+    <published>2012-11-04T00:00:00Z</published>
+    <updated>2012-11-04T00:00:00Z</updated>
     <summary>I was looking for PowerShell solutions for generating a random password (in order to set the Administrator password on a Windows instance provisioned in OpenStack), and found several solutions using the GeneratePassword method of System.Web.Security.Membership (documentation here), along the lines of this:
 Function New-RandomComplexPassword ($length=8) { $Assembly = Add-Type -AssemblyName System.Web $password = [System.Web.Security.Membership]::GeneratePassword($length,2) return $password }  While this works, I was unhappy with the generated passwords: they were difficult to type or transcribe because they make heavy use of punctuation.</summary>
   </entry>
   
   <entry>
     <title>Waiting for networking using PowerShell</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/"/>
     <id>http://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</id>
-    <published>2012-11-04T00:00:00+0000</published>
-    <updated>2012-11-04T00:00:00+0000</updated>
+    <published>2012-11-04T00:00:00Z</published>
+    <updated>2012-11-04T00:00:00Z</updated>
     <summary>I&amp;rsquo;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
 There are a number of common solutions proposed to this problem:
  Just wait for some period of time.

@@ -1,18 +1,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>gmail on The Odd Bit</title>
 
-  <link rel="self" href="http://blog.oddbit.com/tags/gmail/"/>
-  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+  
+  <link rel="self" href="http://blog.oddbit.com/tags/gmail/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tags/gmail/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
-  <updated>2017-07-07T00:00:00+0000</updated>
+  <updated>2017-07-07T00:00:00Z</updated>
   <id>http://blog.oddbit.com/tags/gmail/</id>
   
   <entry>
     <title>Better bulk filtering for Gmail</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2017-07-07-better-bulk-filtering-for-gmail/"/>
     <id>http://blog.oddbit.com/post/2017-07-07-better-bulk-filtering-for-gmail/</id>
-    <published>2017-07-07T00:00:00+0000</published>
-    <updated>2017-07-07T00:00:00+0000</updated>
+    <published>2017-07-07T00:00:00Z</published>
+    <updated>2017-07-07T00:00:00Z</updated>
     <summary>I use Gmail extensively for my personal email, and recently my workplace has been migrated over to Gmail as well. I find that for my work email I rely much more extensively on filters and labels to organize things (like zillions of internal and upstream mailing lists), and that has posed some challenges. While Gmail is in general fairly snappy, attempting to apply an action to thousands of messages (for example, trying to mark 16000 messages as &amp;ldquo;read&amp;rdquo;, or applying a new filter to all your existing messages) results in a very poor experience: it is not possible to interact with Gmail (in the same tab) while the action is running, and frequently actions will timeout.</summary>
   </entry>
   

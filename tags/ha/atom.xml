@@ -1,18 +1,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>ha on The Odd Bit</title>
 
-  <link rel="self" href="http://blog.oddbit.com/tags/ha/"/>
-  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+  
+  <link rel="self" href="http://blog.oddbit.com/tags/ha/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tags/ha/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
-  <updated>2010-02-24T00:00:00+0000</updated>
+  <updated>2010-02-24T00:00:00Z</updated>
   <id>http://blog.oddbit.com/tags/ha/</id>
   
   <entry>
     <title>LDAP redundancy through proxy servers</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
     <id>http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
-    <published>2010-02-24T00:00:00+0000</published>
-    <updated>2010-02-24T00:00:00+0000</updated>
+    <published>2010-02-24T00:00:00Z</published>
+    <updated>2010-02-24T00:00:00Z</updated>
     <summary>Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.
 A solution We can provide a level of redundancy by passing the LDAP connections through a load balancing proxy. While this makes the proxy a single point of failure, it is (a) a very simple tool and thus less prone to complex failure modes, (b) running on the same host as the web application, and &amp;copy; is completely under our control.</summary>
   </entry>

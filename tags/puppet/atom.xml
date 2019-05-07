@@ -1,18 +1,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>puppet on The Odd Bit</title>
 
-  <link rel="self" href="http://blog.oddbit.com/tags/puppet/"/>
-  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+  
+  <link rel="self" href="http://blog.oddbit.com/tags/puppet/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tags/puppet/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
-  <updated>2014-10-22T00:00:00+0000</updated>
+  <updated>2014-10-22T00:00:00Z</updated>
   <id>http://blog.oddbit.com/tags/puppet/</id>
   
   <entry>
     <title>Building Docker images with Puppet</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/"/>
     <id>http://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</id>
-    <published>2014-10-22T00:00:00+0000</published>
-    <updated>2014-10-22T00:00:00+0000</updated>
+    <published>2014-10-22T00:00:00Z</published>
+    <updated>2014-10-22T00:00:00Z</updated>
     <summary>I like Docker, but I&amp;rsquo;m not a huge fan of using shell scripts for complex system configuration&amp;hellip;and Dockerfiles are basically giant shell scripts.
 I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
 I started with a manifest like this (in puppet/node.pp):
@@ -21,20 +24,22 @@ class { &#39;ssh&#39;: }  And a Dockerfile like this:</summary>
   
   <entry>
     <title>Extending Puppet</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/"/>
     <id>http://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/</id>
-    <published>2014-04-16T00:00:00+0000</published>
-    <updated>2014-04-16T00:00:00+0000</updated>
+    <published>2014-04-16T00:00:00Z</published>
+    <updated>2014-04-16T00:00:00Z</updated>
     <summary>I wanted to learn about writing custom Puppet types and providers. The official documentation is a little sparse, but I finally stumbled upon the following series of articles by Gary Larizza that provide a great deal of insight into the process and a bunch of example code:
  Fun With Puppet Providers Who Abstracted My Ruby? Seriously, What Is This Provider Doing?  </summary>
   </entry>
   
   <entry>
     <title>A quote about XMLRPC</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/"/>
     <id>http://blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/</id>
-    <published>2013-02-25T00:00:00+0000</published>
-    <updated>2013-02-25T00:00:00+0000</updated>
+    <published>2013-02-25T00:00:00Z</published>
+    <updated>2013-02-25T00:00:00Z</updated>
     <summary>I&amp;rsquo;ve been reading up on Puppet 3 lately, and came across the following:
  XMLRPC was the new hotness when development on Puppet started. Now, XMLRPC is that horrible thing with the XML and the angle brackets and the pain and sad.
  (from http://somethingsinistral.net/blog/the-angry-guide-to-puppet-3/)
@@ -43,10 +48,11 @@ class { &#39;ssh&#39;: }  And a Dockerfile like this:</summary>
   
   <entry>
     <title>Puppet, scope, and inheritance</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/"/>
     <id>http://blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/</id>
-    <published>2011-08-16T00:00:00+0000</published>
-    <updated>2011-08-16T00:00:00+0000</updated>
+    <published>2011-08-16T00:00:00Z</published>
+    <updated>2011-08-16T00:00:00Z</updated>
     <summary>I note this here because it wasn&amp;rsquo;t apparent to me from the Puppet documentation.
 If you have a Puppet class like this:
 class foo { File { ensure =&amp;gt; file, mode =&amp;gt; 600, } }  And you use it like this:

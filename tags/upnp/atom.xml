@@ -1,18 +1,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>upnp on The Odd Bit</title>
 
-  <link rel="self" href="http://blog.oddbit.com/tags/upnp/"/>
-  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+  
+  <link rel="self" href="http://blog.oddbit.com/tags/upnp/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tags/upnp/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
-  <updated>2010-01-29T00:00:00+0000</updated>
+  <updated>2010-01-29T00:00:00Z</updated>
   <id>http://blog.oddbit.com/tags/upnp/</id>
   
   <entry>
     <title>Linux UPnP Gateway</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/"/>
     <id>http://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</id>
-    <published>2010-01-29T00:00:00+0000</published>
-    <updated>2010-01-29T00:00:00+0000</updated>
+    <published>2010-01-29T00:00:00Z</published>
+    <updated>2010-01-29T00:00:00Z</updated>
     <summary>Like many other folks out there, I have several computers in my house connected to the outside world via a Linux box acting as a NAT gateway. I often want to use application such as BitTorrent and Freenet, which require that a number of ports be forwarded from my external connection to the particular computer on which I happen to be working. It turns out there&amp;rsquo;s a protocol for this, called UPnP.</summary>
   </entry>
   

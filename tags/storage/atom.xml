@@ -1,18 +1,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>storage on The Odd Bit</title>
 
-  <link rel="self" href="http://blog.oddbit.com/tags/storage/"/>
-  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+  
+  <link rel="self" href="http://blog.oddbit.com/tags/storage/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tags/storage/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
-  <updated>2018-01-25T00:00:00+0000</updated>
+  <updated>2018-01-25T00:00:00Z</updated>
   <id>http://blog.oddbit.com/tags/storage/</id>
   
   <entry>
     <title>Fun with devicemapper snapshots</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/"/>
     <id>http://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</id>
-    <published>2018-01-25T00:00:00+0000</published>
-    <updated>2018-01-25T00:00:00+0000</updated>
+    <published>2018-01-25T00:00:00Z</published>
+    <updated>2018-01-25T00:00:00Z</updated>
     <summary>I find myself working with Raspbian disk images fairly often. A typical workflow is:
  Download the disk image. Mount the filesystem somewhere to check something. Make some changes or install packages just to check something else. Crap I&amp;rsquo;ve made changes.  &amp;hellip;at which point I need to fetch a new copy of the image next time I want to start fresh.
 Sure, I could just make a copy of the image and work from there, but what fun is that?</summary>
@@ -20,20 +23,22 @@ Sure, I could just make a copy of the image and work from there, but what fun is
   
   <entry>
     <title>Growing a filesystem on a virtual disk</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/"/>
     <id>http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</id>
-    <published>2012-10-24T00:00:00+0000</published>
-    <updated>2012-10-24T00:00:00+0000</updated>
+    <published>2012-10-24T00:00:00Z</published>
+    <updated>2012-10-24T00:00:00Z</updated>
     <summary>Occasionally we will deploy a virtual instance into our KVM infrastructure and realize after the fact that we need more local disk space available. This is the process we use to expand the disk image. This process assumes the following:
  You&amp;rsquo;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&amp;rsquo;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).</summary>
   </entry>
   
   <entry>
     <title>Installing CrashPlan under FreeBSD 8</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/"/>
     <id>http://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</id>
-    <published>2011-05-22T00:00:00+0000</published>
-    <updated>2011-05-22T00:00:00+0000</updated>
+    <published>2011-05-22T00:00:00Z</published>
+    <updated>2011-05-22T00:00:00Z</updated>
     <summary>This articles describes how I got CrashPlan running on my FreeBSD 8(-STABLE) system. These instructions by Kim Scarborough were my starting point, but as these were for FreeBSD 7 there were some additional steps necessary to get things working.
 Install Java I had originally thought that it might be possible to run the CrashPlan client &amp;ldquo;natively&amp;rdquo; under FreeBSD. CrashPlan is a Java application, so this seemed like a possible solution.</summary>
   </entry>

@@ -1,18 +1,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>quantum on The Odd Bit</title>
 
-  <link rel="self" href="http://blog.oddbit.com/tags/quantum/"/>
-  <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
+  
+  <link rel="self" href="http://blog.oddbit.com/tags/quantum/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tags/quantum/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
-  <updated>2013-11-14T00:00:00+0000</updated>
+  <updated>2013-11-14T00:00:00Z</updated>
   <id>http://blog.oddbit.com/tags/quantum/</id>
   
   <entry>
     <title>Quantum in Too Much Detail</title>
+    <author>Lars Kellogg-Stedman</author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/"/>
     <id>http://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/</id>
-    <published>2013-11-14T00:00:00+0000</published>
-    <updated>2013-11-14T00:00:00+0000</updated>
+    <published>2013-11-14T00:00:00Z</published>
+    <updated>2013-11-14T00:00:00Z</updated>
     <summary>I originally posted this article on the RDO website.
  The players This document describes the architecture that results from a particular OpenStack configuration, specifically:
  Quantum networking using GRE tunnels; A dedicated network controller; A single instance running on a compute host  Much of the document will be relevant to other configurations, but details will vary based on your choice of layer 2 connectivity, number of running instances, and so forth.</summary>
