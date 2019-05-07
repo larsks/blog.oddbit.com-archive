@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Patch to gPXE dhcp command &middot; The Odd Bit</title>
+        <meta name="description" content="Update: This patch has been accepted into gPXE.
+I just released a patch to gPXE that modifies the dhcp command so that it can iterate over multiple interfaces. The stock dhcp command only accepts a single interface as an argument, which can be a problem if you are trying to boot on a machine with multiple interfaces. The builtin autoboot commands attempts to resolve this, but is only useful if you expect to receive appropriate boot parameters from your dhcp server.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container">
+        <header class="post-header">
+    <h1 class="post-title">Patch to gPXE dhcp command</h1>
+    
+</header>
+
+        <div class="post-content clearfix">
+    
+
+    <p><strong>Update</strong>: This patch has been <a href="http://git.etherboot.org/?p=gpxe.git;a=commit;h=fa91c2c3269554df855107a24afec9a1149fee8f">accepted</a> into gPXE.</p>
+
+<p>I just released a <a href="http://gist.github.com/486907">patch</a> to <a href="http://etherboot.org/wiki/index.php">gPXE</a> that modifies the dhcp command so that it can iterate over multiple interfaces. The stock dhcp command only accepts a single interface as an argument, which can be a problem if you are trying to boot on a machine with multiple interfaces. The builtin autoboot commands attempts to resolve this, but is only useful if you expect to receive appropriate boot parameters from your dhcp server.</p>
+
+<p>My patch extends the dhcp command in the following ways:</p>
+
+<ol>
+<li><p>It allows the &ldquo;dhcp&rdquo; command to accept a list of interfaces and to try them in order until it succeeds, e.g.:</p>
+
+<p>gPXE&gt; dhcp net0 net1 net2</p></li>
+</ol>
+
+<p>In order to preserve the original syntax of the command, this will fail on an unknown interface name:</p>
+
+<pre><code>gPXE&gt; dhcp foo net0
+No such interface: foo
+gPXE&gt;
+</code></pre>
+
+<p>The &ldquo;-c&rdquo; flag allows it to continue:</p>
+
+<pre><code>gPXE&gt; dhcp -c foo net0
+No such interface: foo
+DHCP (net0 xx:xx:xx:xx:xx:xx).... ok
+gPXE&gt;
+</code></pre>
+
+<ol>
+<li><p>If given the single parameter &ldquo;any&rdquo; as an interface name, iterate over all known interfaces in a manner similar to autoboot():</p>
+
+<p>gPXE&gt; dhcp any
+DHCP (net0 xx:xx:xx:xx:xx:xx)&hellip;&hellip;.. Connection timed out (&hellip;)
+Could not configure net0: Connection timed out (&hellip;)
+DHCP (net1 xx:xx:xx:xx:xx:xx)&hellip;. ok
+gPXE&gt;</p></li>
+</ol>
+
+<p>I think this manages to preserve the syntax of the existing &ldquo;dhcp&rdquo; command while making the magic of autoboot available to gpxe scripts.</p>
+
+</div>
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

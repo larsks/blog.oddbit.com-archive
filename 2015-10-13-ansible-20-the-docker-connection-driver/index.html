@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ansible 2.0: The Docker connection driver &middot; The Odd Bit</title>
+        <meta name="description" content="As the release of Ansible 2.0 draws closer, I&rsquo;d like to take a look at some of the new features that are coming down the pipe. In this post, we&rsquo;ll look at the docker connection driver.
+A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to your target hosts. These days it uses ssh by default (which relies on the OpenSSH command line client for connectivity), and it also offers the Paramiko library as an alternative ssh implementation (this was in fact the default driver in earlier versions of Ansible).">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container">
+        <header class="post-header">
+    <h1 class="post-title">Ansible 2.0: The Docker connection driver</h1>
+    
+</header>
+
+        <div class="post-content clearfix">
+    
+
+    <p>As the release of <a href="http://ansible.com/">Ansible</a> 2.0 draws closer, I&rsquo;d like to take a
+look at some of the new features that are coming down the pipe.  In
+this post, we&rsquo;ll look at the <code>docker</code> connection driver.</p>
+
+<p>A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to
+your target hosts.  These days it uses <code>ssh</code> by default (which relies
+on the OpenSSH command line client for connectivity), and it also
+offers the <a href="http://www.paramiko.org/">Paramiko</a> library as an alternative ssh implementation
+(this was in fact the default driver in earlier versions of Ansible).
+Alternative drivers offered by recent versions of ansible included the
+<code>winrm</code> driver, for accessing Windows hosts, the <code>fireball</code> driver, a
+(deprecated) driver that used <a href="http://zeromq.org/">0mq</a> for communication, and <code>jail</code>, a
+driver for connecting to FreeBSD jails.</p>
+
+<p>Ansible 2.0 will offer a <code>docker</code> connection driver, which can be used
+to connect to Docker containers via the <code>docker exec</code> command.
+Assuming you have a running container named <code>target</code>, you can run an
+ad-hoc command like this:</p>
+
+<pre><code>$ ansible all -i target, -c docker -m command -a 'uptime'
+target | SUCCESS | rc=0 &gt;&gt;
+ 03:54:21 up 7 days, 15:00,  0 users,  load average: 0.81, 0.60, 0.46
+</code></pre>
+
+<p>You can specify the connection driver as part of a play in your
+playbook:</p>
+
+<pre><code>- hosts: target
+  connection: docker
+  tasks:
+    - package:
+        name: git
+        state: latest
+</code></pre>
+
+<p>Or as a variable in your inventory.  Here&rsquo;s an example that has both a
+docker container and an ssh-accessible host:</p>
+
+<pre><code>target ansible_connection=docker
+server ansible_host=192.168.1.20 ansible_user=root
+</code></pre>
+
+<p>Given the following playbook:</p>
+
+<pre><code>- hosts: all
+  tasks:
+    - ping:
+</code></pre>
+
+<p>If we run it like this, assuming the above inventory is in the file
+<code>inventory</code>:</p>
+
+<pre><code>$ ansible-playbook -i inventory playbook.yml
+</code></pre>
+
+<p>The output will look something like:</p>
+
+<pre><code>TASK [ping] ********************************************************************
+&lt;192.168.1.20&gt; ESTABLISH SSH CONNECTION FOR USER: root
+&lt;192.168.1.20&gt; SSH: EXEC ssh -C -q -o ControlMaster=auto -o ControlPersist=60s ... 192.168.1.20 ...
+&lt;192.168.1.20&gt; PUT /tmp/tmpbtrmo5 TO /root/.ansible/tmp/ansible-tmp-1444795190.49-64658551273604/ping
+&lt;192.168.1.20&gt; SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s ... 192.168.1.20 ...
+ESTABLISH DOCKER CONNECTION FOR USER: lars
+&lt;target&gt; EXEC ['/usr/bin/docker', 'exec', '-i', u'target', '/bin/sh', '-c', ...
+&lt;target&gt; PUT /tmp/tmpNmcPTf TO /root/.ansible/tmp/ansible-tmp-1444795190.53-251446545325875/ping
+&lt;192.168.1.20&gt; ESTABLISH SSH CONNECTION FOR USER: root
+&lt;192.168.1.20&gt; SSH: EXEC ssh -C -q -o ControlMaster=auto -o ControlPersist=60s ... 192.168.1.20 ...
+ok: [server -&gt; localhost] =&gt; {&quot;changed&quot;: false, &quot;ping&quot;: &quot;pong&quot;}
+&lt;target&gt; EXEC ['/usr/bin/docker', 'exec', '-i', u'target', '/bin/sh', '-c', ...
+ok: [target -&gt; localhost] =&gt; {&quot;changed&quot;: false, &quot;ping&quot;: &quot;pong&quot;}
+
+PLAY RECAP *********************************************************************
+server                     : ok=2    changed=0    unreachable=0    failed=0   
+target                     : ok=2    changed=0    unreachable=0    failed=0   
+</code></pre>
+
+<p>Now you have a unified mechanism for managing configuration changes in
+traditional hosts as well as in Docker containers.</p>
+
+</div>
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

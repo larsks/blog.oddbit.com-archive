@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Why does the Neutron documentation recommend three interfaces? &middot; The Odd Bit</title>
+        <meta name="description" content="The documentation for configuring Neutron recommends that a network controller has three physical interfaces:
+ Before you start, set up a machine to be a dedicated network node. Dedicated network nodes should have the following NICs: the management NIC (called MGMT_INTERFACE), the data NIC (called DATA_INTERFACE), and the external NIC (called EXTERNAL_INTERFACE).
+ People occasionally ask, &ldquo;why three interfaces? What if I only have two?&ldquo;, so I wanted to provide an extended answer that might help people understand what the interfaces are for and what trade-offs are involved in using fewer interfaces.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container">
+        <header class="post-header">
+    <h1 class="post-title">Why does the Neutron documentation recommend three interfaces?</h1>
+    
+</header>
+
+        <div class="post-content clearfix">
+    
+
+    <p>The <a href="http://docs.openstack.org/havana/install-guide/install/yum/content/neutron-install.dedicated-network-node.html">documentation for configuring Neutron</a> recommends
+that a network controller has three physical interfaces:</p>
+
+<blockquote>
+<p>Before you start, set up a machine to be a dedicated network node.
+Dedicated network nodes should have the following NICs: the
+management NIC (called MGMT_INTERFACE), the data NIC (called
+DATA_INTERFACE), and the external NIC (called EXTERNAL_INTERFACE).</p>
+</blockquote>
+
+<p>People occasionally ask, &ldquo;why three interfaces? What if I only have
+two?&ldquo;, so I wanted to provide an extended answer that might help
+people understand what the interfaces are for and what trade-offs are
+involved in using fewer interfaces.</p>
+
+<!-- more -->
+
+<p>The <code>MGMT_INTERFACE</code> is used for communication between nodes.  This
+can include traffic from services to the messaging server (<code>qpid</code>,
+<code>rabbitmq</code>, etc), traffic between nova and neutron, connections to the
+database, and other traffic used to manage your OpenStack environment.</p>
+
+<p>The <code>DATA_INTERFACE</code> is used for instance traffic&hellip;that is, traffic
+generated by or inbound to instances running in your OpenStack
+environment.  If you are using GRE or VXLAN tunnels your tunnel
+endpoints will be associated with this interface.</p>
+
+<p>The <code>EXTERNAL_INTERFACE</code> is used to provide public access to your
+instances.  The network attached to this interface is generally open
+to external traffic, and ip addresses are managed by the floating-ip
+functionality in Neutron or Nova.</p>
+
+<ul>
+<li><p>You want your <code>MGMT_INTERFACE</code> seperate from your <code>DATA_INTERFACE</code>
+in order to avoid accidentally granting management access to your
+OpenStack hosts to your tenants.  A typical OpenStack environment
+may not use authentication in all cases, and a tenant host with
+access to the management network could intentionally or accidentally
+cause problems.</p></li>
+
+<li><p>You want your <code>EXTERNAL_INTERFACE</code> separate from your
+<code>DATA_INTERFACE</code> because your network controller <em>must</em> be acting as
+a router between these two interfaces in order for the netfilter
+<code>PREROUTING</code> and <code>POSTROUTING</code> rules to activate.  These rules are
+used to map floating ip addresses to internal addresses via <code>SNAT</code>
+and <code>DNAT</code> rules, which only work packets traverse the <code>FORWARD</code>
+chain.</p></li>
+
+<li><p>You want your <code>MGMT_INTERFACE</code> separate from your
+<code>EXTERNAL_INTERFACE</code> because they have dramatically different access
+requirements.  Your <code>MGMT_INTERFACE</code> should typically only be
+available to other hosts in your OpenStack deployment, while your
+<code>EXTERNAL_INTERFACE</code> will generally require much broader access.</p></li>
+</ul>
+
+<p>If you are deploying a proof-of-concept (POC) deployment to which you
+are not actually providing public access, you can elect to not have an
+<code>EXTERNAL_INTERFACE</code>. Rather than adding this device to <code>br-ex</code>, you
+will set up outbound NAT rules so that &ldquo;external&rdquo; traffic from your
+instances will masquerade using the primary ip address of your network
+controller.</p>
+
+</div>
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

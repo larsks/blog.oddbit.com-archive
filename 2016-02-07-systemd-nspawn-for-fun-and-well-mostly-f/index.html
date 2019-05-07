@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Systemd-nspawn for fun and...well, mostly for fun &middot; The Odd Bit</title>
+        <meta name="description" content="systemd-nspawn has been called &ldquo;chroot on steroids&rdquo;, but if you think of it as Docker with a slightly different target you wouldn&rsquo;t be far wrong, either. It can be used to spawn containers on your host, and has a variety of options for configuring the containerized environment through the use of private networking, bind mounts, capability controls, and a variety of other facilities that give you flexible container management.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container">
+        <header class="post-header">
+    <h1 class="post-title">Systemd-nspawn for fun and...well, mostly for fun</h1>
+    
+</header>
+
+        <div class="post-content clearfix">
+    
+
+    
+
+<p><code>systemd-nspawn</code> has been called <a href="https://wiki.archlinux.org/index.php/Systemd-nspawn">&ldquo;chroot on steroids&rdquo;</a>,
+but if you think of it as <a href="http://docker.com">Docker</a> with a slightly different target
+you wouldn&rsquo;t be far wrong, either.  It can be used to spawn containers
+on your host, and has a variety of options for configuring the
+containerized environment through the use of private networking, bind
+mounts, capability controls, and a variety of other facilities that
+give you flexible container management.</p>
+
+<p>There are many different ways in which it can be used.  I&rsquo;m going to
+focus on one that&rsquo;s a bit of a corner use case that I find
+particularly interesting.  In this article we&rsquo;re going to explore how
+we can use <a href="https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html">systemd-nspawn</a> to spawn lightweight containers for
+architectures other than that of our host system.</p>
+
+<h2 id="why-systemd-nspawn">Why systemd-nspawn?</h2>
+
+<p>While everything described in this article could be accomplished
+through the use of <code>chroot</code> and a chunk of additional configuration,
+using <code>systemd-nspawn</code> makes it much easier.  For example,
+<code>systemd-nspawn</code> takes care of making virtual filesystems like
+<code>/proc</code>, <code>/sys</code>, and a minimal <code>/dev</code> available inside the container
+(without which some programs simply won&rsquo;t work).  And of course
+<code>systemd-nspawn</code> takes care of cleaning up these mounts when the
+container exits.  For a simple container, this:</p>
+
+<pre><code># systemd-nspawn -D /mnt /some/command
+</code></pre>
+
+<p>Is roughly equivalent to:</p>
+
+<pre><code># mount -o bind /proc /mnt/proc
+# mount -o bind /sys /mnt/sys
+# mount -t tmpfs tmpfs /mnt/run
+# mount -t tmpfs tmpfs /mnt/dev
+# ...populate /mnt/dev here...
+# chroot /mnt /some/command
+# umount /mnt/dev
+# umount /mnt/run
+# umount /mnt/sys
+# umount /mnt/proc
+</code></pre>
+
+<p><code>systemd-nspawn</code> does all of this for us, and does much of it via
+private mount namespaces so that the temporary filesystems aren&rsquo;t
+visible from the host.</p>
+
+<h2 id="in-which-we-perform-magic">In which we perform magic</h2>
+
+<p>Linux allows you to run binaries intended for other architectures
+via the <a href="https://www.kernel.org/doc/Documentation/binfmt_misc.txt">binfmt-misc</a> subsystem, which allows you to use bits at the
+beginning of a file to match against an appropriate interpreter.  This
+can be used, for example, to make Java binaries directly executable.
+We&rsquo;re going to use this technique to accomplish the following:</p>
+
+<ul>
+<li>Teach our system how to run Raspberry Pi ARM binaries, and</li>
+<li>Allow us to spawn a <code>systemd-nspawn</code> container into a Raspberry Pi
+filesystem.</li>
+</ul>
+
+<p>When a <code>systemd</code>-based system boots, the <a href="https://www.freedesktop.org/software/systemd/man/binfmt.d.html">systemd-binfmt</a> service
+(if it&rsquo;s enabled) will automatically register configurations found in
+<code>/etc/binfmt.d</code> or <code>/usr/lib/binfmt.d</code>.  You can set these up by hand,
+of course, but we&rsquo;re going to take the easy route and install the
+<code>qemu-user-static</code> package, which includes both the necessary <code>binfmt.d</code>
+configuration files as well as the associated emulators:</p>
+
+<pre><code># dnf -y install qemu-user-static
+</code></pre>
+
+<p>The <code>qemu-user-static</code> package on my system has installed, among other files,
+<code>/usr/lib/binfmt.d/qemu-arm.conf</code>, which looks like this:</p>
+
+<pre><code>:qemu-arm:M::\x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-arm-static:
+</code></pre>
+
+<p>This gets registered with <code>/proc/sys/fs/binfmt_misc/register</code> and
+informs the kernel that there is a new binfmt called <code>qemu-arm</code>, and
+that files that contain the specified byte pattern in the header
+should be handled with <code>/usr/bin/qemu-arm-static</code>.</p>
+
+<p>With all this set up, we can mount a Raspberry Pi filesystem (I&rsquo;m
+starting with <a href="https://minibianpi.wordpress.com/">minibian</a>)&hellip;</p>
+
+<pre><code># tar xf 2015-11-12-jessie-minibian.tar.gz
+# losetup -fP --show 2015-11-12-jessie-minibian.img
+/dev/loop1
+# mount /dev/loop1p2 /mnt
+# mount /dev/loop1p1 /mnt/boot
+</code></pre>
+
+<p>&hellip;and then start up a process in it:</p>
+
+<pre><code># systemd-nspawn -D /mnt
+Spawning container mnt on /mnt.
+Press ^] three times within 1s to kill container.
+root@mnt:~#
+</code></pre>
+
+<p>And there we are!  We&rsquo;re now running a shell inside a container
+running an ARM userspace.  We can modify the image by installing or
+udpating packages or making any other necessary configuration changes:</p>
+
+<pre><code>root@mnt:/# apt-get install raspberrypi-bootloader
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  libraspberrypi-bin libraspberrypi0
+The following packages will be upgraded:
+  libraspberrypi-bin libraspberrypi0 raspberrypi-bootloader
+3 upgraded, 0 newly installed, 0 to remove and 34 not upgraded.
+Need to get 32.5 MB of archives.
+After this operation, 827 kB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+</code></pre>
+
+<p>When we&rsquo;re done, we exit our container:</p>
+
+<pre><code>root#mnt:/# exit
+</code></pre>
+
+<p>Unmount the directory:o</p>
+
+<pre><code># umount /mnt
+</code></pre>
+
+<p>And finally clean up the loopback device:</p>
+
+<pre><code># losetup -d /dev/loop1
+</code></pre>
+
+<p>Now we have an updated image file that we can write to an SD card and
+use to boot our Raspberry Pi.</p>
+
+<p><strong>NB</strong> You&rsquo;ll note that in this document I&rsquo;m mounting <code>loop1p2</code> on <code>/</code>
+and <code>loop1p1</code> on <code>/boot</code>.  You obviously don&rsquo;t need <code>/boot</code> in your
+container in order for things to run, but you will regret not mounting
+it if you happen to install an updated kernel package, which needs to
+populate <code>/boot</code> with the new kernel image.</p>
+
+<h2 id="bonus-growing-the-image">Bonus: growing the image</h2>
+
+<p>The stock <a href="https://minibianpi.wordpress.com/">minibian</a> image doesn&rsquo;t have much free space on it; this
+is intentional, and in general you&rsquo;re expected to grow the root
+partition and resize the filesystem after booting on your Pi.
+However, if we&rsquo;re going to use the above process to pre-configure our
+image, there&rsquo;s a good chance we&rsquo;ll need more space immediately.  We
+start by growing the size of the image file itself; you can that with
+<code>qemu-img</code>, like this:</p>
+
+<pre><code># qemu-img resize 2015-11-12-jessie-minibian.img 2G
+</code></pre>
+
+<p>Or by using <code>truncate</code>:</p>
+
+<pre><code># truncate -s 2G 2015-11-12-jessie-minibian.img
+</code></pre>
+
+<p>Or by using <code>dd</code>:</p>
+
+<pre><code># dd of=2015-11-12-jessie-minibian.img if=/dev/zero \
+  count=0 bs=1G seek=2
+</code></pre>
+
+<p>Once the file has been extended, we need to grow the corresponding
+partition.  Assuming that you have a recent version of <code>util-linux</code>
+(where &ldquo;recent&rdquo; means &ldquo;at least <a href="http://karelzak.blogspot.com/2015/05/resize-by-sfdisk.html">v2.26.2</a>) installed, this is easy:</p>
+
+<pre><code># echo &quot;, +&quot; | sfdisk -N 2 2015-11-12-jessie-minibian.img
+</code></pre>
+
+<p>And lastly, we need to grow the filesystem.  This requires
+attaching the image to a loop device:</p>
+
+<pre><code># losetup -fP --show 2015-11-12-jessie-minibian.img
+/dev/loop1
+</code></pre>
+
+<p>And then:</p>
+
+<pre><code># e2fsck -f /dev/loop1p2
+# resize2fs /dev/loop1p2
+</code></pre>
+
+<p>Now when we mount the filesystem:</p>
+
+<pre><code># mount /dev/loop1p2 /mnt
+# mount /dev/loop1p1 /mnt/boot
+</code></pre>
+
+<p>We see that there is more space available:</p>
+
+<pre><code># df -h /mnt
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop1p2    1.9G  432M  1.4G  24% /mnt
+</code></pre>
+
+<h2 id="bonus-static-qemu-arm-binaries">Bonus: Static qemu-arm binaries</h2>
+
+<p>Earlier we saw that it was necessary to mount <code>/lib64</code> into my
+Raspberry Pi container because the <code>qemu-arm</code> binary was dynamically
+linked.  You can acquire statically built versions of the QEMU
+binaries from the Debian project, e.g., <a href="https://packages.debian.org/sid/amd64/qemu-user-static/download">here</a>:</p>
+
+<ul>
+<li><a href="https://packages.debian.org/sid/amd64/qemu-user-static/download">https://packages.debian.org/sid/amd64/qemu-user-static/download</a></li>
+</ul>
+
+<p>Then unpack the <code>.deb</code> file and extract the <code>qemu-arm-static</code> binary:</p>
+
+<pre><code>$ ar xv qemu-user-static_2.5+dfsg-5_amd64.deb
+x - debian-binary
+x - control.tar.gz
+x - data.tar.xz
+$ tar xf data.tar.xz ./usr/bin/qemu-arm-static
+</code></pre>
+
+<p>And copy it into place:</p>
+
+<pre><code># cp qemu-arm-static /usr/bin/qemu-arm
+</code></pre>
+
+<p>And now our earlier command will work without further modification:</p>
+
+<pre><code># systemd-nspawn -q --bind /usr/bin/qemu-arm -D /mnt /bin/bash
+root@mnt:/#
+</code></pre>
+
+</div>
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

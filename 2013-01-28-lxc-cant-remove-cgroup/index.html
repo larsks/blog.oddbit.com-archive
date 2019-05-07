@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cleaning up LXC cgroups &middot; The Odd Bit</title>
+        <meta name="description" content="I spent some time today looking at systemd (44) under Fedora (17). When stopping an LXC container using lxc-stop, I would always encounter this problem:
+# lxc-stop -n node0 lxc-start: Device or resource busy - failed to remove cgroup &#39;/sys/fs/cgroup/systemd/node0  This prevents one from starting a new container with the same name:
+# lxc-start -n node0 lxc-start: Device or resource busy - failed to remove previous cgroup &#39;/sys/fs/cgroup/systemd/node0&#39; lxc-start: failed to spawn &#39;node0&#39; lxc-start: Device or resource busy - failed to remove cgroup &#39;/sys/fs/cgroup/systemd/node0&#39;  You can correct the problem manually by removing all the child cgroups underneath /sys/fs/cgroup/systemd/&lt;container&gt;, like this:">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container">
+        <header class="post-header">
+    <h1 class="post-title">Cleaning up LXC cgroups</h1>
+    
+</header>
+
+        <div class="post-content clearfix">
+    
+
+    <p>I spent some time today looking at systemd (44) under Fedora (17).
+When stopping an LXC container using <code>lxc-stop</code>, I would always
+encounter this problem:</p>
+
+<pre><code># lxc-stop -n node0
+lxc-start: Device or resource busy - failed to remove cgroup '/sys/fs/cgroup/systemd/node0
+</code></pre>
+
+<p>This prevents one from starting a new container with the same name:</p>
+
+<pre><code># lxc-start -n node0 
+lxc-start: Device or resource busy - failed to remove previous cgroup '/sys/fs/cgroup/systemd/node0'
+lxc-start: failed to spawn 'node0'
+lxc-start: Device or resource busy - failed to remove cgroup '/sys/fs/cgroup/systemd/node0'
+</code></pre>
+
+<p>You can correct the problem manually by removing all the child cgroups
+underneath <code>/sys/fs/cgroup/systemd/&lt;container&gt;</code>, like this:</p>
+
+<pre><code># find /sys/fs/cgroup/systemd/node0/ -type d |
+  tac |
+  xargs rmdir
+</code></pre>
+
+<p>The call to <code>tac</code> (which will output lines in reverse order) is
+necessary because we need to start with the &ldquo;deepest&rdquo; directory and
+work our way back up.</p>
+
+<p>This appears to be a version-specific problem.  I do not see the same
+behavior with <code>systemd</code> 197 under Arch.</p>
+
+</div>
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

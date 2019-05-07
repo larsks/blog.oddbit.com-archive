@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Configuring a static address for wlan0 on Raspbian Stretch &middot; The Odd Bit</title>
+        <meta name="description" content="Recent releases of Raspbian have adopted the use of dhcpcd to manage both dynamic and static interface configuration. If you would prefer to use the traditional /etc/network/interfaces mechanism instead, follow these steps.
+ First, disable dhcpcd and wpa_supplicant.
+systemctl disable --now dhdpcd wpa_supplicant  You will need a wpa_supplicant configuration for wlan0 in /etc/wpa_supplicant/wpa_supplicant-wlan0.conf.
+If you already have an appropriate configuration in /etc/wpa_supplicant/wpa_supplicant.conf, you can just symlink the file:
+ cd /etc/wpa_supplicant ln -s wpa_supplicant.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container">
+        <header class="post-header">
+    <h1 class="post-title">Configuring a static address for wlan0 on Raspbian Stretch</h1>
+    
+</header>
+
+        <div class="post-content clearfix">
+    
+
+    <p>Recent releases of Raspbian have adopted the use of <a href="http://manpages.ubuntu.com/manpages/trusty/man8/dhcpcd5.8.html">dhcpcd</a> to
+manage both dynamic and static interface configuration.  If you would
+prefer to use the traditional <code>/etc/network/interfaces</code> mechanism
+instead, follow these steps.</p>
+
+<ol>
+<li><p>First, disable <code>dhcpcd</code> and <code>wpa_supplicant</code>.</p>
+
+<pre><code>systemctl disable --now dhdpcd wpa_supplicant
+</code></pre></li>
+
+<li><p>You will need a <code>wpa_supplicant</code> configuration for <code>wlan0</code> in
+<code>/etc/wpa_supplicant/wpa_supplicant-wlan0.conf</code>.</p>
+
+<p>If you already have an appropriate configuration in
+<code>/etc/wpa_supplicant/wpa_supplicant.conf</code>, you can just symlink the
+file:</p>
+
+<pre><code> cd /etc/wpa_supplicant
+ ln -s wpa_supplicant.conf wpa_supplicant-wlan0.conf
+</code></pre></li>
+
+<li><p>Enable the <code>wpa_supplicant</code> service for <code>wlan0</code>:</p>
+
+<pre><code>systemctl enable --now wpa_supplicant@wlan0
+</code></pre></li>
+
+<li><p>Create an appropriate configuration in
+<code>/etc/network/interfaces.d/wlan0</code>.  For example:</p>
+
+<pre><code>allow-hotplug wlan0
+
+iface wlan0 inet static
+address 192.168.2.100
+netmask 255.255.255.0
+
+iface wlan0 inet6 static
+address 2607:f0d0:2001:000a:0000:0000:0000:0010
+netmask 64
+</code></pre></li>
+
+<li><p>Reboot to make sure everything comes up as expected.  With the
+above configuration, after rebooting you should see:</p>
+
+<pre><code>root@raspberrypi:~# ip addr show wlan0
+3: wlan0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:e1:b0:67:98:67 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.100/24 brd 192.168.2.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+    inet6 2607:f0d0:2001:a::10/64 scope global
+       valid_lft forever preferred_lft forever
+    inet6 fe80::2e1:b0ff:fe67:9867/64 scope link
+       valid_lft forever preferred_lft forever
+</code></pre></li>
+</ol>
+
+</div>
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

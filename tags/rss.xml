@@ -6,10 +6,19 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>administrivia</title>
+      <link>/tags/administrivia/</link>
+      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/administrivia/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ansible</title>
@@ -278,15 +287,6 @@
       <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>administrivia</title>
-      <link>/tags/administrivia/</link>
-      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/administrivia/</guid>
       <description></description>
     </item>
     

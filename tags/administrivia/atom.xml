@@ -4,8 +4,17 @@
   <link rel="self" href="/tags/administrivia/"/>
   <link href="//blog.oddbit.com/" rel="alternate"></link>                                      │1557152283 127.0.0.1 "GET /dist/styles.css" 304 136 "http://localhost:1313/" "Mozilla/5.0 (X11;
 
-  <updated>2018-01-26T00:00:00+0000</updated>
+  <updated>2019-05-06T00:00:00+0000</updated>
   <id>/tags/administrivia/</id>
+  
+  <entry>
+    <title>New static site generator</title>
+    <link rel="alternate" href="/post/2019-05-06-new-static-site-generator/"/>
+    <id>/post/2019-05-06-new-static-site-generator/</id>
+    <published>2019-05-06T00:00:00+0000</published>
+    <updated>2019-05-06T00:00:00+0000</updated>
+    <summary>I&amp;rsquo;ve switched my static site generator from Pelican to Hugo. I&amp;rsquo;ve tried to ensure that all the old links continue to work correctly, but if you notice anything missing or otherwise not working as intended, please let me know by opening an issue. Thanks!</summary>
+  </entry>
   
   <entry>
     <title>Administrivia: Pelican and theme update</title>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>A unified CLI for OpenStack &middot; The Odd Bit</title>
+        <meta name="description" content="The python-openstackclient project, by Dean Troyer and others, is a new command line tool to replace the existing command line clients (including commands such as nova, keystone, cinder, etc).
+This tool solves two problems I&rsquo;ve encountered in the past:
+ Command line options between different command line clients are sometimes inconsistent.
+ The output from the legacy command line tools is not designed to be machine parse-able (and yet people do it anyway).">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container">
+        <header class="post-header">
+    <h1 class="post-title">A unified CLI for OpenStack</h1>
+    
+</header>
+
+        <div class="post-content clearfix">
+    
+
+    <p>The <a href="https://github.com/openstack/python-openstackclient">python-openstackclient</a> project, by <a href="https://github.com/dtroyer">Dean Troyer</a> and
+others, is a new command line tool to replace the existing command
+line clients (including commands such as <code>nova</code>, <code>keystone</code>, <code>cinder</code>,
+etc).</p>
+
+<p>This tool solves two problems I&rsquo;ve encountered in the past:</p>
+
+<ul>
+<li><p>Command line options between different command line clients are
+sometimes inconsistent.</p></li>
+
+<li><p>The output from the legacy command line tools is not designed to be
+machine parse-able (and yet people <a href="https://github.com/openstack/python-openstackclient">do it anyway</a>).</p></li>
+</ul>
+
+<p>The new <code>openstack</code> CLI framework is implement using the <a href="https://github.com/dreamhost/cliff">cliff</a>
+module for Python, which will help enforce a consistent interface to
+the various subcommands (because common options can be shared, and
+just having everything in the same codebase will help tremendously).
+Cliff also provides flexible table formatters.  It includes a number
+of useful formatters out of the box, and can be extended via
+setuptools entry points.</p>
+
+<p>The <code>csv</code> formatter can be used to produce machine parse-able output
+from list commands.  For example:</p>
+
+<pre><code>$ openstack -q endpoint list -f csv --quote none
+ID,Region,Service Name,Service Type
+ba686936d31846f5b226539dba285654,RegionOne,quantum,network
+161684fd123740138c8806267c489766,RegionOne,cinder,volume
+b2019dbef5f34d1bb809e8e399369782,RegionOne,keystone,identity
+4b5dd8c6b961442ba13d6b9d317d718a,RegionOne,swift_s3,s3
+ac766707ffa3437eaaeaafa3c3eace08,RegionOne,swift,object-store
+e3f7bd37b51341bbaa77f81ba39a3bf2,RegionOne,glance,image
+6821fad71a914636af6e98775e52e1ec,RegionOne,nova_ec2,ec2
+3b2a90e9f85a468988af763c707961d7,RegionOne,nova,compute
+</code></pre>
+
+<p>For &ldquo;show&rdquo; commands, the <code>shell</code> formatter produces output in
+<code>name=value</code> format, like this:</p>
+
+<pre><code>$ openstack -q endpoint show image -f shell --all
+adminurl=&quot;http://192.168.122.110:9292&quot;
+id=&quot;e3f7bd37b51341bbaa77f81ba39a3bf2&quot;
+internalurl=&quot;http://192.168.122.110:9292&quot;
+publicurl=&quot;http://192.168.122.110:9292&quot;
+region=&quot;RegionOne&quot;
+service_id=&quot;14a1479f77274dd485e9fb52af2e1721&quot;
+service_name=&quot;glance&quot;
+service_type=&quot;image&quot;
+</code></pre>
+
+<p>This output could easily be sourced into a shell script.</p>
+
+</div>
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

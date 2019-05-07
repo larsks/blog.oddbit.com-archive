@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>A systemd-nspawn connection driver for Ansible &middot; The Odd Bit</title>
+        <meta name="description" content="I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I&rsquo;m a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
+Ansible already has a chroot module, of course, but for some situations &ndash; such as targeting an emulated chroot environment &ndash; that just means a lot of extra work.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container">
+        <header class="post-header">
+    <h1 class="post-title">A systemd-nspawn connection driver for Ansible</h1>
+    
+</header>
+
+        <div class="post-content clearfix">
+    
+
+    
+
+<p>I wrote <a href="|filename|/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f.md">earlier</a> about <a href="https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html">systemd-nspawn</a>, and how it can take much
+of the fiddly work out of setting up functional <code>chroot</code> environments.
+I&rsquo;m a regular <a href="http://ansible.com/">Ansible</a> user, and I wanted to be able to apply some
+of those techniques to my playbooks.</p>
+
+<p>Ansible already has a <code>chroot</code> module, of course, but for some
+situations &ndash; such as targeting an emulated <code>chroot</code> environment &ndash;
+that just means a lot of extra work.  Using <code>systemd-nspawn</code> makes
+this trivial.</p>
+
+<p>I&rsquo;ve submitted <a href="https://github.com/ansible/ansible/pull/14334">pull request #14334</a> to the Ansible project,
+which introduces a new connection driver named <code>nspawn</code>.  It acts very
+much like the <code>chroot</code> driver, but it adds a few new configuration
+options:</p>
+
+<ul>
+<li><p><code>ansible_nspawn_args</code> &ndash; analagous to <code>ansible_ssh_args</code>, setting
+this will override the arguments that are passed to <code>systemd-nspawn</code>
+by default.</p></li>
+
+<li><p><code>ansible_nspawn_extra_args</code> &ndash; analgous to <code>ansible_ssh_extra_args</code>,
+setting this will <em>append</em> the values to the default
+<code>systemd-nspawn</code> command line.</p></li>
+</ul>
+
+<h2 id="advantages-over-chroot">Advantages over chroot</h2>
+
+<p>Let&rsquo;s say we had a Fedora filesystem mounted on <code>/fedora</code> and we want
+to run the following playbook:</p>
+
+<pre><code>- hosts: /fedora
+  tasks:
+    - raw: dnf -y install python libselinux-python python2-dnf
+    - dnf:
+        name: git
+        state: installed
+</code></pre>
+
+<p>Using the <code>chroot</code> driver, we get:</p>
+
+<pre><code>$ sudo ansible-playbook -i /fedora, -c chroot playbook.yml
+
+PLAY ***************************************************************************
+
+TASK [raw] *********************************************************************
+fatal: [/fedora]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;failed&quot;: true, &quot;rc&quot;: -6, &quot;stderr&quot;: &quot;Fatal Python error: Failed to open /dev/urandom\n&quot;, &quot;stdout&quot;: &quot;&quot;, &quot;stdout_lines&quot;: []}
+</code></pre>
+
+<p>Adding the necessary tasks to our playbook to set up the chroot
+environment properly will add a lot of additional complexity and will
+make the playbook substantially less generic.  Now compare that to the
+result of running the same playbook using the <code>nspawn</code> driver:</p>
+
+<pre><code>$ sudo ansible-playbook -i /fedora, -c nspawn playbook.yml
+
+PLAY ***************************************************************************
+
+TASK [raw] *********************************************************************
+ok: [/fedora]
+
+TASK [dnf] *********************************************************************
+changed: [/fedora]
+
+PLAY RECAP *********************************************************************
+/fedora                       : ok=2    changed=1    unreachable=0    failed=0   
+</code></pre>
+
+<h2 id="ansible-in-emulation">Ansible in emulation</h2>
+
+<p>By taking advantage of <code>ansible_nspawn_extra_args</code> you can create
+more complex containers.  For example, in my <a href="|filename|/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f.md">last post</a> on
+<code>systemd-nspawn</code> I showed how to start a container for a different
+architecture through the use of QEMU user-mode emulation.  We can
+apply the same idea to Ansible with an inventory entry like this:</p>
+
+<pre><code>target
+  ansible_host=/fedora
+  ansible_connection=nspawn
+  ansible_nspawn_extra_args=&quot;--bind /usr/bin/qemu-arm&quot;
+</code></pre>
+
+<p>The above will allow you to run a playbook against a filesystem
+containing ARM architecture binaries, even though you&rsquo;re running on an
+x86_64 host.</p>
+
+</div>
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

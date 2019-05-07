@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Installing nova-docker on Fedora 21/RDO Juno &middot; The Odd Bit</title>
+        <meta name="description" content="This post comes about indirectly by a request on IRC in #rdo for help getting nova-docker installed on Fedora 21. I ran through the process from start to finish and decided to write everything down for posterity.
+Getting started I started with the Fedora 21 Cloud Image, because I&rsquo;m installing onto OpenStack and the cloud images include some features that are useful in this environment.
+We&rsquo;ll be using OpenStack packages from the RDO Juno repository.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container">
+        <header class="post-header">
+    <h1 class="post-title">Installing nova-docker on Fedora 21/RDO Juno</h1>
+    
+</header>
+
+        <div class="post-content clearfix">
+    
+
+    
+
+<p>This post comes about indirectly by a request on IRC in <code>#rdo</code> for help getting <a href="https://github.com/stackforge/nova-docker">nova-docker</a> installed on Fedora 21.  I ran through the process from start to finish and decided to write everything down for posterity.</p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>I started with the <a href="https://getfedora.org/en/cloud/download/">Fedora 21 Cloud Image</a>, because I&rsquo;m
+installing onto OpenStack and the cloud images include
+some features that are useful in this environment.</p>
+
+<p>We&rsquo;ll be using OpenStack packages from the <a href="https://repos.fedorapeople.org/repos/openstack/openstack-juno/">RDO Juno</a> repository.
+Because there is often some skew between the RDO packages and the
+current Fedora selinux policy, we&rsquo;re going to start by putting SELinux
+into permissive mode (sorry, Dan):</p>
+
+<pre><code># setenforce 0
+# sed -i '/^SELINUX=/ s/=.*/=permissive/' /etc/selinux/config
+</code></pre>
+
+<p>Next, install the RDO Juno repository:</p>
+
+<pre><code># yum -y install \
+  https://repos.fedorapeople.org/repos/openstack/openstack-juno/rdo-release-juno-1.noarch.rpm
+</code></pre>
+
+<p>And upgrade all our existing packages:</p>
+
+<pre><code># yum -y upgrade
+</code></pre>
+
+<h2 id="install-openstack">Install OpenStack</h2>
+
+<p>We&rsquo;ll be using <a href="https://wiki.openstack.org/wiki/Packstack">packstack</a> to install OpenStack onto this host.
+Start by installing the package:</p>
+
+<pre><code># yum -y install openstack-packstack
+</code></pre>
+
+<p>And then run a <code>--allinone</code> install, which sets up all OpenStack
+services on a single host:</p>
+
+<pre><code># packstack --allinone
+</code></pre>
+
+<h2 id="install-nova-docker-prequisites">Install nova-docker prequisites</h2>
+
+<p>Once <code>packstack</code> has completed successfully, we need to install some
+prerequisites for <a href="https://github.com/stackforge/nova-docker">nova-docker</a>.</p>
+
+<pre><code># yum -y install git python-pip python-pbr \
+  docker-io fedora-repos-rawhide
+</code></pre>
+
+<p>The <code>fedora-repos-rawhide</code> package provides a yum configuration for the
+<code>rawhide</code> repository (disabled by default).  We&rsquo;re going to need that
+to pick up more recent versions of <code>systemd</code> (because of <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1187882">this
+bug</a>) and
+<code>python-six</code> (because <code>nova-docker</code> needs the <code>six.add_metaclass</code>
+method):</p>
+
+<pre><code># yum --enablerepo=rawhide install python-six systemd
+</code></pre>
+
+<p>At this point, having upgraded <code>systemd</code>, you should probably reboot:</p>
+
+<pre><code># reboot
+</code></pre>
+
+<h2 id="configure-docker">Configure Docker</h2>
+
+<p>Once things are up and running, we will expect the <code>nova-compute</code>
+service to launch Docker containers.  In order for this to work, the
+<code>nova</code> user will need access to the Docker socket,
+<code>/var/run/docker.sock</code>.  By default, this is owned by <code>root:root</code> and
+has mode <code>660</code>:</p>
+
+<pre><code># ls -l /var/run/docker.sock
+srw-rw----. 1 root root 0 Feb  1 12:43 /var/run/docker.sock
+</code></pre>
+
+<p>The <code>nova-compute</code> service runs as the <code>nova</code> user and will not have
+access to that socket.  There are a few ways of resolving this; an
+expedient method is simply to make this socket owned by the <code>nova</code>
+group, which we can do with <code>docker</code>&rsquo;s <code>-G</code> option.</p>
+
+<p>Edit <code>/etc/sysconfig/docker</code>, and modify the <code>OPTIONS=</code> line to look
+like:</p>
+
+<pre><code>OPTIONS='--selinux-enabled -G nova'
+</code></pre>
+
+<p>Then enable and start the <code>docker</code> service:</p>
+
+<pre><code># systemctl enable docker
+# systemctl start docker
+</code></pre>
+
+<h2 id="install-nova-docker">Install nova-docker</h2>
+
+<p>Clone the <a href="https://github.com/stackforge/nova-docker">nova-docker</a> repository:</p>
+
+<pre><code># git clone http://github.com/stackforge/nova-docker.git
+# cd nova-docker
+</code></pre>
+
+<p>And check out the <code>stable/juno</code> branch, since we&rsquo;re operating with an
+OpenStack Juno environment:</p>
+
+<pre><code># git checkout stable/juno
+</code></pre>
+
+<p>Now install the driver:</p>
+
+<pre><code># python setup.py install
+</code></pre>
+
+<h2 id="configure-nova">Configure Nova</h2>
+
+<p>Following the <a href="https://github.com/stackforge/nova-docker/blob/master/README.rst">README</a> from <a href="https://github.com/stackforge/nova-docker">nova-docker</a>, we need to modify
+the Nova configuration to use the <code>nova-docker</code> driver.  Edit
+<code>/etc/nova/nova.conf</code> and add the following line to the <code>DEFAULT</code>
+section:</p>
+
+<pre><code>compute_driver=novadocker.virt.docker.DockerDriver
+</code></pre>
+
+<p>If there is already a line setting <code>compute_driver</code>, then comment it
+out or delete before adding the new one.</p>
+
+<p>Modify the Glance configuration to permit storage of Docker images.
+Edit <code>/etc/glance/glance-api.conf</code>, and add the following line to the
+<code>DEFAULT</code> section:</p>
+
+<pre><code>container_formats=ami,ari,aki,bare,ovf,ova,docker
+</code></pre>
+
+<p>Next, we need to augment the <code>rootwrap</code> configuration such that
+<code>nova-docker</code> is able run the <code>ln</code> command with <code>root</code> privileges.
+We&rsquo;ll install the <a href="https://github.com/stackforge/nova-docker/blob/master/etc/nova/rootwrap.d/docker.filters">docker.filters</a> file from the <code>nova-docker</code>
+source:</p>
+
+<pre><code># mkdir -p /etc/nova/rootwrap.d
+# cp etc/nova/rootwrap.d/docker.filters \
+  /etc/nova/rootwrap.d/docker.filters
+</code></pre>
+
+<p>We&rsquo;ve changed a number of configuration files, so we should restart
+the affected services:</p>
+
+<pre><code># openstack-service restart nova glance
+</code></pre>
+
+<h2 id="testing-things-out">Testing things out</h2>
+
+<p>Let&rsquo;s try starting a container!  We need to select one that will run
+in the <code>nova-docker</code> environment.  Generally, that means one that does
+not expect to have an interactive terminal and that will automatically
+start some sort of web-accessible service.  I have a <a href="https://registry.hub.docker.com/u/larsks/thttpd/">minimal thttpd
+container</a> that fits the bill nicely:</p>
+
+<pre><code># docker pull larsks/thttpd
+</code></pre>
+
+<p>We need to store this image into Glance using the same name:</p>
+
+<pre><code># docker save larsks/thttpd | 
+  glance image-create --name larsks/thttpd \
+  --container-format docker --disk-format raw --is-public true
+</code></pre>
+
+<p>And now we should be able to start a container:</p>
+
+<pre><code># nova boot --image larsks/thttpd --flavor m1.tiny test0
+</code></pre>
+
+<p>After a bit, <code>nova list</code> should show:</p>
+
+<pre><code>+------...+-------+--------+...+------------------+
+| ID   ...| Name  | Status |...| Networks         |
++------...+-------+--------+...+------------------+
+| 430a1...| test0 | ACTIVE |...| private=10.0.0.6 |
++------...+-------+--------+...+------------------+
+</code></pre>
+
+<p>And we should also see the container if we run <code>docker ps</code>:</p>
+
+<pre><code># docker ps
+CONTAINER ID        IMAGE                  COMMAND                CREATED             STATUS              PORTS               NAMES
+ee864da30cf1        larsks/thttpd:latest   &quot;/thttpd -D -l /dev/   7 hours ago         Up 7 hours                              nova-430a197e-a0ca-4e72-a7db-1969d0773cf7   
+</code></pre>
+
+<h2 id="getting-connected">Getting connected</h2>
+
+<p>At this point, the container will <em>not</em> be network accessible; it&rsquo;s
+attached to a private tenant network.  Let&rsquo;s assign it a floating ip
+address:</p>
+
+<pre><code># nova floating-ip-create public
++--------------+-----------+----------+--------+
+| Ip           | Server Id | Fixed Ip | Pool   |
++--------------+-----------+----------+--------+
+| 172.24.4.229 | -         | -        | public |
++--------------+-----------+----------+--------+
+# nova floating-ip-associate test0 172.24.4.229
+</code></pre>
+
+<p>This isn&rsquo;t going to be immediately accessible because Packstack left
+us without a route to the floating ip network.  We can fix that
+temporarily like this:</p>
+
+<pre><code># ip addr add 172.24.4.225/28 dev br-ex
+</code></pre>
+
+<p>And now we can ping our Docker container:</p>
+
+<pre><code># ping -c2 172.24.4.229
+PING 172.24.4.229 (172.24.4.229) 56(84) bytes of data.
+64 bytes from 172.24.4.229: icmp_seq=1 ttl=63 time=0.291 ms
+64 bytes from 172.24.4.229: icmp_seq=2 ttl=63 time=0.074 ms
+
+--- 172.24.4.229 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 0.074/0.182/0.291/0.109 ms
+</code></pre>
+
+<p>And access the webserver:</p>
+
+<pre><code># curl http://172.24.4.229
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;            
+    &lt;title&gt;Your web server is working&lt;/title&gt;
+.
+.
+.
+</code></pre>
+
+</div>
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

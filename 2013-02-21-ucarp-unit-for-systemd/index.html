@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>A systemd unit for ucarp &middot; The Odd Bit</title>
+        <meta name="description" content="In Fedora 17 there are still a number of services that either have not been ported over to systemd or that do not take full advantage of systemd. I&rsquo;ve been investigating some IP failover solutions recently, including ucarp, which includes only a System-V style init script.
+I&rsquo;ve created a template service for ucarp that will let you start a specific virtual ip like this:
+systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/vip-001.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Posts" href="/post">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container">
+        <header class="post-header">
+    <h1 class="post-title">A systemd unit for ucarp</h1>
+    
+</header>
+
+        <div class="post-content clearfix">
+    
+
+    <p>In Fedora 17 there are still a number of services that either have not
+been ported over to <code>systemd</code> or that do not take full advantage of
+<code>systemd</code>.  I&rsquo;ve been investigating some IP failover solutions
+recently, including <a href="http://www.pureftpd.org/project/ucarp">ucarp</a>, which includes only a System-V style
+init script.</p>
+
+<p>I&rsquo;ve created a <a href="http://0pointer.de/blog/projects/instances.html">template service</a> for ucarp that will let
+you start a specific virtual ip like this:</p>
+
+<pre><code>systemctl start ucarp@001
+</code></pre>
+
+<p>This will start ucarp using settings from <code>/etc/ucarp/vip-001.conf</code>.
+The unit file is <a href="https://gist.github.com/larsks/5009872">on github</a> and embedded here for your
+reading pleasure:</p>
+
+<pre><code>[Unit]
+Description=UCARP virtual interface %I
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/ucarp/vip-common.conf
+EnvironmentFile=-/etc/ucarp/vip-%I.conf
+ExecStart=/usr/sbin/ucarp -i $BIND_INTERFACE -p $PASSWORD -v %I -a $VIP_ADDRESS -s $SOURCE_ADDRESS $OPTIONS -u $UPSCRIPT -d $DOWNSCRIPT
+KillMode=control-group
+
+[Install]
+WantedBy=multiuser.target
+</code></pre>
+
+</div>
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+
