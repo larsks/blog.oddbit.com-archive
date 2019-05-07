@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Unpacking a Python regular expression</title>
+      <link>http://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</guid>
+      <description>I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&amp;rsquo;t really seem the write place for that: so, here we are.</description>
+    </item>
+    
+    <item>
       <title>New comment system</title>
       <link>http://blog.oddbit.com/post/2019-05-07-new-comment-system/</link>
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
@@ -19,15 +28,6 @@
       <guid>http://blog.oddbit.com/post/2019-05-07-new-comment-system/</guid>
       <description>As long as I&amp;rsquo;m switching site generators, it seems like a good idea to refresh the comment system as well. I&amp;rsquo;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.
 That means that comments will finally be stored in the same place as the blog content, which I think is a happy state of affairs.</description>
-    </item>
-    
-    <item>
-      <title>Unpacking a Python regular expression</title>
-      <link>http://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</guid>
-      <description>I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&amp;rsquo;t really seem the write place for that: so, here we are.</description>
     </item>
     
     <item>
