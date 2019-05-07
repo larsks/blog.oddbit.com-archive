@@ -11,22 +11,26 @@
   
   <entry>
     <title>Did Arch Linux eat your KVM?</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/"/>
     <id>http://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/</id>
     <published>2013-04-08T00:00:00Z</published>
     <updated>2013-04-08T00:00:00Z</updated>
-    <summary>A recent update to Arch Linux replaced the qemu-kvm package with an updated version of qemu. A side effect of this change is that the qemu-kvm binary is no longer available, and any libvirt guests on your system utilizing that binary will no longer operate. As is typical with Arch, there is no announcement about this incompatible change, and queries to #archlinux will be met with the knowledge, grace and decorum you would expect of that channel:</summary>
+    <summary type="html">A recent update to Arch Linux replaced the qemu-kvm package with an updated version of qemu. A side effect of this change is that the qemu-kvm binary is no longer available, and any libvirt guests on your system utilizing that binary will no longer operate. As is typical with Arch, there is no announcement about this incompatible change, and queries to #archlinux will be met with the knowledge, grace and decorum you would expect of that channel:</summary>
   </entry>
   
   <entry>
     <title>Growing a filesystem on a virtual disk</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/"/>
     <id>http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</id>
     <published>2012-10-24T00:00:00Z</published>
     <updated>2012-10-24T00:00:00Z</updated>
-    <summary>Occasionally we will deploy a virtual instance into our KVM infrastructure and realize after the fact that we need more local disk space available. This is the process we use to expand the disk image. This process assumes the following:
+    <summary type="html">Occasionally we will deploy a virtual instance into our KVM infrastructure and realize after the fact that we need more local disk space available. This is the process we use to expand the disk image. This process assumes the following:
  You&amp;rsquo;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&amp;rsquo;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).</summary>
   </entry>
   

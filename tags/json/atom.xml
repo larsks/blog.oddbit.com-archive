@@ -11,12 +11,14 @@
   
   <entry>
     <title>json-tools: cli for generating and filtering json</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2013-11-17-json-tools/"/>
     <id>http://blog.oddbit.com/post/2013-11-17-json-tools/</id>
     <published>2013-11-17T00:00:00Z</published>
     <updated>2013-11-17T00:00:00Z</updated>
-    <summary>Interacting with JSON-based APIs from the command line can be difficult, and OpenStack is filled with REST APIs that consume or produce JSON. I&amp;rsquo;ve just put pair of tools for generating and filtering JSON on the command line, called collectively json-tools.
+    <summary type="html">Interacting with JSON-based APIs from the command line can be difficult, and OpenStack is filled with REST APIs that consume or produce JSON. I&amp;rsquo;ve just put pair of tools for generating and filtering JSON on the command line, called collectively json-tools.
 Both make use of the Python dpath module to populate or filter JSON objects.
 The jsong command generates JSON on stdout. You provide /-delimited paths on the command line to represent the JSON structure.</summary>
   </entry>

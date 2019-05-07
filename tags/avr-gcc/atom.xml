@@ -11,12 +11,14 @@
   
   <entry>
     <title>AVR micro-optimization: Avr-gcc and --short-enums</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/"/>
     <id>http://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</id>
     <published>2019-01-28T00:00:00Z</published>
     <updated>2019-01-28T00:00:00Z</updated>
-    <summary>How big is an enum? I noticed something odd while browsing through the assembly output of some AVR C code I wrote recently. In the code, I have the following expression:
+    <summary type="html">How big is an enum? I noticed something odd while browsing through the assembly output of some AVR C code I wrote recently. In the code, I have the following expression:
 int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&amp;rsquo;t want to clutter this post with unnecessary code listings):</summary>
   </entry>
   

@@ -11,12 +11,14 @@
   
   <entry>
     <title>In which we are amazed it doesn&#39;t all fall apart</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/"/>
     <id>http://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</id>
     <published>2015-07-26T00:00:00Z</published>
     <updated>2015-07-26T00:00:00Z</updated>
-    <summary>So, the Kilo release notes say:
+    <summary type="html">So, the Kilo release notes say:
 nova-manage migrate-flavor-data  But nova-manage says:
 nova-manage db migrate_flavor_data  But that says:
 Missing arguments: max_number  And the help says:

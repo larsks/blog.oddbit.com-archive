@@ -11,45 +11,53 @@
   
   <entry>
     <title>Generating a memberOf attribute for posixGroups</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2013-07-22-generating-a-membero/"/>
     <id>http://blog.oddbit.com/post/2013-07-22-generating-a-membero/</id>
     <published>2013-07-22T00:00:00Z</published>
     <updated>2013-07-22T00:00:00Z</updated>
-    <summary>This showed up on #openstack earlier today:
+    <summary type="html">This showed up on #openstack earlier today:
 2013-07-22T13:56:10 &amp;lt;m0zes&amp;gt; hello, all. I am looking to setup keystone with an ldap backend. I need to filter users based on group membership, in this case a non-rfc2307 posixGroup. This means that memberOf doesn&#39;t show up, and that the memberUid in the group is not a dn. any thoughts on how to accomplish this?  It turns out that this is a not uncommon question, so I spent some time today working out a solution using the dynlist overlay for OpenLDAP.</summary>
   </entry>
   
   <entry>
     <title>Kerberos authenticated queries to Active Directory</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/"/>
     <id>http://blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/</id>
     <published>2010-06-29T00:00:00Z</published>
     <updated>2010-06-29T00:00:00Z</updated>
-    <summary>There are many guides out there to help you configure your Linux system as an LDAP and Kerberos client to an Active Directory server. Most of these guides solve the problem of authentication by embedding a username and password into a configuration file somewhere on your system. While this works, it presents some problems:
+    <summary type="html">There are many guides out there to help you configure your Linux system as an LDAP and Kerberos client to an Active Directory server. Most of these guides solve the problem of authentication by embedding a username and password into a configuration file somewhere on your system. While this works, it presents some problems:
  If you use a common account for authentication from all of your Linux systems, a compromise on one system means updating the configuration of all of your systems.</summary>
   </entry>
   
   <entry>
     <title>LDAP redundancy through proxy servers</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
     <id>http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
     <published>2010-02-24T00:00:00Z</published>
     <updated>2010-02-24T00:00:00Z</updated>
-    <summary>Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.
+    <summary type="html">Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.
 A solution We can provide a level of redundancy by passing the LDAP connections through a load balancing proxy. While this makes the proxy a single point of failure, it is (a) a very simple tool and thus less prone to complex failure modes, (b) running on the same host as the web application, and &amp;copy; is completely under our control.</summary>
   </entry>
   
   <entry>
     <title>Merging directories with OpenLDAP&#39;s Meta backend</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/"/>
     <id>http://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</id>
     <published>2010-02-16T00:00:00Z</published>
     <updated>2010-02-16T00:00:00Z</updated>
-    <summary>This document provides an example of using OpenLDAP&amp;rsquo;s meta backend to provide a unified view of two distinct LDAP directory trees. I was frustrated by the lack of simple examples available when I went looking for information on this topic, so this is my attempt to make life easier for the next person looking to do the same thing.
+    <summary type="html">This document provides an example of using OpenLDAP&amp;rsquo;s meta backend to provide a unified view of two distinct LDAP directory trees. I was frustrated by the lack of simple examples available when I went looking for information on this topic, so this is my attempt to make life easier for the next person looking to do the same thing.
 The particular use case that motiviated my interest in this topic was the need to configure web applications to (a) authenticate against an existing Active Directory server while (b) also allowing new accounts to be provisioned quickly and without granting any access in the AD environment.</summary>
   </entry>
   

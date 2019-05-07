@@ -11,12 +11,14 @@
   
   <entry>
     <title>Fun with devicemapper snapshots</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/"/>
     <id>http://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</id>
     <published>2018-01-25T00:00:00Z</published>
     <updated>2018-01-25T00:00:00Z</updated>
-    <summary>I find myself working with Raspbian disk images fairly often. A typical workflow is:
+    <summary type="html">I find myself working with Raspbian disk images fairly often. A typical workflow is:
  Download the disk image. Mount the filesystem somewhere to check something. Make some changes or install packages just to check something else. Crap I&amp;rsquo;ve made changes.  &amp;hellip;at which point I need to fetch a new copy of the image next time I want to start fresh.
 Sure, I could just make a copy of the image and work from there, but what fun is that?</summary>
   </entry>

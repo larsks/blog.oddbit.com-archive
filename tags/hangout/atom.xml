@@ -11,12 +11,14 @@
   
   <entry>
     <title>Multinode OpenStack with Packstack</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2014-02-27-multinode/"/>
     <id>http://blog.oddbit.com/post/2014-02-27-multinode/</id>
     <published>2014-02-27T00:00:00Z</published>
     <updated>2014-02-27T00:00:00Z</updated>
-    <summary>I was the presenter for this morning&amp;rsquo;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
+    <summary type="html">I was the presenter for this morning&amp;rsquo;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
 The slides are online here.
 Here&amp;rsquo;s the video (also available on the event page):
  </summary>

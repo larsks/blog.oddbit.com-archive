@@ -11,12 +11,14 @@
   
   <entry>
     <title>Converting hexadecimal ip addresses to dotted quads with Bash</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2015-03-08-converting-hexadecimal-ip-addresses-to-dotted-quads-with-bas/"/>
     <id>http://blog.oddbit.com/post/2015-03-08-converting-hexadecimal-ip-addresses-to-dotted-quads-with-bas/</id>
     <published>2015-03-08T00:00:00Z</published>
     <updated>2015-03-08T00:00:00Z</updated>
-    <summary>This is another post that is primarily for my own benefit for the next time I forget how to do this.
+    <summary type="html">This is another post that is primarily for my own benefit for the next time I forget how to do this.
 I wanted to read routing information directly from /proc/net/route using bash, because you never know what may or may not be available in the minimal environment of a Docker container (for example, the iproute package is not installed by default in the Fedora Docker images). The contents of /proc/net/route looks something like:</summary>
   </entry>
   

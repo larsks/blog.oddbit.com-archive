@@ -11,12 +11,14 @@
   
   <entry>
     <title>Listing iptables rules with line numbers</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/"/>
     <id>http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</id>
     <published>2018-02-08T00:00:00Z</published>
     <updated>2018-02-08T00:00:00Z</updated>
-    <summary>You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.
+    <summary type="html">You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.
 You can augment the output from these commands with rule numbers with the following awk script:
 #!/bin/awk -f state == 0 &amp;amp;&amp;amp; /^-A/ {state=1; chain=$2; counter=1; printf &amp;quot;\n&amp;quot;} state == 1 &amp;amp;&amp;amp; $2 !</summary>
   </entry>

@@ -11,12 +11,14 @@
   
   <entry>
     <title>Tracking down a kernel bug with git bisect</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/"/>
     <id>http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</id>
     <published>2014-07-21T00:00:00Z</published>
     <updated>2014-07-21T00:00:00Z</updated>
-    <summary>After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
+    <summary type="html">After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
 $ docker run -ti fedora /bin/bash bash-4.2# su -c &#39;uptime&#39; su: System error  Hooking up something (like, say, socat unix-listen:/dev/log -) to /dev/log revealed that the system was logging:</summary>
   </entry>
   

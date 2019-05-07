@@ -11,12 +11,14 @@
   
   <entry>
     <title>Funny usage message</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-08-funny-usage-message/"/>
     <id>http://blog.oddbit.com/post/2010-02-08-funny-usage-message/</id>
     <published>2010-02-08T00:00:00Z</published>
     <updated>2010-02-08T00:00:00Z</updated>
-    <summary>I was poking around in a command shell on my Droid to see what was available. While it&amp;rsquo;s a pretty restricted environment, there&amp;rsquo;s a number of commands available in /system/bin, including dexopt.
+    <summary type="html">I was poking around in a command shell on my Droid to see what was available. While it&amp;rsquo;s a pretty restricted environment, there&amp;rsquo;s a number of commands available in /system/bin, including dexopt.
 Apparently dexopt isn&amp;rsquo;t something I&amp;rsquo;m supposed to poke at:
 $ dexopt Usage: don&#39;t use this  Hah.</summary>
   </entry>

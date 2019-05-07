@@ -11,12 +11,14 @@
   
   <entry>
     <title>Filtering Blogger feeds</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/"/>
     <id>http://blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/</id>
     <published>2010-02-10T00:00:00Z</published>
     <updated>2010-02-10T00:00:00Z</updated>
-    <summary>After encountering a number of problems trying to filter Blogger feeds by tag (using services like Feedrinse and Yahoo Pipes), I&amp;rsquo;ve finally put together a solution that works:
+    <summary type="html">After encountering a number of problems trying to filter Blogger feeds by tag (using services like Feedrinse and Yahoo Pipes), I&amp;rsquo;ve finally put together a solution that works:
  Shadow the feed with Feedburner. Enable the Convert Format Burner, and convert your feed to RSS 2.0. Use Yahoo Pipes to filter the feed (because Feedrinse seems to be broken).  This let me create a feed that excluded all my posts containing the fbpost tag, thus allowing me to avoid yet another postgasm in Facebook when adding new import URL to notes.</summary>
   </entry>
   

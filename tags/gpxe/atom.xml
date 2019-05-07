@@ -11,12 +11,14 @@
   
   <entry>
     <title>Patch to gPXE dhcp command</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/"/>
     <id>http://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</id>
     <published>2010-07-22T00:00:00Z</published>
     <updated>2010-07-22T00:00:00Z</updated>
-    <summary>Update: This patch has been accepted into gPXE.
+    <summary type="html">Update: This patch has been accepted into gPXE.
 I just released a patch to gPXE that modifies the dhcp command so that it can iterate over multiple interfaces. The stock dhcp command only accepts a single interface as an argument, which can be a problem if you are trying to boot on a machine with multiple interfaces. The builtin autoboot commands attempts to resolve this, but is only useful if you expect to receive appropriate boot parameters from your dhcp server.</summary>
   </entry>
   

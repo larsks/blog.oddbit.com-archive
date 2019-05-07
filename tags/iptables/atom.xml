@@ -11,24 +11,28 @@
   
   <entry>
     <title>Listing iptables rules with line numbers</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/"/>
     <id>http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</id>
     <published>2018-02-08T00:00:00Z</published>
     <updated>2018-02-08T00:00:00Z</updated>
-    <summary>You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.
+    <summary type="html">You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.
 You can augment the output from these commands with rule numbers with the following awk script:
 #!/bin/awk -f state == 0 &amp;amp;&amp;amp; /^-A/ {state=1; chain=$2; counter=1; printf &amp;quot;\n&amp;quot;} state == 1 &amp;amp;&amp;amp; $2 !</summary>
   </entry>
   
   <entry>
     <title>Blocking VNC with iptables</title>
-    <author>Lars Kellogg-Stedman</author>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
     <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/"/>
     <id>http://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</id>
     <published>2010-02-04T00:00:00Z</published>
     <updated>2010-02-04T00:00:00Z</updated>
-    <summary>VNC clients use the RFB protocol to provide virtual display capabilities. The RFB protocol, as implemented by most clients, provides very poor authentication options. While passwords are not actually sent &amp;ldquo;in the clear&amp;rdquo;, it is possible to brute force them based on information available on the wire. The RFB 3.x protocol limits passwords to a maximum of eight characters, so the potential key space is relatively small.
+    <summary type="html">VNC clients use the RFB protocol to provide virtual display capabilities. The RFB protocol, as implemented by most clients, provides very poor authentication options. While passwords are not actually sent &amp;ldquo;in the clear&amp;rdquo;, it is possible to brute force them based on information available on the wire. The RFB 3.x protocol limits passwords to a maximum of eight characters, so the potential key space is relatively small.
 It&amp;rsquo;s possible to securely connect to a remote VNC server by tunneling your connection using ssh port forwarding (or setting up some sort of SSL proxy).</summary>
   </entry>
   
