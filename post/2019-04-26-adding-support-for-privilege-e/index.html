@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Adding support for privilege escalation to Ansible&#39;s docker connection driver &middot; The Odd Bit</title>
+        <meta name="description" content="I often use Docker to test out Ansible playbooks. While normally that works great, I recently ran into an unexpected problem with privilege escalation. Given a simple playbook like this:
+--- - hosts: all gather_facts: false become: true tasks: - ping:  And an inventory like this:
+all: vars: ansible_user: example ansible_connection: docker hosts: server1: ansible_host: sudostuff_server1_1 server2: ansible_host: sudostuff_server2_1 server3: ansible_host: sudostuff_server3_1  And containers with sudo configured to require a password, Ansible would fail like this (note that I&rsquo;ve configured Ansible to use the debug plugin for stdout_callback):">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Adding support for privilege escalation to Ansible&#39;s docker connection driver</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2019-04-26" itemprop="datePublished">Fri, Apr 26, 2019</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>I often use Docker to test out Ansible playbooks.  While normally that works great, I recently ran into an unexpected problem with privilege escalation.  Given a simple playbook like this:</p>
+
+<pre><code>---
+- hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+    - ping:
+</code></pre>
+
+<p>And an inventory like this:</p>
+
+<pre><code>all:
+  vars:
+    ansible_user: example
+    ansible_connection: docker
+  hosts:
+    server1:
+      ansible_host: sudostuff_server1_1
+    server2:
+      ansible_host: sudostuff_server2_1
+    server3:
+      ansible_host: sudostuff_server3_1
+</code></pre>
+
+<p>And containers with <code>sudo</code> configured to require a password, Ansible would fail like this (note that I&rsquo;ve configured Ansible to use the <code>debug</code> plugin for <code>stdout_callback</code>):</p>
+
+<pre><code>fatal: [server1]: FAILED! =&gt; {
+    &quot;changed&quot;: false,
+    &quot;rc&quot;: 1
+}
+
+MSG:
+
+MODULE FAILURE
+See stdout/stderr for the exact error
+
+
+MODULE_STDERR:
+
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo via ansible, key=rzrfiifcqoggklmehivtcrrlnnbphwbp] password:
+</code></pre>
+
+<p>In the above output, you&rsquo;ll note that there are no actual errors, but unexpectedly we&rsquo;re seeing the privilege escalation prompt show up in the <code>stderr</code> of the command.  A quick search revealed bugs <a href="https://github.com/ansible/ansible/issues/31759">#31759</a> and <a href="https://github.com/ansible/ansible/issues/53385">#53385</a>, both of which confirm that privilege escalation simply doesn&rsquo;t work using the <code>docker</code> connection plugin.</p>
+
+<h2 id="use-the-source-luke">Use the source, Luke</h2>
+
+<figure>
+    <img src="/assets/2019/04/26/sausage.jpg"
+         alt="Discovering how the sausage is made&amp;hellip;" width="400"/> <figcaption>
+            <p>Discovering how the sausage is made&hellip;</p>
+        </figcaption>
+</figure>
+
+
+<p>Looking at the source, I was surprised: while Ansible has individual plugins for different privilege escalation methods, it is entirely up to the individual connection plugin to implement the logic necessary to make use of these mechanisms. I had expected privilege escalation support to be implemented in the base connection plugin (<code>ConnectionBase</code> in <code>lib/ansible/plugins/connection/__init__.py</code>), but it&rsquo;s not.  So while the <a href="https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/connection/ssh.py">ssh plugin</a> has a fairly complex set of logic for handing the <code>become</code> prompt, and the <a href="https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/connection/local.py">local plugin</a> had a relatively simple solution, the <code>docker</code> connection had done.</p>
+
+<p>Fortunately, in many ways the <code>docker</code> plugin is almost identical to the <code>local</code> plugin, which means that rather than doing actual work I was able to largely cut-and-paste the privilege escalation support from the <code>local</code> plugin into the <code>docker</code> plugin.  You can find this work in <a href="https://github.com/ansible/ansible/pull/55816">pull request #55816</a>.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/ansible/">ansible</a>, 
+            
+                <a href="/tags/pull-request/">pull-request</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Adding%20support%20for%20privilege%20escalation%20to%20Ansible%27s%20docker%20connection%20driver&url=http%3a%2f%2fblog.oddbit.com%2fpost%2f2019-04-26-adding-support-for-privilege-e%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

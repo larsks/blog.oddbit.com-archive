@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Private /tmp directories in Fedora &middot; The Odd Bit</title>
+        <meta name="description" content="I ran into an odd problem the other day: I was testing out some configuration changes for a web application by dropping files into /tmp and pointing the application configuration at the appropriate directory. Everything worked out great when testing it by hand&hellip;but when starting up the httpd service, the application behaved as if it was unable to find any of the files in /tmp.
+My first assumption was that had simply missed something obvious like file permissions or that I had a typo in my configuration, but after repeated checks and lots of testing it was obvious that something else was going on.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Private /tmp directories in Fedora</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2012-11-05" itemprop="datePublished">Mon, Nov 5, 2012</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>I ran into an odd problem the other day: I was testing out some
+configuration changes for a web application by dropping files into
+<code>/tmp</code> and pointing the application configuration at the appropriate
+directory.  Everything worked out great when testing it by hand&hellip;but
+when starting up the <code>httpd</code> service, the application behaved as if it
+was unable to find any of the files in <code>/tmp</code>.</p>
+
+<p>My first assumption was that had simply missed something obvious like
+file permissions or that I had a typo in my configuration, but after
+repeated checks and lots of testing it was obvious that something else
+was going on.</p>
+
+<p>Grasping at straws I took a close look at the <code>systemd</code> service file
+for <code>httpd</code>, which looks like this:</p>
+
+<pre><code>[Unit]
+Description=The Apache HTTP Server (prefork MPM)
+After=syslog.target network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/httpd/httpd.pid
+EnvironmentFile=/etc/sysconfig/httpd
+ExecStart=/usr/sbin/httpd $OPTIONS -k start
+ExecReload=/usr/sbin/httpd $OPTIONS -t
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/usr/sbin/httpd $OPTIONS -k stop
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+
+<p>Browsing throught file the following line caught my eye:</p>
+
+<pre><code>PrivateTmp=true
+</code></pre>
+
+<p>If you know about per-process namespaces in Linux, you&rsquo;re probably
+saying &ldquo;Ah-ha!&rdquo;.  If you <em>don&rsquo;t</em> know about per-process namespaces in
+Linux&hellip;you should, because this is the foundation for all sorts of
+things including Linux Containers (<a href="http://lxc.sourceforge.net/">LXC</a>).  Here&rsquo;s some good
+introductory reading:</p>
+
+<ul>
+<li><a href="http://lxr.free-electrons.com/source/Documentation/unshare.txt">http://lxr.free-electrons.com/source/Documentation/unshare.txt</a></li>
+<li><a href="http://www.debian-administration.org/article/628/Per-Process_Namespaces">http://www.debian-administration.org/article/628/Per-Process_Namespaces</a></li>
+<li><a href="http://glandium.org/blog/?p=217">http://glandium.org/blog/?p=217</a></li>
+</ul>
+
+<p>In short, with this configuration in place, the service gets it&rsquo;s very
+own version of <code>/tmp</code> not shared with any other process.  While the
+files I placed in <code>/tmp</code> were visible in <em>my</em> process, they didn&rsquo;t
+exist from the point of view of Apache.</p>
+
+<p>The fix in my case was to place the files somewhere other than <code>/tmp</code>.
+One could also disable the <code>PrivateTmp</code> setting, but it&rsquo;s generally
+turned on for reasons of security.</p>
+
+<p>The <code>PrivateTmp</code> option is documented in <a href="https://docs.fedoraproject.org/en-US/Fedora/17/html/Release_Notes/sect-Release_Notes-Changes_for_Sysadmin.html">Changes in Fedora for System
+Administrators</a>, and Dan Walsh discusses it briefly on
+<a href="http://danwalsh.livejournal.com/51459.html">his blog</a>.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/fedora/">fedora</a>, 
+            
+                <a href="/tags/systemd/">systemd</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Private%20%2ftmp%20directories%20in%20Fedora&url=http%3a%2f%2fblog.oddbit.com%2fpost%2f2012-11-05-fedora-private-tmp%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Posts &middot; The Odd Bit</title>
+        <meta name="description" content="One of these things is not like the others">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+<link rel="alternate" type="application/rss+xml" href="http://blog.oddbit.com/post/rss.xml" title="Posts" />
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div id="post-index" class="container">
+    
+
+
+    <ol class="post-list">
+        
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2012-11-06-moving-from-blogger/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Relocating from Blogger</h4>
+        <time class="post-stub-date" datetime="2012-11-06">Published Tue, Nov 6, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;m in the process of porting over content from Blogger. This may lead to odd formatting or broken links here and there. If you spot something, please let me know.
+If you came here from Google and found a broken link, try starting at the archive and see if you can spot what you were looking for.
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-11-06-moving-from-blogger/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2012-11-05-posting-via-api/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Posting to Scriptogr.am using the API</h4>
+        <time class="post-stub-date" datetime="2012-11-05">Published Mon, Nov 5, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Scriptogr.am has a very simple api that allows one to POST and DELETE articles. POSTing an article will place it in the appropriate Dropbox directory and make it available on your blog all in one step.
+Here is how you could use this API via Curl:
+curl \ -d app_key=$APP_KEY \ -d user_id=$USER_ID \ -d name=&quot;${title:-$1}&quot; \ --data-urlencode text@$tmpfile \ \ http://scriptogr.am/api/article/post/  This assumes that you&rsquo;ve registered for an application key and that you have configured the value into $APP_KEY and your Scriptogr.
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-11-05-posting-via-api/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2012-11-05-fedora-private-tmp/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Private /tmp directories in Fedora</h4>
+        <time class="post-stub-date" datetime="2012-11-05">Published Mon, Nov 5, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I ran into an odd problem the other day: I was testing out some configuration changes for a web application by dropping files into /tmp and pointing the application configuration at the appropriate directory. Everything worked out great when testing it by hand&hellip;but when starting up the httpd service, the application behaved as if it was unable to find any of the files in /tmp.
+My first assumption was that had simply missed something obvious like file permissions or that I had a typo in my configuration, but after repeated checks and lots of testing it was obvious that something else was going on.
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-11-05-fedora-private-tmp/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Automatic configuration of Windows instances in OpenStack, part 1</h4>
+        <time class="post-stub-date" datetime="2012-11-04">Published Sun, Nov 4, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is the first of two articles in which I discuss my work in getting some Windows instances up and running in our OpenStack environment. This article is primarily about problems I encountered along the way.
+Motivations Like many organizations, we have a mix of Linux and Windows in our environment. Some folks in my group felt that it would be nice to let our Windows admins take advantage of OpenStack for prototyping and sandboxing in the same ways our Linux admins can use it.
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Generating random passwords in PowerShell</h4>
+        <time class="post-stub-date" datetime="2012-11-04">Published Sun, Nov 4, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I was looking for PowerShell solutions for generating a random password (in order to set the Administrator password on a Windows instance provisioned in OpenStack), and found several solutions using the GeneratePassword method of System.Web.Security.Membership (documentation here), along the lines of this:
+Function New-RandomComplexPassword ($length=8) { $Assembly = Add-Type -AssemblyName System.Web $password = [System.Web.Security.Membership]::GeneratePassword($length,2) return $password }  While this works, I was unhappy with the generated passwords: they were difficult to type or transcribe because they make heavy use of punctuation.
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Waiting for networking using PowerShell</h4>
+        <time class="post-stub-date" datetime="2012-11-04">Published Sun, Nov 4, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
+There are a number of common solutions proposed to this problem:
+ Just wait for some period of time.
+This can work but it&rsquo;s ugly, and because it doesn&rsquo;t actually verify the network state it can result in things breaking if some problem prevents Windows from pulling a valid DHCP lease.
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Growing a filesystem on a virtual disk</h4>
+        <time class="post-stub-date" datetime="2012-10-24">Published Wed, Oct 24, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Occasionally we will deploy a virtual instance into our KVM infrastructure and realize after the fact that we need more local disk space available. This is the process we use to expand the disk image. This process assumes the following:
+ You&rsquo;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&rsquo;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Parsing XML with Awk</h4>
+        <time class="post-stub-date" datetime="2012-09-10">Published Mon, Sep 10, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Recently, changes from the xmlgawk project have been integrated into GNU awk, and xmlgawk has been renamed to gawkextlib. With both a recent (post-4.0.70) gawk and gawkextlib built and installed correctly, you can write simple XML parsing scripts using gawk.
+For example, let&rsquo;s say you would like to generate a list of disk image files associated with a KVM virtual instance. You can use the virsh dumpxml command to get output like the following:
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2012-08-09-markdown-email/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Markdown in your Email</h4>
+        <time class="post-stub-date" datetime="2012-08-09">Published Thu, Aug 9, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I really like Markdown, a minimal markup language designed to be readable as plain text that can be rendered into structurally valid HTML. Markdown is already used on sites such as GitHub and all the StackExchange sites.
+I use Markdown often enough that it&rsquo;s become ingrained in my fingers, to the point that I&rsquo;ve started unconsciously using Markdown syntax in my email. This isn&rsquo;t particularly useful by itself, although it means that I can take a message and render it to something pretty if I decide it needs to go somewhere other than my sent mail folder.
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-08-09-markdown-email/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2012-07-30-openstack-idle-connection-timeouts/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Chasing OpenStack idle connection timeouts</h4>
+        <time class="post-stub-date" datetime="2012-07-30">Published Mon, Jul 30, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    The original problem I&rsquo;ve recently spent some time working on an OpenStack deployment. I ran into a problem in which the compute service would frequently stop communicating with the AMQP message broker (qpidd).
+In order to gather some data on the problem, I ran the following simple test:
+ Wait n minutes Run nova boot ... to create an instance Wait a minute and see if the new instance becomes ACTIVE If it works, delete the instance, set n = 2n and repeat  This demonstrated that communication was failing after about an hour, which correlates rather nicely with the idle connection timeout on the firewall.
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2012-07-30-openstack-idle-connection-timeouts/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+    </ol>
+
+    <div class="post-navigation">
+        
+
+    <nav class="pagination" role="navigation">
+        <span class="page-number">Page 15 of 18</span>
+        
+            <a class="newer-posts" href="/post/page/14/">&larr; Newer Posts</a>
+        
+        
+            <a class="older-posts" href="/post/page/16/">Older Posts &rarr;</a>
+        
+    </nav>
+
+    </div>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>

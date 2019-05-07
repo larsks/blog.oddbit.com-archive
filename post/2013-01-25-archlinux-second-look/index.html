@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>A second look at Arch Linux &middot; The Odd Bit</title>
+        <meta name="description" content="This is a followup to an earlier post about Arch Linux.
+I&rsquo;ve since spent a little more time working with Arch, and these are the things I like:
+ The base system is very small and has a very short boot time. I replaced Ubuntu on my old Eee PC with Arch and suddenly the boot time is reasonable (&lt; 10 seconds to a text prompt, &lt; 30 seconds to a full GUI login).">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">A second look at Arch Linux</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2013-01-25" itemprop="datePublished">Fri, Jan 25, 2013</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>This is a followup to an <a href="/post/a-first-look-at-arch-linux">earlier post about Arch Linux</a>.</p>
+
+<p>I&rsquo;ve since spent a little more time working with Arch, and these are
+the things I like:</p>
+
+<ul>
+<li><p>The base system is very small and has a very short boot time.  I
+replaced Ubuntu on my old <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC#Eee_900_series">Eee PC</a> with Arch and suddenly the boot
+time is reasonable (&lt; 10 seconds to a text prompt, &lt; 30 seconds to a
+full GUI login).</p></li>
+
+<li><p>I feel better about the Arch installation process after seeing what
+happened to Anaconda (the Fedora installer) in Fedora 18.</p></li>
+
+<li><p>I have been pleasantly surprised at the speed with which bug reports
+have been addressed.</p></li>
+
+<li><p>I really like the fact that Arch has completely converted over to
+<a href="http://www.freedesktop.org/wiki/Software/systemd">systemd</a>.  There are no legacy init scripts, the base system
+relies on the systemd journal for logging, etc.</p></li>
+</ul>
+
+<p>I run a KVM-based virtualization environment at home, and I&rsquo;ve
+switched to Arch on the physical host because of its small footprint
+(and because it tends to have very recent versions of the various
+libvirt-related tools).</p>
+
+<p>Things that still bother me:</p>
+
+<ul>
+<li><p>The <a href="https://aur.archlinux.org/">Arch User Repository</a> is a train wreck.  The fact that
+there are no tools in the standard repositories for working with the
+AUR is a good sign that nobody really trusts it, and despite
+language to the contrary there does not appear to be much movement
+from the AUR in to the Community repository.</p></li>
+
+<li><p>Packages in general are not curated with same care as in Fedora.  It
+is much more common in Arch to find packages that either have broken
+dependencies (e.g., they require a shared library that is not
+actually installed) or they have unreasonably broad dependencies
+(which can happen if a package includes both GUI and command line
+tools, rather than splitting them into separate package).  In
+particular, my experience here highlights the value of (a) the
+automatic dependency mechanisms invoked by <code>rpmbuild</code> (finding
+shared libraries, Python/Perl/Ruby modules required by scripts, etc)
+and (b) the use of a tool such as <code>mock</code> for building packages in a
+&ldquo;pristine&rdquo; environment.</p></li>
+
+<li><p>The average age on <a href="https://wiki.archlinux.org/index.php/IRC_Channel">#archlinux</a> appears to be 13.  I&rsquo;m not sure
+what&rsquo;s up with that (does anyone maintain age demographics for Linux
+distributions?). Do we really need &ldquo;b00bs&rdquo; in the <code>/topic</code>?</p></li>
+</ul>
+
+<p>Also, and this is completely unrelated to anything else, I am terribly
+disappointed that the Arch forums are hosted at
+<a href="http://bbs.archlinux.org">http://bbs.archlinux.org</a> but there is no actual BBS
+(<a href="http://www.synchro.net/">e.g.</a>) running on
+port 23.  Because that would be cool.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=A%20second%20look%20at%20Arch%20Linux&url=http%3a%2f%2fblog.oddbit.com%2fpost%2f2013-01-25-archlinux-second-look%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

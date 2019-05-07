@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Unpacking Docker images with Undocker &middot; The Odd Bit</title>
+        <meta name="description" content="In some ways, the most exciting thing about Docker isn&rsquo;t the ability to start containers. That&rsquo;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
+I was taking a closer at the systemd-nspawn command, which it seems has been developing it&rsquo;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Unpacking Docker images with Undocker</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2015-02-13" itemprop="datePublished">Fri, Feb 13, 2015</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>In some ways, the most exciting thing about <a href="http://docker.com/">Docker</a> isn&rsquo;t the ability
+to start containers.  That&rsquo;s been around for a long time in various
+forms, such as <a href="https://linuxcontainers.org/">LXC</a> or <a href="http://openvz.org/Main_Page">OpenVZ</a>.  What Docker brought to the
+party was a convenient method of building and distributing the
+filesystems necessary for running containers.  Suddenly, it was easy
+to build a containerized service <em>and</em> to share it with other people.</p>
+
+<p>I was taking a closer at the <a href="http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html">systemd-nspawn</a> command, which it
+seems has been developing it&rsquo;s own set of container-related
+superpowers recently, including a number of options for setting up the
+network environment of a container.  Like Docker, <code>systemd-nspawn</code>
+needs a filesystem on which to operate, but <em>unlike</em> Docker, there is
+no convenient distribution mechanism and no ecosystem of existing
+images.  In fact, the official documentation seems to assume that
+you&rsquo;ll be building your own from scratch.  Ain&rsquo;t nobody got time for
+that&hellip;</p>
+
+<p>&hellip;but with that attracting Docker image ecosystem sitting right next
+door, surely there was something we can do?</p>
+
+<h2 id="the-format-of-a-docker-image">The format of a Docker image</h2>
+
+<p>A Docker image is a tar archive that contains a top level
+<code>repositories</code> files, and then a number of layers stored as
+directories containing a <code>json</code> file with some metadata about the
+layer and a tar file named <code>layer.tar</code> with the layer content.  For
+example, if you <code>docker save busybox</code>, you get:</p>
+
+<pre><code>4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125/
+4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125/VERSION
+4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125/json
+4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125/layer.tar
+511136ea3c5a64f264b78b5433614aec563103b4d4702f3ba7d4d2698e22c158/
+511136ea3c5a64f264b78b5433614aec563103b4d4702f3ba7d4d2698e22c158/VERSION
+511136ea3c5a64f264b78b5433614aec563103b4d4702f3ba7d4d2698e22c158/json
+511136ea3c5a64f264b78b5433614aec563103b4d4702f3ba7d4d2698e22c158/layer.tar
+df7546f9f060a2268024c8a230d8639878585defcc1bc6f79d2728a13957871b/
+df7546f9f060a2268024c8a230d8639878585defcc1bc6f79d2728a13957871b/VERSION
+df7546f9f060a2268024c8a230d8639878585defcc1bc6f79d2728a13957871b/json
+df7546f9f060a2268024c8a230d8639878585defcc1bc6f79d2728a13957871b/layer.tar
+ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2/
+ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2/VERSION
+ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2/json
+ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2/layer.tar
+repositories
+</code></pre>
+
+<p>In order to re-create the filesystem that would result from starting a
+Docker container with this image, you need to unpack the <code>layer.tar</code>
+files from the bottom up.  You can find the topmost layer in the
+<code>repositories</code> file, which looks like this:</p>
+
+<p>{
+  &ldquo;busybox&rdquo;: {
+    &ldquo;latest&rdquo;: &ldquo;4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125&rdquo;
+  }
+}</p>
+
+<p>From there, you can investigate the <code>json</code> file for each layer looking
+for the <code>parent</code> tag.</p>
+
+<h2 id="introducing-undocker">Introducing undocker</h2>
+
+<p>I wrote the <a href="http://github.com/larsks/undocker/">undocker</a> command to extract all or part of the layers
+of a Docker image onto the local filesystem.  In other words, if you
+want to use the <code>busybox</code> Docker image, you can fetch and unpack the
+image:</p>
+
+<pre><code># docker pull busybox
+# docker save busybox | undocker -o busybox
+</code></pre>
+
+<p>This will first look in the <code>repositories</code> file for the <code>busybox</code>
+entry with the <code>latest</code> tag, then build the necessary chain of layers
+and unpack them in the correct order.</p>
+
+<p>Once you have the filesystem extracted, you can boot it with
+<code>systemd-nspawn</code>:</p>
+
+<pre><code># systemd-nspawn -D busybox /bin/sh
+Spawning container busybox on /root/busybox.
+Press ^] three times within 1s to kill container.
+Timezone America/New_York does not exist in container, not updating container timezone.
+Failed to copy /etc/resolv.conf to /root/busybox/etc/resolv.conf: Too many levels of symbolic links
+/bin/sh: can't access tty; job control turned off
+/ # 
+</code></pre>
+
+<p>Undocker is able to extract specific layers from the image as well.
+We can get a list of layers with the <code>--layers</code> option:</p>
+
+<pre><code>$ docker save busybox | undocker --layers
+511136ea3c5a64f264b78b5433614aec563103b4d4702f3ba7d4d2698e22c158
+df7546f9f060a2268024c8a230d8639878585defcc1bc6f79d2728a13957871b
+ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2
+4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125
+</code></pre>
+
+<p>And we can extract one or more specific layers with the <code>--layer</code>
+(<code>-l</code>) option:</p>
+
+<pre><code>$ docker save busybox |
+  undocker -vi -o busybox -l ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2
+INFO:undocker:extracting image busybox (4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125)
+INFO:undocker:extracting layer ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2
+</code></pre>
+
+<p>I&rsquo;m using the <code>-i</code> (<code>--ignore-errors</code>) option here because this layer
+contains a device node (<code>/dev/console</code>), and I am running this as an
+unprivileged user.  Without the <code>-i</code> option, we would see:</p>
+
+<pre><code>OSError: [Errno 1] Operation not permitted
+</code></pre>
+
+<p>A Docker image archive can actually contain multiple images, each with
+multiple tags.  For a single image, <code>undocker</code> will default to
+extracting the <code>latest</code> tag.  If the <code>latest</code> tag doesn&rsquo;t exist,
+you&rsquo;ll see:</p>
+
+<pre><code># docker pull fedora:20
+# docker save fedora:20 | undocker -o fedora
+ERROR:undocker:failed to find image fedora with tag latest
+</code></pre>
+
+<p>You can specify an explicit tag in the same way you provide one to
+Docker:</p>
+
+<pre><code># docker save fedora:20 | undocker -o fedora fedora:20
+</code></pre>
+
+<p>If an archive contains multiple images, you&rsquo;ll get a different error:</p>
+
+<pre><code># docker save busybox larsks/thttpd | undocker -o busybox
+ERROR:undocker:No image name specified and multiple images contained in archive
+</code></pre>
+
+<p>You can get a list of available images and tags with the <code>--list</code>
+option:</p>
+
+<pre><code># docker save busybox larsks/thttpd | undocker --list
+larsks/thttpd: latest
+busybox: latest
+
+# docker save fedora | undocker --list
+fedora: heisenbug 20 21 rawhide latest
+</code></pre>
+
+<p>You can specify the image (and tag) to extract on the command line:</p>
+
+<pre><code># docker save busybox larsks/thttpd | undocker -o busybox busybox
+</code></pre>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/docker/">docker</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Unpacking%20Docker%20images%20with%20Undocker&url=http%3a%2f%2fblog.oddbit.com%2fpost%2f2015-02-13-unpacking-docker-images%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

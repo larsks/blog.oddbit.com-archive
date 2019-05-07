@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Docker vs. PrivateTmp &middot; The Odd Bit</title>
+        <meta name="description" content="While working with Docker the other day, I ran into an undesirable interaction between Docker and systemd services that utilize the PrivateTmp directive.
+The PrivateTmp directive, if true, &ldquo;sets up a new file system namespace for the executed processes and mounts private /tmp and /var/tmp directories inside it that is not shared by processes outside of the namespace&rdquo;. This is a great idea from a security perspective, but can cause some unanticipated consequences.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Docker vs. PrivateTmp</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2015-01-18" itemprop="datePublished">Sun, Jan 18, 2015</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>While working with Docker <a href="http://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/">the other day</a>, I ran into an
+undesirable interaction between Docker and <a href="http://www.freedesktop.org/wiki/Software/systemd/">systemd</a> services that
+utilize the <code>PrivateTmp</code> directive.</p>
+
+<p>The <a href="http://www.freedesktop.org/software/systemd/man/systemd.exec.html#PrivateTmp=">PrivateTmp</a> directive, if <code>true</code>, &ldquo;sets up a new file system
+namespace for the executed processes and mounts private <code>/tmp</code> and
+<code>/var/tmp</code> directories inside it that is not shared by processes outside
+of the namespace&rdquo;.  This is a great idea from a <a href="https://danwalsh.livejournal.com/51459.html">security
+perspective</a>, but can cause some unanticipated consequences.</p>
+
+<h2 id="the-problem-in-a-nutshell">The problem in a nutshell</h2>
+
+<ol>
+<li><p>Start a Docker container:</p>
+
+<pre><code># cid=$(docker run -d larsks/thttpd)
+# echo $cid
+e68df3f45d6151259ce84a0e467a3117840084e99ef3bbc654b33f08d2d6dd62
+</code></pre></li>
+
+<li><p>See the <code>devicemapper</code> mountpoint created by Docker for the
+container:</p>
+
+<pre><code># grep devicemapper/mnt /proc/mounts
+/dev/mapper/docker-253:6-98310-e68df3f45d6151259ce84a0e467a3117840084e99ef3bbc654b33f08d2d6dd62 /var/lib/docker/devicemapper/mnt/e68df3f45d6151259ce84a0e467a3117840084e99ef3bbc654b33f08d2d6dd62 ext4 rw,context=&quot;system_u:object_r:svirt_sandbox_file_t:s0:c261,c1018&quot;,relatime,discard,stripe=16,data=ordered 0 0
+</code></pre></li>
+
+<li><p>Now restart a service &ndash; any service! &ndash; that has
+<code>PrivateTmp=true</code>:</p>
+
+<pre><code># systemctl restart systemd-machined
+</code></pre></li>
+
+<li><p>Get the PID for that service:</p>
+
+<pre><code># systemctl status systemd-machined | grep PID
+ Main PID: 18698 (systemd-machine
+</code></pre></li>
+
+<li><p>And see that the mount created by the Docker &ldquo;devicemapper&rdquo; storage
+driver is visible inside the mount namespace for this process:</p>
+
+<pre><code># grep devicemapper/mnt /proc/18698/mounts
+/dev/mapper/docker-253:6-98310-e68df3f45d6151259ce84a0e467a3117840084e99ef3bbc654b33f08d2d6dd62 /var/lib/docker/devicemapper/mnt/e68df3f45d6151259ce84a0e467a3117840084e99ef3bbc654b33f08d2d6dd62 ext4 rw,context=&quot;system_u:object_r:svirt_sandbox_file_t:s0:c261,c1018&quot;,relatime,discard,stripe=16,data=ordered 0 0
+</code></pre></li>
+
+<li><p>Attempt to destroy the container:</p>
+
+<pre><code># docker rm -f $cid
+</code></pre></li>
+
+<li><p>Watch Docker fail to destroy the container because it is unable to
+remove the mountpoint directory:</p>
+
+<pre><code>Jan 17 22:43:03 pk115wp-lkellogg docker-1.4.1-dev[18239]:
+time=&quot;2015-01-17T22:43:03-05:00&quot; level=&quot;error&quot; msg=&quot;Handler for DELETE
+/containers/{name:.*} returned error: Cannot destroy container e68df3f45d61:
+Driver devicemapper failed to remove root filesystem
+e68df3f45d6151259ce84a0e467a3117840084e99ef3bbc654b33f08d2d6dd62: Device is
+Busy&quot;
+</code></pre></li>
+
+<li><p>Because while that mount is gone from the global namespace:</p>
+
+<pre><code># grep devicemapper/mnt /proc/mounts
+</code></pre></li>
+
+<li><p>It still exists inside the mount namespace for the service we restarted:</p>
+
+<pre><code># grep devicemapper/mnt /proc/18698/mounts
+/dev/mapper/docker-253:6-98310-e68df3f45d6151259ce84a0e467a3117840084e99ef3bbc654b33f08d2d6dd62 /var/lib/docker/devicemapper/mnt/e68df3f45d6151259ce84a0e467a3117840084e99ef3bbc654b33f08d2d6dd62 ext4 rw,context=&quot;system_u:object_r:svirt_sandbox_file_t:s0:c261,c1018&quot;,relatime,discard,stripe=16,data=ordered 0 0
+</code></pre></li>
+
+<li><p>To resolve this problem, restart the service holding the mount open:</p>
+
+<p># systemctl restart systemd-machined</p></li>
+</ol>
+
+<p>Now the mountpoint can be deleted.</p>
+
+<h2 id="it-s-not-just-docker">It&rsquo;s not just Docker</h2>
+
+<p>While I ran into this problem while working with Docker, there is
+nothing particularly Docker-specific about the problem.  You can
+replicate this behavior by hand without involving either <code>systemd</code> or
+Docker:</p>
+
+<ol>
+<li><p>Create a parent mountpoint, and make it private:</p>
+
+<pre><code># mkdir /tmp/parent /tmp/parent-backing
+# mount --bind --make-private /tmp/parent-backing /tmp/parent
+</code></pre></li>
+
+<li><p>Create a private mount on a directory <em>inside</em> <code>/tmp/parent</code>:</p>
+
+<pre><code># mkdir /tmp/testmount /tmp/parent/mnt
+# mount --bind --make-private /tmp/testmount /tmp/parent/mnt
+# grep /tmp/parent/mnt /proc/self/mounts
+tmpfs /tmp/parent/mnt tmpfs rw,seclabel 0 0
+</code></pre></li>
+
+<li><p>In another window, create a new mount namespace using <code>unshare</code>:</p>
+
+<pre><code># unshare -m env PS1='unshare# ' bash
+unshare#
+</code></pre></li>
+
+<li><p>Unmount <code>/tmp/parent/mnt</code> in the global namespace:</p>
+
+<pre><code># umount /tmp/parent/mnt
+# grep /tmp/parent/mnt /proc/self/mounts
+#
+</code></pre></li>
+
+<li><p>Try to delete the mountpoint directory:</p>
+
+<pre><code># rmdir /tmp/parent/mnt
+rmdir: failed to remove ‘/tmp/parent/mnt’: Device or resource busy
+</code></pre></li>
+
+<li><p>See that the mount still exists in your <code>unshare</code> namespace:</p>
+
+<pre><code>unshare# grep /tmp/parent/mnt /proc/self/mounts
+tmpfs /tmp/parent/mnt tmpfs rw,seclabel 0 0
+</code></pre></li>
+</ol>
+
+<h2 id="so-what-s-going-on-here">So what&rsquo;s going on here?</h2>
+
+<p>To understand what&rsquo;s going on in these examples, you probably want to
+start by at least glancing through the <a href="https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt">sharedsubtree.txt</a> kernel
+documentation.</p>
+
+<p>The Docker <code>devicemapper</code> driver creates a <em>private</em> mount on
+<code>/var/lib/docker/devicemapper</code>.  A <em>private</em> mount is one that does
+not propagate mount operations between parent and child mount
+namespaces.</p>
+
+<p>Container filesystems are mounted underneath
+<code>/var/lib/docker/devicemapper/mnt</code>, e.g:</p>
+
+<pre><code>    /dev/mapper/docker-253:6-98310-e68df3f45d6151259ce84a0e467a3117840084e99ef3bbc654b33f08d2d6dd62 /var/lib/docker/devicemapper/mnt/e68df3f45d6151259ce84a0e467a3117840084e99ef3bbc654b33f08d2d6dd62 ext4 rw,context=&quot;system_u:object_r:svirt_sandbox_file_t:s0:c261,c1018&quot;,relatime,discard,stripe=16,data=ordered 0 0
+</code></pre>
+
+<p>When you create a new mount namespace as a child of the global mount
+namespace, either via the <code>unshare</code> command or by starting a systemd
+service with <code>PrivateTmp=true</code>, it inherits these private mounts.
+When Docker unmounts the the container filesystem in the global
+namespace, the fact that the <code>/var/lib/docker/devicemapper</code> mountpoint
+is marked <em>private</em> means that the unmount operation does not
+propagate to other namespaces.</p>
+
+<h2 id="the-solution">The solution</h2>
+
+<p>The simplest solution to this problem is to set the <code>MountFlags=slave</code>
+option in the <code>docker.service</code> file:</p>
+
+<pre><code>MountFlags=slave
+</code></pre>
+
+<p>This will cause SystemD to run Docker in a cloned mount namespace and
+sets the <code>MS_SLAVE</code> flag on all mountpoints; it is effectively
+equivalent to:</p>
+
+<pre><code># unshare -m
+# mount --make-rslave /
+</code></pre>
+
+<p>With this change, mounts performed by Docker will not be visible in
+the global mount namespace, and they will thus not propagate into the
+mount namespaces of other services.</p>
+
+<h2 id="not-necessarily-the-solution">Not necessarily the solution</h2>
+
+<p>There was an <a href="http://pkgs.fedoraproject.org/cgit/docker-io.git/commit/?id=6c9e373ee06cb1aee07d3cae426c46002663010d">attempt to fix this problem</a> committed to the Fedora
+<code>docker-io</code> package that set <code>MountFlags=private</code>.  This will prevent
+the symptoms I originally encountered, in which Docker is unable to
+remove a mountpoint because it is still held open by another mount
+namespace&hellip;</p>
+
+<p>&hellip;but it will result in behavior that might be confusing to a system
+administrator.  Specifically, mounts made in the global mount
+namespace after Docker starts will not be visible to Docker
+containers.  This means that if you were to make a remote filesystem
+available on your Docker host:</p>
+
+<pre><code># mount my-fileserver:/vol/webcontent /srv/content
+</code></pre>
+
+<p>And then attempt to bind that into a Docker container as a volume:</p>
+
+<pre><code># docker run -v /srv/content:/content larsks/thttpd -d /content
+</code></pre>
+
+<p>Your content would not be visible.  The mount of
+<code>my-fileserver:/vol/webcontent</code> would not propagate from the global
+namespace into the Docker mount namespace because of the <em>private</em>
+flag.</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>I had some help figuring this out.  Thanks to <a href="https://en.wikipedia.org/wiki/Lennart_Poettering">Lennart Poettering</a>,
+Andrey Borzenkov, and <a href="http://blog.verbum.org/">Colin Walters</a>.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/docker/">docker</a>, 
+            
+                <a href="/tags/systemd/">systemd</a>, 
+            
+                <a href="/tags/namespaces/">namespaces</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Docker%20vs.%20PrivateTmp&url=http%3a%2f%2fblog.oddbit.com%2fpost%2f2015-01-18-docker-vs-privatetmp%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

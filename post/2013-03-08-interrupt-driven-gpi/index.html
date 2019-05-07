@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Interrupt driven GPIO with Python &middot; The Odd Bit</title>
+        <meta name="description" content="There are several Python libraries out there for interacting with the GPIO pins on a Raspberry Pi:
+ RPi.GPIO The WiringPi bindings for Python, and The Quick2Wire Python API (which depends on Python 3)  All of them are reasonably easy to use, but the Quick2Wire API provides a uniquely useful feature: epoll-enabled GPIO interrupts. This makes it trivial to write code that efficiently waits for and responds to things like button presses.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Interrupt driven GPIO with Python</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2013-03-08" itemprop="datePublished">Fri, Mar 8, 2013</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>There are several Python libraries out there for interacting with the
+<a href="https://en.wikipedia.org/wiki/General_Purpose_Input/Output">GPIO</a> pins on a Raspberry Pi:</p>
+
+<ul>
+<li><a href="https://pypi.python.org/pypi/RPi.GPIO">RPi.GPIO</a></li>
+<li>The <a href="https://github.com/WiringPi/WiringPi-Python">WiringPi</a> bindings for Python, and</li>
+<li>The <a href="https://github.com/quick2wire/quick2wire-python-api">Quick2Wire</a> Python API (which depends on Python 3)</li>
+</ul>
+
+<p>All of them are reasonably easy to use, but the Quick2Wire API
+provides a uniquely useful feature: <code>epoll</code>-enabled GPIO interrupts.
+This makes it trivial to write code that efficiently waits for and
+responds to things like button presses.</p>
+
+<p>The following simple example waits for a button press attached to
+<code>GPIO1</code> (but refer to the chart in <a href="https://projects.drogon.net/raspberry-pi/wiringpi/pins/">this document</a> to see
+exactly what that means; this is pin 12 on a Raspberry Pi v2 board)
+and lights an LED attached to <code>GPIO0</code> when the button is pressed:</p>
+
+<pre><code>#!/usr/bin/env python3
+
+import select
+from quick2wire.gpio import pins, In, Out, Rising, Falling, Both
+
+button1 = pins.pin(0, direction=In, interrupt=Both)
+led = pins.pin(1, direction=Out)
+
+with button1,led:
+    epoll = select.epoll()
+    epoll.register(button1, select.EPOLLIN|select.EPOLLET)
+    while True:
+        events = epoll.poll()
+        for fileno, event in events:
+            if fileno == button1.fileno():
+                print('BUTTON 1!', button1.value)
+                led.value = button1.value
+</code></pre>
+
+<p>There is also a <code>Selector</code> class that makes the <code>epoll</code> interface a
+little easier to use.  The following code is equivalent to the above
+<code>epoll</code> example:</p>
+
+<pre><code>#!/usr/bin/env python3
+
+from quick2wire.gpio import pins, In, Out, Both
+from quick2wire.selector import Selector
+
+button1 = pins.pin(0, direction=In, interrupt=Both)
+led = pins.pin(1, direction=Out)
+
+with button1, led, Selector(1) as selector:
+    selector.add(button1)
+    while True:
+        selector.wait()
+        if selector.ready == button1:
+            print('BUTTON 1!', button1.value)
+            led.value = button1.value
+</code></pre>
+
+<p>The <code>selector</code> module includes a <code>Timer</code> class that lets you add
+one-shot or repeating timers to a <code>Selector</code>.  The following example
+will light the LED for one second after the button is pressed, unless
+the button is pressed again, in which case the LED will go out
+immediately:</p>
+
+<pre><code>#!/usr/bin/env python3
+
+from quick2wire.gpio import pins, In, Out, Both
+from quick2wire.selector import Selector, Timer
+
+button1 = pins.pin(0, direction=In, interrupt=Both)
+led = pins.pin(1, direction=Out)
+active = False
+
+with button1, led, \
+        Selector(1) as selector, \
+        Timer(offset=2) as timer:
+
+    selector.add(button1)
+    selector.add(timer)
+
+    while True:
+        selector.wait()
+        if selector.ready == button1:
+            print('BUTTON 1!', button1.value, active)
+
+            if button1.value:
+                if active:      
+                    active = False      
+                    led.value = 0       
+                    timer.stop()        
+                else:           
+                    active = True       
+                    led.value = 1       
+                    timer.start()       
+
+        if selector.ready == timer:
+            if active:  
+                active = False  
+                led.value = 0   
+</code></pre>
+
+<p>All of these examples rely on Python&rsquo;s <a href="http://docs.python.org/3/reference/compound_stmts.html#the-with-statement">with statement</a>.  If you&rsquo;re
+unfamiliar with <code>with</code>, you can find more information [here]<a href="http://docs.python.org/3/reference/compound_stmts.html#the-with-statement">with
+statement</a>.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/raspberrypi/">raspberrypi</a>, 
+            
+                <a href="/tags/hardware/">hardware</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Interrupt%20driven%20GPIO%20with%20Python&url=http%3a%2f%2fblog.oddbit.com%2fpost%2f2013-03-08-interrupt-driven-gpi%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

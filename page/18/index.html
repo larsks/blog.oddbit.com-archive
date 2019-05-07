@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>The Odd Bit &middot; The Odd Bit</title>
+        <meta name="description" content="One of these things is not like the others">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+<link rel="alternate" type="application/rss+xml" href="http://blog.oddbit.com/rss.xml" title="The Odd Bit" />
+<link rel="alternate" type="application/atom+xml" href="http://blog.oddbit.com/atom.xml" title="The Odd Bit" />
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div id="post-index" class="container" itemscope="" itemtype="https://schema.org/Blog">
+    
+
+
+    <ol class="post-list">
+        
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Blocking VNC with iptables</h4>
+        <time class="post-stub-date" datetime="2010-02-04">Published Thu, Feb 4, 2010</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    VNC clients use the RFB protocol to provide virtual display capabilities. The RFB protocol, as implemented by most clients, provides very poor authentication options. While passwords are not actually sent &ldquo;in the clear&rdquo;, it is possible to brute force them based on information available on the wire. The RFB 3.x protocol limits passwords to a maximum of eight characters, so the potential key space is relatively small.
+It&rsquo;s possible to securely connect to a remote VNC server by tunneling your connection using ssh port forwarding (or setting up some sort of SSL proxy).
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">NFS and the 16-group limit</h4>
+        <time class="post-stub-date" datetime="2010-02-02">Published Tue, Feb 2, 2010</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I learned something new today: it appears that the underlying authorization mechanism used by NFS limits your group membership to 16 groups. From http://bit.ly/cBhU8N:
+ NFS is built on ONC RPC (Sun RPC). NFS depends on RPC for authentication and identification of users. Most NFS deployments use an RPC authentication flavor called AUTH_SYS (originally called AUTH_UNIX, but renamed to AUTH_SYS).
+AUTH_SYS sends 3 important things:
+  A 32 bit numeric user identifier (what you&rsquo;d see in the UNIX /etc/passwd file) A 32 bit primary numeric group identifier (ditto) A variable length list of up to 16 32-bit numeric supplemental group identifiers (what&rsquo;d you see in the /etc/group file)    We ran into this today while diagnosing a weird permissions issue.
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Cleaning up Subversion with Git</h4>
+        <time class="post-stub-date" datetime="2010-01-29">Published Fri, Jan 29, 2010</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Overview At my office, we have a crufty Subversion repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.
+What we want to do is move a project from a path that looks like this:
+.../projects/some-project-name  To a new repository using the recommended Subversion repository layout, like this:
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Linux UPnP Gateway</h4>
+        <time class="post-stub-date" datetime="2010-01-29">Published Fri, Jan 29, 2010</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Like many other folks out there, I have several computers in my house connected to the outside world via a Linux box acting as a NAT gateway. I often want to use application such as BitTorrent and Freenet, which require that a number of ports be forwarded from my external connection to the particular computer on which I happen to be working. It turns out there&rsquo;s a protocol for this, called UPnP.
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2010-01-29-retrieving-blogger-posts-by-post-id/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Retrieving Blogger posts by post id</h4>
+        <time class="post-stub-date" datetime="2010-01-29">Published Fri, Jan 29, 2010</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I spent some time recently trying to figure out, using Google&rsquo;s gdata API, how to retrieve a post from a Blogger blog if I know corresponding post id. As far as I can tell there is no obvious way of doing this, at least not using the gdata.blogger.client api, but after much nashing of teeth I came up with the following solution.
+Given client, a gdata.blogger.client instance, and blog, a gdata.
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2010-01-29-retrieving-blogger-posts-by-post-id/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="http://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Fring: How not to handle registration</h4>
+        <time class="post-stub-date" datetime="2010-01-24">Published Sun, Jan 24, 2010</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I thought I&rsquo;d give Fring a try after seeing some favorable reviews on other sites. If you haven&rsquo;t previously heard of Fring, the following blurb from their website might be helpful:
+ Using your handset&rsquo;s internet connection, you can interact with friends on all your favourite social networks including Skype, MSN Messenger, Google Talk, ICQ, SIP, Twitter, Yahoo! and AIM. You can listen to music with your Last.fm friends, check out what each other are up to on Facebook, receive alerts of new Google Mail and tailor make your very own fring by adding more cool experiences from fringAdd-ons
+    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/">(more)</a></span>
+    </p>
+    
+</li>
+
+
+        
+    </ol>
+
+    <div class="post-navigation">
+        
+
+    <nav class="pagination" role="navigation">
+        <span class="page-number">Page 18 of 18</span>
+        
+            <a class="newer-posts" href="/page/17/">&larr; Newer Posts</a>
+        
+        
+    </nav>
+
+    </div>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

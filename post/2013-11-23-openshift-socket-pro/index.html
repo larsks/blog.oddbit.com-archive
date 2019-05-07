@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sockets on OpenShift &middot; The Odd Bit</title>
+        <meta name="description" content="In this article, a followup to my previous post regarding long-poll servers and Python, we investigate the code changes that were necessary to make the code work when deployed on OpenShift.
+In the previous post, we implemented IO polling to watch for client disconnects at the same time we were waiting for messages on a message bus:
+poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.POLLIN) events = dict(poll.poll()) . . .">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Sockets on OpenShift</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2013-11-23" itemprop="datePublished">Sat, Nov 23, 2013</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>In this article, a followup to my <a href="http://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/">previous post</a> regarding
+long-poll servers and Python, we investigate the code changes that
+were necessary to make the code work when deployed on OpenShift.</p>
+
+<!-- more -->
+
+<p>In the previous post, we implemented IO polling to watch for client
+disconnects at the same time we were waiting for messages on a message
+bus:</p>
+
+<pre><code>poll = zmq.Poller()
+poll.register(subsock, zmq.POLLIN)
+poll.register(rfile, zmq.POLLIN)
+
+events = dict(poll.poll())
+
+.
+.
+.
+</code></pre>
+
+<p>If you were to try this at home, you would find that everything worked
+as described&hellip;but if you were to deploy the same code to OpenShift,
+you would find that the problem we were trying to solve (the server
+holding file descriptors open after a client disconnected) would still
+exist.</p>
+
+<p>So, what&rsquo;s going on here?  I spent a chunk of time trying to figure
+this out myself.  I finally found <a href="https://www.openshift.com/blogs/paas-websockets">this post</a> by
+Marak Jelen discussing issues with <a href="http://en.wikipedia.org/wiki/WebSocket">websockets</a> in OpenShift, which
+says, among other things:</p>
+
+<blockquote>
+<p>For OpenShift as a PaaS provider, WebSockets were a big challenge.
+The routing layer that sits between the user&rsquo;s browser and your
+application must be able to route and handle WebSockets. OpenShift
+uses Apache as a reverse proxy server and a main component to route
+requests throughout the platform. However, Apache&rsquo;s mod_proxy has
+been problematic with WebSockets, so OpenShift implemented a new
+Node.js based routing layer that provides scalability and the
+possibility to expand features provided to our users.</p>
+</blockquote>
+
+<p>In order to work around these problems, an alternate <a href="http://nodejs.org/">Node.js</a> based
+front-end has been deployed on port 8000.  So if your application is
+normally available at <code>http://myapplication-myname.rhcloud.com</code>, you
+can also access it at <code>http://myapplication-myname.rhcloud.com:8000</code>.</p>
+
+<p>Not unexpectedly, it seems that the same things that can cause
+difficulties with WebSockets connections can also interfere with the
+operation of a long-poll server.  The root of the problem is that your
+service running on OpenShift never receives notifications of client
+disconnects.  You can see this by opening up a connection to your
+service.  Assuming that you&rsquo;ve deployed the <a href="https://github.com/larsks/pubsub_example/">pubsub example</a>, you
+can run something like this:</p>
+
+<pre><code>$ curl http://myapplication-myname.rhcloud.com/sub
+</code></pre>
+
+<p>Leave the connection open and <a href="https://www.openshift.com/developers/remote-access">log in to your OpenShift
+instance</a>.  Run <code>netstat</code> to see the existing connection:</p>
+
+<pre><code>$ netstat -tan |
+  grep $OPENSHIFT_PYTHON_IP |
+  grep $OPENSHIFT_PYTHON_PORT |
+  grep ESTABLISHED
+tcp        0      0 127.6.26.1:15368            127.6.26.1:8080             ESTABLISHED 
+tcp        0      0 127.6.26.1:8080             127.6.26.1:15368            ESTABLISHED 
+</code></pre>
+
+<p>Now close your client, and re-run the <code>netstat</code> command on your
+OpenShift instance.  You will find that the client connection  from
+the front-end proxies to your server is still active.  Because the
+server never receives any notification that the client has closed the
+connection, no amount of <code>select</code> or <code>poll</code> or anything else will
+solve this problem.</p>
+
+<p>Now, try the same experiment using port 8000.  That is, run:</p>
+
+<pre><code>$ curl http://myapplication-myname.rhcloud.com:8000/sub
+</code></pre>
+
+<p>Verify that when you close your client, the connection is long evident
+in your server.  This means that we need to modify our JavaScript code
+to poll using port 8000, which is why in <a href="https://github.com/larsks/pubsub_example/blob/master/static/pubsub.js">pubsub.js</a> you will find
+the following:</p>
+
+<pre><code>if (using_openshift) {
+        poll_url = location.protocol + &quot;//&quot; + location.hostname + &quot;:8000/sub&quot;;
+} else {
+        poll_url = &quot;/sub&quot;;
+}
+</code></pre>
+
+<h2 id="but-wait-there-s-more">But wait, there&rsquo;s more!</h2>
+
+<p>If you were to deploy the above code with no other changes, you would
+find a mysterious problem: even though your JavaScript console would
+show that your code was successfully polling the server, your client
+would never update.  This is because by introducing an alternate port
+number to the poll operation you are now running afoul of your
+brower&rsquo;s <a href="http://en.wikipedia.org/wiki/Same-origin_policy">same origin policy</a>, a security policy that restricts
+JavaScript in your browser from interacting with sites other than the
+one from which the script was loaded.</p>
+
+<p>The <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> standard introduces a mechanism to work around this
+restriction.  An HTTP response can contain additional access control
+headers that instruct your browser to permit access to the resource from
+a select set of other origins.  The header is called
+<code>Access-Control-Alliow-Origin</code>, and you will find it in the <a href="https://github.com/larsks/pubsub_example/">pubsub
+example</a> in <a href="https://github.com/larsks/pubsub_example/blob/master/pubsub.py">pubsub.py</a>:</p>
+
+<pre><code>    if using_openshift:
+        bottle.response.headers['Access-Control-Allow-Origin'] = '*'
+</code></pre>
+
+<p>With this header in place, your JavaScript can poll your
+OpenShift-hosted application on port 8000 and everything will work as
+expected&hellip;</p>
+
+<p>&hellip;barring bugs in my code, which, if discovered, should be reported
+<a href="https://github.com/larsks/pubsub_example/issues">here</a>.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/openshift/">openshift</a>, 
+            
+                <a href="/tags/javascript/">javascript</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Sockets%20on%20OpenShift&url=http%3a%2f%2fblog.oddbit.com%2fpost%2f2013-11-23-openshift-socket-pro%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

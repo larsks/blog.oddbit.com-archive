@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fedora and OVS Bridge Interfaces &middot; The Odd Bit</title>
+        <meta name="description" content="I run OpenStack on my laptop, and I&rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
+This is the network configuration file for br-ex on my system:
+DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Fedora and OVS Bridge Interfaces</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2014-05-20" itemprop="datePublished">Tue, May 20, 2014</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>I run OpenStack on my laptop, and I&rsquo;ve been chasing down a pernicious
+problem with OVS bridge interfaces under both F19 and F20.  My
+OpenStack environment relies on an OVS bridge device named <code>br-ex</code> for
+external connectivity and for making services available to OpenStack
+instances, but after rebooting, <code>br-ex</code> was consistently unconfigured,
+which caused a variety of problems.</p>
+
+<p>This is the network configuration file for <code>br-ex</code> on my system:</p>
+
+<pre><code>DEVICE=br-ex
+DEVICETYPE=ovs
+TYPE=OVSBridge
+BOOTPROT=static
+IPADDR=192.168.200.1
+NETMASK=255.255.255.0
+ONBOOT=yes
+NM_CONTROLLED=no
+ZONE=openstack
+</code></pre>
+
+<p>Running <code>ifup br-ex</code> would also fail to configure the interface, but
+running <code>ifdown br-ex; ifup br-ex</code> would configure things
+appropriately.</p>
+
+<p>I finally got fed up with this behavior and spent some time chasing
+down the problem, and this is what I found:</p>
+
+<ul>
+<li>Calling <code>ifup br-ex</code> passes control to
+<code>/etc/sysconfig/network-scripts/ifup-ovs</code>.</li>
+
+<li><p><code>ifup-ovs</code> calls the <code>check_device_down</code> function from
+<code>network-functions</code>, which looks like:</p>
+
+<pre><code>check_device_down ()
+{
+     [ ! -d /sys/class/net/$1 ] &amp;&amp; return 0
+     if LC_ALL=C ip -o link show dev $1 2&gt;/dev/null | grep -q &quot;,UP&quot; ; then
+        return 1
+     else
+        return 0
+     fi
+}
+</code></pre></li>
+</ul>
+
+<p>This returns failure (=1) if the interface flags contain <code>,UP</code>.
+Unfortunately, since information about this device is stored
+persistently in <code>ovsdb</code>, the device is already <code>UP</code> when <code>ifup</code> is
+called, which causes <code>ifup-ovs</code> to skip further device
+configuration.  The logic that calls <code>check_device_down</code> looks like
+this:</p>
+
+<pre><code>if check_device_down &quot;${DEVICE}&quot;; then
+        ovs-vsctl -t ${TIMEOUT} -- --may-exist add-br &quot;$DEVICE&quot; $OVS_OPTIONS \
+        ${OVS_EXTRA+-- $OVS_EXTRA} \
+        ${STP+-- set bridge &quot;$DEVICE&quot; stp_enable=&quot;${STP}&quot;}
+else
+        OVSBRIDGECONFIGURED=&quot;yes&quot;
+fi
+</code></pre>
+
+<p>This sets <code>OVSBRIDGECONFIGURED</code> if it believes the device is <code>UP</code>,
+which causes <code>ifup-ovs</code> to skip the call to <code>ifup-eth</code> to configure
+the interface:</p>
+
+<pre><code>if [ &quot;${OVSBOOTPROTO}&quot; != &quot;dhcp&quot; ] &amp;&amp; [ -z &quot;${OVSINTF}&quot; ] &amp;&amp; \
+        [ &quot;${OVSBRIDGECONFIGURED}&quot; != &quot;yes&quot; ]; then
+        ${OTHERSCRIPT} ${CONFIG}
+fi
+</code></pre>
+
+<p>I have found that the simplest solution to this problem is to disable
+the logic that sets <code>OVSBRIDGECONFIGURED</code>, by changing this:</p>
+
+<pre><code>else
+        OVSBRIDGECONFIGURED=&quot;yes&quot;
+fi
+</code></pre>
+
+<p>To this:</p>
+
+<pre><code>else
+        : OVSBRIDGECONFIGURED=&quot;yes&quot;
+fi
+</code></pre>
+
+<p>With this change in place, <code>br-ex</code> is correctly configured after a
+reboot.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/fedora/">fedora</a>, 
+            
+                <a href="/tags/openstack/">openstack</a>, 
+            
+                <a href="/tags/openvswitch/">openvswitch</a>, 
+            
+                <a href="/tags/networking/">networking</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Fedora%20and%20OVS%20Bridge%20Interfaces&url=http%3a%2f%2fblog.oddbit.com%2fpost%2f2014-05-20-fedora-and-ovs-bridge-interfac%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

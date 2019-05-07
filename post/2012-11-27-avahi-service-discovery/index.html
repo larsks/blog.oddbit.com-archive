@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Service discovery in the cloud using Avahi &middot; The Odd Bit</title>
+        <meta name="description" content="I&rsquo;m been writing a provisioning tool for OpenStack recently, and I&rsquo;ve put together a demo configuration that installs a simple cluster consisting of three backend nodes and a front-end http proxy. I needed a way for the backend servers to discover the ip address of the frontend server. Since in my target environment everything would be on the same layer-2 network segment, service discovery with multicast DNS (mDNS) seemed like the way to go.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg">GPG Key</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Service discovery in the cloud using Avahi</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2012-11-27" itemprop="datePublished">Tue, Nov 27, 2012</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>I&rsquo;m been writing <a href="http://github.com/larsks/drifter">a provisioning tool</a> for OpenStack
+recently, and I&rsquo;ve put together a demo configuration that installs a
+simple cluster consisting of three backend nodes and a front-end http
+proxy.  I needed a way for the backend servers to discover the ip
+address of the frontend server.  Since in my target environment
+everything would be on the same layer-2 network segment, service
+discovery with multicast DNS (mDNS) seemed like the way to go.</p>
+
+<p><a href="http://avahi.org/">Avahi</a> is the canonical mDNS implementation for Linux, and it comes
+with command-line tools for interacting with the Avahi server.  There
+is also a DBUS interface and appropriate Python bindings for taking
+advantage of it.</p>
+
+<p>It is relatively simple to publish a service with Avahi; you can
+simply drop an XML file into <code>/etc/avahi/services</code> and you&rsquo;re done.
+Discovering services on the client is a little bit more complicated.
+Doing it right would involve a chunk of code that interacts with DBUS
+in an event-driven environment with lots of callbacks.  It seemed like
+a big hammer for my little problem, so I ended up parsing the output
+of <code>avahi-browse</code> instead.  This turns out to be a little tricker than
+you might think, since:</p>
+
+<ul>
+<li>The master node might come up <em>after</em> the backend nodes, so we need
+to wait for it to publish the service registration.</li>
+<li>The registration process on the backends might run before the local
+<code>avahi-daemon</code> has started.</li>
+</ul>
+
+<p>The <code>-p</code> flag to <code>avahi-browse</code> produces parsable output, like this:</p>
+
+<pre><code>$ avahi-browse -p _http._tcp
++;eth0;IPv4;master-cluster-lars;Web Site;local
+</code></pre>
+
+<p>The <code>-r</code> flag performs name-&gt;address resolution:</p>
+
+<pre><code>$ avahi-browse -rp _http._tcp
++;eth0;IPv4;master-cluster-lars;Web Site;local
+=;eth0;IPv4;master-cluster-lars;Web Site;local;master.local;172.16.10.56;80;
+</code></pre>
+
+<p>The <code>-t</code> flag asks <code>avahi-browse</code> to terminate after receiving &ldquo;all&rdquo;
+entries, and <code>-f</code> causes <code>avahi-browse</code> to retry a connection to
+<code>avahi-daemon</code> rather than failing if the daemon is not available. Pu
+tall together, we get:</p>
+
+<pre><code>$ avahi-browse -rptf _http._tcp
+</code></pre>
+
+<p>We can use <code>awk</code> to get the information we need, and <code>timeout</code> from
+GNU coreutils to take care of the situation I encountered in which
+<code>avahi-browse</code> would never exit.</p>
+
+<p>The final solution look something like this:</p>
+
+<pre><code>master_name=&quot;master-cluster-lars&quot;
+
+while ! [ &quot;$master_ip&quot; ] ; do
+  master_ip=$(timeout 5 avahi-browse -rptf _http._tcp |
+    awk -F';' -vmaster_name=&quot;$master_name&quot; '
+      $1 == &quot;=&quot; &amp;&amp; $4 == master_name {print $8}
+    ')
+done
+</code></pre>
+
+<p>The value of <code>$master_ip</code> is then used to <code>POST</code> a notification to the
+master server with <code>curl</code>:</p>
+
+<pre><code>curl --silent -X POST \
+         &quot;http://$master_ip/proxy/backend/$(facter macaddress)&quot;
+</code></pre>
+
+<p>The master service is running <a href="http://github.com/larsks/dynproxy-http">dynproxy</a>, which is responsible for
+maintaining a list of backend servers that can be queried by other
+tools (such as Apache).</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Service%20discovery%20in%20the%20cloud%20using%20Avahi&url=http%3a%2f%2fblog.oddbit.com%2fpost%2f2012-11-27-avahi-service-discovery%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="http://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+
