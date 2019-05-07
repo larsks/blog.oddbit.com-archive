@@ -27,7 +27,7 @@ That means that comments will finally be stored in the same place as the blog co
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/2019-05-07-unpacking-a-python-regular-exp/</guid>
-      <description>I recently answered a question from Harsha Nalore on StackOverflow that involved extracting output a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&amp;rsquo;t really seem the write place for that: so, here we are.</description>
+      <description>I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&amp;rsquo;t really seem the write place for that: so, here we are.</description>
     </item>
     
     <item>
