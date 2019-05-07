@@ -48,6 +48,10 @@
                             </a>
                         
                         
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
                         
                         
                         
@@ -91,7 +95,19 @@
         <time class="post-stub-date" datetime="2014-01-19">Published Sun, Jan 19, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    This is just here as a reminder for me:
+An OVS interface has a variety of attributes associated with it, including an external-id field that can be used to associate resources outside of OpenVSwitch with the interface. You can view this field with the following command:
+$ ovs-vsctl --columns=name,external-ids list Interface  Which on my system, with a single virtual instance, looks like this:
+# ovs-vsctl --columns=name,external-ids list Interface . .
+    <span class="post-stub-more"><a href="/post/2014-01-19-show-ovs-externalids/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-01-16-stupid-openstack-tricks/" itemprop="url" title="Go to post detail">
@@ -99,7 +115,17 @@
         <time class="post-stub-date" datetime="2014-01-16">Published Thu, Jan 16, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    I work with several different OpenStack installations. I usually work on the command line, sourcing in an appropriate stackrc with credentials as necessary, but occasionally I want to use the dashboard for something.
+For all of the deployments with which I work, the keystone endpoint is on the same host as the dashboard. So rather than trying to remember which dashboard url I want for the environment I&rsquo;m currently using on the command line, I put together this shell script:
+    <span class="post-stub-more"><a href="/post/2014-01-16-stupid-openstack-tricks/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-01-14-direct-access-to-nova-metadata/" itemprop="url" title="Go to post detail">
@@ -107,7 +133,18 @@
         <time class="post-stub-date" datetime="2014-01-14">Published Tue, Jan 14, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    When you boot a virtual instance under OpenStack, your instance has access to certain instance metadata via the Nova metadata service, which is canonically available at http://169.254.169.254/.
+In an environment running Neutron, a request from your instance must traverse a number of steps:
+ From the instance to a router, Through a NAT rule in the router namespace, To an instance of the neutron-ns-metadata-proxy, To the actual Nova metadata service  When there are problem accessing the metadata, it can be helpful to verify that the metadata service itself is configured correctly and returning meaningful information.
+    <span class="post-stub-more"><a href="/post/2014-01-14-direct-access-to-nova-metadata/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-01-13-rdo-bug-triage/" itemprop="url" title="Go to post detail">
@@ -115,7 +152,17 @@
         <time class="post-stub-date" datetime="2014-01-13">Published Mon, Jan 13, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    This Wednesday, January 15, at 14:00 UTC (that&rsquo;s 9AM US/Eastern, or date -d &quot;14:00 UTC&quot; in your local timezone) I will be helping out with the RDO bug triage day. We&rsquo;ll be trying to validate all the untriaged bugs opened against RDO.
+Feel free to drop by on #rdo and help out or ask questions.
+    <span class="post-stub-more"><a href="/post/2014-01-13-rdo-bug-triage/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-12-23-visualizing-network-with-graphviz/" itemprop="url" title="Go to post detail">
@@ -123,7 +170,18 @@
         <time class="post-stub-date" datetime="2013-12-23">Published Mon, Dec 23, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
+In this post I&rsquo;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
+mk-network-dot There are a lot of devices involved in your Neutron network configuration.
+    <span class="post-stub-more"><a href="/post/2013-12-23-visualizing-network-with-graphviz/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-12-06-an-introduction-to-openstack-heat/" itemprop="url" title="Go to post detail">
@@ -131,7 +189,18 @@
         <time class="post-stub-date" datetime="2013-12-06">Published Fri, Dec 6, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    Heat is a template-based orchestration mechanism for use with OpenStack. With Heat, you can deploy collections of resources &ndash; networks, servers, storage, and more &ndash; all from a single, parameterized template.
+In this article I will introduce Heat templates and the heat command line client.
+Writing templates Because Heat began life as an analog of AWS CloudFormation, it supports the template formats used by the CloudFormation (CFN) tools. It also supports its own native template format, called HOT (&ldquo;Heat Orchestration Templates&rdquo;).
+    <span class="post-stub-more"><a href="/post/2013-12-06-an-introduction-to-openstack-heat/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-11-28-a-python-interface-to-signalfd/" itemprop="url" title="Go to post detail">
@@ -139,7 +208,18 @@
         <time class="post-stub-date" datetime="2013-11-28">Published Thu, Nov 28, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    I just recently learned about the signalfd(2) system call, which was introduced to the Linux kernel back in 2007:
+ signalfd() creates a file descriptor that can be used to accept signals targeted at the caller. This provides an alternative to the use of a signal handler or sigwaitinfo(2), and has the advantage that the file descriptor may be monitored by select(2), poll(2), and epoll(7).
+ The traditional asynchronous delivery mechanism can be tricky to get right, whereas this provides a convenient fd interface that integrates nicely with your existing event-based code.
+    <span class="post-stub-more"><a href="/post/2013-11-28-a-python-interface-to-signalfd/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-11-23-long-polling-with-ja/" itemprop="url" title="Go to post detail">
@@ -147,7 +227,17 @@
         <time class="post-stub-date" datetime="2013-11-23">Published Sat, Nov 23, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    In this post I&rsquo;m going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.
+My pubsub_example repository on GitHub has a complete project that implements the ideas discussed in this article. This project can be deployed directly on OpenShift if you want to try things out on your own.
+    <span class="post-stub-more"><a href="/post/2013-11-23-long-polling-with-ja/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-11-23-openshift-socket-pro/" itemprop="url" title="Go to post detail">
@@ -155,7 +245,18 @@
         <time class="post-stub-date" datetime="2013-11-23">Published Sat, Nov 23, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    In this article, a followup to my previous post regarding long-poll servers and Python, we investigate the code changes that were necessary to make the code work when deployed on OpenShift.
+In the previous post, we implemented IO polling to watch for client disconnects at the same time we were waiting for messages on a message bus:
+poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.POLLIN) events = dict(poll.poll()) . . .
+    <span class="post-stub-more"><a href="/post/2013-11-23-openshift-socket-pro/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-11-22-a-unified-cli-for-op/" itemprop="url" title="Go to post detail">
@@ -163,7 +264,19 @@
         <time class="post-stub-date" datetime="2013-11-22">Published Fri, Nov 22, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    The python-openstackclient project, by Dean Troyer and others, is a new command line tool to replace the existing command line clients (including commands such as nova, keystone, cinder, etc).
+This tool solves two problems I&rsquo;ve encountered in the past:
+ Command line options between different command line clients are sometimes inconsistent.
+ The output from the legacy command line tools is not designed to be machine parse-able (and yet people do it anyway).
+    <span class="post-stub-more"><a href="/post/2013-11-22-a-unified-cli-for-op/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
     </ol>
 

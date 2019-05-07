@@ -47,6 +47,10 @@
                             </a>
                         
                         
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
                         
                         
                         
@@ -90,7 +94,17 @@
         <time class="post-stub-date" datetime="2013-07-16">Published Tue, Jul 16, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    This is a short script that takes a list of concatenated certificates as input (such as a collection of CA certificates) and produces a collection of numbered files, each containing a single certificate.
+#!/bin/awk -f # This script expects a list of concatenated certificates on input and # produces a collection of individual numbered files each containing # a single certificate. BEGIN {incert=0} /-----BEGIN( TRUSTED)? CERTIFICATE-----/ { certno++ certfile=sprintf(&quot;cert-%d.crt&quot;, certno) incert=1 } /-----END( TRUSTED)?
+    <span class="post-stub-more"><a href="/post/2013-07-16-split-concatenated-c/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-04-08-did-archlinux-eat-yo/" itemprop="url" title="Go to post detail">
@@ -98,7 +112,16 @@
         <time class="post-stub-date" datetime="2013-04-08">Published Mon, Apr 8, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    A recent update to Arch Linux replaced the qemu-kvm package with an updated version of qemu. A side effect of this change is that the qemu-kvm binary is no longer available, and any libvirt guests on your system utilizing that binary will no longer operate. As is typical with Arch, there is no announcement about this incompatible change, and queries to #archlinux will be met with the knowledge, grace and decorum you would expect of that channel:
+    <span class="post-stub-more"><a href="/post/2013-04-08-did-archlinux-eat-yo/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-03-12-i2c-on-the-raspberry/" itemprop="url" title="Go to post detail">
@@ -106,7 +129,17 @@
         <time class="post-stub-date" datetime="2013-03-12">Published Tue, Mar 12, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
+The design of the I2C bus is such that the only device driving a voltage on the bus is the master (in this case, the Raspberry Pi), via pull-up resistors.
+    <span class="post-stub-more"><a href="/post/2013-03-12-i2c-on-the-raspberry/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-03-08-interrupt-driven-gpi/" itemprop="url" title="Go to post detail">
@@ -114,7 +147,17 @@
         <time class="post-stub-date" datetime="2013-03-08">Published Fri, Mar 8, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    There are several Python libraries out there for interacting with the GPIO pins on a Raspberry Pi:
+ RPi.GPIO The WiringPi bindings for Python, and The Quick2Wire Python API (which depends on Python 3)  All of them are reasonably easy to use, but the Quick2Wire API provides a uniquely useful feature: epoll-enabled GPIO interrupts. This makes it trivial to write code that efficiently waits for and responds to things like button presses.
+    <span class="post-stub-more"><a href="/post/2013-03-08-interrupt-driven-gpi/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-03-07-controlling-a-servo/" itemprop="url" title="Go to post detail">
@@ -122,7 +165,17 @@
         <time class="post-stub-date" datetime="2013-03-07">Published Thu, Mar 7, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
+I was fiddling around with this exercise, which uses the SoftwareServo library to control a servo. Using this library, you just pass it an angle and the library takes care of everything else, e.
+    <span class="post-stub-more"><a href="/post/2013-03-07-controlling-a-servo/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-02-25-puppet-xmlrpc-quote/" itemprop="url" title="Go to post detail">
@@ -130,7 +183,19 @@
         <time class="post-stub-date" datetime="2013-02-25">Published Mon, Feb 25, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve been reading up on Puppet 3 lately, and came across the following:
+ XMLRPC was the new hotness when development on Puppet started. Now, XMLRPC is that horrible thing with the XML and the angle brackets and the pain and sad.
+ (from http://somethingsinistral.net/blog/the-angry-guide-to-puppet-3/)
+&hellip;which also accurately sums up my feelings when I come across yet another piece of software where someone has decided that XML (or even JSON) is a good user-facing configuration syntax.
+    <span class="post-stub-more"><a href="/post/2013-02-25-puppet-xmlrpc-quote/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-02-21-ucarp-unit-for-systemd/" itemprop="url" title="Go to post detail">
@@ -138,7 +203,18 @@
         <time class="post-stub-date" datetime="2013-02-21">Published Thu, Feb 21, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    In Fedora 17 there are still a number of services that either have not been ported over to systemd or that do not take full advantage of systemd. I&rsquo;ve been investigating some IP failover solutions recently, including ucarp, which includes only a System-V style init script.
+I&rsquo;ve created a template service for ucarp that will let you start a specific virtual ip like this:
+systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/vip-001.
+    <span class="post-stub-more"><a href="/post/2013-02-21-ucarp-unit-for-systemd/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-02-01-dhcpcd-under-lxc/" itemprop="url" title="Go to post detail">
@@ -146,7 +222,17 @@
         <time class="post-stub-date" datetime="2013-02-01">Published Fri, Feb 1, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve been working with Arch Linux recently, which uses dhcpcd as its default DHCP agent. If you try booting Arch inside an LXC container, you will find that dhcpcd is unable to configure your network interfaces. Running it by hand you will first see the following error:
+# dhcpcd eth0 dhcpcd[492]: version 5.6.4 starting dhcpcd[492]: eth0: if_init: Read-only file system dhcpcd[492]: eth0: interface not found or invalid  This happens because dhcpcd is trying to modify a sysctl value.
+    <span class="post-stub-more"><a href="/post/2013-02-01-dhcpcd-under-lxc/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-01-28-lxc-cant-remove-cgroup/" itemprop="url" title="Go to post detail">
@@ -154,7 +240,18 @@
         <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    I spent some time today looking at systemd (44) under Fedora (17). When stopping an LXC container using lxc-stop, I would always encounter this problem:
+# lxc-stop -n node0 lxc-start: Device or resource busy - failed to remove cgroup '/sys/fs/cgroup/systemd/node0  This prevents one from starting a new container with the same name:
+# lxc-start -n node0 lxc-start: Device or resource busy - failed to remove previous cgroup '/sys/fs/cgroup/systemd/node0' lxc-start: failed to spawn 'node0' lxc-start: Device or resource busy - failed to remove cgroup '/sys/fs/cgroup/systemd/node0'  You can correct the problem manually by removing all the child cgroups underneath /sys/fs/cgroup/systemd/&lt;container&gt;, like this:
+    <span class="post-stub-more"><a href="/post/2013-01-28-lxc-cant-remove-cgroup/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2013-01-28-how-do-i-lxc-console/" itemprop="url" title="Go to post detail">
@@ -162,7 +259,18 @@
         <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    It took me an unreasonably long time to boot an LXC container with working console access. For the record:
+When you boot an LXC container, the console appears to be attached to a pts device. For example, when booting with the console attached to your current terminal:
+# lxc-start -n node0 ... node0 login: root Last login: Mon Jan 28 16:35:19 on tty1 [root@node0 ~]# tty /dev/console [root@node0 ~]# ls -l /dev/console crw------- 1 root tty 136, 12 Jan 28 16:36 /dev/console  This is also true when you attach to a container using lxc-console:
+    <span class="post-stub-more"><a href="/post/2013-01-28-how-do-i-lxc-console/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
     </ol>
 

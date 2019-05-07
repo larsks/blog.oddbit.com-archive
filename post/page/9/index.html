@@ -47,6 +47,10 @@
                             </a>
                         
                         
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
                         
                         
                         
@@ -90,7 +94,22 @@
         <time class="post-stub-date" datetime="2014-09-01">Published Mon, Sep 1, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    This is a companion to my article on the Docker plugin for Heat.
+While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&rsquo;ve submitted patches for most of the issues I encountered:
+Bugs in the Heat plugin  https://bugs.launchpad.net/heat/+bug/1364017
+docker plugin fails to delete a container resource in CREATE_FAILED state.
+ https://bugs.launchpad.net/heat/+bug/1364041
+docker plugin volumes_from parameter should be a list.
+ https://bugs.launchpad.net/heat/+bug/1364039
+    <span class="post-stub-more"><a href="/post/2014-09-01-docker-plugin-bugs/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-08-31-docker-contain-doc/" itemprop="url" title="Go to post detail">
@@ -98,7 +117,27 @@
         <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    This is a companion to my article on the Docker plugin for Heat.
+DockerInc::Docker::Container Properties  cmd : List
+Command to run after spawning the container.
+Optional property.
+Example:
+cmd: [ 'thttpd', '-C', '/etc/thttpd.conf', '-D', '-c', '*.cgi']  dns : List
+Set custom DNS servers.
+Example:
+dns: - 8.8.8.8 - 8.8.4.4  docker_endopint : String
+Docker daemon endpoint. By default the local Docker daemon will be used.
+Example:
+docker_endpoint: tcp://192.
+    <span class="post-stub-more"><a href="/post/2014-08-31-docker-contain-doc/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-08-30-docker-plugin-for-openstack-he/" itemprop="url" title="Go to post detail">
@@ -106,7 +145,17 @@
         <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
+The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.
+    <span class="post-stub-more"><a href="/post/2014-08-30-docker-plugin-for-openstack-he/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-08-30-using-wait-conditions-with-hea/" itemprop="url" title="Go to post detail">
@@ -114,7 +163,18 @@
         <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    This post accompanies my article on the Docker plugin for Heat.
+In order for WaitCondition resources to operate correctly in Heat, you will need to make sure that that you have:
+ Created the necessary Heat domain and administrative user in Keystone, Configured appropriate values in heat.conf for stack_user_domain, stack_domain_admin, and stack_domain_admin_password. Configured an appropriate value in heat.conf for heat_waitcondition_server_url. On a single-system install this will often be pointed by default at 127.
+    <span class="post-stub-more"><a href="/post/2014-08-30-using-wait-conditions-with-hea/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-08-28-novadocker-and-environment-var/" itemprop="url" title="Go to post detail">
@@ -122,7 +182,17 @@
         <time class="post-stub-date" datetime="2014-08-28">Published Thu, Aug 28, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
+The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker containers instead of hypervisor-based servers. For certain workloads, this leads to better resource utilization than you would get with a hypervisor-based solution, while at the same time givin you better support for multi-tenancy and flexible networking than you get with Docker by itself.
+    <span class="post-stub-more"><a href="/post/2014-08-28-novadocker-and-environment-var/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-08-16-lvcache-a-tool-for-managing-lv/" itemprop="url" title="Go to post detail">
@@ -130,7 +200,17 @@
         <time class="post-stub-date" datetime="2014-08-16">Published Sat, Aug 16, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    Until recently I had a bcache based setup on my laptop, but when forced by circumstance to reinstall everything I spent some time looking for alternatives that were less disruptive to configure on an existing system.
+I came across Richard Jones&rsquo; article discussing the recent work to integrate dm-cache into LVM. Unlike bcache and unlike using dm-cache directly, the integration with LVM makes it easy to associate devices with an existing logical volume.
+    <span class="post-stub-more"><a href="/post/2014-08-16-lvcache-a-tool-for-managing-lv/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-08-11-four-ways-to-connect-a-docker/" itemprop="url" title="Go to post detail">
@@ -138,7 +218,17 @@
         <time class="post-stub-date" datetime="2014-08-11">Published Mon, Aug 11, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&rsquo;ve written an article about working with the macvlan driver.
+This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.
+    <span class="post-stub-more"><a href="/post/2014-08-11-four-ways-to-connect-a-docker/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-07-26-gpiowatch-run-scripts-in-respo/" itemprop="url" title="Go to post detail">
@@ -146,7 +236,17 @@
         <time class="post-stub-date" datetime="2014-07-26">Published Sat, Jul 26, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    For a small project I&rsquo;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
+Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&rsquo;t want to write something that was tied closely to my project&hellip;
+    <span class="post-stub-more"><a href="/post/2014-07-26-gpiowatch-run-scripts-in-respo/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-07-21-tracking-down-a-kernel-bug-wit/" itemprop="url" title="Go to post detail">
@@ -154,7 +254,17 @@
         <time class="post-stub-date" datetime="2014-07-21">Published Mon, Jul 21, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
+$ docker run -ti fedora /bin/bash bash-4.2# su -c 'uptime' su: System error  Hooking up something (like, say, socat unix-listen:/dev/log -) to /dev/log revealed that the system was logging:
+    <span class="post-stub-more"><a href="/post/2014-07-21-tracking-down-a-kernel-bug-wit/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="/post/2014-05-28-booting-an-instance-with-multi/" itemprop="url" title="Go to post detail">
@@ -162,7 +272,18 @@
         <time class="post-stub-date" datetime="2014-05-28">Published Wed, May 28, 2014</time>
         
     </a>
+
+    
+    <p class="post-stub-summary">
+    This article expands on my answer to Add multiple specific IPs to instance, a question posted to ask.openstack.org.
+In order to serve out SSL services from an OpenStack instance, you will generally want one local ip address for each SSL virtual host you support. It is possible to create an instance with multiple fixed addresses, but there are a few complications to watch out for.
+Assumptions This article assumes that the following resources exist:
+    <span class="post-stub-more"><a href="/post/2014-05-28-booting-an-instance-with-multi/">(more)</a></span>
+    </p>
+    
 </li>
+
+
         
     </ol>
 
