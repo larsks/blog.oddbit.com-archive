@@ -48,6 +48,24 @@
     </item>
     
     <item>
+      <title>python</title>
+      <link>/tags/python/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stackexchange</title>
+      <link>/tags/stackexchange/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/stackexchange/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>utterances</title>
       <link>/tags/utterances/</link>
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
@@ -71,15 +89,6 @@
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/pull-request/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>/tags/python/</link>
-      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
