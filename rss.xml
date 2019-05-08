@@ -1878,12 +1878,12 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>[✓] Ansible Jinja2 issue iterating over a list when inventory_hostname is top of variable tree
- Connect to Nodes without DNS or /etc/hosts&amp;amp;quot; resolution
- How to convert longblob to readable format
- [✓] filter a list of objects with ipaddr in Ansible
- [✓] Fetch specific output from stdout_lines and store it in a list
- Ansible script module adds leading newline character in stdout, probably when sudo is used.</description>
+      <description>Is there a way to sort the groups in an ansible host file without sorting the hosts within the groups?
+ Ansible HTML parsing and grep for data with Jinja Filters
+ [✓] ansible unable to find or access script
+ [✓] Ansible Jinja2 issue iterating over a list when inventory_hostname is top of variable tree
+ [✓] Connect to Nodes without DNS or /etc/hosts&amp;amp;quot; resolution
+ How to convert longblob to readable format</description>
     </item>
     
   </channel>
