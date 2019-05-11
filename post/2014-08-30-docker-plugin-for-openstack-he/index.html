@@ -20,6 +20,7 @@ The release announcement on the Docker blog includes an example Heat template, b
 
 
         <link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
 
         
     </head>
@@ -564,7 +565,9 @@ the value (right-hand side) is the <em>host</em> port.</p>
 <p>And in theory, this should also work for UDP ports (but in practice
 there is an issue between the Docker plugin and the <code>docker-py</code> Python
 module which makes it impossible to expose UDP ports via <code>port_specs</code>;
-this is fixed in <a href="https://github.com/docker/docker-py/pull/310">PR #310</a> on GitHub).</p>
+this is fixed in 
+<a href="https://github.com/docker/docker-py/pull/310" class="pull-request pull-request-state-closed">#310</a>
+ on GitHub).</p>
 
 <pre><code>port_bindings:
   53/udp: 5300

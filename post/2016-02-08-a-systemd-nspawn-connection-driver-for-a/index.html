@@ -20,6 +20,7 @@ Ansible already has a chroot module, of course, but for some situations &ndash; 
 
 
         <link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
 
         
     </head>
@@ -114,7 +115,9 @@ situations &ndash; such as targeting an emulated <code>chroot</code> environment
 that just means a lot of extra work.  Using <code>systemd-nspawn</code> makes
 this trivial.</p>
 
-<p>I&rsquo;ve submitted <a href="https://github.com/ansible/ansible/pull/14334">pull request #14334</a> to the Ansible project,
+<p>I&rsquo;ve submitted 
+<a href="https://github.com/ansible/ansible/pull/14334" class="pull-request pull-request-state-closed">#14334</a>
+ to the Ansible project,
 which introduces a new connection driver named <code>nspawn</code>.  It acts very
 much like the <code>chroot</code> driver, but it adds a few new configuration
 options:</p>
