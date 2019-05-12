@@ -26,7 +26,7 @@
       
       <guid>http://blog.oddbit.com/about/stackoverflow/</guid>
       <description>How can I traverse nested lists in Ansible? ansible
- List all branches with git branch -a does not show recently fetched branch? git git-checkout git-fetch
+ [✓] List all branches with git branch -a does not show recently fetched branch? git git-checkout git-fetch
  [✓] I am having ansible issues with register command when using when in tasks ansible
  [✓] Parse through dictionary with list items ansible jinja2
  How to refer to an item within the Ansible when statement ansible
