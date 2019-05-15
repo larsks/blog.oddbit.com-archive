@@ -1,0 +1,39 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>tripleo on The Odd Bit</title>
+
+  
+  <link rel="self" href="http://blog.oddbit.com/tag/tripleo/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tag/tripleo/" rel="alternate"></link>
+
+  <updated>2016-05-19T00:00:00Z</updated>
+  <id>http://blog.oddbit.com/tag/tripleo/</id>
+  
+  <entry>
+    <title>Connecting another vm to your tripleo-quickstart deployment</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/"/>
+    <id>http://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</id>
+    <published>2016-05-19T00:00:00Z</published>
+    <updated>2016-05-19T00:00:00Z</updated>
+    <summary type="html">Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
+For a concrete example, let&amp;rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:</summary>
+  </entry>
+  
+  <entry>
+    <title>Deploying an HA OpenStack development environment with tripleo-quickstart
+</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/"/>
+    <id>http://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</id>
+    <published>2016-02-19T00:00:00Z</published>
+    <updated>2016-02-19T00:00:00Z</updated>
+    <summary type="html">In this article I would like to introduce tripleo-quickstart, a tool that will automatically provision a virtual environment and then use TripleO to deploy an HA OpenStack on top of it.
+Introducing Tripleo-Quickstart The goal of the Tripleo-Quickstart project is to replace the instack-virt-setup tool for quickly setting up virtual TripleO environments, and to ultimately become the tool used by both developers and upstream CI for this purpose. The project is a set of Ansible playbooks that will take care of:</summary>
+  </entry>
+  
+</feed>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>namespaces on The Odd Bit</title>
+    <link>http://blog.oddbit.com/tag/namespaces/</link>
+    <description>Recent content in namespaces on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Jan 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.oddbit.com/tag/namespaces/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker vs. PrivateTmp</title>
+      <link>http://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</link>
+      <pubDate>Sun, 18 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</guid>
+      <description>While working with Docker the other day, I ran into an undesirable interaction between Docker and systemd services that utilize the PrivateTmp directive.
+The PrivateTmp directive, if true, &amp;ldquo;sets up a new file system namespace for the executed processes and mounts private /tmp and /var/tmp directories inside it that is not shared by processes outside of the namespace&amp;rdquo;. This is a great idea from a security perspective, but can cause some unanticipated consequences.</description>
+    </item>
+    
+  </channel>
+</rss>

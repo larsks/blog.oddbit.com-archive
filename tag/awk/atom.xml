@@ -1,0 +1,38 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>awk on The Odd Bit</title>
+
+  
+  <link rel="self" href="http://blog.oddbit.com/tag/awk/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tag/awk/" rel="alternate"></link>
+
+  <updated>2013-07-16T00:00:00Z</updated>
+  <id>http://blog.oddbit.com/tag/awk/</id>
+  
+  <entry>
+    <title>Split concatenated certificates with awk</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2013-07-16-split-concatenated-c/"/>
+    <id>http://blog.oddbit.com/post/2013-07-16-split-concatenated-c/</id>
+    <published>2013-07-16T00:00:00Z</published>
+    <updated>2013-07-16T00:00:00Z</updated>
+    <summary type="html">This is a short script that takes a list of concatenated certificates as input (such as a collection of CA certificates) and produces a collection of numbered files, each containing a single certificate.
+#!/bin/awk -f # This script expects a list of concatenated certificates on input and # produces a collection of individual numbered files each containing # a single certificate. BEGIN {incert=0} /-----BEGIN( TRUSTED)? CERTIFICATE-----/ { certno++ certfile=sprintf(&amp;quot;cert-%d.crt&amp;quot;, certno) incert=1 } /-----END( TRUSTED)?</summary>
+  </entry>
+  
+  <entry>
+    <title>Parsing XML with Awk</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/"/>
+    <id>http://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</id>
+    <published>2012-09-10T00:00:00Z</published>
+    <updated>2012-09-10T00:00:00Z</updated>
+    <summary type="html">Recently, changes from the xmlgawk project have been integrated into GNU awk, and xmlgawk has been renamed to gawkextlib. With both a recent (post-4.0.70) gawk and gawkextlib built and installed correctly, you can write simple XML parsing scripts using gawk.
+For example, let&amp;rsquo;s say you would like to generate a list of disk image files associated with a KVM virtual instance. You can use the virsh dumpxml command to get output like the following:</summary>
+  </entry>
+  
+</feed>

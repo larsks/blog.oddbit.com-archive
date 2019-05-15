@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>heat on The Odd Bit</title>
+    <link>http://blog.oddbit.com/tag/heat/</link>
+    <description>Recent content in heat on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 11 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.oddbit.com/tag/heat/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exploring YAQL Expressions</title>
+      <link>http://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</link>
+      <pubDate>Thu, 11 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</guid>
+      <description>The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&amp;rsquo;s more advanced features.
+I am working on a Fluentd composable service for TripleO. I want to allow each service to specify a logging source configuration fragment, for example:
+parameters: NovaAPILoggingSource: type: json description: Fluentd logging configuration for nova-api.</description>
+    </item>
+    
+    <item>
+      <title>Heat-kubernetes Demo with Autoscaling</title>
+      <link>http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</link>
+      <pubDate>Fri, 19 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</guid>
+      <description>Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
+As part of that presentation, I&amp;rsquo;ve put together a short demonstration video:
+ This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</description>
+    </item>
+    
+    <item>
+      <title>Heat Hangout</title>
+      <link>http://blog.oddbit.com/post/2014-09-05-heat-hangout/</link>
+      <pubDate>Fri, 05 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-09-05-heat-hangout/</guid>
+      <description>I ran a Google Hangout this morning on Deploying with Heat. You can find the slides for the presentation on line here, and the Heat templates (as well as slide sources) are available on github.
+If you have any questions about the presentation, please feel free to ping me on irc (larsks).
+ </description>
+    </item>
+    
+    <item>
+      <title>Visualizing Heat stacks</title>
+      <link>http://blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/</link>
+      <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/</guid>
+      <description>I spent some time today learning about Heat autoscaling groups, which are incredibly nifty but a little opaque from the Heat command line, since commands such as heat resource-list don&amp;rsquo;t recurse into nested stacks. It is possible to introspect these resources (you can pass the physical resource id of a nested stack to heat resource-list, for example)&amp;hellip;
+&amp;hellip;but I really like visualizing things, so I wrote a quick hack called dotstack that will generate dot language output from a Heat stack.</description>
+    </item>
+    
+    <item>
+      <title>Docker plugin bugs</title>
+      <link>http://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</link>
+      <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</guid>
+      <description>This is a companion to my article on the Docker plugin for Heat.
+While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&amp;rsquo;ve submitted patches for most of the issues I encountered:
+Bugs in the Heat plugin  https://bugs.launchpad.net/heat/+bug/1364017
+docker plugin fails to delete a container resource in CREATE_FAILED state.
+ https://bugs.launchpad.net/heat/+bug/1364041
+docker plugin volumes_from parameter should be a list.
+ https://bugs.launchpad.net/heat/+bug/1364039</description>
+    </item>
+    
+    <item>
+      <title>Annotated documentation for DockerInc::Docker::Container</title>
+      <link>http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</link>
+      <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</guid>
+      <description>This is a companion to my article on the Docker plugin for Heat.
+DockerInc::Docker::Container Properties  cmd : List
+Command to run after spawning the container.
+Optional property.
+Example:
+cmd: [ &#39;thttpd&#39;, &#39;-C&#39;, &#39;/etc/thttpd.conf&#39;, &#39;-D&#39;, &#39;-c&#39;, &#39;*.cgi&#39;]  dns : List
+Set custom DNS servers.
+Example:
+dns: - 8.8.8.8 - 8.8.4.4  docker_endopint : String
+Docker daemon endpoint. By default the local Docker daemon will be used.
+Example:
+docker_endpoint: tcp://192.</description>
+    </item>
+    
+    <item>
+      <title>Docker plugin for OpenStack Heat</title>
+      <link>http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</link>
+      <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</guid>
+      <description>I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&amp;rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
+The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.</description>
+    </item>
+    
+    <item>
+      <title>Using wait conditions with Heat</title>
+      <link>http://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/</link>
+      <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/</guid>
+      <description>This post accompanies my article on the Docker plugin for Heat.
+In order for WaitCondition resources to operate correctly in Heat, you will need to make sure that that you have:
+ Created the necessary Heat domain and administrative user in Keystone, Configured appropriate values in heat.conf for stack_user_domain, stack_domain_admin, and stack_domain_admin_password. Configured an appropriate value in heat.conf for heat_waitcondition_server_url. On a single-system install this will often be pointed by default at 127.</description>
+    </item>
+    
+    <item>
+      <title>An introduction to OpenStack Heat</title>
+      <link>http://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</link>
+      <pubDate>Fri, 06 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</guid>
+      <description>Heat is a template-based orchestration mechanism for use with OpenStack. With Heat, you can deploy collections of resources &amp;ndash; networks, servers, storage, and more &amp;ndash; all from a single, parameterized template.
+In this article I will introduce Heat templates and the heat command line client.
+Writing templates Because Heat began life as an analog of AWS CloudFormation, it supports the template formats used by the CloudFormation (CFN) tools. It also supports its own native template format, called HOT (&amp;ldquo;Heat Orchestration Templates&amp;rdquo;).</description>
+    </item>
+    
+  </channel>
+</rss>

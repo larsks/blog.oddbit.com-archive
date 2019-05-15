@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>powershell on The Odd Bit</title>
+    <link>http://blog.oddbit.com/tag/powershell/</link>
+    <description>Recent content in powershell on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Nov 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.oddbit.com/tag/powershell/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Generating random passwords in PowerShell</title>
+      <link>http://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</link>
+      <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</guid>
+      <description>I was looking for PowerShell solutions for generating a random password (in order to set the Administrator password on a Windows instance provisioned in OpenStack), and found several solutions using the GeneratePassword method of System.Web.Security.Membership (documentation here), along the lines of this:
+Function New-RandomComplexPassword ($length=8) { $Assembly = Add-Type -AssemblyName System.Web $password = [System.Web.Security.Membership]::GeneratePassword($length,2) return $password }  While this works, I was unhappy with the generated passwords: they were difficult to type or transcribe because they make heavy use of punctuation.</description>
+    </item>
+    
+    <item>
+      <title>Waiting for networking using PowerShell</title>
+      <link>http://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</link>
+      <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</guid>
+      <description>I&amp;rsquo;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
+There are a number of common solutions proposed to this problem:
+ Just wait for some period of time.
+This can work but it&amp;rsquo;s ugly, and because it doesn&amp;rsquo;t actually verify the network state it can result in things breaking if some problem prevents Windows from pulling a valid DHCP lease.</description>
+    </item>
+    
+  </channel>
+</rss>

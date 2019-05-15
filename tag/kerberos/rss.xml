@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kerberos on The Odd Bit</title>
+    <link>http://blog.oddbit.com/tag/kerberos/</link>
+    <description>Recent content in kerberos on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Jul 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.oddbit.com/tag/kerberos/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mapping local users to Kerberos principals with SSSD</title>
+      <link>http://blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/</link>
+      <pubDate>Thu, 16 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/</guid>
+      <description>I work for an organization that follows the common model of assigning people systematically generated user ids. Like most technically inclined employees of this organization, I have local accounts on my workstation that don&amp;rsquo;t bear any relation to the generated account ids. For the most part this isn&amp;rsquo;t a problem, except that our organization uses Kerberos to authenticate access to a variety of resources (such as the mailserver and a variety of web applications).</description>
+    </item>
+    
+    <item>
+      <title>Kerberos authenticated queries to Active Directory</title>
+      <link>http://blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/</link>
+      <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/</guid>
+      <description>There are many guides out there to help you configure your Linux system as an LDAP and Kerberos client to an Active Directory server. Most of these guides solve the problem of authentication by embedding a username and password into a configuration file somewhere on your system. While this works, it presents some problems:
+ If you use a common account for authentication from all of your Linux systems, a compromise on one system means updating the configuration of all of your systems.</description>
+    </item>
+    
+  </channel>
+</rss>

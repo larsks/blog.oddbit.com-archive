@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iptables on The Odd Bit</title>
+    <link>http://blog.oddbit.com/tag/iptables/</link>
+    <description>Recent content in iptables on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.oddbit.com/tag/iptables/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Listing iptables rules with line numbers</title>
+      <link>http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</link>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</guid>
+      <description>You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.
+You can augment the output from these commands with rule numbers with the following awk script:
+#!/bin/awk -f state == 0 &amp;amp;&amp;amp; /^-A/ {state=1; chain=$2; counter=1; printf &amp;quot;\n&amp;quot;} state == 1 &amp;amp;&amp;amp; $2 !</description>
+    </item>
+    
+    <item>
+      <title>Blocking VNC with iptables</title>
+      <link>http://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</link>
+      <pubDate>Thu, 04 Feb 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</guid>
+      <description>VNC clients use the RFB protocol to provide virtual display capabilities. The RFB protocol, as implemented by most clients, provides very poor authentication options. While passwords are not actually sent &amp;ldquo;in the clear&amp;rdquo;, it is possible to brute force them based on information available on the wire. The RFB 3.x protocol limits passwords to a maximum of eight characters, so the potential key space is relatively small.
+It&amp;rsquo;s possible to securely connect to a remote VNC server by tunneling your connection using ssh port forwarding (or setting up some sort of SSL proxy).</description>
+    </item>
+    
+  </channel>
+</rss>

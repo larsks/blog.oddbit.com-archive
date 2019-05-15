@@ -1,0 +1,25 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>xpath on The Odd Bit</title>
+
+  
+  <link rel="self" href="http://blog.oddbit.com/tag/xpath/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tag/xpath/" rel="alternate"></link>
+
+  <updated>2015-02-19T00:00:00Z</updated>
+  <id>http://blog.oddbit.com/tag/xpath/</id>
+  
+  <entry>
+    <title>Stupid Pacemaker XML tricks</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/"/>
+    <id>http://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</id>
+    <published>2015-02-19T00:00:00Z</published>
+    <updated>2015-02-19T00:00:00Z</updated>
+    <summary type="html">I&amp;rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
+Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;//resource[@active=&amp;quot;false&amp;quot;]&#39; - &amp;gt;&amp;amp;/dev/null &amp;amp;&amp;amp; echo &amp;quot;There are inactive resources&amp;quot;  This selects any resource (//resource) in the output of pcs status xml that has the attribute active set to false.</summary>
+  </entry>
+  
+</feed>

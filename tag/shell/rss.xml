@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on The Odd Bit</title>
+    <link>http://blog.oddbit.com/tag/shell/</link>
+    <description>Recent content in shell on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.oddbit.com/tag/shell/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Listing iptables rules with line numbers</title>
+      <link>http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</link>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</guid>
+      <description>You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.
+You can augment the output from these commands with rule numbers with the following awk script:
+#!/bin/awk -f state == 0 &amp;amp;&amp;amp; /^-A/ {state=1; chain=$2; counter=1; printf &amp;quot;\n&amp;quot;} state == 1 &amp;amp;&amp;amp; $2 !</description>
+    </item>
+    
+  </channel>
+</rss>

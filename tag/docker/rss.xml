@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on The Odd Bit</title>
+    <link>http://blog.oddbit.com/tag/docker/</link>
+    <description>Recent content in docker on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.oddbit.com/tag/docker/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker build learns about secrets and ssh agent forwarding</title>
+      <link>http://blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/</link>
+      <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/</guid>
+      <description>A common problem for folks working with Docker is accessing resources which require authentication during the image build step. A particularly common use case is getting access to private git repositories using ssh key-based authentication. Until recently there hasn&amp;rsquo;t been a great solution:
+ you can embed secrets in your image, but now you can&amp;rsquo;t share the image with anybody. you can use build arguments, but this requires passing in an unenecrypted private key on the docker build command line, which is suboptimal for a number of reasons you can perform all the steps requiring authentication at runtime, but this can needlessly complicate your container startup process.</description>
+    </item>
+    
+    <item>
+      <title>Using Docker macvlan networks</title>
+      <link>http://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/</link>
+      <pubDate>Mon, 12 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/</guid>
+      <description>A question that crops up regularly on #docker is &amp;ldquo;How do I attach a container directly to my local network?&amp;rdquo; One possible answer to that question is the macvlan network type, which lets you create &amp;ldquo;clones&amp;rdquo; of a physical interface on your host and use that to attach containers directly to your local network. For the most part it works great, but it does come with some minor caveats and limitations.</description>
+    </item>
+    
+    <item>
+      <title>Ansible 2.0: The Docker connection driver</title>
+      <link>http://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</link>
+      <pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</guid>
+      <description>As the release of Ansible 2.0 draws closer, I&amp;rsquo;d like to take a look at some of the new features that are coming down the pipe. In this post, we&amp;rsquo;ll look at the docker connection driver.
+A &amp;ldquo;connection driver&amp;rdquo; is the mechanism by which Ansible connects to your target hosts. These days it uses ssh by default (which relies on the OpenSSH command line client for connectivity), and it also offers the Paramiko library as an alternative ssh implementation (this was in fact the default driver in earlier versions of Ansible).</description>
+    </item>
+    
+    <item>
+      <title>Running NTP in a Container</title>
+      <link>http://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/</link>
+      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/</guid>
+      <description>Someone asked on IRC about running ntpd in a container on Atomic, so I&amp;rsquo;ve put together a small example. We&amp;rsquo;ll start with a very simple Dockerfile:
+FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&amp;quot;ntpd&amp;quot;]  I&amp;rsquo;m using the alpine image as my starting point because it&amp;rsquo;s very small, which makes this whole process go a little faster. I&amp;rsquo;m installing the openntpd package, which provides the ntpd binary.</description>
+    </item>
+    
+    <item>
+      <title>Heat-kubernetes Demo with Autoscaling</title>
+      <link>http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</link>
+      <pubDate>Fri, 19 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</guid>
+      <description>Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
+As part of that presentation, I&amp;rsquo;ve put together a short demonstration video:
+ This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</description>
+    </item>
+    
+    <item>
+      <title>Suggestions for the Docker MAINTAINER directive</title>
+      <link>http://blog.oddbit.com/post/2015-04-27-suggestions-for-the-docker-maintainer-directive/</link>
+      <pubDate>Mon, 27 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-04-27-suggestions-for-the-docker-maintainer-directive/</guid>
+      <description>Because nobody asked for it, this is my opinion on the use of the MAINTAINER directive in your Dockerfiles.
+The documentation says simply:
+The MAINTAINER instruction allows you to set the Author field of the generated images.  Many people end up putting the name and email address of an actual person here. I think this is ultimately a bad idea, and does a disservice both to members of a project that produce Docker images and to people consuming those images.</description>
+    </item>
+    
+    <item>
+      <title>Converting hexadecimal ip addresses to dotted quads with Bash</title>
+      <link>http://blog.oddbit.com/post/2015-03-08-converting-hexadecimal-ip-addresses-to-dotted-quads-with-bas/</link>
+      <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-03-08-converting-hexadecimal-ip-addresses-to-dotted-quads-with-bas/</guid>
+      <description>This is another post that is primarily for my own benefit for the next time I forget how to do this.
+I wanted to read routing information directly from /proc/net/route using bash, because you never know what may or may not be available in the minimal environment of a Docker container (for example, the iproute package is not installed by default in the Fedora Docker images). The contents of /proc/net/route looks something like:</description>
+    </item>
+    
+    <item>
+      <title>Unpacking Docker images with Undocker</title>
+      <link>http://blog.oddbit.com/post/2015-02-13-unpacking-docker-images/</link>
+      <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-02-13-unpacking-docker-images/</guid>
+      <description>In some ways, the most exciting thing about Docker isn&amp;rsquo;t the ability to start containers. That&amp;rsquo;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
+I was taking a closer at the systemd-nspawn command, which it seems has been developing it&amp;rsquo;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.</description>
+    </item>
+    
+    <item>
+      <title>Installing nova-docker with devstack</title>
+      <link>http://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/</link>
+      <pubDate>Wed, 11 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/</guid>
+      <description>This is a long-form response to this question, and describes how to get the nova-docker driver up running with devstack under Ubuntu 14.04 (Trusty). I wrote a similar post for Fedora 21, although that one was using the RDO Juno packages, while this one is using devstack and the upstream sources.
+Getting started We&amp;rsquo;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
+First, let&amp;rsquo;s install a few prerequisites:</description>
+    </item>
+    
+    <item>
+      <title>External networking for Kubernetes services</title>
+      <link>http://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/</link>
+      <pubDate>Tue, 10 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/</guid>
+      <description>I have recently started running some &amp;ldquo;real&amp;rdquo; services (that is, &amp;ldquo;services being consumed by someone other than myself&amp;rdquo;) on top of Kubernetes (running on bare metal), which means I suddenly had to confront the question of how to provide external access to Kubernetes hosted services. Kubernetes provides two solutions to this problem, neither of which is particularly attractive out of the box:
+ There is a field createExternalLoadBalancer that can be set in a service description.</description>
+    </item>
+    
+    <item>
+      <title>Installing nova-docker on Fedora 21/RDO Juno</title>
+      <link>http://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</link>
+      <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</guid>
+      <description>This post comes about indirectly by a request on IRC in #rdo for help getting nova-docker installed on Fedora 21. I ran through the process from start to finish and decided to write everything down for posterity.
+Getting started I started with the Fedora 21 Cloud Image, because I&amp;rsquo;m installing onto OpenStack and the cloud images include some features that are useful in this environment.
+We&amp;rsquo;ll be using OpenStack packages from the RDO Juno repository.</description>
+    </item>
+    
+    <item>
+      <title>Creating minimal Docker images from dynamically linked ELF binaries</title>
+      <link>http://blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/</link>
+      <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/</guid>
+      <description>In this post, we&amp;rsquo;ll look at a method for building minimal Docker images for dynamically linked ELF binaries, and then at a tool for automating this process.
+It is tempting, when creating a simple Docker image, to start with one of the images provided by the major distributions. For example, if you need an image that provides tcpdump for use on your Atomic host, you might do something like:</description>
+    </item>
+    
+    <item>
+      <title>Docker vs. PrivateTmp</title>
+      <link>http://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</link>
+      <pubDate>Sun, 18 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</guid>
+      <description>While working with Docker the other day, I ran into an undesirable interaction between Docker and systemd services that utilize the PrivateTmp directive.
+The PrivateTmp directive, if true, &amp;ldquo;sets up a new file system namespace for the executed processes and mounts private /tmp and /var/tmp directories inside it that is not shared by processes outside of the namespace&amp;rdquo;. This is a great idea from a security perspective, but can cause some unanticipated consequences.</description>
+    </item>
+    
+    <item>
+      <title>Running nova-libvirt and nova-docker on the same host</title>
+      <link>http://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</link>
+      <pubDate>Sat, 17 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</guid>
+      <description>I regularly use OpenStack on my laptop with libvirt as my hypervisor. I was interested in experimenting with recent versions of the nova-docker driver, but I didn&amp;rsquo;t have a spare system available on which to run the driver, and I use my regular nova-compute service often enough that I didn&amp;rsquo;t want to simply disable it temporarily in favor of nova-docker.
+NB As pointed out by gustavo in the comments, running two neutron-openvswitch-agents on the same host &amp;ndash; as suggested in this article &amp;ndash; is going to lead to nothing but sadness and doom.</description>
+    </item>
+    
+    <item>
+      <title>Building a minimal web server for testing Kubernetes</title>
+      <link>http://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</link>
+      <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</guid>
+      <description>I have recently been doing some work with Kubernetes, and wanted to put together a minimal image with which I could test service and pod deployment. Size in this case was critical: I wanted something that would download quickly when initially deployed, because I am often setting up and tearing down Kubernetes as part of my testing (and some of my test environments have poor external bandwidth).
+Building thttpd My go-to minimal webserver is thttpd.</description>
+    </item>
+    
+    <item>
+      <title>Building Docker images with Puppet</title>
+      <link>http://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</link>
+      <pubDate>Wed, 22 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</guid>
+      <description>I like Docker, but I&amp;rsquo;m not a huge fan of using shell scripts for complex system configuration&amp;hellip;and Dockerfiles are basically giant shell scripts.
+I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
+I started with a manifest like this (in puppet/node.pp):
+class { &#39;ssh&#39;: }  And a Dockerfile like this:</description>
+    </item>
+    
+    <item>
+      <title>Docker networking with dedicated network containers</title>
+      <link>http://blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/</link>
+      <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/</guid>
+      <description>The current version of Docker has a very limited set of networking options:
+ bridge &amp;ndash; connect a container to the Docker bridge host &amp;ndash; run the container in the global network namespace container:xxx &amp;ndash; connect a container to the network namespace of another container none &amp;ndash; do not configure any networking  If you need something more than that, you can use a tool like pipework to provision additional network interfaces inside the container, but this leads to a synchronization problem: pipework can only be used after your container is running.</description>
+    </item>
+    
+    <item>
+      <title>Docker plugin bugs</title>
+      <link>http://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</link>
+      <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</guid>
+      <description>This is a companion to my article on the Docker plugin for Heat.
+While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&amp;rsquo;ve submitted patches for most of the issues I encountered:
+Bugs in the Heat plugin  https://bugs.launchpad.net/heat/+bug/1364017
+docker plugin fails to delete a container resource in CREATE_FAILED state.
+ https://bugs.launchpad.net/heat/+bug/1364041
+docker plugin volumes_from parameter should be a list.
+ https://bugs.launchpad.net/heat/+bug/1364039</description>
+    </item>
+    
+    <item>
+      <title>Annotated documentation for DockerInc::Docker::Container</title>
+      <link>http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</link>
+      <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</guid>
+      <description>This is a companion to my article on the Docker plugin for Heat.
+DockerInc::Docker::Container Properties  cmd : List
+Command to run after spawning the container.
+Optional property.
+Example:
+cmd: [ &#39;thttpd&#39;, &#39;-C&#39;, &#39;/etc/thttpd.conf&#39;, &#39;-D&#39;, &#39;-c&#39;, &#39;*.cgi&#39;]  dns : List
+Set custom DNS servers.
+Example:
+dns: - 8.8.8.8 - 8.8.4.4  docker_endopint : String
+Docker daemon endpoint. By default the local Docker daemon will be used.
+Example:
+docker_endpoint: tcp://192.</description>
+    </item>
+    
+    <item>
+      <title>Docker plugin for OpenStack Heat</title>
+      <link>http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</link>
+      <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</guid>
+      <description>I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&amp;rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
+The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.</description>
+    </item>
+    
+    <item>
+      <title>nova-docker and environment variables</title>
+      <link>http://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/</link>
+      <pubDate>Thu, 28 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/</guid>
+      <description>I&amp;rsquo;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
+The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker containers instead of hypervisor-based servers. For certain workloads, this leads to better resource utilization than you would get with a hypervisor-based solution, while at the same time givin you better support for multi-tenancy and flexible networking than you get with Docker by itself.</description>
+    </item>
+    
+    <item>
+      <title>Four ways to connect a docker container to a local network</title>
+      <link>http://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</link>
+      <pubDate>Mon, 11 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</guid>
+      <description>Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&amp;rsquo;ve written an article about working with the macvlan driver.
+This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.</description>
+    </item>
+    
+    <item>
+      <title>Tracking down a kernel bug with git bisect</title>
+      <link>http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</guid>
+      <description>After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
+$ docker run -ti fedora /bin/bash bash-4.2# su -c &#39;uptime&#39; su: System error  Hooking up something (like, say, socat unix-listen:/dev/log -) to /dev/log revealed that the system was logging:</description>
+    </item>
+    
+  </channel>
+</rss>

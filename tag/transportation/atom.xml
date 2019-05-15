@@ -1,0 +1,26 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>transportation on The Odd Bit</title>
+
+  
+  <link rel="self" href="http://blog.oddbit.com/tag/transportation/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tag/transportation/" rel="alternate"></link>
+
+  <updated>2010-02-07T00:00:00Z</updated>
+  <id>http://blog.oddbit.com/tag/transportation/</id>
+  
+  <entry>
+    <title>MBTA realtime XML feed</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/"/>
+    <id>http://blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/</id>
+    <published>2010-02-07T00:00:00Z</published>
+    <updated>2010-02-07T00:00:00Z</updated>
+    <summary type="html">The MBTA has a trial web service interface that provides access to realtime location information for select MBTA buses, as well as access to route information, arrival prediction, and other features. More information can be found here:
+ http://www.eot.state.ma.us/developers/realtime/
+ The service is provided by NextBus, which specializes in real-time location information for public transit organizations. The API (sorry, PDF) is very simple and does not require any sort of advance registration.</summary>
+  </entry>
+  
+</feed>

@@ -1878,12 +1878,13 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How can I traverse nested lists in Ansible? ansible
- [✓] List all branches with git branch -a does not show recently fetched branch? git git-checkout git-fetch
- [✓] I am having ansible issues with register command when using when in tasks ansible
- [✓] Parse through dictionary with list items ansible jinja2
- How to refer to an item within the Ansible when statement ansible
- [✓] Ansible retrieve the value of keys from the other list loops ansible nested-loops</description>
+      <description>Ansible compare between two files on remote server ansible
+ How do I make my local changes show up to github repository? git github
+ Track submodule branch in cloned-from repository git git-submodules
+ [✓] no package matching is available in ansible version 2.7.10 ansible
+ group_names and nested variables ansible ansible-template
+ Create Vars from Facts Ansible and Jinja2 python ansible jinja2
+ Replacing / by \ in a string with ansible ansible yaml jinja2</description>
     </item>
     
   </channel>

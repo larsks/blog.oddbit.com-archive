@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>peertopeer on The Odd Bit</title>
+    <link>http://blog.oddbit.com/tag/peertopeer/</link>
+    <description>Recent content in peertopeer on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Jan 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.oddbit.com/tag/peertopeer/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux UPnP Gateway</title>
+      <link>http://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</link>
+      <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</guid>
+      <description>Like many other folks out there, I have several computers in my house connected to the outside world via a Linux box acting as a NAT gateway. I often want to use application such as BitTorrent and Freenet, which require that a number of ports be forwarded from my external connection to the particular computer on which I happen to be working. It turns out there&amp;rsquo;s a protocol for this, called UPnP.</description>
+    </item>
+    
+  </channel>
+</rss>

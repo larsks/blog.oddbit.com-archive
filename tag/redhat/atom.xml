@@ -1,0 +1,25 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>redhat on The Odd Bit</title>
+
+  
+  <link rel="self" href="http://blog.oddbit.com/tag/redhat/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tag/redhat/" rel="alternate"></link>
+
+  <updated>2014-01-13T00:00:00Z</updated>
+  <id>http://blog.oddbit.com/tag/redhat/</id>
+  
+  <entry>
+    <title>RDO Bug Triage</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2014-01-13-rdo-bug-triage/"/>
+    <id>http://blog.oddbit.com/post/2014-01-13-rdo-bug-triage/</id>
+    <published>2014-01-13T00:00:00Z</published>
+    <updated>2014-01-13T00:00:00Z</updated>
+    <summary type="html">This Wednesday, January 15, at 14:00 UTC (that&amp;rsquo;s 9AM US/Eastern, or date -d &amp;quot;14:00 UTC&amp;quot; in your local timezone) I will be helping out with the RDO bug triage day. We&amp;rsquo;ll be trying to validate all the untriaged bugs opened against RDO.
+Feel free to drop by on #rdo and help out or ask questions.</summary>
+  </entry>
+  
+</feed>

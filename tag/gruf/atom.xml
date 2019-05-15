@@ -1,0 +1,38 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>gruf on The Odd Bit</title>
+
+  
+  <link rel="self" href="http://blog.oddbit.com/tag/gruf/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tag/gruf/" rel="alternate"></link>
+
+  <updated>2016-02-19T00:00:00Z</updated>
+  <id>http://blog.oddbit.com/tag/gruf/</id>
+  
+  <entry>
+    <title>Gruf gets superpowers</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/"/>
+    <id>http://blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/</id>
+    <published>2016-02-19T00:00:00Z</published>
+    <updated>2016-02-19T00:00:00Z</updated>
+    <summary type="html">In my last article article I introduced Gruf, a command line tool for interacting with Gerrit. Since then, Gruf has gained a few important new features.
+Caching Gruf will now by default cache results for five minutes. This avoids repeatedly querying the server for the same information when you&amp;rsquo;re just displaying it with different templates (for example, if you run a gruf query open here followed by a gruf -t patches query open here).</summary>
+  </entry>
+  
+  <entry>
+    <title>Gruf, a Gerrit command line utility</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/"/>
+    <id>http://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</id>
+    <published>2016-02-16T00:00:00Z</published>
+    <updated>2016-02-16T00:00:00Z</updated>
+    <summary type="html">(See also the followup to this article.)
+I&amp;rsquo;ve recently started spending more time interacting with Gerrit, the code review tool used both by OpenStack, at review.openstack.org, and by a variety of other open source projects at GerritForge&amp;rsquo;s GitHub-linked review.gerrithub.io. I went looking for command line tools and was largely disappointed with what I found. Many of the solutions out there assume that you&amp;rsquo;re regularly interacting with a single Gerrit instance, and that&amp;rsquo;s seldom the case: more often, the Gerrit server in use varies from project to project.</summary>
+  </entry>
+  
+</feed>

@@ -1,0 +1,26 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>cli on The Odd Bit</title>
+
+  
+  <link rel="self" href="http://blog.oddbit.com/tag/cli/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tag/cli/" rel="alternate"></link>
+
+  <updated>2014-09-23T00:00:00Z</updated>
+  <id>http://blog.oddbit.com/tag/cli/</id>
+  
+  <entry>
+    <title>Stupid command line tricks: Quickly share screen captures</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/"/>
+    <id>http://blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/</id>
+    <published>2014-09-23T00:00:00Z</published>
+    <updated>2014-09-23T00:00:00Z</updated>
+    <summary type="html">Sometimes you want to quickly share a screenshot with someone. Here&amp;rsquo;s my favorite mechanism, which assumes you have installed both curl and the ImageMagick suite.
+$ import png:- | curl -T- -s chunk.io http://chunk.io/f/76ea98ea081748e19de4507fde3c2c65  When you run this command, you cursor will change into crosshairs. Click on a window, and this will grab a png image of that window and send it to chunk.io using curl.
+You&amp;rsquo;ll get back a URL that you can use to share the image with people.</summary>
+  </entry>
+  
+</feed>

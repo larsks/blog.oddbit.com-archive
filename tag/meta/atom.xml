@@ -1,0 +1,51 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>meta on The Odd Bit</title>
+
+  
+  <link rel="self" href="http://blog.oddbit.com/tag/meta/atom.xml"/>
+  
+  <link href="http://blog.oddbit.com/tag/meta/" rel="alternate"></link>
+
+  <updated>2012-11-06T00:00:00Z</updated>
+  <id>http://blog.oddbit.com/tag/meta/</id>
+  
+  <entry>
+    <title>Converting HTML to Markdown</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/"/>
+    <id>http://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/</id>
+    <published>2012-11-06T00:00:00Z</published>
+    <updated>2012-11-06T00:00:00Z</updated>
+    <summary type="html">In order to import posts from Blogger into Scriptogr.am I needed to convert all the HTML formatting into Markdown. Thankfully there are a number of tools out there that can help with this task.
+ MarkdownRules. This is an online service build around Markdownify. It&amp;rsquo;s a slick site with a nice API, but the backend wasn&amp;rsquo;t able to correctly render &amp;lt;pre&amp;gt; blocks. Since I&amp;rsquo;m often writing about code, my posts are filled with things like embedded XML and #include &amp;lt;stdio.</summary>
+  </entry>
+  
+  <entry>
+    <title>Relocating from Blogger</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2012-11-06-moving-from-blogger/"/>
+    <id>http://blog.oddbit.com/post/2012-11-06-moving-from-blogger/</id>
+    <published>2012-11-06T00:00:00Z</published>
+    <updated>2012-11-06T00:00:00Z</updated>
+    <summary type="html">I&amp;rsquo;m in the process of porting over content from Blogger. This may lead to odd formatting or broken links here and there. If you spot something, please let me know.
+If you came here from Google and found a broken link, try starting at the archive and see if you can spot what you were looking for.</summary>
+  </entry>
+  
+  <entry>
+    <title>Merging directories with OpenLDAP&#39;s Meta backend</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/"/>
+    <id>http://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</id>
+    <published>2010-02-16T00:00:00Z</published>
+    <updated>2010-02-16T00:00:00Z</updated>
+    <summary type="html">This document provides an example of using OpenLDAP&amp;rsquo;s meta backend to provide a unified view of two distinct LDAP directory trees. I was frustrated by the lack of simple examples available when I went looking for information on this topic, so this is my attempt to make life easier for the next person looking to do the same thing.
+The particular use case that motiviated my interest in this topic was the need to configure web applications to (a) authenticate against an existing Active Directory server while (b) also allowing new accounts to be provisioned quickly and without granting any access in the AD environment.</summary>
+  </entry>
+  
+</feed>

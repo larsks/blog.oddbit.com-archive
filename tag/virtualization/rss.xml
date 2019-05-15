@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>virtualization on The Odd Bit</title>
+    <link>http://blog.oddbit.com/tag/virtualization/</link>
+    <description>Recent content in virtualization on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Oct 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.oddbit.com/tag/virtualization/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Automatic hostname entries for libvirt domains</title>
+      <link>http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</link>
+      <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</guid>
+      <description>Have you ever wished that you could use libvirt domain names as hostnames? So that you could do something like this:
+$ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something that would certainly make my life convenient, I put together a small script called virt-hosts that makes this possible. You can find virt-hosts in my virt-utils GitHub repository:
+ https://raw.github.com/larsks/virt-utils/master/virt-hosts  Run by itself, with no options, virt-hosts will scan through your running domains for interfaces on the libvirt default network, look up those MAC addresses up in the corresponding default.</description>
+    </item>
+    
+    <item>
+      <title>Did Arch Linux eat your KVM?</title>
+      <link>http://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/</link>
+      <pubDate>Mon, 08 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/</guid>
+      <description>A recent update to Arch Linux replaced the qemu-kvm package with an updated version of qemu. A side effect of this change is that the qemu-kvm binary is no longer available, and any libvirt guests on your system utilizing that binary will no longer operate. As is typical with Arch, there is no announcement about this incompatible change, and queries to #archlinux will be met with the knowledge, grace and decorum you would expect of that channel:</description>
+    </item>
+    
+    <item>
+      <title>Growing a filesystem on a virtual disk</title>
+      <link>http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</link>
+      <pubDate>Wed, 24 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</guid>
+      <description>Occasionally we will deploy a virtual instance into our KVM infrastructure and realize after the fact that we need more local disk space available. This is the process we use to expand the disk image. This process assumes the following:
+ You&amp;rsquo;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&amp;rsquo;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).</description>
+    </item>
+    
+  </channel>
+</rss>
