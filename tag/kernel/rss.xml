@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kernel on The Odd Bit</title>
-    <link>http://blog.oddbit.com/tag/kernel/</link>
+    <link>//blog.oddbit.com/tag/kernel/</link>
     <description>Recent content in kernel on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 21 Jul 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.oddbit.com/tag/kernel/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//blog.oddbit.com/tag/kernel/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tracking down a kernel bug with git bisect</title>
-      <link>http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</link>
+      <link>//blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</link>
       <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</guid>
+      <guid>//blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</guid>
       <description>After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
 $ docker run -ti fedora /bin/bash bash-4.2# su -c &#39;uptime&#39; su: System error  Hooking up something (like, say, socat unix-listen:/dev/log -) to /dev/log revealed that the system was logging:</description>
     </item>

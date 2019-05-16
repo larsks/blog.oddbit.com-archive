@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gpxe on The Odd Bit</title>
-    <link>http://blog.oddbit.com/tag/gpxe/</link>
+    <link>//blog.oddbit.com/tag/gpxe/</link>
     <description>Recent content in gpxe on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Jul 2010 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.oddbit.com/tag/gpxe/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//blog.oddbit.com/tag/gpxe/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Patch to gPXE dhcp command</title>
-      <link>http://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</link>
+      <link>//blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</link>
       <pubDate>Thu, 22 Jul 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</guid>
+      <guid>//blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</guid>
       <description>Update: This patch has been accepted into gPXE.
 I just released a patch to gPXE that modifies the dhcp command so that it can iterate over multiple interfaces. The stock dhcp command only accepts a single interface as an argument, which can be a problem if you are trying to boot on a machine with multiple interfaces. The builtin autoboot commands attempts to resolve this, but is only useful if you expect to receive appropriate boot parameters from your dhcp server.</description>
     </item>

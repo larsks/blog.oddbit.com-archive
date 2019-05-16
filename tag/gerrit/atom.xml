@@ -2,20 +2,20 @@
   <title>gerrit on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/gerrit/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/gerrit/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/gerrit/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/gerrit/" rel="alternate"></link>
 
   <updated>2017-01-22T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/gerrit/</id>
+  <id>//blog.oddbit.com/tag/gerrit/</id>
   
   <entry>
     <title>Making sure your Gerrit changes aren&#39;t broken</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/"/>
-    <id>http://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/"/>
+    <id>//blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</id>
     <published>2017-01-22T00:00:00Z</published>
     <updated>2017-01-22T00:00:00Z</updated>
     <summary type="html">It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
@@ -27,8 +27,8 @@ In many cases you can alleviate this through the use of the git pre-commit hook,
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/"/>
-    <id>http://blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/"/>
+    <id>//blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/</id>
     <published>2016-02-19T00:00:00Z</published>
     <updated>2016-02-19T00:00:00Z</updated>
     <summary type="html">In my last article article I introduced Gruf, a command line tool for interacting with Gerrit. Since then, Gruf has gained a few important new features.
@@ -40,8 +40,8 @@ Caching Gruf will now by default cache results for five minutes. This avoids rep
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/"/>
-    <id>http://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/"/>
+    <id>//blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</id>
     <published>2016-02-16T00:00:00Z</published>
     <updated>2016-02-16T00:00:00Z</updated>
     <summary type="html">(See also the followup to this article.)

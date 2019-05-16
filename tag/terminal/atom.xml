@@ -2,20 +2,20 @@
   <title>terminal on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/terminal/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/terminal/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/terminal/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/terminal/" rel="alternate"></link>
 
   <updated>2014-05-21T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/terminal/</id>
+  <id>//blog.oddbit.com/tag/terminal/</id>
   
   <entry>
     <title>Sharing a terminal session with termshare</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/"/>
-    <id>http://blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/"/>
+    <id>//blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/</id>
     <published>2014-05-21T00:00:00Z</published>
     <updated>2014-05-21T00:00:00Z</updated>
     <summary type="html">Termshare is a tool for sharing your terminal in a browser session. It supports both read-only and read-write sessions, and unlike many other tools it does not require any software installation on the remote side. This makes it tremendously handy for:

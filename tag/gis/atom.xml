@@ -2,20 +2,20 @@
   <title>gis on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/gis/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/gis/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/gis/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/gis/" rel="alternate"></link>
 
   <updated>2015-11-17T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/gis/</id>
+  <id>//blog.oddbit.com/tag/gis/</id>
   
   <entry>
     <title>Installing pyspatialite on Fedora</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/"/>
-    <id>http://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/"/>
+    <id>//blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/</id>
     <published>2015-11-17T00:00:00Z</published>
     <updated>2015-11-17T00:00:00Z</updated>
     <summary type="html">If you should find yourself wanting to install pyspatialite on Fedora &amp;ndash; perhaps because you want to use the Processing plugin for QGIS &amp;ndash; you will first need to install the following dependencies:

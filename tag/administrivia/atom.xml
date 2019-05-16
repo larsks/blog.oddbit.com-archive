@@ -2,20 +2,20 @@
   <title>administrivia on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/administrivia/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/administrivia/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/administrivia/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/administrivia/" rel="alternate"></link>
 
   <updated>2019-05-07T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/administrivia/</id>
+  <id>//blog.oddbit.com/tag/administrivia/</id>
   
   <entry>
     <title>New comment system</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2019-05-07-new-comment-system/"/>
-    <id>http://blog.oddbit.com/post/2019-05-07-new-comment-system/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2019-05-07-new-comment-system/"/>
+    <id>//blog.oddbit.com/post/2019-05-07-new-comment-system/</id>
     <published>2019-05-07T00:00:00Z</published>
     <updated>2019-05-07T00:00:00Z</updated>
     <summary type="html">As long as I&amp;rsquo;m switching site generators, it seems like a good idea to refresh the comment system as well. I&amp;rsquo;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.
@@ -27,8 +27,8 @@ That means that comments will finally be stored in the same place as the blog co
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2019-05-06-new-static-site-generator/"/>
-    <id>http://blog.oddbit.com/post/2019-05-06-new-static-site-generator/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2019-05-06-new-static-site-generator/"/>
+    <id>//blog.oddbit.com/post/2019-05-06-new-static-site-generator/</id>
     <published>2019-05-06T00:00:00Z</published>
     <updated>2019-05-06T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve switched my static site generator from Pelican to Hugo. I&amp;rsquo;ve tried to ensure that all the old links continue to work correctly, but if you notice anything missing or otherwise not working as intended, please let me know by opening an issue. Thanks!</summary>
@@ -39,8 +39,8 @@ That means that comments will finally be stored in the same place as the blog co
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2018-01-26-administrivia/"/>
-    <id>http://blog.oddbit.com/post/2018-01-26-administrivia/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2018-01-26-administrivia/"/>
+    <id>//blog.oddbit.com/post/2018-01-26-administrivia/</id>
     <published>2018-01-26T00:00:00Z</published>
     <updated>2018-01-26T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve just refreshed the version of Pelican used to generate this blog, along with the associated themes and plugins. It all seems to be working, but if you spot a problem feel free to drop me a line.</summary>

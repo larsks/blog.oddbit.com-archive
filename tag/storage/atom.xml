@@ -2,20 +2,20 @@
   <title>storage on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/storage/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/storage/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/storage/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/storage/" rel="alternate"></link>
 
   <updated>2018-01-25T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/storage/</id>
+  <id>//blog.oddbit.com/tag/storage/</id>
   
   <entry>
     <title>Fun with devicemapper snapshots</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/"/>
-    <id>http://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/"/>
+    <id>//blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</id>
     <published>2018-01-25T00:00:00Z</published>
     <updated>2018-01-25T00:00:00Z</updated>
     <summary type="html">I find myself working with Raspbian disk images fairly often. A typical workflow is:
@@ -28,8 +28,8 @@ Sure, I could just make a copy of the image and work from there, but what fun is
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/"/>
-    <id>http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/"/>
+    <id>//blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</id>
     <published>2012-10-24T00:00:00Z</published>
     <updated>2012-10-24T00:00:00Z</updated>
     <summary type="html">Occasionally we will deploy a virtual instance into our KVM infrastructure and realize after the fact that we need more local disk space available. This is the process we use to expand the disk image. This process assumes the following:
@@ -41,8 +41,8 @@ Sure, I could just make a copy of the image and work from there, but what fun is
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/"/>
-    <id>http://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/"/>
+    <id>//blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</id>
     <published>2011-05-22T00:00:00Z</published>
     <updated>2011-05-22T00:00:00Z</updated>
     <summary type="html">This articles describes how I got CrashPlan running on my FreeBSD 8(-STABLE) system. These instructions by Kim Scarborough were my starting point, but as these were for FreeBSD 7 there were some additional steps necessary to get things working.

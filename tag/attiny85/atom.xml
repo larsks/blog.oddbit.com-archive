@@ -2,20 +2,20 @@
   <title>attiny85 on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/attiny85/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/attiny85/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/attiny85/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/attiny85/" rel="alternate"></link>
 
   <updated>2019-01-28T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/attiny85/</id>
+  <id>//blog.oddbit.com/tag/attiny85/</id>
   
   <entry>
     <title>AVR micro-optimization: Avr-gcc and --short-enums</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/"/>
-    <id>http://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/"/>
+    <id>//blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</id>
     <published>2019-01-28T00:00:00Z</published>
     <updated>2019-01-28T00:00:00Z</updated>
     <summary type="html">How big is an enum? I noticed something odd while browsing through the assembly output of some AVR C code I wrote recently. In the code, I have the following expression:
@@ -27,8 +27,8 @@ int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2019-01-28-losing-malloc/"/>
-    <id>http://blog.oddbit.com/post/2019-01-28-losing-malloc/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2019-01-28-losing-malloc/"/>
+    <id>//blog.oddbit.com/post/2019-01-28-losing-malloc/</id>
     <published>2019-01-28T00:00:00Z</published>
     <updated>2019-01-28T00:00:00Z</updated>
     <summary type="html">Pssst! Hey&amp;hellip;hey, buddy, wanna get an extra KB for cheap?
@@ -41,8 +41,8 @@ Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/"/>
-    <id>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/"/>
+    <id>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</id>
     <published>2019-01-22T00:00:00Z</published>
     <updated>2019-01-22T00:00:00Z</updated>
     <summary type="html">In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
@@ -54,8 +54,8 @@ I&amp;rsquo;ve split this into three posts:</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/"/>
-    <id>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/"/>
+    <id>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</id>
     <published>2019-01-22T00:00:00Z</published>
     <updated>2019-01-22T00:00:00Z</updated>
     <summary type="html">This is the second of three posts about using gdb and simavr to debug AVR code. The complete series is:
@@ -72,8 +72,8 @@ Using simavr to collect information about the state of microcontroller pins whil
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/"/>
-    <id>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/"/>
+    <id>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</id>
     <published>2019-01-22T00:00:00Z</published>
     <updated>2019-01-22T00:00:00Z</updated>
     <summary type="html">This is the third of three posts about using gdb and simavr to debug AVR code. The complete series is:
@@ -90,8 +90,8 @@ Using simavr to collect information about the state of microcontroller pins whil
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/"/>
-    <id>http://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/"/>
+    <id>//blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</id>
     <published>2019-01-19T00:00:00Z</published>
     <updated>2019-01-19T00:00:00Z</updated>
     <summary type="html">I have a Raspberry Pi running RetroPie hooked up to a television. It&amp;rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&amp;rsquo;re pulling the plug on the Pi. While there haven&amp;rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</summary>

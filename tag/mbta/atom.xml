@@ -2,20 +2,20 @@
   <title>mbta on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/mbta/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/mbta/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/mbta/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/mbta/" rel="alternate"></link>
 
   <updated>2010-02-07T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/mbta/</id>
+  <id>//blog.oddbit.com/tag/mbta/</id>
   
   <entry>
     <title>MBTA realtime XML feed</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/"/>
-    <id>http://blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/"/>
+    <id>//blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/</id>
     <published>2010-02-07T00:00:00Z</published>
     <updated>2010-02-07T00:00:00Z</updated>
     <summary type="html">The MBTA has a trial web service interface that provides access to realtime location information for select MBTA buses, as well as access to route information, arrival prediction, and other features. More information can be found here:

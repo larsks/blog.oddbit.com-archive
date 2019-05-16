@@ -2,20 +2,20 @@
   <title>ha on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/ha/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/ha/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/ha/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/ha/" rel="alternate"></link>
 
   <updated>2010-02-24T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/ha/</id>
+  <id>//blog.oddbit.com/tag/ha/</id>
   
   <entry>
     <title>LDAP redundancy through proxy servers</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
-    <id>http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
+    <id>//blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
     <published>2010-02-24T00:00:00Z</published>
     <updated>2010-02-24T00:00:00Z</updated>
     <summary type="html">Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.

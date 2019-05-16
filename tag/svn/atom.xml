@@ -2,20 +2,20 @@
   <title>svn on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/svn/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/svn/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/svn/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/svn/" rel="alternate"></link>
 
   <updated>2010-01-29T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/svn/</id>
+  <id>//blog.oddbit.com/tag/svn/</id>
   
   <entry>
     <title>Cleaning up Subversion with Git</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/"/>
-    <id>http://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/"/>
+    <id>//blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</id>
     <published>2010-01-29T00:00:00Z</published>
     <updated>2010-01-29T00:00:00Z</updated>
     <summary type="html">Overview At my office, we have a crufty Subversion repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.

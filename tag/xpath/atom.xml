@@ -2,20 +2,20 @@
   <title>xpath on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/xpath/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/xpath/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/xpath/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/xpath/" rel="alternate"></link>
 
   <updated>2015-02-19T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/xpath/</id>
+  <id>//blog.oddbit.com/tag/xpath/</id>
   
   <entry>
     <title>Stupid Pacemaker XML tricks</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/"/>
-    <id>http://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/"/>
+    <id>//blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</id>
     <published>2015-02-19T00:00:00Z</published>
     <updated>2015-02-19T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.

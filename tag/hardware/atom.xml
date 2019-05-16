@@ -2,20 +2,20 @@
   <title>hardware on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/hardware/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/hardware/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/hardware/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/hardware/" rel="alternate"></link>
 
   <updated>2018-03-27T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/hardware/</id>
+  <id>//blog.oddbit.com/tag/hardware/</id>
   
   <entry>
     <title>Multiple 1-Wire Buses on the Raspberry Pi</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/"/>
-    <id>http://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/"/>
+    <id>//blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</id>
     <published>2018-03-27T00:00:00Z</published>
     <updated>2018-03-27T00:00:00Z</updated>
     <summary type="html">The DS18B20 is a popular temperature sensor that uses the 1-Wire protocol for communication. Recent versions of the Linux kernel include a kernel driver for this protocol, making it relatively convenient to connect one or more of these devices to a Raspberry Pi or similar device. 1-Wire devices can be daisy chained, so it is possible to connect several devices to your Pi using only a single GPIO pin, and you&amp;rsquo;ll find many articles out there that describe how to do so.</summary>
@@ -26,8 +26,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/"/>
-    <id>http://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/"/>
+    <id>//blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</id>
     <published>2013-03-12T00:00:00Z</published>
     <updated>2013-03-12T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&amp;rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
@@ -39,8 +39,8 @@ The design of the I2C bus is such that the only device driving a voltage on the 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/"/>
-    <id>http://blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/"/>
+    <id>//blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/</id>
     <published>2013-03-08T00:00:00Z</published>
     <updated>2013-03-08T00:00:00Z</updated>
     <summary type="html">There are several Python libraries out there for interacting with the GPIO pins on a Raspberry Pi:
@@ -52,8 +52,8 @@ The design of the I2C bus is such that the only device driving a voltage on the 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2013-03-07-controlling-a-servo/"/>
-    <id>http://blog.oddbit.com/post/2013-03-07-controlling-a-servo/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2013-03-07-controlling-a-servo/"/>
+    <id>//blog.oddbit.com/post/2013-03-07-controlling-a-servo/</id>
     <published>2013-03-07T00:00:00Z</published>
     <updated>2013-03-07T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.

@@ -2,20 +2,20 @@
   <title>ssh on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/ssh/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/ssh/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/ssh/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/ssh/" rel="alternate"></link>
 
   <updated>2011-05-09T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/ssh/</id>
+  <id>//blog.oddbit.com/tag/ssh/</id>
   
   <entry>
     <title>Signing data with ssh-agent</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/"/>
-    <id>http://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/"/>
+    <id>//blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</id>
     <published>2011-05-09T00:00:00Z</published>
     <updated>2011-05-09T00:00:00Z</updated>
     <summary type="html">This is follow-up to my previous post, Converting OpenSSH public keys.

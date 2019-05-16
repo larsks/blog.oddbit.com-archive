@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on The Odd Bit</title>
-    <link>http://blog.oddbit.com/post/</link>
+    <link>//blog.oddbit.com/post/</link>
     <description>Recent content in Posts on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.oddbit.com/post/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//blog.oddbit.com/post/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Unpacking a Python regular expression</title>
-      <link>http://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</link>
+      <link>//blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</link>
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</guid>
+      <guid>//blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</guid>
       <description>I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&amp;rsquo;t really seem the write place for that: so, here we are.</description>
     </item>
     
     <item>
       <title>New comment system</title>
-      <link>http://blog.oddbit.com/post/2019-05-07-new-comment-system/</link>
+      <link>//blog.oddbit.com/post/2019-05-07-new-comment-system/</link>
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-05-07-new-comment-system/</guid>
+      <guid>//blog.oddbit.com/post/2019-05-07-new-comment-system/</guid>
       <description>As long as I&amp;rsquo;m switching site generators, it seems like a good idea to refresh the comment system as well. I&amp;rsquo;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.
 That means that comments will finally be stored in the same place as the blog content, which I think is a happy state of affairs.</description>
     </item>
     
     <item>
       <title>New static site generator</title>
-      <link>http://blog.oddbit.com/post/2019-05-06-new-static-site-generator/</link>
+      <link>//blog.oddbit.com/post/2019-05-06-new-static-site-generator/</link>
       <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-05-06-new-static-site-generator/</guid>
+      <guid>//blog.oddbit.com/post/2019-05-06-new-static-site-generator/</guid>
       <description>I&amp;rsquo;ve switched my static site generator from Pelican to Hugo. I&amp;rsquo;ve tried to ensure that all the old links continue to work correctly, but if you notice anything missing or otherwise not working as intended, please let me know by opening an issue. Thanks!</description>
     </item>
     
     <item>
       <title>Adding support for privilege escalation to Ansible&#39;s docker connection driver</title>
-      <link>http://blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/</link>
+      <link>//blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/</guid>
+      <guid>//blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/</guid>
       <description>Update 2019-05-09 Pull request #55816 has merged, so you can now use sudo with the docker connection driver even when sudo is configured to require a password.
 I often use Docker to test out Ansible playbooks. While normally that works great, I recently ran into an unexpected problem with privilege escalation. Given a simple playbook like this:
 --- - hosts: all gather_facts: false become: true tasks: - ping:  And an inventory like this:</description>
@@ -52,29 +52,29 @@ I often use Docker to test out Ansible playbooks. While normally that works grea
     
     <item>
       <title>Writing Ansible filter plugins</title>
-      <link>http://blog.oddbit.com/post/2019-04-25-writing-ansible-filter-plugins/</link>
+      <link>//blog.oddbit.com/post/2019-04-25-writing-ansible-filter-plugins/</link>
       <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-04-25-writing-ansible-filter-plugins/</guid>
+      <guid>//blog.oddbit.com/post/2019-04-25-writing-ansible-filter-plugins/</guid>
       <description>I often see questions from people who are attemping to perform complex text transformations in their Ansible playbooks. While I am a huge fan of Ansible, data transformation is not one of its strong points. For example, this past week someone asked a question on Stack Overflow in which they were attempting to convert the output of the keytool command into a list of dictionaries. The output of the keytool -list -v command looks something like this:</description>
     </item>
     
     <item>
       <title>Docker build learns about secrets and ssh agent forwarding</title>
-      <link>http://blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/</link>
+      <link>//blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/</link>
       <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/</guid>
+      <guid>//blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/</guid>
       <description>A common problem for folks working with Docker is accessing resources which require authentication during the image build step. A particularly common use case is getting access to private git repositories using ssh key-based authentication. Until recently there hasn&amp;rsquo;t been a great solution:
  you can embed secrets in your image, but now you can&amp;rsquo;t share the image with anybody. you can use build arguments, but this requires passing in an unenecrypted private key on the docker build command line, which is suboptimal for a number of reasons you can perform all the steps requiring authentication at runtime, but this can needlessly complicate your container startup process.</description>
     </item>
     
     <item>
       <title>In which I PEBKAC so you don&#39;t have to</title>
-      <link>http://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</link>
+      <link>//blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</guid>
+      <guid>//blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</guid>
       <description>Say you have a simple bit of code:
 #include &amp;lt;avr/io.h&amp;gt; #include &amp;lt;util/delay.h&amp;gt; #define LED_BUILTIN _BV(PORTB5) int main(void) { DDRB |= LED_BUILTIN; while (1) { PORTB |= LED_BUILTIN; // turn on led _delay_ms(1000); // delay 1s PORTB &amp;amp;= ~LED_BUILTIN; // turn off led _delay_ms(1000); // delay 1s } }  You have a Makefile that compiles that into an object (.o) file like this:
 avr-gcc -mmcu=atmega328p -DF_CPU=16000000 -Os -c blink.c  If you were to forget to set the device type when compiling your .</description>
@@ -82,10 +82,10 @@ avr-gcc -mmcu=atmega328p -DF_CPU=16000000 -Os -c blink.c  If you were to forget 
     
     <item>
       <title>ATOMIC_BLOCK magic in avr-libc</title>
-      <link>http://blog.oddbit.com/post/2019-02-01-atomicblock-magic-in-avrlibc/</link>
+      <link>//blog.oddbit.com/post/2019-02-01-atomicblock-magic-in-avrlibc/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-02-01-atomicblock-magic-in-avrlibc/</guid>
+      <guid>//blog.oddbit.com/post/2019-02-01-atomicblock-magic-in-avrlibc/</guid>
       <description>The AVR C library, avr-libc, provide an ATOMIC_BLOCK macro that you can use to wrap critical sections of your code to ensure that interrupts are disabled while the code executes. At high level, the ATOMIC_BLOCK macro (when called using ATOMIC_FORCEON) does something like this:
 cli(); ...your code here... seti();  But it&amp;rsquo;s more than that. If you read the documentation for the macro, it says:
  Creates a block of code that is guaranteed to be executed atomically.</description>
@@ -93,20 +93,20 @@ cli(); ...your code here... seti();  But it&amp;rsquo;s more than that. If you r
     
     <item>
       <title>AVR micro-optimization: Avr-gcc and --short-enums</title>
-      <link>http://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</link>
+      <link>//blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</guid>
+      <guid>//blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</guid>
       <description>How big is an enum? I noticed something odd while browsing through the assembly output of some AVR C code I wrote recently. In the code, I have the following expression:
 int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&amp;rsquo;t want to clutter this post with unnecessary code listings):</description>
     </item>
     
     <item>
       <title>AVR micro-optimization: Losing malloc</title>
-      <link>http://blog.oddbit.com/post/2019-01-28-losing-malloc/</link>
+      <link>//blog.oddbit.com/post/2019-01-28-losing-malloc/</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-01-28-losing-malloc/</guid>
+      <guid>//blog.oddbit.com/post/2019-01-28-losing-malloc/</guid>
       <description>Pssst! Hey&amp;hellip;hey, buddy, wanna get an extra KB for cheap?
 When I write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
 Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&amp;rsquo;s exactly what I did.</description>
@@ -114,20 +114,20 @@ Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)
     
     <item>
       <title>Debugging attiny85 code, part 1: simavr and gdb</title>
-      <link>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</link>
+      <link>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</guid>
+      <guid>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</guid>
       <description>In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
 I&amp;rsquo;ve split this into three posts:</description>
     </item>
     
     <item>
       <title>Debugging attiny85 code, part 2: Automating GDB with scripts</title>
-      <link>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</link>
+      <link>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</guid>
+      <guid>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</guid>
       <description>This is the second of three posts about using gdb and simavr to debug AVR code. The complete series is:
  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
@@ -139,10 +139,10 @@ Using simavr to collect information about the state of microcontroller pins whil
     
     <item>
       <title>Debugging attiny85 code, part 3: Tracing with simavr</title>
-      <link>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</link>
+      <link>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</guid>
+      <guid>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</guid>
       <description>This is the third of three posts about using gdb and simavr to debug AVR code. The complete series is:
  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
@@ -154,29 +154,29 @@ Using simavr to collect information about the state of microcontroller pins whil
     
     <item>
       <title>PiPower: A Raspberry Pi UPS</title>
-      <link>http://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</link>
+      <link>//blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</link>
       <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</guid>
+      <guid>//blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</guid>
       <description>I have a Raspberry Pi running RetroPie hooked up to a television. It&amp;rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&amp;rsquo;re pulling the plug on the Pi. While there haven&amp;rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</description>
     </item>
     
     <item>
       <title>Integrating Bitwarden with Ansible</title>
-      <link>http://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</link>
+      <link>//blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</link>
       <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</guid>
+      <guid>//blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</guid>
       <description>Bitwarden is a password management service (like LastPass or 1Password). It&amp;rsquo;s unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.
 At $WORK(-ish) we&amp;rsquo;re looking into Bitwarden because we want a password sharing and management solution that was better than dropping files into directories on remote hosts or sharing things over Slack.</description>
     </item>
     
     <item>
       <title>Systemd unit for managing USB gadgets</title>
-      <link>http://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</link>
+      <link>//blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</link>
       <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</guid>
+      <guid>//blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</guid>
       <description>The Pi Zero (and Zero W) have support for acting as a USB gadget: that means that they can be configured to act as a USB device &amp;ndash; like a serial port, an ethernet interface, a mass storage device, etc.
 There are two different ways of configuring this support. The first only allows you to configure a single type of gadget at a time, and boils down to:
  Enable the dwc2 overlay in /boot/config.</description>
@@ -184,10 +184,10 @@ There are two different ways of configuring this support. The first only allows 
     
     <item>
       <title>Configuring a static address for wlan0 on Raspbian Stretch</title>
-      <link>http://blog.oddbit.com/post/2018-06-14-configuring-a-static-address-f/</link>
+      <link>//blog.oddbit.com/post/2018-06-14-configuring-a-static-address-f/</link>
       <pubDate>Thu, 14 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-06-14-configuring-a-static-address-f/</guid>
+      <guid>//blog.oddbit.com/post/2018-06-14-configuring-a-static-address-f/</guid>
       <description>Recent releases of Raspbian have adopted the use of dhcpcd to manage both dynamic and static interface configuration. If you would prefer to use the traditional /etc/network/interfaces mechanism instead, follow these steps.
  First, disable dhcpcd and wpa_supplicant.
 systemctl disable --now dhdpcd wpa_supplicant  You will need a wpa_supplicant configuration for wlan0 in /etc/wpa_supplicant/wpa_supplicant-wlan0.conf.
@@ -197,58 +197,58 @@ If you already have an appropriate configuration in /etc/wpa_supplicant/wpa_supp
     
     <item>
       <title>Using a TM1637 LED module with CircuitPython</title>
-      <link>http://blog.oddbit.com/post/2018-05-03-using-a-tm-led-module-with-cir/</link>
+      <link>//blog.oddbit.com/post/2018-05-03-using-a-tm-led-module-with-cir/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-05-03-using-a-tm-led-module-with-cir/</guid>
+      <guid>//blog.oddbit.com/post/2018-05-03-using-a-tm-led-module-with-cir/</guid>
       <description>CircuitPython is &amp;ldquo;an education friendly open source derivative of MicroPython&amp;rdquo;. MicroPython is a port of Python to microcontroller environments; it can run on boards with very few resources such as the ESP8266. I&amp;rsquo;ve recently started experimenting with CircuitPython on a Wemos D1 mini, which is a small form-factor ESP8266 board.
 I had previously been using Mike Causer&amp;rsquo;s micropython-tm1637 for MicroPython to drive a 4 digit LED display. I was hoping to get the same code working under CircuitPython, but when I tried to build an image that included the tm1637 module I ran into:</description>
     </item>
     
     <item>
       <title>Multiple 1-Wire Buses on the Raspberry Pi</title>
-      <link>http://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</link>
+      <link>//blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</guid>
+      <guid>//blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</guid>
       <description>The DS18B20 is a popular temperature sensor that uses the 1-Wire protocol for communication. Recent versions of the Linux kernel include a kernel driver for this protocol, making it relatively convenient to connect one or more of these devices to a Raspberry Pi or similar device. 1-Wire devices can be daisy chained, so it is possible to connect several devices to your Pi using only a single GPIO pin, and you&amp;rsquo;ll find many articles out there that describe how to do so.</description>
     </item>
     
     <item>
       <title>Using Docker macvlan networks</title>
-      <link>http://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/</link>
+      <link>//blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/</link>
       <pubDate>Mon, 12 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/</guid>
+      <guid>//blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/</guid>
       <description>A question that crops up regularly on #docker is &amp;ldquo;How do I attach a container directly to my local network?&amp;rdquo; One possible answer to that question is the macvlan network type, which lets you create &amp;ldquo;clones&amp;rdquo; of a physical interface on your host and use that to attach containers directly to your local network. For the most part it works great, but it does come with some minor caveats and limitations.</description>
     </item>
     
     <item>
       <title>Listening for connections on all ports/any port</title>
-      <link>http://blog.oddbit.com/post/2018-02-27-listening-for-connections-on-a/</link>
+      <link>//blog.oddbit.com/post/2018-02-27-listening-for-connections-on-a/</link>
       <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-02-27-listening-for-connections-on-a/</guid>
+      <guid>//blog.oddbit.com/post/2018-02-27-listening-for-connections-on-a/</guid>
       <description>On IRC &amp;ndash; and other online communities &amp;ndash; it is common to use a &amp;ldquo;pastebin&amp;rdquo; service to share snippets of code, logs, and other material, rather than pasting them directly into a conversation. These services will typically return a URL that you can share with others so that they can see the content in their browser.
 One of my favorite pastebin services is termbin.com, because it works from the command line using tools you probably already have installed.</description>
     </item>
     
     <item>
       <title>Grouping aggregation queries in Gnocchi 4.0.x</title>
-      <link>http://blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/</link>
+      <link>//blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/</link>
       <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/</guid>
+      <guid>//blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/</guid>
       <description>In this article, we&amp;rsquo;re going to ask Gnocchi (the OpenStack telemetry storage service) how much memory was used, on average, over the course of each day by each project in an OpenStack environment.
 Environment I&amp;rsquo;m working with an OpenStack &amp;ldquo;Pike&amp;rdquo; deployment, which means I have Gnocchi 4.0.x. More recent versions of Gnocchi (4.1.x and later) have a new aggregation API called dynamic aggregates, but that isn&amp;rsquo;t available in 4.0.x so in this article we&amp;rsquo;ll be using the legacy /v1/aggregations API.</description>
     </item>
     
     <item>
       <title>Listing iptables rules with line numbers</title>
-      <link>http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</link>
+      <link>//blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</link>
       <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</guid>
+      <guid>//blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</guid>
       <description>You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.
 You can augment the output from these commands with rule numbers with the following awk script:
 #!/bin/awk -f state == 0 &amp;amp;&amp;amp; /^-A/ {state=1; chain=$2; counter=1; printf &amp;quot;\n&amp;quot;} state == 1 &amp;amp;&amp;amp; $2 !</description>
@@ -256,19 +256,19 @@ You can augment the output from these commands with rule numbers with the follow
     
     <item>
       <title>Pelican and theme update</title>
-      <link>http://blog.oddbit.com/post/2018-01-26-administrivia/</link>
+      <link>//blog.oddbit.com/post/2018-01-26-administrivia/</link>
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-01-26-administrivia/</guid>
+      <guid>//blog.oddbit.com/post/2018-01-26-administrivia/</guid>
       <description>I&amp;rsquo;ve just refreshed the version of Pelican used to generate this blog, along with the associated themes and plugins. It all seems to be working, but if you spot a problem feel free to drop me a line.</description>
     </item>
     
     <item>
       <title>Fun with devicemapper snapshots</title>
-      <link>http://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</link>
+      <link>//blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</link>
       <pubDate>Thu, 25 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</guid>
+      <guid>//blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</guid>
       <description>I find myself working with Raspbian disk images fairly often. A typical workflow is:
  Download the disk image. Mount the filesystem somewhere to check something. Make some changes or install packages just to check something else. Crap I&amp;rsquo;ve made changes.  &amp;hellip;at which point I need to fetch a new copy of the image next time I want to start fresh.
 Sure, I could just make a copy of the image and work from there, but what fun is that?</description>
@@ -276,10 +276,10 @@ Sure, I could just make a copy of the image and work from there, but what fun is
     
     <item>
       <title>Safely restarting an OpenStack server with Ansible</title>
-      <link>http://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/</link>
+      <link>//blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/</link>
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/</guid>
+      <guid>//blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/</guid>
       <description>The other day on #ansible, someone was looking for a way to safely shut down a Nova server, wait for it to stop, and then start it up again using the openstack cli. The first part seemed easy:
 - hosts: myserver tasks: - name: shut down the server command: poweroff become: true  &amp;hellip;but that will actually fail with the following result:
 TASK [shut down server] ************************************* fatal: [myserver]: UNREACHABLE! =&amp;gt; {&amp;quot;changed&amp;quot;: false, &amp;quot;msg&amp;quot;: &amp;quot;Failed to connect to the host via ssh: Shared connection to 10.</description>
@@ -287,38 +287,38 @@ TASK [shut down server] ************************************* fatal: [myserver]:
     
     <item>
       <title>Some notes on PWM on the Raspberry Pi</title>
-      <link>http://blog.oddbit.com/post/2017-09-26-some-notes-on-pwm-on-the-raspberry-pi/</link>
+      <link>//blog.oddbit.com/post/2017-09-26-some-notes-on-pwm-on-the-raspberry-pi/</link>
       <pubDate>Tue, 26 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2017-09-26-some-notes-on-pwm-on-the-raspberry-pi/</guid>
+      <guid>//blog.oddbit.com/post/2017-09-26-some-notes-on-pwm-on-the-raspberry-pi/</guid>
       <description>I was recently working on a project in which I wanted to drive a simple piezo buzzer attached to a GPIO pin on a Raspberry Pi. I was already using the RPi.GPIO module in my project so that seemed like a logical place to start, but I ran into a few issues.
 You drive a piezo buzzer by generating a PWM signal with the appropriate frequency. The RPi.GPIO module implements PWM via software, which is tricky on a non-realtime system.</description>
     </item>
     
     <item>
       <title>Ansible for Infrastructure Testing</title>
-      <link>http://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</link>
+      <link>//blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</link>
       <pubDate>Wed, 02 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</guid>
+      <guid>//blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</guid>
       <description>At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&amp;ldquo;your clocks aren&amp;rsquo;t in sync&amp;rdquo; or &amp;ldquo;your filesystem is full&amp;rdquo; or &amp;ldquo;you haven&amp;rsquo;t installed a critical update&amp;rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues.</description>
     </item>
     
     <item>
       <title>Better bulk filtering for Gmail</title>
-      <link>http://blog.oddbit.com/post/2017-07-07-better-bulk-filtering-for-gmail/</link>
+      <link>//blog.oddbit.com/post/2017-07-07-better-bulk-filtering-for-gmail/</link>
       <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2017-07-07-better-bulk-filtering-for-gmail/</guid>
+      <guid>//blog.oddbit.com/post/2017-07-07-better-bulk-filtering-for-gmail/</guid>
       <description>I use Gmail extensively for my personal email, and recently my workplace has been migrated over to Gmail as well. I find that for my work email I rely much more extensively on filters and labels to organize things (like zillions of internal and upstream mailing lists), and that has posed some challenges. While Gmail is in general fairly snappy, attempting to apply an action to thousands of messages (for example, trying to mark 16000 messages as &amp;ldquo;read&amp;rdquo;, or applying a new filter to all your existing messages) results in a very poor experience: it is not possible to interact with Gmail (in the same tab) while the action is running, and frequently actions will timeout.</description>
     </item>
     
     <item>
       <title>OpenStack, Containers, and Logging</title>
-      <link>http://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</link>
+      <link>//blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</link>
       <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</guid>
+      <guid>//blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</guid>
       <description>I&amp;rsquo;ve been thinking about logging in the context of OpenStack and containerized service deployments. I&amp;rsquo;d like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.
 There are effectively three different mechanisms that an application can use to emit log messages:
  Via some logging-specific API, such as the legacy syslog API By writing a byte stream to stdout/stderr By writing a byte stream to a file  A substantial advantage to the first mechanism (using a logging API) is that the application is logging messages rather than bytes.</description>
@@ -326,30 +326,30 @@ There are effectively three different mechanisms that an application can use to 
     
     <item>
       <title>FAA Cannot Require Drone Registration</title>
-      <link>http://blog.oddbit.com/post/2017-05-25-faa-cannot-require-drone-registration/</link>
+      <link>//blog.oddbit.com/post/2017-05-25-faa-cannot-require-drone-registration/</link>
       <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2017-05-25-faa-cannot-require-drone-registration/</guid>
+      <guid>//blog.oddbit.com/post/2017-05-25-faa-cannot-require-drone-registration/</guid>
       <description>This is now old news if you&amp;rsquo;re already following the drone industry, but if you&amp;rsquo;re not, I&amp;rsquo;d like to highlight a recent decision made by the US Court of Appeals regarding the FAA&amp;rsquo;s drone registration requirements.
 To place this in context, back in 2015 the FAA established a new set of regulations (the &amp;ldquo;Registration Rule&amp;rdquo;) requiring anyone with a UAV (&amp;ldquo;unmanned aerial vehicle&amp;rdquo;, or &amp;ldquo;drone&amp;rdquo;) weighing between 0.5 and 55 lbs to register with the FAA.</description>
     </item>
     
     <item>
       <title>Making sure your Gerrit changes aren&#39;t broken</title>
-      <link>http://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</link>
+      <link>//blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</link>
       <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</guid>
+      <guid>//blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</guid>
       <description>It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
 In many cases you can alleviate this through the use of the git pre-commit hook, which will run every time you commit changes locally.</description>
     </item>
     
     <item>
       <title>Exploring YAQL Expressions</title>
-      <link>http://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</link>
+      <link>//blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</link>
       <pubDate>Thu, 11 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</guid>
+      <guid>//blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</guid>
       <description>The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&amp;rsquo;s more advanced features.
 I am working on a Fluentd composable service for TripleO. I want to allow each service to specify a logging source configuration fragment, for example:
 parameters: NovaAPILoggingSource: type: json description: Fluentd logging configuration for nova-api.</description>
@@ -357,20 +357,20 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
     
     <item>
       <title>Connecting another vm to your tripleo-quickstart deployment</title>
-      <link>http://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</link>
+      <link>//blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</guid>
+      <guid>//blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</guid>
       <description>Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
 For a concrete example, let&amp;rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:</description>
     </item>
     
     <item>
       <title>A collection of git tips</title>
-      <link>http://blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</link>
+      <link>//blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</link>
       <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</guid>
+      <guid>//blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</guid>
       <description>This is a small collection of simple git tips and tricks I use to make my life easier.
 Quickly amend an existing commit with new files I have this alias in place that will amend the current commit while automatically re-using the existing commit message:
 alias.fix=commit --amend -C HEAD  With this in place, fixing a review becomes:
@@ -380,69 +380,69 @@ $ vim some/file/somewhere $ git add -u $ git fix  Which I find much more conveni
     <item>
       <title>Deploying an HA OpenStack development environment with tripleo-quickstart
 </title>
-      <link>http://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</link>
+      <link>//blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</link>
       <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</guid>
+      <guid>//blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</guid>
       <description>In this article I would like to introduce tripleo-quickstart, a tool that will automatically provision a virtual environment and then use TripleO to deploy an HA OpenStack on top of it.
 Introducing Tripleo-Quickstart The goal of the Tripleo-Quickstart project is to replace the instack-virt-setup tool for quickly setting up virtual TripleO environments, and to ultimately become the tool used by both developers and upstream CI for this purpose. The project is a set of Ansible playbooks that will take care of:</description>
     </item>
     
     <item>
       <title>Gruf gets superpowers</title>
-      <link>http://blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/</link>
+      <link>//blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/</link>
       <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/</guid>
+      <guid>//blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/</guid>
       <description>In my last article article I introduced Gruf, a command line tool for interacting with Gerrit. Since then, Gruf has gained a few important new features.
 Caching Gruf will now by default cache results for five minutes. This avoids repeatedly querying the server for the same information when you&amp;rsquo;re just displaying it with different templates (for example, if you run a gruf query open here followed by a gruf -t patches query open here).</description>
     </item>
     
     <item>
       <title>Gruf, a Gerrit command line utility</title>
-      <link>http://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</link>
+      <link>//blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</link>
       <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</guid>
+      <guid>//blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</guid>
       <description>(See also the followup to this article.)
 I&amp;rsquo;ve recently started spending more time interacting with Gerrit, the code review tool used both by OpenStack, at review.openstack.org, and by a variety of other open source projects at GerritForge&amp;rsquo;s GitHub-linked review.gerrithub.io. I went looking for command line tools and was largely disappointed with what I found. Many of the solutions out there assume that you&amp;rsquo;re regularly interacting with a single Gerrit instance, and that&amp;rsquo;s seldom the case: more often, the Gerrit server in use varies from project to project.</description>
     </item>
     
     <item>
       <title>A systemd-nspawn connection driver for Ansible</title>
-      <link>http://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</link>
+      <link>//blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</link>
       <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</guid>
+      <guid>//blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</guid>
       <description>I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I&amp;rsquo;m a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
 Ansible already has a chroot module, of course, but for some situations &amp;ndash; such as targeting an emulated chroot environment &amp;ndash; that just means a lot of extra work.</description>
     </item>
     
     <item>
       <title>Folding long lines in Ansible inventory files</title>
-      <link>http://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</link>
+      <link>//blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</link>
       <pubDate>Sun, 07 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</guid>
+      <guid>//blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</guid>
       <description>If you have an Ansible inventory file that includes lots of per host variables, it&amp;rsquo;s not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
 I&amp;rsquo;ve just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.</description>
     </item>
     
     <item>
       <title>Systemd-nspawn for fun and...well, mostly for fun</title>
-      <link>http://blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</link>
+      <link>//blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</link>
       <pubDate>Sun, 07 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</guid>
+      <guid>//blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</guid>
       <description>systemd-nspawn has been called &amp;ldquo;chroot on steroids&amp;rdquo;, but if you think of it as Docker with a slightly different target you wouldn&amp;rsquo;t be far wrong, either. It can be used to spawn containers on your host, and has a variety of options for configuring the containerized environment through the use of private networking, bind mounts, capability controls, and a variety of other facilities that give you flexible container management.</description>
     </item>
     
     <item>
       <title>Installing pyspatialite on Fedora</title>
-      <link>http://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/</link>
+      <link>//blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/</link>
       <pubDate>Tue, 17 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/</guid>
+      <guid>//blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/</guid>
       <description>If you should find yourself wanting to install pyspatialite on Fedora &amp;ndash; perhaps because you want to use the Processing plugin for QGIS &amp;ndash; you will first need to install the following dependencies:
  gcc python-devel sqlite-devel geos-devel proj-devel python-pip redhat-rpm-config  After which you can install pyspatialite using pip by running:
 CFLAGS=-I/usr/include pip install pyspatialite  At this point, you should be able to use the &amp;ldquo;Processing&amp;rdquo; plugin.</description>
@@ -450,20 +450,20 @@ CFLAGS=-I/usr/include pip install pyspatialite  At this point, you should be abl
     
     <item>
       <title>Ansible 2.0: New OpenStack modules</title>
-      <link>http://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</link>
+      <link>//blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</link>
       <pubDate>Mon, 26 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</guid>
+      <guid>//blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</guid>
       <description>This is the second in a loose sequence of articles looking at new features in Ansible 2.0. In the previous article I looked at the Docker connection driver. In this article, I would like to provide an overview of the new-and-much-improved suite of modules for interacting with an OpenStack environment, and provide a few examples of their use.
 In versions of Ansible prior to 2.0, there was a small collection of OpenStack modules.</description>
     </item>
     
     <item>
       <title>Automatic git cache</title>
-      <link>http://blog.oddbit.com/post/2015-10-19-automatic-git-cache/</link>
+      <link>//blog.oddbit.com/post/2015-10-19-automatic-git-cache/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-10-19-automatic-git-cache/</guid>
+      <guid>//blog.oddbit.com/post/2015-10-19-automatic-git-cache/</guid>
       <description>This post is in response to a comment someone made on irc earlier today:
  [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&amp;rsquo;re available
  In this post I present a proof-of-concept solution to this request. Please note that thisand isn&amp;rsquo;t something that has actually been used or tested anywhere!
@@ -472,10 +472,10 @@ If you access a git repository via ssh, it&amp;rsquo;s easy to provide a wrapper
     
     <item>
       <title>Stupid Ansible Tricks: Running a role from the command line</title>
-      <link>http://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/</link>
+      <link>//blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/</guid>
+      <guid>//blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/</guid>
       <description>When writing Ansible roles I occasionally want a way to just run a role from the command line, without having to muck about with a playbook. I&amp;rsquo;ve seen similar requests on the mailing lists and on irc.
 I&amp;rsquo;ve thrown together a quick wrapper that will allow you (and me!) to do exactly that, called ansible-role. The --help output looks like this:
 usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTRA_VARS] [-i INVENTORY] [--hosts HOSTS] [--sudo] [--become] [--user USER] role positional arguments: role optional arguments: -h, --help show this help message and exit --verbose, -v --gather, -g --no-gather, -G --extra-vars EXTRA_VARS, -e EXTRA_VARS Inventory: -i INVENTORY, --inventory INVENTORY --hosts HOSTS, -H HOSTS Identity: --sudo, -s --become, -b --user USER, -u USER  Example If you have a role roles/testrole that contains the following in tasks/main.</description>
@@ -483,59 +483,59 @@ usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTR
     
     <item>
       <title>Bootstrapping Ansible on Fedora 23</title>
-      <link>http://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</link>
+      <link>//blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</link>
       <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</guid>
+      <guid>//blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</guid>
       <description>If you&amp;rsquo;ve tried running Ansible against a Fedora 23 system, you may have run into the following problem:
 fatal: [myserver]: FAILED! =&amp;gt; {&amp;quot;changed&amp;quot;: false, &amp;quot;failed&amp;quot;: true, &amp;quot;msg&amp;quot;: &amp;quot;/bin/sh: /usr/bin/python: No such file or directory\r\n&amp;quot;, &amp;quot;parsed&amp;quot;: false}  Fedora has recently made the switch to only including Python 3 on the base system (at least for the cloud variant), while Ansible still requires Python 2. With Fedora 23, Python 3 is available as /usr/bin/python3, and /usr/bin/python is only available if you have installed the Python 2 interpreter.</description>
     </item>
     
     <item>
       <title>Ansible 2.0: The Docker connection driver</title>
-      <link>http://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</link>
+      <link>//blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</link>
       <pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</guid>
+      <guid>//blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</guid>
       <description>As the release of Ansible 2.0 draws closer, I&amp;rsquo;d like to take a look at some of the new features that are coming down the pipe. In this post, we&amp;rsquo;ll look at the docker connection driver.
 A &amp;ldquo;connection driver&amp;rdquo; is the mechanism by which Ansible connects to your target hosts. These days it uses ssh by default (which relies on the OpenSSH command line client for connectivity), and it also offers the Paramiko library as an alternative ssh implementation (this was in fact the default driver in earlier versions of Ansible).</description>
     </item>
     
     <item>
       <title>Running NTP in a Container</title>
-      <link>http://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/</link>
+      <link>//blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/</guid>
+      <guid>//blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/</guid>
       <description>Someone asked on IRC about running ntpd in a container on Atomic, so I&amp;rsquo;ve put together a small example. We&amp;rsquo;ll start with a very simple Dockerfile:
 FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&amp;quot;ntpd&amp;quot;]  I&amp;rsquo;m using the alpine image as my starting point because it&amp;rsquo;s very small, which makes this whole process go a little faster. I&amp;rsquo;m installing the openntpd package, which provides the ntpd binary.</description>
     </item>
     
     <item>
       <title>Migrating Cinder volumes between OpenStack environments using shared NFS storage</title>
-      <link>http://blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/</link>
+      <link>//blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/</link>
       <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/</guid>
+      <guid>//blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/</guid>
       <description>Many of the upgrade guides for OpenStack focus on in-place upgrades to your OpenStack environment. Some organizations may opt for a less risky (but more hardware intensive) option of setting up a parallel environment, and then migrating data into the new environment. In this article, we look at how to use Cinder backups with a shared NFS volume to facilitate the migration of Cinder volumes between two different OpenStack environments.</description>
     </item>
     
     <item>
       <title>Provider external networks (in an appropriate amount of detail)</title>
-      <link>http://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</link>
+      <link>//blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</link>
       <pubDate>Thu, 13 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</guid>
+      <guid>//blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</guid>
       <description>In Quantum in Too Much Detail, I discussed the architecture of a Neutron deployment in detail. Since that article was published, Neutron gained the ability to handle multiple external networks with a single L3 agent. While I wrote about that back in 2014, I covered the configuration side of it in much more detail than I discussed the underlying network architecture. This post addresses the architecture side.
 The players This document describes the architecture that results from a particular OpenStack configuration, specifically:</description>
     </item>
     
     <item>
       <title>In which we are amazed it doesn&#39;t all fall apart</title>
-      <link>http://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</link>
+      <link>//blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</link>
       <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</guid>
+      <guid>//blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</guid>
       <description>So, the Kilo release notes say:
 nova-manage migrate-flavor-data  But nova-manage says:
 nova-manage db migrate_flavor_data  But that says:
@@ -548,29 +548,29 @@ nova-manage db migrate_flavor_data --max_number 100  And that says:</description
     
     <item>
       <title>Mapping local users to Kerberos principals with SSSD</title>
-      <link>http://blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/</link>
+      <link>//blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/</link>
       <pubDate>Thu, 16 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/</guid>
+      <guid>//blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/</guid>
       <description>I work for an organization that follows the common model of assigning people systematically generated user ids. Like most technically inclined employees of this organization, I have local accounts on my workstation that don&amp;rsquo;t bear any relation to the generated account ids. For the most part this isn&amp;rsquo;t a problem, except that our organization uses Kerberos to authenticate access to a variety of resources (such as the mailserver and a variety of web applications).</description>
     </item>
     
     <item>
       <title>OpenStack Networking without DHCP</title>
-      <link>http://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</link>
+      <link>//blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</link>
       <pubDate>Fri, 26 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</guid>
+      <guid>//blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</guid>
       <description>In an OpenStack environment, cloud-init generally fetches information from the metadata service provided by Nova. It also has support for reading this information from a configuration drive, which under OpenStack means a virtual CD-ROM device attached to your instance containing the same information that would normally be available via the metadata service.
 It is possible to generate your network configuration from this configuration drive, rather than relying on the DHCP server provided by your OpenStack environment.</description>
     </item>
     
     <item>
       <title>Heat-kubernetes Demo with Autoscaling</title>
-      <link>http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</link>
+      <link>//blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</link>
       <pubDate>Fri, 19 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</guid>
+      <guid>//blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</guid>
       <description>Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
 As part of that presentation, I&amp;rsquo;ve put together a short demonstration video:
  This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</description>
@@ -578,10 +578,10 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
     
     <item>
       <title>Suggestions for the Docker MAINTAINER directive</title>
-      <link>http://blog.oddbit.com/post/2015-04-27-suggestions-for-the-docker-maintainer-directive/</link>
+      <link>//blog.oddbit.com/post/2015-04-27-suggestions-for-the-docker-maintainer-directive/</link>
       <pubDate>Mon, 27 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-04-27-suggestions-for-the-docker-maintainer-directive/</guid>
+      <guid>//blog.oddbit.com/post/2015-04-27-suggestions-for-the-docker-maintainer-directive/</guid>
       <description>Because nobody asked for it, this is my opinion on the use of the MAINTAINER directive in your Dockerfiles.
 The documentation says simply:
 The MAINTAINER instruction allows you to set the Author field of the generated images.  Many people end up putting the name and email address of an actual person here. I think this is ultimately a bad idea, and does a disservice both to members of a project that produce Docker images and to people consuming those images.</description>
@@ -590,10 +590,10 @@ The MAINTAINER instruction allows you to set the Author field of the generated i
     <item>
       <title>Using tools badly: time shifting git commits with Workinghours
 </title>
-      <link>http://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</link>
+      <link>//blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</link>
       <pubDate>Fri, 10 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</guid>
+      <guid>//blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</guid>
       <description>This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!
 You are working on a wonderful open source project&amp;hellip;but you are not supposed to be working on that project! You&amp;rsquo;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
 And now your boss knows why the TPS reports are late.</description>
@@ -601,40 +601,40 @@ And now your boss knows why the TPS reports are late.</description>
     
     <item>
       <title>Booting cloud images with libvirt</title>
-      <link>http://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/</link>
+      <link>//blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/</link>
       <pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/</guid>
+      <guid>//blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/</guid>
       <description>Most major distributions now provide &amp;ldquo;cloud-enabled&amp;rdquo; images designed for use in cloud environments like OpenStack and AWS. These images are usually differentiated by (a) being relatively small, and (b) running cloud-init at boot to perform initial system configuration tasks using metadata provided by the cloud environment.
 Because of their small size and support for automatic configuration (including such useful tasks as provisioning ssh keys), these images are attractive for use outside of a cloud environment.</description>
     </item>
     
     <item>
       <title>Diagnosing problems with an OpenStack deployment</title>
-      <link>http://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/</link>
+      <link>//blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/</link>
       <pubDate>Mon, 09 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/</guid>
+      <guid>//blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/</guid>
       <description>I recently had the chance to help a colleague debug some problems in his OpenStack installation. The environment was unique because it was booting virtualized aarch64 instances, which at the time did not have any PCI bus support&amp;hellip;which in turn precluded things like graphic consoles (i.e., VNC or SPICE consoles) for the Nova instances.
 This post began life as an email summarizing the various configuration changes we made on the systems to get things up and running.</description>
     </item>
     
     <item>
       <title>Converting hexadecimal ip addresses to dotted quads with Bash</title>
-      <link>http://blog.oddbit.com/post/2015-03-08-converting-hexadecimal-ip-addresses-to-dotted-quads-with-bas/</link>
+      <link>//blog.oddbit.com/post/2015-03-08-converting-hexadecimal-ip-addresses-to-dotted-quads-with-bas/</link>
       <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-03-08-converting-hexadecimal-ip-addresses-to-dotted-quads-with-bas/</guid>
+      <guid>//blog.oddbit.com/post/2015-03-08-converting-hexadecimal-ip-addresses-to-dotted-quads-with-bas/</guid>
       <description>This is another post that is primarily for my own benefit for the next time I forget how to do this.
 I wanted to read routing information directly from /proc/net/route using bash, because you never know what may or may not be available in the minimal environment of a Docker container (for example, the iproute package is not installed by default in the Fedora Docker images). The contents of /proc/net/route looks something like:</description>
     </item>
     
     <item>
       <title>Visualizing Pacemaker resource constraints</title>
-      <link>http://blog.oddbit.com/post/2015-02-24-visualizing-pacemaker-constraints/</link>
+      <link>//blog.oddbit.com/post/2015-02-24-visualizing-pacemaker-constraints/</link>
       <pubDate>Tue, 24 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-02-24-visualizing-pacemaker-constraints/</guid>
+      <guid>//blog.oddbit.com/post/2015-02-24-visualizing-pacemaker-constraints/</guid>
       <description>If a picture is worth a thousand words, then code that generates pictures from words is worth&amp;hellip;uh, anyway, I wrote a script that produces dot output from Pacemaker start and colocation constraints:
 https://github.com/larsks/pacemaker-tools/
 You can pass this output to graphviz to create visualizations of your Pacemaker resource constraints.
@@ -643,30 +643,30 @@ The graph-constraints.py script in that repository consumes the output of cibadm
     
     <item>
       <title>Stupid Pacemaker XML tricks</title>
-      <link>http://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</link>
+      <link>//blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</link>
       <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</guid>
+      <guid>//blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</guid>
       <description>I&amp;rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
 Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;//resource[@active=&amp;quot;false&amp;quot;]&#39; - &amp;gt;&amp;amp;/dev/null &amp;amp;&amp;amp; echo &amp;quot;There are inactive resources&amp;quot;  This selects any resource (//resource) in the output of pcs status xml that has the attribute active set to false.</description>
     </item>
     
     <item>
       <title>Unpacking Docker images with Undocker</title>
-      <link>http://blog.oddbit.com/post/2015-02-13-unpacking-docker-images/</link>
+      <link>//blog.oddbit.com/post/2015-02-13-unpacking-docker-images/</link>
       <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-02-13-unpacking-docker-images/</guid>
+      <guid>//blog.oddbit.com/post/2015-02-13-unpacking-docker-images/</guid>
       <description>In some ways, the most exciting thing about Docker isn&amp;rsquo;t the ability to start containers. That&amp;rsquo;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
 I was taking a closer at the systemd-nspawn command, which it seems has been developing it&amp;rsquo;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.</description>
     </item>
     
     <item>
       <title>Installing nova-docker with devstack</title>
-      <link>http://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/</link>
+      <link>//blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/</link>
       <pubDate>Wed, 11 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/</guid>
+      <guid>//blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/</guid>
       <description>This is a long-form response to this question, and describes how to get the nova-docker driver up running with devstack under Ubuntu 14.04 (Trusty). I wrote a similar post for Fedora 21, although that one was using the RDO Juno packages, while this one is using devstack and the upstream sources.
 Getting started We&amp;rsquo;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
 First, let&amp;rsquo;s install a few prerequisites:</description>
@@ -674,20 +674,20 @@ First, let&amp;rsquo;s install a few prerequisites:</description>
     
     <item>
       <title>External networking for Kubernetes services</title>
-      <link>http://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/</link>
+      <link>//blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/</link>
       <pubDate>Tue, 10 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/</guid>
+      <guid>//blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/</guid>
       <description>I have recently started running some &amp;ldquo;real&amp;rdquo; services (that is, &amp;ldquo;services being consumed by someone other than myself&amp;rdquo;) on top of Kubernetes (running on bare metal), which means I suddenly had to confront the question of how to provide external access to Kubernetes hosted services. Kubernetes provides two solutions to this problem, neither of which is particularly attractive out of the box:
  There is a field createExternalLoadBalancer that can be set in a service description.</description>
     </item>
     
     <item>
       <title>Installing nova-docker on Fedora 21/RDO Juno</title>
-      <link>http://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</link>
+      <link>//blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</link>
       <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</guid>
+      <guid>//blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</guid>
       <description>This post comes about indirectly by a request on IRC in #rdo for help getting nova-docker installed on Fedora 21. I ran through the process from start to finish and decided to write everything down for posterity.
 Getting started I started with the Fedora 21 Cloud Image, because I&amp;rsquo;m installing onto OpenStack and the cloud images include some features that are useful in this environment.
 We&amp;rsquo;ll be using OpenStack packages from the RDO Juno repository.</description>
@@ -695,78 +695,78 @@ We&amp;rsquo;ll be using OpenStack packages from the RDO Juno repository.</descr
     
     <item>
       <title>Creating minimal Docker images from dynamically linked ELF binaries</title>
-      <link>http://blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/</link>
+      <link>//blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/</link>
       <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/</guid>
+      <guid>//blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/</guid>
       <description>In this post, we&amp;rsquo;ll look at a method for building minimal Docker images for dynamically linked ELF binaries, and then at a tool for automating this process.
 It is tempting, when creating a simple Docker image, to start with one of the images provided by the major distributions. For example, if you need an image that provides tcpdump for use on your Atomic host, you might do something like:</description>
     </item>
     
     <item>
       <title>Filtering libvirt XML in Nova</title>
-      <link>http://blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/</link>
+      <link>//blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/</link>
       <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/</guid>
+      <guid>//blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/</guid>
       <description>I saw a request from a customer float by the other day regarding the ability to filter the XML used to create Nova instances in libvirt. The customer effectively wanted to blacklist a variety of devices (and device types). The consensus seems to be &amp;ldquo;you can&amp;rsquo;t do this right now and upstream is unlikely to accept patches that implement this behavior&amp;rdquo;, but it sounded like an interesting problem, so&amp;hellip;</description>
     </item>
     
     <item>
       <title>Docker vs. PrivateTmp</title>
-      <link>http://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</link>
+      <link>//blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</link>
       <pubDate>Sun, 18 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</guid>
+      <guid>//blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</guid>
       <description>While working with Docker the other day, I ran into an undesirable interaction between Docker and systemd services that utilize the PrivateTmp directive.
 The PrivateTmp directive, if true, &amp;ldquo;sets up a new file system namespace for the executed processes and mounts private /tmp and /var/tmp directories inside it that is not shared by processes outside of the namespace&amp;rdquo;. This is a great idea from a security perspective, but can cause some unanticipated consequences.</description>
     </item>
     
     <item>
       <title>Running nova-libvirt and nova-docker on the same host</title>
-      <link>http://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</link>
+      <link>//blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</link>
       <pubDate>Sat, 17 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</guid>
+      <guid>//blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</guid>
       <description>I regularly use OpenStack on my laptop with libvirt as my hypervisor. I was interested in experimenting with recent versions of the nova-docker driver, but I didn&amp;rsquo;t have a spare system available on which to run the driver, and I use my regular nova-compute service often enough that I didn&amp;rsquo;t want to simply disable it temporarily in favor of nova-docker.
 NB As pointed out by gustavo in the comments, running two neutron-openvswitch-agents on the same host &amp;ndash; as suggested in this article &amp;ndash; is going to lead to nothing but sadness and doom.</description>
     </item>
     
     <item>
       <title>Building a minimal web server for testing Kubernetes</title>
-      <link>http://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</link>
+      <link>//blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</link>
       <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</guid>
+      <guid>//blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</guid>
       <description>I have recently been doing some work with Kubernetes, and wanted to put together a minimal image with which I could test service and pod deployment. Size in this case was critical: I wanted something that would download quickly when initially deployed, because I am often setting up and tearing down Kubernetes as part of my testing (and some of my test environments have poor external bandwidth).
 Building thttpd My go-to minimal webserver is thttpd.</description>
     </item>
     
     <item>
       <title>Accessing the serial console of your Nova servers</title>
-      <link>http://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</link>
+      <link>//blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</link>
       <pubDate>Mon, 22 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</guid>
+      <guid>//blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</guid>
       <description>One of the new features available in the Juno release of OpenStack is support for serial console access to your Nova servers. This post looks into how to configure the serial console feature and then how to access the serial consoles of your Nova servers.
 Configuring serial console support In previous release of OpenStack, read-only access to the serial console of your servers was available through the os-getConsoleOutput server action (exposed via nova console-log on the command line).</description>
     </item>
     
     <item>
       <title>Cloud-init and the case of the changing hostname</title>
-      <link>http://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</link>
+      <link>//blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</link>
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</guid>
+      <guid>//blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</guid>
       <description>Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.</description>
     </item>
     
     <item>
       <title>Starting systemd services without blocking</title>
-      <link>http://blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/</link>
+      <link>//blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/</link>
       <pubDate>Tue, 02 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/</guid>
+      <guid>//blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/</guid>
       <description>Recently, I&amp;rsquo;ve been playing around with Fedora Atomic and Kubernetes. I ran into a frustrating problem in which I would attempt to start a service from within a script launched by cloud-init, only to have have systemctl block indefinitely because the service I was attempting to start was dependent on cloud-init finishing first.
 It turns out that systemctl has a flag meant exactly for this situation:
  --no-block Do not synchronously wait for the requested operation to finish.</description>
@@ -774,20 +774,20 @@ It turns out that systemctl has a flag meant exactly for this situation:
     
     <item>
       <title>Fedora Atomic, OpenStack, and Kubernetes (oh my)</title>
-      <link>http://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</link>
+      <link>//blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</link>
       <pubDate>Mon, 24 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</guid>
+      <guid>//blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</guid>
       <description>While experimenting with Fedora Atomic, I was looking for an elegant way to automatically deploy Atomic into an OpenStack environment and then automatically schedule some Docker containers on the Atomic host. This post describes my solution.
 Like many other cloud-targeted distributions, Fedora Atomic runs cloud-init when the system boots. We can take advantage of this to configure the system at first boot by providing a user-data blob to Nova when we boot the instance.</description>
     </item>
     
     <item>
       <title>Creating a Windows image for OpenStack</title>
-      <link>http://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</link>
+      <link>//blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</link>
       <pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</guid>
+      <guid>//blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</guid>
       <description>If you want to build a Windows image for use in your OpenStack environment, you can follow the example in the official documentation, or you can grab a Windows 2012r2 evaluation pre-built image from the nice folks at CloudBase.
 The CloudBase-provided image is built using a set of scripts and configuration files that CloudBase has made available on GitHub.
 The CloudBase repository is an excellent source of information, but I wanted to understand the process myself.</description>
@@ -795,10 +795,10 @@ The CloudBase repository is an excellent source of information, but I wanted to 
     
     <item>
       <title>Building Docker images with Puppet</title>
-      <link>http://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</link>
+      <link>//blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</link>
       <pubDate>Wed, 22 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</guid>
+      <guid>//blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</guid>
       <description>I like Docker, but I&amp;rsquo;m not a huge fan of using shell scripts for complex system configuration&amp;hellip;and Dockerfiles are basically giant shell scripts.
 I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
 I started with a manifest like this (in puppet/node.pp):
@@ -807,20 +807,20 @@ class { &#39;ssh&#39;: }  And a Dockerfile like this:</description>
     
     <item>
       <title>Docker networking with dedicated network containers</title>
-      <link>http://blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/</link>
+      <link>//blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/</link>
       <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/</guid>
+      <guid>//blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/</guid>
       <description>The current version of Docker has a very limited set of networking options:
  bridge &amp;ndash; connect a container to the Docker bridge host &amp;ndash; run the container in the global network namespace container:xxx &amp;ndash; connect a container to the network namespace of another container none &amp;ndash; do not configure any networking  If you need something more than that, you can use a tool like pipework to provision additional network interfaces inside the container, but this leads to a synchronization problem: pipework can only be used after your container is running.</description>
     </item>
     
     <item>
       <title>Integrating custom code with Nova using hooks</title>
-      <link>http://blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/</link>
+      <link>//blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/</link>
       <pubDate>Sat, 27 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/</guid>
+      <guid>//blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/</guid>
       <description>Would you like to run some custom Python code when Nova creates and destroys virtual instances on your compute hosts? This is possible using Nova&amp;rsquo;s support for hooks, but the existing documentation is somewhat short on examples, so I&amp;rsquo;ve spent some time trying to get things working.
 The demo_nova_hooks repository contains a working example of the techniques discussed in this article.
 What&amp;rsquo;s a hook? A Nova &amp;ldquo;hook&amp;rdquo; is a mechanism that allows you to attach a class of your own design to a particular function or method call in Nova.</description>
@@ -828,10 +828,10 @@ What&amp;rsquo;s a hook? A Nova &amp;ldquo;hook&amp;rdquo; is a mechanism that a
     
     <item>
       <title>Stupid command line tricks: Quickly share screen captures</title>
-      <link>http://blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/</link>
+      <link>//blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/</link>
       <pubDate>Tue, 23 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/</guid>
+      <guid>//blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/</guid>
       <description>Sometimes you want to quickly share a screenshot with someone. Here&amp;rsquo;s my favorite mechanism, which assumes you have installed both curl and the ImageMagick suite.
 $ import png:- | curl -T- -s chunk.io http://chunk.io/f/76ea98ea081748e19de4507fde3c2c65  When you run this command, you cursor will change into crosshairs. Click on a window, and this will grab a png image of that window and send it to chunk.io using curl.
 You&amp;rsquo;ll get back a URL that you can use to share the image with people.</description>
@@ -839,10 +839,10 @@ You&amp;rsquo;ll get back a URL that you can use to share the image with people.
     
     <item>
       <title>Heat Hangout</title>
-      <link>http://blog.oddbit.com/post/2014-09-05-heat-hangout/</link>
+      <link>//blog.oddbit.com/post/2014-09-05-heat-hangout/</link>
       <pubDate>Fri, 05 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-09-05-heat-hangout/</guid>
+      <guid>//blog.oddbit.com/post/2014-09-05-heat-hangout/</guid>
       <description>I ran a Google Hangout this morning on Deploying with Heat. You can find the slides for the presentation on line here, and the Heat templates (as well as slide sources) are available on github.
 If you have any questions about the presentation, please feel free to ping me on irc (larsks).
  </description>
@@ -850,20 +850,20 @@ If you have any questions about the presentation, please feel free to ping me on
     
     <item>
       <title>Visualizing Heat stacks</title>
-      <link>http://blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/</link>
+      <link>//blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/</link>
       <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/</guid>
+      <guid>//blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/</guid>
       <description>I spent some time today learning about Heat autoscaling groups, which are incredibly nifty but a little opaque from the Heat command line, since commands such as heat resource-list don&amp;rsquo;t recurse into nested stacks. It is possible to introspect these resources (you can pass the physical resource id of a nested stack to heat resource-list, for example)&amp;hellip;
 &amp;hellip;but I really like visualizing things, so I wrote a quick hack called dotstack that will generate dot language output from a Heat stack.</description>
     </item>
     
     <item>
       <title>Docker plugin bugs</title>
-      <link>http://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</link>
+      <link>//blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</link>
       <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</guid>
+      <guid>//blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</guid>
       <description>This is a companion to my article on the Docker plugin for Heat.
 While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&amp;rsquo;ve submitted patches for most of the issues I encountered:
 Bugs in the Heat plugin  https://bugs.launchpad.net/heat/+bug/1364017
@@ -875,10 +875,10 @@ docker plugin volumes_from parameter should be a list.
     
     <item>
       <title>Annotated documentation for DockerInc::Docker::Container</title>
-      <link>http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</link>
+      <link>//blog.oddbit.com/post/2014-08-31-docker-contain-doc/</link>
       <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</guid>
+      <guid>//blog.oddbit.com/post/2014-08-31-docker-contain-doc/</guid>
       <description>This is a companion to my article on the Docker plugin for Heat.
 DockerInc::Docker::Container Properties  cmd : List
 Command to run after spawning the container.
@@ -895,20 +895,20 @@ docker_endpoint: tcp://192.</description>
     
     <item>
       <title>Docker plugin for OpenStack Heat</title>
-      <link>http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</link>
+      <link>//blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</link>
       <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</guid>
+      <guid>//blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</guid>
       <description>I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&amp;rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
 The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.</description>
     </item>
     
     <item>
       <title>Using wait conditions with Heat</title>
-      <link>http://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/</link>
+      <link>//blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/</link>
       <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/</guid>
+      <guid>//blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/</guid>
       <description>This post accompanies my article on the Docker plugin for Heat.
 In order for WaitCondition resources to operate correctly in Heat, you will need to make sure that that you have:
  Created the necessary Heat domain and administrative user in Keystone, Configured appropriate values in heat.conf for stack_user_domain, stack_domain_admin, and stack_domain_admin_password. Configured an appropriate value in heat.conf for heat_waitcondition_server_url. On a single-system install this will often be pointed by default at 127.</description>
@@ -916,60 +916,60 @@ In order for WaitCondition resources to operate correctly in Heat, you will need
     
     <item>
       <title>nova-docker and environment variables</title>
-      <link>http://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/</link>
+      <link>//blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/</link>
       <pubDate>Thu, 28 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/</guid>
+      <guid>//blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/</guid>
       <description>I&amp;rsquo;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
 The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker containers instead of hypervisor-based servers. For certain workloads, this leads to better resource utilization than you would get with a hypervisor-based solution, while at the same time givin you better support for multi-tenancy and flexible networking than you get with Docker by itself.</description>
     </item>
     
     <item>
       <title>lvcache: a tool for managing LVM caches</title>
-      <link>http://blog.oddbit.com/post/2014-08-16-lvcache-a-tool-for-managing-lv/</link>
+      <link>//blog.oddbit.com/post/2014-08-16-lvcache-a-tool-for-managing-lv/</link>
       <pubDate>Sat, 16 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-08-16-lvcache-a-tool-for-managing-lv/</guid>
+      <guid>//blog.oddbit.com/post/2014-08-16-lvcache-a-tool-for-managing-lv/</guid>
       <description>Until recently I had a bcache based setup on my laptop, but when forced by circumstance to reinstall everything I spent some time looking for alternatives that were less disruptive to configure on an existing system.
 I came across Richard Jones&amp;rsquo; article discussing the recent work to integrate dm-cache into LVM. Unlike bcache and unlike using dm-cache directly, the integration with LVM makes it easy to associate devices with an existing logical volume.</description>
     </item>
     
     <item>
       <title>Four ways to connect a docker container to a local network</title>
-      <link>http://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</link>
+      <link>//blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</link>
       <pubDate>Mon, 11 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</guid>
+      <guid>//blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</guid>
       <description>Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&amp;rsquo;ve written an article about working with the macvlan driver.
 This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.</description>
     </item>
     
     <item>
       <title>gpio-watch: Run scripts in response to GPIO signals</title>
-      <link>http://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/</link>
+      <link>//blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/</link>
       <pubDate>Sat, 26 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/</guid>
+      <guid>//blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/</guid>
       <description>For a small project I&amp;rsquo;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
 Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&amp;rsquo;t want to write something that was tied closely to my project&amp;hellip;</description>
     </item>
     
     <item>
       <title>Tracking down a kernel bug with git bisect</title>
-      <link>http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</link>
+      <link>//blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</link>
       <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</guid>
+      <guid>//blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</guid>
       <description>After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
 $ docker run -ti fedora /bin/bash bash-4.2# su -c &#39;uptime&#39; su: System error  Hooking up something (like, say, socat unix-listen:/dev/log -) to /dev/log revealed that the system was logging:</description>
     </item>
     
     <item>
       <title>Booting an instance with multiple fixed addresses</title>
-      <link>http://blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/</link>
+      <link>//blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/</link>
       <pubDate>Wed, 28 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/</guid>
+      <guid>//blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/</guid>
       <description>This article expands on my answer to Add multiple specific IPs to instance, a question posted to ask.openstack.org.
 In order to serve out SSL services from an OpenStack instance, you will generally want one local ip address for each SSL virtual host you support. It is possible to create an instance with multiple fixed addresses, but there are a few complications to watch out for.
 Assumptions This article assumes that the following resources exist:</description>
@@ -977,10 +977,10 @@ Assumptions This article assumes that the following resources exist:</descriptio
     
     <item>
       <title>Multiple external networks with a single L3 agent</title>
-      <link>http://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/</link>
+      <link>//blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/</link>
       <pubDate>Wed, 28 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/</guid>
+      <guid>//blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/</guid>
       <description>In the old days (so, like, last year), Neutron supported a single external network per L3 agent. You would run something like this&amp;hellip;
 $ neutron net-create external --router:external=true  &amp;hellip;and neutron would map this to the bridge defined in external_network_bridge in /etc/neutron/l3_agent.ini. If you wanted to support more than a single external network, you would need to run multiple L3 agents, each with a unique value for external_network_bridge.
 There is now a better option available.</description>
@@ -988,30 +988,30 @@ There is now a better option available.</description>
     
     <item>
       <title>Video: Configuring OpenStack&#39;s external bridge on a single-interface system</title>
-      <link>http://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</link>
+      <link>//blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</link>
       <pubDate>Tue, 27 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</guid>
+      <guid>//blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</guid>
       <description>I&amp;rsquo;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
  </description>
     </item>
     
     <item>
       <title>Open vSwitch and persistent MAC addresses</title>
-      <link>http://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</link>
+      <link>//blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</link>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</guid>
+      <guid>//blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</guid>
       <description>Normally I like to post solutions, but today&amp;rsquo;s post is about a vexing problem to which I have not been able to find a solution.
 This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.</description>
     </item>
     
     <item>
       <title>Solved: Open vSwitch and persistent MAC addresses</title>
-      <link>http://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</link>
+      <link>//blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</link>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</guid>
+      <guid>//blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</guid>
       <description>In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &amp;ldquo;don&amp;rsquo;t use ip link set ...&amp;rdquo; for this purpose.
 You can set the bridge MAC address via ovs-vsctl like this:
 ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&amp;rsquo;ve updated my ifconfig-br-ex to look like this:
@@ -1020,20 +1020,20 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
     
     <item>
       <title>Sharing a terminal session with termshare</title>
-      <link>http://blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/</link>
+      <link>//blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/</link>
       <pubDate>Wed, 21 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/</guid>
+      <guid>//blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/</guid>
       <description>Termshare is a tool for sharing your terminal in a browser session. It supports both read-only and read-write sessions, and unlike many other tools it does not require any software installation on the remote side. This makes it tremendously handy for:
  Streaming terminal demonstrations to a diverse audience, or Sharing a terminal session with someone without needing to much about with ssh, tmux, screen, etc.  I&amp;rsquo;ve successfully used Termshare under both Fedora (19 and 20) and CentOS.</description>
     </item>
     
     <item>
       <title>Fedora and OVS Bridge Interfaces</title>
-      <link>http://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</link>
+      <link>//blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</link>
       <pubDate>Tue, 20 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</guid>
+      <guid>//blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</guid>
       <description>I run OpenStack on my laptop, and I&amp;rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
 This is the network configuration file for br-ex on my system:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</description>
@@ -1041,10 +1041,10 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</descript
     
     <item>
       <title>Firewalld, NetworkManager, and OpenStack</title>
-      <link>http://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/</link>
+      <link>//blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/</link>
       <pubDate>Tue, 20 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/</guid>
+      <guid>//blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/</guid>
       <description>These are my notes on making OpenStack play well with firewalld and NetworkManager.
 NetworkManager By default, NetworkManager attempts to start a DHCP client on every new available interface. Since booting a single instance in OpenStack can result in the creation of several virtual interfaces, this results in a lot of:
 May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &amp;lt;info&amp;gt; Activation (qvb512640bd-ee) starting connection &#39;Wired connection 2&#39;  You can disable this behavior by adding the following to /etc/NetworkManager/NetworkManager.</description>
@@ -1052,10 +1052,10 @@ May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &amp;lt;info&amp;gt; Acti
     
     <item>
       <title>Flat networks with ML2 and OpenVSwitch</title>
-      <link>http://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</link>
+      <link>//blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</link>
       <pubDate>Mon, 19 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</guid>
+      <guid>//blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</guid>
       <description>Due to an unfortunate incident involving sleep mode and an overheated backpack I had the &amp;ldquo;opportunity&amp;rdquo; to rebuild my laptop. Since this meant reinstalling OpenStack I used this as an excuse to finally move to the ML2 network plugin for Neutron.
 I was attempting to add an external network using the normal incantation:
 neutron net-create external -- --router:external=true \ --provider:network_type=flat \ --provider:physical_network=physnet1  While this command completed successfully, I was left without any connectivity between br-int and br-ex, despite having in my /etc/neutron/plugins/ml2/ml2_conf.</description>
@@ -1063,20 +1063,20 @@ neutron net-create external -- --router:external=true \ --provider:network_type=
     
     <item>
       <title>Extending Puppet</title>
-      <link>http://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/</link>
+      <link>//blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/</link>
       <pubDate>Wed, 16 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/</guid>
+      <guid>//blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/</guid>
       <description>I wanted to learn about writing custom Puppet types and providers. The official documentation is a little sparse, but I finally stumbled upon the following series of articles by Gary Larizza that provide a great deal of insight into the process and a bunch of example code:
  Fun With Puppet Providers Who Abstracted My Ruby? Seriously, What Is This Provider Doing?  </description>
     </item>
     
     <item>
       <title>Multinode OpenStack with Packstack</title>
-      <link>http://blog.oddbit.com/post/2014-02-27-multinode/</link>
+      <link>//blog.oddbit.com/post/2014-02-27-multinode/</link>
       <pubDate>Thu, 27 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-02-27-multinode/</guid>
+      <guid>//blog.oddbit.com/post/2014-02-27-multinode/</guid>
       <description>I was the presenter for this morning&amp;rsquo;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
 The slides are online here.
 Here&amp;rsquo;s the video (also available on the event page):
@@ -1085,10 +1085,10 @@ Here&amp;rsquo;s the video (also available on the event page):
     
     <item>
       <title>Show OVS external-ids</title>
-      <link>http://blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</link>
+      <link>//blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</link>
       <pubDate>Sun, 19 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</guid>
+      <guid>//blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</guid>
       <description>This is just here as a reminder for me:
 An OVS interface has a variety of attributes associated with it, including an external-id field that can be used to associate resources outside of OpenVSwitch with the interface. You can view this field with the following command:
 $ ovs-vsctl --columns=name,external-ids list Interface  Which on my system, with a single virtual instance, looks like this:
@@ -1097,20 +1097,20 @@ $ ovs-vsctl --columns=name,external-ids list Interface  Which on my system, with
     
     <item>
       <title>Stupid OpenStack Tricks</title>
-      <link>http://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</link>
+      <link>//blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</link>
       <pubDate>Thu, 16 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</guid>
+      <guid>//blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</guid>
       <description>I work with several different OpenStack installations. I usually work on the command line, sourcing in an appropriate stackrc with credentials as necessary, but occasionally I want to use the dashboard for something.
 For all of the deployments with which I work, the keystone endpoint is on the same host as the dashboard. So rather than trying to remember which dashboard url I want for the environment I&amp;rsquo;m currently using on the command line, I put together this shell script:</description>
     </item>
     
     <item>
       <title>Direct access to Nova metadata</title>
-      <link>http://blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/</link>
+      <link>//blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/</link>
       <pubDate>Tue, 14 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/</guid>
+      <guid>//blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/</guid>
       <description>When you boot a virtual instance under OpenStack, your instance has access to certain instance metadata via the Nova metadata service, which is canonically available at http://169.254.169.254/.
 In an environment running Neutron, a request from your instance must traverse a number of steps:
  From the instance to a router, Through a NAT rule in the router namespace, To an instance of the neutron-ns-metadata-proxy, To the actual Nova metadata service  When there are problem accessing the metadata, it can be helpful to verify that the metadata service itself is configured correctly and returning meaningful information.</description>
@@ -1118,20 +1118,20 @@ In an environment running Neutron, a request from your instance must traverse a 
     
     <item>
       <title>RDO Bug Triage</title>
-      <link>http://blog.oddbit.com/post/2014-01-13-rdo-bug-triage/</link>
+      <link>//blog.oddbit.com/post/2014-01-13-rdo-bug-triage/</link>
       <pubDate>Mon, 13 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-01-13-rdo-bug-triage/</guid>
+      <guid>//blog.oddbit.com/post/2014-01-13-rdo-bug-triage/</guid>
       <description>This Wednesday, January 15, at 14:00 UTC (that&amp;rsquo;s 9AM US/Eastern, or date -d &amp;quot;14:00 UTC&amp;quot; in your local timezone) I will be helping out with the RDO bug triage day. We&amp;rsquo;ll be trying to validate all the untriaged bugs opened against RDO.
 Feel free to drop by on #rdo and help out or ask questions.</description>
     </item>
     
     <item>
       <title>Visualizing Neutron Networking with GraphViz</title>
-      <link>http://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</link>
+      <link>//blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</link>
       <pubDate>Mon, 23 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</guid>
+      <guid>//blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</guid>
       <description>I&amp;rsquo;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
 In this post I&amp;rsquo;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
 mk-network-dot There are a lot of devices involved in your Neutron network configuration.</description>
@@ -1139,10 +1139,10 @@ mk-network-dot There are a lot of devices involved in your Neutron network confi
     
     <item>
       <title>An introduction to OpenStack Heat</title>
-      <link>http://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</link>
+      <link>//blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</link>
       <pubDate>Fri, 06 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</guid>
+      <guid>//blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</guid>
       <description>Heat is a template-based orchestration mechanism for use with OpenStack. With Heat, you can deploy collections of resources &amp;ndash; networks, servers, storage, and more &amp;ndash; all from a single, parameterized template.
 In this article I will introduce Heat templates and the heat command line client.
 Writing templates Because Heat began life as an analog of AWS CloudFormation, it supports the template formats used by the CloudFormation (CFN) tools. It also supports its own native template format, called HOT (&amp;ldquo;Heat Orchestration Templates&amp;rdquo;).</description>
@@ -1150,10 +1150,10 @@ Writing templates Because Heat began life as an analog of AWS CloudFormation, it
     
     <item>
       <title>A Python interface to signalfd() using FFI</title>
-      <link>http://blog.oddbit.com/post/2013-11-28-a-python-interface-to-signalfd/</link>
+      <link>//blog.oddbit.com/post/2013-11-28-a-python-interface-to-signalfd/</link>
       <pubDate>Thu, 28 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-11-28-a-python-interface-to-signalfd/</guid>
+      <guid>//blog.oddbit.com/post/2013-11-28-a-python-interface-to-signalfd/</guid>
       <description>I just recently learned about the signalfd(2) system call, which was introduced to the Linux kernel back in 2007:
  signalfd() creates a file descriptor that can be used to accept signals targeted at the caller. This provides an alternative to the use of a signal handler or sigwaitinfo(2), and has the advantage that the file descriptor may be monitored by select(2), poll(2), and epoll(7).
  The traditional asynchronous delivery mechanism can be tricky to get right, whereas this provides a convenient fd interface that integrates nicely with your existing event-based code.</description>
@@ -1161,20 +1161,20 @@ Writing templates Because Heat began life as an analog of AWS CloudFormation, it
     
     <item>
       <title>Long polling with Javascript and Python</title>
-      <link>http://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</link>
+      <link>//blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</guid>
+      <guid>//blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</guid>
       <description>In this post I&amp;rsquo;m going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.
 My pubsub_example repository on GitHub has a complete project that implements the ideas discussed in this article. This project can be deployed directly on OpenShift if you want to try things out on your own.</description>
     </item>
     
     <item>
       <title>Sockets on OpenShift</title>
-      <link>http://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/</link>
+      <link>//blog.oddbit.com/post/2013-11-23-openshift-socket-pro/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/</guid>
+      <guid>//blog.oddbit.com/post/2013-11-23-openshift-socket-pro/</guid>
       <description>In this article, a followup to my previous post regarding long-poll servers and Python, we investigate the code changes that were necessary to make the code work when deployed on OpenShift.
 In the previous post, we implemented IO polling to watch for client disconnects at the same time we were waiting for messages on a message bus:
 poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.POLLIN) events = dict(poll.poll()) . . .</description>
@@ -1182,10 +1182,10 @@ poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.
     
     <item>
       <title>A unified CLI for OpenStack</title>
-      <link>http://blog.oddbit.com/post/2013-11-22-a-unified-cli-for-op/</link>
+      <link>//blog.oddbit.com/post/2013-11-22-a-unified-cli-for-op/</link>
       <pubDate>Fri, 22 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-11-22-a-unified-cli-for-op/</guid>
+      <guid>//blog.oddbit.com/post/2013-11-22-a-unified-cli-for-op/</guid>
       <description>The python-openstackclient project, by Dean Troyer and others, is a new command line tool to replace the existing command line clients (including commands such as nova, keystone, cinder, etc).
 This tool solves two problems I&amp;rsquo;ve encountered in the past:
  Command line options between different command line clients are sometimes inconsistent.
@@ -1194,28 +1194,28 @@ This tool solves two problems I&amp;rsquo;ve encountered in the past:
     
     <item>
       <title>Automatic maintenance of tag feeds</title>
-      <link>http://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</link>
+      <link>//blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</link>
       <pubDate>Fri, 22 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</guid>
+      <guid>//blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</guid>
       <description>I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&amp;rsquo;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&amp;rsquo;s the perfect place to insert generated content that must be kept in sync with posts on the blog.</description>
     </item>
     
     <item>
       <title>Enabled blog comments</title>
-      <link>http://blog.oddbit.com/post/2013-11-18-enabled-comments/</link>
+      <link>//blog.oddbit.com/post/2013-11-18-enabled-comments/</link>
       <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-11-18-enabled-comments/</guid>
+      <guid>//blog.oddbit.com/post/2013-11-18-enabled-comments/</guid>
       <description>I&amp;rsquo;ve enabled blog comments using Disqus. This is something of an experiment, since (a) I&amp;rsquo;m not really happy with how Disqus is handling user registration these days and (b) I don&amp;rsquo;t know that I have the time to moderate anything. But we&amp;rsquo;ll see.</description>
     </item>
     
     <item>
       <title>json-tools: cli for generating and filtering json</title>
-      <link>http://blog.oddbit.com/post/2013-11-17-json-tools/</link>
+      <link>//blog.oddbit.com/post/2013-11-17-json-tools/</link>
       <pubDate>Sun, 17 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-11-17-json-tools/</guid>
+      <guid>//blog.oddbit.com/post/2013-11-17-json-tools/</guid>
       <description>Interacting with JSON-based APIs from the command line can be difficult, and OpenStack is filled with REST APIs that consume or produce JSON. I&amp;rsquo;ve just put pair of tools for generating and filtering JSON on the command line, called collectively json-tools.
 Both make use of the Python dpath module to populate or filter JSON objects.
 The jsong command generates JSON on stdout. You provide /-delimited paths on the command line to represent the JSON structure.</description>
@@ -1223,10 +1223,10 @@ The jsong command generates JSON on stdout. You provide /-delimited paths on the
     
     <item>
       <title>Quantum in Too Much Detail</title>
-      <link>http://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/</link>
+      <link>//blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/</link>
       <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/</guid>
+      <guid>//blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/</guid>
       <description>I originally posted this article on the RDO website.
  The players This document describes the architecture that results from a particular OpenStack configuration, specifically:
  Quantum networking using GRE tunnels; A dedicated network controller; A single instance running on a compute host  Much of the document will be relevant to other configurations, but details will vary based on your choice of layer 2 connectivity, number of running instances, and so forth.</description>
@@ -1234,30 +1234,30 @@ The jsong command generates JSON on stdout. You provide /-delimited paths on the
     
     <item>
       <title>Moving to GitHub</title>
-      <link>http://blog.oddbit.com/post/2013-11-13-moving-to-github/</link>
+      <link>//blog.oddbit.com/post/2013-11-13-moving-to-github/</link>
       <pubDate>Wed, 13 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-11-13-moving-to-github/</guid>
+      <guid>//blog.oddbit.com/post/2013-11-13-moving-to-github/</guid>
       <description>This blog has been hosted on scriptogram for the past year or so. Unfortunately, while I like the publish-via-Dropbox mechanism, there have been enough problems recently that I&amp;rsquo;ve finally switched over to using GitHub Pages for hosting. I&amp;rsquo;ve been thinking about doing this for a while, but the things that finally pushed me to make the change were:
  Sync problems that would prevent new posts from appearing (and that at least once caused posts to disappear).</description>
     </item>
     
     <item>
       <title>A random collection of OpenStack Tools</title>
-      <link>http://blog.oddbit.com/post/2013-11-12-a-random-collection/</link>
+      <link>//blog.oddbit.com/post/2013-11-12-a-random-collection/</link>
       <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-11-12-a-random-collection/</guid>
+      <guid>//blog.oddbit.com/post/2013-11-12-a-random-collection/</guid>
       <description>I&amp;rsquo;ve been working with OpenStack a lot recently, and I&amp;rsquo;ve ended up with a small collection of utilities that make my life easier. On the odd chance that they&amp;rsquo;ll make your life easier, too, I thought I&amp;rsquo;d hilight them here.
 Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Instead of a sequence of keystone command, you can provision new tenants, users, and roles with a single comand.</description>
     </item>
     
     <item>
       <title>Why does the Neutron documentation recommend three interfaces?</title>
-      <link>http://blog.oddbit.com/post/2013-10-28-why-does-the-neutron/</link>
+      <link>//blog.oddbit.com/post/2013-10-28-why-does-the-neutron/</link>
       <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-10-28-why-does-the-neutron/</guid>
+      <guid>//blog.oddbit.com/post/2013-10-28-why-does-the-neutron/</guid>
       <description>The documentation for configuring Neutron recommends that a network controller has three physical interfaces:
  Before you start, set up a machine to be a dedicated network node. Dedicated network nodes should have the following NICs: the management NIC (called MGMT_INTERFACE), the data NIC (called DATA_INTERFACE), and the external NIC (called EXTERNAL_INTERFACE).
  People occasionally ask, &amp;ldquo;why three interfaces? What if I only have two?&amp;ldquo;, so I wanted to provide an extended answer that might help people understand what the interfaces are for and what trade-offs are involved in using fewer interfaces.</description>
@@ -1265,10 +1265,10 @@ Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Inst
     
     <item>
       <title>Automatic hostname entries for libvirt domains</title>
-      <link>http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</link>
+      <link>//blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</link>
       <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</guid>
+      <guid>//blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</guid>
       <description>Have you ever wished that you could use libvirt domain names as hostnames? So that you could do something like this:
 $ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something that would certainly make my life convenient, I put together a small script called virt-hosts that makes this possible. You can find virt-hosts in my virt-utils GitHub repository:
  https://raw.github.com/larsks/virt-utils/master/virt-hosts  Run by itself, with no options, virt-hosts will scan through your running domains for interfaces on the libvirt default network, look up those MAC addresses up in the corresponding default.</description>
@@ -1276,79 +1276,79 @@ $ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something
     
     <item>
       <title>Interrupts on the PiFace</title>
-      <link>http://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/</link>
+      <link>//blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/</link>
       <pubDate>Mon, 05 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/</guid>
+      <guid>//blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/</guid>
       <description>I recently acquired both a Raspberry Pi and a PiFace IO board. I had a rough time finding examples of how to read the input ports via interrupts (rather than periodically polling for values), especially for the newer versions of the PiFace python libraries.
 After a little research, here&amp;rsquo;s some simple code that will print out pin names as you press the input buttons. Button 3 will cause the code to exit:</description>
     </item>
     
     <item>
       <title>Generating a memberOf attribute for posixGroups</title>
-      <link>http://blog.oddbit.com/post/2013-07-22-generating-a-membero/</link>
+      <link>//blog.oddbit.com/post/2013-07-22-generating-a-membero/</link>
       <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-07-22-generating-a-membero/</guid>
+      <guid>//blog.oddbit.com/post/2013-07-22-generating-a-membero/</guid>
       <description>This showed up on #openstack earlier today:
 2013-07-22T13:56:10 &amp;lt;m0zes&amp;gt; hello, all. I am looking to setup keystone with an ldap backend. I need to filter users based on group membership, in this case a non-rfc2307 posixGroup. This means that memberOf doesn&#39;t show up, and that the memberUid in the group is not a dn. any thoughts on how to accomplish this?  It turns out that this is a not uncommon question, so I spent some time today working out a solution using the dynlist overlay for OpenLDAP.</description>
     </item>
     
     <item>
       <title>Split concatenated certificates with awk</title>
-      <link>http://blog.oddbit.com/post/2013-07-16-split-concatenated-c/</link>
+      <link>//blog.oddbit.com/post/2013-07-16-split-concatenated-c/</link>
       <pubDate>Tue, 16 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-07-16-split-concatenated-c/</guid>
+      <guid>//blog.oddbit.com/post/2013-07-16-split-concatenated-c/</guid>
       <description>This is a short script that takes a list of concatenated certificates as input (such as a collection of CA certificates) and produces a collection of numbered files, each containing a single certificate.
 #!/bin/awk -f # This script expects a list of concatenated certificates on input and # produces a collection of individual numbered files each containing # a single certificate. BEGIN {incert=0} /-----BEGIN( TRUSTED)? CERTIFICATE-----/ { certno++ certfile=sprintf(&amp;quot;cert-%d.crt&amp;quot;, certno) incert=1 } /-----END( TRUSTED)?</description>
     </item>
     
     <item>
       <title>Did Arch Linux eat your KVM?</title>
-      <link>http://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/</link>
+      <link>//blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/</link>
       <pubDate>Mon, 08 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/</guid>
+      <guid>//blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/</guid>
       <description>A recent update to Arch Linux replaced the qemu-kvm package with an updated version of qemu. A side effect of this change is that the qemu-kvm binary is no longer available, and any libvirt guests on your system utilizing that binary will no longer operate. As is typical with Arch, there is no announcement about this incompatible change, and queries to #archlinux will be met with the knowledge, grace and decorum you would expect of that channel:</description>
     </item>
     
     <item>
       <title>I2C on the Raspberry Pi</title>
-      <link>http://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</link>
+      <link>//blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</link>
       <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</guid>
+      <guid>//blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</guid>
       <description>I&amp;rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&amp;rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
 The design of the I2C bus is such that the only device driving a voltage on the bus is the master (in this case, the Raspberry Pi), via pull-up resistors.</description>
     </item>
     
     <item>
       <title>Interrupt driven GPIO with Python</title>
-      <link>http://blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/</link>
+      <link>//blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/</link>
       <pubDate>Fri, 08 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/</guid>
+      <guid>//blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/</guid>
       <description>There are several Python libraries out there for interacting with the GPIO pins on a Raspberry Pi:
  RPi.GPIO The WiringPi bindings for Python, and The Quick2Wire Python API (which depends on Python 3)  All of them are reasonably easy to use, but the Quick2Wire API provides a uniquely useful feature: epoll-enabled GPIO interrupts. This makes it trivial to write code that efficiently waits for and responds to things like button presses.</description>
     </item>
     
     <item>
       <title>Controlling a servo with your Arduino</title>
-      <link>http://blog.oddbit.com/post/2013-03-07-controlling-a-servo/</link>
+      <link>//blog.oddbit.com/post/2013-03-07-controlling-a-servo/</link>
       <pubDate>Thu, 07 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-03-07-controlling-a-servo/</guid>
+      <guid>//blog.oddbit.com/post/2013-03-07-controlling-a-servo/</guid>
       <description>I&amp;rsquo;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
 I was fiddling around with this exercise, which uses the SoftwareServo library to control a servo. Using this library, you just pass it an angle and the library takes care of everything else, e.</description>
     </item>
     
     <item>
       <title>A quote about XMLRPC</title>
-      <link>http://blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/</link>
+      <link>//blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/</link>
       <pubDate>Mon, 25 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/</guid>
+      <guid>//blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/</guid>
       <description>I&amp;rsquo;ve been reading up on Puppet 3 lately, and came across the following:
  XMLRPC was the new hotness when development on Puppet started. Now, XMLRPC is that horrible thing with the XML and the angle brackets and the pain and sad.
  (from http://somethingsinistral.net/blog/the-angry-guide-to-puppet-3/)
@@ -1357,10 +1357,10 @@ I was fiddling around with this exercise, which uses the SoftwareServo library t
     
     <item>
       <title>A systemd unit for ucarp</title>
-      <link>http://blog.oddbit.com/post/2013-02-21-ucarp-unit-for-systemd/</link>
+      <link>//blog.oddbit.com/post/2013-02-21-ucarp-unit-for-systemd/</link>
       <pubDate>Thu, 21 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-02-21-ucarp-unit-for-systemd/</guid>
+      <guid>//blog.oddbit.com/post/2013-02-21-ucarp-unit-for-systemd/</guid>
       <description>In Fedora 17 there are still a number of services that either have not been ported over to systemd or that do not take full advantage of systemd. I&amp;rsquo;ve been investigating some IP failover solutions recently, including ucarp, which includes only a System-V style init script.
 I&amp;rsquo;ve created a template service for ucarp that will let you start a specific virtual ip like this:
 systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/vip-001.</description>
@@ -1368,20 +1368,20 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
     
     <item>
       <title>Running dhcpcd under LXC</title>
-      <link>http://blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/</link>
+      <link>//blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/</link>
       <pubDate>Fri, 01 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/</guid>
+      <guid>//blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/</guid>
       <description>I&amp;rsquo;ve been working with Arch Linux recently, which uses dhcpcd as its default DHCP agent. If you try booting Arch inside an LXC container, you will find that dhcpcd is unable to configure your network interfaces. Running it by hand you will first see the following error:
 # dhcpcd eth0 dhcpcd[492]: version 5.6.4 starting dhcpcd[492]: eth0: if_init: Read-only file system dhcpcd[492]: eth0: interface not found or invalid  This happens because dhcpcd is trying to modify a sysctl value.</description>
     </item>
     
     <item>
       <title>Cleaning up LXC cgroups</title>
-      <link>http://blog.oddbit.com/post/2013-01-28-lxc-cant-remove-cgroup/</link>
+      <link>//blog.oddbit.com/post/2013-01-28-lxc-cant-remove-cgroup/</link>
       <pubDate>Mon, 28 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-01-28-lxc-cant-remove-cgroup/</guid>
+      <guid>//blog.oddbit.com/post/2013-01-28-lxc-cant-remove-cgroup/</guid>
       <description>I spent some time today looking at systemd (44) under Fedora (17). When stopping an LXC container using lxc-stop, I would always encounter this problem:
 # lxc-stop -n node0 lxc-start: Device or resource busy - failed to remove cgroup &#39;/sys/fs/cgroup/systemd/node0  This prevents one from starting a new container with the same name:
 # lxc-start -n node0 lxc-start: Device or resource busy - failed to remove previous cgroup &#39;/sys/fs/cgroup/systemd/node0&#39; lxc-start: failed to spawn &#39;node0&#39; lxc-start: Device or resource busy - failed to remove cgroup &#39;/sys/fs/cgroup/systemd/node0&#39;  You can correct the problem manually by removing all the child cgroups underneath /sys/fs/cgroup/systemd/&amp;lt;container&amp;gt;, like this:</description>
@@ -1389,10 +1389,10 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
     
     <item>
       <title>How do I LXC console?</title>
-      <link>http://blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/</link>
+      <link>//blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/</link>
       <pubDate>Mon, 28 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/</guid>
+      <guid>//blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/</guid>
       <description>It took me an unreasonably long time to boot an LXC container with working console access. For the record:
 When you boot an LXC container, the console appears to be attached to a pts device. For example, when booting with the console attached to your current terminal:
 # lxc-start -n node0 ... node0 login: root Last login: Mon Jan 28 16:35:19 on tty1 [root@node0 ~]# tty /dev/console [root@node0 ~]# ls -l /dev/console crw------- 1 root tty 136, 12 Jan 28 16:36 /dev/console  This is also true when you attach to a container using lxc-console:</description>
@@ -1400,20 +1400,20 @@ When you boot an LXC container, the console appears to be attached to a pts devi
     
     <item>
       <title>Systemd and the case of the missing network</title>
-      <link>http://blog.oddbit.com/post/2013-01-28-net-with-no-net/</link>
+      <link>//blog.oddbit.com/post/2013-01-28-net-with-no-net/</link>
       <pubDate>Mon, 28 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-01-28-net-with-no-net/</guid>
+      <guid>//blog.oddbit.com/post/2013-01-28-net-with-no-net/</guid>
       <description>I was intrigued by this post on socket activated containers with systemd. The basic premise is:
  systemd opens a socket on the host and listens for connections. When a client connections, systemd spawns a new container. The host systemd passes the connected socket to the container systemd. Services in the container receive these sockets from the container systemd.  This is a very neat idea, since it delegates all the socket listening to the host and only spins up container and service resources when necessary.</description>
     </item>
     
     <item>
       <title>A second look at Arch Linux</title>
-      <link>http://blog.oddbit.com/post/2013-01-25-archlinux-second-look/</link>
+      <link>//blog.oddbit.com/post/2013-01-25-archlinux-second-look/</link>
       <pubDate>Fri, 25 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-01-25-archlinux-second-look/</guid>
+      <guid>//blog.oddbit.com/post/2013-01-25-archlinux-second-look/</guid>
       <description>This is a followup to an earlier post about Arch Linux.
 I&amp;rsquo;ve since spent a little more time working with Arch, and these are the things I like:
  The base system is very small and has a very short boot time. I replaced Ubuntu on my old Eee PC with Arch and suddenly the boot time is reasonable (&amp;lt; 10 seconds to a text prompt, &amp;lt; 30 seconds to a full GUI login).</description>
@@ -1421,30 +1421,30 @@ I&amp;rsquo;ve since spent a little more time working with Arch, and these are t
     
     <item>
       <title>Parsing Libvirt XML with xmllint</title>
-      <link>http://blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/</link>
+      <link>//blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/</link>
       <pubDate>Fri, 21 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/</guid>
+      <guid>//blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/</guid>
       <description>I&amp;rsquo;ve been playing around with the LXC support in libvirt recently, and I&amp;rsquo;m trying to use a model where each LXC instance is backed by a dedicated LVM volume. This means that the process of starting an instance is:
  mount the instance root filesystem if necessary start the instance  It&amp;rsquo;s annoying to have to do this by hand. I could simply add all the LXC filesystems to /etc/fstab, but this would mean and extra step when creating and deleting each instance.</description>
     </item>
     
     <item>
       <title>Getting the IP address of a libvirt domain</title>
-      <link>http://blog.oddbit.com/post/2012-12-15-get-vm-ip/</link>
+      <link>//blog.oddbit.com/post/2012-12-15-get-vm-ip/</link>
       <pubDate>Sat, 15 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-12-15-get-vm-ip/</guid>
+      <guid>//blog.oddbit.com/post/2012-12-15-get-vm-ip/</guid>
       <description>If you are starting virtual machines via libvirt, and you have attached them to the default network, there is a very simple method you can use to determine the address assigned to your running instance:
  Libvirt runs dnsmasq for the default network, and saves leases in a local file (/var/lib/libvirt/dnsmasq/default.leases under RHEL). You can get the MAC address assigned to a virtual machine by querying the domain XML description.  Putting this together gets us something along the lines of:</description>
     </item>
     
     <item>
       <title>A first look at Arch Linux</title>
-      <link>http://blog.oddbit.com/post/2012-12-10-archlinux/</link>
+      <link>//blog.oddbit.com/post/2012-12-10-archlinux/</link>
       <pubDate>Mon, 10 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-12-10-archlinux/</guid>
+      <guid>//blog.oddbit.com/post/2012-12-10-archlinux/</guid>
       <description>I decided to take a look at Arch Linux this evening. It&amp;rsquo;s an interesting idea, but has a long way to go:
  The installer configured the wrong root= command line into my syslinux configuration, resulting in a system that wouldn&amp;rsquo;t boot.  Update: As far as I can tell, the syslinux-install_update command doesn&amp;rsquo;t actually make any attempt to configure syslinux.cfg at all.
  I tried to install libvirt and lxc, but there are unresolved library dependencies&amp;hellip;the virsh command apparently requires libX11.</description>
@@ -1452,19 +1452,19 @@ I&amp;rsquo;ve since spent a little more time working with Arch, and these are t
     
     <item>
       <title>Service discovery in the cloud using Avahi</title>
-      <link>http://blog.oddbit.com/post/2012-11-27-avahi-service-discovery/</link>
+      <link>//blog.oddbit.com/post/2012-11-27-avahi-service-discovery/</link>
       <pubDate>Tue, 27 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-11-27-avahi-service-discovery/</guid>
+      <guid>//blog.oddbit.com/post/2012-11-27-avahi-service-discovery/</guid>
       <description>I&amp;rsquo;m been writing a provisioning tool for OpenStack recently, and I&amp;rsquo;ve put together a demo configuration that installs a simple cluster consisting of three backend nodes and a front-end http proxy. I needed a way for the backend servers to discover the ip address of the frontend server. Since in my target environment everything would be on the same layer-2 network segment, service discovery with multicast DNS (mDNS) seemed like the way to go.</description>
     </item>
     
     <item>
       <title>Using Oracle JDK under CentOS</title>
-      <link>http://blog.oddbit.com/post/2012-11-26-using-oracle-jdk/</link>
+      <link>//blog.oddbit.com/post/2012-11-26-using-oracle-jdk/</link>
       <pubDate>Mon, 26 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-11-26-using-oracle-jdk/</guid>
+      <guid>//blog.oddbit.com/post/2012-11-26-using-oracle-jdk/</guid>
       <description>I needed to replace the native OpenJDK based Java VM with the Oracle Java distribution on one of our CentOS servers. In order to do it cleanly I wanted to set up the alternatives system to handle it, but it took a while to figure out the exact syntax.
 For the record (and because I will probably forget):
 alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --slave /usr/bin/keytool keytool /usr/java/latest/bin/keytool \ --slave /usr/bin/rmiregistry rmiregistry /usr/java/latest/bin/rmiregistry  </description>
@@ -1472,39 +1472,39 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
     
     <item>
       <title>Document classification with POPFile</title>
-      <link>http://blog.oddbit.com/post/2012-11-08-popfile-document-classification/</link>
+      <link>//blog.oddbit.com/post/2012-11-08-popfile-document-classification/</link>
       <pubDate>Thu, 08 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-11-08-popfile-document-classification/</guid>
+      <guid>//blog.oddbit.com/post/2012-11-08-popfile-document-classification/</guid>
       <description>I recently embarked upon a quest to categorize a year&amp;rsquo;s worth of trouble tickets (around 15000 documents total). We wanted to see what sort of things are generating the most work for our helpdesk staff so that we can identify areas in which improvements would have the biggest impact. One of my colleagues took a first pass at the data by manually categorizing the tickets based on their subject. This resulted in some useful data, but in the end just over 40% of the tickets are still uncategorized.</description>
     </item>
     
     <item>
       <title>Converting HTML to Markdown</title>
-      <link>http://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/</link>
+      <link>//blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/</link>
       <pubDate>Tue, 06 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/</guid>
+      <guid>//blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/</guid>
       <description>In order to import posts from Blogger into Scriptogr.am I needed to convert all the HTML formatting into Markdown. Thankfully there are a number of tools out there that can help with this task.
  MarkdownRules. This is an online service build around Markdownify. It&amp;rsquo;s a slick site with a nice API, but the backend wasn&amp;rsquo;t able to correctly render &amp;lt;pre&amp;gt; blocks. Since I&amp;rsquo;m often writing about code, my posts are filled with things like embedded XML and #include &amp;lt;stdio.</description>
     </item>
     
     <item>
       <title>Relocating from Blogger</title>
-      <link>http://blog.oddbit.com/post/2012-11-06-moving-from-blogger/</link>
+      <link>//blog.oddbit.com/post/2012-11-06-moving-from-blogger/</link>
       <pubDate>Tue, 06 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-11-06-moving-from-blogger/</guid>
+      <guid>//blog.oddbit.com/post/2012-11-06-moving-from-blogger/</guid>
       <description>I&amp;rsquo;m in the process of porting over content from Blogger. This may lead to odd formatting or broken links here and there. If you spot something, please let me know.
 If you came here from Google and found a broken link, try starting at the archive and see if you can spot what you were looking for.</description>
     </item>
     
     <item>
       <title>Posting to Scriptogr.am using the API</title>
-      <link>http://blog.oddbit.com/post/2012-11-05-posting-via-api/</link>
+      <link>//blog.oddbit.com/post/2012-11-05-posting-via-api/</link>
       <pubDate>Mon, 05 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-11-05-posting-via-api/</guid>
+      <guid>//blog.oddbit.com/post/2012-11-05-posting-via-api/</guid>
       <description>Scriptogr.am has a very simple api that allows one to POST and DELETE articles. POSTing an article will place it in the appropriate Dropbox directory and make it available on your blog all in one step.
 Here is how you could use this API via Curl:
 curl \ -d app_key=$APP_KEY \ -d user_id=$USER_ID \ -d name=&amp;quot;${title:-$1}&amp;quot; \ --data-urlencode text@$tmpfile \ \ http://scriptogr.am/api/article/post/  This assumes that you&amp;rsquo;ve registered for an application key and that you have configured the value into $APP_KEY and your Scriptogr.</description>
@@ -1512,40 +1512,40 @@ curl \ -d app_key=$APP_KEY \ -d user_id=$USER_ID \ -d name=&amp;quot;${title:-$1
     
     <item>
       <title>Private /tmp directories in Fedora</title>
-      <link>http://blog.oddbit.com/post/2012-11-05-fedora-private-tmp/</link>
+      <link>//blog.oddbit.com/post/2012-11-05-fedora-private-tmp/</link>
       <pubDate>Mon, 05 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-11-05-fedora-private-tmp/</guid>
+      <guid>//blog.oddbit.com/post/2012-11-05-fedora-private-tmp/</guid>
       <description>I ran into an odd problem the other day: I was testing out some configuration changes for a web application by dropping files into /tmp and pointing the application configuration at the appropriate directory. Everything worked out great when testing it by hand&amp;hellip;but when starting up the httpd service, the application behaved as if it was unable to find any of the files in /tmp.
 My first assumption was that had simply missed something obvious like file permissions or that I had a typo in my configuration, but after repeated checks and lots of testing it was obvious that something else was going on.</description>
     </item>
     
     <item>
       <title>Automatic configuration of Windows instances in OpenStack, part 1</title>
-      <link>http://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</link>
+      <link>//blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</link>
       <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</guid>
+      <guid>//blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</guid>
       <description>This is the first of two articles in which I discuss my work in getting some Windows instances up and running in our OpenStack environment. This article is primarily about problems I encountered along the way.
 Motivations Like many organizations, we have a mix of Linux and Windows in our environment. Some folks in my group felt that it would be nice to let our Windows admins take advantage of OpenStack for prototyping and sandboxing in the same ways our Linux admins can use it.</description>
     </item>
     
     <item>
       <title>Generating random passwords in PowerShell</title>
-      <link>http://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</link>
+      <link>//blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</link>
       <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</guid>
+      <guid>//blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</guid>
       <description>I was looking for PowerShell solutions for generating a random password (in order to set the Administrator password on a Windows instance provisioned in OpenStack), and found several solutions using the GeneratePassword method of System.Web.Security.Membership (documentation here), along the lines of this:
 Function New-RandomComplexPassword ($length=8) { $Assembly = Add-Type -AssemblyName System.Web $password = [System.Web.Security.Membership]::GeneratePassword($length,2) return $password }  While this works, I was unhappy with the generated passwords: they were difficult to type or transcribe because they make heavy use of punctuation.</description>
     </item>
     
     <item>
       <title>Waiting for networking using PowerShell</title>
-      <link>http://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</link>
+      <link>//blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</link>
       <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</guid>
+      <guid>//blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</guid>
       <description>I&amp;rsquo;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
 There are a number of common solutions proposed to this problem:
  Just wait for some period of time.
@@ -1554,40 +1554,40 @@ This can work but it&amp;rsquo;s ugly, and because it doesn&amp;rsquo;t actually
     
     <item>
       <title>Growing a filesystem on a virtual disk</title>
-      <link>http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</link>
+      <link>//blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</link>
       <pubDate>Wed, 24 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</guid>
+      <guid>//blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</guid>
       <description>Occasionally we will deploy a virtual instance into our KVM infrastructure and realize after the fact that we need more local disk space available. This is the process we use to expand the disk image. This process assumes the following:
  You&amp;rsquo;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&amp;rsquo;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).</description>
     </item>
     
     <item>
       <title>Parsing XML with Awk</title>
-      <link>http://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</link>
+      <link>//blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</link>
       <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</guid>
+      <guid>//blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</guid>
       <description>Recently, changes from the xmlgawk project have been integrated into GNU awk, and xmlgawk has been renamed to gawkextlib. With both a recent (post-4.0.70) gawk and gawkextlib built and installed correctly, you can write simple XML parsing scripts using gawk.
 For example, let&amp;rsquo;s say you would like to generate a list of disk image files associated with a KVM virtual instance. You can use the virsh dumpxml command to get output like the following:</description>
     </item>
     
     <item>
       <title>Markdown in your Email</title>
-      <link>http://blog.oddbit.com/post/2012-08-09-markdown-email/</link>
+      <link>//blog.oddbit.com/post/2012-08-09-markdown-email/</link>
       <pubDate>Thu, 09 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-08-09-markdown-email/</guid>
+      <guid>//blog.oddbit.com/post/2012-08-09-markdown-email/</guid>
       <description>I really like Markdown, a minimal markup language designed to be readable as plain text that can be rendered into structurally valid HTML. Markdown is already used on sites such as GitHub and all the StackExchange sites.
 I use Markdown often enough that it&amp;rsquo;s become ingrained in my fingers, to the point that I&amp;rsquo;ve started unconsciously using Markdown syntax in my email. This isn&amp;rsquo;t particularly useful by itself, although it means that I can take a message and render it to something pretty if I decide it needs to go somewhere other than my sent mail folder.</description>
     </item>
     
     <item>
       <title>Chasing OpenStack idle connection timeouts</title>
-      <link>http://blog.oddbit.com/post/2012-07-30-openstack-idle-connection-timeouts/</link>
+      <link>//blog.oddbit.com/post/2012-07-30-openstack-idle-connection-timeouts/</link>
       <pubDate>Mon, 30 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-07-30-openstack-idle-connection-timeouts/</guid>
+      <guid>//blog.oddbit.com/post/2012-07-30-openstack-idle-connection-timeouts/</guid>
       <description>The original problem I&amp;rsquo;ve recently spent some time working on an OpenStack deployment. I ran into a problem in which the compute service would frequently stop communicating with the AMQP message broker (qpidd).
 In order to gather some data on the problem, I ran the following simple test:
  Wait n minutes Run nova boot ... to create an instance Wait a minute and see if the new instance becomes ACTIVE If it works, delete the instance, set n = 2n and repeat  This demonstrated that communication was failing after about an hour, which correlates rather nicely with the idle connection timeout on the firewall.</description>
@@ -1595,10 +1595,10 @@ In order to gather some data on the problem, I ran the following simple test:
     
     <item>
       <title>Git fetch, tags, remotes, and more</title>
-      <link>http://blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</link>
+      <link>//blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</guid>
+      <guid>//blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</guid>
       <description>I’ve been playing around with Git, Puppet, and GPG verification of our Puppet configuration repository, and these are some random facts about Git that have come to light as part of the process.
 If you want to pull both changes and new tags from a remote repository, you can do this:
 $ git fetch $ git fetch --tags  Or you can do this:
@@ -1607,39 +1607,39 @@ $ git fetch --tags $ git fetch  What’s the difference?</description>
     
     <item>
       <title>Capturing Envoy Data</title>
-      <link>http://blog.oddbit.com/post/2012-02-22-capturing-envoy-data/</link>
+      <link>//blog.oddbit.com/post/2012-02-22-capturing-envoy-data/</link>
       <pubDate>Wed, 22 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-02-22-capturing-envoy-data/</guid>
+      <guid>//blog.oddbit.com/post/2012-02-22-capturing-envoy-data/</guid>
       <description>Pursuant to my last post, I&amp;rsquo;ve written a simple man-in-the-middle proxy to intercept communication between the Envoy and the Enphase servers. The code is available here.
 What it does As I detailed in my previous post, the Envoy sends data to Enphase via http POST requests. The proxy intercepts these requests, extracts the XML data from the request, and writes it to a local file (by default in /var/spool/envoy). It then forwards the request on to Enphase, and returns the reply to your Envoy.</description>
     </item>
     
     <item>
       <title>Enphase Envoy XML Data Format</title>
-      <link>http://blog.oddbit.com/post/2012-02-13-enphase-envoy-xml-data-format/</link>
+      <link>//blog.oddbit.com/post/2012-02-13-enphase-envoy-xml-data-format/</link>
       <pubDate>Mon, 13 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-02-13-enphase-envoy-xml-data-format/</guid>
+      <guid>//blog.oddbit.com/post/2012-02-13-enphase-envoy-xml-data-format/</guid>
       <description>We recently installed a (photovoltaic) solar array on our house. The system uses Enphase microinverters, and includes a monitoring device called the &amp;ldquo;Envoy&amp;rdquo;. The Envoy collects data from the microinverters and sends it back to Enphase. Enphase performs monitoring services for the array and also provides access to the data collected by the Envoy product.
 I&amp;rsquo;m interested in getting direct access to the data provided by the Envoy. In pursuit of that goal, I set up a man-in-the-middle proxy server on my home network to intercept the communication from the Envoy to the Enphase servers.</description>
     </item>
     
     <item>
       <title>Rate limiting made simple</title>
-      <link>http://blog.oddbit.com/post/2011-12-26-simple-rate-limiting/</link>
+      <link>//blog.oddbit.com/post/2011-12-26-simple-rate-limiting/</link>
       <pubDate>Mon, 26 Dec 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2011-12-26-simple-rate-limiting/</guid>
+      <guid>//blog.oddbit.com/post/2011-12-26-simple-rate-limiting/</guid>
       <description>I use CrashPlan as a backup service. It works and is very simple to set up, but has limited options for controlling bandwidth. In fact, if you&amp;rsquo;re running it on a headless system (e.g., a fileserver of some sort), your options are effectively &amp;ldquo;too slow&amp;rdquo; and &amp;ldquo;CONSUME EVERYTHING&amp;rdquo;. There is an open request to add time-based limitations to the application itself, but for now I&amp;rsquo;ve solved this using a very simple traffic shaping configuration.</description>
     </item>
     
     <item>
       <title>Puppet, scope, and inheritance</title>
-      <link>http://blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/</link>
+      <link>//blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/</link>
       <pubDate>Tue, 16 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/</guid>
+      <guid>//blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/</guid>
       <description>I note this here because it wasn&amp;rsquo;t apparent to me from the Puppet documentation.
 If you have a Puppet class like this:
 class foo { File { ensure =&amp;gt; file, mode =&amp;gt; 600, } }  And you use it like this:
@@ -1649,30 +1649,30 @@ class bar inherits foo { file { &#39;/tmp/myfile&#39;: } }  It will be created w
     
     <item>
       <title>Fixing RPM with evil magic</title>
-      <link>http://blog.oddbit.com/post/2011-07-26-fixing-rpm-with-evil-magic/</link>
+      <link>//blog.oddbit.com/post/2011-07-26-fixing-rpm-with-evil-magic/</link>
       <pubDate>Tue, 26 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2011-07-26-fixing-rpm-with-evil-magic/</guid>
+      <guid>//blog.oddbit.com/post/2011-07-26-fixing-rpm-with-evil-magic/</guid>
       <description>Fixing rpmsign with evil magic At my office we are developing a deployment mechanism for RPM packages. The general workflow looks like this:
  You build a source rpm on your own machine. You sign the rpm with your GPG key. You submit the source RPM to our buildserver. The buildserver validates your signature and then builds the package. The buildserver signs the package using a master signing key.  The last step in that sequence represents a problem, because the rpmsign command will always, always prompt for a password and read the response from /dev/tty.</description>
     </item>
     
     <item>
       <title>Installing CrashPlan under FreeBSD 8</title>
-      <link>http://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</link>
+      <link>//blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</link>
       <pubDate>Sun, 22 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</guid>
+      <guid>//blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</guid>
       <description>This articles describes how I got CrashPlan running on my FreeBSD 8(-STABLE) system. These instructions by Kim Scarborough were my starting point, but as these were for FreeBSD 7 there were some additional steps necessary to get things working.
 Install Java I had originally thought that it might be possible to run the CrashPlan client &amp;ldquo;natively&amp;rdquo; under FreeBSD. CrashPlan is a Java application, so this seemed like a possible solution.</description>
     </item>
     
     <item>
       <title>Signing data with ssh-agent</title>
-      <link>http://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</link>
+      <link>//blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</link>
       <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</guid>
+      <guid>//blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</guid>
       <description>This is follow-up to my previous post, Converting OpenSSH public keys.
 OpenSSH allows one to use an agent that acts as a proxy to your private key. When using an agent &amp;ndash; particularly with agent forwarding enabled &amp;ndash; this allows you to authenticate to a remote host without having to (a) repeatedly type in your password or (b) expose an unencrypted private key to remote systems.
 If one is temtped to use SSH keys as authentication credentials outside of ssh, one would ideally be able to take advantage of the ssh agent for these same reasons.</description>
@@ -1680,10 +1680,10 @@ If one is temtped to use SSH keys as authentication credentials outside of ssh, 
     
     <item>
       <title>Converting OpenSSH public keys</title>
-      <link>http://blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</link>
+      <link>//blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</link>
       <pubDate>Sun, 08 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</guid>
+      <guid>//blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</guid>
       <description>I&amp;rsquo;ve posted a followup to this article that discusses ssh-agent.
  For reasons best left to another post, I wanted to convert an SSH public key into a PKCS#1 PEM-encoded public key. That is, I wanted to go from this:
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD7EZn/BzP26AWk/Ts2ymjpTXuXRiEWIWn HFTilOTcuJ/P1HfOwiy4RHC1rv59Yh/E6jbTx623+OGySJWh1IS3dAEaHhcGKnJaikrBn3c cdoNVkAAuL/YD7FMG1Z0SjtcZS6MoO8Lb9pkq6R+Ok6JQjwCEsB+OaVwP9RnVA+HSYeyCVE 0KakLCbBJcD1U2aHP4+IH4OaXhZacpb9Ueja6NNfGrv558xTgfZ+fLdJ7cpg6wU8UZnVM1B JiUW5KFasc+2IuZR0+g/oJXaYwvW2T6XsMgipetCEtQoMAJ4zmugzHSQuFRYHw/7S6PUI2U 03glFmULvEV+qIxsVFT1ng3pj lars@tiamat.house  To this:
@@ -1692,99 +1692,99 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD7EZn/BzP26AWk/Ts2ymjpTXuXRiEWIWn HFTilOTc
     
     <item>
       <title>Python ctypes module</title>
-      <link>http://blog.oddbit.com/post/2010-08-10-python-ctypes-module/</link>
+      <link>//blog.oddbit.com/post/2010-08-10-python-ctypes-module/</link>
       <pubDate>Tue, 10 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-08-10-python-ctypes-module/</guid>
+      <guid>//blog.oddbit.com/post/2010-08-10-python-ctypes-module/</guid>
       <description>I just learned about the Python ctypes module, which is a Python module for interfacing with C code. Among other things, ctypes lets you call arbitrary functions in shared libraries. This is, from my perspective, some very cool magic. I thought I would provide a short example here, since it took me a little time to get everything working smoothly.
 For this example, we&amp;rsquo;ll write a wrapper for the standard statvfs(2) function:</description>
     </item>
     
     <item>
       <title>Importing vCard contacts into an LG 420G</title>
-      <link>http://blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into-lg-420g/</link>
+      <link>//blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into-lg-420g/</link>
       <pubDate>Fri, 06 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into-lg-420g/</guid>
+      <guid>//blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into-lg-420g/</guid>
       <description>Alix recently acquired an LG 420G from TracFone. She was interested in getting all of her contacts onto the phone, which at first seemed like a simple task &amp;ndash; transfer a vCard (.vcf) file to the phone via Bluetooth, and the phone would import all the contacts. This turned out to be a great idea in theory, but in practice there was a fatal flaw &amp;ndash; while the phone did indeed import the contacts, it only imported names and the occasional note or email address.</description>
     </item>
     
     <item>
       <title>Patch to gPXE dhcp command</title>
-      <link>http://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</link>
+      <link>//blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</link>
       <pubDate>Thu, 22 Jul 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</guid>
+      <guid>//blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</guid>
       <description>Update: This patch has been accepted into gPXE.
 I just released a patch to gPXE that modifies the dhcp command so that it can iterate over multiple interfaces. The stock dhcp command only accepts a single interface as an argument, which can be a problem if you are trying to boot on a machine with multiple interfaces. The builtin autoboot commands attempts to resolve this, but is only useful if you expect to receive appropriate boot parameters from your dhcp server.</description>
     </item>
     
     <item>
       <title>Kerberos authenticated queries to Active Directory</title>
-      <link>http://blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/</link>
+      <link>//blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/</guid>
+      <guid>//blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/</guid>
       <description>There are many guides out there to help you configure your Linux system as an LDAP and Kerberos client to an Active Directory server. Most of these guides solve the problem of authentication by embedding a username and password into a configuration file somewhere on your system. While this works, it presents some problems:
  If you use a common account for authentication from all of your Linux systems, a compromise on one system means updating the configuration of all of your systems.</description>
     </item>
     
     <item>
       <title>Pushing a Git repository to Subversion</title>
-      <link>http://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</link>
+      <link>//blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</link>
       <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</guid>
+      <guid>//blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</guid>
       <description>I recently set up a git repository server (using gitosis and gitweb). Among the required features of the system was the ability to publish the git repository to a read-only Subversion repository. This sounds simple in principle but in practice proved to be a bit tricky.
 Git makes an excellent Subversion client. You can use the git svn &amp;hellip; series of commands to pull a remote Subversion repository into a local git working tree and then have all the local advantages of git forcing the central code repository to change version control software.</description>
     </item>
     
     <item>
       <title>LDAP redundancy through proxy servers</title>
-      <link>http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</link>
+      <link>//blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</link>
       <pubDate>Wed, 24 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</guid>
+      <guid>//blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</guid>
       <description>Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.
 A solution We can provide a level of redundancy by passing the LDAP connections through a load balancing proxy. While this makes the proxy a single point of failure, it is (a) a very simple tool and thus less prone to complex failure modes, (b) running on the same host as the web application, and &amp;copy; is completely under our control.</description>
     </item>
     
     <item>
       <title>Apache virtual host statistics</title>
-      <link>http://blog.oddbit.com/post/2010-02-19-apache-virtual-host-statistics/</link>
+      <link>//blog.oddbit.com/post/2010-02-19-apache-virtual-host-statistics/</link>
       <pubDate>Fri, 19 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-02-19-apache-virtual-host-statistics/</guid>
+      <guid>//blog.oddbit.com/post/2010-02-19-apache-virtual-host-statistics/</guid>
       <description>As part of a project I&amp;rsquo;m working on I wanted to get a rough idea of the activity of the Apache virtual hosts on the system. I wasn&amp;rsquo;t able to find exactly what I wanted, so I refreshed my memory of curses to bring you vhoststats.
 This tools reads an Apache log file (with support for arbitrary formats) and generates a dynamic bar chart showing the activity (in number of requests and bytes transferred) of hosts on the system.</description>
     </item>
     
     <item>
       <title>Merging directories with OpenLDAP&#39;s Meta backend</title>
-      <link>http://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</link>
+      <link>//blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</link>
       <pubDate>Tue, 16 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</guid>
+      <guid>//blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</guid>
       <description>This document provides an example of using OpenLDAP&amp;rsquo;s meta backend to provide a unified view of two distinct LDAP directory trees. I was frustrated by the lack of simple examples available when I went looking for information on this topic, so this is my attempt to make life easier for the next person looking to do the same thing.
 The particular use case that motiviated my interest in this topic was the need to configure web applications to (a) authenticate against an existing Active Directory server while (b) also allowing new accounts to be provisioned quickly and without granting any access in the AD environment.</description>
     </item>
     
     <item>
       <title>Filtering Blogger feeds</title>
-      <link>http://blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/</link>
+      <link>//blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/</link>
       <pubDate>Wed, 10 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/</guid>
+      <guid>//blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/</guid>
       <description>After encountering a number of problems trying to filter Blogger feeds by tag (using services like Feedrinse and Yahoo Pipes), I&amp;rsquo;ve finally put together a solution that works:
  Shadow the feed with Feedburner. Enable the Convert Format Burner, and convert your feed to RSS 2.0. Use Yahoo Pipes to filter the feed (because Feedrinse seems to be broken).  This let me create a feed that excluded all my posts containing the fbpost tag, thus allowing me to avoid yet another postgasm in Facebook when adding new import URL to notes.</description>
     </item>
     
     <item>
       <title>Funny usage message</title>
-      <link>http://blog.oddbit.com/post/2010-02-08-funny-usage-message/</link>
+      <link>//blog.oddbit.com/post/2010-02-08-funny-usage-message/</link>
       <pubDate>Mon, 08 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-02-08-funny-usage-message/</guid>
+      <guid>//blog.oddbit.com/post/2010-02-08-funny-usage-message/</guid>
       <description>I was poking around in a command shell on my Droid to see what was available. While it&amp;rsquo;s a pretty restricted environment, there&amp;rsquo;s a number of commands available in /system/bin, including dexopt.
 Apparently dexopt isn&amp;rsquo;t something I&amp;rsquo;m supposed to poke at:
 $ dexopt Usage: don&#39;t use this  Hah.</description>
@@ -1792,10 +1792,10 @@ $ dexopt Usage: don&#39;t use this  Hah.</description>
     
     <item>
       <title>MBTA realtime XML feed</title>
-      <link>http://blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/</link>
+      <link>//blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/</link>
       <pubDate>Sun, 07 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/</guid>
+      <guid>//blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/</guid>
       <description>The MBTA has a trial web service interface that provides access to realtime location information for select MBTA buses, as well as access to route information, arrival prediction, and other features. More information can be found here:
  http://www.eot.state.ma.us/developers/realtime/
  The service is provided by NextBus, which specializes in real-time location information for public transit organizations. The API (sorry, PDF) is very simple and does not require any sort of advance registration.</description>
@@ -1803,20 +1803,20 @@ $ dexopt Usage: don&#39;t use this  Hah.</description>
     
     <item>
       <title>Blocking VNC with iptables</title>
-      <link>http://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</link>
+      <link>//blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</link>
       <pubDate>Thu, 04 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</guid>
+      <guid>//blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</guid>
       <description>VNC clients use the RFB protocol to provide virtual display capabilities. The RFB protocol, as implemented by most clients, provides very poor authentication options. While passwords are not actually sent &amp;ldquo;in the clear&amp;rdquo;, it is possible to brute force them based on information available on the wire. The RFB 3.x protocol limits passwords to a maximum of eight characters, so the potential key space is relatively small.
 It&amp;rsquo;s possible to securely connect to a remote VNC server by tunneling your connection using ssh port forwarding (or setting up some sort of SSL proxy).</description>
     </item>
     
     <item>
       <title>NFS and the 16-group limit</title>
-      <link>http://blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/</link>
+      <link>//blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/</link>
       <pubDate>Tue, 02 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/</guid>
+      <guid>//blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/</guid>
       <description>I learned something new today: it appears that the underlying authorization mechanism used by NFS limits your group membership to 16 groups. From http://bit.ly/cBhU8N:
  NFS is built on ONC RPC (Sun RPC). NFS depends on RPC for authentication and identification of users. Most NFS deployments use an RPC authentication flavor called AUTH_SYS (originally called AUTH_UNIX, but renamed to AUTH_SYS).
 AUTH_SYS sends 3 important things:
@@ -1825,10 +1825,10 @@ AUTH_SYS sends 3 important things:
     
     <item>
       <title>Cleaning up Subversion with Git</title>
-      <link>http://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</link>
+      <link>//blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</link>
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</guid>
+      <guid>//blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</guid>
       <description>Overview At my office, we have a crufty Subversion repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.
 What we want to do is move a project from a path that looks like this:
 .../projects/some-project-name  To a new repository using the recommended Subversion repository layout, like this:</description>
@@ -1836,29 +1836,29 @@ What we want to do is move a project from a path that looks like this:
     
     <item>
       <title>Linux UPnP Gateway</title>
-      <link>http://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</link>
+      <link>//blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</link>
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</guid>
+      <guid>//blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</guid>
       <description>Like many other folks out there, I have several computers in my house connected to the outside world via a Linux box acting as a NAT gateway. I often want to use application such as BitTorrent and Freenet, which require that a number of ports be forwarded from my external connection to the particular computer on which I happen to be working. It turns out there&amp;rsquo;s a protocol for this, called UPnP.</description>
     </item>
     
     <item>
       <title>Retrieving Blogger posts by post id</title>
-      <link>http://blog.oddbit.com/post/2010-01-29-retrieving-blogger-posts-by-post-id/</link>
+      <link>//blog.oddbit.com/post/2010-01-29-retrieving-blogger-posts-by-post-id/</link>
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-01-29-retrieving-blogger-posts-by-post-id/</guid>
+      <guid>//blog.oddbit.com/post/2010-01-29-retrieving-blogger-posts-by-post-id/</guid>
       <description>I spent some time recently trying to figure out, using Google&amp;rsquo;s gdata API, how to retrieve a post from a Blogger blog if I know corresponding post id. As far as I can tell there is no obvious way of doing this, at least not using the gdata.blogger.client api, but after much nashing of teeth I came up with the following solution.
 Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
     </item>
     
     <item>
       <title>Fring: How not to handle registration</title>
-      <link>http://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</link>
+      <link>//blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</link>
       <pubDate>Sun, 24 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</guid>
+      <guid>//blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</guid>
       <description>I thought I&amp;rsquo;d give Fring a try after seeing some favorable reviews on other sites. If you haven&amp;rsquo;t previously heard of Fring, the following blurb from their website might be helpful:
  Using your handset&amp;rsquo;s internet connection, you can interact with friends on all your favourite social networks including Skype, MSN Messenger, Google Talk, ICQ, SIP, Twitter, Yahoo! and AIM. You can listen to music with your Last.fm friends, check out what each other are up to on Facebook, receive alerts of new Google Mail and tailor make your very own fring by adding more cool experiences from fringAdd-ons</description>
     </item>

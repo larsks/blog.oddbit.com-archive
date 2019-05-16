@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on The Odd Bit</title>
-    <link>http://blog.oddbit.com/tag/git/</link>
+    <link>//blog.oddbit.com/tag/git/</link>
     <description>Recent content in git on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 22 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.oddbit.com/tag/git/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//blog.oddbit.com/tag/git/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Making sure your Gerrit changes aren&#39;t broken</title>
-      <link>http://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</link>
+      <link>//blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</link>
       <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</guid>
+      <guid>//blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</guid>
       <description>It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
 In many cases you can alleviate this through the use of the git pre-commit hook, which will run every time you commit changes locally.</description>
     </item>
     
     <item>
       <title>A collection of git tips</title>
-      <link>http://blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</link>
+      <link>//blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</link>
       <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</guid>
+      <guid>//blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</guid>
       <description>This is a small collection of simple git tips and tricks I use to make my life easier.
 Quickly amend an existing commit with new files I have this alias in place that will amend the current commit while automatically re-using the existing commit message:
 alias.fix=commit --amend -C HEAD  With this in place, fixing a review becomes:
@@ -35,10 +35,10 @@ $ vim some/file/somewhere $ git add -u $ git fix  Which I find much more conveni
     
     <item>
       <title>Automatic git cache</title>
-      <link>http://blog.oddbit.com/post/2015-10-19-automatic-git-cache/</link>
+      <link>//blog.oddbit.com/post/2015-10-19-automatic-git-cache/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-10-19-automatic-git-cache/</guid>
+      <guid>//blog.oddbit.com/post/2015-10-19-automatic-git-cache/</guid>
       <description>This post is in response to a comment someone made on irc earlier today:
  [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&amp;rsquo;re available
  In this post I present a proof-of-concept solution to this request. Please note that thisand isn&amp;rsquo;t something that has actually been used or tested anywhere!
@@ -48,10 +48,10 @@ If you access a git repository via ssh, it&amp;rsquo;s easy to provide a wrapper
     <item>
       <title>Using tools badly: time shifting git commits with Workinghours
 </title>
-      <link>http://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</link>
+      <link>//blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</link>
       <pubDate>Fri, 10 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</guid>
+      <guid>//blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</guid>
       <description>This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!
 You are working on a wonderful open source project&amp;hellip;but you are not supposed to be working on that project! You&amp;rsquo;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
 And now your boss knows why the TPS reports are late.</description>
@@ -59,29 +59,29 @@ And now your boss knows why the TPS reports are late.</description>
     
     <item>
       <title>Tracking down a kernel bug with git bisect</title>
-      <link>http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</link>
+      <link>//blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</link>
       <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</guid>
+      <guid>//blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</guid>
       <description>After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
 $ docker run -ti fedora /bin/bash bash-4.2# su -c &#39;uptime&#39; su: System error  Hooking up something (like, say, socat unix-listen:/dev/log -) to /dev/log revealed that the system was logging:</description>
     </item>
     
     <item>
       <title>Automatic maintenance of tag feeds</title>
-      <link>http://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</link>
+      <link>//blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</link>
       <pubDate>Fri, 22 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</guid>
+      <guid>//blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</guid>
       <description>I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&amp;rsquo;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&amp;rsquo;s the perfect place to insert generated content that must be kept in sync with posts on the blog.</description>
     </item>
     
     <item>
       <title>Git fetch, tags, remotes, and more</title>
-      <link>http://blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</link>
+      <link>//blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</guid>
+      <guid>//blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</guid>
       <description>I’ve been playing around with Git, Puppet, and GPG verification of our Puppet configuration repository, and these are some random facts about Git that have come to light as part of the process.
 If you want to pull both changes and new tags from a remote repository, you can do this:
 $ git fetch $ git fetch --tags  Or you can do this:
@@ -90,20 +90,20 @@ $ git fetch --tags $ git fetch  What’s the difference?</description>
     
     <item>
       <title>Pushing a Git repository to Subversion</title>
-      <link>http://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</link>
+      <link>//blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</link>
       <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</guid>
+      <guid>//blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</guid>
       <description>I recently set up a git repository server (using gitosis and gitweb). Among the required features of the system was the ability to publish the git repository to a read-only Subversion repository. This sounds simple in principle but in practice proved to be a bit tricky.
 Git makes an excellent Subversion client. You can use the git svn &amp;hellip; series of commands to pull a remote Subversion repository into a local git working tree and then have all the local advantages of git forcing the central code repository to change version control software.</description>
     </item>
     
     <item>
       <title>Cleaning up Subversion with Git</title>
-      <link>http://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</link>
+      <link>//blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</link>
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</guid>
+      <guid>//blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</guid>
       <description>Overview At my office, we have a crufty Subversion repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.
 What we want to do is move a project from a path that looks like this:
 .../projects/some-project-name  To a new repository using the recommended Subversion repository layout, like this:</description>

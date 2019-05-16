@@ -2,20 +2,20 @@
   <title>metrics on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/metrics/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/metrics/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/metrics/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/metrics/" rel="alternate"></link>
 
   <updated>2018-02-26T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/metrics/</id>
+  <id>//blog.oddbit.com/tag/metrics/</id>
   
   <entry>
     <title>Grouping aggregation queries in Gnocchi 4.0.x</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/"/>
-    <id>http://blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/"/>
+    <id>//blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/</id>
     <published>2018-02-26T00:00:00Z</published>
     <updated>2018-02-26T00:00:00Z</updated>
     <summary type="html">In this article, we&amp;rsquo;re going to ask Gnocchi (the OpenStack telemetry storage service) how much memory was used, on average, over the course of each day by each project in an OpenStack environment.

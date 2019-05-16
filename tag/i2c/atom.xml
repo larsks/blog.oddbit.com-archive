@@ -2,20 +2,20 @@
   <title>i2c on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/i2c/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/i2c/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/i2c/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/i2c/" rel="alternate"></link>
 
   <updated>2013-03-12T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/i2c/</id>
+  <id>//blog.oddbit.com/tag/i2c/</id>
   
   <entry>
     <title>I2C on the Raspberry Pi</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/"/>
-    <id>http://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/"/>
+    <id>//blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</id>
     <published>2013-03-12T00:00:00Z</published>
     <updated>2013-03-12T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&amp;rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.

@@ -2,20 +2,20 @@
   <title>orchestration on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/orchestration/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/orchestration/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/orchestration/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/orchestration/" rel="alternate"></link>
 
   <updated>2014-08-30T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/orchestration/</id>
+  <id>//blog.oddbit.com/tag/orchestration/</id>
   
   <entry>
     <title>Annotated documentation for DockerInc::Docker::Container</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/"/>
-    <id>http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-08-31-docker-contain-doc/"/>
+    <id>//blog.oddbit.com/post/2014-08-31-docker-contain-doc/</id>
     <published>2014-08-30T00:00:00Z</published>
     <updated>2014-08-30T00:00:00Z</updated>
     <summary type="html">This is a companion to my article on the Docker plugin for Heat.
@@ -37,8 +37,8 @@ docker_endpoint: tcp://192.</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/"/>
-    <id>http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/"/>
+    <id>//blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</id>
     <published>2014-08-30T00:00:00Z</published>
     <updated>2014-08-30T00:00:00Z</updated>
     <summary type="html">I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&amp;rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.

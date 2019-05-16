@@ -2,20 +2,20 @@
   <title>yaql on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/yaql/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/yaql/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/yaql/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/yaql/" rel="alternate"></link>
 
   <updated>2016-08-11T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/yaql/</id>
+  <id>//blog.oddbit.com/tag/yaql/</id>
   
   <entry>
     <title>Exploring YAQL Expressions</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/"/>
-    <id>http://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/"/>
+    <id>//blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</id>
     <published>2016-08-11T00:00:00Z</published>
     <updated>2016-08-11T00:00:00Z</updated>
     <summary type="html">The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&amp;rsquo;s more advanced features.

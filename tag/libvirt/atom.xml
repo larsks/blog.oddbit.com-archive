@@ -2,20 +2,20 @@
   <title>libvirt on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/libvirt/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/libvirt/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/libvirt/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/libvirt/" rel="alternate"></link>
 
   <updated>2013-10-04T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/libvirt/</id>
+  <id>//blog.oddbit.com/tag/libvirt/</id>
   
   <entry>
     <title>Automatic hostname entries for libvirt domains</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/"/>
-    <id>http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/"/>
+    <id>//blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</id>
     <published>2013-10-04T00:00:00Z</published>
     <updated>2013-10-04T00:00:00Z</updated>
     <summary type="html">Have you ever wished that you could use libvirt domain names as hostnames? So that you could do something like this:

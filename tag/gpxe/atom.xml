@@ -2,20 +2,20 @@
   <title>gpxe on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/gpxe/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/gpxe/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/gpxe/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/gpxe/" rel="alternate"></link>
 
   <updated>2010-07-22T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/gpxe/</id>
+  <id>//blog.oddbit.com/tag/gpxe/</id>
   
   <entry>
     <title>Patch to gPXE dhcp command</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/"/>
-    <id>http://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/"/>
+    <id>//blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</id>
     <published>2010-07-22T00:00:00Z</published>
     <updated>2010-07-22T00:00:00Z</updated>
     <summary type="html">Update: This patch has been accepted into gPXE.

@@ -2,20 +2,20 @@
   <title>archlinux on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/archlinux/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/archlinux/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/archlinux/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/archlinux/" rel="alternate"></link>
 
   <updated>2013-04-08T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/archlinux/</id>
+  <id>//blog.oddbit.com/tag/archlinux/</id>
   
   <entry>
     <title>Did Arch Linux eat your KVM?</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/"/>
-    <id>http://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/"/>
+    <id>//blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/</id>
     <published>2013-04-08T00:00:00Z</published>
     <updated>2013-04-08T00:00:00Z</updated>
     <summary type="html">A recent update to Arch Linux replaced the qemu-kvm package with an updated version of qemu. A side effect of this change is that the qemu-kvm binary is no longer available, and any libvirt guests on your system utilizing that binary will no longer operate. As is typical with Arch, there is no announcement about this incompatible change, and queries to #archlinux will be met with the knowledge, grace and decorum you would expect of that channel:</summary>

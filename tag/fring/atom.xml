@@ -2,20 +2,20 @@
   <title>fring on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/fring/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/fring/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/fring/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/fring/" rel="alternate"></link>
 
   <updated>2010-01-24T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/fring/</id>
+  <id>//blog.oddbit.com/tag/fring/</id>
   
   <entry>
     <title>Fring: How not to handle registration</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/"/>
-    <id>http://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/"/>
+    <id>//blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</id>
     <published>2010-01-24T00:00:00Z</published>
     <updated>2010-01-24T00:00:00Z</updated>
     <summary type="html">I thought I&amp;rsquo;d give Fring a try after seeing some favorable reviews on other sites. If you haven&amp;rsquo;t previously heard of Fring, the following blurb from their website might be helpful:

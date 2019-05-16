@@ -2,20 +2,20 @@
   <title>tricks on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/tricks/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/tricks/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/tricks/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/tricks/" rel="alternate"></link>
 
   <updated>2014-01-16T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/tricks/</id>
+  <id>//blog.oddbit.com/tag/tricks/</id>
   
   <entry>
     <title>Stupid OpenStack Tricks</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/"/>
-    <id>http://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/"/>
+    <id>//blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</id>
     <published>2014-01-16T00:00:00Z</published>
     <updated>2014-01-16T00:00:00Z</updated>
     <summary type="html">I work with several different OpenStack installations. I usually work on the command line, sourcing in an appropriate stackrc with credentials as necessary, but occasionally I want to use the dashboard for something.

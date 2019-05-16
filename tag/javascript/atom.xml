@@ -2,20 +2,20 @@
   <title>javascript on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/javascript/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/javascript/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/javascript/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/javascript/" rel="alternate"></link>
 
   <updated>2013-11-23T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/javascript/</id>
+  <id>//blog.oddbit.com/tag/javascript/</id>
   
   <entry>
     <title>Long polling with Javascript and Python</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/"/>
-    <id>http://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2013-11-23-long-polling-with-ja/"/>
+    <id>//blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</id>
     <published>2013-11-23T00:00:00Z</published>
     <updated>2013-11-23T00:00:00Z</updated>
     <summary type="html">In this post I&amp;rsquo;m going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.
@@ -27,8 +27,8 @@ My pubsub_example repository on GitHub has a complete project that implements th
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/"/>
-    <id>http://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2013-11-23-openshift-socket-pro/"/>
+    <id>//blog.oddbit.com/post/2013-11-23-openshift-socket-pro/</id>
     <published>2013-11-23T00:00:00Z</published>
     <updated>2013-11-23T00:00:00Z</updated>
     <summary type="html">In this article, a followup to my previous post regarding long-poll servers and Python, we investigate the code changes that were necessary to make the code work when deployed on OpenShift.

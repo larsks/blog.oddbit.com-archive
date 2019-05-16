@@ -2,20 +2,20 @@
   <title>atomic on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/atomic/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/atomic/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/atomic/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/atomic/" rel="alternate"></link>
 
   <updated>2015-10-09T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/atomic/</id>
+  <id>//blog.oddbit.com/tag/atomic/</id>
   
   <entry>
     <title>Running NTP in a Container</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/"/>
-    <id>http://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/"/>
+    <id>//blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/</id>
     <published>2015-10-09T00:00:00Z</published>
     <updated>2015-10-09T00:00:00Z</updated>
     <summary type="html">Someone asked on IRC about running ntpd in a container on Atomic, so I&amp;rsquo;ve put together a small example. We&amp;rsquo;ll start with a very simple Dockerfile:
@@ -27,8 +27,8 @@ FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&amp;quot;ntpd&amp;q
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/"/>
-    <id>http://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/"/>
+    <id>//blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
     <published>2015-06-19T00:00:00Z</published>
     <updated>2015-06-19T00:00:00Z</updated>
     <summary type="html">Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
@@ -41,8 +41,8 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/"/>
-    <id>http://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/"/>
+    <id>//blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</id>
     <published>2014-11-24T00:00:00Z</published>
     <updated>2014-11-24T00:00:00Z</updated>
     <summary type="html">While experimenting with Fedora Atomic, I was looking for an elegant way to automatically deploy Atomic into an OpenStack environment and then automatically schedule some Docker containers on the Atomic host. This post describes my solution.

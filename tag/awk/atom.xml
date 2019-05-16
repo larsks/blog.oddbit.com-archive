@@ -2,20 +2,20 @@
   <title>awk on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/awk/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/awk/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/awk/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/awk/" rel="alternate"></link>
 
   <updated>2013-07-16T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/awk/</id>
+  <id>//blog.oddbit.com/tag/awk/</id>
   
   <entry>
     <title>Split concatenated certificates with awk</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2013-07-16-split-concatenated-c/"/>
-    <id>http://blog.oddbit.com/post/2013-07-16-split-concatenated-c/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2013-07-16-split-concatenated-c/"/>
+    <id>//blog.oddbit.com/post/2013-07-16-split-concatenated-c/</id>
     <published>2013-07-16T00:00:00Z</published>
     <updated>2013-07-16T00:00:00Z</updated>
     <summary type="html">This is a short script that takes a list of concatenated certificates as input (such as a collection of CA certificates) and produces a collection of numbered files, each containing a single certificate.
@@ -27,8 +27,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/"/>
-    <id>http://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2012-09-10-awk-parsing-xml/"/>
+    <id>//blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</id>
     <published>2012-09-10T00:00:00Z</published>
     <updated>2012-09-10T00:00:00Z</updated>
     <summary type="html">Recently, changes from the xmlgawk project have been integrated into GNU awk, and xmlgawk has been renamed to gawkextlib. With both a recent (post-4.0.70) gawk and gawkextlib built and installed correctly, you can write simple XML parsing scripts using gawk.

@@ -2,20 +2,20 @@
   <title>openvswitch on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/openvswitch/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/openvswitch/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/openvswitch/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/openvswitch/" rel="alternate"></link>
 
   <updated>2016-05-19T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/openvswitch/</id>
+  <id>//blog.oddbit.com/tag/openvswitch/</id>
   
   <entry>
     <title>Connecting another vm to your tripleo-quickstart deployment</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/"/>
-    <id>http://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/"/>
+    <id>//blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</id>
     <published>2016-05-19T00:00:00Z</published>
     <updated>2016-05-19T00:00:00Z</updated>
     <summary type="html">Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
@@ -27,8 +27,8 @@ For a concrete example, let&amp;rsquo;s presume you have deployed an environment
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/"/>
-    <id>http://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2015-08-13-provider-external-networks-details/"/>
+    <id>//blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</id>
     <published>2015-08-13T00:00:00Z</published>
     <updated>2015-08-13T00:00:00Z</updated>
     <summary type="html">In Quantum in Too Much Detail, I discussed the architecture of a Neutron deployment in detail. Since that article was published, Neutron gained the ability to handle multiple external networks with a single L3 agent. While I wrote about that back in 2014, I covered the configuration side of it in much more detail than I discussed the underlying network architecture. This post addresses the architecture side.
@@ -40,8 +40,8 @@ The players This document describes the architecture that results from a particu
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/"/>
-    <id>http://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/"/>
+    <id>//blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</id>
     <published>2014-08-11T00:00:00Z</published>
     <updated>2014-08-11T00:00:00Z</updated>
     <summary type="html">Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&amp;rsquo;ve written an article about working with the macvlan driver.
@@ -53,8 +53,8 @@ This article discusses four ways to make a Docker container appear on a local ne
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/"/>
-    <id>http://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/"/>
+    <id>//blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</id>
     <published>2014-05-27T00:00:00Z</published>
     <updated>2014-05-27T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
@@ -66,8 +66,8 @@ This article discusses four ways to make a Docker container appear on a local ne
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/"/>
-    <id>http://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/"/>
+    <id>//blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</id>
     <published>2014-05-23T00:00:00Z</published>
     <updated>2014-05-23T00:00:00Z</updated>
     <summary type="html">Normally I like to post solutions, but today&amp;rsquo;s post is about a vexing problem to which I have not been able to find a solution.
@@ -79,8 +79,8 @@ This started as a simple attempt to set up external connectivity on an all-in-on
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/"/>
-    <id>http://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/"/>
+    <id>//blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</id>
     <published>2014-05-23T00:00:00Z</published>
     <updated>2014-05-23T00:00:00Z</updated>
     <summary type="html">In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &amp;ldquo;don&amp;rsquo;t use ip link set ...&amp;rdquo; for this purpose.
@@ -94,8 +94,8 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/"/>
-    <id>http://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/"/>
+    <id>//blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</id>
     <published>2014-05-20T00:00:00Z</published>
     <updated>2014-05-20T00:00:00Z</updated>
     <summary type="html">I run OpenStack on my laptop, and I&amp;rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
@@ -108,8 +108,8 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/"/>
-    <id>http://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/"/>
+    <id>//blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</id>
     <published>2014-05-19T00:00:00Z</published>
     <updated>2014-05-19T00:00:00Z</updated>
     <summary type="html">Due to an unfortunate incident involving sleep mode and an overheated backpack I had the &amp;ldquo;opportunity&amp;rdquo; to rebuild my laptop. Since this meant reinstalling OpenStack I used this as an excuse to finally move to the ML2 network plugin for Neutron.
@@ -122,8 +122,8 @@ neutron net-create external -- --router:external=true \ --provider:network_type=
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2014-01-19-show-ovs-externalids/"/>
-    <id>http://blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2014-01-19-show-ovs-externalids/"/>
+    <id>//blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</id>
     <published>2014-01-19T00:00:00Z</published>
     <updated>2014-01-19T00:00:00Z</updated>
     <summary type="html">This is just here as a reminder for me:

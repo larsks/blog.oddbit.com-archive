@@ -2,20 +2,20 @@
   <title>json on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/json/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/json/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/json/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/json/" rel="alternate"></link>
 
   <updated>2013-11-17T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/json/</id>
+  <id>//blog.oddbit.com/tag/json/</id>
   
   <entry>
     <title>json-tools: cli for generating and filtering json</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2013-11-17-json-tools/"/>
-    <id>http://blog.oddbit.com/post/2013-11-17-json-tools/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2013-11-17-json-tools/"/>
+    <id>//blog.oddbit.com/post/2013-11-17-json-tools/</id>
     <published>2013-11-17T00:00:00Z</published>
     <updated>2013-11-17T00:00:00Z</updated>
     <summary type="html">Interacting with JSON-based APIs from the command line can be difficult, and OpenStack is filled with REST APIs that consume or produce JSON. I&amp;rsquo;ve just put pair of tools for generating and filtering JSON on the command line, called collectively json-tools.

@@ -2,20 +2,20 @@
   <title>filter on The Odd Bit</title>
 
   
-  <link rel="self" href="http://blog.oddbit.com/tag/filter/atom.xml"/>
+  <link rel="self" href="//blog.oddbit.com/tag/filter/atom.xml"/>
   
-  <link href="http://blog.oddbit.com/tag/filter/" rel="alternate"></link>
+  <link href="//blog.oddbit.com/tag/filter/" rel="alternate"></link>
 
   <updated>2010-02-10T00:00:00Z</updated>
-  <id>http://blog.oddbit.com/tag/filter/</id>
+  <id>//blog.oddbit.com/tag/filter/</id>
   
   <entry>
     <title>Filtering Blogger feeds</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="http://blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/"/>
-    <id>http://blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/</id>
+    <link rel="alternate" href="//blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/"/>
+    <id>//blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/</id>
     <published>2010-02-10T00:00:00Z</published>
     <updated>2010-02-10T00:00:00Z</updated>
     <summary type="html">After encountering a number of problems trying to filter Blogger feeds by tag (using services like Feedrinse and Yahoo Pipes), I&amp;rsquo;ve finally put together a solution that works:
