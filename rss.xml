@@ -6,15 +6,24 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>A DIY CPAP Battery Box</title>
+      <link>https://blog.oddbit.com/post/2019-05-14-a-diy-cpap-battery-box/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2019-05-14-a-diy-cpap-battery-box/</guid>
+      <description>A year or so ago I was diagnosed with sleep apnea, and since them I&amp;rsquo;ve been sleeping with a CPAP. This past weekend, I joined my daughter on a scout camping trip to a campground without readily accessible electricity. This would be the first time I found myself in this situation, and as the date approached, I realized I was going to have to build or buy some sort of battery solution for my CPAP.</description>
+    </item>
+    
+    <item>
       <title>Unpacking a Python regular expression</title>
       <link>https://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 07 May 2019 10:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</guid>
       <description>I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&amp;rsquo;t really seem the write place for that: so, here we are.</description>
@@ -23,7 +32,7 @@
     <item>
       <title>New comment system</title>
       <link>https://blog.oddbit.com/post/2019-05-07-new-comment-system/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 07 May 2019 09:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-05-07-new-comment-system/</guid>
       <description>As long as I&amp;rsquo;m switching site generators, it seems like a good idea to refresh the comment system as well. I&amp;rsquo;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.
@@ -1878,12 +1887,11 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Manipulate list items in Ansible playbooks ansible yaml jinja2 ansible-inventory
- How do i add filtering to the dictionary json list dictionary ansible
- Using vars_prompt on Task file ansible yaml ansible-role
- ansible variable scope not broad enough scope ansible
- ansible taks is failing even with the right syntax ansible ansible-2.x ansible-inventory ansible-facts ansible-template
- I want a playbook to install multiple packages on multiple machines ansible</description>
+      <description>ansible taks is failing even with the right syntax ansible ansible-2.x ansible-inventory ansible-facts ansible-template
+ Custom callback plugin path and copy plugin to /home/user/.ansible ansible
+ [✓] Run one ansible playbook task on localhost, and then another task on remote server ansible
+ [✓] ansible run role against host name that is returned from a local script ansible
+ How to conditionally replace text in a list with regex_replace? ansible yaml jinja2 ansible-inventory</description>
     </item>
     
   </channel>

@@ -6,8 +6,20 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2019-05-07T00:00:00Z</updated>
+  <updated>2019-05-14T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  
+  <entry>
+    <title>A DIY CPAP Battery Box</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-05-14-a-diy-cpap-battery-box/"/>
+    <id>https://blog.oddbit.com/post/2019-05-14-a-diy-cpap-battery-box/</id>
+    <published>2019-05-14T00:00:00Z</published>
+    <updated>2019-05-14T00:00:00Z</updated>
+    <summary type="html">A year or so ago I was diagnosed with sleep apnea, and since them I&amp;rsquo;ve been sleeping with a CPAP. This past weekend, I joined my daughter on a scout camping trip to a campground without readily accessible electricity. This would be the first time I found myself in this situation, and as the date approached, I realized I was going to have to build or buy some sort of battery solution for my CPAP.</summary>
+  </entry>
   
   <entry>
     <title>Unpacking a Python regular expression</title>
@@ -16,8 +28,8 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/"/>
     <id>https://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</id>
-    <published>2019-05-07T00:00:00Z</published>
-    <updated>2019-05-07T00:00:00Z</updated>
+    <published>2019-05-07T10:00:00Z</published>
+    <updated>2019-05-07T10:00:00Z</updated>
     <summary type="html">I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&amp;rsquo;t really seem the write place for that: so, here we are.</summary>
   </entry>
   
@@ -28,8 +40,8 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/post/2019-05-07-new-comment-system/"/>
     <id>https://blog.oddbit.com/post/2019-05-07-new-comment-system/</id>
-    <published>2019-05-07T00:00:00Z</published>
-    <updated>2019-05-07T00:00:00Z</updated>
+    <published>2019-05-07T09:00:00Z</published>
+    <updated>2019-05-07T09:00:00Z</updated>
     <summary type="html">As long as I&amp;rsquo;m switching site generators, it seems like a good idea to refresh the comment system as well. I&amp;rsquo;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.
 That means that comments will finally be stored in the same place as the blog content, which I think is a happy state of affairs.</summary>
   </entry>
@@ -199,19 +211,6 @@ Using simavr to collect information about the state of microcontroller pins whil
     <published>2019-01-19T00:00:00Z</published>
     <updated>2019-01-19T00:00:00Z</updated>
     <summary type="html">I have a Raspberry Pi running RetroPie hooked up to a television. It&amp;rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&amp;rsquo;re pulling the plug on the Pi. While there haven&amp;rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</summary>
-  </entry>
-  
-  <entry>
-    <title>Integrating Bitwarden with Ansible</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/"/>
-    <id>https://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</id>
-    <published>2018-10-19T00:00:00Z</published>
-    <updated>2018-10-19T00:00:00Z</updated>
-    <summary type="html">Bitwarden is a password management service (like LastPass or 1Password). It&amp;rsquo;s unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.
-At $WORK(-ish) we&amp;rsquo;re looking into Bitwarden because we want a password sharing and management solution that was better than dropping files into directories on remote hosts or sharing things over Slack.</summary>
   </entry>
   
 </feed>

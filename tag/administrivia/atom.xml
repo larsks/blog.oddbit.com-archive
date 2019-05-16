@@ -6,7 +6,7 @@
   
   <link href="https://blog.oddbit.com/tag/administrivia/" rel="alternate"></link>
 
-  <updated>2019-05-07T00:00:00Z</updated>
+  <updated>2019-05-07T09:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/administrivia/</id>
   
   <entry>
@@ -16,8 +16,8 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/post/2019-05-07-new-comment-system/"/>
     <id>https://blog.oddbit.com/post/2019-05-07-new-comment-system/</id>
-    <published>2019-05-07T00:00:00Z</published>
-    <updated>2019-05-07T00:00:00Z</updated>
+    <published>2019-05-07T09:00:00Z</published>
+    <updated>2019-05-07T09:00:00Z</updated>
     <summary type="html">As long as I&amp;rsquo;m switching site generators, it seems like a good idea to refresh the comment system as well. I&amp;rsquo;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.
 That means that comments will finally be stored in the same place as the blog content, which I think is a happy state of affairs.</summary>
   </entry>

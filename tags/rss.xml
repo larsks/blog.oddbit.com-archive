@@ -6,51 +6,51 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>administrivia</title>
-      <link>https://blog.oddbit.com/tag/administrivia/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      <title>battery</title>
+      <link>https://blog.oddbit.com/tag/battery/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/tag/administrivia/</guid>
+      <guid>https://blog.oddbit.com/tag/battery/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>comments</title>
-      <link>https://blog.oddbit.com/tag/comments/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      <title>cpap</title>
+      <link>https://blog.oddbit.com/tag/cpap/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/tag/comments/</guid>
+      <guid>https://blog.oddbit.com/tag/cpap/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>disqus</title>
-      <link>https://blog.oddbit.com/tag/disqus/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      <title>diy</title>
+      <link>https://blog.oddbit.com/tag/diy/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/tag/disqus/</guid>
+      <guid>https://blog.oddbit.com/tag/diy/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>github</title>
-      <link>https://blog.oddbit.com/tag/github/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      <title>medical</title>
+      <link>https://blog.oddbit.com/tag/medical/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/tag/github/</guid>
+      <guid>https://blog.oddbit.com/tag/medical/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
       <link>https://blog.oddbit.com/tag/python/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 07 May 2019 10:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/python/</guid>
       <description></description>
@@ -59,16 +59,52 @@
     <item>
       <title>stackexchange</title>
       <link>https://blog.oddbit.com/tag/stackexchange/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 07 May 2019 10:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/stackexchange/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>administrivia</title>
+      <link>https://blog.oddbit.com/tag/administrivia/</link>
+      <pubDate>Tue, 07 May 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/administrivia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>comments</title>
+      <link>https://blog.oddbit.com/tag/comments/</link>
+      <pubDate>Tue, 07 May 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/comments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>disqus</title>
+      <link>https://blog.oddbit.com/tag/disqus/</link>
+      <pubDate>Tue, 07 May 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/disqus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://blog.oddbit.com/tag/github/</link>
+      <pubDate>Tue, 07 May 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>utterances</title>
       <link>https://blog.oddbit.com/tag/utterances/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 07 May 2019 09:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/utterances/</guid>
       <description></description>

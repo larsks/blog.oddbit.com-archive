@@ -6,7 +6,7 @@
     <description>Recent content in administrivia on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 09:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tag/administrivia/rss.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>New comment system</title>
       <link>https://blog.oddbit.com/post/2019-05-07-new-comment-system/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 07 May 2019 09:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-05-07-new-comment-system/</guid>
       <description>As long as I&amp;rsquo;m switching site generators, it seems like a good idea to refresh the comment system as well. I&amp;rsquo;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.
