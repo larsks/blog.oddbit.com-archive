@@ -2,20 +2,20 @@
   <title>malloc on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/malloc/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/malloc/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/malloc/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/malloc/" rel="alternate"></link>
 
   <updated>2019-01-28T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/malloc/</id>
+  <id>https://blog.oddbit.com/tag/malloc/</id>
   
   <entry>
     <title>AVR micro-optimization: Losing malloc</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2019-01-28-losing-malloc/"/>
-    <id>//blog.oddbit.com/post/2019-01-28-losing-malloc/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-01-28-losing-malloc/"/>
+    <id>https://blog.oddbit.com/post/2019-01-28-losing-malloc/</id>
     <published>2019-01-28T00:00:00Z</published>
     <updated>2019-01-28T00:00:00Z</updated>
     <summary type="html">Pssst! Hey&amp;hellip;hey, buddy, wanna get an extra KB for cheap?

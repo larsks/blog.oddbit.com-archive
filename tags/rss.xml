@@ -2,1596 +2,1596 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on The Odd Bit</title>
-    <link>//blog.oddbit.com/tags/</link>
+    <link>https://blog.oddbit.com/tags/</link>
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="//blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>administrivia</title>
-      <link>//blog.oddbit.com/tag/administrivia/</link>
+      <link>https://blog.oddbit.com/tag/administrivia/</link>
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/administrivia/</guid>
+      <guid>https://blog.oddbit.com/tag/administrivia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>comments</title>
-      <link>//blog.oddbit.com/tag/comments/</link>
+      <link>https://blog.oddbit.com/tag/comments/</link>
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/comments/</guid>
+      <guid>https://blog.oddbit.com/tag/comments/</guid>
       <description></description>
     </item>
     
     <item>
       <title>disqus</title>
-      <link>//blog.oddbit.com/tag/disqus/</link>
+      <link>https://blog.oddbit.com/tag/disqus/</link>
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/disqus/</guid>
+      <guid>https://blog.oddbit.com/tag/disqus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github</title>
-      <link>//blog.oddbit.com/tag/github/</link>
+      <link>https://blog.oddbit.com/tag/github/</link>
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/github/</guid>
+      <guid>https://blog.oddbit.com/tag/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>//blog.oddbit.com/tag/python/</link>
+      <link>https://blog.oddbit.com/tag/python/</link>
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/python/</guid>
+      <guid>https://blog.oddbit.com/tag/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>stackexchange</title>
-      <link>//blog.oddbit.com/tag/stackexchange/</link>
+      <link>https://blog.oddbit.com/tag/stackexchange/</link>
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/stackexchange/</guid>
+      <guid>https://blog.oddbit.com/tag/stackexchange/</guid>
       <description></description>
     </item>
     
     <item>
       <title>utterances</title>
-      <link>//blog.oddbit.com/tag/utterances/</link>
+      <link>https://blog.oddbit.com/tag/utterances/</link>
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/utterances/</guid>
+      <guid>https://blog.oddbit.com/tag/utterances/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ansible</title>
-      <link>//blog.oddbit.com/tag/ansible/</link>
+      <link>https://blog.oddbit.com/tag/ansible/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/ansible/</guid>
+      <guid>https://blog.oddbit.com/tag/ansible/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pull-request</title>
-      <link>//blog.oddbit.com/tag/pull-request/</link>
+      <link>https://blog.oddbit.com/tag/pull-request/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/pull-request/</guid>
+      <guid>https://blog.oddbit.com/tag/pull-request/</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker</title>
-      <link>//blog.oddbit.com/tag/docker/</link>
+      <link>https://blog.oddbit.com/tag/docker/</link>
       <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/docker/</guid>
+      <guid>https://blog.oddbit.com/tag/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>secrets</title>
-      <link>//blog.oddbit.com/tag/secrets/</link>
+      <link>https://blog.oddbit.com/tag/secrets/</link>
       <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/secrets/</guid>
+      <guid>https://blog.oddbit.com/tag/secrets/</guid>
       <description></description>
     </item>
     
     <item>
       <title>avr</title>
-      <link>//blog.oddbit.com/tag/avr/</link>
+      <link>https://blog.oddbit.com/tag/avr/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/avr/</guid>
+      <guid>https://blog.oddbit.com/tag/avr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gcc</title>
-      <link>//blog.oddbit.com/tag/gcc/</link>
+      <link>https://blog.oddbit.com/tag/gcc/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gcc/</guid>
+      <guid>https://blog.oddbit.com/tag/gcc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>attiny85</title>
-      <link>//blog.oddbit.com/tag/attiny85/</link>
+      <link>https://blog.oddbit.com/tag/attiny85/</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/attiny85/</guid>
+      <guid>https://blog.oddbit.com/tag/attiny85/</guid>
       <description></description>
     </item>
     
     <item>
       <title>avr-gcc</title>
-      <link>//blog.oddbit.com/tag/avr-gcc/</link>
+      <link>https://blog.oddbit.com/tag/avr-gcc/</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/avr-gcc/</guid>
+      <guid>https://blog.oddbit.com/tag/avr-gcc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>malloc</title>
-      <link>//blog.oddbit.com/tag/malloc/</link>
+      <link>https://blog.oddbit.com/tag/malloc/</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/malloc/</guid>
+      <guid>https://blog.oddbit.com/tag/malloc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gdb</title>
-      <link>//blog.oddbit.com/tag/gdb/</link>
+      <link>https://blog.oddbit.com/tag/gdb/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gdb/</guid>
+      <guid>https://blog.oddbit.com/tag/gdb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>simavr</title>
-      <link>//blog.oddbit.com/tag/simavr/</link>
+      <link>https://blog.oddbit.com/tag/simavr/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/simavr/</guid>
+      <guid>https://blog.oddbit.com/tag/simavr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>arduino</title>
-      <link>//blog.oddbit.com/tag/arduino/</link>
+      <link>https://blog.oddbit.com/tag/arduino/</link>
       <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/arduino/</guid>
+      <guid>https://blog.oddbit.com/tag/arduino/</guid>
       <description></description>
     </item>
     
     <item>
       <title>raspberrypi</title>
-      <link>//blog.oddbit.com/tag/raspberrypi/</link>
+      <link>https://blog.oddbit.com/tag/raspberrypi/</link>
       <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/raspberrypi/</guid>
+      <guid>https://blog.oddbit.com/tag/raspberrypi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bitwarden</title>
-      <link>//blog.oddbit.com/tag/bitwarden/</link>
+      <link>https://blog.oddbit.com/tag/bitwarden/</link>
       <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/bitwarden/</guid>
+      <guid>https://blog.oddbit.com/tag/bitwarden/</guid>
       <description></description>
     </item>
     
     <item>
       <title>security</title>
-      <link>//blog.oddbit.com/tag/security/</link>
+      <link>https://blog.oddbit.com/tag/security/</link>
       <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/security/</guid>
+      <guid>https://blog.oddbit.com/tag/security/</guid>
       <description></description>
     </item>
     
     <item>
       <title>usb</title>
-      <link>//blog.oddbit.com/tag/usb/</link>
+      <link>https://blog.oddbit.com/tag/usb/</link>
       <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/usb/</guid>
+      <guid>https://blog.oddbit.com/tag/usb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>networking</title>
-      <link>//blog.oddbit.com/tag/networking/</link>
+      <link>https://blog.oddbit.com/tag/networking/</link>
       <pubDate>Thu, 14 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/networking/</guid>
+      <guid>https://blog.oddbit.com/tag/networking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>adafruit</title>
-      <link>//blog.oddbit.com/tag/adafruit/</link>
+      <link>https://blog.oddbit.com/tag/adafruit/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/adafruit/</guid>
+      <guid>https://blog.oddbit.com/tag/adafruit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>circuitpython</title>
-      <link>//blog.oddbit.com/tag/circuitpython/</link>
+      <link>https://blog.oddbit.com/tag/circuitpython/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/circuitpython/</guid>
+      <guid>https://blog.oddbit.com/tag/circuitpython/</guid>
       <description></description>
     </item>
     
     <item>
       <title>esp8266</title>
-      <link>//blog.oddbit.com/tag/esp8266/</link>
+      <link>https://blog.oddbit.com/tag/esp8266/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/esp8266/</guid>
+      <guid>https://blog.oddbit.com/tag/esp8266/</guid>
       <description></description>
     </item>
     
     <item>
       <title>micropython</title>
-      <link>//blog.oddbit.com/tag/micropython/</link>
+      <link>https://blog.oddbit.com/tag/micropython/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/micropython/</guid>
+      <guid>https://blog.oddbit.com/tag/micropython/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hardware</title>
-      <link>//blog.oddbit.com/tag/hardware/</link>
+      <link>https://blog.oddbit.com/tag/hardware/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/hardware/</guid>
+      <guid>https://blog.oddbit.com/tag/hardware/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iot</title>
-      <link>//blog.oddbit.com/tag/iot/</link>
+      <link>https://blog.oddbit.com/tag/iot/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/iot/</guid>
+      <guid>https://blog.oddbit.com/tag/iot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>raspiberrypi</title>
-      <link>//blog.oddbit.com/tag/raspiberrypi/</link>
+      <link>https://blog.oddbit.com/tag/raspiberrypi/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/raspiberrypi/</guid>
+      <guid>https://blog.oddbit.com/tag/raspiberrypi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gnocchi</title>
-      <link>//blog.oddbit.com/tag/gnocchi/</link>
+      <link>https://blog.oddbit.com/tag/gnocchi/</link>
       <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gnocchi/</guid>
+      <guid>https://blog.oddbit.com/tag/gnocchi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>metrics</title>
-      <link>//blog.oddbit.com/tag/metrics/</link>
+      <link>https://blog.oddbit.com/tag/metrics/</link>
       <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/metrics/</guid>
+      <guid>https://blog.oddbit.com/tag/metrics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openstack</title>
-      <link>//blog.oddbit.com/tag/openstack/</link>
+      <link>https://blog.oddbit.com/tag/openstack/</link>
       <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/openstack/</guid>
+      <guid>https://blog.oddbit.com/tag/openstack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iptables</title>
-      <link>//blog.oddbit.com/tag/iptables/</link>
+      <link>https://blog.oddbit.com/tag/iptables/</link>
       <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/iptables/</guid>
+      <guid>https://blog.oddbit.com/tag/iptables/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shell</title>
-      <link>//blog.oddbit.com/tag/shell/</link>
+      <link>https://blog.oddbit.com/tag/shell/</link>
       <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/shell/</guid>
+      <guid>https://blog.oddbit.com/tag/shell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>devicemapper</title>
-      <link>//blog.oddbit.com/tag/devicemapper/</link>
+      <link>https://blog.oddbit.com/tag/devicemapper/</link>
       <pubDate>Thu, 25 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/devicemapper/</guid>
+      <guid>https://blog.oddbit.com/tag/devicemapper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>storage</title>
-      <link>//blog.oddbit.com/tag/storage/</link>
+      <link>https://blog.oddbit.com/tag/storage/</link>
       <pubDate>Thu, 25 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/storage/</guid>
+      <guid>https://blog.oddbit.com/tag/storage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pwm</title>
-      <link>//blog.oddbit.com/tag/pwm/</link>
+      <link>https://blog.oddbit.com/tag/pwm/</link>
       <pubDate>Tue, 26 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/pwm/</guid>
+      <guid>https://blog.oddbit.com/tag/pwm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ansible-assertive</title>
-      <link>//blog.oddbit.com/tag/ansible-assertive/</link>
+      <link>https://blog.oddbit.com/tag/ansible-assertive/</link>
       <pubDate>Wed, 02 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/ansible-assertive/</guid>
+      <guid>https://blog.oddbit.com/tag/ansible-assertive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gmail</title>
-      <link>//blog.oddbit.com/tag/gmail/</link>
+      <link>https://blog.oddbit.com/tag/gmail/</link>
       <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gmail/</guid>
+      <guid>https://blog.oddbit.com/tag/gmail/</guid>
       <description></description>
     </item>
     
     <item>
       <title>logging</title>
-      <link>//blog.oddbit.com/tag/logging/</link>
+      <link>https://blog.oddbit.com/tag/logging/</link>
       <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/logging/</guid>
+      <guid>https://blog.oddbit.com/tag/logging/</guid>
       <description></description>
     </item>
     
     <item>
       <title>faa</title>
-      <link>//blog.oddbit.com/tag/faa/</link>
+      <link>https://blog.oddbit.com/tag/faa/</link>
       <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/faa/</guid>
+      <guid>https://blog.oddbit.com/tag/faa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>uav</title>
-      <link>//blog.oddbit.com/tag/uav/</link>
+      <link>https://blog.oddbit.com/tag/uav/</link>
       <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/uav/</guid>
+      <guid>https://blog.oddbit.com/tag/uav/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gerrit</title>
-      <link>//blog.oddbit.com/tag/gerrit/</link>
+      <link>https://blog.oddbit.com/tag/gerrit/</link>
       <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gerrit/</guid>
+      <guid>https://blog.oddbit.com/tag/gerrit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>//blog.oddbit.com/tag/git/</link>
+      <link>https://blog.oddbit.com/tag/git/</link>
       <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/git/</guid>
+      <guid>https://blog.oddbit.com/tag/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>heat</title>
-      <link>//blog.oddbit.com/tag/heat/</link>
+      <link>https://blog.oddbit.com/tag/heat/</link>
       <pubDate>Thu, 11 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/heat/</guid>
+      <guid>https://blog.oddbit.com/tag/heat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hot</title>
-      <link>//blog.oddbit.com/tag/hot/</link>
+      <link>https://blog.oddbit.com/tag/hot/</link>
       <pubDate>Thu, 11 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/hot/</guid>
+      <guid>https://blog.oddbit.com/tag/hot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>yaql</title>
-      <link>//blog.oddbit.com/tag/yaql/</link>
+      <link>https://blog.oddbit.com/tag/yaql/</link>
       <pubDate>Thu, 11 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/yaql/</guid>
+      <guid>https://blog.oddbit.com/tag/yaql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openvswitch</title>
-      <link>//blog.oddbit.com/tag/openvswitch/</link>
+      <link>https://blog.oddbit.com/tag/openvswitch/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/openvswitch/</guid>
+      <guid>https://blog.oddbit.com/tag/openvswitch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tripleo</title>
-      <link>//blog.oddbit.com/tag/tripleo/</link>
+      <link>https://blog.oddbit.com/tag/tripleo/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/tripleo/</guid>
+      <guid>https://blog.oddbit.com/tag/tripleo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gruf</title>
-      <link>//blog.oddbit.com/tag/gruf/</link>
+      <link>https://blog.oddbit.com/tag/gruf/</link>
       <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gruf/</guid>
+      <guid>https://blog.oddbit.com/tag/gruf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rdo</title>
-      <link>//blog.oddbit.com/tag/rdo/</link>
+      <link>https://blog.oddbit.com/tag/rdo/</link>
       <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/rdo/</guid>
+      <guid>https://blog.oddbit.com/tag/rdo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>systemd</title>
-      <link>//blog.oddbit.com/tag/systemd/</link>
+      <link>https://blog.oddbit.com/tag/systemd/</link>
       <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/systemd/</guid>
+      <guid>https://blog.oddbit.com/tag/systemd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>containers</title>
-      <link>//blog.oddbit.com/tag/containers/</link>
+      <link>https://blog.oddbit.com/tag/containers/</link>
       <pubDate>Sun, 07 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/containers/</guid>
+      <guid>https://blog.oddbit.com/tag/containers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>qemu</title>
-      <link>//blog.oddbit.com/tag/qemu/</link>
+      <link>https://blog.oddbit.com/tag/qemu/</link>
       <pubDate>Sun, 07 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/qemu/</guid>
+      <guid>https://blog.oddbit.com/tag/qemu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fedora</title>
-      <link>//blog.oddbit.com/tag/fedora/</link>
+      <link>https://blog.oddbit.com/tag/fedora/</link>
       <pubDate>Tue, 17 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/fedora/</guid>
+      <guid>https://blog.oddbit.com/tag/fedora/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gis</title>
-      <link>//blog.oddbit.com/tag/gis/</link>
+      <link>https://blog.oddbit.com/tag/gis/</link>
       <pubDate>Tue, 17 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gis/</guid>
+      <guid>https://blog.oddbit.com/tag/gis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ansible_20_series</title>
-      <link>//blog.oddbit.com/tag/ansible_20_series/</link>
+      <link>https://blog.oddbit.com/tag/ansible_20_series/</link>
       <pubDate>Mon, 26 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/ansible_20_series/</guid>
+      <guid>https://blog.oddbit.com/tag/ansible_20_series/</guid>
       <description></description>
     </item>
     
     <item>
       <title>atomic</title>
-      <link>//blog.oddbit.com/tag/atomic/</link>
+      <link>https://blog.oddbit.com/tag/atomic/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/atomic/</guid>
+      <guid>https://blog.oddbit.com/tag/atomic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cinder</title>
-      <link>//blog.oddbit.com/tag/cinder/</link>
+      <link>https://blog.oddbit.com/tag/cinder/</link>
       <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/cinder/</guid>
+      <guid>https://blog.oddbit.com/tag/cinder/</guid>
       <description></description>
     </item>
     
     <item>
       <title>neutron</title>
-      <link>//blog.oddbit.com/tag/neutron/</link>
+      <link>https://blog.oddbit.com/tag/neutron/</link>
       <pubDate>Thu, 13 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/neutron/</guid>
+      <guid>https://blog.oddbit.com/tag/neutron/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rant</title>
-      <link>//blog.oddbit.com/tag/rant/</link>
+      <link>https://blog.oddbit.com/tag/rant/</link>
       <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/rant/</guid>
+      <guid>https://blog.oddbit.com/tag/rant/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kerberos</title>
-      <link>//blog.oddbit.com/tag/kerberos/</link>
+      <link>https://blog.oddbit.com/tag/kerberos/</link>
       <pubDate>Thu, 16 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/kerberos/</guid>
+      <guid>https://blog.oddbit.com/tag/kerberos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sssd</title>
-      <link>//blog.oddbit.com/tag/sssd/</link>
+      <link>https://blog.oddbit.com/tag/sssd/</link>
       <pubDate>Thu, 16 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/sssd/</guid>
+      <guid>https://blog.oddbit.com/tag/sssd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cloud-init</title>
-      <link>//blog.oddbit.com/tag/cloud-init/</link>
+      <link>https://blog.oddbit.com/tag/cloud-init/</link>
       <pubDate>Fri, 26 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/cloud-init/</guid>
+      <guid>https://blog.oddbit.com/tag/cloud-init/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nova</title>
-      <link>//blog.oddbit.com/tag/nova/</link>
+      <link>https://blog.oddbit.com/tag/nova/</link>
       <pubDate>Fri, 26 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/nova/</guid>
+      <guid>https://blog.oddbit.com/tag/nova/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kubernetes</title>
-      <link>//blog.oddbit.com/tag/kubernetes/</link>
+      <link>https://blog.oddbit.com/tag/kubernetes/</link>
       <pubDate>Fri, 19 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/kubernetes/</guid>
+      <guid>https://blog.oddbit.com/tag/kubernetes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hack</title>
-      <link>//blog.oddbit.com/tag/hack/</link>
+      <link>https://blog.oddbit.com/tag/hack/</link>
       <pubDate>Fri, 10 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/hack/</guid>
+      <guid>https://blog.oddbit.com/tag/hack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bash</title>
-      <link>//blog.oddbit.com/tag/bash/</link>
+      <link>https://blog.oddbit.com/tag/bash/</link>
       <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/bash/</guid>
+      <guid>https://blog.oddbit.com/tag/bash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pacemaker</title>
-      <link>//blog.oddbit.com/tag/pacemaker/</link>
+      <link>https://blog.oddbit.com/tag/pacemaker/</link>
       <pubDate>Tue, 24 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/pacemaker/</guid>
+      <guid>https://blog.oddbit.com/tag/pacemaker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>visualization</title>
-      <link>//blog.oddbit.com/tag/visualization/</link>
+      <link>https://blog.oddbit.com/tag/visualization/</link>
       <pubDate>Tue, 24 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/visualization/</guid>
+      <guid>https://blog.oddbit.com/tag/visualization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>xml</title>
-      <link>//blog.oddbit.com/tag/xml/</link>
+      <link>https://blog.oddbit.com/tag/xml/</link>
       <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/xml/</guid>
+      <guid>https://blog.oddbit.com/tag/xml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>xpath</title>
-      <link>//blog.oddbit.com/tag/xpath/</link>
+      <link>https://blog.oddbit.com/tag/xpath/</link>
       <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/xpath/</guid>
+      <guid>https://blog.oddbit.com/tag/xpath/</guid>
       <description></description>
     </item>
     
     <item>
       <title>devstack</title>
-      <link>//blog.oddbit.com/tag/devstack/</link>
+      <link>https://blog.oddbit.com/tag/devstack/</link>
       <pubDate>Wed, 11 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/devstack/</guid>
+      <guid>https://blog.oddbit.com/tag/devstack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>namespaces</title>
-      <link>//blog.oddbit.com/tag/namespaces/</link>
+      <link>https://blog.oddbit.com/tag/namespaces/</link>
       <pubDate>Sun, 18 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/namespaces/</guid>
+      <guid>https://blog.oddbit.com/tag/namespaces/</guid>
       <description></description>
     </item>
     
     <item>
       <title>windows</title>
-      <link>//blog.oddbit.com/tag/windows/</link>
+      <link>https://blog.oddbit.com/tag/windows/</link>
       <pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/windows/</guid>
+      <guid>https://blog.oddbit.com/tag/windows/</guid>
       <description></description>
     </item>
     
     <item>
       <title>puppet</title>
-      <link>//blog.oddbit.com/tag/puppet/</link>
+      <link>https://blog.oddbit.com/tag/puppet/</link>
       <pubDate>Wed, 22 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/puppet/</guid>
+      <guid>https://blog.oddbit.com/tag/puppet/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cli</title>
-      <link>//blog.oddbit.com/tag/cli/</link>
+      <link>https://blog.oddbit.com/tag/cli/</link>
       <pubDate>Tue, 23 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/cli/</guid>
+      <guid>https://blog.oddbit.com/tag/cli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>orchestration</title>
-      <link>//blog.oddbit.com/tag/orchestration/</link>
+      <link>https://blog.oddbit.com/tag/orchestration/</link>
       <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/orchestration/</guid>
+      <guid>https://blog.oddbit.com/tag/orchestration/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cache</title>
-      <link>//blog.oddbit.com/tag/cache/</link>
+      <link>https://blog.oddbit.com/tag/cache/</link>
       <pubDate>Sat, 16 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/cache/</guid>
+      <guid>https://blog.oddbit.com/tag/cache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lvm</title>
-      <link>//blog.oddbit.com/tag/lvm/</link>
+      <link>https://blog.oddbit.com/tag/lvm/</link>
       <pubDate>Sat, 16 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/lvm/</guid>
+      <guid>https://blog.oddbit.com/tag/lvm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gpio</title>
-      <link>//blog.oddbit.com/tag/gpio/</link>
+      <link>https://blog.oddbit.com/tag/gpio/</link>
       <pubDate>Sat, 26 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gpio/</guid>
+      <guid>https://blog.oddbit.com/tag/gpio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kernel</title>
-      <link>//blog.oddbit.com/tag/kernel/</link>
+      <link>https://blog.oddbit.com/tag/kernel/</link>
       <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/kernel/</guid>
+      <guid>https://blog.oddbit.com/tag/kernel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>terminal</title>
-      <link>//blog.oddbit.com/tag/terminal/</link>
+      <link>https://blog.oddbit.com/tag/terminal/</link>
       <pubDate>Wed, 21 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/terminal/</guid>
+      <guid>https://blog.oddbit.com/tag/terminal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tools</title>
-      <link>//blog.oddbit.com/tag/tools/</link>
+      <link>https://blog.oddbit.com/tag/tools/</link>
       <pubDate>Wed, 21 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/tools/</guid>
+      <guid>https://blog.oddbit.com/tag/tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NetworkManager</title>
-      <link>//blog.oddbit.com/tag/networkmanager/</link>
+      <link>https://blog.oddbit.com/tag/networkmanager/</link>
       <pubDate>Tue, 20 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/networkmanager/</guid>
+      <guid>https://blog.oddbit.com/tag/networkmanager/</guid>
       <description></description>
     </item>
     
     <item>
       <title>firewalld</title>
-      <link>//blog.oddbit.com/tag/firewalld/</link>
+      <link>https://blog.oddbit.com/tag/firewalld/</link>
       <pubDate>Tue, 20 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/firewalld/</guid>
+      <guid>https://blog.oddbit.com/tag/firewalld/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hangout</title>
-      <link>//blog.oddbit.com/tag/hangout/</link>
+      <link>https://blog.oddbit.com/tag/hangout/</link>
       <pubDate>Thu, 27 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/hangout/</guid>
+      <guid>https://blog.oddbit.com/tag/hangout/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tricks</title>
-      <link>//blog.oddbit.com/tag/tricks/</link>
+      <link>https://blog.oddbit.com/tag/tricks/</link>
       <pubDate>Thu, 16 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/tricks/</guid>
+      <guid>https://blog.oddbit.com/tag/tricks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>redhat</title>
-      <link>//blog.oddbit.com/tag/redhat/</link>
+      <link>https://blog.oddbit.com/tag/redhat/</link>
       <pubDate>Mon, 13 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/redhat/</guid>
+      <guid>https://blog.oddbit.com/tag/redhat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bottle</title>
-      <link>//blog.oddbit.com/tag/bottle/</link>
+      <link>https://blog.oddbit.com/tag/bottle/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/bottle/</guid>
+      <guid>https://blog.oddbit.com/tag/bottle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gevent</title>
-      <link>//blog.oddbit.com/tag/gevent/</link>
+      <link>https://blog.oddbit.com/tag/gevent/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gevent/</guid>
+      <guid>https://blog.oddbit.com/tag/gevent/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>//blog.oddbit.com/tag/javascript/</link>
+      <link>https://blog.oddbit.com/tag/javascript/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/javascript/</guid>
+      <guid>https://blog.oddbit.com/tag/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jquery</title>
-      <link>//blog.oddbit.com/tag/jquery/</link>
+      <link>https://blog.oddbit.com/tag/jquery/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/jquery/</guid>
+      <guid>https://blog.oddbit.com/tag/jquery/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openshift</title>
-      <link>//blog.oddbit.com/tag/openshift/</link>
+      <link>https://blog.oddbit.com/tag/openshift/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/openshift/</guid>
+      <guid>https://blog.oddbit.com/tag/openshift/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zeromq</title>
-      <link>//blog.oddbit.com/tag/zeromq/</link>
+      <link>https://blog.oddbit.com/tag/zeromq/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/zeromq/</guid>
+      <guid>https://blog.oddbit.com/tag/zeromq/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blog</title>
-      <link>//blog.oddbit.com/tag/blog/</link>
+      <link>https://blog.oddbit.com/tag/blog/</link>
       <pubDate>Fri, 22 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/blog/</guid>
+      <guid>https://blog.oddbit.com/tag/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>json</title>
-      <link>//blog.oddbit.com/tag/json/</link>
+      <link>https://blog.oddbit.com/tag/json/</link>
       <pubDate>Sun, 17 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/json/</guid>
+      <guid>https://blog.oddbit.com/tag/json/</guid>
       <description></description>
     </item>
     
     <item>
       <title>quantum</title>
-      <link>//blog.oddbit.com/tag/quantum/</link>
+      <link>https://blog.oddbit.com/tag/quantum/</link>
       <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/quantum/</guid>
+      <guid>https://blog.oddbit.com/tag/quantum/</guid>
       <description></description>
     </item>
     
     <item>
       <title>libvirt</title>
-      <link>//blog.oddbit.com/tag/libvirt/</link>
+      <link>https://blog.oddbit.com/tag/libvirt/</link>
       <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/libvirt/</guid>
+      <guid>https://blog.oddbit.com/tag/libvirt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>virtualization</title>
-      <link>//blog.oddbit.com/tag/virtualization/</link>
+      <link>https://blog.oddbit.com/tag/virtualization/</link>
       <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/virtualization/</guid>
+      <guid>https://blog.oddbit.com/tag/virtualization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>piface</title>
-      <link>//blog.oddbit.com/tag/piface/</link>
+      <link>https://blog.oddbit.com/tag/piface/</link>
       <pubDate>Mon, 05 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/piface/</guid>
+      <guid>https://blog.oddbit.com/tag/piface/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ldap</title>
-      <link>//blog.oddbit.com/tag/ldap/</link>
+      <link>https://blog.oddbit.com/tag/ldap/</link>
       <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/ldap/</guid>
+      <guid>https://blog.oddbit.com/tag/ldap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>awk</title>
-      <link>//blog.oddbit.com/tag/awk/</link>
+      <link>https://blog.oddbit.com/tag/awk/</link>
       <pubDate>Tue, 16 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/awk/</guid>
+      <guid>https://blog.oddbit.com/tag/awk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>archlinux</title>
-      <link>//blog.oddbit.com/tag/archlinux/</link>
+      <link>https://blog.oddbit.com/tag/archlinux/</link>
       <pubDate>Mon, 08 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/archlinux/</guid>
+      <guid>https://blog.oddbit.com/tag/archlinux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kvm</title>
-      <link>//blog.oddbit.com/tag/kvm/</link>
+      <link>https://blog.oddbit.com/tag/kvm/</link>
       <pubDate>Mon, 08 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/kvm/</guid>
+      <guid>https://blog.oddbit.com/tag/kvm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>i2c</title>
-      <link>//blog.oddbit.com/tag/i2c/</link>
+      <link>https://blog.oddbit.com/tag/i2c/</link>
       <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/i2c/</guid>
+      <guid>https://blog.oddbit.com/tag/i2c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>analytics</title>
-      <link>//blog.oddbit.com/tag/analytics/</link>
+      <link>https://blog.oddbit.com/tag/analytics/</link>
       <pubDate>Thu, 08 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/analytics/</guid>
+      <guid>https://blog.oddbit.com/tag/analytics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bayes</title>
-      <link>//blog.oddbit.com/tag/bayes/</link>
+      <link>https://blog.oddbit.com/tag/bayes/</link>
       <pubDate>Thu, 08 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/bayes/</guid>
+      <guid>https://blog.oddbit.com/tag/bayes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>markdown</title>
-      <link>//blog.oddbit.com/tag/markdown/</link>
+      <link>https://blog.oddbit.com/tag/markdown/</link>
       <pubDate>Tue, 06 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/markdown/</guid>
+      <guid>https://blog.oddbit.com/tag/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>meta</title>
-      <link>//blog.oddbit.com/tag/meta/</link>
+      <link>https://blog.oddbit.com/tag/meta/</link>
       <pubDate>Tue, 06 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/meta/</guid>
+      <guid>https://blog.oddbit.com/tag/meta/</guid>
       <description></description>
     </item>
     
     <item>
       <title>api</title>
-      <link>//blog.oddbit.com/tag/api/</link>
+      <link>https://blog.oddbit.com/tag/api/</link>
       <pubDate>Mon, 05 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/api/</guid>
+      <guid>https://blog.oddbit.com/tag/api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scriptogr.am</title>
-      <link>//blog.oddbit.com/tag/scriptogr.am/</link>
+      <link>https://blog.oddbit.com/tag/scriptogr.am/</link>
       <pubDate>Mon, 05 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/scriptogr.am/</guid>
+      <guid>https://blog.oddbit.com/tag/scriptogr.am/</guid>
       <description></description>
     </item>
     
     <item>
       <title>passwords</title>
-      <link>//blog.oddbit.com/tag/passwords/</link>
+      <link>https://blog.oddbit.com/tag/passwords/</link>
       <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/passwords/</guid>
+      <guid>https://blog.oddbit.com/tag/passwords/</guid>
       <description></description>
     </item>
     
     <item>
       <title>powershell</title>
-      <link>//blog.oddbit.com/tag/powershell/</link>
+      <link>https://blog.oddbit.com/tag/powershell/</link>
       <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/powershell/</guid>
+      <guid>https://blog.oddbit.com/tag/powershell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>//blog.oddbit.com/tag/linux/</link>
+      <link>https://blog.oddbit.com/tag/linux/</link>
       <pubDate>Mon, 26 Dec 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/linux/</guid>
+      <guid>https://blog.oddbit.com/tag/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rpm</title>
-      <link>//blog.oddbit.com/tag/rpm/</link>
+      <link>https://blog.oddbit.com/tag/rpm/</link>
       <pubDate>Tue, 26 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/rpm/</guid>
+      <guid>https://blog.oddbit.com/tag/rpm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>backup</title>
-      <link>//blog.oddbit.com/tag/backup/</link>
+      <link>https://blog.oddbit.com/tag/backup/</link>
       <pubDate>Sun, 22 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/backup/</guid>
+      <guid>https://blog.oddbit.com/tag/backup/</guid>
       <description></description>
     </item>
     
     <item>
       <title>crashplan</title>
-      <link>//blog.oddbit.com/tag/crashplan/</link>
+      <link>https://blog.oddbit.com/tag/crashplan/</link>
       <pubDate>Sun, 22 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/crashplan/</guid>
+      <guid>https://blog.oddbit.com/tag/crashplan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>freebsd</title>
-      <link>//blog.oddbit.com/tag/freebsd/</link>
+      <link>https://blog.oddbit.com/tag/freebsd/</link>
       <pubDate>Sun, 22 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/freebsd/</guid>
+      <guid>https://blog.oddbit.com/tag/freebsd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>java</title>
-      <link>//blog.oddbit.com/tag/java/</link>
+      <link>https://blog.oddbit.com/tag/java/</link>
       <pubDate>Sun, 22 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/java/</guid>
+      <guid>https://blog.oddbit.com/tag/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cryptography</title>
-      <link>//blog.oddbit.com/tag/cryptography/</link>
+      <link>https://blog.oddbit.com/tag/cryptography/</link>
       <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/cryptography/</guid>
+      <guid>https://blog.oddbit.com/tag/cryptography/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openssh</title>
-      <link>//blog.oddbit.com/tag/openssh/</link>
+      <link>https://blog.oddbit.com/tag/openssh/</link>
       <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/openssh/</guid>
+      <guid>https://blog.oddbit.com/tag/openssh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openssl</title>
-      <link>//blog.oddbit.com/tag/openssl/</link>
+      <link>https://blog.oddbit.com/tag/openssl/</link>
       <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/openssl/</guid>
+      <guid>https://blog.oddbit.com/tag/openssl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rsa</title>
-      <link>//blog.oddbit.com/tag/rsa/</link>
+      <link>https://blog.oddbit.com/tag/rsa/</link>
       <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/rsa/</guid>
+      <guid>https://blog.oddbit.com/tag/rsa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>//blog.oddbit.com/tag/ssh/</link>
+      <link>https://blog.oddbit.com/tag/ssh/</link>
       <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/ssh/</guid>
+      <guid>https://blog.oddbit.com/tag/ssh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssh-agent</title>
-      <link>//blog.oddbit.com/tag/ssh-agent/</link>
+      <link>https://blog.oddbit.com/tag/ssh-agent/</link>
       <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/ssh-agent/</guid>
+      <guid>https://blog.oddbit.com/tag/ssh-agent/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssl</title>
-      <link>//blog.oddbit.com/tag/ssl/</link>
+      <link>https://blog.oddbit.com/tag/ssl/</link>
       <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/ssl/</guid>
+      <guid>https://blog.oddbit.com/tag/ssl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>contacts</title>
-      <link>//blog.oddbit.com/tag/contacts/</link>
+      <link>https://blog.oddbit.com/tag/contacts/</link>
       <pubDate>Fri, 06 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/contacts/</guid>
+      <guid>https://blog.oddbit.com/tag/contacts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>import</title>
-      <link>//blog.oddbit.com/tag/import/</link>
+      <link>https://blog.oddbit.com/tag/import/</link>
       <pubDate>Fri, 06 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/import/</guid>
+      <guid>https://blog.oddbit.com/tag/import/</guid>
       <description></description>
     </item>
     
     <item>
       <title>phone</title>
-      <link>//blog.oddbit.com/tag/phone/</link>
+      <link>https://blog.oddbit.com/tag/phone/</link>
       <pubDate>Fri, 06 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/phone/</guid>
+      <guid>https://blog.oddbit.com/tag/phone/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sync</title>
-      <link>//blog.oddbit.com/tag/sync/</link>
+      <link>https://blog.oddbit.com/tag/sync/</link>
       <pubDate>Fri, 06 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/sync/</guid>
+      <guid>https://blog.oddbit.com/tag/sync/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vcard</title>
-      <link>//blog.oddbit.com/tag/vcard/</link>
+      <link>https://blog.oddbit.com/tag/vcard/</link>
       <pubDate>Fri, 06 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/vcard/</guid>
+      <guid>https://blog.oddbit.com/tag/vcard/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dhcp</title>
-      <link>//blog.oddbit.com/tag/dhcp/</link>
+      <link>https://blog.oddbit.com/tag/dhcp/</link>
       <pubDate>Thu, 22 Jul 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/dhcp/</guid>
+      <guid>https://blog.oddbit.com/tag/dhcp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gpxe</title>
-      <link>//blog.oddbit.com/tag/gpxe/</link>
+      <link>https://blog.oddbit.com/tag/gpxe/</link>
       <pubDate>Thu, 22 Jul 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gpxe/</guid>
+      <guid>https://blog.oddbit.com/tag/gpxe/</guid>
       <description></description>
     </item>
     
     <item>
       <title>active_directory</title>
-      <link>//blog.oddbit.com/tag/active_directory/</link>
+      <link>https://blog.oddbit.com/tag/active_directory/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/active_directory/</guid>
+      <guid>https://blog.oddbit.com/tag/active_directory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>subversion</title>
-      <link>//blog.oddbit.com/tag/subversion/</link>
+      <link>https://blog.oddbit.com/tag/subversion/</link>
       <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/subversion/</guid>
+      <guid>https://blog.oddbit.com/tag/subversion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vcs</title>
-      <link>//blog.oddbit.com/tag/vcs/</link>
+      <link>https://blog.oddbit.com/tag/vcs/</link>
       <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/vcs/</guid>
+      <guid>https://blog.oddbit.com/tag/vcs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>balance</title>
-      <link>//blog.oddbit.com/tag/balance/</link>
+      <link>https://blog.oddbit.com/tag/balance/</link>
       <pubDate>Wed, 24 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/balance/</guid>
+      <guid>https://blog.oddbit.com/tag/balance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ha</title>
-      <link>//blog.oddbit.com/tag/ha/</link>
+      <link>https://blog.oddbit.com/tag/ha/</link>
       <pubDate>Wed, 24 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/ha/</guid>
+      <guid>https://blog.oddbit.com/tag/ha/</guid>
       <description></description>
     </item>
     
     <item>
       <title>howto</title>
-      <link>//blog.oddbit.com/tag/howto/</link>
+      <link>https://blog.oddbit.com/tag/howto/</link>
       <pubDate>Wed, 24 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/howto/</guid>
+      <guid>https://blog.oddbit.com/tag/howto/</guid>
       <description></description>
     </item>
     
     <item>
       <title>proxy</title>
-      <link>//blog.oddbit.com/tag/proxy/</link>
+      <link>https://blog.oddbit.com/tag/proxy/</link>
       <pubDate>Wed, 24 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/proxy/</guid>
+      <guid>https://blog.oddbit.com/tag/proxy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>stunnel</title>
-      <link>//blog.oddbit.com/tag/stunnel/</link>
+      <link>https://blog.oddbit.com/tag/stunnel/</link>
       <pubDate>Wed, 24 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/stunnel/</guid>
+      <guid>https://blog.oddbit.com/tag/stunnel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>apache</title>
-      <link>//blog.oddbit.com/tag/apache/</link>
+      <link>https://blog.oddbit.com/tag/apache/</link>
       <pubDate>Fri, 19 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/apache/</guid>
+      <guid>https://blog.oddbit.com/tag/apache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>release</title>
-      <link>//blog.oddbit.com/tag/release/</link>
+      <link>https://blog.oddbit.com/tag/release/</link>
       <pubDate>Fri, 19 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/release/</guid>
+      <guid>https://blog.oddbit.com/tag/release/</guid>
       <description></description>
     </item>
     
     <item>
       <title>software</title>
-      <link>//blog.oddbit.com/tag/software/</link>
+      <link>https://blog.oddbit.com/tag/software/</link>
       <pubDate>Fri, 19 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/software/</guid>
+      <guid>https://blog.oddbit.com/tag/software/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openldap</title>
-      <link>//blog.oddbit.com/tag/openldap/</link>
+      <link>https://blog.oddbit.com/tag/openldap/</link>
       <pubDate>Tue, 16 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/openldap/</guid>
+      <guid>https://blog.oddbit.com/tag/openldap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>atom</title>
-      <link>//blog.oddbit.com/tag/atom/</link>
+      <link>https://blog.oddbit.com/tag/atom/</link>
       <pubDate>Wed, 10 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/atom/</guid>
+      <guid>https://blog.oddbit.com/tag/atom/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blogger</title>
-      <link>//blog.oddbit.com/tag/blogger/</link>
+      <link>https://blog.oddbit.com/tag/blogger/</link>
       <pubDate>Wed, 10 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/blogger/</guid>
+      <guid>https://blog.oddbit.com/tag/blogger/</guid>
       <description></description>
     </item>
     
     <item>
       <title>filter</title>
-      <link>//blog.oddbit.com/tag/filter/</link>
+      <link>https://blog.oddbit.com/tag/filter/</link>
       <pubDate>Wed, 10 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/filter/</guid>
+      <guid>https://blog.oddbit.com/tag/filter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pipes</title>
-      <link>//blog.oddbit.com/tag/pipes/</link>
+      <link>https://blog.oddbit.com/tag/pipes/</link>
       <pubDate>Wed, 10 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/pipes/</guid>
+      <guid>https://blog.oddbit.com/tag/pipes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rss</title>
-      <link>//blog.oddbit.com/tag/rss/</link>
+      <link>https://blog.oddbit.com/tag/rss/</link>
       <pubDate>Wed, 10 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/rss/</guid>
+      <guid>https://blog.oddbit.com/tag/rss/</guid>
       <description></description>
     </item>
     
     <item>
       <title>android</title>
-      <link>//blog.oddbit.com/tag/android/</link>
+      <link>https://blog.oddbit.com/tag/android/</link>
       <pubDate>Mon, 08 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/android/</guid>
+      <guid>https://blog.oddbit.com/tag/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>development</title>
-      <link>//blog.oddbit.com/tag/development/</link>
+      <link>https://blog.oddbit.com/tag/development/</link>
       <pubDate>Mon, 08 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/development/</guid>
+      <guid>https://blog.oddbit.com/tag/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bus</title>
-      <link>//blog.oddbit.com/tag/bus/</link>
+      <link>https://blog.oddbit.com/tag/bus/</link>
       <pubDate>Sun, 07 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/bus/</guid>
+      <guid>https://blog.oddbit.com/tag/bus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gps</title>
-      <link>//blog.oddbit.com/tag/gps/</link>
+      <link>https://blog.oddbit.com/tag/gps/</link>
       <pubDate>Sun, 07 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gps/</guid>
+      <guid>https://blog.oddbit.com/tag/gps/</guid>
       <description></description>
     </item>
     
     <item>
       <title>location</title>
-      <link>//blog.oddbit.com/tag/location/</link>
+      <link>https://blog.oddbit.com/tag/location/</link>
       <pubDate>Sun, 07 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/location/</guid>
+      <guid>https://blog.oddbit.com/tag/location/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mbta</title>
-      <link>//blog.oddbit.com/tag/mbta/</link>
+      <link>https://blog.oddbit.com/tag/mbta/</link>
       <pubDate>Sun, 07 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/mbta/</guid>
+      <guid>https://blog.oddbit.com/tag/mbta/</guid>
       <description></description>
     </item>
     
     <item>
       <title>transportation</title>
-      <link>//blog.oddbit.com/tag/transportation/</link>
+      <link>https://blog.oddbit.com/tag/transportation/</link>
       <pubDate>Sun, 07 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/transportation/</guid>
+      <guid>https://blog.oddbit.com/tag/transportation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>classification</title>
-      <link>//blog.oddbit.com/tag/classification/</link>
+      <link>https://blog.oddbit.com/tag/classification/</link>
       <pubDate>Thu, 04 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/classification/</guid>
+      <guid>https://blog.oddbit.com/tag/classification/</guid>
       <description></description>
     </item>
     
     <item>
       <title>netfilter</title>
-      <link>//blog.oddbit.com/tag/netfilter/</link>
+      <link>https://blog.oddbit.com/tag/netfilter/</link>
       <pubDate>Thu, 04 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/netfilter/</guid>
+      <guid>https://blog.oddbit.com/tag/netfilter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rfb</title>
-      <link>//blog.oddbit.com/tag/rfb/</link>
+      <link>https://blog.oddbit.com/tag/rfb/</link>
       <pubDate>Thu, 04 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/rfb/</guid>
+      <guid>https://blog.oddbit.com/tag/rfb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vnc</title>
-      <link>//blog.oddbit.com/tag/vnc/</link>
+      <link>https://blog.oddbit.com/tag/vnc/</link>
       <pubDate>Thu, 04 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/vnc/</guid>
+      <guid>https://blog.oddbit.com/tag/vnc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>groups</title>
-      <link>//blog.oddbit.com/tag/groups/</link>
+      <link>https://blog.oddbit.com/tag/groups/</link>
       <pubDate>Tue, 02 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/groups/</guid>
+      <guid>https://blog.oddbit.com/tag/groups/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nfs</title>
-      <link>//blog.oddbit.com/tag/nfs/</link>
+      <link>https://blog.oddbit.com/tag/nfs/</link>
       <pubDate>Tue, 02 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/nfs/</guid>
+      <guid>https://blog.oddbit.com/tag/nfs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gdata</title>
-      <link>//blog.oddbit.com/tag/gdata/</link>
+      <link>https://blog.oddbit.com/tag/gdata/</link>
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/gdata/</guid>
+      <guid>https://blog.oddbit.com/tag/gdata/</guid>
       <description></description>
     </item>
     
     <item>
       <title>peertopeer</title>
-      <link>//blog.oddbit.com/tag/peertopeer/</link>
+      <link>https://blog.oddbit.com/tag/peertopeer/</link>
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/peertopeer/</guid>
+      <guid>https://blog.oddbit.com/tag/peertopeer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>svn</title>
-      <link>//blog.oddbit.com/tag/svn/</link>
+      <link>https://blog.oddbit.com/tag/svn/</link>
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/svn/</guid>
+      <guid>https://blog.oddbit.com/tag/svn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>upnp</title>
-      <link>//blog.oddbit.com/tag/upnp/</link>
+      <link>https://blog.oddbit.com/tag/upnp/</link>
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/upnp/</guid>
+      <guid>https://blog.oddbit.com/tag/upnp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>versioncontrol</title>
-      <link>//blog.oddbit.com/tag/versioncontrol/</link>
+      <link>https://blog.oddbit.com/tag/versioncontrol/</link>
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/versioncontrol/</guid>
+      <guid>https://blog.oddbit.com/tag/versioncontrol/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fring</title>
-      <link>//blog.oddbit.com/tag/fring/</link>
+      <link>https://blog.oddbit.com/tag/fring/</link>
       <pubDate>Sun, 24 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/fring/</guid>
+      <guid>https://blog.oddbit.com/tag/fring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>review</title>
-      <link>//blog.oddbit.com/tag/review/</link>
+      <link>https://blog.oddbit.com/tag/review/</link>
       <pubDate>Sun, 24 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/review/</guid>
+      <guid>https://blog.oddbit.com/tag/review/</guid>
       <description></description>
     </item>
     
     <item>
       <title>skype</title>
-      <link>//blog.oddbit.com/tag/skype/</link>
+      <link>https://blog.oddbit.com/tag/skype/</link>
       <pubDate>Sun, 24 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/skype/</guid>
+      <guid>https://blog.oddbit.com/tag/skype/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sucks</title>
-      <link>//blog.oddbit.com/tag/sucks/</link>
+      <link>https://blog.oddbit.com/tag/sucks/</link>
       <pubDate>Sun, 24 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/sucks/</guid>
+      <guid>https://blog.oddbit.com/tag/sucks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>voip</title>
-      <link>//blog.oddbit.com/tag/voip/</link>
+      <link>https://blog.oddbit.com/tag/voip/</link>
       <pubDate>Sun, 24 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/tag/voip/</guid>
+      <guid>https://blog.oddbit.com/tag/voip/</guid>
       <description></description>
     </item>
     

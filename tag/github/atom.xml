@@ -2,20 +2,20 @@
   <title>github on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/github/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/github/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/github/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/github/" rel="alternate"></link>
 
   <updated>2019-05-07T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/github/</id>
+  <id>https://blog.oddbit.com/tag/github/</id>
   
   <entry>
     <title>New comment system</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2019-05-07-new-comment-system/"/>
-    <id>//blog.oddbit.com/post/2019-05-07-new-comment-system/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-05-07-new-comment-system/"/>
+    <id>https://blog.oddbit.com/post/2019-05-07-new-comment-system/</id>
     <published>2019-05-07T00:00:00Z</published>
     <updated>2019-05-07T00:00:00Z</updated>
     <summary type="html">As long as I&amp;rsquo;m switching site generators, it seems like a good idea to refresh the comment system as well. I&amp;rsquo;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.

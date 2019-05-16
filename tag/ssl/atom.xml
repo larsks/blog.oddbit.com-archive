@@ -2,20 +2,20 @@
   <title>ssl on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/ssl/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/ssl/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/ssl/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/ssl/" rel="alternate"></link>
 
   <updated>2011-05-09T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/ssl/</id>
+  <id>https://blog.oddbit.com/tag/ssl/</id>
   
   <entry>
     <title>Signing data with ssh-agent</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/"/>
-    <id>//blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/"/>
+    <id>https://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</id>
     <published>2011-05-09T00:00:00Z</published>
     <updated>2011-05-09T00:00:00Z</updated>
     <summary type="html">This is follow-up to my previous post, Converting OpenSSH public keys.
@@ -28,8 +28,8 @@ If one is temtped to use SSH keys as authentication credentials outside of ssh, 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
-    <id>//blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
+    <id>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
     <published>2010-02-24T00:00:00Z</published>
     <updated>2010-02-24T00:00:00Z</updated>
     <summary type="html">Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.

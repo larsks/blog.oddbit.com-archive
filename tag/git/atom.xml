@@ -2,20 +2,20 @@
   <title>git on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/git/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/git/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/git/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/git/" rel="alternate"></link>
 
   <updated>2017-01-22T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/git/</id>
+  <id>https://blog.oddbit.com/tag/git/</id>
   
   <entry>
     <title>Making sure your Gerrit changes aren&#39;t broken</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/"/>
-    <id>//blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/"/>
+    <id>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</id>
     <published>2017-01-22T00:00:00Z</published>
     <updated>2017-01-22T00:00:00Z</updated>
     <summary type="html">It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
@@ -27,8 +27,8 @@ In many cases you can alleviate this through the use of the git pre-commit hook,
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/"/>
-    <id>//blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/"/>
+    <id>https://blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</id>
     <published>2016-02-19T00:00:00Z</published>
     <updated>2016-02-19T00:00:00Z</updated>
     <summary type="html">This is a small collection of simple git tips and tricks I use to make my life easier.
@@ -42,8 +42,8 @@ $ vim some/file/somewhere $ git add -u $ git fix  Which I find much more conveni
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2015-10-19-automatic-git-cache/"/>
-    <id>//blog.oddbit.com/post/2015-10-19-automatic-git-cache/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-10-19-automatic-git-cache/"/>
+    <id>https://blog.oddbit.com/post/2015-10-19-automatic-git-cache/</id>
     <published>2015-10-19T00:00:00Z</published>
     <updated>2015-10-19T00:00:00Z</updated>
     <summary type="html">This post is in response to a comment someone made on irc earlier today:
@@ -58,8 +58,8 @@ If you access a git repository via ssh, it&amp;rsquo;s easy to provide a wrapper
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/"/>
-    <id>//blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/"/>
+    <id>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</id>
     <published>2015-04-10T00:00:00Z</published>
     <updated>2015-04-10T00:00:00Z</updated>
     <summary type="html">This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!
@@ -72,8 +72,8 @@ And now your boss knows why the TPS reports are late.</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/"/>
-    <id>//blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/"/>
+    <id>https://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</id>
     <published>2014-07-21T00:00:00Z</published>
     <updated>2014-07-21T00:00:00Z</updated>
     <summary type="html">After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
@@ -85,8 +85,8 @@ $ docker run -ti fedora /bin/bash bash-4.2# su -c &#39;uptime&#39; su: System er
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2013-11-22-automatic-maintenanc/"/>
-    <id>//blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/"/>
+    <id>https://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</id>
     <published>2013-11-22T00:00:00Z</published>
     <updated>2013-11-22T00:00:00Z</updated>
     <summary type="html">I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&amp;rsquo;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&amp;rsquo;s the perfect place to insert generated content that must be kept in sync with posts on the blog.</summary>
@@ -97,8 +97,8 @@ $ docker run -ti fedora /bin/bash bash-4.2# su -c &#39;uptime&#39; su: System er
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/"/>
-    <id>//blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/"/>
+    <id>https://blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</id>
     <published>2012-07-27T00:00:00Z</published>
     <updated>2012-07-27T00:00:00Z</updated>
     <summary type="html">I’ve been playing around with Git, Puppet, and GPG verification of our Puppet configuration repository, and these are some random facts about Git that have come to light as part of the process.
@@ -112,8 +112,8 @@ $ git fetch --tags $ git fetch  What’s the difference?</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/"/>
-    <id>//blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/"/>
+    <id>https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</id>
     <published>2010-05-11T00:00:00Z</published>
     <updated>2010-05-11T00:00:00Z</updated>
     <summary type="html">I recently set up a git repository server (using gitosis and gitweb). Among the required features of the system was the ability to publish the git repository to a read-only Subversion repository. This sounds simple in principle but in practice proved to be a bit tricky.
@@ -125,8 +125,8 @@ Git makes an excellent Subversion client. You can use the git svn &amp;hellip; s
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/"/>
-    <id>//blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/"/>
+    <id>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</id>
     <published>2010-01-29T00:00:00Z</published>
     <updated>2010-01-29T00:00:00Z</updated>
     <summary type="html">Overview At my office, we have a crufty Subversion repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.

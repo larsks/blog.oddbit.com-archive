@@ -2,20 +2,20 @@
   <title>scriptogr.am on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/scriptogr.am/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/scriptogr.am/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/scriptogr.am/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/scriptogr.am/" rel="alternate"></link>
 
   <updated>2012-11-05T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/scriptogr.am/</id>
+  <id>https://blog.oddbit.com/tag/scriptogr.am/</id>
   
   <entry>
     <title>Posting to Scriptogr.am using the API</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2012-11-05-posting-via-api/"/>
-    <id>//blog.oddbit.com/post/2012-11-05-posting-via-api/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2012-11-05-posting-via-api/"/>
+    <id>https://blog.oddbit.com/post/2012-11-05-posting-via-api/</id>
     <published>2012-11-05T00:00:00Z</published>
     <updated>2012-11-05T00:00:00Z</updated>
     <summary type="html">Scriptogr.am has a very simple api that allows one to POST and DELETE articles. POSTing an article will place it in the appropriate Dropbox directory and make it available on your blog all in one step.

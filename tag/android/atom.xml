@@ -2,20 +2,20 @@
   <title>android on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/android/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/android/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/android/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/android/" rel="alternate"></link>
 
   <updated>2010-02-08T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/android/</id>
+  <id>https://blog.oddbit.com/tag/android/</id>
   
   <entry>
     <title>Funny usage message</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2010-02-08-funny-usage-message/"/>
-    <id>//blog.oddbit.com/post/2010-02-08-funny-usage-message/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-02-08-funny-usage-message/"/>
+    <id>https://blog.oddbit.com/post/2010-02-08-funny-usage-message/</id>
     <published>2010-02-08T00:00:00Z</published>
     <updated>2010-02-08T00:00:00Z</updated>
     <summary type="html">I was poking around in a command shell on my Droid to see what was available. While it&amp;rsquo;s a pretty restricted environment, there&amp;rsquo;s a number of commands available in /system/bin, including dexopt.
@@ -28,8 +28,8 @@ $ dexopt Usage: don&#39;t use this  Hah.</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/"/>
-    <id>//blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/"/>
+    <id>https://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</id>
     <published>2010-01-24T00:00:00Z</published>
     <updated>2010-01-24T00:00:00Z</updated>
     <summary type="html">I thought I&amp;rsquo;d give Fring a try after seeing some favorable reviews on other sites. If you haven&amp;rsquo;t previously heard of Fring, the following blurb from their website might be helpful:

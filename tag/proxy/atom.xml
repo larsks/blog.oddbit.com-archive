@@ -2,20 +2,20 @@
   <title>proxy on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/proxy/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/proxy/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/proxy/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/proxy/" rel="alternate"></link>
 
   <updated>2010-02-24T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/proxy/</id>
+  <id>https://blog.oddbit.com/tag/proxy/</id>
   
   <entry>
     <title>LDAP redundancy through proxy servers</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
-    <id>//blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
+    <id>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
     <published>2010-02-24T00:00:00Z</published>
     <updated>2010-02-24T00:00:00Z</updated>
     <summary type="html">Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.
@@ -27,8 +27,8 @@ A solution We can provide a level of redundancy by passing the LDAP connections 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/"/>
-    <id>//blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/"/>
+    <id>https://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</id>
     <published>2010-02-16T00:00:00Z</published>
     <updated>2010-02-16T00:00:00Z</updated>
     <summary type="html">This document provides an example of using OpenLDAP&amp;rsquo;s meta backend to provide a unified view of two distinct LDAP directory trees. I was frustrated by the lack of simple examples available when I went looking for information on this topic, so this is my attempt to make life easier for the next person looking to do the same thing.

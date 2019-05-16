@@ -2,20 +2,20 @@
   <title>groups on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/groups/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/groups/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/groups/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/groups/" rel="alternate"></link>
 
   <updated>2010-02-02T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/groups/</id>
+  <id>https://blog.oddbit.com/tag/groups/</id>
   
   <entry>
     <title>NFS and the 16-group limit</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/"/>
-    <id>//blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/"/>
+    <id>https://blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/</id>
     <published>2010-02-02T00:00:00Z</published>
     <updated>2010-02-02T00:00:00Z</updated>
     <summary type="html">I learned something new today: it appears that the underlying authorization mechanism used by NFS limits your group membership to 16 groups. From http://bit.ly/cBhU8N:

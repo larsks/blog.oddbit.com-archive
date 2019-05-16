@@ -2,20 +2,20 @@
   <title>quantum on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/quantum/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/quantum/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/quantum/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/quantum/" rel="alternate"></link>
 
   <updated>2013-11-14T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/quantum/</id>
+  <id>https://blog.oddbit.com/tag/quantum/</id>
   
   <entry>
     <title>Quantum in Too Much Detail</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/"/>
-    <id>//blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/"/>
+    <id>https://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/</id>
     <published>2013-11-14T00:00:00Z</published>
     <updated>2013-11-14T00:00:00Z</updated>
     <summary type="html">I originally posted this article on the RDO website.

@@ -2,20 +2,20 @@
   <title>devicemapper on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/devicemapper/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/devicemapper/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/devicemapper/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/devicemapper/" rel="alternate"></link>
 
   <updated>2018-01-25T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/devicemapper/</id>
+  <id>https://blog.oddbit.com/tag/devicemapper/</id>
   
   <entry>
     <title>Fun with devicemapper snapshots</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/"/>
-    <id>//blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/"/>
+    <id>https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</id>
     <published>2018-01-25T00:00:00Z</published>
     <updated>2018-01-25T00:00:00Z</updated>
     <summary type="html">I find myself working with Raspbian disk images fairly often. A typical workflow is:

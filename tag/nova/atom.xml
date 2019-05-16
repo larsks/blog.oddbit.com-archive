@@ -2,20 +2,20 @@
   <title>nova on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/nova/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/nova/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/nova/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/nova/" rel="alternate"></link>
 
   <updated>2015-06-26T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/nova/</id>
+  <id>https://blog.oddbit.com/tag/nova/</id>
   
   <entry>
     <title>OpenStack Networking without DHCP</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/"/>
-    <id>//blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/"/>
+    <id>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</id>
     <published>2015-06-26T00:00:00Z</published>
     <updated>2015-06-26T00:00:00Z</updated>
     <summary type="html">In an OpenStack environment, cloud-init generally fetches information from the metadata service provided by Nova. It also has support for reading this information from a configuration drive, which under OpenStack means a virtual CD-ROM device attached to your instance containing the same information that would normally be available via the metadata service.
@@ -27,8 +27,8 @@ It is possible to generate your network configuration from this configuration dr
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/"/>
-    <id>//blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/"/>
+    <id>https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</id>
     <published>2015-02-06T00:00:00Z</published>
     <updated>2015-02-06T00:00:00Z</updated>
     <summary type="html">This post comes about indirectly by a request on IRC in #rdo for help getting nova-docker installed on Fedora 21. I ran through the process from start to finish and decided to write everything down for posterity.
@@ -41,8 +41,8 @@ We&amp;rsquo;ll be using OpenStack packages from the RDO Juno repository.</summa
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/"/>
-    <id>//blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/"/>
+    <id>https://blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/</id>
     <published>2015-02-05T00:00:00Z</published>
     <updated>2015-02-05T00:00:00Z</updated>
     <summary type="html">I saw a request from a customer float by the other day regarding the ability to filter the XML used to create Nova instances in libvirt. The customer effectively wanted to blacklist a variety of devices (and device types). The consensus seems to be &amp;ldquo;you can&amp;rsquo;t do this right now and upstream is unlikely to accept patches that implement this behavior&amp;rdquo;, but it sounded like an interesting problem, so&amp;hellip;</summary>
@@ -53,8 +53,8 @@ We&amp;rsquo;ll be using OpenStack packages from the RDO Juno repository.</summa
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/"/>
-    <id>//blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/"/>
+    <id>https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</id>
     <published>2014-12-22T00:00:00Z</published>
     <updated>2014-12-22T00:00:00Z</updated>
     <summary type="html">One of the new features available in the Juno release of OpenStack is support for serial console access to your Nova servers. This post looks into how to configure the serial console feature and then how to access the serial consoles of your Nova servers.
@@ -66,8 +66,8 @@ Configuring serial console support In previous release of OpenStack, read-only a
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/"/>
-    <id>//blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/"/>
+    <id>https://blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/</id>
     <published>2014-09-27T00:00:00Z</published>
     <updated>2014-09-27T00:00:00Z</updated>
     <summary type="html">Would you like to run some custom Python code when Nova creates and destroys virtual instances on your compute hosts? This is possible using Nova&amp;rsquo;s support for hooks, but the existing documentation is somewhat short on examples, so I&amp;rsquo;ve spent some time trying to get things working.

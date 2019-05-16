@@ -2,20 +2,20 @@
   <title>gpio on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/gpio/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/gpio/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/gpio/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/gpio/" rel="alternate"></link>
 
   <updated>2014-07-26T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/gpio/</id>
+  <id>https://blog.oddbit.com/tag/gpio/</id>
   
   <entry>
     <title>gpio-watch: Run scripts in response to GPIO signals</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/"/>
-    <id>//blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/"/>
+    <id>https://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/</id>
     <published>2014-07-26T00:00:00Z</published>
     <updated>2014-07-26T00:00:00Z</updated>
     <summary type="html">For a small project I&amp;rsquo;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.

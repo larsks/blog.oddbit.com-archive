@@ -2,20 +2,20 @@
   <title>puppet on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/puppet/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/puppet/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/puppet/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/puppet/" rel="alternate"></link>
 
   <updated>2014-10-22T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/puppet/</id>
+  <id>https://blog.oddbit.com/tag/puppet/</id>
   
   <entry>
     <title>Building Docker images with Puppet</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/"/>
-    <id>//blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/"/>
+    <id>https://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</id>
     <published>2014-10-22T00:00:00Z</published>
     <updated>2014-10-22T00:00:00Z</updated>
     <summary type="html">I like Docker, but I&amp;rsquo;m not a huge fan of using shell scripts for complex system configuration&amp;hellip;and Dockerfiles are basically giant shell scripts.
@@ -29,8 +29,8 @@ class { &#39;ssh&#39;: }  And a Dockerfile like this:</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/"/>
-    <id>//blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/"/>
+    <id>https://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/</id>
     <published>2014-04-16T00:00:00Z</published>
     <updated>2014-04-16T00:00:00Z</updated>
     <summary type="html">I wanted to learn about writing custom Puppet types and providers. The official documentation is a little sparse, but I finally stumbled upon the following series of articles by Gary Larizza that provide a great deal of insight into the process and a bunch of example code:
@@ -42,8 +42,8 @@ class { &#39;ssh&#39;: }  And a Dockerfile like this:</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/"/>
-    <id>//blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/"/>
+    <id>https://blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/</id>
     <published>2013-02-25T00:00:00Z</published>
     <updated>2013-02-25T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve been reading up on Puppet 3 lately, and came across the following:
@@ -57,8 +57,8 @@ class { &#39;ssh&#39;: }  And a Dockerfile like this:</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/"/>
-    <id>//blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/"/>
+    <id>https://blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/</id>
     <published>2011-08-16T00:00:00Z</published>
     <updated>2011-08-16T00:00:00Z</updated>
     <summary type="html">I note this here because it wasn&amp;rsquo;t apparent to me from the Puppet documentation.

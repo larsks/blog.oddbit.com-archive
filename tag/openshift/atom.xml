@@ -2,20 +2,20 @@
   <title>openshift on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/openshift/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/openshift/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/openshift/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/openshift/" rel="alternate"></link>
 
   <updated>2013-11-23T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/openshift/</id>
+  <id>https://blog.oddbit.com/tag/openshift/</id>
   
   <entry>
     <title>Sockets on OpenShift</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2013-11-23-openshift-socket-pro/"/>
-    <id>//blog.oddbit.com/post/2013-11-23-openshift-socket-pro/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/"/>
+    <id>https://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/</id>
     <published>2013-11-23T00:00:00Z</published>
     <updated>2013-11-23T00:00:00Z</updated>
     <summary type="html">In this article, a followup to my previous post regarding long-poll servers and Python, we investigate the code changes that were necessary to make the code work when deployed on OpenShift.

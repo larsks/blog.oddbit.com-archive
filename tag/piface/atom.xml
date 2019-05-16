@@ -2,20 +2,20 @@
   <title>piface on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/piface/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/piface/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/piface/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/piface/" rel="alternate"></link>
 
   <updated>2013-08-05T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/piface/</id>
+  <id>https://blog.oddbit.com/tag/piface/</id>
   
   <entry>
     <title>Interrupts on the PiFace</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/"/>
-    <id>//blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/"/>
+    <id>https://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/</id>
     <published>2013-08-05T00:00:00Z</published>
     <updated>2013-08-05T00:00:00Z</updated>
     <summary type="html">I recently acquired both a Raspberry Pi and a PiFace IO board. I had a rough time finding examples of how to read the input ports via interrupts (rather than periodically polling for values), especially for the newer versions of the PiFace python libraries.

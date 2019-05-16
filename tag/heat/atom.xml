@@ -2,20 +2,20 @@
   <title>heat on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/heat/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/heat/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/heat/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/heat/" rel="alternate"></link>
 
   <updated>2016-08-11T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/heat/</id>
+  <id>https://blog.oddbit.com/tag/heat/</id>
   
   <entry>
     <title>Exploring YAQL Expressions</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/"/>
-    <id>//blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/"/>
+    <id>https://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</id>
     <published>2016-08-11T00:00:00Z</published>
     <updated>2016-08-11T00:00:00Z</updated>
     <summary type="html">The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&amp;rsquo;s more advanced features.
@@ -28,8 +28,8 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/"/>
-    <id>//blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/"/>
+    <id>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
     <published>2015-06-19T00:00:00Z</published>
     <updated>2015-06-19T00:00:00Z</updated>
     <summary type="html">Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
@@ -42,8 +42,8 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-09-05-heat-hangout/"/>
-    <id>//blog.oddbit.com/post/2014-09-05-heat-hangout/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-09-05-heat-hangout/"/>
+    <id>https://blog.oddbit.com/post/2014-09-05-heat-hangout/</id>
     <published>2014-09-05T00:00:00Z</published>
     <updated>2014-09-05T00:00:00Z</updated>
     <summary type="html">I ran a Google Hangout this morning on Deploying with Heat. You can find the slides for the presentation on line here, and the Heat templates (as well as slide sources) are available on github.
@@ -56,8 +56,8 @@ If you have any questions about the presentation, please feel free to ping me on
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/"/>
-    <id>//blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/"/>
+    <id>https://blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/</id>
     <published>2014-09-02T00:00:00Z</published>
     <updated>2014-09-02T00:00:00Z</updated>
     <summary type="html">I spent some time today learning about Heat autoscaling groups, which are incredibly nifty but a little opaque from the Heat command line, since commands such as heat resource-list don&amp;rsquo;t recurse into nested stacks. It is possible to introspect these resources (you can pass the physical resource id of a nested stack to heat resource-list, for example)&amp;hellip;
@@ -69,8 +69,8 @@ If you have any questions about the presentation, please feel free to ping me on
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/"/>
-    <id>//blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/"/>
+    <id>https://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</id>
     <published>2014-09-01T00:00:00Z</published>
     <updated>2014-09-01T00:00:00Z</updated>
     <summary type="html">This is a companion to my article on the Docker plugin for Heat.
@@ -87,8 +87,8 @@ docker plugin volumes_from parameter should be a list.
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-08-31-docker-contain-doc/"/>
-    <id>//blog.oddbit.com/post/2014-08-31-docker-contain-doc/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/"/>
+    <id>https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</id>
     <published>2014-08-30T00:00:00Z</published>
     <updated>2014-08-30T00:00:00Z</updated>
     <summary type="html">This is a companion to my article on the Docker plugin for Heat.
@@ -110,8 +110,8 @@ docker_endpoint: tcp://192.</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/"/>
-    <id>//blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/"/>
+    <id>https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</id>
     <published>2014-08-30T00:00:00Z</published>
     <updated>2014-08-30T00:00:00Z</updated>
     <summary type="html">I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&amp;rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
@@ -123,8 +123,8 @@ The release announcement on the Docker blog includes an example Heat template, b
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/"/>
-    <id>//blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/"/>
+    <id>https://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/</id>
     <published>2014-08-30T00:00:00Z</published>
     <updated>2014-08-30T00:00:00Z</updated>
     <summary type="html">This post accompanies my article on the Docker plugin for Heat.
@@ -137,8 +137,8 @@ In order for WaitCondition resources to operate correctly in Heat, you will need
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/"/>
-    <id>//blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/"/>
+    <id>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</id>
     <published>2013-12-06T00:00:00Z</published>
     <updated>2013-12-06T00:00:00Z</updated>
     <summary type="html">Heat is a template-based orchestration mechanism for use with OpenStack. With Heat, you can deploy collections of resources &amp;ndash; networks, servers, storage, and more &amp;ndash; all from a single, parameterized template.

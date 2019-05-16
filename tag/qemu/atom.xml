@@ -2,20 +2,20 @@
   <title>qemu on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/qemu/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/qemu/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/qemu/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/qemu/" rel="alternate"></link>
 
   <updated>2016-02-07T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/qemu/</id>
+  <id>https://blog.oddbit.com/tag/qemu/</id>
   
   <entry>
     <title>Systemd-nspawn for fun and...well, mostly for fun</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/"/>
-    <id>//blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/"/>
+    <id>https://blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</id>
     <published>2016-02-07T00:00:00Z</published>
     <updated>2016-02-07T00:00:00Z</updated>
     <summary type="html">systemd-nspawn has been called &amp;ldquo;chroot on steroids&amp;rdquo;, but if you think of it as Docker with a slightly different target you wouldn&amp;rsquo;t be far wrong, either. It can be used to spawn containers on your host, and has a variety of options for configuring the containerized environment through the use of private networking, bind mounts, capability controls, and a variety of other facilities that give you flexible container management.</summary>

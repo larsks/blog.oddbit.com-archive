@@ -2,20 +2,20 @@
   <title>rsa on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/rsa/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/rsa/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/rsa/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/rsa/" rel="alternate"></link>
 
   <updated>2011-05-09T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/rsa/</id>
+  <id>https://blog.oddbit.com/tag/rsa/</id>
   
   <entry>
     <title>Signing data with ssh-agent</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/"/>
-    <id>//blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/"/>
+    <id>https://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</id>
     <published>2011-05-09T00:00:00Z</published>
     <updated>2011-05-09T00:00:00Z</updated>
     <summary type="html">This is follow-up to my previous post, Converting OpenSSH public keys.
@@ -28,8 +28,8 @@ If one is temtped to use SSH keys as authentication credentials outside of ssh, 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/"/>
-    <id>//blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/"/>
+    <id>https://blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</id>
     <published>2011-05-08T00:00:00Z</published>
     <updated>2011-05-08T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve posted a followup to this article that discusses ssh-agent.

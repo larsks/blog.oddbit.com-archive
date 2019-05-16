@@ -2,20 +2,20 @@
   <title>logging on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/logging/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/logging/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/logging/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/logging/" rel="alternate"></link>
 
   <updated>2017-06-14T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/logging/</id>
+  <id>https://blog.oddbit.com/tag/logging/</id>
   
   <entry>
     <title>OpenStack, Containers, and Logging</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/"/>
-    <id>//blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/"/>
+    <id>https://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</id>
     <published>2017-06-14T00:00:00Z</published>
     <updated>2017-06-14T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve been thinking about logging in the context of OpenStack and containerized service deployments. I&amp;rsquo;d like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.
@@ -28,8 +28,8 @@ There are effectively three different mechanisms that an application can use to 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2010-02-19-apache-virtual-host-statistics/"/>
-    <id>//blog.oddbit.com/post/2010-02-19-apache-virtual-host-statistics/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-02-19-apache-virtual-host-statistics/"/>
+    <id>https://blog.oddbit.com/post/2010-02-19-apache-virtual-host-statistics/</id>
     <published>2010-02-19T00:00:00Z</published>
     <updated>2010-02-19T00:00:00Z</updated>
     <summary type="html">As part of a project I&amp;rsquo;m working on I wanted to get a rough idea of the activity of the Apache virtual hosts on the system. I wasn&amp;rsquo;t able to find exactly what I wanted, so I refreshed my memory of curses to bring you vhoststats.

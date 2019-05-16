@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>subversion on The Odd Bit</title>
-    <link>//blog.oddbit.com/tag/subversion/</link>
+    <link>https://blog.oddbit.com/tag/subversion/</link>
     <description>Recent content in subversion on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 11 May 2010 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="//blog.oddbit.com/tag/subversion/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.oddbit.com/tag/subversion/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pushing a Git repository to Subversion</title>
-      <link>//blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</link>
+      <link>https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</link>
       <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</guid>
+      <guid>https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</guid>
       <description>I recently set up a git repository server (using gitosis and gitweb). Among the required features of the system was the ability to publish the git repository to a read-only Subversion repository. This sounds simple in principle but in practice proved to be a bit tricky.
 Git makes an excellent Subversion client. You can use the git svn &amp;hellip; series of commands to pull a remote Subversion repository into a local git working tree and then have all the local advantages of git forcing the central code repository to change version control software.</description>
     </item>
     
     <item>
       <title>Cleaning up Subversion with Git</title>
-      <link>//blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</link>
+      <link>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</link>
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</guid>
+      <guid>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</guid>
       <description>Overview At my office, we have a crufty Subversion repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.
 What we want to do is move a project from a path that looks like this:
 .../projects/some-project-name  To a new repository using the recommended Subversion repository layout, like this:</description>

@@ -2,12 +2,12 @@
   <title>hack on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/hack/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/hack/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/hack/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/hack/" rel="alternate"></link>
 
   <updated>2015-04-10T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/hack/</id>
+  <id>https://blog.oddbit.com/tag/hack/</id>
   
   <entry>
     <title>Using tools badly: time shifting git commits with Workinghours
@@ -15,8 +15,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/"/>
-    <id>//blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/"/>
+    <id>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</id>
     <published>2015-04-10T00:00:00Z</published>
     <updated>2015-04-10T00:00:00Z</updated>
     <summary type="html">This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!

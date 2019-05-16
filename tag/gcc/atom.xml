@@ -2,20 +2,20 @@
   <title>gcc on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/gcc/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/gcc/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/gcc/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/gcc/" rel="alternate"></link>
 
   <updated>2019-02-11T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/gcc/</id>
+  <id>https://blog.oddbit.com/tag/gcc/</id>
   
   <entry>
     <title>In which I PEBKAC so you don&#39;t have to</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/"/>
-    <id>//blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/"/>
+    <id>https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</id>
     <published>2019-02-11T00:00:00Z</published>
     <updated>2019-02-11T00:00:00Z</updated>
     <summary type="html">Say you have a simple bit of code:

@@ -2,20 +2,20 @@
   <title>xml on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/xml/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/xml/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/xml/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/xml/" rel="alternate"></link>
 
   <updated>2015-02-19T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/xml/</id>
+  <id>https://blog.oddbit.com/tag/xml/</id>
   
   <entry>
     <title>Stupid Pacemaker XML tricks</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/"/>
-    <id>//blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/"/>
+    <id>https://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</id>
     <published>2015-02-19T00:00:00Z</published>
     <updated>2015-02-19T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
@@ -27,8 +27,8 @@ Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2012-09-10-awk-parsing-xml/"/>
-    <id>//blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/"/>
+    <id>https://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</id>
     <published>2012-09-10T00:00:00Z</published>
     <updated>2012-09-10T00:00:00Z</updated>
     <summary type="html">Recently, changes from the xmlgawk project have been integrated into GNU awk, and xmlgawk has been renamed to gawkextlib. With both a recent (post-4.0.70) gawk and gawkextlib built and installed correctly, you can write simple XML parsing scripts using gawk.
@@ -40,8 +40,8 @@ For example, let&amp;rsquo;s say you would like to generate a list of disk image
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/"/>
-    <id>//blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/"/>
+    <id>https://blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/</id>
     <published>2010-02-07T00:00:00Z</published>
     <updated>2010-02-07T00:00:00Z</updated>
     <summary type="html">The MBTA has a trial web service interface that provides access to realtime location information for select MBTA buses, as well as access to route information, arrival prediction, and other features. More information can be found here:

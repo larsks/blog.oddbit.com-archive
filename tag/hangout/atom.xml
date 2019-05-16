@@ -2,20 +2,20 @@
   <title>hangout on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/hangout/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/hangout/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/hangout/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/hangout/" rel="alternate"></link>
 
   <updated>2014-02-27T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/hangout/</id>
+  <id>https://blog.oddbit.com/tag/hangout/</id>
   
   <entry>
     <title>Multinode OpenStack with Packstack</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2014-02-27-multinode/"/>
-    <id>//blog.oddbit.com/post/2014-02-27-multinode/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-02-27-multinode/"/>
+    <id>https://blog.oddbit.com/post/2014-02-27-multinode/</id>
     <published>2014-02-27T00:00:00Z</published>
     <updated>2014-02-27T00:00:00Z</updated>
     <summary type="html">I was the presenter for this morning&amp;rsquo;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.

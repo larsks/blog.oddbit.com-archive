@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>openvswitch on The Odd Bit</title>
-    <link>//blog.oddbit.com/tag/openvswitch/</link>
+    <link>https://blog.oddbit.com/tag/openvswitch/</link>
     <description>Recent content in openvswitch on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 19 May 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="//blog.oddbit.com/tag/openvswitch/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.oddbit.com/tag/openvswitch/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Connecting another vm to your tripleo-quickstart deployment</title>
-      <link>//blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</link>
+      <link>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</guid>
+      <guid>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</guid>
       <description>Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
 For a concrete example, let&amp;rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:</description>
     </item>
     
     <item>
       <title>Provider external networks (in an appropriate amount of detail)</title>
-      <link>//blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</link>
+      <link>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</link>
       <pubDate>Thu, 13 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</guid>
+      <guid>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</guid>
       <description>In Quantum in Too Much Detail, I discussed the architecture of a Neutron deployment in detail. Since that article was published, Neutron gained the ability to handle multiple external networks with a single L3 agent. While I wrote about that back in 2014, I covered the configuration side of it in much more detail than I discussed the underlying network architecture. This post addresses the architecture side.
 The players This document describes the architecture that results from a particular OpenStack configuration, specifically:</description>
     </item>
     
     <item>
       <title>Four ways to connect a docker container to a local network</title>
-      <link>//blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</link>
+      <link>https://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</link>
       <pubDate>Mon, 11 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</guid>
+      <guid>https://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</guid>
       <description>Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&amp;rsquo;ve written an article about working with the macvlan driver.
 This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.</description>
     </item>
     
     <item>
       <title>Video: Configuring OpenStack&#39;s external bridge on a single-interface system</title>
-      <link>//blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</link>
+      <link>https://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</link>
       <pubDate>Tue, 27 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</guid>
+      <guid>https://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</guid>
       <description>I&amp;rsquo;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
  </description>
     </item>
     
     <item>
       <title>Open vSwitch and persistent MAC addresses</title>
-      <link>//blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</link>
+      <link>https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</link>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</guid>
+      <guid>https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</guid>
       <description>Normally I like to post solutions, but today&amp;rsquo;s post is about a vexing problem to which I have not been able to find a solution.
 This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.</description>
     </item>
     
     <item>
       <title>Solved: Open vSwitch and persistent MAC addresses</title>
-      <link>//blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</link>
+      <link>https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</link>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</guid>
+      <guid>https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</guid>
       <description>In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &amp;ldquo;don&amp;rsquo;t use ip link set ...&amp;rdquo; for this purpose.
 You can set the bridge MAC address via ovs-vsctl like this:
 ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&amp;rsquo;ve updated my ifconfig-br-ex to look like this:
@@ -75,10 +75,10 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
     
     <item>
       <title>Fedora and OVS Bridge Interfaces</title>
-      <link>//blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</link>
+      <link>https://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</link>
       <pubDate>Tue, 20 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</guid>
+      <guid>https://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</guid>
       <description>I run OpenStack on my laptop, and I&amp;rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
 This is the network configuration file for br-ex on my system:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</description>
@@ -86,10 +86,10 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</descript
     
     <item>
       <title>Flat networks with ML2 and OpenVSwitch</title>
-      <link>//blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</link>
+      <link>https://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</link>
       <pubDate>Mon, 19 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</guid>
+      <guid>https://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</guid>
       <description>Due to an unfortunate incident involving sleep mode and an overheated backpack I had the &amp;ldquo;opportunity&amp;rdquo; to rebuild my laptop. Since this meant reinstalling OpenStack I used this as an excuse to finally move to the ML2 network plugin for Neutron.
 I was attempting to add an external network using the normal incantation:
 neutron net-create external -- --router:external=true \ --provider:network_type=flat \ --provider:physical_network=physnet1  While this command completed successfully, I was left without any connectivity between br-int and br-ex, despite having in my /etc/neutron/plugins/ml2/ml2_conf.</description>
@@ -97,10 +97,10 @@ neutron net-create external -- --router:external=true \ --provider:network_type=
     
     <item>
       <title>Show OVS external-ids</title>
-      <link>//blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</link>
+      <link>https://blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</link>
       <pubDate>Sun, 19 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</guid>
+      <guid>https://blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</guid>
       <description>This is just here as a reminder for me:
 An OVS interface has a variety of attributes associated with it, including an external-id field that can be used to associate resources outside of OpenVSwitch with the interface. You can view this field with the following command:
 $ ovs-vsctl --columns=name,external-ids list Interface  Which on my system, with a single virtual instance, looks like this:

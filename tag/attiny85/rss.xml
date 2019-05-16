@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>attiny85 on The Odd Bit</title>
-    <link>//blog.oddbit.com/tag/attiny85/</link>
+    <link>https://blog.oddbit.com/tag/attiny85/</link>
     <description>Recent content in attiny85 on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="//blog.oddbit.com/tag/attiny85/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.oddbit.com/tag/attiny85/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AVR micro-optimization: Avr-gcc and --short-enums</title>
-      <link>//blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</link>
+      <link>https://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</guid>
+      <guid>https://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</guid>
       <description>How big is an enum? I noticed something odd while browsing through the assembly output of some AVR C code I wrote recently. In the code, I have the following expression:
 int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&amp;rsquo;t want to clutter this post with unnecessary code listings):</description>
     </item>
     
     <item>
       <title>AVR micro-optimization: Losing malloc</title>
-      <link>//blog.oddbit.com/post/2019-01-28-losing-malloc/</link>
+      <link>https://blog.oddbit.com/post/2019-01-28-losing-malloc/</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2019-01-28-losing-malloc/</guid>
+      <guid>https://blog.oddbit.com/post/2019-01-28-losing-malloc/</guid>
       <description>Pssst! Hey&amp;hellip;hey, buddy, wanna get an extra KB for cheap?
 When I write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
 Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&amp;rsquo;s exactly what I did.</description>
@@ -34,20 +34,20 @@ Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)
     
     <item>
       <title>Debugging attiny85 code, part 1: simavr and gdb</title>
-      <link>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</link>
+      <link>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</guid>
+      <guid>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</guid>
       <description>In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
 I&amp;rsquo;ve split this into three posts:</description>
     </item>
     
     <item>
       <title>Debugging attiny85 code, part 2: Automating GDB with scripts</title>
-      <link>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</link>
+      <link>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</guid>
+      <guid>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</guid>
       <description>This is the second of three posts about using gdb and simavr to debug AVR code. The complete series is:
  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
@@ -59,10 +59,10 @@ Using simavr to collect information about the state of microcontroller pins whil
     
     <item>
       <title>Debugging attiny85 code, part 3: Tracing with simavr</title>
-      <link>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</link>
+      <link>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</guid>
+      <guid>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</guid>
       <description>This is the third of three posts about using gdb and simavr to debug AVR code. The complete series is:
  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
@@ -74,10 +74,10 @@ Using simavr to collect information about the state of microcontroller pins whil
     
     <item>
       <title>PiPower: A Raspberry Pi UPS</title>
-      <link>//blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</link>
+      <link>https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</link>
       <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</guid>
+      <guid>https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</guid>
       <description>I have a Raspberry Pi running RetroPie hooked up to a television. It&amp;rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&amp;rsquo;re pulling the plug on the Pi. While there haven&amp;rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</description>
     </item>
     

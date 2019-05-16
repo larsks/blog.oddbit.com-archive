@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>windows on The Odd Bit</title>
-    <link>//blog.oddbit.com/tag/windows/</link>
+    <link>https://blog.oddbit.com/tag/windows/</link>
     <description>Recent content in windows on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Nov 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="//blog.oddbit.com/tag/windows/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.oddbit.com/tag/windows/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Creating a Windows image for OpenStack</title>
-      <link>//blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</link>
+      <link>https://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</link>
       <pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</guid>
+      <guid>https://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</guid>
       <description>If you want to build a Windows image for use in your OpenStack environment, you can follow the example in the official documentation, or you can grab a Windows 2012r2 evaluation pre-built image from the nice folks at CloudBase.
 The CloudBase-provided image is built using a set of scripts and configuration files that CloudBase has made available on GitHub.
 The CloudBase repository is an excellent source of information, but I wanted to understand the process myself.</description>
@@ -24,30 +24,30 @@ The CloudBase repository is an excellent source of information, but I wanted to 
     
     <item>
       <title>Automatic configuration of Windows instances in OpenStack, part 1</title>
-      <link>//blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</link>
+      <link>https://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</link>
       <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</guid>
+      <guid>https://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</guid>
       <description>This is the first of two articles in which I discuss my work in getting some Windows instances up and running in our OpenStack environment. This article is primarily about problems I encountered along the way.
 Motivations Like many organizations, we have a mix of Linux and Windows in our environment. Some folks in my group felt that it would be nice to let our Windows admins take advantage of OpenStack for prototyping and sandboxing in the same ways our Linux admins can use it.</description>
     </item>
     
     <item>
       <title>Generating random passwords in PowerShell</title>
-      <link>//blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</link>
+      <link>https://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</link>
       <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</guid>
+      <guid>https://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</guid>
       <description>I was looking for PowerShell solutions for generating a random password (in order to set the Administrator password on a Windows instance provisioned in OpenStack), and found several solutions using the GeneratePassword method of System.Web.Security.Membership (documentation here), along the lines of this:
 Function New-RandomComplexPassword ($length=8) { $Assembly = Add-Type -AssemblyName System.Web $password = [System.Web.Security.Membership]::GeneratePassword($length,2) return $password }  While this works, I was unhappy with the generated passwords: they were difficult to type or transcribe because they make heavy use of punctuation.</description>
     </item>
     
     <item>
       <title>Waiting for networking using PowerShell</title>
-      <link>//blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</link>
+      <link>https://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</link>
       <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</guid>
+      <guid>https://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</guid>
       <description>I&amp;rsquo;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
 There are a number of common solutions proposed to this problem:
  Just wait for some period of time.

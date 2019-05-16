@@ -2,20 +2,20 @@
   <title>gevent on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/gevent/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/gevent/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/gevent/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/gevent/" rel="alternate"></link>
 
   <updated>2013-11-23T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/gevent/</id>
+  <id>https://blog.oddbit.com/tag/gevent/</id>
   
   <entry>
     <title>Long polling with Javascript and Python</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2013-11-23-long-polling-with-ja/"/>
-    <id>//blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/"/>
+    <id>https://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</id>
     <published>2013-11-23T00:00:00Z</published>
     <updated>2013-11-23T00:00:00Z</updated>
     <summary type="html">In this post I&amp;rsquo;m going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.

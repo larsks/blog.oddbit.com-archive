@@ -2,20 +2,20 @@
   <title>iptables on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/iptables/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/iptables/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/iptables/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/iptables/" rel="alternate"></link>
 
   <updated>2018-02-08T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/iptables/</id>
+  <id>https://blog.oddbit.com/tag/iptables/</id>
   
   <entry>
     <title>Listing iptables rules with line numbers</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/"/>
-    <id>//blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/"/>
+    <id>https://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</id>
     <published>2018-02-08T00:00:00Z</published>
     <updated>2018-02-08T00:00:00Z</updated>
     <summary type="html">You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.
@@ -28,8 +28,8 @@ You can augment the output from these commands with rule numbers with the follow
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2010-02-04-vnc-blockingrst/"/>
-    <id>//blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/"/>
+    <id>https://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</id>
     <published>2010-02-04T00:00:00Z</published>
     <updated>2010-02-04T00:00:00Z</updated>
     <summary type="html">VNC clients use the RFB protocol to provide virtual display capabilities. The RFB protocol, as implemented by most clients, provides very poor authentication options. While passwords are not actually sent &amp;ldquo;in the clear&amp;rdquo;, it is possible to brute force them based on information available on the wire. The RFB 3.x protocol limits passwords to a maximum of eight characters, so the potential key space is relatively small.

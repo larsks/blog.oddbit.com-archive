@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>openssl on The Odd Bit</title>
-    <link>//blog.oddbit.com/tag/openssl/</link>
+    <link>https://blog.oddbit.com/tag/openssl/</link>
     <description>Recent content in openssl on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 May 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="//blog.oddbit.com/tag/openssl/rss.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.oddbit.com/tag/openssl/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Signing data with ssh-agent</title>
-      <link>//blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</link>
+      <link>https://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</link>
       <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</guid>
+      <guid>https://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</guid>
       <description>This is follow-up to my previous post, Converting OpenSSH public keys.
 OpenSSH allows one to use an agent that acts as a proxy to your private key. When using an agent &amp;ndash; particularly with agent forwarding enabled &amp;ndash; this allows you to authenticate to a remote host without having to (a) repeatedly type in your password or (b) expose an unencrypted private key to remote systems.
 If one is temtped to use SSH keys as authentication credentials outside of ssh, one would ideally be able to take advantage of the ssh agent for these same reasons.</description>
@@ -24,10 +24,10 @@ If one is temtped to use SSH keys as authentication credentials outside of ssh, 
     
     <item>
       <title>Converting OpenSSH public keys</title>
-      <link>//blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</link>
+      <link>https://blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</link>
       <pubDate>Sun, 08 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>//blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</guid>
+      <guid>https://blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</guid>
       <description>I&amp;rsquo;ve posted a followup to this article that discusses ssh-agent.
  For reasons best left to another post, I wanted to convert an SSH public key into a PKCS#1 PEM-encoded public key. That is, I wanted to go from this:
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD7EZn/BzP26AWk/Ts2ymjpTXuXRiEWIWn HFTilOTcuJ/P1HfOwiy4RHC1rv59Yh/E6jbTx623+OGySJWh1IS3dAEaHhcGKnJaikrBn3c cdoNVkAAuL/YD7FMG1Z0SjtcZS6MoO8Lb9pkq6R+Ok6JQjwCEsB+OaVwP9RnVA+HSYeyCVE 0KakLCbBJcD1U2aHP4+IH4OaXhZacpb9Ueja6NNfGrv558xTgfZ+fLdJ7cpg6wU8UZnVM1B JiUW5KFasc+2IuZR0+g/oJXaYwvW2T6XsMgipetCEtQoMAJ4zmugzHSQuFRYHw/7S6PUI2U 03glFmULvEV+qIxsVFT1ng3pj lars@tiamat.house  To this:

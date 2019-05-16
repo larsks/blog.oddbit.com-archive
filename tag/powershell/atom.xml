@@ -2,20 +2,20 @@
   <title>powershell on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/powershell/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/powershell/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/powershell/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/powershell/" rel="alternate"></link>
 
   <updated>2012-11-04T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/powershell/</id>
+  <id>https://blog.oddbit.com/tag/powershell/</id>
   
   <entry>
     <title>Generating random passwords in PowerShell</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2012-11-04-powershell-random-passwords/"/>
-    <id>//blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/"/>
+    <id>https://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</id>
     <published>2012-11-04T00:00:00Z</published>
     <updated>2012-11-04T00:00:00Z</updated>
     <summary type="html">I was looking for PowerShell solutions for generating a random password (in order to set the Administrator password on a Windows instance provisioned in OpenStack), and found several solutions using the GeneratePassword method of System.Web.Security.Membership (documentation here), along the lines of this:
@@ -27,8 +27,8 @@ Function New-RandomComplexPassword ($length=8) { $Assembly = Add-Type -AssemblyN
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/"/>
-    <id>//blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/"/>
+    <id>https://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</id>
     <published>2012-11-04T00:00:00Z</published>
     <updated>2012-11-04T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.

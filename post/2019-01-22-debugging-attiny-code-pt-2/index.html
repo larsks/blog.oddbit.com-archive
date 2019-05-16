@@ -19,7 +19,7 @@ Using simavr to collect information about the state of microcontroller pins whil
         
         
         
-        <link rel="stylesheet" href="//blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -40,10 +40,10 @@ Using simavr to collect information about the state of microcontroller pins whil
                     <div class="site-title-wrapper">
                         
                             <h1 class="site-title">
-                                <a title="The Odd Bit" href="//blog.oddbit.com/">The Odd Bit</a>
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
                             </h1>
                         
-                        <a class="button-square" href="//blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
                         
                             <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
                                 <i class="fa fa-twitter"></i>
@@ -115,15 +115,15 @@ Using simavr to collect information about the state of microcontroller pins whil
 <p>This is the second of three posts about using <code>gdb</code> and <code>simavr</code> to debug AVR code. The complete series is:</p>
 
 <ul>
-<li><p><a href="//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/">Part 1: Using GDB</a></p>
+<li><p><a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/">Part 1: Using GDB</a></p>
 
 <p>A walkthrough of using GDB to manually inspect the behavior of our code.</p></li>
 
-<li><p><a href="//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/">Part 2: Automating GDB with scripts</a></p>
+<li><p><a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/">Part 2: Automating GDB with scripts</a></p>
 
 <p>Creating GDB scripts to automatically test the behavior of our code.</p></li>
 
-<li><p><a href="//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/">Part 3: Tracing with simavr</a></p>
+<li><p><a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/">Part 3: Tracing with simavr</a></p>
 
 <p>Using <code>simavr</code> to collect information about the state of microcontroller pins while our code is running.</p></li>
 </ul>
@@ -139,7 +139,7 @@ Using simavr to collect information about the state of microcontroller pins whil
 
 <h2 id="goals">Goals</h2>
 
-<p>In <a href="//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/">the first post</a> on this topic, we looked at how one can use <code>gdb</code> and <a href="https://github.com/buserror/simavr">simavr</a> to debug your attiny85 (or other AVR code) without flashing it to a device. In this post, I would like to extend that by looking at how we can automate some aspects of the debugging process.</p>
+<p>In <a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/">the first post</a> on this topic, we looked at how one can use <code>gdb</code> and <a href="https://github.com/buserror/simavr">simavr</a> to debug your attiny85 (or other AVR code) without flashing it to a device. In this post, I would like to extend that by looking at how we can automate some aspects of the debugging process.</p>
 
 <h2 id="sending-commands-to-gdb">Sending commands to gdb</h2>
 
@@ -228,7 +228,7 @@ define wait_for
 end
 </code></pre>
 
-<p>The <code>disable 1</code> at the beginning is disabling breakpoint 1, which we assume is the breakpoint created by running <code>b loop</code> as in the <a href="//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/">previous post</a>. We re-enable the breakpoint at the end of the definition.</p>
+<p>The <code>disable 1</code> at the beginning is disabling breakpoint 1, which we assume is the breakpoint created by running <code>b loop</code> as in the <a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/">previous post</a>. We re-enable the breakpoint at the end of the definition.</p>
 
 <p>This takes advantage of the fact that the code in <code>pipower.c</code> is explicitly updating a variable call <code>now</code> with the output of the <code>millis()</code> command, which counts milliseconds since the microprocessor started. We can store the current value of that variable in a <code>gdb</code> variable by using the <code>set</code> command:</p>
 
@@ -556,22 +556,22 @@ main () at ../pipower.c:280
             
               
               
-              <a href="//blog.oddbit.com/tag/attiny85/">attiny85</a>, 
+              <a href="https://blog.oddbit.com/tag/attiny85/">attiny85</a>, 
               
             
               
               
-              <a href="//blog.oddbit.com/tag/avr/">avr</a>, 
+              <a href="https://blog.oddbit.com/tag/avr/">avr</a>, 
               
             
               
               
-              <a href="//blog.oddbit.com/tag/gdb/">gdb</a>, 
+              <a href="https://blog.oddbit.com/tag/gdb/">gdb</a>, 
               
             
               
               
-              <a href="//blog.oddbit.com/tag/simavr/">simavr</a>
+              <a href="https://blog.oddbit.com/tag/simavr/">simavr</a>
               
             
         </p>
@@ -579,7 +579,7 @@ main () at ../pipower.c:280
 
     <div class="share">
         
-            <a class="icon-twitter" href="https://twitter.com/share?text=Debugging%20attiny85%20code%2c%20part%202%3a%20Automating%20GDB%20with%20scripts&url=%2f%2fblog.oddbit.com%2fpost%2f2019-01-22-debugging-attiny-code-pt-2%2f"
+            <a class="icon-twitter" href="https://twitter.com/share?text=Debugging%20attiny85%20code%2c%20part%202%3a%20Automating%20GDB%20with%20scripts&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2019-01-22-debugging-attiny-code-pt-2%2f"
                 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="fa fa-twitter"></i>
                 <span class="hidden">Twitter</span>
@@ -615,7 +615,7 @@ main () at ../pipower.c:280
             <div class="container">
                 <div class="site-title-wrapper">
                     <h1 class="site-title">
-                        <a title="The Odd Bit" href="//blog.oddbit.com/">The Odd Bit</a>
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
                     </h1>
                     <a class="button-square button-jump-top js-jump-top" href="#">
                         <i class="fa fa-angle-up"></i>
@@ -632,14 +632,14 @@ main () at ../pipower.c:280
             </div>
         </footer>
 
-        <script src="//blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
-        <script src="//blog.oddbit.com/js/jquery.fitvids.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
         
         
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         
         
-        <script src="//blog.oddbit.com/js/scripts.js"></script>
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
     </body>
 </html>
 

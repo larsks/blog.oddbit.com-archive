@@ -2,20 +2,20 @@
   <title>markdown on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/markdown/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/markdown/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/markdown/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/markdown/" rel="alternate"></link>
 
   <updated>2012-11-06T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/markdown/</id>
+  <id>https://blog.oddbit.com/tag/markdown/</id>
   
   <entry>
     <title>Converting HTML to Markdown</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/"/>
-    <id>//blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/"/>
+    <id>https://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/</id>
     <published>2012-11-06T00:00:00Z</published>
     <updated>2012-11-06T00:00:00Z</updated>
     <summary type="html">In order to import posts from Blogger into Scriptogr.am I needed to convert all the HTML formatting into Markdown. Thankfully there are a number of tools out there that can help with this task.

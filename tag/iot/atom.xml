@@ -2,20 +2,20 @@
   <title>iot on The Odd Bit</title>
 
   
-  <link rel="self" href="//blog.oddbit.com/tag/iot/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/iot/atom.xml"/>
   
-  <link href="//blog.oddbit.com/tag/iot/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/iot/" rel="alternate"></link>
 
   <updated>2018-03-27T00:00:00Z</updated>
-  <id>//blog.oddbit.com/tag/iot/</id>
+  <id>https://blog.oddbit.com/tag/iot/</id>
   
   <entry>
     <title>Multiple 1-Wire Buses on the Raspberry Pi</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="//blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/"/>
-    <id>//blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/"/>
+    <id>https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</id>
     <published>2018-03-27T00:00:00Z</published>
     <updated>2018-03-27T00:00:00Z</updated>
     <summary type="html">The DS18B20 is a popular temperature sensor that uses the 1-Wire protocol for communication. Recent versions of the Linux kernel include a kernel driver for this protocol, making it relatively convenient to connect one or more of these devices to a Raspberry Pi or similar device. 1-Wire devices can be daisy chained, so it is possible to connect several devices to your Pi using only a single GPIO pin, and you&amp;rsquo;ll find many articles out there that describe how to do so.</summary>

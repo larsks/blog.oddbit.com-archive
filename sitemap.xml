@@ -3,1970 +3,1970 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</loc>
+    <loc>https://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-05-07-new-comment-system/</loc>
+    <loc>https://blog.oddbit.com/post/2019-05-07-new-comment-system/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/</loc>
-    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tags/</loc>
+    <loc>https://blog.oddbit.com/post/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/</loc>
+    <loc>https://blog.oddbit.com/tags/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/administrivia/</loc>
+    <loc>https://blog.oddbit.com/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/comments/</loc>
+    <loc>https://blog.oddbit.com/tag/administrivia/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/disqus/</loc>
+    <loc>https://blog.oddbit.com/tag/comments/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/github/</loc>
+    <loc>https://blog.oddbit.com/tag/disqus/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/python/</loc>
+    <loc>https://blog.oddbit.com/tag/github/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/stackexchange/</loc>
+    <loc>https://blog.oddbit.com/tag/python/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/utterances/</loc>
+    <loc>https://blog.oddbit.com/tag/stackexchange/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-05-06-new-static-site-generator/</loc>
+    <loc>https://blog.oddbit.com/tag/utterances/</loc>
+    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2019-05-06-new-static-site-generator/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/</loc>
+    <loc>https://blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/ansible/</loc>
-    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/pull-request/</loc>
+    <loc>https://blog.oddbit.com/tag/ansible/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-04-25-writing-ansible-filter-plugins/</loc>
+    <loc>https://blog.oddbit.com/tag/pull-request/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2019-04-25-writing-ansible-filter-plugins/</loc>
     <lastmod>2019-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/</loc>
+    <loc>https://blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/</loc>
     <lastmod>2019-02-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/docker/</loc>
-    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/secrets/</loc>
+    <loc>https://blog.oddbit.com/tag/docker/</loc>
     <lastmod>2019-02-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</loc>
+    <loc>https://blog.oddbit.com/tag/secrets/</loc>
+    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</loc>
     <lastmod>2019-02-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/avr/</loc>
+    <loc>https://blog.oddbit.com/tag/avr/</loc>
     <lastmod>2019-02-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/gcc/</loc>
+    <loc>https://blog.oddbit.com/tag/gcc/</loc>
     <lastmod>2019-02-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-02-01-atomicblock-magic-in-avrlibc/</loc>
+    <loc>https://blog.oddbit.com/post/2019-02-01-atomicblock-magic-in-avrlibc/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</loc>
+    <loc>https://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</loc>
     <lastmod>2019-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-01-28-losing-malloc/</loc>
+    <loc>https://blog.oddbit.com/post/2019-01-28-losing-malloc/</loc>
     <lastmod>2019-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/attiny85/</loc>
-    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/avr-gcc/</loc>
+    <loc>https://blog.oddbit.com/tag/attiny85/</loc>
     <lastmod>2019-01-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/malloc/</loc>
+    <loc>https://blog.oddbit.com/tag/avr-gcc/</loc>
     <lastmod>2019-01-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</loc>
+    <loc>https://blog.oddbit.com/tag/malloc/</loc>
+    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</loc>
     <lastmod>2019-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</loc>
+    <loc>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</loc>
     <lastmod>2019-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</loc>
+    <loc>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</loc>
     <lastmod>2019-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/gdb/</loc>
+    <loc>https://blog.oddbit.com/tag/gdb/</loc>
     <lastmod>2019-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/simavr/</loc>
+    <loc>https://blog.oddbit.com/tag/simavr/</loc>
     <lastmod>2019-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</loc>
+    <loc>https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</loc>
     <lastmod>2019-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/arduino/</loc>
-    <lastmod>2019-01-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/raspberrypi/</loc>
+    <loc>https://blog.oddbit.com/tag/arduino/</loc>
     <lastmod>2019-01-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</loc>
+    <loc>https://blog.oddbit.com/tag/raspberrypi/</loc>
+    <lastmod>2019-01-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</loc>
     <lastmod>2018-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</loc>
+    <loc>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</loc>
     <lastmod>2018-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/bitwarden/</loc>
+    <loc>https://blog.oddbit.com/tag/bitwarden/</loc>
     <lastmod>2018-10-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/security/</loc>
+    <loc>https://blog.oddbit.com/tag/security/</loc>
     <lastmod>2018-10-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/usb/</loc>
+    <loc>https://blog.oddbit.com/tag/usb/</loc>
     <lastmod>2018-10-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-06-14-configuring-a-static-address-f/</loc>
+    <loc>https://blog.oddbit.com/post/2018-06-14-configuring-a-static-address-f/</loc>
     <lastmod>2018-06-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/networking/</loc>
+    <loc>https://blog.oddbit.com/tag/networking/</loc>
     <lastmod>2018-06-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-05-03-using-a-tm-led-module-with-cir/</loc>
+    <loc>https://blog.oddbit.com/post/2018-05-03-using-a-tm-led-module-with-cir/</loc>
     <lastmod>2018-05-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/adafruit/</loc>
-    <lastmod>2018-05-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/circuitpython/</loc>
+    <loc>https://blog.oddbit.com/tag/adafruit/</loc>
     <lastmod>2018-05-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/esp8266/</loc>
+    <loc>https://blog.oddbit.com/tag/circuitpython/</loc>
     <lastmod>2018-05-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/micropython/</loc>
+    <loc>https://blog.oddbit.com/tag/esp8266/</loc>
     <lastmod>2018-05-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</loc>
+    <loc>https://blog.oddbit.com/tag/micropython/</loc>
+    <lastmod>2018-05-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/hardware/</loc>
-    <lastmod>2018-03-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/iot/</loc>
+    <loc>https://blog.oddbit.com/tag/hardware/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/raspiberrypi/</loc>
+    <loc>https://blog.oddbit.com/tag/iot/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/</loc>
+    <loc>https://blog.oddbit.com/tag/raspiberrypi/</loc>
+    <lastmod>2018-03-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/</loc>
     <lastmod>2018-03-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-02-27-listening-for-connections-on-a/</loc>
+    <loc>https://blog.oddbit.com/post/2018-02-27-listening-for-connections-on-a/</loc>
     <lastmod>2018-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/</loc>
+    <loc>https://blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/</loc>
     <lastmod>2018-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/gnocchi/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/metrics/</loc>
+    <loc>https://blog.oddbit.com/tag/gnocchi/</loc>
     <lastmod>2018-02-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/openstack/</loc>
+    <loc>https://blog.oddbit.com/tag/metrics/</loc>
     <lastmod>2018-02-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</loc>
+    <loc>https://blog.oddbit.com/tag/openstack/</loc>
+    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</loc>
     <lastmod>2018-02-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/iptables/</loc>
-    <lastmod>2018-02-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/shell/</loc>
+    <loc>https://blog.oddbit.com/tag/iptables/</loc>
     <lastmod>2018-02-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-01-26-administrivia/</loc>
+    <loc>https://blog.oddbit.com/tag/shell/</loc>
+    <lastmod>2018-02-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2018-01-26-administrivia/</loc>
     <lastmod>2018-01-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</loc>
+    <loc>https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</loc>
     <lastmod>2018-01-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/devicemapper/</loc>
-    <lastmod>2018-01-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/storage/</loc>
+    <loc>https://blog.oddbit.com/tag/devicemapper/</loc>
     <lastmod>2018-01-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/</loc>
+    <loc>https://blog.oddbit.com/tag/storage/</loc>
+    <lastmod>2018-01-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2017-09-26-some-notes-on-pwm-on-the-raspberry-pi/</loc>
+    <loc>https://blog.oddbit.com/post/2017-09-26-some-notes-on-pwm-on-the-raspberry-pi/</loc>
     <lastmod>2017-09-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/pwm/</loc>
+    <loc>https://blog.oddbit.com/tag/pwm/</loc>
     <lastmod>2017-09-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</loc>
+    <loc>https://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</loc>
     <lastmod>2017-08-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/ansible-assertive/</loc>
+    <loc>https://blog.oddbit.com/tag/ansible-assertive/</loc>
     <lastmod>2017-08-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2017-07-07-better-bulk-filtering-for-gmail/</loc>
+    <loc>https://blog.oddbit.com/post/2017-07-07-better-bulk-filtering-for-gmail/</loc>
     <lastmod>2017-07-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/gmail/</loc>
+    <loc>https://blog.oddbit.com/tag/gmail/</loc>
     <lastmod>2017-07-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</loc>
+    <loc>https://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</loc>
     <lastmod>2017-06-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/logging/</loc>
+    <loc>https://blog.oddbit.com/tag/logging/</loc>
     <lastmod>2017-06-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2017-05-25-faa-cannot-require-drone-registration/</loc>
+    <loc>https://blog.oddbit.com/post/2017-05-25-faa-cannot-require-drone-registration/</loc>
     <lastmod>2017-05-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/faa/</loc>
-    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/uav/</loc>
+    <loc>https://blog.oddbit.com/tag/faa/</loc>
     <lastmod>2017-05-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</loc>
+    <loc>https://blog.oddbit.com/tag/uav/</loc>
+    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</loc>
     <lastmod>2017-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/gerrit/</loc>
+    <loc>https://blog.oddbit.com/tag/gerrit/</loc>
     <lastmod>2017-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/git/</loc>
+    <loc>https://blog.oddbit.com/tag/git/</loc>
     <lastmod>2017-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</loc>
+    <loc>https://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</loc>
     <lastmod>2016-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/heat/</loc>
-    <lastmod>2016-08-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/hot/</loc>
+    <loc>https://blog.oddbit.com/tag/heat/</loc>
     <lastmod>2016-08-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/yaql/</loc>
+    <loc>https://blog.oddbit.com/tag/hot/</loc>
     <lastmod>2016-08-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</loc>
+    <loc>https://blog.oddbit.com/tag/yaql/</loc>
+    <lastmod>2016-08-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</loc>
     <lastmod>2016-05-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/openvswitch/</loc>
-    <lastmod>2016-05-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/tripleo/</loc>
+    <loc>https://blog.oddbit.com/tag/openvswitch/</loc>
     <lastmod>2016-05-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</loc>
+    <loc>https://blog.oddbit.com/tag/tripleo/</loc>
+    <lastmod>2016-05-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/</loc>
     <lastmod>2016-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</loc>
+    <loc>https://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</loc>
     <lastmod>2016-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/</loc>
+    <loc>https://blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/</loc>
     <lastmod>2016-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/gruf/</loc>
+    <loc>https://blog.oddbit.com/tag/gruf/</loc>
     <lastmod>2016-02-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/rdo/</loc>
+    <loc>https://blog.oddbit.com/tag/rdo/</loc>
     <lastmod>2016-02-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</loc>
+    <loc>https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</loc>
     <lastmod>2016-02-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</loc>
+    <loc>https://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</loc>
     <lastmod>2016-02-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/systemd/</loc>
+    <loc>https://blog.oddbit.com/tag/systemd/</loc>
     <lastmod>2016-02-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</loc>
+    <loc>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</loc>
     <lastmod>2016-02-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</loc>
+    <loc>https://blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</loc>
     <lastmod>2016-02-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/containers/</loc>
-    <lastmod>2016-02-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/qemu/</loc>
+    <loc>https://blog.oddbit.com/tag/containers/</loc>
     <lastmod>2016-02-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/</loc>
+    <loc>https://blog.oddbit.com/tag/qemu/</loc>
+    <lastmod>2016-02-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/</loc>
     <lastmod>2015-11-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/fedora/</loc>
-    <lastmod>2015-11-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/gis/</loc>
+    <loc>https://blog.oddbit.com/tag/fedora/</loc>
     <lastmod>2015-11-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</loc>
+    <loc>https://blog.oddbit.com/tag/gis/</loc>
+    <lastmod>2015-11-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</loc>
     <lastmod>2015-10-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/ansible_20_series/</loc>
+    <loc>https://blog.oddbit.com/tag/ansible_20_series/</loc>
     <lastmod>2015-10-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-10-19-automatic-git-cache/</loc>
+    <loc>https://blog.oddbit.com/post/2015-10-19-automatic-git-cache/</loc>
     <lastmod>2015-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/</loc>
+    <loc>https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/</loc>
     <lastmod>2015-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</loc>
+    <loc>https://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</loc>
     <lastmod>2015-10-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</loc>
+    <loc>https://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</loc>
     <lastmod>2015-10-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/</loc>
+    <loc>https://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/</loc>
     <lastmod>2015-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/atomic/</loc>
+    <loc>https://blog.oddbit.com/tag/atomic/</loc>
     <lastmod>2015-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/</loc>
+    <loc>https://blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/</loc>
     <lastmod>2015-09-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/cinder/</loc>
+    <loc>https://blog.oddbit.com/tag/cinder/</loc>
     <lastmod>2015-09-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</loc>
+    <loc>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</loc>
     <lastmod>2015-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/neutron/</loc>
+    <loc>https://blog.oddbit.com/tag/neutron/</loc>
     <lastmod>2015-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</loc>
+    <loc>https://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</loc>
     <lastmod>2015-07-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/rant/</loc>
+    <loc>https://blog.oddbit.com/tag/rant/</loc>
     <lastmod>2015-07-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/</loc>
+    <loc>https://blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/</loc>
     <lastmod>2015-07-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/kerberos/</loc>
-    <lastmod>2015-07-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/sssd/</loc>
+    <loc>https://blog.oddbit.com/tag/kerberos/</loc>
     <lastmod>2015-07-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</loc>
+    <loc>https://blog.oddbit.com/tag/sssd/</loc>
+    <lastmod>2015-07-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</loc>
     <lastmod>2015-06-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/cloud-init/</loc>
+    <loc>https://blog.oddbit.com/tag/cloud-init/</loc>
     <lastmod>2015-06-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/nova/</loc>
+    <loc>https://blog.oddbit.com/tag/nova/</loc>
     <lastmod>2015-06-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</loc>
+    <loc>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</loc>
     <lastmod>2015-06-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/kubernetes/</loc>
+    <loc>https://blog.oddbit.com/tag/kubernetes/</loc>
     <lastmod>2015-06-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-04-27-suggestions-for-the-docker-maintainer-directive/</loc>
+    <loc>https://blog.oddbit.com/post/2015-04-27-suggestions-for-the-docker-maintainer-directive/</loc>
     <lastmod>2015-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</loc>
+    <loc>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</loc>
     <lastmod>2015-04-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/hack/</loc>
+    <loc>https://blog.oddbit.com/tag/hack/</loc>
     <lastmod>2015-04-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/</loc>
+    <loc>https://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/</loc>
     <lastmod>2015-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/</loc>
+    <loc>https://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/</loc>
     <lastmod>2015-03-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-03-08-converting-hexadecimal-ip-addresses-to-dotted-quads-with-bas/</loc>
+    <loc>https://blog.oddbit.com/post/2015-03-08-converting-hexadecimal-ip-addresses-to-dotted-quads-with-bas/</loc>
     <lastmod>2015-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/bash/</loc>
+    <loc>https://blog.oddbit.com/tag/bash/</loc>
     <lastmod>2015-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-02-24-visualizing-pacemaker-constraints/</loc>
+    <loc>https://blog.oddbit.com/post/2015-02-24-visualizing-pacemaker-constraints/</loc>
     <lastmod>2015-02-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/pacemaker/</loc>
-    <lastmod>2015-02-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/visualization/</loc>
+    <loc>https://blog.oddbit.com/tag/pacemaker/</loc>
     <lastmod>2015-02-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</loc>
+    <loc>https://blog.oddbit.com/tag/visualization/</loc>
+    <lastmod>2015-02-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</loc>
     <lastmod>2015-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/xml/</loc>
+    <loc>https://blog.oddbit.com/tag/xml/</loc>
     <lastmod>2015-02-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/xpath/</loc>
+    <loc>https://blog.oddbit.com/tag/xpath/</loc>
     <lastmod>2015-02-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-02-13-unpacking-docker-images/</loc>
+    <loc>https://blog.oddbit.com/post/2015-02-13-unpacking-docker-images/</loc>
     <lastmod>2015-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/</loc>
+    <loc>https://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/</loc>
     <lastmod>2015-02-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/devstack/</loc>
+    <loc>https://blog.oddbit.com/tag/devstack/</loc>
     <lastmod>2015-02-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/</loc>
+    <loc>https://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/</loc>
     <lastmod>2015-02-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</loc>
+    <loc>https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</loc>
     <lastmod>2015-02-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/</loc>
+    <loc>https://blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/</loc>
     <lastmod>2015-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/</loc>
+    <loc>https://blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/</loc>
     <lastmod>2015-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</loc>
+    <loc>https://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</loc>
     <lastmod>2015-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/namespaces/</loc>
+    <loc>https://blog.oddbit.com/tag/namespaces/</loc>
     <lastmod>2015-01-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</loc>
+    <loc>https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</loc>
     <lastmod>2015-01-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</loc>
+    <loc>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</loc>
     <lastmod>2015-01-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</loc>
+    <loc>https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</loc>
     <lastmod>2014-12-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</loc>
+    <loc>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</loc>
     <lastmod>2014-12-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/</loc>
+    <loc>https://blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/</loc>
     <lastmod>2014-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</loc>
+    <loc>https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</loc>
     <lastmod>2014-11-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</loc>
+    <loc>https://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</loc>
     <lastmod>2014-11-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/windows/</loc>
+    <loc>https://blog.oddbit.com/tag/windows/</loc>
     <lastmod>2014-11-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</loc>
+    <loc>https://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</loc>
     <lastmod>2014-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/puppet/</loc>
+    <loc>https://blog.oddbit.com/tag/puppet/</loc>
     <lastmod>2014-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/</loc>
+    <loc>https://blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/</loc>
     <lastmod>2014-10-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/</loc>
+    <loc>https://blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/</loc>
     <lastmod>2014-09-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/</loc>
+    <loc>https://blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/</loc>
     <lastmod>2014-09-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/cli/</loc>
+    <loc>https://blog.oddbit.com/tag/cli/</loc>
     <lastmod>2014-09-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-09-05-heat-hangout/</loc>
+    <loc>https://blog.oddbit.com/post/2014-09-05-heat-hangout/</loc>
     <lastmod>2014-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/</loc>
+    <loc>https://blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/</loc>
     <lastmod>2014-09-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</loc>
+    <loc>https://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</loc>
     <lastmod>2014-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-08-31-docker-contain-doc/</loc>
+    <loc>https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</loc>
     <lastmod>2014-08-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</loc>
+    <loc>https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</loc>
     <lastmod>2014-08-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/</loc>
+    <loc>https://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/</loc>
     <lastmod>2014-08-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/orchestration/</loc>
+    <loc>https://blog.oddbit.com/tag/orchestration/</loc>
     <lastmod>2014-08-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/</loc>
+    <loc>https://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/</loc>
     <lastmod>2014-08-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/cache/</loc>
+    <loc>https://blog.oddbit.com/tag/cache/</loc>
     <lastmod>2014-08-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-08-16-lvcache-a-tool-for-managing-lv/</loc>
+    <loc>https://blog.oddbit.com/post/2014-08-16-lvcache-a-tool-for-managing-lv/</loc>
     <lastmod>2014-08-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/lvm/</loc>
+    <loc>https://blog.oddbit.com/tag/lvm/</loc>
     <lastmod>2014-08-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</loc>
+    <loc>https://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</loc>
     <lastmod>2014-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/gpio/</loc>
+    <loc>https://blog.oddbit.com/tag/gpio/</loc>
     <lastmod>2014-07-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/</loc>
+    <loc>https://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/</loc>
     <lastmod>2014-07-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</loc>
+    <loc>https://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</loc>
     <lastmod>2014-07-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/kernel/</loc>
+    <loc>https://blog.oddbit.com/tag/kernel/</loc>
     <lastmod>2014-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/</loc>
+    <loc>https://blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/</loc>
     <lastmod>2014-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/</loc>
+    <loc>https://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/</loc>
     <lastmod>2014-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</loc>
+    <loc>https://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</loc>
     <lastmod>2014-05-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</loc>
+    <loc>https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</loc>
     <lastmod>2014-05-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</loc>
+    <loc>https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</loc>
     <lastmod>2014-05-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/</loc>
+    <loc>https://blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/</loc>
     <lastmod>2014-05-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/terminal/</loc>
-    <lastmod>2014-05-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/tools/</loc>
+    <loc>https://blog.oddbit.com/tag/terminal/</loc>
     <lastmod>2014-05-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</loc>
+    <loc>https://blog.oddbit.com/tag/tools/</loc>
+    <lastmod>2014-05-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</loc>
     <lastmod>2014-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/</loc>
+    <loc>https://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/</loc>
     <lastmod>2014-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/networkmanager/</loc>
+    <loc>https://blog.oddbit.com/tag/networkmanager/</loc>
     <lastmod>2014-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/firewalld/</loc>
+    <loc>https://blog.oddbit.com/tag/firewalld/</loc>
     <lastmod>2014-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</loc>
+    <loc>https://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/</loc>
     <lastmod>2014-05-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/</loc>
+    <loc>https://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/</loc>
     <lastmod>2014-04-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-02-27-multinode/</loc>
+    <loc>https://blog.oddbit.com/post/2014-02-27-multinode/</loc>
     <lastmod>2014-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/hangout/</loc>
+    <loc>https://blog.oddbit.com/tag/hangout/</loc>
     <lastmod>2014-02-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</loc>
+    <loc>https://blog.oddbit.com/post/2014-01-19-show-ovs-externalids/</loc>
     <lastmod>2014-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</loc>
+    <loc>https://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</loc>
     <lastmod>2014-01-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/tricks/</loc>
+    <loc>https://blog.oddbit.com/tag/tricks/</loc>
     <lastmod>2014-01-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/</loc>
+    <loc>https://blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/</loc>
     <lastmod>2014-01-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2014-01-13-rdo-bug-triage/</loc>
+    <loc>https://blog.oddbit.com/post/2014-01-13-rdo-bug-triage/</loc>
     <lastmod>2014-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/redhat/</loc>
+    <loc>https://blog.oddbit.com/tag/redhat/</loc>
     <lastmod>2014-01-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</loc>
+    <loc>https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</loc>
     <lastmod>2013-12-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</loc>
+    <loc>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</loc>
     <lastmod>2013-12-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-11-28-a-python-interface-to-signalfd/</loc>
+    <loc>https://blog.oddbit.com/post/2013-11-28-a-python-interface-to-signalfd/</loc>
     <lastmod>2013-11-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</loc>
+    <loc>https://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</loc>
     <lastmod>2013-11-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-11-23-openshift-socket-pro/</loc>
+    <loc>https://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/</loc>
     <lastmod>2013-11-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/bottle/</loc>
-    <lastmod>2013-11-23T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/gevent/</loc>
+    <loc>https://blog.oddbit.com/tag/bottle/</loc>
     <lastmod>2013-11-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/javascript/</loc>
+    <loc>https://blog.oddbit.com/tag/gevent/</loc>
     <lastmod>2013-11-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/jquery/</loc>
+    <loc>https://blog.oddbit.com/tag/javascript/</loc>
     <lastmod>2013-11-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/openshift/</loc>
+    <loc>https://blog.oddbit.com/tag/jquery/</loc>
     <lastmod>2013-11-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/zeromq/</loc>
+    <loc>https://blog.oddbit.com/tag/openshift/</loc>
     <lastmod>2013-11-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-11-22-a-unified-cli-for-op/</loc>
+    <loc>https://blog.oddbit.com/tag/zeromq/</loc>
+    <lastmod>2013-11-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2013-11-22-a-unified-cli-for-op/</loc>
     <lastmod>2013-11-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</loc>
+    <loc>https://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</loc>
     <lastmod>2013-11-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/blog/</loc>
+    <loc>https://blog.oddbit.com/tag/blog/</loc>
     <lastmod>2013-11-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-11-18-enabled-comments/</loc>
+    <loc>https://blog.oddbit.com/post/2013-11-18-enabled-comments/</loc>
     <lastmod>2013-11-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/json/</loc>
+    <loc>https://blog.oddbit.com/tag/json/</loc>
     <lastmod>2013-11-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-11-17-json-tools/</loc>
+    <loc>https://blog.oddbit.com/post/2013-11-17-json-tools/</loc>
     <lastmod>2013-11-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/</loc>
+    <loc>https://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/</loc>
     <lastmod>2013-11-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/quantum/</loc>
+    <loc>https://blog.oddbit.com/tag/quantum/</loc>
     <lastmod>2013-11-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-11-13-moving-to-github/</loc>
+    <loc>https://blog.oddbit.com/post/2013-11-13-moving-to-github/</loc>
     <lastmod>2013-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-11-12-a-random-collection/</loc>
+    <loc>https://blog.oddbit.com/post/2013-11-12-a-random-collection/</loc>
     <lastmod>2013-11-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-10-28-why-does-the-neutron/</loc>
+    <loc>https://blog.oddbit.com/post/2013-10-28-why-does-the-neutron/</loc>
     <lastmod>2013-10-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</loc>
+    <loc>https://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</loc>
     <lastmod>2013-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/libvirt/</loc>
-    <lastmod>2013-10-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/virtualization/</loc>
+    <loc>https://blog.oddbit.com/tag/libvirt/</loc>
     <lastmod>2013-10-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/</loc>
+    <loc>https://blog.oddbit.com/tag/virtualization/</loc>
+    <lastmod>2013-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/</loc>
     <lastmod>2013-08-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/piface/</loc>
+    <loc>https://blog.oddbit.com/tag/piface/</loc>
     <lastmod>2013-08-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-07-22-generating-a-membero/</loc>
+    <loc>https://blog.oddbit.com/post/2013-07-22-generating-a-membero/</loc>
     <lastmod>2013-07-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/ldap/</loc>
+    <loc>https://blog.oddbit.com/tag/ldap/</loc>
     <lastmod>2013-07-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-07-16-split-concatenated-c/</loc>
+    <loc>https://blog.oddbit.com/post/2013-07-16-split-concatenated-c/</loc>
     <lastmod>2013-07-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/awk/</loc>
+    <loc>https://blog.oddbit.com/tag/awk/</loc>
     <lastmod>2013-07-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/</loc>
+    <loc>https://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/</loc>
     <lastmod>2013-04-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/archlinux/</loc>
-    <lastmod>2013-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/kvm/</loc>
+    <loc>https://blog.oddbit.com/tag/archlinux/</loc>
     <lastmod>2013-04-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</loc>
+    <loc>https://blog.oddbit.com/tag/kvm/</loc>
+    <lastmod>2013-04-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</loc>
     <lastmod>2013-03-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/i2c/</loc>
+    <loc>https://blog.oddbit.com/tag/i2c/</loc>
     <lastmod>2013-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/</loc>
+    <loc>https://blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/</loc>
     <lastmod>2013-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-03-07-controlling-a-servo/</loc>
+    <loc>https://blog.oddbit.com/post/2013-03-07-controlling-a-servo/</loc>
     <lastmod>2013-03-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/</loc>
+    <loc>https://blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/</loc>
     <lastmod>2013-02-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-02-21-ucarp-unit-for-systemd/</loc>
+    <loc>https://blog.oddbit.com/post/2013-02-21-ucarp-unit-for-systemd/</loc>
     <lastmod>2013-02-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/</loc>
+    <loc>https://blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/</loc>
     <lastmod>2013-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-01-28-lxc-cant-remove-cgroup/</loc>
+    <loc>https://blog.oddbit.com/post/2013-01-28-lxc-cant-remove-cgroup/</loc>
     <lastmod>2013-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/</loc>
+    <loc>https://blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/</loc>
     <lastmod>2013-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-01-28-net-with-no-net/</loc>
+    <loc>https://blog.oddbit.com/post/2013-01-28-net-with-no-net/</loc>
     <lastmod>2013-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2013-01-25-archlinux-second-look/</loc>
+    <loc>https://blog.oddbit.com/post/2013-01-25-archlinux-second-look/</loc>
     <lastmod>2013-01-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/</loc>
+    <loc>https://blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/</loc>
     <lastmod>2012-12-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-12-15-get-vm-ip/</loc>
+    <loc>https://blog.oddbit.com/post/2012-12-15-get-vm-ip/</loc>
     <lastmod>2012-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-12-10-archlinux/</loc>
+    <loc>https://blog.oddbit.com/post/2012-12-10-archlinux/</loc>
     <lastmod>2012-12-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-11-27-avahi-service-discovery/</loc>
+    <loc>https://blog.oddbit.com/post/2012-11-27-avahi-service-discovery/</loc>
     <lastmod>2012-11-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-11-26-using-oracle-jdk/</loc>
+    <loc>https://blog.oddbit.com/post/2012-11-26-using-oracle-jdk/</loc>
     <lastmod>2012-11-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-11-08-popfile-document-classification/</loc>
+    <loc>https://blog.oddbit.com/post/2012-11-08-popfile-document-classification/</loc>
     <lastmod>2012-11-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/analytics/</loc>
-    <lastmod>2012-11-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/bayes/</loc>
+    <loc>https://blog.oddbit.com/tag/analytics/</loc>
     <lastmod>2012-11-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/</loc>
+    <loc>https://blog.oddbit.com/tag/bayes/</loc>
+    <lastmod>2012-11-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/</loc>
     <lastmod>2012-11-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-11-06-moving-from-blogger/</loc>
+    <loc>https://blog.oddbit.com/post/2012-11-06-moving-from-blogger/</loc>
     <lastmod>2012-11-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/markdown/</loc>
-    <lastmod>2012-11-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/meta/</loc>
+    <loc>https://blog.oddbit.com/tag/markdown/</loc>
     <lastmod>2012-11-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-11-05-posting-via-api/</loc>
+    <loc>https://blog.oddbit.com/tag/meta/</loc>
+    <lastmod>2012-11-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2012-11-05-posting-via-api/</loc>
     <lastmod>2012-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-11-05-fedora-private-tmp/</loc>
+    <loc>https://blog.oddbit.com/post/2012-11-05-fedora-private-tmp/</loc>
     <lastmod>2012-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/api/</loc>
+    <loc>https://blog.oddbit.com/tag/api/</loc>
     <lastmod>2012-11-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/scriptogr.am/</loc>
+    <loc>https://blog.oddbit.com/tag/scriptogr.am/</loc>
     <lastmod>2012-11-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</loc>
+    <loc>https://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/</loc>
     <lastmod>2012-11-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</loc>
+    <loc>https://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/</loc>
     <lastmod>2012-11-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</loc>
+    <loc>https://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</loc>
     <lastmod>2012-11-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/passwords/</loc>
-    <lastmod>2012-11-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/powershell/</loc>
+    <loc>https://blog.oddbit.com/tag/passwords/</loc>
     <lastmod>2012-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</loc>
+    <loc>https://blog.oddbit.com/tag/powershell/</loc>
+    <lastmod>2012-11-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</loc>
     <lastmod>2012-10-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</loc>
+    <loc>https://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</loc>
     <lastmod>2012-09-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-08-09-markdown-email/</loc>
+    <loc>https://blog.oddbit.com/post/2012-08-09-markdown-email/</loc>
     <lastmod>2012-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-07-30-openstack-idle-connection-timeouts/</loc>
+    <loc>https://blog.oddbit.com/post/2012-07-30-openstack-idle-connection-timeouts/</loc>
     <lastmod>2012-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</loc>
+    <loc>https://blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/</loc>
     <lastmod>2012-07-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-02-22-capturing-envoy-data/</loc>
+    <loc>https://blog.oddbit.com/post/2012-02-22-capturing-envoy-data/</loc>
     <lastmod>2012-02-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2012-02-13-enphase-envoy-xml-data-format/</loc>
+    <loc>https://blog.oddbit.com/post/2012-02-13-enphase-envoy-xml-data-format/</loc>
     <lastmod>2012-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2011-12-26-simple-rate-limiting/</loc>
+    <loc>https://blog.oddbit.com/post/2011-12-26-simple-rate-limiting/</loc>
     <lastmod>2011-12-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/linux/</loc>
+    <loc>https://blog.oddbit.com/tag/linux/</loc>
     <lastmod>2011-12-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/</loc>
+    <loc>https://blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/</loc>
     <lastmod>2011-08-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2011-07-26-fixing-rpm-with-evil-magic/</loc>
+    <loc>https://blog.oddbit.com/post/2011-07-26-fixing-rpm-with-evil-magic/</loc>
     <lastmod>2011-07-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/rpm/</loc>
+    <loc>https://blog.oddbit.com/tag/rpm/</loc>
     <lastmod>2011-07-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</loc>
+    <loc>https://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</loc>
     <lastmod>2011-05-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/backup/</loc>
-    <lastmod>2011-05-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/crashplan/</loc>
+    <loc>https://blog.oddbit.com/tag/backup/</loc>
     <lastmod>2011-05-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/freebsd/</loc>
+    <loc>https://blog.oddbit.com/tag/crashplan/</loc>
     <lastmod>2011-05-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/java/</loc>
+    <loc>https://blog.oddbit.com/tag/freebsd/</loc>
     <lastmod>2011-05-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</loc>
+    <loc>https://blog.oddbit.com/tag/java/</loc>
+    <lastmod>2011-05-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2011-05-09-signing-data-with-ssh-agent/</loc>
     <lastmod>2011-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/cryptography/</loc>
+    <loc>https://blog.oddbit.com/tag/cryptography/</loc>
     <lastmod>2011-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/openssh/</loc>
+    <loc>https://blog.oddbit.com/tag/openssh/</loc>
     <lastmod>2011-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/openssl/</loc>
+    <loc>https://blog.oddbit.com/tag/openssl/</loc>
     <lastmod>2011-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/rsa/</loc>
+    <loc>https://blog.oddbit.com/tag/rsa/</loc>
     <lastmod>2011-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/ssh/</loc>
+    <loc>https://blog.oddbit.com/tag/ssh/</loc>
     <lastmod>2011-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/ssh-agent/</loc>
+    <loc>https://blog.oddbit.com/tag/ssh-agent/</loc>
     <lastmod>2011-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/ssl/</loc>
+    <loc>https://blog.oddbit.com/tag/ssl/</loc>
     <lastmod>2011-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</loc>
+    <loc>https://blog.oddbit.com/post/2011-05-08-converting-openssh-public-keys/</loc>
     <lastmod>2011-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-08-10-python-ctypes-module/</loc>
+    <loc>https://blog.oddbit.com/post/2010-08-10-python-ctypes-module/</loc>
     <lastmod>2010-08-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into-lg-420g/</loc>
+    <loc>https://blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into-lg-420g/</loc>
     <lastmod>2010-08-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/contacts/</loc>
-    <lastmod>2010-08-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/import/</loc>
+    <loc>https://blog.oddbit.com/tag/contacts/</loc>
     <lastmod>2010-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/phone/</loc>
+    <loc>https://blog.oddbit.com/tag/import/</loc>
     <lastmod>2010-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/sync/</loc>
+    <loc>https://blog.oddbit.com/tag/phone/</loc>
     <lastmod>2010-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/vcard/</loc>
+    <loc>https://blog.oddbit.com/tag/sync/</loc>
     <lastmod>2010-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</loc>
+    <loc>https://blog.oddbit.com/tag/vcard/</loc>
+    <lastmod>2010-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</loc>
     <lastmod>2010-07-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/dhcp/</loc>
-    <lastmod>2010-07-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/gpxe/</loc>
+    <loc>https://blog.oddbit.com/tag/dhcp/</loc>
     <lastmod>2010-07-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/</loc>
+    <loc>https://blog.oddbit.com/tag/gpxe/</loc>
+    <lastmod>2010-07-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2010-06-29-linux-kerberos-ad/</loc>
     <lastmod>2010-06-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/active_directory/</loc>
+    <loc>https://blog.oddbit.com/tag/active_directory/</loc>
     <lastmod>2010-06-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</loc>
+    <loc>https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</loc>
     <lastmod>2010-05-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/subversion/</loc>
-    <lastmod>2010-05-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/vcs/</loc>
+    <loc>https://blog.oddbit.com/tag/subversion/</loc>
     <lastmod>2010-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</loc>
+    <loc>https://blog.oddbit.com/tag/vcs/</loc>
+    <lastmod>2010-05-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</loc>
     <lastmod>2010-02-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/balance/</loc>
+    <loc>https://blog.oddbit.com/tag/balance/</loc>
     <lastmod>2010-02-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/ha/</loc>
+    <loc>https://blog.oddbit.com/tag/ha/</loc>
     <lastmod>2010-02-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/howto/</loc>
+    <loc>https://blog.oddbit.com/tag/howto/</loc>
     <lastmod>2010-02-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/proxy/</loc>
+    <loc>https://blog.oddbit.com/tag/proxy/</loc>
     <lastmod>2010-02-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/stunnel/</loc>
+    <loc>https://blog.oddbit.com/tag/stunnel/</loc>
     <lastmod>2010-02-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-02-19-apache-virtual-host-statistics/</loc>
+    <loc>https://blog.oddbit.com/post/2010-02-19-apache-virtual-host-statistics/</loc>
     <lastmod>2010-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/apache/</loc>
-    <lastmod>2010-02-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/release/</loc>
-    <lastmod>2010-02-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/software/</loc>
+    <loc>https://blog.oddbit.com/tag/apache/</loc>
     <lastmod>2010-02-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</loc>
+    <loc>https://blog.oddbit.com/tag/release/</loc>
+    <lastmod>2010-02-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/software/</loc>
+    <lastmod>2010-02-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</loc>
     <lastmod>2010-02-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/openldap/</loc>
+    <loc>https://blog.oddbit.com/tag/openldap/</loc>
     <lastmod>2010-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/</loc>
+    <loc>https://blog.oddbit.com/post/2010-02-10-filtering-blogger-feeds/</loc>
     <lastmod>2010-02-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/atom/</loc>
-    <lastmod>2010-02-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/blogger/</loc>
+    <loc>https://blog.oddbit.com/tag/atom/</loc>
     <lastmod>2010-02-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/filter/</loc>
+    <loc>https://blog.oddbit.com/tag/blogger/</loc>
     <lastmod>2010-02-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/pipes/</loc>
+    <loc>https://blog.oddbit.com/tag/filter/</loc>
     <lastmod>2010-02-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/rss/</loc>
+    <loc>https://blog.oddbit.com/tag/pipes/</loc>
     <lastmod>2010-02-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-02-08-funny-usage-message/</loc>
+    <loc>https://blog.oddbit.com/tag/rss/</loc>
+    <lastmod>2010-02-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2010-02-08-funny-usage-message/</loc>
     <lastmod>2010-02-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/android/</loc>
-    <lastmod>2010-02-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/development/</loc>
+    <loc>https://blog.oddbit.com/tag/android/</loc>
     <lastmod>2010-02-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/</loc>
+    <loc>https://blog.oddbit.com/tag/development/</loc>
+    <lastmod>2010-02-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2010-02-07-mbta-realtime-xml-feed/</loc>
     <lastmod>2010-02-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/bus/</loc>
+    <loc>https://blog.oddbit.com/tag/bus/</loc>
     <lastmod>2010-02-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/gps/</loc>
+    <loc>https://blog.oddbit.com/tag/gps/</loc>
     <lastmod>2010-02-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/location/</loc>
+    <loc>https://blog.oddbit.com/tag/location/</loc>
     <lastmod>2010-02-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/mbta/</loc>
+    <loc>https://blog.oddbit.com/tag/mbta/</loc>
     <lastmod>2010-02-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/transportation/</loc>
+    <loc>https://blog.oddbit.com/tag/transportation/</loc>
     <lastmod>2010-02-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</loc>
+    <loc>https://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</loc>
     <lastmod>2010-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/classification/</loc>
-    <lastmod>2010-02-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/netfilter/</loc>
-    <lastmod>2010-02-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/rfb/</loc>
+    <loc>https://blog.oddbit.com/tag/classification/</loc>
     <lastmod>2010-02-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/vnc/</loc>
+    <loc>https://blog.oddbit.com/tag/netfilter/</loc>
     <lastmod>2010-02-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/</loc>
+    <loc>https://blog.oddbit.com/tag/rfb/</loc>
+    <lastmod>2010-02-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/vnc/</loc>
+    <lastmod>2010-02-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/</loc>
     <lastmod>2010-02-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/groups/</loc>
+    <loc>https://blog.oddbit.com/tag/groups/</loc>
     <lastmod>2010-02-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/nfs/</loc>
+    <loc>https://blog.oddbit.com/tag/nfs/</loc>
     <lastmod>2010-02-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</loc>
+    <loc>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</loc>
     <lastmod>2010-01-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</loc>
+    <loc>https://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</loc>
     <lastmod>2010-01-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-01-29-retrieving-blogger-posts-by-post-id/</loc>
+    <loc>https://blog.oddbit.com/post/2010-01-29-retrieving-blogger-posts-by-post-id/</loc>
     <lastmod>2010-01-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/gdata/</loc>
-    <lastmod>2010-01-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/peertopeer/</loc>
+    <loc>https://blog.oddbit.com/tag/gdata/</loc>
     <lastmod>2010-01-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/svn/</loc>
+    <loc>https://blog.oddbit.com/tag/peertopeer/</loc>
     <lastmod>2010-01-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/upnp/</loc>
+    <loc>https://blog.oddbit.com/tag/svn/</loc>
     <lastmod>2010-01-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/versioncontrol/</loc>
+    <loc>https://blog.oddbit.com/tag/upnp/</loc>
     <lastmod>2010-01-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</loc>
+    <loc>https://blog.oddbit.com/tag/versioncontrol/</loc>
+    <lastmod>2010-01-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</loc>
     <lastmod>2010-01-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/fring/</loc>
-    <lastmod>2010-01-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//blog.oddbit.com/tag/review/</loc>
+    <loc>https://blog.oddbit.com/tag/fring/</loc>
     <lastmod>2010-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/skype/</loc>
+    <loc>https://blog.oddbit.com/tag/review/</loc>
     <lastmod>2010-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/sucks/</loc>
+    <loc>https://blog.oddbit.com/tag/skype/</loc>
     <lastmod>2010-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/tag/voip/</loc>
+    <loc>https://blog.oddbit.com/tag/sucks/</loc>
     <lastmod>2010-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/about/</loc>
+    <loc>https://blog.oddbit.com/tag/voip/</loc>
+    <lastmod>2010-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/about/gpg/</loc>
+    <loc>https://blog.oddbit.com/about/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>//blog.oddbit.com/about/stackoverflow/</loc>
+    <loc>https://blog.oddbit.com/about/gpg/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/about/stackoverflow/</loc>
   </url>
   
 </urlset>
