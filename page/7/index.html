@@ -11,7 +11,9 @@
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -22,7 +24,6 @@
 
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
-<link rel="stylesheet" href="/css/floats.css">
 
         
     </head>
@@ -103,8 +104,13 @@
     <p class="post-stub-summary">
     I&rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
 Check if there are any inactive resources pcs status xml | xmllint --xpath '//resource[@active=&quot;false&quot;]' - &gt;&amp;/dev/null &amp;&amp; echo &quot;There are inactive resources&quot;  This selects any resource (//resource) in the output of pcs status xml that has the attribute active set to false.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -121,8 +127,13 @@ Check if there are any inactive resources pcs status xml | xmllint --xpath '//re
     <p class="post-stub-summary">
     In some ways, the most exciting thing about Docker isn&rsquo;t the ability to start containers. That&rsquo;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
 I was taking a closer at the systemd-nspawn command, which it seems has been developing it&rsquo;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2015-02-13-unpacking-docker-images/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2015-02-13-unpacking-docker-images/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -140,8 +151,13 @@ I was taking a closer at the systemd-nspawn command, which it seems has been dev
     This is a long-form response to this question, and describes how to get the nova-docker driver up running with devstack under Ubuntu 14.04 (Trusty). I wrote a similar post for Fedora 21, although that one was using the RDO Juno packages, while this one is using devstack and the upstream sources.
 Getting started We&rsquo;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
 First, let&rsquo;s install a few prerequisites:
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -158,8 +174,13 @@ First, let&rsquo;s install a few prerequisites:
     <p class="post-stub-summary">
     I have recently started running some &ldquo;real&rdquo; services (that is, &ldquo;services being consumed by someone other than myself&rdquo;) on top of Kubernetes (running on bare metal), which means I suddenly had to confront the question of how to provide external access to Kubernetes hosted services. Kubernetes provides two solutions to this problem, neither of which is particularly attractive out of the box:
  There is a field createExternalLoadBalancer that can be set in a service description.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -177,8 +198,13 @@ First, let&rsquo;s install a few prerequisites:
     This post comes about indirectly by a request on IRC in #rdo for help getting nova-docker installed on Fedora 21. I ran through the process from start to finish and decided to write everything down for posterity.
 Getting started I started with the Fedora 21 Cloud Image, because I&rsquo;m installing onto OpenStack and the cloud images include some features that are useful in this environment.
 We&rsquo;ll be using OpenStack packages from the RDO Juno repository.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -195,8 +221,13 @@ We&rsquo;ll be using OpenStack packages from the RDO Juno repository.
     <p class="post-stub-summary">
     In this post, we&rsquo;ll look at a method for building minimal Docker images for dynamically linked ELF binaries, and then at a tool for automating this process.
 It is tempting, when creating a simple Docker image, to start with one of the images provided by the major distributions. For example, if you need an image that provides tcpdump for use on your Atomic host, you might do something like:
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -212,8 +243,13 @@ It is tempting, when creating a simple Docker image, to start with one of the im
     
     <p class="post-stub-summary">
     I saw a request from a customer float by the other day regarding the ability to filter the XML used to create Nova instances in libvirt. The customer effectively wanted to blacklist a variety of devices (and device types). The consensus seems to be &ldquo;you can&rsquo;t do this right now and upstream is unlikely to accept patches that implement this behavior&rdquo;, but it sounded like an interesting problem, so&hellip;
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -230,8 +266,13 @@ It is tempting, when creating a simple Docker image, to start with one of the im
     <p class="post-stub-summary">
     While working with Docker the other day, I ran into an undesirable interaction between Docker and systemd services that utilize the PrivateTmp directive.
 The PrivateTmp directive, if true, &ldquo;sets up a new file system namespace for the executed processes and mounts private /tmp and /var/tmp directories inside it that is not shared by processes outside of the namespace&rdquo;. This is a great idea from a security perspective, but can cause some unanticipated consequences.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -248,8 +289,13 @@ The PrivateTmp directive, if true, &ldquo;sets up a new file system namespace fo
     <p class="post-stub-summary">
     I regularly use OpenStack on my laptop with libvirt as my hypervisor. I was interested in experimenting with recent versions of the nova-docker driver, but I didn&rsquo;t have a spare system available on which to run the driver, and I use my regular nova-compute service often enough that I didn&rsquo;t want to simply disable it temporarily in favor of nova-docker.
 NB As pointed out by gustavo in the comments, running two neutron-openvswitch-agents on the same host &ndash; as suggested in this article &ndash; is going to lead to nothing but sadness and doom.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -266,8 +312,13 @@ NB As pointed out by gustavo in the comments, running two neutron-openvswitch-ag
     <p class="post-stub-summary">
     I have recently been doing some work with Kubernetes, and wanted to put together a minimal image with which I could test service and pod deployment. Size in this case was critical: I wanted something that would download quickly when initially deployed, because I am often setting up and tearing down Kubernetes as part of my testing (and some of my test environments have poor external bandwidth).
 Building thttpd My go-to minimal webserver is thttpd.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/">(Read more...)</a>
+    </p>
+    
     
 </li>
 

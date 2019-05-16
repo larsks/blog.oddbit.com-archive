@@ -11,7 +11,9 @@
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -22,7 +24,6 @@
 
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
-<link rel="stylesheet" href="/css/floats.css">
 
         
     </head>
@@ -105,8 +106,13 @@
 This tool solves two problems I&rsquo;ve encountered in the past:
  Command line options between different command line clients are sometimes inconsistent.
  The output from the legacy command line tools is not designed to be machine parse-able (and yet people do it anyway).
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-11-22-a-unified-cli-for-op/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2013-11-22-a-unified-cli-for-op/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -122,8 +128,13 @@ This tool solves two problems I&rsquo;ve encountered in the past:
     
     <p class="post-stub-summary">
     I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&rsquo;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&rsquo;s the perfect place to insert generated content that must be kept in sync with posts on the blog.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -139,8 +150,13 @@ This tool solves two problems I&rsquo;ve encountered in the past:
     
     <p class="post-stub-summary">
     I&rsquo;ve enabled blog comments using Disqus. This is something of an experiment, since (a) I&rsquo;m not really happy with how Disqus is handling user registration these days and (b) I don&rsquo;t know that I have the time to moderate anything. But we&rsquo;ll see.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-11-18-enabled-comments/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2013-11-18-enabled-comments/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -158,8 +174,13 @@ This tool solves two problems I&rsquo;ve encountered in the past:
     Interacting with JSON-based APIs from the command line can be difficult, and OpenStack is filled with REST APIs that consume or produce JSON. I&rsquo;ve just put pair of tools for generating and filtering JSON on the command line, called collectively json-tools.
 Both make use of the Python dpath module to populate or filter JSON objects.
 The jsong command generates JSON on stdout. You provide /-delimited paths on the command line to represent the JSON structure.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-11-17-json-tools/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2013-11-17-json-tools/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -177,8 +198,13 @@ The jsong command generates JSON on stdout. You provide /-delimited paths on the
     I originally posted this article on the RDO website.
  The players This document describes the architecture that results from a particular OpenStack configuration, specifically:
  Quantum networking using GRE tunnels; A dedicated network controller; A single instance running on a compute host  Much of the document will be relevant to other configurations, but details will vary based on your choice of layer 2 connectivity, number of running instances, and so forth.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -195,8 +221,13 @@ The jsong command generates JSON on stdout. You provide /-delimited paths on the
     <p class="post-stub-summary">
     This blog has been hosted on scriptogram for the past year or so. Unfortunately, while I like the publish-via-Dropbox mechanism, there have been enough problems recently that I&rsquo;ve finally switched over to using GitHub Pages for hosting. I&rsquo;ve been thinking about doing this for a while, but the things that finally pushed me to make the change were:
  Sync problems that would prevent new posts from appearing (and that at least once caused posts to disappear).
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-11-13-moving-to-github/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2013-11-13-moving-to-github/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -213,8 +244,13 @@ The jsong command generates JSON on stdout. You provide /-delimited paths on the
     <p class="post-stub-summary">
     I&rsquo;ve been working with OpenStack a lot recently, and I&rsquo;ve ended up with a small collection of utilities that make my life easier. On the odd chance that they&rsquo;ll make your life easier, too, I thought I&rsquo;d hilight them here.
 Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Instead of a sequence of keystone command, you can provision new tenants, users, and roles with a single comand.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-11-12-a-random-collection/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2013-11-12-a-random-collection/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -232,8 +268,13 @@ Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Inst
     The documentation for configuring Neutron recommends that a network controller has three physical interfaces:
  Before you start, set up a machine to be a dedicated network node. Dedicated network nodes should have the following NICs: the management NIC (called MGMT_INTERFACE), the data NIC (called DATA_INTERFACE), and the external NIC (called EXTERNAL_INTERFACE).
  People occasionally ask, &ldquo;why three interfaces? What if I only have two?&ldquo;, so I wanted to provide an extended answer that might help people understand what the interfaces are for and what trade-offs are involved in using fewer interfaces.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-10-28-why-does-the-neutron/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2013-10-28-why-does-the-neutron/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -251,8 +292,13 @@ Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Inst
     Have you ever wished that you could use libvirt domain names as hostnames? So that you could do something like this:
 $ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something that would certainly make my life convenient, I put together a small script called virt-hosts that makes this possible. You can find virt-hosts in my virt-utils GitHub repository:
  https://raw.github.com/larsks/virt-utils/master/virt-hosts  Run by itself, with no options, virt-hosts will scan through your running domains for interfaces on the libvirt default network, look up those MAC addresses up in the corresponding default.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -269,8 +315,13 @@ $ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something
     <p class="post-stub-summary">
     I recently acquired both a Raspberry Pi and a PiFace IO board. I had a rough time finding examples of how to read the input ports via interrupts (rather than periodically polling for values), especially for the newer versions of the PiFace python libraries.
 After a little research, here&rsquo;s some simple code that will print out pin names as you press the input buttons. Button 3 will cause the code to exit:
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/">(Read more...)</a>
+    </p>
+    
     
 </li>
 

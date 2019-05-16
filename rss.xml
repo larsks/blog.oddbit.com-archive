@@ -1878,13 +1878,12 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Ansible compare between two files on remote server ansible
- How do I make my local changes show up to github repository? git github
- Track submodule branch in cloned-from repository git git-submodules
- [✓] no package matching is available in ansible version 2.7.10 ansible
- group_names and nested variables ansible ansible-template
- Create Vars from Facts Ansible and Jinja2 python ansible jinja2
- Replacing / by \ in a string with ansible ansible yaml jinja2</description>
+      <description>Manipulate list items in Ansible playbooks ansible yaml jinja2 ansible-inventory
+ How do i add filtering to the dictionary json list dictionary ansible
+ Using vars_prompt on Task file ansible yaml ansible-role
+ ansible variable scope not broad enough scope ansible
+ ansible taks is failing even with the right syntax ansible ansible-2.x ansible-inventory ansible-facts ansible-template
+ I want a playbook to install multiple packages on multiple machines ansible</description>
     </item>
     
   </channel>

@@ -11,7 +11,9 @@
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -21,7 +23,6 @@
 
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
-<link rel="stylesheet" href="/css/floats.css">
 
         
     </head>
@@ -103,8 +104,13 @@
     This article expands on my answer to Add multiple specific IPs to instance, a question posted to ask.openstack.org.
 In order to serve out SSL services from an OpenStack instance, you will generally want one local ip address for each SSL virtual host you support. It is possible to create an instance with multiple fixed addresses, but there are a few complications to watch out for.
 Assumptions This article assumes that the following resources exist:
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -122,8 +128,13 @@ Assumptions This article assumes that the following resources exist:
     In the old days (so, like, last year), Neutron supported a single external network per L3 agent. You would run something like this&hellip;
 $ neutron net-create external --router:external=true  &hellip;and neutron would map this to the bridge defined in external_network_bridge in /etc/neutron/l3_agent.ini. If you wanted to support more than a single external network, you would need to run multiple L3 agents, each with a unique value for external_network_bridge.
 There is now a better option available.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -140,8 +151,13 @@ There is now a better option available.
     <p class="post-stub-summary">
     I&rsquo;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
  
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -158,8 +174,13 @@ There is now a better option available.
     <p class="post-stub-summary">
     Normally I like to post solutions, but today&rsquo;s post is about a vexing problem to which I have not been able to find a solution.
 This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -178,8 +199,13 @@ This started as a simple attempt to set up external connectivity on an all-in-on
 You can set the bridge MAC address via ovs-vsctl like this:
 ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&rsquo;ve updated my ifconfig-br-ex to look like this:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPINTERFACES=eth0 MACADDR=fa:16:3e:ef:91:ec OVS_EXTRA=&quot;set bridge br-ex other-config:hwaddr=$MACADDR&quot;  The OVS_EXTRA parameter gets passed to the add-br call like this:
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -196,8 +222,13 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
     <p class="post-stub-summary">
     Termshare is a tool for sharing your terminal in a browser session. It supports both read-only and read-write sessions, and unlike many other tools it does not require any software installation on the remote side. This makes it tremendously handy for:
  Streaming terminal demonstrations to a diverse audience, or Sharing a terminal session with someone without needing to much about with ssh, tmux, screen, etc.  I&rsquo;ve successfully used Termshare under both Fedora (19 and 20) and CentOS.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -215,8 +246,13 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
     I run OpenStack on my laptop, and I&rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
 This is the network configuration file for br-ex on my system:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -234,8 +270,13 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.
     These are my notes on making OpenStack play well with firewalld and NetworkManager.
 NetworkManager By default, NetworkManager attempts to start a DHCP client on every new available interface. Since booting a single instance in OpenStack can result in the creation of several virtual interfaces, this results in a lot of:
 May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &lt;info&gt; Activation (qvb512640bd-ee) starting connection 'Wired connection 2'  You can disable this behavior by adding the following to /etc/NetworkManager/NetworkManager.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -253,8 +294,13 @@ May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &lt;info&gt; Activation (
     Due to an unfortunate incident involving sleep mode and an overheated backpack I had the &ldquo;opportunity&rdquo; to rebuild my laptop. Since this meant reinstalling OpenStack I used this as an excuse to finally move to the ML2 network plugin for Neutron.
 I was attempting to add an external network using the normal incantation:
 neutron net-create external -- --router:external=true \ --provider:network_type=flat \ --provider:physical_network=physnet1  While this command completed successfully, I was left without any connectivity between br-int and br-ex, despite having in my /etc/neutron/plugins/ml2/ml2_conf.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -271,8 +317,13 @@ neutron net-create external -- --router:external=true \ --provider:network_type=
     <p class="post-stub-summary">
     I wanted to learn about writing custom Puppet types and providers. The official documentation is a little sparse, but I finally stumbled upon the following series of articles by Gary Larizza that provide a great deal of insight into the process and a bunch of example code:
  Fun With Puppet Providers Who Abstracted My Ruby? Seriously, What Is This Provider Doing?  
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/">(Read more...)</a>
+    </p>
+    
     
 </li>
 

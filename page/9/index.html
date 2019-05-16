@@ -11,7 +11,9 @@
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -22,7 +24,6 @@
 
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
-<link rel="stylesheet" href="/css/floats.css">
 
         
     </head>
@@ -103,8 +104,13 @@
     <p class="post-stub-summary">
     I spent some time today learning about Heat autoscaling groups, which are incredibly nifty but a little opaque from the Heat command line, since commands such as heat resource-list don&rsquo;t recurse into nested stacks. It is possible to introspect these resources (you can pass the physical resource id of a nested stack to heat resource-list, for example)&hellip;
 &hellip;but I really like visualizing things, so I wrote a quick hack called dotstack that will generate dot language output from a Heat stack.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -126,8 +132,13 @@ docker plugin fails to delete a container resource in CREATE_FAILED state.
  https://bugs.launchpad.net/heat/+bug/1364041
 docker plugin volumes_from parameter should be a list.
  https://bugs.launchpad.net/heat/+bug/1364039
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -154,8 +165,13 @@ dns: - 8.8.8.8 - 8.8.4.4  docker_endopint : String
 Docker daemon endpoint. By default the local Docker daemon will be used.
 Example:
 docker_endpoint: tcp://192.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-08-31-docker-contain-doc/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -172,8 +188,13 @@ docker_endpoint: tcp://192.
     <p class="post-stub-summary">
     I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
 The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -191,8 +212,13 @@ The release announcement on the Docker blog includes an example Heat template, b
     This post accompanies my article on the Docker plugin for Heat.
 In order for WaitCondition resources to operate correctly in Heat, you will need to make sure that that you have:
  Created the necessary Heat domain and administrative user in Keystone, Configured appropriate values in heat.conf for stack_user_domain, stack_domain_admin, and stack_domain_admin_password. Configured an appropriate value in heat.conf for heat_waitcondition_server_url. On a single-system install this will often be pointed by default at 127.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -209,8 +235,13 @@ In order for WaitCondition resources to operate correctly in Heat, you will need
     <p class="post-stub-summary">
     I&rsquo;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
 The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker containers instead of hypervisor-based servers. For certain workloads, this leads to better resource utilization than you would get with a hypervisor-based solution, while at the same time givin you better support for multi-tenancy and flexible networking than you get with Docker by itself.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -227,8 +258,13 @@ The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker co
     <p class="post-stub-summary">
     Until recently I had a bcache based setup on my laptop, but when forced by circumstance to reinstall everything I spent some time looking for alternatives that were less disruptive to configure on an existing system.
 I came across Richard Jones&rsquo; article discussing the recent work to integrate dm-cache into LVM. Unlike bcache and unlike using dm-cache directly, the integration with LVM makes it easy to associate devices with an existing logical volume.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-08-16-lvcache-a-tool-for-managing-lv/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-08-16-lvcache-a-tool-for-managing-lv/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -245,8 +281,13 @@ I came across Richard Jones&rsquo; article discussing the recent work to integra
     <p class="post-stub-summary">
     Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&rsquo;ve written an article about working with the macvlan driver.
 This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -263,8 +304,13 @@ This article discusses four ways to make a Docker container appear on a local ne
     <p class="post-stub-summary">
     For a small project I&rsquo;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
 Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&rsquo;t want to write something that was tied closely to my project&hellip;
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -281,8 +327,13 @@ Normally I would reach for Python for a simple project like this, but constraint
     <p class="post-stub-summary">
     After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
 $ docker run -ti fedora /bin/bash bash-4.2# su -c 'uptime' su: System error  Hooking up something (like, say, socat unix-listen:/dev/log -) to /dev/log revealed that the system was logging:
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/">(Read more...)</a>
+    </p>
+    
     
 </li>
 

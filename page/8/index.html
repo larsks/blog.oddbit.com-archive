@@ -11,7 +11,9 @@
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="http://blog.oddbit.com/dist/styles.css">
+        
+        
+        <link rel="stylesheet" href="http://blog.oddbit.com/dist/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -22,7 +24,6 @@
 
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
-<link rel="stylesheet" href="/css/floats.css">
 
         
     </head>
@@ -103,8 +104,13 @@
     <p class="post-stub-summary">
     One of the new features available in the Juno release of OpenStack is support for serial console access to your Nova servers. This post looks into how to configure the serial console feature and then how to access the serial consoles of your Nova servers.
 Configuring serial console support In previous release of OpenStack, read-only access to the serial console of your servers was available through the os-getConsoleOutput server action (exposed via nova console-log on the command line).
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -120,8 +126,13 @@ Configuring serial console support In previous release of OpenStack, read-only a
     
     <p class="post-stub-summary">
     Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -139,8 +150,13 @@ Configuring serial console support In previous release of OpenStack, read-only a
     Recently, I&rsquo;ve been playing around with Fedora Atomic and Kubernetes. I ran into a frustrating problem in which I would attempt to start a service from within a script launched by cloud-init, only to have have systemctl block indefinitely because the service I was attempting to start was dependent on cloud-init finishing first.
 It turns out that systemctl has a flag meant exactly for this situation:
  --no-block Do not synchronously wait for the requested operation to finish.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -157,8 +173,13 @@ It turns out that systemctl has a flag meant exactly for this situation:
     <p class="post-stub-summary">
     While experimenting with Fedora Atomic, I was looking for an elegant way to automatically deploy Atomic into an OpenStack environment and then automatically schedule some Docker containers on the Atomic host. This post describes my solution.
 Like many other cloud-targeted distributions, Fedora Atomic runs cloud-init when the system boots. We can take advantage of this to configure the system at first boot by providing a user-data blob to Nova when we boot the instance.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -176,8 +197,13 @@ Like many other cloud-targeted distributions, Fedora Atomic runs cloud-init when
     If you want to build a Windows image for use in your OpenStack environment, you can follow the example in the official documentation, or you can grab a Windows 2012r2 evaluation pre-built image from the nice folks at CloudBase.
 The CloudBase-provided image is built using a set of scripts and configuration files that CloudBase has made available on GitHub.
 The CloudBase repository is an excellent source of information, but I wanted to understand the process myself.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -196,8 +222,13 @@ The CloudBase repository is an excellent source of information, but I wanted to 
 I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
 I started with a manifest like this (in puppet/node.pp):
 class { 'ssh': }  And a Dockerfile like this:
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -214,8 +245,13 @@ class { 'ssh': }  And a Dockerfile like this:
     <p class="post-stub-summary">
     The current version of Docker has a very limited set of networking options:
  bridge &ndash; connect a container to the Docker bridge host &ndash; run the container in the global network namespace container:xxx &ndash; connect a container to the network namespace of another container none &ndash; do not configure any networking  If you need something more than that, you can use a tool like pipework to provision additional network interfaces inside the container, but this leads to a synchronization problem: pipework can only be used after your container is running.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -233,8 +269,13 @@ class { 'ssh': }  And a Dockerfile like this:
     Would you like to run some custom Python code when Nova creates and destroys virtual instances on your compute hosts? This is possible using Nova&rsquo;s support for hooks, but the existing documentation is somewhat short on examples, so I&rsquo;ve spent some time trying to get things working.
 The demo_nova_hooks repository contains a working example of the techniques discussed in this article.
 What&rsquo;s a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to attach a class of your own design to a particular function or method call in Nova.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -252,8 +293,13 @@ What&rsquo;s a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to
     Sometimes you want to quickly share a screenshot with someone. Here&rsquo;s my favorite mechanism, which assumes you have installed both curl and the ImageMagick suite.
 $ import png:- | curl -T- -s chunk.io http://chunk.io/f/76ea98ea081748e19de4507fde3c2c65  When you run this command, you cursor will change into crosshairs. Click on a window, and this will grab a png image of that window and send it to chunk.io using curl.
 You&rsquo;ll get back a URL that you can use to share the image with people.
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
@@ -271,8 +317,13 @@ You&rsquo;ll get back a URL that you can use to share the image with people.
     I ran a Google Hangout this morning on Deploying with Heat. You can find the slides for the presentation on line here, and the Heat templates (as well as slide sources) are available on github.
 If you have any questions about the presentation, please feel free to ping me on irc (larsks).
  
-    <span class="post-stub-more"><a href="http://blog.oddbit.com/post/2014-09-05-heat-hangout/">(more)</a></span>
     </p>
+
+    
+    <p class="post-stub-more">
+      <a href="http://blog.oddbit.com/post/2014-09-05-heat-hangout/">(Read more...)</a>
+    </p>
+    
     
 </li>
 
