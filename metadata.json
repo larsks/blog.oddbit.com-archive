@@ -1,5 +1,8 @@
 {
-    "config": "e8f417231a162512e06981d8563f9758fb7e8e7a",
+    "config": "7bc759bc61c947eb32ca4eb1f5a128cfc8bf7ca1",
     "content": "5430d9ecb0a4b11844ae2ce74226d540594283f6",
-    "date": "2019-05-16T17:38:46Z"
+    "date": "2019-05-16T17:55:39Z",
+    "submodules": {
+        "themes/ghostwriter": "34a88138581b5d0428e4925d07822fbb30f0a9e8"
+    }
 }
