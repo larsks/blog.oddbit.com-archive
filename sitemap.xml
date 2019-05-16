@@ -8,12 +8,17 @@
   </url>
   
   <url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.oddbit.com/post/2019-05-14-a-diy-cpap-battery-box/</loc>
     <lastmod>2019-05-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/tags/</loc>
+    <loc>https://blog.oddbit.com/categories/</loc>
     <lastmod>2019-05-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -44,6 +49,12 @@
   
   <url>
     <loc>https://blog.oddbit.com/tag/medical/</loc>
+    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/categories/technology/</loc>
     <lastmod>2019-05-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
