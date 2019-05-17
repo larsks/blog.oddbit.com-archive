@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>The Odd Bit</title>
+    <title>Tags on The Odd Bit</title>
     <link>https://blog.oddbit.com/tags/</link>
-    <description>Recent content on The Odd Bit</description>
+    <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>

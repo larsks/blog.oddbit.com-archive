@@ -109,7 +109,7 @@ I often use Docker to test out Ansible playbooks. While normally that works grea
     
 
 <p><strong>Update 2019-05-09</strong> Pull request 
-<a href="https://github.com/ansible/ansible/pull/55816" class="pull-request pull-request-state-merged">#55816</a>
+<a href="https://github.com/ansible/ansible/pull/55816" class="pull-request">#55816</a>
  has merged, so you can now use <code>sudo</code> with the <code>docker</code> connection driver even when <code>sudo</code> is configured to require a password.</p>
 
 <hr />
@@ -180,7 +180,7 @@ Administrator. It usually boils down to these three things:
 <p>Looking at the source, I was surprised: while Ansible has individual plugins for different privilege escalation methods, it is entirely up to the individual connection plugin to implement the logic necessary to make use of these mechanisms. I had expected privilege escalation support to be implemented in the base connection plugin (<code>ConnectionBase</code> in <code>lib/ansible/plugins/connection/__init__.py</code>), but it&rsquo;s not.  So while the <a href="https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/connection/ssh.py">ssh plugin</a> has a fairly complex set of logic for handing the <code>become</code> prompt, and the <a href="https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/connection/local.py">local plugin</a> had a relatively simple solution, the <code>docker</code> connection had none.</p>
 
 <p>Fortunately, in many ways the <code>docker</code> plugin is almost identical to the <code>local</code> plugin, which means that rather than doing actual work I was able to largely cut-and-paste the privilege escalation support from the <code>local</code> plugin into the <code>docker</code> plugin.  You can find this work in pull request 
-<a href="https://github.com/ansible/ansible/pull/55816" class="pull-request pull-request-state-merged">#55816</a>
+<a href="https://github.com/ansible/ansible/pull/55816" class="pull-request">#55816</a>
 .</p>
 
 </div>
