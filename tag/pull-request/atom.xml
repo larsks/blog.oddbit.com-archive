@@ -76,6 +76,18 @@ In versions of Ansible prior to 2.0, there was a small collection of OpenStack m
   </entry>
   
   <entry>
+    <title>Teach git about GIT_SSL_CIPHER_LIST</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/"/>
+    <id>https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/</id>
+    <published>2015-05-08T00:00:00Z</published>
+    <updated>2015-05-08T00:00:00Z</updated>
+    <summary type="html">Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &amp;ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&amp;ldquo;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).</summary>
+  </entry>
+  
+  <entry>
     <title>Docker plugin bugs</title>
     <author>
       <name>Lars Kellogg-Stedman</name>

@@ -586,6 +586,15 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
     </item>
     
     <item>
+      <title>Teach git about GIT_SSL_CIPHER_LIST</title>
+      <link>https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/</link>
+      <pubDate>Fri, 08 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/</guid>
+      <description>Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &amp;ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&amp;ldquo;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).</description>
+    </item>
+    
+    <item>
       <title>Suggestions for the Docker MAINTAINER directive</title>
       <link>https://blog.oddbit.com/post/2015-04-27-suggestions-for-the-docker-maintainer-directive/</link>
       <pubDate>Mon, 27 Apr 2015 00:00:00 +0000</pubDate>
@@ -1887,7 +1896,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to loop through two lists &amp;amp; add conditional statement to execute something when one condition is true json list loops ansible ansible-inventory  How to conditionally replace text in a list with regex_replace? ansible yaml jinja2 ansible-inventory  Ansible task is failing even with the right syntax ansible ansible-2.x ansible-inventory ansible-facts ansible-template  Custom callback plugin path and copy plugin to /home/user/.ansible ansible  Run one ansible playbook task on localhost, and then another task on remote server ansible  ansible run role against host name that is returned from a local script ansible  How do i add filtering to the dictionary json list dictionary ansible  Using `vars_prompt` on Task file ansible yaml ansible-role  ansible variable scope not broad enough scope ansible  I want a playbook to install multiple packages on multiple machines ansible   (last refreshed at 2019-05-17 02:08 UTC )</description>
+      <description>How to loop through two lists &amp;amp; add conditional statement to execute something when one condition is true json list loops ansible ansible-inventory  How to conditionally replace text in a list with regex_replace? ansible yaml jinja2 ansible-inventory  Ansible task is failing even with the right syntax ansible ansible-2.x ansible-inventory ansible-facts ansible-template  Custom callback plugin path and copy plugin to /home/user/.ansible ansible  Run one ansible playbook task on localhost, and then another task on remote server ansible  ansible run role against host name that is returned from a local script ansible  How do i add filtering to the dictionary json list dictionary ansible  Using `vars_prompt` on Task file ansible yaml ansible-role  ansible variable scope not broad enough scope ansible  I want a playbook to install multiple packages on multiple machines ansible   (last refreshed at 2019-05-17 11:34 UTC )</description>
     </item>
     
   </channel>

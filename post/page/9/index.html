@@ -23,6 +23,7 @@
 
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
 
         
     </head>
@@ -71,6 +72,10 @@
     </li>
 
     <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
         <a title="Answers" href="/about/stackoverflow/">Answers</a>
     </li>
 
@@ -91,6 +96,30 @@
 
     <ol class="post-list">
         
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Stupid command line tricks: Quickly share screen captures</h4>
+        <time class="post-stub-date" datetime="2014-09-23">Published Tue, Sep 23, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Sometimes you want to quickly share a screenshot with someone. Here&rsquo;s my favorite mechanism, which assumes you have installed both curl and the ImageMagick suite.
+$ import png:- | curl -T- -s chunk.io http://chunk.io/f/76ea98ea081748e19de4507fde3c2c65  When you run this command, you cursor will change into crosshairs. Click on a window, and this will grab a png image of that window and send it to chunk.io using curl.
+You&rsquo;ll get back a URL that you can use to share the image with people.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-screencap/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-09-05-heat-hangout/" itemprop="url" title="Go to post detail">
@@ -309,29 +338,6 @@ This article discusses four ways to make a Docker container appear on a local ne
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">gpio-watch: Run scripts in response to GPIO signals</h4>
-        <time class="post-stub-date" datetime="2014-07-26">Published Sat, Jul 26, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    For a small project I&rsquo;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
-Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&rsquo;t want to write something that was tied closely to my project&hellip;
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/">(Read more...)</a>
     </p>
     
     

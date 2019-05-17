@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Teach git about GIT_SSL_CIPHER_LIST &middot; The Odd Bit</title>
+        <meta name="description" content="Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&ldquo;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Teach git about GIT_SSL_CIPHER_LIST</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2015-05-08" itemprop="datePublished">Fri, May 8, 2015</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>Someone named <a href="https://stackoverflow.com/users/4713895/hithard">hithard</a> on <a href="https://stackoverflow.com/">StackOverflow</a> was trying to clone a git repository via https, and was <a href="https://stackoverflow.com/a/30090725/147356">running into an odd error</a>: &ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&ldquo;. This was due to the fact that the server (<code>openhatch.org</code>) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either <a href="https://www.openssl.org/">OpenSSL</a> or <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS">NSS</a>, depending on how git was built).</p>
+
+<p>Many applications allow the user to configure an explicit list of ciphers to consider when negotiating a secure connection. For example, <a href="https://curl.haxx.se/">curl</a> has the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSL_CIPHER_LIST.html">CURLOPT_SSL_CIPHER_LIST</a> option. This turns out to be especially relevant because git relies on <a href="https://curl.haxx.se/libcurl/">libcurl</a> for all of its http operations, which means all we need to do is (a) create a new configuration option for git, and then (b) pass that value through to libcurl.</p>
+
+<p>I took a look at the code and it turned out to be surprisingly easy. The functional part of the patch ends up being less than 10 lines total:</p>
+
+<pre><code>diff --git a/http.c b/http.c
+index 679862006..c5e947965 100644
+--- a/http.c
++++ b/http.c
+@@ -35,6 +35,7 @@ char curl_errorstr[CURL_ERROR_SIZE];
+ static int curl_ssl_verify = -1;
+ static int curl_ssl_try;
+ static const char *ssl_cert;
++static const char *ssl_cipherlist;
+ #if LIBCURL_VERSION_NUM &gt;= 0x070903
+ static const char *ssl_key;
+ #endif
+@@ -153,6 +154,8 @@ static int http_options(const char *var, const char *value, void *cb)
+                curl_ssl_verify = git_config_bool(var, value);
+                return 0;
+        }
++       if (!strcmp(&quot;http.sslcipherlist&quot;, var))
++               return git_config_string(&amp;ssl_cipherlist, var, value);
+        if (!strcmp(&quot;http.sslcert&quot;, var))
+                return git_config_string(&amp;ssl_cert, var, value);
+ #if LIBCURL_VERSION_NUM &gt;= 0x070903
+@@ -327,6 +330,13 @@ static CURL *get_curl_handle(void)
+        if (http_proactive_auth)
+                init_curl_http_auth(result);
+
++       if (getenv(&quot;GIT_SSL_CIPHER_LIST&quot;))
++               ssl_cipherlist = getenv(&quot;GIT_SSL_CIPHER_LIST&quot;);
++
++       if (ssl_cipherlist != NULL &amp;&amp; *ssl_cipherlist)
++               curl_easy_setopt(result, CURLOPT_SSL_CIPHER_LIST,
++                               ssl_cipherlist);
++
+        if (ssl_cert != NULL)
+                curl_easy_setopt(result, CURLOPT_SSLCERT, ssl_cert);
+        if (has_cert_password())
+</code></pre>
+
+<p>I <a href="https://marc.info/?l=git&amp;m=143100824118409&amp;w=2">submitted this patch</a> to the git mailing list, and after some discussion and a few revisions it was accepted.  This changed was <a href="https://github.com/git/git/commit/f6f2a9e42d14e61429af418d8038aa67049b3821">committed to git</a> on May 8, 2015.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/git/">git</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/pull-request/">pull-request</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Teach%20git%20about%20GIT_SSL_CIPHER_LIST&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2015-05-08-git-ssl-cipher-list%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+
