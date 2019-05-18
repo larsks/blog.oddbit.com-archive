@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to loop through two lists &amp;amp; add conditional statement to execute something when one condition is true json list loops ansible ansible-inventory  How to conditionally replace text in a list with regex_replace? ansible yaml jinja2 ansible-inventory  Ansible task is failing even with the right syntax ansible ansible-2.x ansible-inventory ansible-facts ansible-template  Custom callback plugin path and copy plugin to /home/user/.ansible ansible  Run one ansible playbook task on localhost, and then another task on remote server ansible  ansible run role against host name that is returned from a local script ansible  How do i add filtering to the dictionary json list dictionary ansible  Using `vars_prompt` on Task file ansible yaml ansible-role  ansible variable scope not broad enough scope ansible  I want a playbook to install multiple packages on multiple machines ansible   (last refreshed at 2019-05-17 11:34 UTC )</description>
+      <description>Manipulating time series data in python: summing series and aggregating over a time period python pandas time-series  Is there a way to loop on two variables when importing an Ansible role? loops variables ansible  How to loop through two lists &amp;amp; add conditional statement to execute something when one condition is true json list loops ansible ansible-inventory  How to conditionally replace text in a list with regex_replace?</description>
     </item>
     
   </channel>
