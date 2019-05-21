@@ -1896,7 +1896,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Manipulating time series data in python: summing series and aggregating over a time period python pandas time-series  Is there a way to loop on two variables when importing an Ansible role? loops variables ansible  How to loop through two lists &amp;amp; add conditional statement to execute something when one condition is true json list loops ansible ansible-inventory  How to conditionally replace text in a list with regex_replace?</description>
+      <description>Ansible : Return a attribute from list, with filter applied on another attribute ansible ansible-2.x ansible-facts  Ansible vmware_vm_facts: get mac address for a specific VM and write it to existing inventory ansible virtual-machine vmware  Use subelements into a API call in Ansible ansible  Manipulating time series data in python: summing series and aggregating over a time period python pandas time-series  Is there a way to loop on two variables when importing an Ansible role?</description>
     </item>
     
   </channel>
