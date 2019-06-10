@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Running Keystone with Docker Compose &middot; The Odd Bit</title>
+        <meta name="description" content="In this article, we will look at what is necessary to run OpenStack&rsquo;s Keystone service (and the requisite database server) in containers using Docker Compose.
+Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&rsquo;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Running Keystone with Docker Compose</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2019-06-07" itemprop="datePublished">Fri, Jun 7, 2019</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>In this article, we will look at what is necessary to run OpenStack&rsquo;s <a href="https://docs.openstack.org/keystone/latest/">Keystone</a> service (and the requisite database server) in containers using <a href="https://docs.docker.com/compose/">Docker Compose</a>.</p>
+
+<h2 id="running-mariadb">Running MariaDB</h2>
+
+<p>The standard <a href="https://hub.docker.com/_/mariadb/">mariadb docker image</a> can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&rsquo;t want to lose your data when you remove a container. A simple <code>docker</code> command line for starting MariaDB might look something like:</p>
+
+<pre><code>docker run \
+  -v mariadb_data:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=secret.password
+  mariadb
+</code></pre>
+
+<p>The above assumes that we have previously created a Docker volume named <code>mariadb_data</code> by running:</p>
+
+<pre><code>docker volume create mariadb_data
+</code></pre>
+
+<p>An equivalent <code>docker-compose.yml</code> would look like this:</p>
+
+<pre><code>version: 3
+
+services:
+  database:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: secret.password
+    volumes:
+      - &quot;mariadb_data:/var/lib/mysql&quot;
+
+volumes:
+  mariadb_data:
+</code></pre>
+
+<p>Now, rather than typing a long <code>docker run</code> command line (and possibly forgetting something), you can simply run:</p>
+
+<pre><code>docker-compose up
+</code></pre>
+
+<h3 id="pre-creating-a-database">Pre-creating a database</h3>
+
+<p>For the purposes of setting up Keystone in Docker, we will need to make a few changes. In particular, we will need to have the <code>mariadb</code> container create the <code>keystone</code> database (and user) for us, and as a matter of best practice we will want to specify an explicit tag for the <code>mariadb</code> image rather than relying on the default <code>latest</code>.</p>
+
+<p>We can have the <code>mariadb</code> image create a database for us at startup by setting the <code>MYSQL_DATABASE</code>, <code>MYSQL_USER</code>, and <code>MYSQL_PASSWORD</code> environment variables:</p>
+
+<pre><code>version: 3
+
+services:
+  database:
+    image: mariadb:10.4.5-bionic
+    environment:
+      MYSQL_ROOT_PASSWORD: secret.password
+      MYSQL_USER: keystone
+      MYSQL_PASSWORD: another.password
+      MYSQL_DATABASE: keystone
+    volumes:
+      - &quot;mariadb_data:/var/lib/mysql&quot;
+
+volumes:
+  mariadb_data:
+</code></pre>
+
+<p>When the <code>database</code> service starts up, it will create a <code>keystone</code> database accessible by the <code>keystone</code> user.</p>
+
+<h3 id="parameterize-all-the-things">Parameterize all the things</h3>
+
+<p>The above example is pretty much what we want, but there is one problem: we&rsquo;ve hardcoded our passwords (and database name) into the <code>docker-compose.yml</code> file, which makes it hard to share: it would be unsuitable for hosting on a public git repository, because anybody who wanted to use it would need to modify the file first, which would make it difficult to contribute changes or bring in new changes from the upstream repository. We can solve that problem by using environment variables in our <code>docker-compose.yml</code>. Much like the shell, <code>docker-compose</code> will replace an expression of the form <code>${MY_VARIABLE}</code> with the value of the <code>MY_VARIABLE</code> environment variable. It is possible to provide a fallback value in the event that an environment variable is undefined by writing <code>${MY_VARIABLE:-some_default_value}</code>.</p>
+
+<p>You have a couple options for providing values for this variables. You can of course simply set them in the environment, either like this:</p>
+
+<pre><code>export MY_VARIABLE=some_value
+</code></pre>
+
+<p>Or as part of the <code>docker-compose</code> command line, like this:</p>
+
+<pre><code>MY_VARIABLE=some_value docker-compose up
+</code></pre>
+
+<p>Alternatively, you can also set them in a <code>.env</code> file in the same directory as your <code>docker-compose.yml</code> file; <code>docker-compose</code> reads this file automatically when it runs. A <code>.env</code> file looks like this:</p>
+
+<pre><code>MY_VARIABLE=some_value
+</code></pre>
+
+<p>With the above in mind, we can restructure our example <code>docker-compose.yml</code> so that it looks like this:</p>
+
+<pre><code>version: 3
+
+services:
+  database:
+    image: mariadb:${MARIADB_IMAGE_TAG:-10.4.5-bionic}
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${KEYSTONE_DB_USER:-keystone}
+      MYSQL_PASSWORD: ${KEYSTONE_DB_PASSWORD}
+      MYSQL_DATABASE: ${KEYSTONE_DB_NAME:-keystone}
+    volumes:
+      - &quot;mariadb_data:/var/lib/mysql&quot;
+
+volumes:
+  mariadb_data:
+</code></pre>
+
+<h2 id="running-keystone">Running Keystone</h2>
+
+<h3 id="selecting-a-base-image">Selecting a base image</h3>
+
+<p>While there is an official MariaDB image available in Docker Hub, there is no such thing as an official Keystone image. A search for <code>keystone</code> yields over 300 results. I have elected to use the Keystone image produced as part of the <a href="https://wiki.openstack.org/wiki/TripleO">TripleO</a> project, <a href="https://hub.docker.com/r/tripleomaster/centos-binary-keystone">tripleo-master/centos-binary-keystone</a>. The <code>current-rdo</code> tag follows the head of the Keystone repository, and the images are produced automatically as part of the CI process. Unlike the MariaDB image, which is designed to pretty much be &ldquo;plug and play&rdquo;, the Keystone image is going to require some configuration before it provides us with a useful service.</p>
+
+<p>Using the <code>centos-binary-keystone</code> image, there are two required configuration tasks we will have to complete when starting the container:</p>
+
+<ul>
+<li><p>We will need to inject an appropriate configuration file to run Keystone as a <a href="https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface">WSGI</a> binary under Apache <a href="http://httpd.apache.org/">httpd</a>. This is certainly not the only way to run Keystone, but the <code>centos-binary-keystone</code> image has both <code>httpd</code> and <code>mod_wsgi</code> installed.</p></li>
+
+<li><p>We will need to inject a minimal configuration for Keystone (for example, we will need to provide Keystone with connection information for the database instance).</p></li>
+</ul>
+
+<h3 id="keystone-wsgi-configuration">Keystone WSGI configuration</h3>
+
+<p>We need to configure Keystone as a WSGI service running on port 5000. We will do this with the following configuration file:</p>
+
+<pre><code>Listen 5000
+ErrorLog &quot;/dev/stderr&quot;
+CustomLog &quot;/dev/stderr&quot; combined
+
+&lt;VirtualHost *:5000&gt;
+  ServerName keystone
+  ServerSignature Off
+
+  DocumentRoot &quot;/var/www/cgi-bin/keystone&quot;
+
+  &lt;Directory &quot;/var/www/cgi-bin/keystone&quot;&gt;
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride None
+    Require all granted
+  &lt;/Directory&gt;
+
+  WSGIApplicationGroup %{GLOBAL}
+  WSGIDaemonProcess keystone_main display-name=keystone-main \
+  	processes=12 threads=1 user=keystone group=keystone
+  WSGIProcessGroup keystone_main
+  WSGIScriptAlias / &quot;/var/www/cgi-bin/keystone/main&quot;
+  WSGIPassAuthorization On
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<p>The easiest way to inject this custom configuration is to bake it into a custom image. Using the <code>tripleomaster/centos-binary-keystone</code> base image identified earlier, we can start with a custom <code>Dockerfile</code> that looks like this:</p>
+
+<pre><code>ARG KEYSTONE_IMAGE_TAG=current-tripleo
+FROM tripleomaster/centos-binary-keystone:${KEYSTONE_IMAGE_TAG}
+
+COPY keystone-wsgi-main.conf /etc/httpd/conf.d/keystone-wsgi-main.conf
+</code></pre>
+
+<p>The <code>ARG</code> directive permits us to select an image tag via a build argument (but defaults to <code>current-tripleo</code>).</p>
+
+<p>We can ask <code>docker-compose</code> to build our custom image for us when we run <code>docker-compose up</code>. Instead of specifying an <code>image</code> as we did with the MariaDB container, we use the <code>build</code> directive:</p>
+
+<pre><code>[...]
+  keystone:
+    build:
+      context: .
+      args:
+        KEYSTONE_IMAGE_TAG: current-tripleo
+[...]
+</code></pre>
+
+<p>This tells <code>docker-compose</code> to use the <code>Dockerfile</code> in the current directory (and to set the <code>KEYSTONE_IMAGE_TAG</code> build argument to <code>current-tripleo</code>). Note that <code>docker-compose</code> will only build this image for us by default if it doesn&rsquo;t already exist; we can ask <code>docker-compose</code> to build it explicitly by running <code>docker-compose build</code>, or by providing the <code>--build</code> option to <code>docker-compose up</code>.</p>
+
+<h3 id="configuring-at-build-time-vs-run-time">Configuring at build time vs run time</h3>
+
+<p>In the previous section, we used a <code>Dockerfile</code> to build on a selected base image by adding custom content. Other sorts of configuration must happen when the container starts up (for example, we probably want to be able to set passwords at runtime). One way of solving this problem is to embed some scripts into our custom image and then run them when the container starts in order to perform any necessary initialization.</p>
+
+<p>I have placed some custom scripts and templates into the <code>runtime</code> directory and arranged to copy that directory into the custom image like this:</p>
+
+<pre><code>ARG KEYSTONE_IMAGE_TAG=current-tripleo
+FROM tripleomaster/centos-binary-keystone:${KEYSTONE_IMAGE_TAG}
+
+COPY keystone-wsgi-main.conf /etc/httpd/conf.d/keystone-wsgi-main.conf
+COPY runtime /runtime
+
+CMD [&quot;/bin/sh&quot;, &quot;/runtime/startup.sh&quot;]
+</code></pre>
+
+<p>The <code>runtime</code> directory contains the following files:</p>
+
+<ul>
+<li><code>runtime/dtu.py</code> &ndash; a short Python script for generating files from templates.</li>
+<li><code>runtime/startup.sh</code> &ndash; a shell script that performs all the necessary initialization tasks before starting Keystone</li>
+<li><code>runtime/keystone.j2.conf</code> &ndash; template for the Keystone configuration file</li>
+<li><code>runtime/clouds.j2.yaml</code> &ndash; template for a <code>clouds.yaml</code> for use by the <code>openshift</code> command line client.</li>
+</ul>
+
+<h3 id="starting-up">Starting up</h3>
+
+<p>The <code>startup.sh</code> script performs the following actions:</p>
+
+<ol>
+<li><p>Generates <code>/etc/keystone/keystone.conf</code> from <code>/runtime/keystone.j2.conf</code>.</p>
+
+<p>The file <code>/runtime/keystone.j2.conf</code> is a minimal Keystone configuration template. It ensures that Keystone logs to <code>stderr</code> (by setting <code>log_file</code> to an empty value) and configures the database connection using values from the environment.</p>
+
+<pre><code>[DEFAULT]
+debug = {{ environ.KEYSTONE_DEBUG|default('false') }}
+log_file =
+
+
+[database]
+{% set keystone_db_user = environ.KEYSTONE_DB_USER|default('keystone') %}
+{% set keystone_db_host = environ.KEYSTONE_DB_HOST|default('localhost') %}
+{% set keystone_db_port = environ.KEYSTONE_DB_PORT|default('3306') %}
+{% set keystone_db_name = environ.KEYSTONE_DB_NAME|default('keystone') %}
+{% set keystone_db_pass = environ.KEYSTONE_DB_PASSWORD|default('insert-password-here') %}
+connection = mysql+pymysql://{{ keystone_db_user }}:{{ keystone_db_pass }}@{{ keystone_db_host }}:{{ keystone_db_port }}/{{ keystone_db_name }}
+
+[token]
+provider = fernet
+</code></pre></li>
+
+<li><p>Generates <code>/root/clouds.yaml</code> from <code>/runtime/clouds.j2.yaml</code>.</p>
+
+<p>The <code>clouds.yaml</code> file can be used with to provide authentication information to the <code>openshift</code> command line client (and other applications that use the OpenStack Python SDK). We&rsquo;ll see an example of this further on in this article.</p></li>
+
+<li><p>Initializes Keystone&rsquo;s fernet token mechanism by running <code>keystone-manage fernet_setup</code>.</p>
+
+<p>Keystone supports various token generation mechanisms. Fernet tokens provide some advantages over the older UUID token mechanism. From the <a href="fernet-faq">FAQ</a>:</p>
+
+<blockquote>
+<p>Even though fernet tokens operate very similarly to UUID tokens, they do not require persistence or leverage the configured token persistence driver in any way. The keystone token database no longer suffers bloat as a side effect of authentication. Pruning expired tokens from the token database is no longer required when using fernet tokens. Because fernet tokens do not require persistence, they do not have to be replicated. As long as each keystone node shares the same key repository, fernet tokens can be created and validated instantly across nodes.</p>
+</blockquote></li>
+
+<li><p>Initializes the Keystone database schema by running <code>keystone-manage db_sync</code>.</p>
+
+<p>The <code>db_sync</code> command creates the database tables that Keystone requires to operate.</p></li>
+
+<li><p>Creates the Keystone <code>admin</code> user and initial service catalog entries by running <code>keystone-manage bootstrap</code></p>
+
+<p>Before we can authenticate to Keystone, there needs to exist a user with administrative privileges (so that we can create other users, projects, and so forth).</p></li>
+
+<li><p>Starts <code>httpd</code>.</p></li>
+</ol>
+
+<h3 id="avoiding-race-conditions">Avoiding race conditions</h3>
+
+<p>When we run <code>docker-compose up</code>, it will bring up both the <code>keystone</code> container and the <code>database</code> container in parallel. This is going to cause problems if we try to initialize the Keystone database schema before the database server is actually up and running. There is a <code>depends_on</code> keyword that can be used to order the startup of containers in your <code>docker-compose.yml</code> file, but this isn&rsquo;t useful to us: this only delays the startup of the dependent container until the indicated container is <em>running</em>. It doesn&rsquo;t know anything about application startup, and so it would not wait for the database to be ready.</p>
+
+<p>We need to explicitly wait until we can successfully connect to the database before we can complete initializing the Keystone service. It turns out the easiest solution to this problem is to imply run the database schema initialization in a loop until it is successful, like this:</p>
+
+<pre><code>echo &quot;* initializing database schema&quot;
+while ! keystone-manage db_sync; do
+  echo &quot;! database schema initialization failed; retrying in 5 seconds...&quot;
+  sleep 5
+done
+</code></pre>
+
+<p>This will attempt the <code>db_sync</code> command every five seconds until it is sucessful.</p>
+
+<h2 id="the-final-docker-compose-file">The final docker-compose file</h2>
+
+<p>Taking all of the above into account, this is what the final <code>docker-compose.yml</code> file looks like:</p>
+
+<pre><code>---
+version: &quot;3&quot;
+
+services:
+  database:
+    image: mariadb:10.4.5-bionic
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${KEYSTONE_DB_USER:-keystone}
+      MYSQL_PASSWORD: ${KEYSTONE_DB_PASSWORD}
+      MYSQL_DATABASE: ${KEYSTONE_DB_NAME:-keystone}
+    volumes:
+      - mysql:/var/lib/mysql
+
+  keystone:
+    build:
+      context: .
+      args:
+        KEYSTONE_IMAGE_TAG: current-tripleo
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      KEYSTONE_ADMIN_PASSWORD: ${KEYSTONE_ADMIN_PASSWORD}
+      KEYSTONE_DB_PASSWORD: ${KEYSTONE_DB_PASSWORD}
+      KEYSTONE_DB_USER: ${KEYSTONE_DB_USER:-keystone}
+      KEYSTONE_DB_NAME: ${KEYSTONE_DB_NAME:-keystone}
+      KEYSTONE_DEBUG: ${KEYSTONE_DEBUG:-&quot;false&quot;}
+    ports:
+      - &quot;127.0.0.1:5000:5000&quot;
+
+volumes:
+  mysql:
+</code></pre>
+
+<h2 id="interacting-with-keystone">Interacting with Keystone</h2>
+
+<p>Once Keystone is up and running, we can grab the generated <code>clouds.yaml</code> file like this:</p>
+
+<pre><code>docker-compose exec keystone cat /root/clouds.yaml &gt; clouds.yaml
+</code></pre>
+
+<p>Now we can run the <code>openstack</code> command line client:</p>
+
+<pre><code>$ export OS_CLOUD=openstack-public
+$ openstack catalog list
++----------+----------+-----------------------------------+
+| Name     | Type     | Endpoints                         |
++----------+----------+-----------------------------------+
+| keystone | identity | RegionOne                         |
+|          |          |   internal: http://localhost:5000 |
+|          |          | RegionOne                         |
+|          |          |   public: http://localhost:5000   |
+|          |          |                                   |
++----------+----------+-----------------------------------+
+$ openstack user list
++----------------------------------+-------+
+| ID                               | Name  |
++----------------------------------+-------+
+| e8f460619a854c849feaf278b8d68e2c | admin |
++----------------------------------+-------+
+</code></pre>
+
+<h2 id="project-sources">Project sources</h2>
+
+<p>You can find everything reference in this article in my <a href="https://github.com/larsks/docker-compose-keystone">docker-compose-keystone</a> repository.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/openstack/">openstack</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/docker/">docker</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/keystone/">keystone</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/docker-compose/">docker-compose</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/tripleo/">tripleo</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Running%20Keystone%20with%20Docker%20Compose&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2019-06-07-running-keystone-with-docker-c%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

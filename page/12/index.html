@@ -99,6 +99,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-11-28-a-python-interface-to-signalfd/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">A Python interface to signalfd() using FFI</h4>
+        <time class="post-stub-date" datetime="2013-11-28">Published Thu, Nov 28, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I just recently learned about the signalfd(2) system call, which was introduced to the Linux kernel back in 2007:
+ signalfd() creates a file descriptor that can be used to accept signals targeted at the caller. This provides an alternative to the use of a signal handler or sigwaitinfo(2), and has the advantage that the file descriptor may be monitored by select(2), poll(2), and epoll(7).
+ The traditional asynchronous delivery mechanism can be tricky to get right, whereas this provides a convenient fd interface that integrates nicely with your existing event-based code.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-11-28-a-python-interface-to-signalfd/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Long polling with Javascript and Python</h4>
         <time class="post-stub-date" datetime="2013-11-23">Published Sat, Nov 23, 2013</time>
@@ -301,30 +325,6 @@ Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Inst
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-11-12-a-random-collection/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-10-28-why-does-the-neutron/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Why does the Neutron documentation recommend three interfaces?</h4>
-        <time class="post-stub-date" datetime="2013-10-28">Published Mon, Oct 28, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    The documentation for configuring Neutron recommends that a network controller has three physical interfaces:
- Before you start, set up a machine to be a dedicated network node. Dedicated network nodes should have the following NICs: the management NIC (called MGMT_INTERFACE), the data NIC (called DATA_INTERFACE), and the external NIC (called EXTERNAL_INTERFACE).
- People occasionally ask, &ldquo;why three interfaces? What if I only have two?&ldquo;, so I wanted to provide an extended answer that might help people understand what the interfaces are for and what trade-offs are involved in using fewer interfaces.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-10-28-why-does-the-neutron/">(Read more...)</a>
     </p>
     
     

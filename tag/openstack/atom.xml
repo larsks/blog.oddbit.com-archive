@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/openstack/" rel="alternate"></link>
 
-  <updated>2018-02-26T00:00:00Z</updated>
+  <updated>2019-06-07T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/openstack/</id>
+  
+  <entry>
+    <title>Running Keystone with Docker Compose</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/"/>
+    <id>https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/</id>
+    <published>2019-06-07T00:00:00Z</published>
+    <updated>2019-06-07T00:00:00Z</updated>
+    <summary type="html">In this article, we will look at what is necessary to run OpenStack&amp;rsquo;s Keystone service (and the requisite database server) in containers using Docker Compose.
+Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&amp;rsquo;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:</summary>
+  </entry>
   
   <entry>
     <title>Grouping aggregation queries in Gnocchi 4.0.x</title>
@@ -198,19 +211,6 @@ It is possible to generate your network configuration from this configuration dr
     <summary type="html">Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
 As part of that presentation, I&amp;rsquo;ve put together a short demonstration video:
  This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</summary>
-  </entry>
-  
-  <entry>
-    <title>Diagnosing problems with an OpenStack deployment</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/"/>
-    <id>https://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/</id>
-    <published>2015-03-09T00:00:00Z</published>
-    <updated>2015-03-09T00:00:00Z</updated>
-    <summary type="html">I recently had the chance to help a colleague debug some problems in his OpenStack installation. The environment was unique because it was booting virtualized aarch64 instances, which at the time did not have any PCI bus support&amp;hellip;which in turn precluded things like graphic consoles (i.e., VNC or SPICE consoles) for the Nova instances.
-This post began life as an email summarizing the various configuration changes we made on the systems to get things up and running.</summary>
   </entry>
   
 </feed>

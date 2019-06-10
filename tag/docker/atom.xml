@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/docker/" rel="alternate"></link>
 
-  <updated>2019-02-24T00:00:00Z</updated>
+  <updated>2019-06-07T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/docker/</id>
+  
+  <entry>
+    <title>Running Keystone with Docker Compose</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/"/>
+    <id>https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/</id>
+    <published>2019-06-07T00:00:00Z</published>
+    <updated>2019-06-07T00:00:00Z</updated>
+    <summary type="html">In this article, we will look at what is necessary to run OpenStack&amp;rsquo;s Keystone service (and the requisite database server) in containers using Docker Compose.
+Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&amp;rsquo;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:</summary>
+  </entry>
   
   <entry>
     <title>Docker build learns about secrets and ssh agent forwarding</title>
@@ -192,19 +205,6 @@ The PrivateTmp directive, if true, &amp;ldquo;sets up a new file system namespac
     <updated>2015-01-17T00:00:00Z</updated>
     <summary type="html">I regularly use OpenStack on my laptop with libvirt as my hypervisor. I was interested in experimenting with recent versions of the nova-docker driver, but I didn&amp;rsquo;t have a spare system available on which to run the driver, and I use my regular nova-compute service often enough that I didn&amp;rsquo;t want to simply disable it temporarily in favor of nova-docker.
 NB As pointed out by gustavo in the comments, running two neutron-openvswitch-agents on the same host &amp;ndash; as suggested in this article &amp;ndash; is going to lead to nothing but sadness and doom.</summary>
-  </entry>
-  
-  <entry>
-    <title>Building a minimal web server for testing Kubernetes</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/"/>
-    <id>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</id>
-    <published>2015-01-04T00:00:00Z</published>
-    <updated>2015-01-04T00:00:00Z</updated>
-    <summary type="html">I have recently been doing some work with Kubernetes, and wanted to put together a minimal image with which I could test service and pod deployment. Size in this case was critical: I wanted something that would download quickly when initially deployed, because I am often setting up and tearing down Kubernetes as part of my testing (and some of my test environments have poor external bandwidth).
-Building thttpd My go-to minimal webserver is thttpd.</summary>
   </entry>
   
 </feed>

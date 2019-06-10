@@ -4,24 +4,59 @@
   
   <url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2019-05-14-a-diy-cpap-battery-box/</loc>
-    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
+    <loc>https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/</loc>
+    <lastmod>2019-06-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.oddbit.com/</loc>
-    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/docker/</loc>
+    <lastmod>2019-06-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/docker-compose/</loc>
+    <lastmod>2019-06-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/keystone/</loc>
+    <lastmod>2019-06-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/openstack/</loc>
+    <lastmod>2019-06-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/tripleo/</loc>
+    <lastmod>2019-06-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2019-05-14-a-diy-cpap-battery-box/</loc>
+    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -130,12 +165,6 @@
   <url>
     <loc>https://blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/</loc>
     <lastmod>2019-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/docker/</loc>
-    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -357,12 +386,6 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/tag/openstack/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/</loc>
     <lastmod>2018-02-08T00:00:00+00:00</lastmod>
   </url>
@@ -514,12 +537,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/tag/openvswitch/</loc>
-    <lastmod>2016-05-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/tripleo/</loc>
     <lastmod>2016-05-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

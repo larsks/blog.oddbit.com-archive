@@ -99,6 +99,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Docker vs. PrivateTmp</h4>
+        <time class="post-stub-date" datetime="2015-01-18">Published Sun, Jan 18, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    While working with Docker the other day, I ran into an undesirable interaction between Docker and systemd services that utilize the PrivateTmp directive.
+The PrivateTmp directive, if true, &ldquo;sets up a new file system namespace for the executed processes and mounts private /tmp and /var/tmp directories inside it that is not shared by processes outside of the namespace&rdquo;. This is a great idea from a security perspective, but can cause some unanticipated consequences.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Running nova-libvirt and nova-docker on the same host</h4>
         <time class="post-stub-date" datetime="2015-01-17">Published Sat, Jan 17, 2015</time>
@@ -301,30 +324,6 @@ class { 'ssh': }  And a Dockerfile like this:
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Integrating custom code with Nova using hooks</h4>
-        <time class="post-stub-date" datetime="2014-09-27">Published Sat, Sep 27, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Would you like to run some custom Python code when Nova creates and destroys virtual instances on your compute hosts? This is possible using Nova&rsquo;s support for hooks, but the existing documentation is somewhat short on examples, so I&rsquo;ve spent some time trying to get things working.
-The demo_nova_hooks repository contains a working example of the techniques discussed in this article.
-What&rsquo;s a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to attach a class of your own design to a particular function or method call in Nova.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/">(Read more...)</a>
     </p>
     
     

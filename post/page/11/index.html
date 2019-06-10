@@ -98,6 +98,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Firewalld, NetworkManager, and OpenStack</h4>
+        <time class="post-stub-date" datetime="2014-05-20">Published Tue, May 20, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    These are my notes on making OpenStack play well with firewalld and NetworkManager.
+NetworkManager By default, NetworkManager attempts to start a DHCP client on every new available interface. Since booting a single instance in OpenStack can result in the creation of several virtual interfaces, this results in a lot of:
+May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &lt;info&gt; Activation (qvb512640bd-ee) starting connection 'Wired connection 2'  You can disable this behavior by adding the following to /etc/NetworkManager/NetworkManager.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Flat networks with ML2 and OpenVSwitch</h4>
         <time class="post-stub-date" datetime="2014-05-19">Published Mon, May 19, 2014</time>
@@ -305,30 +329,6 @@ Writing templates Because Heat began life as an analog of AWS CloudFormation, it
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-11-28-a-python-interface-to-signalfd/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">A Python interface to signalfd() using FFI</h4>
-        <time class="post-stub-date" datetime="2013-11-28">Published Thu, Nov 28, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I just recently learned about the signalfd(2) system call, which was introduced to the Linux kernel back in 2007:
- signalfd() creates a file descriptor that can be used to accept signals targeted at the caller. This provides an alternative to the use of a signal handler or sigwaitinfo(2), and has the advantage that the file descriptor may be monitored by select(2), poll(2), and epoll(7).
- The traditional asynchronous delivery mechanism can be tricky to get right, whereas this provides a convenient fd interface that integrates nicely with your existing event-based code.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-11-28-a-python-interface-to-signalfd/">(Read more...)</a>
     </p>
     
     

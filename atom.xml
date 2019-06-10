@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2019-05-14T00:00:00Z</updated>
+  <updated>2019-06-07T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  
+  <entry>
+    <title>Running Keystone with Docker Compose</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/"/>
+    <id>https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/</id>
+    <published>2019-06-07T00:00:00Z</published>
+    <updated>2019-06-07T00:00:00Z</updated>
+    <summary type="html">In this article, we will look at what is necessary to run OpenStack&amp;rsquo;s Keystone service (and the requisite database server) in containers using Docker Compose.
+Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&amp;rsquo;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:</summary>
+  </entry>
   
   <entry>
     <title>A DIY CPAP Battery Box</title>
@@ -199,18 +212,6 @@ A walkthrough of using GDB to manually inspect the behavior of our code.
 Creating GDB scripts to automatically test the behavior of our code.
  Part 3: Tracing with simavr
 Using simavr to collect information about the state of microcontroller pins while our code is running.</summary>
-  </entry>
-  
-  <entry>
-    <title>PiPower: A Raspberry Pi UPS</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/"/>
-    <id>https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</id>
-    <published>2019-01-19T00:00:00Z</published>
-    <updated>2019-01-19T00:00:00Z</updated>
-    <summary type="html">I have a Raspberry Pi running RetroPie hooked up to a television. It&amp;rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&amp;rsquo;re pulling the plug on the Pi. While there haven&amp;rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</summary>
   </entry>
   
 </feed>
