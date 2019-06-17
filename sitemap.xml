@@ -4,30 +4,35 @@
   
   <url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2019-06-14-git-etiquette-commit-messages/</loc>
-    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
+    <loc>https://blog.oddbit.com/post/2019-06-17-avoid-rebase-hell-squashing-wi/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.oddbit.com/</loc>
-    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.oddbit.com/tag/git/</loc>
-    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2019-06-14-git-etiquette-commit-messages/</loc>
+    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Avoid rebase hell: squashing without rebasing &middot; The Odd Bit</title>
+        <meta name="description" content="You&rsquo;re working on a pull request. You&rsquo;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&rsquo;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this:
+7e181479 [0487162] Adds methods for widget sales 0487162 [76ee81c d6ed026] Merge remote-tracking branch &#39;origin/master&#39; into my_feature 76ee81c [b048836 981aab4] Merge branch &#39;my_feature&#39; of https://github.com/my_user_name/widgets into my_feature 981aab4 [08d95d3] Adds api for the widget service.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Avoid rebase hell: squashing without rebasing</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2019-06-17" itemprop="datePublished">Mon, Jun 17, 2019</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>You&rsquo;re working on a pull request. You&rsquo;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&rsquo;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this:</p>
+
+<pre><code>7e181479 [0487162] Adds methods for widget sales
+0487162 [76ee81c d6ed026] Merge remote-tracking branch 'origin/master' into my_feature
+76ee81c [b048836 981aab4] Merge branch 'my_feature' of https://github.com/my_user_name/widgets into my_feature
+981aab4 [08d95d3] Adds api for the widget service.
+b048836 [3dd0c22] Includes fixes suggested by reviewer.
+3dd0c22 [5891db2] adds changes requested by reviewer
+5891db2 [2e226e4 da1e85c] fixing merge conflicts
+2e226e4 [c555cc1] fixes suggestions given by the reviewer
+da1e85c [e5beb3e] Adds gadget related API spec
+c555cc1 [e5beb3e] Adds doodad related API spec
+e5beb3e [c43bade] Adds api for update and delete of widgets
+c43bade [deaa962] Adds api for creating widgets
+deaa962 [9de79ab] Adds all get methods for listing widgets
+9de79ab [8288ab1] Adds api for showing a widget and simple data model
+8288ab1 [08d95d3] Adds api framework for widget service
+</code></pre>
+
+<p>You know that&rsquo;s a mess, so you try to fix it by running <code>git rebase -i master</code> and squashing everything together&hellip;and you find yourself stuck in an endless maze of merge conflicts. There has to be a better way!</p>
+
+<p><em>(voiceover: there is a better way&hellip;)</em></p>
+
+<h2 id="option-1-merge-squash">Option 1: merge &ndash;squash</h2>
+
+<ol>
+<li><p>Check out a new branch based on <code>master</code> (or the appropriate base branch if your feature branch isn&rsquo;t based on <code>master</code>):</p>
+
+<pre><code>git checkout -b work master
+</code></pre>
+
+<p>(This creates a new branch called <code>work</code> and makes that your current branch.)</p></li>
+
+<li><p>Bring in the changes from your messy pull request using <code>git merge --squash</code>:</p>
+
+<pre><code>git merge --squash my_feature
+</code></pre></li>
+
+<li><p>Commit the changes with an appropriate commit message:</p>
+
+<pre><code>git commit
+</code></pre>
+
+<p>At this point, you <code>work</code> branch should be identical to the original <code>my_feature</code> branch (running <code>git diff master</code> should not show any changes), but it will have only a single commit after <code>master</code>.</p></li>
+
+<li><p>Return to your feature branch and <code>reset</code> it to the squashed version:</p>
+
+<pre><code>git checkout my_feature
+git reset --hard work
+</code></pre></li>
+
+<li><p>Update your pull request:</p>
+
+<pre><code>git push -f
+</code></pre></li>
+
+<li><p>Optionally clean up your work branch:</p>
+
+<pre><code>git branch -D work
+</code></pre></li>
+</ol>
+
+<h2 id="option-2-using-git-commit-tree">Option 2: Using <code>git commit-tree</code></h2>
+
+<ol>
+<li><p>Use <code>git commit-tree</code> to create new commit that reproduces the current state of your <code>my_feature</code> branch but</p>
+
+<pre><code>git commit-tree -p master -m 'this implements my_feature' my_feature^{tree}
+</code></pre>
+
+<p>This will print out a commit hash:</p>
+
+<pre><code>1d3917a3b7c43f4585084e626303c9eeee59c6d6
+</code></pre></li>
+
+<li><p>Reset your <code>my_feature</code> branch to this new commit hash:</p>
+
+<pre><code>git reset --hard 1d3917a3b7c43f4585084e626303c9eeee59c6d6
+</code></pre></li>
+
+<li><p>Consider editing your commit message to meet <a href="https://blog.oddbit.com/post/2019-06-14-git-etiquette-commit-messages/">best practices</a>.</p></li>
+
+<li><p>Update your pull request:</p>
+
+<pre><code>git push -f
+</code></pre></li>
+</ol>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/git/">git</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Avoid%20rebase%20hell%3a%20squashing%20without%20rebasing&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2019-06-17-avoid-rebase-hell-squashing-wi%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+
