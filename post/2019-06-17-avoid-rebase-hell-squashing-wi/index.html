@@ -148,7 +148,9 @@ deaa962 [9de79ab] Adds all get methods for listing widgets
 <li><p>Bring in the changes from your messy pull request using <code>git merge --squash</code>:</p>
 
 <pre><code>git merge --squash my_feature
-</code></pre></li>
+</code></pre>
+
+<p>This brings in all the changes from your <code>my_feature</code> branch and stages them, but does not create <em>any</em> commits.</p></li>
 
 <li><p>Commit the changes with an appropriate commit message:</p>
 
@@ -182,7 +184,7 @@ git reset --hard work
 <pre><code>git commit-tree -p master -m 'this implements my_feature' my_feature^{tree}
 </code></pre>
 
-<p>This will print out a commit hash:</p>
+<p>This uses the current state of the <code>my_feature</code> branch as the source of a new commit whose parent is <code>master</code>.  This will print out a commit hash:</p>
 
 <pre><code>1d3917a3b7c43f4585084e626303c9eeee59c6d6
 </code></pre></li>
