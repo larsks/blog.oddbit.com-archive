@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/github/" rel="alternate"></link>
 
-  <updated>2019-05-07T09:00:00Z</updated>
+  <updated>2019-06-14T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/github/</id>
+  
+  <entry>
+    <title>Git Etiquette: Commit messages and pull requests</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-06-14-git-etiquette-commit-messages/"/>
+    <id>https://blog.oddbit.com/post/2019-06-14-git-etiquette-commit-messages/</id>
+    <published>2019-06-14T00:00:00Z</published>
+    <updated>2019-06-14T00:00:00Z</updated>
+    <summary type="html">Always work on a branch (never commit on master) When working with an upstream codebase, always make your changes on a feature branch rather than your local master branch. This will make it easier to keep your local master branch current with respect to upstream, and can help avoid situations in which you accidentally overwrite your local changes or introduce unnecessary merge commits into your history.
+Rebase instead of merge If you need to incorporate changes from the upstream master branch in the feature branch on which you are currently doing, bring in those changes using git rebase rather than git merge.</summary>
+  </entry>
   
   <entry>
     <title>New comment system</title>

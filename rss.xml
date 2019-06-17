@@ -6,10 +6,20 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git Etiquette: Commit messages and pull requests</title>
+      <link>https://blog.oddbit.com/post/2019-06-14-git-etiquette-commit-messages/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2019-06-14-git-etiquette-commit-messages/</guid>
+      <description>Always work on a branch (never commit on master) When working with an upstream codebase, always make your changes on a feature branch rather than your local master branch. This will make it easier to keep your local master branch current with respect to upstream, and can help avoid situations in which you accidentally overwrite your local changes or introduce unnecessary merge commits into your history.
+Rebase instead of merge If you need to incorporate changes from the upstream master branch in the feature branch on which you are currently doing, bring in those changes using git rebase rather than git merge.</description>
+    </item>
     
     <item>
       <title>Running Keystone with Docker Compose</title>

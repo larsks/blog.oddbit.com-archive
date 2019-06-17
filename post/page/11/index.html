@@ -98,6 +98,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Fedora and OVS Bridge Interfaces</h4>
+        <time class="post-stub-date" datetime="2014-05-20">Published Tue, May 20, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I run OpenStack on my laptop, and I&rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
+This is the network configuration file for br-ex on my system:
+DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Firewalld, NetworkManager, and OpenStack</h4>
         <time class="post-stub-date" datetime="2014-05-20">Published Tue, May 20, 2014</time>
@@ -305,30 +329,6 @@ mk-network-dot There are a lot of devices involved in your Neutron network confi
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">An introduction to OpenStack Heat</h4>
-        <time class="post-stub-date" datetime="2013-12-06">Published Fri, Dec 6, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Heat is a template-based orchestration mechanism for use with OpenStack. With Heat, you can deploy collections of resources &ndash; networks, servers, storage, and more &ndash; all from a single, parameterized template.
-In this article I will introduce Heat templates and the heat command line client.
-Writing templates Because Heat began life as an analog of AWS CloudFormation, it supports the template formats used by the CloudFormation (CFN) tools. It also supports its own native template format, called HOT (&ldquo;Heat Orchestration Templates&rdquo;).
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/">(Read more...)</a>
     </p>
     
     

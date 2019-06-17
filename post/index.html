@@ -98,6 +98,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2019-06-14-git-etiquette-commit-messages/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Git Etiquette: Commit messages and pull requests</h4>
+        <time class="post-stub-date" datetime="2019-06-14">Published Fri, Jun 14, 2019</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Always work on a branch (never commit on master) When working with an upstream codebase, always make your changes on a feature branch rather than your local master branch. This will make it easier to keep your local master branch current with respect to upstream, and can help avoid situations in which you accidentally overwrite your local changes or introduce unnecessary merge commits into your history.
+Rebase instead of merge If you need to incorporate changes from the upstream master branch in the feature branch on which you are currently doing, bring in those changes using git rebase rather than git merge.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2019-06-14-git-etiquette-commit-messages/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Running Keystone with Docker Compose</h4>
         <time class="post-stub-date" datetime="2019-06-07">Published Fri, Jun 7, 2019</time>
@@ -295,30 +318,6 @@ avr-gcc -mmcu=atmega328p -DF_CPU=16000000 -Os -c blink.c  If you were to forget 
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2019-02-01-atomicblock-magic-in-avrlibc/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">ATOMIC_BLOCK magic in avr-libc</h4>
-        <time class="post-stub-date" datetime="2019-02-01">Published Fri, Feb 1, 2019</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    The AVR C library, avr-libc, provide an ATOMIC_BLOCK macro that you can use to wrap critical sections of your code to ensure that interrupts are disabled while the code executes. At high level, the ATOMIC_BLOCK macro (when called using ATOMIC_FORCEON) does something like this:
-cli(); ...your code here... seti();  But it&rsquo;s more than that. If you read the documentation for the macro, it says:
- Creates a block of code that is guaranteed to be executed atomically.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2019-02-01-atomicblock-magic-in-avrlibc/">(Read more...)</a>
     </p>
     
     
