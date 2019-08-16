@@ -1926,7 +1926,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>docker-compose is starting containers after host reboot. Which ones? docker path docker-compose reboot autostart  Why do the following string comparisons return inconsistent results? bash relational-operators  How to frame my URL to send GraphQL request to the application running inside a container on linux machine from windows machine? linux docker graphql containers citrix  How do I select a variable using a fact in my ansible playbook? ansible ansible-facts  bash brace expansion based on variable content not working bash brace-expansion  How can I include my --net=host in my Dockerfile before I deploy my container?</description>
+      <description>precompiled golang on alpine docker go alpine  How to add variables to prefix path? ansible  Redis data is getting overridden by Docker Entrypoint docker docker-compose  docker-compose is starting containers after host reboot. Which ones? docker path docker-compose reboot autostart  Why do the following string comparisons return inconsistent results? bash relational-operators  How to frame my URL to send GraphQL request to the application running inside a container on linux machine from windows machine?</description>
     </item>
     
   </channel>
