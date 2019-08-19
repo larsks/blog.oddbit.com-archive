@@ -1926,7 +1926,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>precompiled golang on alpine docker go alpine  How to add variables to prefix path? ansible  Redis data is getting overridden by Docker Entrypoint docker docker-compose  docker-compose is starting containers after host reboot. Which ones? docker path docker-compose reboot autostart  Why do the following string comparisons return inconsistent results? bash relational-operators  How to frame my URL to send GraphQL request to the application running inside a container on linux machine from windows machine?</description>
+      <description>Python set dictionary nested key with dot delineated string python dictionary  Cannot install pyodbc in docker and getting error command &amp;#39;gcc&amp;#39; failed with exit status 1 python-3.x docker dockerfile azure-functions docker-build  Iterating over Ansible debug output ansible ansible-facts  Flask accessing config variables when app is created inside of function python python-2.7 flask  Ansible: Copying files from local to remote - &amp;#34;AttributeError: &amp;#39;dict&amp;#39; object has no attribute &amp;#39;endswith&amp;#39;&amp;#34; ansible  precompiled golang on alpine docker go alpine  How to add variables to prefix path?</description>
     </item>
     
   </channel>
