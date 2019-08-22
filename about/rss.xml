@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Append to YAML list - how do I only &amp;#39;append&amp;#39; the value? python yaml pyyaml  Ansible looping over with_items $n times ansible  How to split a very long line into several lines on Python? python xml  How to render a string using jinja2 while making use of environment variables python jinja2  How to move Docker containers between different hosts? docker containers docker-registry  Python set dictionary nested key with dot delineated string python dictionary  Cannot install pyodbc in docker and getting error command &amp;#39;gcc&amp;#39; failed with exit status 1 python-3.</description>
+      <description>Filter out lines from input file ansible  Nothing written next to remote: in git git github  How create correct template file for ansible role ansible jinja2  Docker COPY no such file or directory docker directory echo pwd  can you keep the ssh host key on remote sever the same after replace the instance? amazon-ec2 ssh ssh-keys openssh ecdsa  Why do the following string comparisons return inconsistent results?</description>
     </item>
     
   </channel>
