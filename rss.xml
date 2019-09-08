@@ -1926,7 +1926,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to add Dynamic URL part that contains a slash python django url  Simple ansible example that connects to new server as root with password ansible provisioning  See user id in linux journalctl linux logging  Filter out lines from input file ansible  Nothing written next to remote: in git git github  How create correct template file for ansible role ansible jinja2  Docker COPY no such file or directory docker directory echo pwd  Why do the following string comparisons return inconsistent results?</description>
+      <description>Web API run by Docker Compose unable to access service dependency over HTTP docker asp.net-core docker-compose  How to add Dynamic URL part that contains a slash python django url  Simple ansible example that connects to new server as root with password ansible provisioning  See user id in linux journalctl linux logging  Filter out lines from input file ansible  Nothing written next to remote: in git git github  How create correct template file for ansible role ansible jinja2  Docker COPY no such file or directory docker directory echo pwd  Why do the following string comparisons return inconsistent results?</description>
     </item>
     
   </channel>
