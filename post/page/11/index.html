@@ -103,6 +103,31 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Solved: Open vSwitch and persistent MAC addresses</h4>
+        <time class="post-stub-date" datetime="2014-05-23">Published Fri, May 23, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &ldquo;don&rsquo;t use ip link set ...&rdquo; for this purpose.
+You can set the bridge MAC address via ovs-vsctl like this:
+ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&rsquo;ve updated my ifconfig-br-ex to look like this:
+DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPINTERFACES=eth0 MACADDR=fa:16:3e:ef:91:ec OVS_EXTRA=&quot;set bridge br-ex other-config:hwaddr=$MACADDR&quot;  The OVS_EXTRA parameter gets passed to the add-br call like this:
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-05-21-sharing-a-terminal-session-wit/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Sharing a terminal session with termshare</h4>
         <time class="post-stub-date" datetime="2014-05-21">Published Wed, May 21, 2014</time>
@@ -310,29 +335,6 @@ In an environment running Neutron, a request from your instance must traverse a 
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-01-13-rdo-bug-triage/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">RDO Bug Triage</h4>
-        <time class="post-stub-date" datetime="2014-01-13">Published Mon, Jan 13, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    This Wednesday, January 15, at 14:00 UTC (that&rsquo;s 9AM US/Eastern, or date -d &quot;14:00 UTC&quot; in your local timezone) I will be helping out with the RDO bug triage day. We&rsquo;ll be trying to validate all the untriaged bugs opened against RDO.
-Feel free to drop by on #rdo and help out or ask questions.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-01-13-rdo-bug-triage/">(Read more...)</a>
     </p>
     
     

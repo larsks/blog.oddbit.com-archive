@@ -6,10 +6,19 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TM-V71A and Linux, part 1: Programming mode</title>
+      <link>https://blog.oddbit.com/post/2019-10-03-tm-v71a-linux-part-1/</link>
+      <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2019-10-03-tm-v71a-linux-part-1/</guid>
+      <description>I recently acquired my Technician amateur radio license, and like many folks my first radio purchase was a Baofeng UV-5R. Due to its low cost, this is a very popular radio, and there is excellent open source software available for programming it in the form of the CHIRP project. After futzing around with the UV-5R for a while, I wanted to get something a little nicer for use at home, so I purchased a Kenwood TM-V71A.</description>
+    </item>
     
     <item>
       <title>Avoid rebase hell: squashing without rebasing</title>
@@ -1926,7 +1935,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to include package data with setuptools/distribute? python setuptools distribute  module &amp;#39;yaml&amp;#39; has no attribute &amp;#39;FullLoader&amp;#39; python  Web API run by Docker Compose unable to access service dependency over HTTP docker asp.net-core docker-compose  How to add Dynamic URL part that contains a slash python django url  Simple ansible example that connects to new server as root with password ansible provisioning  See user id in linux journalctl linux logging  Filter out lines from input file ansible  Nothing written next to remote: in git git github  How create correct template file for ansible role ansible jinja2  Docker COPY no such file or directory docker directory echo pwd   (last refreshed at 2019-10-04 21:42 UTC )</description>
+      <description>How to include package data with setuptools/distribute? python setuptools distribute  module &amp;#39;yaml&amp;#39; has no attribute &amp;#39;FullLoader&amp;#39; python  Web API run by Docker Compose unable to access service dependency over HTTP docker asp.net-core docker-compose  How to add Dynamic URL part that contains a slash python django url  Simple ansible example that connects to new server as root with password ansible provisioning  See user id in linux journalctl linux logging  Filter out lines from input file ansible  Nothing written next to remote: in git git github  How create correct template file for ansible role ansible jinja2  Docker COPY no such file or directory docker directory echo pwd   (last refreshed at 2019-10-06 19:53 UTC )</description>
     </item>
     
   </channel>

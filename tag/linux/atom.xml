@@ -6,8 +6,20 @@
   
   <link href="https://blog.oddbit.com/tag/linux/" rel="alternate"></link>
 
-  <updated>2011-12-26T00:00:00Z</updated>
+  <updated>2019-10-03T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/linux/</id>
+  
+  <entry>
+    <title>TM-V71A and Linux, part 1: Programming mode</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-10-03-tm-v71a-linux-part-1/"/>
+    <id>https://blog.oddbit.com/post/2019-10-03-tm-v71a-linux-part-1/</id>
+    <published>2019-10-03T00:00:00Z</published>
+    <updated>2019-10-03T00:00:00Z</updated>
+    <summary type="html">I recently acquired my Technician amateur radio license, and like many folks my first radio purchase was a Baofeng UV-5R. Due to its low cost, this is a very popular radio, and there is excellent open source software available for programming it in the form of the CHIRP project. After futzing around with the UV-5R for a while, I wanted to get something a little nicer for use at home, so I purchased a Kenwood TM-V71A.</summary>
+  </entry>
   
   <entry>
     <title>Rate limiting made simple</title>

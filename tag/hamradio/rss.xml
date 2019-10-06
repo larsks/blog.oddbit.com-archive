@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hamradio on The Odd Bit</title>
+    <link>https://blog.oddbit.com/tag/hamradio/</link>
+    <description>Recent content in hamradio on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/hamradio/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TM-V71A and Linux, part 1: Programming mode</title>
+      <link>https://blog.oddbit.com/post/2019-10-03-tm-v71a-linux-part-1/</link>
+      <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2019-10-03-tm-v71a-linux-part-1/</guid>
+      <description>I recently acquired my Technician amateur radio license, and like many folks my first radio purchase was a Baofeng UV-5R. Due to its low cost, this is a very popular radio, and there is excellent open source software available for programming it in the form of the CHIRP project. After futzing around with the UV-5R for a while, I wanted to get something a little nicer for use at home, so I purchased a Kenwood TM-V71A.</description>
+    </item>
+    
+  </channel>
+</rss>

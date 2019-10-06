@@ -6,8 +6,20 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2019-06-17T00:00:00Z</updated>
+  <updated>2019-10-03T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  
+  <entry>
+    <title>TM-V71A and Linux, part 1: Programming mode</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-10-03-tm-v71a-linux-part-1/"/>
+    <id>https://blog.oddbit.com/post/2019-10-03-tm-v71a-linux-part-1/</id>
+    <published>2019-10-03T00:00:00Z</published>
+    <updated>2019-10-03T00:00:00Z</updated>
+    <summary type="html">I recently acquired my Technician amateur radio license, and like many folks my first radio purchase was a Baofeng UV-5R. Due to its low cost, this is a very popular radio, and there is excellent open source software available for programming it in the form of the CHIRP project. After futzing around with the UV-5R for a while, I wanted to get something a little nicer for use at home, so I purchased a Kenwood TM-V71A.</summary>
+  </entry>
   
   <entry>
     <title>Avoid rebase hell: squashing without rebasing</title>
@@ -189,19 +201,6 @@ int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is 
     <summary type="html">Pssst! Hey&amp;hellip;hey, buddy, wanna get an extra KB for cheap?
 When I write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
 Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&amp;rsquo;s exactly what I did.</summary>
-  </entry>
-  
-  <entry>
-    <title>Debugging attiny85 code, part 1: simavr and gdb</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/"/>
-    <id>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</id>
-    <published>2019-01-22T00:00:00Z</published>
-    <updated>2019-01-22T00:00:00Z</updated>
-    <summary type="html">In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
-I&amp;rsquo;ve split this into three posts:</summary>
   </entry>
   
 </feed>
