@@ -1935,7 +1935,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>python yaml load formatted string python yaml pyyaml  Docker container running SQL Server seems to crash every time docker  Freenas &amp;gt; Docker &amp;gt; Openproject Container Autostart docker autostart openproject  Docker Increase default storage space of container with storage driver overlay2 docker  Is it possible to reference variables passed as &amp;#39;item&amp;#39; and use their elements when looping through a jinja template? ansible jinja2  Ansible default value and split string ansible yaml  Programmatically checking for a device of a specific type in Linux python linux embedded-linux  Systemd journal access with python API python systemd  Running OpenMapTilesServer on RHEL8 with Podman podman  How to set influx docker container listen to collectd on a specific port address?</description>
+      <description>Ansible Unable to Perform &amp;#39;Yum Install&amp;#39; task on Single Server (out of many) python ansible  Create symlink with existing directory structure in new location bash shell find ln  How do i get all directory and files in my github repository by using github api? git github  Nested loops using list and dict in ansible python loops ansible conditional-statements  How to filter language for cloning multiple GitHub repositories with curl?</description>
     </item>
     
   </channel>
