@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How do I get the PR information from a branch that&amp;#39;s been merged to master using the Github API? git github pull-request  Use a var in a var in Ansible (lookup) - aws_ssm plugin variables ansible yaml  Is there a DRY way to &amp;#34;git submodule add git@url&amp;#34; with ansible? ansible git-submodules  &amp;#34;Extending&amp;#34; Dockerfile to modify a file, caused sonarqube to fail docker sonarqube  How to dynamically add Docker Container&amp;#39;s IP to the Django&amp;#39;s ALLOWED_HOST python django docker docker-container  how to interpret db volume entries in a docker compose file postgresql docker docker-compose  Jinja2 condition not matching within an expression, how to resolve this?</description>
+      <description>Finding trunk commits not ending on master - Trunk based development with Azure repos git azure-repos tbd  Accessing PostgreSQL on docker container from pgAdmin4 in another docker container postgresql docker pgadmin pgadmin-4 postgresql-12  Question about safely starting and stopping docker container docker rabbitmq  How do I get the PR information from a branch that&amp;#39;s been merged to master using the Github API? git github pull-request  Use a var in a var in Ansible (lookup) - aws_ssm plugin variables ansible yaml  Is there a DRY way to &amp;#34;git submodule add git@url&amp;#34; with ansible?</description>
     </item>
     
   </channel>
