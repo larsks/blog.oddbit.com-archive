@@ -1935,7 +1935,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Retrieve comment from specific XML node in Python python xml  Following a docker tutorial but tutorial and real output is different docker  Docker patch command substitution docker dockerfile  Passing a string in Python as a variable to render_template() in Flask python flask jinja2  Ansible: build a Mac Adresse from a string python ansible mac-address  problems parsing text in python python parsing  How to store a new record in gnome keyring via secret-tool in an ansible task or how to pipe stdin in an ansible shell task?</description>
+      <description>Merge git repo into branch of another repo git  Ansible single-element list breaks lookup call python ansible  Can podman connect to a remote docker host by setting $DOCKER_HOST? docker podman  Associative array update in Ansible ansible  Concourse build docker-image copying from git repo docker dockerfile concourse concourse-git-resource concourse-pipeline  how to set hostname using inventory file ansible  Retrieve comment from specific XML node in Python python xml  Following a docker tutorial but tutorial and real output is different docker  Docker patch command substitution docker dockerfile  Passing a string in Python as a variable to render_template() in Flask python flask jinja2   (last refreshed at 2019-11-21 22:08 UTC )</description>
     </item>
     
   </channel>
