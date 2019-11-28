@@ -1935,7 +1935,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Ansible Hostvars to List or Dictionary to match off in later task (key:value) ansible ansible-inventory ansible-role ansible-tasks  openstackclient python error during server list python runtime-error openstack  Docker container name vs container id docker  setfacl in Dockerfile has no effect linux docker ubuntu dockerfile acl  Program does not recognize value as a valid variable value? python python-3.x  Python script doesn&amp;#39;t handle lftp and sftp with call to utility python sftp lftp  Ansible - malformed block was encountered while loading a block ansible  Psycopg2 query remove \n from args python python-3.</description>
+      <description>how to use iterator in while loop statement in python python python-3.x while-loop iterator generator  Does packaging python apps into deb inhibits usage of virtual environments? python linux debian python-3.7 python-venv  How to translate bridge networks in docker compose v. 3.7 docker docker-compose  Can not access Jupyter server on Raspberry Pi raspberry-pi jupyter-notebook  Can we mmap /dev/mem to supply expected output for dmidecode inside a container linux  Error with installing docker-compose (def _collate(*iterables, key=lambda a: a, reverse=False) python python-2.</description>
     </item>
     
   </channel>
