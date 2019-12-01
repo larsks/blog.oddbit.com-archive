@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Redis on Ubuntu docker: sysctl: setting key &amp;#34;vm.overcommit_memory&amp;#34;: Read-only file system docker redis  how to use iterator in while loop statement in python python python-3.x while-loop iterator generator  Does packaging python apps into deb inhibits usage of virtual environments? python linux debian python-3.7 python-venv  How to translate bridge networks in docker compose v. 3.7 docker docker-compose  Can not access Jupyter server on Raspberry Pi raspberry-pi jupyter-notebook  Can we mmap /dev/mem to supply expected output for dmidecode inside a container linux  Error with installing docker-compose (def _collate(*iterables, key=lambda a: a, reverse=False) python python-2.</description>
+      <description>Can&amp;#39;t receive data on pull socket using zeroMQ, &amp;#34;Address in use&amp;#34; - Error python sockets zeromq  Hugo server in Docker container not reachable in Windows 10 docker windows-10 hugo  Limit of decorator as class compared to decorator as function python class decorator python-decorators  How to idiomatically filter a list of hostnames by testing for (in)equality to a `lookup( &amp;#39;dig&amp;#39;, ... )` in ansible playbook ansible jinja2  Python unittest: How to assert the existence of a file or folder and print the path on failure?</description>
     </item>
     
   </channel>
