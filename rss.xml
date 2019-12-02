@@ -1935,7 +1935,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Can&amp;#39;t receive data on pull socket using zeroMQ, &amp;#34;Address in use&amp;#34; - Error python sockets zeromq  Hugo server in Docker container not reachable in Windows 10 docker windows-10 hugo  Limit of decorator as class compared to decorator as function python class decorator python-decorators  How to idiomatically filter a list of hostnames by testing for (in)equality to a `lookup( &amp;#39;dig&amp;#39;, ... )` in ansible playbook ansible jinja2  Python unittest: How to assert the existence of a file or folder and print the path on failure?</description>
+      <description>docker-compose equivalent for docker run arguments like &amp;#34;--foo bar&amp;#34; in compose file? docker docker-compose  OS version capture script - unexpected results when using awk shell awk scripting  Why does ansible ad hoc debug module not print variable? ansible  I don&amp;#39;t understand Docker&amp;#39;s &amp;#34;POSTGRES_USER: parameter not set&amp;#34; django postgresql docker  Can&amp;#39;t receive data on pull socket using zeroMQ, &amp;#34;Address in use&amp;#34; - Error python sockets zeromq  Hugo server in Docker container not reachable in Windows 10 docker windows-10 hugo  Limit of decorator as class compared to decorator as function python class decorator python-decorators  How to idiomatically filter a list of hostnames by testing for (in)equality to a `lookup( &amp;#39;dig&amp;#39;, .</description>
     </item>
     
   </channel>
