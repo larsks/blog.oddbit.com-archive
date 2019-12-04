@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>docker-compose equivalent for docker run arguments like &amp;#34;--foo bar&amp;#34; in compose file? docker docker-compose  OS version capture script - unexpected results when using awk shell awk scripting  Why does ansible ad hoc debug module not print variable? ansible  I don&amp;#39;t understand Docker&amp;#39;s &amp;#34;POSTGRES_USER: parameter not set&amp;#34; django postgresql docker  Can&amp;#39;t receive data on pull socket using zeroMQ, &amp;#34;Address in use&amp;#34; - Error python sockets zeromq  Hugo server in Docker container not reachable in Windows 10 docker windows-10 hugo  Limit of decorator as class compared to decorator as function python class decorator python-decorators  How to idiomatically filter a list of hostnames by testing for (in)equality to a `lookup( &amp;#39;dig&amp;#39;, .</description>
+      <description>How ansible find python modules on target and is it possible to use virtualenv to install modules dependencies? ansible  is this method used for string concatenation of variables using a with_items loop correct? python ansible yaml jinja2 string-concatenation  Mount read-write volume inside of read-only volume docker docker-volume  docker-compose equivalent for docker run arguments like &amp;#34;--foo bar&amp;#34; in compose file? docker docker-compose  OS version capture script - unexpected results when using awk shell awk scripting  Why does ansible ad hoc debug module not print variable?</description>
     </item>
     
   </channel>
