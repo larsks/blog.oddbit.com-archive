@@ -1935,7 +1935,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Ansible Dictionary/Hash Key as Special Variable python python-3.x dictionary ansible ansible-facts  Setting and using environment variable in Ansible ansible ansible-2.x ansible-inventory  Install python3 in ubuntu 16.04 docker image python python-3.x docker ubuntu dockerfile  How to make docker client communicate with more than one daemon docker  Why does --uid option leads to permission denied error when running uWSGI on Alipne? docker uwsgi  How to get kubernetes node name and IP address as dictionary in ansible?</description>
+      <description>Python XPath returning empty lists from Google Project Sunroof python xpath web-scraping  Bash: get a list of container names from docker-compose.yml bash shell docker docker-compose  Ansible Dictionary/Hash Key as Special Variable python python-3.x dictionary ansible ansible-facts  Setting and using environment variable in Ansible ansible ansible-2.x ansible-inventory  Install python3 in ubuntu 16.04 docker image python python-3.x docker ubuntu dockerfile  How to make docker client communicate with more than one daemon docker  Why does --uid option leads to permission denied error when running uWSGI on Alipne?</description>
     </item>
     
   </channel>
