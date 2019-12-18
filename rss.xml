@@ -1935,7 +1935,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Creating a namespace with a dict of dicts python python-3.x dictionary  Unable to get PhpMyAdmin with MariaDb docker-compose docker phpmyadmin docker-compose mariadb  Cannot Scrape Fantasy Table Using Python python web-scraping beautifulsoup selenium-chromedriver  Ansible Loop and Update Dict python loops dictionary ansible ansible-2.x  Unable to delete origin remote in Git Repository git git-remote  Possible to request github JSON file without token python github  &amp;#39;import&amp;#39; operation behaves differently if I name script &amp;#39;string.</description>
+      <description>Python multi-command CLI with common options python command-line-interface argparse python-click  Use ansible facts to filter interfaces with fact = value python variables ansible jinja2 devops  How can I detect &amp;#34;missing&amp;#34; keys from a Python dict? python  How to get the sum of two defined variables in Jinja2 ansible ansible jinja2  ansible returns with &amp;#34;Failed to import the required Python library (Docker SDK for Python: docker (Python &amp;gt;= 2.</description>
     </item>
     
   </channel>
