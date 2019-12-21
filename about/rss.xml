@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to download unknown object from S3 using Python Boto3? python amazon-web-services amazon-s3 boto3 amazon-sqs  Limit ansible output from shell command results list ansible ansible-2.x ansible-inventory ansible-facts  Python multi-command CLI with common options python command-line-interface argparse python-click  Use ansible facts to filter interfaces with fact = value python variables ansible jinja2 devops  How can I detect &amp;#34;missing&amp;#34; keys from a Python dict? python  How to get the sum of two defined variables in Jinja2 ansible ansible jinja2  ansible returns with &amp;#34;Failed to import the required Python library (Docker SDK for Python: docker (Python &amp;gt;= 2.</description>
+      <description>Block network access of a test/process on Travis? python pytest travis-ci  API for redhat base image to get values of image tags? docker redhat-containers  Running meta: refresh_inventory in a loop? ansible libvirt  How to download unknown object from S3 using Python Boto3? python amazon-web-services amazon-s3 boto3 amazon-sqs  Limit ansible output from shell command results list ansible ansible-2.x ansible-inventory ansible-facts  Python multi-command CLI with common options python command-line-interface argparse python-click  Use ansible facts to filter interfaces with fact = value python variables ansible jinja2 devops  How can I detect &amp;#34;missing&amp;#34; keys from a Python dict?</description>
     </item>
     
   </channel>
