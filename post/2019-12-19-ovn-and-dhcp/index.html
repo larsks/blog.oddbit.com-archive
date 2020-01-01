@@ -169,7 +169,6 @@
 <p>A long time ago, I wrote an article <a href="https://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/">all about OpenStack Neutron</a> (which at that time was called Quantum). That served as an excellent reference for a number of years, but if you've deployed a recent version of OpenStack you may have noticed that the network architecture looks completely different. The network namespaces previously used to implement routers and dhcp servers are gone (along with iptables rules and other features), and have been replaced by OVN (&ldquo;Open Virtual Network&rdquo;). What is OVN? How does it work? In this article, I'd like to explore a minimal OVN installation to help answer these questions.</p>
 <h2 id="goals">Goals</h2>
 <p>We're going to create a single OVN logical switch to which we will attach a few ports. We will demonstrate how we can realize a port on a physical node and configure it using DHCP, using a virtual DHCP server provided by OVN.</p>
-<p>Let's get started!</p>
 <h2 id="so-what-is-ovn-anyway">So what is OVN anyway?</h2>
 <p>If you're just getting started with OVN, you'll find that's a hard question to answer: there is no dedicated OVN website; there's no OVN landing page at <a href="http://openvswitch.org">http://openvswitch.org</a>; in fact, there's really no documentation for OVN at all other than the man pages. The only high-level description you'll find comes from the <code>ovn-architecture(7)</code> man page:</p>
 <blockquote>
@@ -244,7 +243,7 @@ LISTEN    0         10                 0.0.0.0:6642             0.0.0.0:*       
   external_ids:ovn-encap-ip=$(ip addr show eth0 | awk '$1 == &quot;inet&quot; {print $2}' | cut -f1 -d/) \
   external_ids:ovn-encap-type=geneve \
   external_ids:system-id=$(hostname)
-</code></pre><p>This points <code>ovn-remote</code> at the address of the controller, sets <code>ovn-encap-ip</code> to the address of <code>eth0</code> on the local host, , sets <code>systemd-id</code> to the local hostname, and selects <a href="https://tools.ietf.org/html/draft-ietf-nvo3-geneve-08">geneve</a> encapsulation for tunnels (see <a href="https://blog.russellbryant.net/2017/05/30/ovn-geneve-vs-vxlan-does-it-matter/">this post</a> for information on why OVN prefers Geneve encapsulation).</p>
+</code></pre><p>This points <code>ovn-remote</code> at the address of the controller, sets <code>ovn-encap-ip</code> to the address of <code>eth0</code> on the local host, sets <code>systemd-id</code> to the local hostname, and selects <a href="https://tools.ietf.org/html/draft-ietf-nvo3-geneve-08">geneve</a> encapsulation for tunnels (see <a href="https://blog.russellbryant.net/2017/05/30/ovn-geneve-vs-vxlan-does-it-matter/">this post</a> for information on why OVN prefers Geneve encapsulation).</p>
 <p>We can verify these settings by using the <code>ovn-vsctl list</code> command:</p>
 <pre><code>[root@ovn1 ~]# ovs-vsctl --columns external_ids list open_vswitch
 external_ids        : {hostname=&quot;ovn1.virt&quot;, ovn-encap-ip=&quot;192.168.122.101&quot;, ovn-encap-type=geneve, ovn-remote=&quot;192.168.122.100&quot;, rundir=&quot;/var/run/openvswitch&quot;, system-id=&quot;ovn1&quot;}
