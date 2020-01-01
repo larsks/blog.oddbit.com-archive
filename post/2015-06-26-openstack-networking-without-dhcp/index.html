@@ -8,7 +8,7 @@
 It is possible to generate your network configuration from this configuration drive, rather than relying on the DHCP server provided by your OpenStack environment.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ It is possible to generate your network configuration from this configuration dr
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,42 +116,42 @@ It is possible to generate your network configuration from this configuration dr
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>In an OpenStack environment, <a href="https://cloudinit.readthedocs.org/en/latest/">cloud-init</a> generally fetches
 information from the metadata service provided by Nova.  It also has
 support for reading this information from a <em>configuration drive</em>,
 which under OpenStack means a virtual CD-ROM device attached to your
 instance containing the same information that would normally be
 available via the metadata service.</p>
-
 <p>It is possible to generate your network configuration from this
 configuration drive, rather than relying on the DHCP server provided
 by your OpenStack environment.  In order to do this you will need to
 make the following changes to your Nova configuration:</p>
-
 <ol>
-<li><p>You must be using a subnet that does have a DHCP server.  This
-means that you have created it using <code>neutron subnet-create
---disable-dhcp ...</code>, or that you disabled DHCP on an existing
-network using <code>neutron net-update --disable-dhcp ...</code>.</p></li>
-
-<li><p>You must set <code>flat_inject</code> to <code>true</code> in <code>/etc/nova/nova.conf</code>.
+<li>
+<p>You must be using a subnet that does have a DHCP server.  This
+means that you have created it using <code>neutron subnet-create --disable-dhcp ...</code>, or that you disabled DHCP on an existing
+network using <code>neutron net-update --disable-dhcp ...</code>.</p>
+</li>
+<li>
+<p>You must set <code>flat_inject</code> to <code>true</code> in <code>/etc/nova/nova.conf</code>.
 This causes Nova to embed network configuration information in the
-meta-data embedded on the configuration drive.</p></li>
-
-<li><p>You must ensure that <code>injected_network_template</code> in
+meta-data embedded on the configuration drive.</p>
+</li>
+<li>
+<p>You must ensure that <code>injected_network_template</code> in
 <code>/etc/nova/nova.conf</code> points to an appropriately formatted
-template.</p></li>
+template.</p>
+</li>
 </ol>
-
 <p>Cloud-init expects the network configuration information to be
 presented in the format of a Debian <code>/etc/network/interfaces</code> file,
-even if you&rsquo;re using it on RHEL (or a derivative).  The template is
+even if you're using it on RHEL (or a derivative).  The template is
 rendered using the <a href="http://jinja.pocoo.org/docs/dev/">Jinja2</a> template engine, and receives a
 top-level key called <code>interfaces</code> that contains a list of
 dictionaries, one for each interface.</p>
-
 <p>A template similar to the following ought to be sufficient:</p>
-
 <pre><code>{% for interface in interfaces %}
 auto {{ interface.name }}
 iface {{ interface.name }} inet static
@@ -161,7 +162,6 @@ iface {{ interface.name }} inet static
   dns-nameservers {{ interface.dns }}
 {% endfor %}
 </code></pre>
-
 <p>This will directly populate <code>/etc/network/interfaces</code> on an Ubuntu
 system, or will get translated into
 <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code> on a RHEL system (a RHEL
@@ -169,6 +169,7 @@ environment can only configure a single network interface using this
 mechanism).</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

@@ -10,7 +10,7 @@ $ git fetch $ git fetch --tags  Or you can do this:
 $ git fetch --tags $ git fetch  What’s the difference?">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -26,6 +26,7 @@ $ git fetch --tags $ git fetch  What’s the difference?">
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,38 +118,33 @@ $ git fetch --tags $ git fetch  What’s the difference?">
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>I’ve been playing around with Git, Puppet, and GPG verification of our
 Puppet configuration repository, and these are some random facts about
 Git that have come to light as part of the process.</p>
-
 <p>If you want to pull both changes <em>and</em> new tags from a remote
 repository, you can do this:</p>
-
 <pre><code>$ git fetch
 $ git fetch --tags
 </code></pre>
-
 <p>Or you can do this:</p>
-
 <pre><code>$ git fetch --tags
 $ git fetch
 </code></pre>
-
 <p>What’s the difference? <code>git fetch</code> will leave <code>FETCH_HEAD</code> pointing at
 the remote <code>HEAD</code>, whereas <code>git fetch --tags</code> will leave <code>FETCH_HEAD</code>
 pointing at the most recent tag.</p>
-
 <p>You can also do:</p>
-
 <pre><code>$ git remote update
 </code></pre>
-
 <p>Which unlike <code>git fetch</code> will pull down any new tags…but unlike
 <code>git fetch --tags</code> will not update tags that already exist in the local
 repository (<code>git remote update</code> also sets <code>FETCH_HEAD</code> to the remote
 <code>HEAD</code>).</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

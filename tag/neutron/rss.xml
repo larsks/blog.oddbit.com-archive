@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>neutron on The Odd Bit</title>
@@ -79,8 +79,8 @@ neutron net-create external -- --router:external=true \ --provider:network_type=
       <pubDate>Mon, 23 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</guid>
-      <description>I&amp;rsquo;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
-In this post I&amp;rsquo;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
+      <description>I&#39;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
+In this post I&#39;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
 mk-network-dot There are a lot of devices involved in your Neutron network configuration.</description>
     </item>
     
@@ -103,7 +103,7 @@ Writing templates Because Heat began life as an analog of AWS CloudFormation, it
       <guid>https://blog.oddbit.com/post/2013-10-28-why-does-the-neutron/</guid>
       <description>The documentation for configuring Neutron recommends that a network controller has three physical interfaces:
  Before you start, set up a machine to be a dedicated network node. Dedicated network nodes should have the following NICs: the management NIC (called MGMT_INTERFACE), the data NIC (called DATA_INTERFACE), and the external NIC (called EXTERNAL_INTERFACE).
- People occasionally ask, &amp;ldquo;why three interfaces? What if I only have two?&amp;ldquo;, so I wanted to provide an extended answer that might help people understand what the interfaces are for and what trade-offs are involved in using fewer interfaces.</description>
+ People occasionally ask, &amp;ldquo;why three interfaces? What if I only have two?&amp;quot;, so I wanted to provide an extended answer that might help people understand what the interfaces are for and what trade-offs are involved in using fewer interfaces.</description>
     </item>
     
   </channel>

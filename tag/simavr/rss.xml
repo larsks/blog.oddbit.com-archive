@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>simavr on The Odd Bit</title>
@@ -18,7 +18,7 @@
       
       <guid>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</guid>
       <description>In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
-I&amp;rsquo;ve split this into three posts:</description>
+I&#39;ve split this into three posts:</description>
     </item>
     
     <item>
@@ -28,11 +28,11 @@ I&amp;rsquo;ve split this into three posts:</description>
       
       <guid>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</guid>
       <description>This is the second of three posts about using gdb and simavr to debug AVR code. The complete series is:
- Part 1: Using GDB
+  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
- Part 2: Automating GDB with scripts
+  Part 2: Automating GDB with scripts
 Creating GDB scripts to automatically test the behavior of our code.
- Part 3: Tracing with simavr
+  Part 3: Tracing with simavr
 Using simavr to collect information about the state of microcontroller pins while our code is running.</description>
     </item>
     
@@ -43,11 +43,11 @@ Using simavr to collect information about the state of microcontroller pins whil
       
       <guid>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</guid>
       <description>This is the third of three posts about using gdb and simavr to debug AVR code. The complete series is:
- Part 1: Using GDB
+  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
- Part 2: Automating GDB with scripts
+  Part 2: Automating GDB with scripts
 Creating GDB scripts to automatically test the behavior of our code.
- Part 3: Tracing with simavr
+  Part 3: Tracing with simavr
 Using simavr to collect information about the state of microcontroller pins while our code is running.</description>
     </item>
     

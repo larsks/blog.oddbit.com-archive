@@ -9,7 +9,7 @@
 # lxc-start -n node0 lxc-start: Device or resource busy - failed to remove previous cgroup &#39;/sys/fs/cgroup/systemd/node0&#39; lxc-start: failed to spawn &#39;node0&#39; lxc-start: Device or resource busy - failed to remove cgroup &#39;/sys/fs/cgroup/systemd/node0&#39;  You can correct the problem manually by removing all the child cgroups underneath /sys/fs/cgroup/systemd/&lt;container&gt;, like this:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,38 +117,34 @@
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>I spent some time today looking at systemd (44) under Fedora (17).
 When stopping an LXC container using <code>lxc-stop</code>, I would always
 encounter this problem:</p>
-
 <pre><code># lxc-stop -n node0
 lxc-start: Device or resource busy - failed to remove cgroup '/sys/fs/cgroup/systemd/node0
 </code></pre>
-
 <p>This prevents one from starting a new container with the same name:</p>
-
 <pre><code># lxc-start -n node0 
 lxc-start: Device or resource busy - failed to remove previous cgroup '/sys/fs/cgroup/systemd/node0'
 lxc-start: failed to spawn 'node0'
 lxc-start: Device or resource busy - failed to remove cgroup '/sys/fs/cgroup/systemd/node0'
 </code></pre>
-
 <p>You can correct the problem manually by removing all the child cgroups
 underneath <code>/sys/fs/cgroup/systemd/&lt;container&gt;</code>, like this:</p>
-
 <pre><code># find /sys/fs/cgroup/systemd/node0/ -type d |
   tac |
   xargs rmdir
 </code></pre>
-
 <p>The call to <code>tac</code> (which will output lines in reverse order) is
 necessary because we need to start with the &ldquo;deepest&rdquo; directory and
 work our way back up.</p>
-
 <p>This appears to be a version-specific problem.  I do not see the same
 behavior with <code>systemd</code> 197 under Arch.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>upnp on The Odd Bit</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</guid>
-      <description>Like many other folks out there, I have several computers in my house connected to the outside world via a Linux box acting as a NAT gateway. I often want to use application such as BitTorrent and Freenet, which require that a number of ports be forwarded from my external connection to the particular computer on which I happen to be working. It turns out there&amp;rsquo;s a protocol for this, called UPnP.</description>
+      <description>Like many other folks out there, I have several computers in my house connected to the outside world via a Linux box acting as a NAT gateway. I often want to use application such as BitTorrent and Freenet, which require that a number of ports be forwarded from my external connection to the particular computer on which I happen to be working. It turns out there&#39;s a protocol for this, called UPnP.</description>
     </item>
     
   </channel>

@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Growing a filesystem on a virtual disk &middot; The Odd Bit</title>
         <meta name="description" content="Occasionally we will deploy a virtual instance into our KVM infrastructure and realize after the fact that we need more local disk space available. This is the process we use to expand the disk image. This process assumes the following:
- You&rsquo;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&rsquo;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).">
+ You&#39;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&#39;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,59 +116,46 @@
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>Occasionally we will deploy a virtual instance into our KVM
 infrastructure and realize after the fact that we need more local disk
 space available.  This is the process we use to expand the disk image.
 This process assumes the following:</p>
-
 <ul>
-<li>You&rsquo;re using legacy disk partitions.  The process for LVM is similar
-and I will describe that in another post (it&rsquo;s generally identical
+<li>You're using legacy disk partitions.  The process for LVM is similar
+and I will describe that in another post (it's generally identical
 except for an additional <code>pvresize</code> thrown in and <code>lvextend</code> in
 place of <code>resize2fs</code>).</li>
 <li>The partition you need to resize is the last partition on the disk.</li>
 </ul>
-
 <p>This process will work with either a <code>qcow2</code> or <code>raw</code> disk image.  For
 <code>raw</code> images you can also run <code>fdisk</code> on the host, potentially saving
-yourself a reboot, but that&rsquo;s less convenient for <code>qcow2</code> format
+yourself a reboot, but that's less convenient for <code>qcow2</code> format
 images.</p>
-
-<hr />
-
+<hr>
 <p>We start with a 5.5G root filesystem with 4.4G free:</p>
-
 <pre><code>[root@localhost ~]# df -h /
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/vda2       5.5G  864M  4.4G  17% /
 </code></pre>
-
 <p>We need to shut down the system to grow the underlying image:</p>
-
 <pre><code>[root@localhost ~]# poweroff
 </code></pre>
-
 <p>On the host, we use the <code>qemu-img resize</code> command to grow the image.
 First we need the path to the underlying disk image:</p>
-
 <pre><code>[lars@madhatter blog]$ virsh -c qemu:///system dumpxml lars-test-0 | grep file
     &lt;disk type='file' device='disk'&gt;
       &lt;source file='/var/lib/libvirt/images/lars-test-0-1.img'/&gt;
 </code></pre>
-
 <p>And now we increase the image size by 10G:</p>
-
 <pre><code>[lars@madhatter blog]$ sudo qemu-img resize /var/lib/libvirt/images/lars-test-0.img +10G
 Image resized.
 </code></pre>
-
 <p>Now reboot the instance:</p>
-
 <pre><code>[lars@madhatter blog]$ virsh -c qemu:///system start lars-test-0
 </code></pre>
-
 <p>And login in on the console:</p>
-
 <pre><code>[lars@madhatter blog]$ virsh -c qemu:///system console lars-test-0
 Connected to domain lars-test-0
 Escape character is ^]
@@ -178,20 +166,16 @@ Kernel 3.6.2-4.fc17.x86_64 on an x86_64 (ttyS0)
 localhost login: root
 Password:
 </code></pre>
-
-<p>We&rsquo;re going to use <code>fdisk</code> to modify the partition layout.  Run
+<p>We're going to use <code>fdisk</code> to modify the partition layout.  Run
 <code>fdisk</code> on the system disk:</p>
-
 <pre><code>[root@localhost ~]# fdisk /dev/vda
 Welcome to fdisk (util-linux 2.21.2).
 
 Changes will remain in memory only, until you decide to write them.
 Be careful before using the write command.
 </code></pre>
-
 <p>Print out the existing partition table and verify that you really are
 going to be modifying the final partition:</p>
-
 <pre><code>Command (m for help): p
 
 Disk /dev/vda: 19.3 GB, 19327352832 bytes
@@ -206,18 +190,14 @@ Disk identifier: 0x00007d9f
 /dev/vda2         1026048     5154815     2064384   82  Linux swap / Solaris
 /dev/vda3         5154816    16777215     5811200   83  Linux
 </code></pre>
-
 <p>Delete and recreate the final partition, in this case <code>/dev/vda3</code>&hellip;</p>
-
 <pre><code>Command (m for help): d
 Partition number (1-4): 3
 Partition 3 is deleted
 </code></pre>
-
 <p>&hellip;and create a new partition, accepting all the defaults.  This will
 create a new partition starting in the same place and extending to the
 end of the disk:</p>
-
 <pre><code>Command (m for help): n
 Partition type:
    p   primary (2 primary, 0 extended, 2 free)
@@ -230,10 +210,8 @@ Last sector, +sectors or +size{K,M,G} (5154816-37748735, default 37748735):
 Using default value 37748735
 Partition 3 of type Linux and of size 15.6 GiB is set
 </code></pre>
-
 <p>You can print out the new partition table to see that indeed
 <code>/dev/vda3</code> is now larger:</p>
-
 <pre><code>Command (m for help): p
 
 Disk /dev/vda: 19.3 GB, 19327352832 bytes
@@ -248,9 +226,7 @@ Disk identifier: 0x00007d9f
 /dev/vda2         1026048     5154815     2064384   82  Linux swap / Solaris
 /dev/vda3         5154816    37748735    16296960   83  Linux
 </code></pre>
-
 <p>Write the changes to disk:</p>
-
 <pre><code>Command (m for help): w
 The partition table has been altered!
 
@@ -261,34 +237,26 @@ The kernel still uses the old table. The new table will be used at
 the next reboot or after you run partprobe(8) or kpartx(8)
 Syncing disks.
 </code></pre>
-
 <p><strong>Note the warning!</strong>  The kernel has cached a copy of the old
 partition table.  We need to reboot the system before our changes are
 visible!  So we reboot the system:</p>
-
 <pre><code>[root@localhost ~]# reboot
 </code></pre>
-
 <p>And log back in.  Run <code>df</code> to see the current size of the root
 filesystem:</p>
-
 <pre><code>[root@localhost ~]# df -h /
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/vda3       5.5G  864M  4.4G  17% /
 </code></pre>
-
 <p>Now run <code>resize2fs</code> to resize the root filesystem so that it expands
 to fill our extended <code>/dev/vda3</code>:</p>
-
 <pre><code>[root@localhost ~]# resize2fs /dev/vda3
 resize2fs 1.42.3 (14-May-2012)
 Filesystem at /dev/vda3 is mounted on /; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 1
 The filesystem on /dev/vda3 is now 4074240 blocks long.
 </code></pre>
-
 <p>Run <code>df</code> again to see that we now have additional space available:</p>
-
 <pre><code>[root@localhost ~]# df -h /
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/vda3        16G  867M   14G   6% /
@@ -296,6 +264,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

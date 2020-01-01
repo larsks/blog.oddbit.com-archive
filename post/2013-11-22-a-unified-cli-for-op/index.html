@@ -5,12 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>A unified CLI for OpenStack &middot; The Odd Bit</title>
         <meta name="description" content="The python-openstackclient project, by Dean Troyer and others, is a new command line tool to replace the existing command line clients (including commands such as nova, keystone, cinder, etc).
-This tool solves two problems I&rsquo;ve encountered in the past:
- Command line options between different command line clients are sometimes inconsistent.
- The output from the legacy command line tools is not designed to be machine parse-able (and yet people do it anyway).">
+This tool solves two problems I&#39;ve encountered in the past:
+  Command line options between different command line clients are sometimes inconsistent.
+  The output from the legacy command line tools is not designed to be machine parse-able (and yet people do it anyway).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -26,6 +26,7 @@ This tool solves two problems I&rsquo;ve encountered in the past:
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,21 +118,23 @@ This tool solves two problems I&rsquo;ve encountered in the past:
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>The <a href="https://github.com/openstack/python-openstackclient">python-openstackclient</a> project, by <a href="https://github.com/dtroyer">Dean Troyer</a> and
 others, is a new command line tool to replace the existing command
 line clients (including commands such as <code>nova</code>, <code>keystone</code>, <code>cinder</code>,
 etc).</p>
-
-<p>This tool solves two problems I&rsquo;ve encountered in the past:</p>
-
+<p>This tool solves two problems I've encountered in the past:</p>
 <ul>
-<li><p>Command line options between different command line clients are
-sometimes inconsistent.</p></li>
-
-<li><p>The output from the legacy command line tools is not designed to be
-machine parse-able (and yet people <a href="https://github.com/openstack/python-openstackclient">do it anyway</a>).</p></li>
+<li>
+<p>Command line options between different command line clients are
+sometimes inconsistent.</p>
+</li>
+<li>
+<p>The output from the legacy command line tools is not designed to be
+machine parse-able (and yet people <a href="https://github.com/openstack/python-openstackclient">do it anyway</a>).</p>
+</li>
 </ul>
-
 <p>The new <code>openstack</code> CLI framework is implement using the <a href="https://github.com/dreamhost/cliff">cliff</a>
 module for Python, which will help enforce a consistent interface to
 the various subcommands (because common options can be shared, and
@@ -139,10 +142,8 @@ just having everything in the same codebase will help tremendously).
 Cliff also provides flexible table formatters.  It includes a number
 of useful formatters out of the box, and can be extended via
 setuptools entry points.</p>
-
 <p>The <code>csv</code> formatter can be used to produce machine parse-able output
 from list commands.  For example:</p>
-
 <pre><code>$ openstack -q endpoint list -f csv --quote none
 ID,Region,Service Name,Service Type
 ba686936d31846f5b226539dba285654,RegionOne,quantum,network
@@ -154,10 +155,8 @@ e3f7bd37b51341bbaa77f81ba39a3bf2,RegionOne,glance,image
 6821fad71a914636af6e98775e52e1ec,RegionOne,nova_ec2,ec2
 3b2a90e9f85a468988af763c707961d7,RegionOne,nova,compute
 </code></pre>
-
 <p>For &ldquo;show&rdquo; commands, the <code>shell</code> formatter produces output in
 <code>name=value</code> format, like this:</p>
-
 <pre><code>$ openstack -q endpoint show image -f shell --all
 adminurl=&quot;http://192.168.122.110:9292&quot;
 id=&quot;e3f7bd37b51341bbaa77f81ba39a3bf2&quot;
@@ -168,10 +167,10 @@ service_id=&quot;14a1479f77274dd485e9fb52af2e1721&quot;
 service_name=&quot;glance&quot;
 service_type=&quot;image&quot;
 </code></pre>
-
 <p>This output could easily be sourced into a shell script.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

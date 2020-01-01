@@ -9,7 +9,7 @@ For the record (and because I will probably forget):
 alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --slave /usr/bin/keytool keytool /usr/java/latest/bin/keytool \ --slave /usr/bin/rmiregistry rmiregistry /usr/java/latest/bin/rmiregistry  ">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,19 +117,20 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>I needed to replace the native OpenJDK based Java VM with the Oracle
 Java distribution on one of our CentOS servers.  In order to do it
 cleanly I wanted to set up the <code>alternatives</code> system to handle it, but
 it took a while to figure out the exact syntax.</p>
-
 <p>For the record (and because I will probably forget):</p>
-
 <pre><code>alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \
   --slave /usr/bin/keytool keytool /usr/java/latest/bin/keytool \
   --slave /usr/bin/rmiregistry rmiregistry /usr/java/latest/bin/rmiregistry
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

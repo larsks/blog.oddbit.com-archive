@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Controlling a servo with your Arduino &middot; The Odd Bit</title>
-        <meta name="description" content="I&rsquo;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
+        <meta name="description" content="I&#39;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
 I was fiddling around with this exercise, which uses the SoftwareServo library to control a servo. Using this library, you just pass it an angle and the library takes care of everything else, e.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ I was fiddling around with this exercise, which uses the SoftwareServo library t
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,22 +116,20 @@ I was fiddling around with this exercise, which uses the SoftwareServo library t
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>I&rsquo;ve recently started playing with an <a href="http://arduino.cc/">Arduino</a> kit I purchased a year
+    
+
+    <p>I've recently started playing with an <a href="http://arduino.cc/">Arduino</a> kit I purchased a year
 ago (and only just now got around to unboxing).  I purchased the kit
 from <a href="https://www.sparkfun.com/">SparkFun</a>, and it includes a motley collection of resistors,
 LEDs, a motor, a servo, and more.</p>
-
 <p>I was fiddling around with <a href="http://oomlout.com/a/products/ardx/circ-04/">this exercise</a>, which uses the
 <code>SoftwareServo</code> library to control a servo.  Using this library,
 you just pass it an angle and the library takes care of everything
 else, e.g. to rotate to 90 degrees you would do this:</p>
-
 <pre><code>myservo.write(90);
 </code></pre>
-
 <p>The exercise suggests trying to control the servo without using the
 library:</p>
-
 <blockquote>
 <p>While it is easy to control a servo using the Arduino’s included
 library sometimes it is fun to figure out how to program something
@@ -139,12 +138,10 @@ use this method to control servos on any of the Arduino’s 20
 available pins (you need to highly optimize this code before doing
 that).</p>
 </blockquote>
-
 <p>It took me a few tries, and it looks as if the upper and lower limits
 for the servo pulses given in that documentation may not be 100%
 accurate.  This is what I finally came with.  As an added bonus, it
 writes position information to the serial port:</p>
-
 <pre><code>int incomingByte = 0;
 int servo0 = 600;
 int servo180 = 2100;
@@ -184,14 +181,13 @@ void loop() {
   delay(20);
 }
 </code></pre>
-
 <p>Under Linux or OS X, you could view the serial output using <code>screen</code>
 like this:</p>
-
 <pre><code>screen /dev/tty.usbmodemfd12441 9600
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Ansible for Infrastructure Testing &middot; The Odd Bit</title>
-        <meta name="description" content="At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&ldquo;your clocks aren&rsquo;t in sync&rdquo; or &ldquo;your filesystem is full&rdquo; or &ldquo;you haven&rsquo;t installed a critical update&rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues.">
+        <meta name="description" content="At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&ldquo;your clocks aren&#39;t in sync&rdquo; or &ldquo;your filesystem is full&rdquo; or &ldquo;you haven&#39;t installed a critical update&rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues. Fundamentally, we want something that acts like a typical code test suite, but for infrastructure.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,55 +117,48 @@
 
     
 
-<p>At <code>$JOB</code> we often find ourselves at customer sites where we see the
+    <p>At <code>$JOB</code> we often find ourselves at customer sites where we see the
 same set of basic problems that we have previously encountered
-elsewhere (&ldquo;your clocks aren&rsquo;t in sync&rdquo; or &ldquo;your filesystem is full&rdquo;
-or &ldquo;you haven&rsquo;t installed a critical update&rdquo;, etc). We would like a
+elsewhere (&ldquo;your clocks aren't in sync&rdquo; or &ldquo;your filesystem is full&rdquo;
+or &ldquo;you haven't installed a critical update&rdquo;, etc). We would like a
 simple tool that could be run either by the customer or by our own
 engineers to test for and report on these common issues.
 Fundamentally, we want something that acts like a typical code test
 suite, but for infrastructure.</p>
-
 <p>It turns out that Ansible is <em>almost</em> the right tool for the job:</p>
-
 <ul>
-<li>It&rsquo;s easy to write simple tests.</li>
+<li>It's easy to write simple tests.</li>
 <li>It works well in distributed environments.</li>
-<li>It&rsquo;s easy to extend with custom modules and plugins.</li>
+<li>It's easy to extend with custom modules and plugins.</li>
 </ul>
-
 <p>The only real problem is that Ansible has, by default, &ldquo;fail fast&rdquo;
 behavior: once a task fails on a host, no more tasks will run on that
-host.  That&rsquo;s great if you&rsquo;re actually making configuration changes,
+host.  That's great if you're actually making configuration changes,
 but for our purposes we are running a set of read-only independent
 checks, and we want to know the success or failure of all of those
 checks in a single operation (and in many situations we may not have
 the option of correcting the underlying problem ourselves).</p>
-
-<p>In this post, I would like to discuss a few Ansible extensions I&rsquo;ve
+<p>In this post, I would like to discuss a few Ansible extensions I've
 put together to make it more useful as an infrastructure testing tool.</p>
-
 <h2 id="the-ansible-assertive-project">The ansible-assertive project</h2>
-
 <p>The <a href="https://github.com/larsks/ansible-assertive/">ansible-assertive</a> project contains two extensions for Ansible:</p>
-
 <ul>
-<li><p>The <code>assert</code> action plugin replaces Ansible&rsquo;s native <code>assert</code>
-behavior with something more appropriate for infrastructure testing.</p></li>
-
-<li><p>The <code>assertive</code> callback plugin modifies the output of <code>assert</code>
-tasks and collects and reports results.</p></li>
+<li>
+<p>The <code>assert</code> action plugin replaces Ansible's native <code>assert</code>
+behavior with something more appropriate for infrastructure testing.</p>
+</li>
+<li>
+<p>The <code>assertive</code> callback plugin modifies the output of <code>assert</code>
+tasks and collects and reports results.</p>
+</li>
 </ul>
-
 <p>The idea is that you write all of your tests using the <code>assert</code>
 plugin, which means you can run your playbooks in a stock environment
 and see the standard Ansible fail-fast behavior, or you can activate
 the <code>assert</code> plugin from the ansible-assertive project and get
 behavior more useful for infrastructure testing.</p>
-
 <h2 id="a-simple-example">A simple example</h2>
-
-<p>Ansible&rsquo;s native <code>assert</code> plugin will trigger a task failure when an
+<p>Ansible's native <code>assert</code> plugin will trigger a task failure when an
 assertion evaluates to <code>false</code>.  Consider the following example:</p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">-<span class="w"> </span>hosts<span class="p">:</span><span class="w"> </span>localhost<span class="w">
 </span><span class="w">  </span>vars<span class="p">:</span><span class="w">
@@ -174,16 +168,15 @@ assertion evaluates to <code>false</code>.  Consider the following example:</p>
 </span><span class="w">  </span>tasks<span class="p">:</span><span class="w">
 </span><span class="w">    </span>-<span class="w"> </span>assert<span class="p">:</span><span class="w">
 </span><span class="w">        </span>that<span class="p">:</span><span class="w"> </span>&gt;<span class="sd">-
-</span><span class="sd">          &#39;apples&#39; in fruits</span><span class="w">
+</span><span class="sd">         </span><span class="sd"> </span><span class="sd">&#39;apples&#39; in fruits</span><span class="w">
 </span><span class="w">        </span>msg<span class="p">:</span><span class="w"> </span>you<span class="w"> </span>have<span class="w"> </span>no<span class="w"> </span>apples<span class="w">
 </span><span class="w">
 </span><span class="w">    </span>-<span class="w"> </span>assert<span class="p">:</span><span class="w">
 </span><span class="w">        </span>that<span class="p">:</span><span class="w"> </span>&gt;<span class="sd">-
-</span><span class="sd">          &#39;lemons&#39; in fruits</span><span class="w">
-</span><span class="w">        </span>msg<span class="p">:</span><span class="w"> </span>you<span class="w"> </span>have<span class="w"> </span>no<span class="w"> </span>lemons</code></pre></div>
-<p>If we run this in a stock Ansible environment, we will see the
+</span><span class="sd">         </span><span class="sd"> </span><span class="sd">&#39;lemons&#39; in fruits</span><span class="w">
+</span><span class="w">        </span>msg<span class="p">:</span><span class="w"> </span>you<span class="w"> </span>have<span class="w"> </span>no<span class="w"> </span>lemons<span class="w">
+</span></code></pre></div><p>If we run this in a stock Ansible environment, we will see the
 following:</p>
-
 <pre><code>PLAY [localhost] ***************************************************************
 
 TASK [Gathering Facts] *********************************************************
@@ -201,26 +194,18 @@ fatal: [localhost]: FAILED! =&gt; {
 
 PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=0    unreachable=0    failed=1
-</code></pre>
-
-<h2 id="a-modified-assert-plugin">A modified assert plugin</h2>
-
-<p>Let&rsquo;s activate the <code>assert</code> plugin in <a href="https://github.com/larsks/ansible-assertive/">ansible-assertive</a>.  We&rsquo;ll
+</code></pre><h2 id="a-modified-assert-plugin">A modified assert plugin</h2>
+<p>Let's activate the <code>assert</code> plugin in <a href="https://github.com/larsks/ansible-assertive/">ansible-assertive</a>.  We'll
 start by cloning the project into our local directory:</p>
-
 <pre><code>$ git clone https://github.com/larsks/ansible-assertive
 </code></pre>
-
-<p>And we&rsquo;ll activate the plugin by creating an <code>ansible.cfg</code> file with
+<p>And we'll activate the plugin by creating an <code>ansible.cfg</code> file with
 the following content:</p>
-
 <pre><code>[defaults]
 action_plugins = ./ansible-assertive/action_plugins
 </code></pre>
-
 <p>Now when we re-run the playbook we see that a failed assertion now
 registers as <code>changed</code> rather than <code>failed</code>:</p>
-
 <pre><code>PLAY [localhost] ***************************************************************
 
 TASK [Gathering Facts] *********************************************************
@@ -234,14 +219,11 @@ ok: [localhost]
 
 PLAY RECAP *********************************************************************
 localhost                  : ok=3    changed=1    unreachable=0    failed=0
-</code></pre>
-
-<p>While that doesn&rsquo;t look like much of a change, there are two things of
+</code></pre><p>While that doesn't look like much of a change, there are two things of
 interest going on here.  The first is that the <code>assert</code> plugin
 provides detailed information about the assertions specified in the
 task; if we were to <code>register</code> the result of the failed assertion and
 display it in a <code>debug</code> task, it would look like:</p>
-
 <pre><code>TASK [debug] *******************************************************************
 ok: [localhost] =&gt; {
     &quot;apples&quot;: {
@@ -265,36 +247,24 @@ ok: [localhost] =&gt; {
         &quot;msg&quot;: &quot;you have no apples&quot;
     }
 }
-</code></pre>
-
-<p>The <code>assertions</code> key in the result dictionary contains of a list of
+</code></pre><p>The <code>assertions</code> key in the result dictionary contains of a list of
 tests and their results.  The <code>ansible_stats</code> key contains metadata
 that will be consumed by the custom statistics support in recent
 versions of Ansible.  If you have Ansible 2.3.0.0 or later, add
 the following to the <code>defaults</code> section of your <code>ansible.cfg</code>:</p>
-
 <pre><code>show_custom_stats = yes
-</code></pre>
-
-<p>With this feature enabled, your playbook run will conclude with:</p>
-
+</code></pre><p>With this feature enabled, your playbook run will conclude with:</p>
 <pre><code>CUSTOM STATS: ******************************************************************
 	localhost: { &quot;assertions&quot;: 2,  &quot;assertions_failed&quot;: 1,  &quot;assertions_passed&quot;: 1}
-</code></pre>
-
-<h2 id="a-callback-plugin-for-better-output">A callback plugin for better output</h2>
-
+</code></pre><h2 id="a-callback-plugin-for-better-output">A callback plugin for better output</h2>
 <p>The <code>assertive</code> callback plugin provided by the <a href="https://github.com/larsks/ansible-assertive/">ansible-assertive</a>
 project will provide more useful output concerning the result of
 failed assertions.  We activate it by adding the following to our
 <code>ansible.cfg</code>:</p>
-
 <pre><code>callback_plugins = ./ansible-assertive/callback_plugins
 stdout_callback = assertive
 </code></pre>
-
 <p>Now when we run our playbook we see:</p>
-
 <pre><code>PLAY [localhost] ***************************************************************
 
 TASK [Gathering Facts] *********************************************************
@@ -309,10 +279,7 @@ passed: [localhost]  ASSERT('lemons' in fruits)
 
 PLAY RECAP *********************************************************************
 localhost                  : ok=3    changed=1    unreachable=0    failed=0
-</code></pre>
-
-<h2 id="machine-readable-statistics">Machine readable statistics</h2>
-
+</code></pre><h2 id="machine-readable-statistics">Machine readable statistics</h2>
 <p>The above is nice but is still primarily human-consumable.  What if we
 want to collect test statistics for machine processing (maybe we want
 to produce a nicely formatted report of some kind, or maybe we want to
@@ -320,11 +287,9 @@ aggregate information from multiple test runs, or maybe we want to
 trigger some action in the event there are failed tests, or&hellip;)?  You
 can ask the <code>assertive</code> plugin to write a YAML format document with
 this information by adding the following to your <code>ansible.cfg</code>:</p>
-
 <pre><code>[assertive]
 results = testresult.yml
 </code></pre>
-
 <p>After running our playbook, this file would contain:</p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">groups<span class="p">:</span><span class="w">
 </span><span class="w"></span>-<span class="w"> </span>hosts<span class="p">:</span><span class="w">
@@ -336,13 +301,13 @@ results = testresult.yml
 </span><span class="w">        </span>assertions_skipped<span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
 </span><span class="w">      </span>tests<span class="p">:</span><span class="w">
 </span><span class="w">      </span>-<span class="w"> </span>assertions<span class="p">:</span><span class="w">
-</span><span class="w">        </span>-<span class="w"> </span>test<span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;&#39;apples&#39;&#39; in fruits&#39;</span><span class="w">
+</span><span class="w">        </span>-<span class="w"> </span>test<span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="s1">&#39;apples&#39;</span><span class="s1">&#39; in fruits&#39;</span><span class="w">
 </span><span class="w">          </span>testresult<span class="p">:</span><span class="w"> </span>failed<span class="w">
 </span><span class="w">        </span>msg<span class="p">:</span><span class="w"> </span>you<span class="w"> </span>have<span class="w"> </span>no<span class="w"> </span>apples<span class="w">
 </span><span class="w">        </span>testresult<span class="p">:</span><span class="w"> </span>failed<span class="w">
 </span><span class="w">        </span>testtime<span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:58.624789&#39;</span><span class="w">
 </span><span class="w">      </span>-<span class="w"> </span>assertions<span class="p">:</span><span class="w">
-</span><span class="w">        </span>-<span class="w"> </span>test<span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;&#39;lemons&#39;&#39; in fruits&#39;</span><span class="w">
+</span><span class="w">        </span>-<span class="w"> </span>test<span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="s1">&#39;lemons&#39;</span><span class="s1">&#39; in fruits&#39;</span><span class="w">
 </span><span class="w">          </span>testresult<span class="p">:</span><span class="w"> </span>passed<span class="w">
 </span><span class="w">        </span>msg<span class="p">:</span><span class="w"> </span>All<span class="w"> </span>assertions<span class="w"> </span>passed<span class="w">
 </span><span class="w">        </span>testresult<span class="p">:</span><span class="w"> </span>passed<span class="w">
@@ -360,11 +325,12 @@ results = testresult.yml
 </span><span class="w">  </span>assertions_skipped<span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
 </span><span class="w"></span>timing<span class="p">:</span><span class="w">
 </span><span class="w">  </span>test_finished_at<span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:58.670802&#39;</span><span class="w">
-</span><span class="w">  </span>test_started_at<span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:57.918412&#39;</span></code></pre></div>
-<p>With these tools it becomes much easier to design playbooks for
+</span><span class="w">  </span>test_started_at<span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:57.918412&#39;</span><span class="w">
+</span></code></pre></div><p>With these tools it becomes much easier to design playbooks for
 testing your infrastructure.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

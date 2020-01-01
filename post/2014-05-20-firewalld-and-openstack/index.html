@@ -9,7 +9,7 @@ NetworkManager By default, NetworkManager attempts to start a DHCP client on eve
 May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &lt;info&gt; Activation (qvb512640bd-ee) starting connection &#39;Wired connection 2&#39;  You can disable this behavior by adding the following to /etc/NetworkManager/NetworkManager.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &lt;info&gt; Activation (
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -118,90 +119,68 @@ May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &lt;info&gt; Activation (
 
     
 
-<p>These are my notes on making OpenStack play well with <a href="https://fedoraproject.org/wiki/FirewallD">firewalld</a>
+    <p>These are my notes on making OpenStack play well with <a href="https://fedoraproject.org/wiki/FirewallD">firewalld</a>
 and <a href="https://wiki.gnome.org/Projects/NetworkManager">NetworkManager</a>.</p>
-
 <h2 id="networkmanager">NetworkManager</h2>
-
 <p>By default, NetworkManager attempts to start a DHCP client on every
 new available interface.  Since booting a single instance in OpenStack
 can result in the creation of several virtual interfaces, this results
 in a lot of:</p>
-
 <pre><code>May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &lt;info&gt;
   Activation (qvb512640bd-ee) starting connection 'Wired connection 2'
 </code></pre>
-
 <p>You can disable this behavior by adding the following to
 <code>/etc/NetworkManager/NetworkManager.conf</code>:</p>
-
 <pre><code>[main]
 no-auto-default=*
 </code></pre>
-
 <p>From <code>NetworkManager.conf(5)</code>:</p>
-
 <blockquote>
-<p>Comma-separated list of devices for which NetworkManager shouldn&rsquo;t
- create default wired connection (Auto eth0). By default,
- NetworkManager creates a temporary wired connection for any
- Ethernet device that is managed and doesn&rsquo;t have a connection
- configured. List a device in this option to inhibit creating the
- default connection for the device. May have the special value * to
- apply to all devices.</p>
+<p>Comma-separated list of devices for which NetworkManager shouldn't
+create default wired connection (Auto eth0). By default,
+NetworkManager creates a temporary wired connection for any
+Ethernet device that is managed and doesn't have a connection
+configured. List a device in this option to inhibit creating the
+default connection for the device. May have the special value * to
+apply to all devices.</p>
 </blockquote>
-
 <h2 id="firewalld">FirewallD</h2>
-
 <p><a href="https://fedoraproject.org/wiki/FirewallD">FirewallD</a> is the firewall manager recently introduced in Fedora
 (and soon to be appearing in RHEL 7).</p>
-
 <p>I start by creating a new zone named <code>openstack</code> by creating the file
 <code>/etc/firewalld/zones/openstack.xml</code> with the following content:</p>
-
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;zone&gt;
   &lt;short&gt;OpenStack&lt;/short&gt;
   &lt;description&gt;For OpenStack services&lt;/description&gt;
 &lt;/zone&gt;
 </code></pre>
-
 <p>After populating this file, you need to run <code>firewall-cmd --reload</code>
-to make the zone available.  Note that if you&rsquo;re already running
+to make the zone available.  Note that if you're already running
 OpenStack this will hose any rules set up by Neutron or Nova, so
-you&rsquo;ll probably want to restart those services:</p>
-
+you'll probably want to restart those services:</p>
 <pre><code># openstack-service restart nova neutron
 </code></pre>
-
 <p>I then add <code>br-ex</code> to this zone, where <code>br-ex</code> is the OVS bridge my
 OpenStack environment uses for external connectivity:</p>
-
 <pre><code># echo ZONE=openstack &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-br-ex
 </code></pre>
-
 <p>I run a <code>dnsmasq</code> instance on my laptop to which I expect OpenStack
 instances to connect, so I need to add the <code>dns</code> service to this zone:</p>
-
 <pre><code># firewall-cmd --zone openstack --add-service dns
 # firewall-cmd --zone openstack --add-service dns --permanent
 </code></pre>
-
-<p>I&rsquo;m running <code>firewall-cmd</code> twice here: the first time modifies the
+<p>I'm running <code>firewall-cmd</code> twice here: the first time modifies the
 currently running configuration, while the second makes the change
 persistent across reboots.</p>
-
 <p>On my laptop, I handle external connectivity through NAT rather than
 placing floating ips on a &ldquo;real&rdquo; network.  To make this work, I add my
 ethernet and wireless interfaces to the <code>external</code> zone, which already
 has ip masquerading enabled, by adding a <code>ZONE</code> directive to the
 appropriate interface configuration file:</p>
-
 <pre><code># echo ZONE=external &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-em1
 </code></pre>
-
 <p>After a reboot, things look like this:</p>
-
 <pre><code># firewall-cmd --get-active-zones
 openstack
   interfaces: br-ex
@@ -214,6 +193,7 @@ dns
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

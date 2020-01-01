@@ -18,7 +18,7 @@
     <id>https://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</id>
     <published>2019-05-07T10:00:00Z</published>
     <updated>2019-05-07T10:00:00Z</updated>
-    <summary type="html">I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&amp;rsquo;t really seem the write place for that: so, here we are.</summary>
+    <summary type="html">I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&#39;t really seem the write place for that: so, here we are.</summary>
   </entry>
   
 </feed>

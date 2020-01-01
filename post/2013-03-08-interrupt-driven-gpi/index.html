@@ -8,7 +8,7 @@
  RPi.GPIO The WiringPi bindings for Python, and The Quick2Wire Python API (which depends on Python 3)  All of them are reasonably easy to use, but the Quick2Wire API provides a uniquely useful feature: epoll-enabled GPIO interrupts. This makes it trivial to write code that efficiently waits for and responds to things like button presses.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,25 +116,23 @@
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>There are several Python libraries out there for interacting with the
 <a href="https://en.wikipedia.org/wiki/General_Purpose_Input/Output">GPIO</a> pins on a Raspberry Pi:</p>
-
 <ul>
 <li><a href="https://pypi.python.org/pypi/RPi.GPIO">RPi.GPIO</a></li>
 <li>The <a href="https://github.com/WiringPi/WiringPi-Python">WiringPi</a> bindings for Python, and</li>
 <li>The <a href="https://github.com/quick2wire/quick2wire-python-api">Quick2Wire</a> Python API (which depends on Python 3)</li>
 </ul>
-
 <p>All of them are reasonably easy to use, but the Quick2Wire API
 provides a uniquely useful feature: <code>epoll</code>-enabled GPIO interrupts.
 This makes it trivial to write code that efficiently waits for and
 responds to things like button presses.</p>
-
 <p>The following simple example waits for a button press attached to
 <code>GPIO1</code> (but refer to the chart in <a href="https://projects.drogon.net/raspberry-pi/wiringpi/pins/">this document</a> to see
 exactly what that means; this is pin 12 on a Raspberry Pi v2 board)
 and lights an LED attached to <code>GPIO0</code> when the button is pressed:</p>
-
 <pre><code>#!/usr/bin/env python3
 
 import select
@@ -152,11 +151,9 @@ with button1,led:
                 print('BUTTON 1!', button1.value)
                 led.value = button1.value
 </code></pre>
-
 <p>There is also a <code>Selector</code> class that makes the <code>epoll</code> interface a
 little easier to use.  The following code is equivalent to the above
 <code>epoll</code> example:</p>
-
 <pre><code>#!/usr/bin/env python3
 
 from quick2wire.gpio import pins, In, Out, Both
@@ -173,13 +170,11 @@ with button1, led, Selector(1) as selector:
             print('BUTTON 1!', button1.value)
             led.value = button1.value
 </code></pre>
-
 <p>The <code>selector</code> module includes a <code>Timer</code> class that lets you add
 one-shot or repeating timers to a <code>Selector</code>.  The following example
 will light the LED for one second after the button is pressed, unless
 the button is pressed again, in which case the LED will go out
 immediately:</p>
-
 <pre><code>#!/usr/bin/env python3
 
 from quick2wire.gpio import pins, In, Out, Both
@@ -216,12 +211,12 @@ with button1, led, \
                 active = False  
                 led.value = 0   
 </code></pre>
-
-<p>All of these examples rely on Python&rsquo;s <a href="http://docs.python.org/3/reference/compound_stmts.html#the-with-statement">with statement</a>.  If you&rsquo;re
+<p>All of these examples rely on Python's <a href="http://docs.python.org/3/reference/compound_stmts.html#the-with-statement">with statement</a>.  If you're
 unfamiliar with <code>with</code>, you can find more information [here]<a href="http://docs.python.org/3/reference/compound_stmts.html#the-with-statement">with
 statement</a>.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

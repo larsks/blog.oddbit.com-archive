@@ -32,7 +32,7 @@
     <published>2012-09-10T00:00:00Z</published>
     <updated>2012-09-10T00:00:00Z</updated>
     <summary type="html">Recently, changes from the xmlgawk project have been integrated into GNU awk, and xmlgawk has been renamed to gawkextlib. With both a recent (post-4.0.70) gawk and gawkextlib built and installed correctly, you can write simple XML parsing scripts using gawk.
-For example, let&amp;rsquo;s say you would like to generate a list of disk image files associated with a KVM virtual instance. You can use the virsh dumpxml command to get output like the following:</summary>
+For example, let&#39;s say you would like to generate a list of disk image files associated with a KVM virtual instance. You can use the virsh dumpxml command to get output like the following:</summary>
   </entry>
   
 </feed>

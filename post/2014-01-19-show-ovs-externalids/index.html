@@ -10,7 +10,7 @@ $ ovs-vsctl --columns=name,external-ids list Interface  Which on my system, with
 # ovs-vsctl --columns=name,external-ids list Interface . .">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -26,6 +26,7 @@ $ ovs-vsctl --columns=name,external-ids list Interface  Which on my system, with
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,18 +118,16 @@ $ ovs-vsctl --columns=name,external-ids list Interface  Which on my system, with
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>This is just here as a reminder for me:</p>
+    
 
+    <p>This is just here as a reminder for me:</p>
 <p>An OVS interface has a variety of attributes associated with it, including an
 <code>external-id</code> field that can be used to associate resources outside of
 OpenVSwitch with the interface.  You can view this field with the following
 command:</p>
-
 <pre><code>$ ovs-vsctl --columns=name,external-ids list Interface
 </code></pre>
-
 <p>Which on my system, with a single virtual instance, looks like this:</p>
-
 <pre><code># ovs-vsctl --columns=name,external-ids list Interface
 .
 .
@@ -139,17 +138,13 @@ external_ids        : {attached-mac=&quot;fa:16:3e:f7:75:b0&quot;, iface-id=&quo
 .
 .
 </code></pre>
-
 <p>Note the information contained here:</p>
-
 <ul>
 <li><code>attached-mac</code> is the MAC address of the device attached to this interface.</li>
 <li><code>vm-uuid</code> is the libvirt UUID for the instance attached to this interface&hellip;</li>
 <li>&hellip;which also happens to be the Nova UUID for the instance.</li>
 </ul>
-
 <p>So we can pass that UUID to <code>virsh dumpxml</code>:</p>
-
 <pre><code>$ virsh dumpxml 0330b084-03db-4d42-a231-2cd6ad89515b
 &lt;domain type='kvm' id='150'&gt;
   &lt;name&gt;instance-0000009c&lt;/name&gt;
@@ -161,9 +156,7 @@ external_ids        : {attached-mac=&quot;fa:16:3e:f7:75:b0&quot;, iface-id=&quo
 .
 .
 </code></pre>
-
 <p>Or to <code>nova show</code>:</p>
-
 <pre><code>$ nova show 0330b084-03db-4d42-a231-2cd6ad89515b 
 +--------------------------------------+----------------------------------------------------------+
 | Property                             | Value                                                    |
@@ -176,6 +169,7 @@ external_ids        : {attached-mac=&quot;fa:16:3e:f7:75:b0&quot;, iface-id=&quo
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

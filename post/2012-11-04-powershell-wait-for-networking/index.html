@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Waiting for networking using PowerShell &middot; The Odd Bit</title>
-        <meta name="description" content="I&rsquo;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
+        <meta name="description" content="I&#39;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
 There are a number of common solutions proposed to this problem:
- Just wait for some period of time.
-This can work but it&rsquo;s ugly, and because it doesn&rsquo;t actually verify the network state it can result in things breaking if some problem prevents Windows from pulling a valid DHCP lease.">
+  Just wait for some period of time.
+This can work but it&#39;s ugly, and because it doesn&#39;t actually verify the network state it can result in things breaking if some problem prevents Windows from pulling a valid DHCP lease.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -26,6 +26,7 @@ This can work but it&rsquo;s ugly, and because it doesn&rsquo;t actually verify 
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,37 +118,35 @@ This can work but it&rsquo;s ugly, and because it doesn&rsquo;t actually verify 
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>I&rsquo;ve recently been exploring the world of Windows scripting, and I ran
+    
+
+    <p>I've recently been exploring the world of Windows scripting, and I ran
 into a small problem: I was running a script at system startup, and
 the script was running before the network interface (which was using
 DHCP) was configured.</p>
-
 <p>There are a number of common solutions proposed to this problem:</p>
-
 <ul>
-<li><p>Just wait for some period of time.</p>
-
-<p>This can work but it&rsquo;s ugly, and because it doesn&rsquo;t actually
+<li>
+<p>Just wait for some period of time.</p>
+<p>This can work but it's ugly, and because it doesn't actually
 verify the network state it can result in things breaking if some
-problem prevents Windows from pulling a valid DHCP lease.</p></li>
-
-<li><p>Use ping to verify the availability of some remote host.</p>
-
+problem prevents Windows from pulling a valid DHCP lease.</p>
+</li>
+<li>
+<p>Use ping to verify the availability of some remote host.</p>
 <p>This works reasonably well if you have a known endpoint you can
-test, but it&rsquo;s hard to make a generic solution using this method.</p></li>
+test, but it's hard to make a generic solution using this method.</p>
+</li>
 </ul>
-
 <p>What I really wanted to do was to have my script wait until a default
 gateway appeared on the system (which would indicate that Windows had
 successfully acquired a DHCP lease and had configured the interface).</p>
-
 <p>My first attempts involved traditional batch scripts (<code>.bat</code>) running
 some variant of <code>route print</code> and searching the output.  This can
-work, but it&rsquo;s ugly, and I was certain there must be a better way.  I
+work, but it's ugly, and I was certain there must be a better way.  I
 spent some time learning about accessing network configuration
 information using PowerShell, and I came up with <a href="https://gist.github.com/4011808">the following
 code</a>:</p>
-
 <pre><code># Wait for a DHCP-enabled interface to develop
 # a default gateway.
 #
@@ -176,7 +175,6 @@ function wait-for-network ($tries) {
         }
 }
 </code></pre>
-
 <p>This uses various sort of filtering to get a list of DHCP-enabled
 interfaces that have a default gateway (the <code>DefaultIPGateway</code>
 attribute).  It will poll the state of things once/second up to <code>$tries</code>
@@ -184,6 +182,7 @@ times, and if nothing is available it will ultimately throw an
 exception.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

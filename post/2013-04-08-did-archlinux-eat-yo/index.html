@@ -7,7 +7,7 @@
         <meta name="description" content="A recent update to Arch Linux replaced the qemu-kvm package with an updated version of qemu. A side effect of this change is that the qemu-kvm binary is no longer available, and any libvirt guests on your system utilizing that binary will no longer operate. As is typical with Arch, there is no announcement about this incompatible change, and queries to #archlinux will be met with the knowledge, grace and decorum you would expect of that channel:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -114,6 +115,8 @@
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>A recent update to <a href="https://www.archlinux.org/">Arch Linux</a> replaced the <code>qemu-kvm</code> package with
 an updated version of <code>qemu</code>.  A side effect of this change is that
 the <code>qemu-kvm</code> binary is no longer available, and any <code>libvirt</code> guests
@@ -121,31 +124,25 @@ on your system utilizing that binary will no longer operate.  As is
 typical with Arch, there is no announcement about this incompatible
 change, and queries to <code>#archlinux</code> will be met with the knowledge,
 grace and decorum you would expect of that channel:</p>
-
 <pre><code>2013-04-08T18:00 &lt; gtmanfred&gt; USE --enable-kvm for fucks sake
 2013-04-08T18:00 &lt; gtmanfred&gt; DO I HAVE TO SAY IT AGAIN?
 </code></pre>
-
 <p>The emulator binary is hardcoded into your domain in the <code>&lt;emulator&gt;</code>
 emulator, and typically looks something like this:</p>
-
 <pre><code>&lt;emulator&gt;/usr/bin/qemu-kvm&lt;/emulator&gt;
 </code></pre>
-
-<p>In order to get your guests working again after the upgrade you&rsquo;ll
+<p>In order to get your guests working again after the upgrade you'll
 need to replace this path with an appropriate selection from one of
 the other binaries provided by the <code>qemu</code> package, which include
-<code>qemu-system-i386</code> and <code>qemu-system-x86_64</code>.  You&rsquo;ll want to select
+<code>qemu-system-i386</code> and <code>qemu-system-x86_64</code>.  You'll want to select
 the one appropriate for your <em>guest</em> architecture.  You can do this
 manually running <code>virsh edit</code> for each affected guest, but if you have
 more than a couple that rapidly becomes annoying.</p>
-
 <p>We can use <a href="https://en.wikipedia.org/wiki/XSLT">XSLT</a> to write a transformation that will set the
 <code>&lt;emulator&gt;</code> to an appropriate value, and we can set things up to run
 this automatically across all of our guests.  The following stylesheet
 will replace the <code>&lt;emulator&gt;</code> tag with a path to an appropriate <code>qemu</code> (by
 extracting the <code>arch</code> attribute of the <code>domain/os/type</code> element:</p>
-
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
 
@@ -163,24 +160,20 @@ extracting the <code>arch</code> attribute of the <code>domain/os/type</code> el
 
 &lt;/xsl:stylesheet&gt;
 </code></pre>
-
-<p>We&rsquo;re going to apply this to all of our (inactive) guests via the
+<p>We're going to apply this to all of our (inactive) guests via the
 <code>virsh edit</code> subcommand.  This command runs an editor (selected based
 on your <code>VISUAL</code> or <code>EDITOR</code> environment variables) on your domain
 XML.  We need to create an &ldquo;editor&rdquo; that will apply the above
 transformation to its input file.  Something like this will work:</p>
-
 <pre><code>#!/bin/sh
 
 tmpfile=$(mktemp &quot;$1.patched.XXXXXX&quot;)
 xsltproc -o &quot;$tmpfile&quot; patch-emulator.xsl &quot;$1&quot;
 mv &quot;$tmpfile&quot; &quot;$1&quot;
 </code></pre>
-
 <p>Assuming the above script has been saved as &ldquo;patch-emulator.sh&rdquo; (and
 made executable), we can run this across all of our inactive guests
 like this:</p>
-
 <pre><code>#!/bin/sh
 
 VISUAL=./patch-emulator.sh
@@ -193,6 +186,7 @@ done
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

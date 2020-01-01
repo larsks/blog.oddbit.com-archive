@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Moving to GitHub &middot; The Odd Bit</title>
-        <meta name="description" content="This blog has been hosted on scriptogram for the past year or so. Unfortunately, while I like the publish-via-Dropbox mechanism, there have been enough problems recently that I&rsquo;ve finally switched over to using GitHub Pages for hosting. I&rsquo;ve been thinking about doing this for a while, but the things that finally pushed me to make the change were:
+        <meta name="description" content="This blog has been hosted on scriptogram for the past year or so. Unfortunately, while I like the publish-via-Dropbox mechanism, there have been enough problems recently that I&#39;ve finally switched over to using GitHub Pages for hosting. I&#39;ve been thinking about doing this for a while, but the things that finally pushed me to make the change were:
  Sync problems that would prevent new posts from appearing (and that at least once caused posts to disappear).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,39 +118,31 @@
 
     
 
-<p>This blog has been hosted on <a href="http://scriptogr.am/">scriptogram</a> for the past year or so.
+    <p>This blog has been hosted on <a href="http://scriptogr.am/">scriptogram</a> for the past year or so.
 Unfortunately, while I like the publish-via-Dropbox mechanism, there
-have been enough problems recently that I&rsquo;ve finally switched over to
-using <a href="http://pages.github.com/">GitHub Pages</a> for hosting.  I&rsquo;ve been thinking about doing
+have been enough problems recently that I've finally switched over to
+using <a href="http://pages.github.com/">GitHub Pages</a> for hosting.  I've been thinking about doing
 this for a while, but the things that finally pushed me to make the
 change were:</p>
-
 <ul>
 <li>Sync problems that would prevent new posts from appearing (and that
 at least once caused posts to disappear).</li>
 <li>Lack of any response to bug reports by the site maintainers.</li>
 </ul>
-
 <p>A benefit of the publish-via-Dropbox mechanism is, of course, that I
-already had all the data and didn&rsquo;t need to go through any sort of
+already had all the data and didn't need to go through any sort of
 export process.</p>
-
-<!-- more -->
-
+<!-- raw HTML omitted -->
 <h2 id="fixing-metadata">Fixing metadata</h2>
-
 <p>Like <a href="http://scriptogr.am/">scriptogram</a>, <a href="http://pages.github.com/">GitHub Pages</a> is also a Markdown-based
 solution.  GitHub uses <a href="http://jekyllrb.com/">Jekyll</a> to render Markdown to HTML, which
 requires some metadata at the beginning of each post.  On
 <a href="http://scriptogr.am/">scriptogram</a> the file headers looked like this:</p>
-
 <pre><code>Title: A random collection of OpenStack Tools
 Date: 2013-11-12
 Tags: openstack
 </code></pre>
-
 <p>Whereas the corresponding header for GitHub would look like this:</p>
-
 <pre><code>---
 layout: post
 title: A random collection of OpenStack Tools
@@ -158,9 +151,7 @@ tags:
   - openstack
 ---
 </code></pre>
-
 <p>I was able to generally automate this with the following script:</p>
-
 <pre><code>#!/bin/sh
 
 for post in &quot;$@&quot;; do
@@ -178,26 +169,20 @@ for post in &quot;$@&quot;; do
   ' $post
 done
 </code></pre>
-
 <p>The <code>tags:</code> header need further processing to transform them into a
 <a href="http://en.wikipedia.org/wiki/YAML">YAML</a> list.  That means something like:</p>
-
 <pre><code>tags: foo,bar,baz
 </code></pre>
-
 <p>Would need to end up looking like:</p>
-
 <pre><code>tags:
   - foo
   - bar
   - baz
 </code></pre>
-
-<p>While that&rsquo;s not entirely accurate &ndash; YAML supports multiple list
+<p>While that's not entirely accurate &ndash; YAML supports multiple list
 syntaxes and I could have just expressed that as <code>[foo,bar,baz]</code> &ndash;  I
 prefer this extended syntax and got there via the following <code>awk</code>
 script:</p>
-
 <pre><code>BEGIN {state=0}
 
 state == 1 &amp;&amp; /^tags:/ {
@@ -220,22 +205,17 @@ state == 0 &amp;&amp; /^---$/ { state=1 }
 
 {print}
 </code></pre>
-
 <p>(This would process a single post; I wrapped it in a shell script to
 run it across all the posts.)</p>
-
 <h1 id="redirecting-legacy-links">Redirecting legacy links</h1>
-
 <p>In order to preserve links pointing at the old blog I needed to generate
 a bunch of HTML redirect files.  <a href="http://scriptogr.am/">Scriptogram</a> posts had permalinks
 of the form <code>/post/&lt;slug&gt;</code>, where <code>&lt;slug&gt;</code> was computed from the post
-aliases: [&ldquo;/2013/11/13/moving-to-github/&rdquo;]
+aliases: [&quot;/2013/11/13/moving-to-github/&quot;]
 title.  GitHub posts (with <code>permalinks: pretty</code>) have the form
 <code>/&lt;year&gt;/&lt;month&gt;/&lt;day&gt;/&lt;title&gt;</code>, where <code>&lt;title&gt;</code> comes from the
 filename rather than the post metadata.</p>
-
 <p>I automated the generation of redirects with the following script:</p>
-
 <pre><code>#!/bin/sh
 
 for post in _posts/*; do
@@ -262,15 +242,13 @@ for post in _posts/*; do
 
   # the url at which the post is available on github
   new_url=&quot;/$post_year/$post_month/$post_day/$post_title/&quot;
-
+  
   # generate the html redirect file
   mkdir -p post/$slug
   sed &quot;s|URL|$new_url|g&quot; redirect.html &gt; post/$slug/index.html
 done
 </code></pre>
-
 <p>Where <code>redirect.html</code> looks like this:</p>
-
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -280,12 +258,10 @@ done
 &lt;/head&gt;
 &lt;/html&gt;
 </code></pre>
-
 <p>So given a file <code>_posts/2013-11-12-a-random-collection.md</code>, this would
 result in a new file
 <code>post/a-random-collection-of-openstack-tools/index.html</code> with the
 following content:</p>
-
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -295,13 +271,12 @@ following content:</p>
 &lt;/head&gt;
 &lt;/html&gt;
 </code></pre>
-
 <p>With this in place, a URL such as <a href="http://blog.oddbit.com/post/a-random-collection-of-openstack-tools">http://blog.oddbit.com/post/a-random-collection-of-openstack-tools</a> goes to the right place.</p>
-
 <p><strong>Update</strong>: It turns out that it has been almost exactly a year since
 I <a href="http://blog.oddbit.com/2012/11/06/moving-from-blogger/">moved from Blogger to Scriptogram</a>.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

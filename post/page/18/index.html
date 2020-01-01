@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -103,6 +104,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Pushing a Git repository to Subversion</h4>
+        <time class="post-stub-date" datetime="2010-05-11">Published Tue, May 11, 2010</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I recently set up a git repository server (using gitosis and gitweb). Among the required features of the system was the ability to publish the git repository to a read-only Subversion repository. This sounds simple in principle but in practice proved to be a bit tricky.
+Git makes an excellent Subversion client. You can use the git svn &hellip; series of commands to pull a remote Subversion repository into a local git working tree and then have all the local advantages of git forcing the central code repository to change version control software.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">LDAP redundancy through proxy servers</h4>
         <time class="post-stub-date" datetime="2010-02-24">Published Wed, Feb 24, 2010</time>
@@ -112,7 +136,7 @@
     
     <p class="post-stub-summary">
     Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.
-A solution We can provide a level of redundancy by passing the LDAP connections through a load balancing proxy. While this makes the proxy a single point of failure, it is (a) a very simple tool and thus less prone to complex failure modes, (b) running on the same host as the web application, and &copy; is completely under our control.
+A solution We can provide a level of redundancy by passing the LDAP connections through a load balancing proxy. While this makes the proxy a single point of failure, it is (a) a very simple tool and thus less prone to complex failure modes, (b) running on the same host as the web application, and (c) is completely under our control.
     </p>
 
     
@@ -134,7 +158,7 @@ A solution We can provide a level of redundancy by passing the LDAP connections 
 
     
     <p class="post-stub-summary">
-    As part of a project I&rsquo;m working on I wanted to get a rough idea of the activity of the Apache virtual hosts on the system. I wasn&rsquo;t able to find exactly what I wanted, so I refreshed my memory of curses to bring you vhoststats.
+    As part of a project I'm working on I wanted to get a rough idea of the activity of the Apache virtual hosts on the system. I wasn't able to find exactly what I wanted, so I refreshed my memory of curses to bring you vhoststats.
 This tools reads an Apache log file (with support for arbitrary formats) and generates a dynamic bar chart showing the activity (in number of requests and bytes transferred) of hosts on the system.
     </p>
 
@@ -157,7 +181,7 @@ This tools reads an Apache log file (with support for arbitrary formats) and gen
 
     
     <p class="post-stub-summary">
-    This document provides an example of using OpenLDAP&rsquo;s meta backend to provide a unified view of two distinct LDAP directory trees. I was frustrated by the lack of simple examples available when I went looking for information on this topic, so this is my attempt to make life easier for the next person looking to do the same thing.
+    This document provides an example of using OpenLDAP's meta backend to provide a unified view of two distinct LDAP directory trees. I was frustrated by the lack of simple examples available when I went looking for information on this topic, so this is my attempt to make life easier for the next person looking to do the same thing.
 The particular use case that motiviated my interest in this topic was the need to configure web applications to (a) authenticate against an existing Active Directory server while (b) also allowing new accounts to be provisioned quickly and without granting any access in the AD environment.
     </p>
 
@@ -180,7 +204,7 @@ The particular use case that motiviated my interest in this topic was the need t
 
     
     <p class="post-stub-summary">
-    After encountering a number of problems trying to filter Blogger feeds by tag (using services like Feedrinse and Yahoo Pipes), I&rsquo;ve finally put together a solution that works:
+    After encountering a number of problems trying to filter Blogger feeds by tag (using services like Feedrinse and Yahoo Pipes), I've finally put together a solution that works:
  Shadow the feed with Feedburner. Enable the Convert Format Burner, and convert your feed to RSS 2.0. Use Yahoo Pipes to filter the feed (because Feedrinse seems to be broken).  This let me create a feed that excluded all my posts containing the fbpost tag, thus allowing me to avoid yet another postgasm in Facebook when adding new import URL to notes.
     </p>
 
@@ -203,8 +227,8 @@ The particular use case that motiviated my interest in this topic was the need t
 
     
     <p class="post-stub-summary">
-    I was poking around in a command shell on my Droid to see what was available. While it&rsquo;s a pretty restricted environment, there&rsquo;s a number of commands available in /system/bin, including dexopt.
-Apparently dexopt isn&rsquo;t something I&rsquo;m supposed to poke at:
+    I was poking around in a command shell on my Droid to see what was available. While it's a pretty restricted environment, there's a number of commands available in /system/bin, including dexopt.
+Apparently dexopt isn't something I'm supposed to poke at:
 $ dexopt Usage: don't use this  Hah.
     </p>
 
@@ -252,7 +276,7 @@ $ dexopt Usage: don't use this  Hah.
     
     <p class="post-stub-summary">
     VNC clients use the RFB protocol to provide virtual display capabilities. The RFB protocol, as implemented by most clients, provides very poor authentication options. While passwords are not actually sent &ldquo;in the clear&rdquo;, it is possible to brute force them based on information available on the wire. The RFB 3.x protocol limits passwords to a maximum of eight characters, so the potential key space is relatively small.
-It&rsquo;s possible to securely connect to a remote VNC server by tunneling your connection using ssh port forwarding (or setting up some sort of SSL proxy).
+It's possible to securely connect to a remote VNC server by tunneling your connection using ssh port forwarding (or setting up some sort of SSL proxy).
     </p>
 
     
@@ -277,7 +301,7 @@ It&rsquo;s possible to securely connect to a remote VNC server by tunneling your
     I learned something new today: it appears that the underlying authorization mechanism used by NFS limits your group membership to 16 groups. From http://bit.ly/cBhU8N:
  NFS is built on ONC RPC (Sun RPC). NFS depends on RPC for authentication and identification of users. Most NFS deployments use an RPC authentication flavor called AUTH_SYS (originally called AUTH_UNIX, but renamed to AUTH_SYS).
 AUTH_SYS sends 3 important things:
-  A 32 bit numeric user identifier (what you&rsquo;d see in the UNIX /etc/passwd file) A 32 bit primary numeric group identifier (ditto) A variable length list of up to 16 32-bit numeric supplemental group identifiers (what&rsquo;d you see in the /etc/group file)    We ran into this today while diagnosing a weird permissions issue.
+  A 32 bit numeric user identifier (what you'd see in the UNIX /etc/passwd file) A 32 bit primary numeric group identifier (ditto) A variable length list of up to 16 32-bit numeric supplemental group identifiers (what'd you see in the /etc/group file)    We ran into this today while diagnosing a weird permissions issue.
     </p>
 
     
@@ -307,28 +331,6 @@ What we want to do is move a project from a path that looks like this:
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Linux UPnP Gateway</h4>
-        <time class="post-stub-date" datetime="2010-01-29">Published Fri, Jan 29, 2010</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Like many other folks out there, I have several computers in my house connected to the outside world via a Linux box acting as a NAT gateway. I often want to use application such as BitTorrent and Freenet, which require that a number of ports be forwarded from my external connection to the particular computer on which I happen to be working. It turns out there&rsquo;s a protocol for this, called UPnP.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/">(Read more...)</a>
     </p>
     
     

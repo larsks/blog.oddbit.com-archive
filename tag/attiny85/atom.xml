@@ -19,7 +19,7 @@
     <published>2019-01-28T00:00:00Z</published>
     <updated>2019-01-28T00:00:00Z</updated>
     <summary type="html">How big is an enum? I noticed something odd while browsing through the assembly output of some AVR C code I wrote recently. In the code, I have the following expression:
-int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&amp;rsquo;t want to clutter this post with unnecessary code listings):</summary>
+int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&#39;t want to clutter this post with unnecessary code listings):</summary>
   </entry>
   
   <entry>
@@ -33,7 +33,7 @@ int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is 
     <updated>2019-01-28T00:00:00Z</updated>
     <summary type="html">Pssst! Hey&amp;hellip;hey, buddy, wanna get an extra KB for cheap?
 When I write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
-Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&amp;rsquo;s exactly what I did.</summary>
+Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&#39;s exactly what I did.</summary>
   </entry>
   
   <entry>
@@ -46,7 +46,7 @@ Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)
     <published>2019-01-22T00:00:00Z</published>
     <updated>2019-01-22T00:00:00Z</updated>
     <summary type="html">In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
-I&amp;rsquo;ve split this into three posts:</summary>
+I&#39;ve split this into three posts:</summary>
   </entry>
   
   <entry>
@@ -59,11 +59,11 @@ I&amp;rsquo;ve split this into three posts:</summary>
     <published>2019-01-22T00:00:00Z</published>
     <updated>2019-01-22T00:00:00Z</updated>
     <summary type="html">This is the second of three posts about using gdb and simavr to debug AVR code. The complete series is:
- Part 1: Using GDB
+  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
- Part 2: Automating GDB with scripts
+  Part 2: Automating GDB with scripts
 Creating GDB scripts to automatically test the behavior of our code.
- Part 3: Tracing with simavr
+  Part 3: Tracing with simavr
 Using simavr to collect information about the state of microcontroller pins while our code is running.</summary>
   </entry>
   
@@ -77,11 +77,11 @@ Using simavr to collect information about the state of microcontroller pins whil
     <published>2019-01-22T00:00:00Z</published>
     <updated>2019-01-22T00:00:00Z</updated>
     <summary type="html">This is the third of three posts about using gdb and simavr to debug AVR code. The complete series is:
- Part 1: Using GDB
+  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
- Part 2: Automating GDB with scripts
+  Part 2: Automating GDB with scripts
 Creating GDB scripts to automatically test the behavior of our code.
- Part 3: Tracing with simavr
+  Part 3: Tracing with simavr
 Using simavr to collect information about the state of microcontroller pins while our code is running.</summary>
   </entry>
   
@@ -94,7 +94,7 @@ Using simavr to collect information about the state of microcontroller pins whil
     <id>https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</id>
     <published>2019-01-19T00:00:00Z</published>
     <updated>2019-01-19T00:00:00Z</updated>
-    <summary type="html">I have a Raspberry Pi running RetroPie hooked up to a television. It&amp;rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&amp;rsquo;re pulling the plug on the Pi. While there haven&amp;rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</summary>
+    <summary type="html">I have a Raspberry Pi running RetroPie hooked up to a television. It&#39;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&#39;re pulling the plug on the Pi. While there haven&#39;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</summary>
   </entry>
   
 </feed>

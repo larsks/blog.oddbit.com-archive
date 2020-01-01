@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Parsing XML with Awk &middot; The Odd Bit</title>
         <meta name="description" content="Recently, changes from the xmlgawk project have been integrated into GNU awk, and xmlgawk has been renamed to gawkextlib. With both a recent (post-4.0.70) gawk and gawkextlib built and installed correctly, you can write simple XML parsing scripts using gawk.
-For example, let&rsquo;s say you would like to generate a list of disk image files associated with a KVM virtual instance. You can use the virsh dumpxml command to get output like the following:">
+For example, let&#39;s say you would like to generate a list of disk image files associated with a KVM virtual instance. You can use the virsh dumpxml command to get output like the following:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ For example, let&rsquo;s say you would like to generate a list of disk image fil
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,15 +116,14 @@ For example, let&rsquo;s say you would like to generate a list of disk image fil
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>Recently, changes from the <a href="http://gawkextlib.sourceforge.net/">xmlgawk</a> project have been integrated into
 <a href="https://www.gnu.org/software/gawk/">GNU awk</a>, and xmlgawk has been renamed to <a href="http://gawkextlib.sourceforge.net/">gawkextlib</a>. With both a
 recent (post-4.0.70) gawk and gawkextlib built and installed
 correctly, you can write simple XML parsing scripts using gawk.</p>
-
-<p>For example, let&rsquo;s say you would like to generate a list of disk image
-files associated with a KVM virtual instance. You can use the <code>virsh
-dumpxml</code> command to get output like the following:</p>
-
+<p>For example, let's say you would like to generate a list of disk image
+files associated with a KVM virtual instance. You can use the <code>virsh dumpxml</code> command to get output like the following:</p>
 <pre><code>&lt;devices&gt;
   &lt;emulator&gt;/usr/bin/qemu-kvm&lt;/emulator&gt;
   &lt;disk type='file' device='disk'&gt;
@@ -136,11 +136,9 @@ dumpxml</code> command to get output like the following:</p>
  ...
 &lt;/devices&gt;
 </code></pre>
-
 <p>You could then write code similar to <a href="https://gist.github.com/4012705">the
 following</a> to extract the relevant
 information:</p>
-
 <pre><code>@load &quot;xml&quot;
 
 XMLSTARTELEM == &quot;disk&quot;  {
@@ -162,16 +160,12 @@ XMLENDELEM == &quot;disk&quot;    {
         print disk_target, disk_file
 }
 </code></pre>
-
 <p>Given the sample input above, the script will produce the following
 output:</p>
-
 <pre><code>sda /var/lib/libvirt/images/client.qcow2
 </code></pre>
-
 <p>The xml extension for gawk populates a number of variables that
 can be used in your scripts:</p>
-
 <ul>
 <li><code>XMLSTARTELEM</code> marks the start of a new element (and is set to the
 name of that element).</li>
@@ -180,11 +174,11 @@ element attributes.</li>
 <li><code>XMLENDELEM</code> marks the end of an element (and is set to the name of
 the element).</li>
 </ul>
-
 <p>There are other variables available, but with this basic set is
 becomes easy to extract information from XML documents.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

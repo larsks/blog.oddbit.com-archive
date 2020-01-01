@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Solved: Open vSwitch and persistent MAC addresses &middot; The Odd Bit</title>
-        <meta name="description" content="In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &ldquo;don&rsquo;t use ip link set ...&rdquo; for this purpose.
+        <meta name="description" content="In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &ldquo;don&#39;t use ip link set ...&rdquo; for this purpose.
 You can set the bridge MAC address via ovs-vsctl like this:
-ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&rsquo;ve updated my ifconfig-br-ex to look like this:
+ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&#39;ve updated my ifconfig-br-ex to look like this:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPINTERFACES=eth0 MACADDR=fa:16:3e:ef:91:ec OVS_EXTRA=&quot;set bridge br-ex other-config:hwaddr=$MACADDR&quot;  The OVS_EXTRA parameter gets passed to the add-br call like this:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -26,6 +26,7 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,17 +118,15 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>In my <a href="/2014/05/23/open-vswitch-and-persistent-ma/">previous post</a> I discussed a problem I was having setting a
 persistent MAC address on an OVS bridge device.  It looks like the
-short answer is, &ldquo;don&rsquo;t use <code>ip link set ...</code>&rdquo; for this purpose.</p>
-
+short answer is, &ldquo;don't use <code>ip link set ...</code>&rdquo; for this purpose.</p>
 <p>You can set the bridge MAC address via <code>ovs-vsctl</code> like this:</p>
-
 <pre><code>ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR
 </code></pre>
-
-<p>So I&rsquo;ve updated my <code>ifconfig-br-ex</code> to look like this:</p>
-
+<p>So I've updated my <code>ifconfig-br-ex</code> to look like this:</p>
 <pre><code>DEVICE=br-ex
 DEVICETYPE=ovs
 TYPE=OVSBridge
@@ -137,15 +136,13 @@ OVSDHCPINTERFACES=eth0
 MACADDR=fa:16:3e:ef:91:ec
 OVS_EXTRA=&quot;set bridge br-ex other-config:hwaddr=$MACADDR&quot;
 </code></pre>
-
 <p>The <code>OVS_EXTRA</code> parameter gets passed to the <code>add-br</code> call like this:</p>
-
 <pre><code>ovs-vsctl --may-exist add-br br-ex -- set bridge br-ex other-config:hwaddr=$MACADDR
 </code></pre>
-
 <p>And unlike using <code>ip link set</code>, this seems to stick.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

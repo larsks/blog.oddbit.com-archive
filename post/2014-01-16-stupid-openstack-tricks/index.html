@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Stupid OpenStack Tricks &middot; The Odd Bit</title>
         <meta name="description" content="I work with several different OpenStack installations. I usually work on the command line, sourcing in an appropriate stackrc with credentials as necessary, but occasionally I want to use the dashboard for something.
-For all of the deployments with which I work, the keystone endpoint is on the same host as the dashboard. So rather than trying to remember which dashboard url I want for the environment I&rsquo;m currently using on the command line, I put together this shell script:">
+For all of the deployments with which I work, the keystone endpoint is on the same host as the dashboard. So rather than trying to remember which dashboard url I want for the environment I&#39;m currently using on the command line, I put together this shell script:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ For all of the deployments with which I work, the keystone endpoint is on the sa
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,27 +116,27 @@ For all of the deployments with which I work, the keystone endpoint is on the sa
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>I work with several different OpenStack installations.  I usually work
 on the command line, sourcing in an appropriate <code>stackrc</code> with
 credentials as necessary, but occasionally I want to use the dashboard
 for something.</p>
-
 <p>For all of the deployments with which I work, the keystone endpoint is
 on the same host as the dashboard.  So rather than trying to remember
-which dashboard url I want for the environment I&rsquo;m currently using on
+which dashboard url I want for the environment I'm currently using on
 the command line, I put together this shell script:</p>
-
 <pre><code>#!/bin/sh
 
 url=${OS_AUTH_URL%:*}/
 exec xdg-open $url
 </code></pre>
-
 <p>This takes the value of your <code>OS_AUTH_URL</code> environment variable,
 strips off everything after the port specification, and passes that to
 your default browser.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

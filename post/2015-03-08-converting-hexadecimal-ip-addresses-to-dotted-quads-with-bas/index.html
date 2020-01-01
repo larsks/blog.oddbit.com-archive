@@ -8,7 +8,7 @@
 I wanted to read routing information directly from /proc/net/route using bash, because you never know what may or may not be available in the minimal environment of a Docker container (for example, the iproute package is not installed by default in the Fedora Docker images). The contents of /proc/net/route looks something like:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ I wanted to read routing information directly from /proc/net/route using bash, b
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,76 +116,56 @@ I wanted to read routing information directly from /proc/net/route using bash, b
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>This is another post that is primarily for my own benefit for the next
 time I forget how to do this.</p>
-
 <p>I wanted to read routing information directly from <code>/proc/net/route</code>
 using <code>bash</code>, because you never know what may or may not be available
 in the minimal environment of a Docker container (for example, the
 <code>iproute</code> package is not installed by default in the Fedora Docker
 images).  The contents of <code>/proc/net/route</code> looks something like:</p>
-
-<pre><code>Iface   Destination Gateway     Flags   RefCnt  Use Metric  Mask        MTU Window  IRTT                                                       
-eth0    00000000    0101A8C0    0003    0   0   1024    00000000    0   0   0                                                                          
-eth0    37E9BB42    0101A8C0    0007    0   0   20  FFFFFFFF    0   0   0                                                                            
+<pre><code>Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+eth0	00000000	0101A8C0	0003	0	0	1024	00000000	0	0	0                                                                          
+eth0	37E9BB42	0101A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                            
 </code></pre>
-
 <p>If I want the address of the default gateway, I can trivially get the
 hexadecimal form like this:</p>
-
 <pre><code>awk '$2 == &quot;00000000&quot; {print $3}' /proc/net/route
 </code></pre>
-
 <p>Which gives me:</p>
-
 <pre><code>0101A8C0
 </code></pre>
-
-<p>This is in little-endian order; that is, the above bytes represent <code>1
-1 168 192</code>, which you may recognize better as <code>192.168.1.1</code>.  So, we
+<p>This is in little-endian order; that is, the above bytes represent <code>1 1 168 192</code>, which you may recognize better as <code>192.168.1.1</code>.  So, we
 need to convert this into a sequence of individual octets, reverse the
 order, and produce the decimal equivalent of each octet.</p>
-
 <p>The following gives us the octets in the correct order, prefixed by
-<code>0x</code> (which we&rsquo;re going to want in the next step):</p>
-
+<code>0x</code> (which we're going to want in the next step):</p>
 <pre><code>awk '$2 == &quot;00000000&quot; {print $3}' /proc/net/route |
   sed 's/../0x&amp; /g' | tr ' ' '\n' | tac
 </code></pre>
-
 <p>We can put this into a bash array like this:</p>
-
 <pre><code>octets=($(
 awk '$2 == &quot;00000000&quot; {print $3}' /proc/net/route |
   sed 's/../0x&amp; /g' | tr ' ' '\n' | tac
 ))
 </code></pre>
-
 <p>And we convert those hexadecimal octets into decimal like this:</p>
-
 <pre><code>printf &quot;%d.&quot; ${octets[@]} | sed 's/\.$/\n/'
 </code></pre>
-
 <p>An interesting feature of the Bash <code>printf</code> command &ndash; and one that
 may be surprising to people who are coming from a C background &ndash; is
 that:</p>
-
 <blockquote>
 <p>The format is re-used as necessary to consume all of the arguments.</p>
 </blockquote>
-
 <p>That means, that a command like this:</p>
-
 <pre><code>printf &quot;%d.&quot; 1 2 3 4
 </code></pre>
-
 <p>Will yield:</p>
-
 <pre><code>1.2.3.4.
 </code></pre>
-
 <p>If we put this all together, we might end up with something like:</p>
-
 <pre><code>hexaddr=$(awk '$2 == &quot;00000000&quot; {print $3}' /proc/net/route)
 ipaddr=$(printf &quot;%d.&quot; $(
   echo $hexaddr | sed 's/../0x&amp; /g' | tr ' ' '\n' | tac
@@ -192,6 +173,7 @@ ipaddr=$(printf &quot;%d.&quot; $(
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

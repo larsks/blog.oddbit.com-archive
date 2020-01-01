@@ -9,7 +9,7 @@ In an environment running Neutron, a request from your instance must traverse a 
  From the instance to a router, Through a NAT rule in the router namespace, To an instance of the neutron-ns-metadata-proxy, To the actual Nova metadata service  When there are problem accessing the metadata, it can be helpful to verify that the metadata service itself is configured correctly and returning meaningful information.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ In an environment running Neutron, a request from your instance must traverse a 
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,29 +117,25 @@ In an environment running Neutron, a request from your instance must traverse a 
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>When you boot a virtual instance under <a href="http://www.openstack.org/">OpenStack</a>, your instance
 has access to certain <a href="http://docs.openstack.org/admin-guide-cloud/content//section_metadata-service.html">instance metadata</a> via the Nova metadata service,
 which is canonically available at <a href="http://169.254.169.254/">http://169.254.169.254/</a>.</p>
-
 <p>In an environment running <a href="https://wiki.openstack.org/wiki/Neutron">Neutron</a>, a request from your instance
 must traverse a number of steps:</p>
-
 <ul>
 <li>From the instance to a router,</li>
 <li>Through a NAT rule in the router namespace,</li>
 <li>To an instance of the neutron-ns-metadata-proxy,</li>
 <li>To the actual Nova metadata service</li>
 </ul>
-
 <p>When there are problem accessing the metadata, it can be helpful to
 verify that the metadata service itself is configured correctly and
 returning meaningful information.</p>
-
-<!-- more -->
-
+<!-- raw HTML omitted -->
 <p>Naively trying to contact the Nova metadata service listening on port
 8775 will, not unexpectedly, fail:</p>
-
 <pre><code>$ curl http://localhost:8775/latest/meta-data/
 &lt;html&gt;
  &lt;head&gt;
@@ -149,9 +146,7 @@ returning meaningful information.</p>
   X-Instance-ID header is missing from request.&lt;br /&gt;&lt;br /&gt;
  &lt;/body&gt;
 </code></pre>
-
 <p>You can grab the UUID of a running instance with <code>nova list</code>:</p>
-
 <pre><code>$ nova list
 +--------------------------------------+-------...
 | ID                                   | Name  ...
@@ -159,28 +154,22 @@ returning meaningful information.</p>
 | 32d0524b-314d-4594-b3a3-607e3f2354f8 | test0 ...
 +--------------------------------------+-------...
 </code></pre>
-
 <p>You can retry your request with an appropraite <code>X-Instance-ID</code> header
 (<code>-H 'x-instance-id: 32d0524b-314d-4594-b3a3-607e3f2354f8'</code>), but
-ultimately (after also adding the tenant id), you&rsquo;ll find that you
+ultimately (after also adding the tenant id), you'll find that you
 need to add an <code>x-instance-id-signature</code> header.  If you investigate
-the <a href="https://github.com/openstack/nova/blob/master/nova/api/metadata/handler.py">Nova source code</a>, you&rsquo;ll find that this header is calculated
+the <a href="https://github.com/openstack/nova/blob/master/nova/api/metadata/handler.py">Nova source code</a>, you'll find that this header is calculated
 via an HMAC over the instance ID and a shared secret:</p>
-
 <pre><code>expected_signature = hmac.new(
     CONF.neutron_metadata_proxy_shared_secret,
     instance_id,
     hashlib.sha256).hexdigest()
 </code></pre>
-
 <p>You can get the shared secret from <code>/etc/nova/nova.conf</code>:</p>
-
 <pre><code># grep shared_secret /etc/nova/nova.conf
 neutron_metadata_proxy_shared_secret=deadbeef2eb84d8d
 </code></pre>
-
 <p>And insert that into the previous Python code:</p>
-
 <pre><code>Python 2.7.5 (default, Nov 12 2013, 16:18:42) 
 [GCC 4.8.2 20131017 (Red Hat 4.8.2-1)] on linux2
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
@@ -192,9 +181,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 '6bcbe3885ae7efc49cef35b438efe29c95501f4a720a0c53ed000d8fcf04a605'
 &gt;&gt;&gt; 
 </code></pre>
-
 <p>And now make a request directly to the metadata service:</p>
-
 <pre><code>$ curl \
   -H 'x-instance-id: 32d0524b-314d-4594-b3a3-607e3f2354f8' \
   -H 'x-tenant-id: 28a490a0f8b28800181ce490a74df8d2' \
@@ -218,10 +205,10 @@ public-keys/
 ramdisk-id
 reservation-id
 </code></pre>
-
-<p>And you&rsquo;re done!</p>
+<p>And you're done!</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

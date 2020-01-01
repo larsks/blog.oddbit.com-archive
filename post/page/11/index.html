@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -103,6 +104,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Open vSwitch and persistent MAC addresses</h4>
+        <time class="post-stub-date" datetime="2014-05-23">Published Fri, May 23, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Normally I like to post solutions, but today's post is about a vexing problem to which I have not been able to find a solution.
+This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Solved: Open vSwitch and persistent MAC addresses</h4>
         <time class="post-stub-date" datetime="2014-05-23">Published Fri, May 23, 2014</time>
@@ -111,9 +135,9 @@
 
     
     <p class="post-stub-summary">
-    In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &ldquo;don&rsquo;t use ip link set ...&rdquo; for this purpose.
+    In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &ldquo;don't use ip link set ...&rdquo; for this purpose.
 You can set the bridge MAC address via ovs-vsctl like this:
-ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&rsquo;ve updated my ifconfig-br-ex to look like this:
+ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I've updated my ifconfig-br-ex to look like this:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPINTERFACES=eth0 MACADDR=fa:16:3e:ef:91:ec OVS_EXTRA=&quot;set bridge br-ex other-config:hwaddr=$MACADDR&quot;  The OVS_EXTRA parameter gets passed to the add-br call like this:
     </p>
 
@@ -137,7 +161,7 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
     
     <p class="post-stub-summary">
     Termshare is a tool for sharing your terminal in a browser session. It supports both read-only and read-write sessions, and unlike many other tools it does not require any software installation on the remote side. This makes it tremendously handy for:
- Streaming terminal demonstrations to a diverse audience, or Sharing a terminal session with someone without needing to much about with ssh, tmux, screen, etc.  I&rsquo;ve successfully used Termshare under both Fedora (19 and 20) and CentOS.
+ Streaming terminal demonstrations to a diverse audience, or Sharing a terminal session with someone without needing to much about with ssh, tmux, screen, etc.  I've successfully used Termshare under both Fedora (19 and 20) and CentOS.
     </p>
 
     
@@ -159,7 +183,7 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
 
     
     <p class="post-stub-summary">
-    I run OpenStack on my laptop, and I&rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
+    I run OpenStack on my laptop, and I've been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
 This is the network configuration file for br-ex on my system:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.
     </p>
@@ -254,10 +278,9 @@ neutron net-create external -- --router:external=true \ --provider:network_type=
 
     
     <p class="post-stub-summary">
-    I was the presenter for this morning&rsquo;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
+    I was the presenter for this morning's RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
 The slides are online here.
-Here&rsquo;s the video (also available on the event page):
- 
+Here's the video (also available on the event page):
     </p>
 
     
@@ -305,36 +328,12 @@ $ ovs-vsctl --columns=name,external-ids list Interface  Which on my system, with
     
     <p class="post-stub-summary">
     I work with several different OpenStack installations. I usually work on the command line, sourcing in an appropriate stackrc with credentials as necessary, but occasionally I want to use the dashboard for something.
-For all of the deployments with which I work, the keystone endpoint is on the same host as the dashboard. So rather than trying to remember which dashboard url I want for the environment I&rsquo;m currently using on the command line, I put together this shell script:
+For all of the deployments with which I work, the keystone endpoint is on the same host as the dashboard. So rather than trying to remember which dashboard url I want for the environment I'm currently using on the command line, I put together this shell script:
     </p>
 
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Direct access to Nova metadata</h4>
-        <time class="post-stub-date" datetime="2014-01-14">Published Tue, Jan 14, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    When you boot a virtual instance under OpenStack, your instance has access to certain instance metadata via the Nova metadata service, which is canonically available at http://169.254.169.254/.
-In an environment running Neutron, a request from your instance must traverse a number of steps:
- From the instance to a router, Through a NAT rule in the router namespace, To an instance of the neutron-ns-metadata-proxy, To the actual Nova metadata service  When there are problem accessing the metadata, it can be helpful to verify that the metadata service itself is configured correctly and returning meaningful information.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/">(Read more...)</a>
     </p>
     
     

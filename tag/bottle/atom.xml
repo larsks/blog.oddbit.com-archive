@@ -18,8 +18,8 @@
     <id>https://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</id>
     <published>2013-11-23T00:00:00Z</published>
     <updated>2013-11-23T00:00:00Z</updated>
-    <summary type="html">In this post I&amp;rsquo;m going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.
-My pubsub_example repository on GitHub has a complete project that implements the ideas discussed in this article. This project can be deployed directly on OpenShift if you want to try things out on your own.</summary>
+    <summary type="html">In this post I&#39;m going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.
+My pubsub_example repository on GitHub has a complete project that implements the ideas discussed in this article. This project can be deployed directly on OpenShift if you want to try things out on your own. You can also try it out online at http://pubsub.</summary>
   </entry>
   
 </feed>

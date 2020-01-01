@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>openshift on The Odd Bit</title>
@@ -19,7 +19,7 @@
       <guid>https://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/</guid>
       <description>In this article, a followup to my previous post regarding long-poll servers and Python, we investigate the code changes that were necessary to make the code work when deployed on OpenShift.
 In the previous post, we implemented IO polling to watch for client disconnects at the same time we were waiting for messages on a message bus:
-poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.POLLIN) events = dict(poll.poll()) . . .</description>
+poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.POLLIN) events = dict(poll.poll()) . . .  If you were to try this at home, you would find that everything worked as described&amp;hellip;but if you were to deploy the same code to OpenShift, you would find that the problem we were trying to solve (the server holding file descriptors open after a client disconnected) would still exist.</description>
     </item>
     
   </channel>

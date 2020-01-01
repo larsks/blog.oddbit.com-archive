@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tricks on The Odd Bit</title>
@@ -18,7 +18,7 @@
       
       <guid>https://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/</guid>
       <description>I work with several different OpenStack installations. I usually work on the command line, sourcing in an appropriate stackrc with credentials as necessary, but occasionally I want to use the dashboard for something.
-For all of the deployments with which I work, the keystone endpoint is on the same host as the dashboard. So rather than trying to remember which dashboard url I want for the environment I&amp;rsquo;m currently using on the command line, I put together this shell script:</description>
+For all of the deployments with which I work, the keystone endpoint is on the same host as the dashboard. So rather than trying to remember which dashboard url I want for the environment I&#39;m currently using on the command line, I put together this shell script:</description>
     </item>
     
   </channel>

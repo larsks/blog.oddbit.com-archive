@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gpio on The Odd Bit</title>
@@ -17,8 +17,8 @@
       <pubDate>Sat, 26 Jul 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/</guid>
-      <description>For a small project I&amp;rsquo;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
-Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&amp;rsquo;t want to write something that was tied closely to my project&amp;hellip;</description>
+      <description>For a small project I&#39;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
+Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&#39;t want to write something that was tied closely to my project&amp;hellip;</description>
     </item>
     
   </channel>

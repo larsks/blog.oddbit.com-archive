@@ -10,7 +10,7 @@ You can pass this output to graphviz to create visualizations of your Pacemaker 
 The graph-constraints.py script in that repository consumes the output of cibadmin -Q and can produce output for either start constraints (-S, the default) or colocation constraints (-C).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -26,6 +26,7 @@ The graph-constraints.py script in that repository consumes the output of cibadm
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,36 +118,31 @@ The graph-constraints.py script in that repository consumes the output of cibadm
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>If a picture is worth a thousand words, then code that generates
 pictures from words is worth&hellip;uh, anyway, I wrote a script that
 produces <a href="http://en.wikipedia.org/wiki/DOT_%28graph_description_language%29">dot</a> output from Pacemaker start and colocation
 constraints:</p>
-
 <p><a href="https://github.com/larsks/pacemaker-tools/">https://github.com/larsks/pacemaker-tools/</a></p>
-
 <p>You can pass this output to <a href="http://www.graphviz.org/">graphviz</a> to create visualizations of
 your Pacemaker resource constraints.</p>
-
 <p>The <code>graph-constraints.py</code> script in that repository consumes the
 output of <code>cibadmin -Q</code> and can produce output for either start
 constraints (<code>-S</code>, the default) or colocation constraints (<code>-C</code>).</p>
-
 <p>Given a document like <a href="/assets/2015/02/24/cib.xml">this</a>, if you run:</p>
-
 <pre><code>cibadmin -Q | 
 python graph-constraints.py -o cib.svg
 </code></pre>
-
 <p>You get a graph like <a href="/assets/2015/02/24/cib.svg">this</a>:</p>
-
 <figure><a href="/assets/2015/02/24/cib.svg">
     <img src="/assets/2015/02/24/cib.svg" width="800"/> </a>
 </figure>
 
-
 <p>Nodes are colored by their tag (so, <code>primitive</code>, <code>clone</code>, etc).</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

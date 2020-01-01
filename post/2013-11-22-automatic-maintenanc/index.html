@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Automatic maintenance of tag feeds &middot; The Odd Bit</title>
-        <meta name="description" content="I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&rsquo;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&rsquo;s the perfect place to insert generated content that must be kept in sync with posts on the blog.">
+        <meta name="description" content="I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&#39;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&#39;s the perfect place to insert generated content that must be kept in sync with posts on the blog.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,70 +117,55 @@
 
     
 
-<p>I recently added some scripts to automatically generate tag feeds for
-my blog when pushing new content.  I&rsquo;m using GitHub Pages to publish
+    <p>I recently added some scripts to automatically generate tag feeds for
+my blog when pushing new content.  I'm using GitHub Pages to publish
 everything, so it seemed easiest to make tag generation part of a
 <code>pre-push</code> hook (new in Git 1.8.2).  This hook is run automatically as
-part of the <code>git push</code> operation, so it&rsquo;s the perfect place to insert
+part of the <code>git push</code> operation, so it's the perfect place to insert
 generated content that must be kept in sync with posts on the blog.</p>
-
-<!-- more -->
-
+<!-- raw HTML omitted -->
 <h2 id="keeping-things-in-sync">Keeping things in sync</h2>
-
 <p>The <code>_posts</code> directory of my blog is a <a href="http://git-scm.com/book/en/Git-Tools-Submodules">git submodule</a>, which means
 it gets updated and pushed asynchronously with respect to the main
-repository.  We want to make sure that we don&rsquo;t regenerate the tag
+repository.  We want to make sure that we don't regenerate the tag
 feeds if there are either uncomitted changes in <code>_posts</code> <em>or</em> if there
 are <em>unpushed</em> changes in <code>_posts</code>: in either situation, we could
-generate a tag feed for tags that weren&rsquo;t actually used in any
+generate a tag feed for tags that weren't actually used in any
 published posts.</p>
-
 <p>The following checks for any uncomitted changes in <code>_posts</code>:</p>
-
 <pre><code>if ! git diff-files --quiet _posts; then
   echo &quot;posts are out of sync (skipping tag maintenance)&quot;
   exit 0
 fi
 </code></pre>
-
 <p>This will abort the tag feed generation if any of the following is
 true:</p>
-
 <ul>
 <li><code>_posts</code> has uncomitted changes</li>
 <li><code>_posts</code> has new, untracked content</li>
 <li><code>_posts</code> is at a revision that differs from the last comitted
 revision in the parent repository.</li>
 </ul>
-
 <p>This still leaves one possible failure mode: if we commit all changes
 in <code>_posts</code>, and then commit the updated <code>_posts</code> revision in the
 parent repository, all of the previous checks will pass&hellip;but since we
-haven&rsquo;t pushed the <code>_posts</code> repository, we could still be pushing tags
-that don&rsquo;t match up with published posts.</p>
-
+haven't pushed the <code>_posts</code> repository, we could still be pushing tags
+that don't match up with published posts.</p>
 <p>The following check will prevent this situation by checking if the
 repository differs from the upstream branch:</p>
-
 <pre><code>if ! (cd _posts; git diff-index --quiet origin/posts); then
   echo &quot;posts are out of sync (skipping tag maintenance)&quot;
   exit 0
 fi
 </code></pre>
-
 <h2 id="generating-tag-feeds">Generating tag feeds</h2>
-
 <p>In order to prevent stale tags, we need to delete and regenerate all
 the tag feeds.  Cleaning up the existing tag feeds is taken care of by
 the <code>cleantagfeeds</code> script:</p>
-
 <pre><code>echo &quot;cleaning tag feeds&quot;
 _oddbit/cleantagfeeds
 </code></pre>
-
 <p>Which is really just a wrapper for the following <code>find</code> commands:</p>
-
 <pre><code>#!/bin/sh
 
 # Delete tag feeds unless there is a `.keep` file in the
@@ -188,41 +174,30 @@ find tag/* -name index.xml \
   -execdir sh -c 'test -f .keep || rm -f index.xml' \;
 find tag/* -type d -delete
 </code></pre>
-
 <p>This will preserve any tag feeds that have a corresponding <code>.keep</code>
-file (just in case we&rsquo;ve done something special that requires manual
+file (just in case we've done something special that requires manual
 intervention) and deletes everything else.</p>
-
 <p>Generating the tag feeds is taken care of by the <code>gentagfeeds</code>
 script:</p>
-
 <pre><code>echo &quot;generating tag feeds&quot;
 _oddbit/gentagfeeds
 </code></pre>
-
 <p>This is a Python program that iterates over all the files in <code>_posts</code>,
 reads in the YAML frontmatter from each one, and then generates a feed
 file for each tag using a template.</p>
-
 <p>Finally, we need to add any changes to the repository.  We
 unilaterally add the <code>tags/</code> directory:</p>
-
 <pre><code>git add -A tag
 </code></pre>
-
 <p>And then see if that got us anything:</p>
-
 <pre><code>if ! git diff-index --quiet HEAD -- tag; then
   git commit -m 'automatic tag update' tag
 fi
 </code></pre>
-
-<p>At this point, we&rsquo;ve regenerated all the tag feeds and committed any
+<p>At this point, we've regenerated all the tag feeds and committed any
 new or modified tag feeds to the repository, which will get published
 to GitHub as part of the current <code>push</code> operation.</p>
-
 <p>The actual feed templates look like this:</p>
-
 <pre><code>---
 layout: rss
 exclude: true
@@ -230,24 +205,21 @@ tags:
   - {{tag}}
 ---
 </code></pre>
-
-<p>I&rsquo;m using a modified version of <a href="https://github.com/thedereck/gh-pages-blog/">gh-pages-blog</a> in which I have
+<p>I'm using a modified version of <a href="https://github.com/thedereck/gh-pages-blog/">gh-pages-blog</a> in which I have
 modified <code>_layouts/rss.xml</code> to optionally filter posts by tag using
 the following template code:</p>
-
 <p>{% raw %}
-      .
-      .
-      .
-            {% for p in site.posts %}
-        {% if page contains &lsquo;tags&rsquo; %}
-          {% assign selected = false %}
-          {% for t in p.tags %}
-            {% if page.tags contains t %}
-              {% assign selected = true %}
-            {% endif %}
-          {% endfor %}</p>
-
+.
+.
+.
+{% for p in site.posts %}
+{% if page contains &lsquo;tags&rsquo; %}
+{% assign selected = false %}
+{% for t in p.tags %}
+{% if page.tags contains t %}
+{% assign selected = true %}
+{% endif %}
+{% endfor %}</p>
 <pre><code>      {% if selected == false %}
       {% continue %}
       {% endif %}
@@ -256,18 +228,16 @@ the following template code:</p>
   .
   .
 </code></pre>
-
 <p>{% endraw %}</p>
-
 <p>For each post on the site (<code>site.posts</code>), this checks for any overlap
 between the tags in the post and the tags selected in the tag feed.
 While the automatic feeds use only a single tag, this also makes it
 possible to create feeds that follow multiple tags.</p>
-
 <p>All of the code used to implement this is available in the <a href="http://github.com/larsks/blog.oddbit.com/">GitHub
 repository for this blog</a>.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

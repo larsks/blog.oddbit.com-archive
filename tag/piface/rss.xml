@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>piface on The Odd Bit</title>
@@ -18,7 +18,7 @@
       
       <guid>https://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/</guid>
       <description>I recently acquired both a Raspberry Pi and a PiFace IO board. I had a rough time finding examples of how to read the input ports via interrupts (rather than periodically polling for values), especially for the newer versions of the PiFace python libraries.
-After a little research, here&amp;rsquo;s some simple code that will print out pin names as you press the input buttons. Button 3 will cause the code to exit:</description>
+After a little research, here&#39;s some simple code that will print out pin names as you press the input buttons. Button 3 will cause the code to exit:</description>
     </item>
     
   </channel>

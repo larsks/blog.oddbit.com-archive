@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Folding long lines in Ansible inventory files &middot; The Odd Bit</title>
-        <meta name="description" content="If you have an Ansible inventory file that includes lots of per host variables, it&rsquo;s not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
-I&rsquo;ve just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.">
+        <meta name="description" content="If you have an Ansible inventory file that includes lots of per host variables, it&#39;s not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
+I&#39;ve just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ I&rsquo;ve just submitted pull request #14359 to Ansible which implements suppor
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,46 +116,38 @@ I&rsquo;ve just submitted pull request #14359 to Ansible which implements suppor
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>If you have an Ansible inventory file that includes lots of per host
-variables, it&rsquo;s not unusual for lines to get long enough that they
+variables, it's not unusual for lines to get long enough that they
 become unwieldly, particularly if you want to discuss them in an email
 or write about them in some context (e.g., a blog post).</p>
-
-<p>I&rsquo;ve just submitted pull request <a href="https://github.com/ansible/ansible/pull/14359">#14359</a> to Ansible which
+<p>I've just submitted pull request <a href="https://github.com/ansible/ansible/pull/14359">#14359</a> to Ansible which
 implements support for folding long lines using the INI-format
 convention of using indent to mark extended logical lines.</p>
-
 <p>With this patch in place, you can turn this:</p>
-
 <pre><code>myhost ansible_host=a.b.c.d ansible_user=alice ansible_become=true ansible_ssh_extra_args=&quot;-F ~/.ssh/specialconfig&quot; 
 </code></pre>
-
 <p>Into this:</p>
-
 <pre><code>myhost
   ansible_host=a.b.c.d
   ansible_user=alice
   ansible_become=true
   ansible_ssh_extra_args=&quot;-F ~/.ssh/specialconfig&quot; 
 </code></pre>
-
-<p>I think that&rsquo;s a lot easier to read.</p>
-
+<p>I think that's a lot easier to read.</p>
 <p>If you think this is a good idea (or not!), feel free to comment on
 the 
 <a href="https://github.com/ansible/ansible/pull/14359" class="pull-request">#14359</a>
 .  I considered (and implemented, then discarded)
 using a backslash-based model instead&hellip;</p>
-
 <pre><code>myhost \
   ansible_host=a.b.c.d \
   ...
 </code></pre>
-
 <p>&hellip;but I was swayed by the fact that the indent-style model is at
 least documented <a href="https://docs.python.org/3/library/configparser.html#supported-ini-file-structure">somewhere</a>, and with the backslash
-model it&rsquo;s easy to end up with something like this:</p>
-
+model it's easy to end up with something like this:</p>
 <pre><code>myhost \
   ansible_host=a.b.c.d  # &lt;--- OOOPS NO BACKSLASH
   ansible_user=alice \
@@ -162,6 +155,7 @@ model it&rsquo;s easy to end up with something like this:</p>
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -103,6 +104,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Docker plugin for OpenStack Heat</h4>
+        <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I'll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
+The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Using wait conditions with Heat</h4>
         <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
@@ -135,7 +159,7 @@ In order for WaitCondition resources to operate correctly in Heat, you will need
 
     
     <p class="post-stub-summary">
-    I&rsquo;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
+    I've been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
 The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker containers instead of hypervisor-based servers. For certain workloads, this leads to better resource utilization than you would get with a hypervisor-based solution, while at the same time givin you better support for multi-tenancy and flexible networking than you get with Docker by itself.
     </p>
 
@@ -181,8 +205,8 @@ I came across Richard Jones&rsquo; article discussing the recent work to integra
 
     
     <p class="post-stub-summary">
-    Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&rsquo;ve written an article about working with the macvlan driver.
-This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.
+    Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I've written an article about working with the macvlan driver.
+ This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.
     </p>
 
     
@@ -204,8 +228,8 @@ This article discusses four ways to make a Docker container appear on a local ne
 
     
     <p class="post-stub-summary">
-    For a small project I&rsquo;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
-Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&rsquo;t want to write something that was tied closely to my project&hellip;
+    For a small project I'm working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
+Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn't want to write something that was tied closely to my project&hellip;
     </p>
 
     
@@ -229,6 +253,7 @@ Normally I would reach for Python for a simple project like this, but constraint
     <p class="post-stub-summary">
     After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
 $ docker run -ti fedora /bin/bash bash-4.2# su -c 'uptime' su: System error  Hooking up something (like, say, socat unix-listen:/dev/log -) to /dev/log revealed that the system was logging:
+Jul 19 14:31:18 su: PAM audit_log_acct_message() failed: Operation not permitted  Downgrading the kernel to 3.
     </p>
 
     
@@ -298,36 +323,12 @@ There is now a better option available.
 
     
     <p class="post-stub-summary">
-    I&rsquo;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
- 
+    I've just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
     </p>
 
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Open vSwitch and persistent MAC addresses</h4>
-        <time class="post-stub-date" datetime="2014-05-23">Published Fri, May 23, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Normally I like to post solutions, but today&rsquo;s post is about a vexing problem to which I have not been able to find a solution.
-This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/">(Read more...)</a>
     </p>
     
     

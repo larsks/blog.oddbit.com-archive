@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Retrieving Blogger posts by post id &middot; The Odd Bit</title>
-        <meta name="description" content="I spent some time recently trying to figure out, using Google&rsquo;s gdata API, how to retrieve a post from a Blogger blog if I know corresponding post id. As far as I can tell there is no obvious way of doing this, at least not using the gdata.blogger.client api, but after much nashing of teeth I came up with the following solution.
+        <meta name="description" content="I spent some time recently trying to figure out, using Google&#39;s gdata API, how to retrieve a post from a Blogger blog if I know corresponding post id. As far as I can tell there is no obvious way of doing this, at least not using the gdata.blogger.client api, but after much nashing of teeth I came up with the following solution.
 Given client, a gdata.blogger.client instance, and blog, a gdata.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.">
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,19 +116,19 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.">
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>I spent some time recently trying to figure out, using Google&rsquo;s <a href="http://code.google.com/apis/gdata/docs/2.0/basics.html">gdata</a> API, how to retrieve a post from a <a href="http://www.blogger.com/">Blogger</a> blog if I know corresponding post id. As far as I can tell there is no obvious way of doing this, at least not using the gdata.blogger.client api, but after much nashing of teeth I came up with the following solution.</p>
+    
 
+    <p>I spent some time recently trying to figure out, using Google's <a href="http://code.google.com/apis/gdata/docs/2.0/basics.html">gdata</a> API, how to retrieve a post from a <a href="http://www.blogger.com/">Blogger</a> blog if I know corresponding post id. As far as I can tell there is no obvious way of doing this, at least not using the gdata.blogger.client api, but after much nashing of teeth I came up with the following solution.</p>
 <p>Given client, a <a href="http://gdata-python-client.googlecode.com/svn/trunk/pydocs/gdata.blogger.client.html">gdata.blogger.client</a> instance, and blog, a <a href="http://gdata-python-client.googlecode.com/svn/trunk/pydocs/gdata.blogger.data.html">gdata.blogger.data.Blog</a> instance, the following code will return a <a href="http://gdata-python-client.googlecode.com/svn/trunk/pydocs/gdata.blogger.data.html">gdata.blogger.data.BlogPost</a> instance:</p>
-
 <pre><code>post = client.get_feed(blog.get_post_link().href
           + '/%s' % post_id,
         auth_token=client.auth_token,
         desired_class=gdata.blogger.data.BlogPost)
 </code></pre>
-
-<p>I&rsquo;m not sure if this is the canonical solution or not, but it appears to work for me.</p>
+<p>I'm not sure if this is the canonical solution or not, but it appears to work for me.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

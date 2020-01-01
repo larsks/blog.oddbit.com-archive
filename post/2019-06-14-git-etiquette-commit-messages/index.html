@@ -8,7 +8,7 @@
 Rebase instead of merge If you need to incorporate changes from the upstream master branch in the feature branch on which you are currently doing, bring in those changes using git rebase rather than git merge.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ Rebase instead of merge If you need to incorporate changes from the upstream mas
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,70 +118,57 @@ Rebase instead of merge If you need to incorporate changes from the upstream mas
 
     
 
-<h2 id="always-work-on-a-branch-never-commit-on-master">Always work on a branch (never commit on master)</h2>
-
+    <h2 id="always-work-on-a-branch-never-commit-on-master">Always work on a branch (never commit on master)</h2>
 <p>When working with an upstream codebase, always make your changes on a feature branch rather than your local <code>master</code> branch. This will make it easier to keep your local <code>master</code> branch current with respect to upstream, and can help avoid situations in which you accidentally overwrite your local changes or introduce unnecessary merge commits into your history.</p>
-
 <h2 id="rebase-instead-of-merge">Rebase instead of merge</h2>
-
 <p>If you need to incorporate changes from the upstream <code>master</code> branch in the feature branch on which you are currently doing, bring in those changes using <code>git rebase</code> rather than <code>git merge</code>.  This process will generally start by ensuring that your local copy of the upstream <code>master</code> is current:</p>
-
 <pre><code>git remote update
 
-</code></pre>
-
-<p>Followed by rebasing your changes on top of that branch:</p>
-
+</code></pre><p>Followed by rebasing your changes on top of that branch:</p>
 <pre><code>git rebase origin/master
-</code></pre>
-
-<h2 id="make-your-commit-messages-meaningful">Make your commit messages meaningful</h2>
-
+</code></pre><h2 id="make-your-commit-messages-meaningful">Make your commit messages meaningful</h2>
 <p>Your commit messages should follow common best practices, such as <a href="https://wiki.openstack.org/wiki/GitCommitMessages">those documented for OpenStack</a>.  In general, this means:</p>
-
 <ul>
-<li><p>Your commit message should have the subject on the first line, then a blank line, then the message body.</p></li>
-
-<li><p>The message body should be wrapped at around 75 characters.</p></li>
-
-<li><p>Your commit message should succinctly describe <em>what</em> was changed and <em>why</em> it was changed.</p></li>
-
-<li><p>If your commit is associated with a bug, user story, task, or other tracking mechanism, include a reference to the appropriate item in your commit message.</p></li>
+<li>
+<p>Your commit message should have the subject on the first line, then a blank line, then the message body.</p>
+</li>
+<li>
+<p>The message body should be wrapped at around 75 characters.</p>
+</li>
+<li>
+<p>Your commit message should succinctly describe <em>what</em> was changed and <em>why</em> it was changed.</p>
+</li>
+<li>
+<p>If your commit is associated with a bug, user story, task, or other tracking mechanism, include a reference to the appropriate item in your commit message.</p>
+</li>
 </ul>
-
 <h3 id="example-of-bad-commit-messages">Example of bad commit messages</h3>
-
 <ol>
-<li><p>This should probably have been squashed with the commit that introduced the typo:</p>
-
+<li>
+<p>This should probably have been squashed with the commit that introduced the typo:</p>
 <pre><code>Fixed a typo.
 </code></pre></li>
-
-<li><p>This doesn&rsquo;t provide sufficient details:</p>
-
+<li>
+<p>This doesn't provide sufficient details:</p>
 <pre><code>Trying that thing again
 </code></pre></li>
-
-<li><p>Changes necessary to resolve merge conflicts should generally be squashed into the commits that introduce the conflict:</p>
-
+<li>
+<p>Changes necessary to resolve merge conflicts should generally be squashed into the commits that introduce the conflict:</p>
 <pre><code>Fixing merge conflicts
 </code></pre></li>
 </ol>
-
 <h3 id="example-of-good-commit-messages">Example of good commit messages</h3>
-
 <ol>
-<li><p>A constructed example:</p>
-
+<li>
+<p>A constructed example:</p>
 <pre><code>Support new &quot;description&quot; field on all widgets (TG-100)
 
 Update both the database model and the web UI to support an extended
 &quot;description&quot; field on all objects. This allows us to generate more useful
 product listings.
 </code></pre></li>
-
-<li><p>from <a href="https://github.com/openstack/ironic/commit/6ca99d67302d7e1b639ad9b745631e65a4b2f25c:">https://github.com/openstack/ironic/commit/6ca99d67302d7e1b639ad9b745631e65a4b2f25c:</a></p>
-
+<li>
+<p>from <a href="https://github.com/openstack/ironic/commit/6ca99d67302d7e1b639ad9b745631e65a4b2f25c:">https://github.com/openstack/ironic/commit/6ca99d67302d7e1b639ad9b745631e65a4b2f25c:</a></p>
 <pre><code>Add release note updating status of smartnics
 
 Smartnic support merged into Neutron a few weeks ago,
@@ -190,76 +178,61 @@ now be available.
 
 Change-Id: I19372a0ede703f62940bbb2cc3a80618560ebc93
 </code></pre></li>
-
-<li><p>from <a href="https://github.com/ansible/ansible/commit/88a1fc28d894575d48edc3817cc1a8ef4dca3cae:">https://github.com/ansible/ansible/commit/88a1fc28d894575d48edc3817cc1a8ef4dca3cae:</a></p>
-
+<li>
+<p>from <a href="https://github.com/ansible/ansible/commit/88a1fc28d894575d48edc3817cc1a8ef4dca3cae:">https://github.com/ansible/ansible/commit/88a1fc28d894575d48edc3817cc1a8ef4dca3cae:</a></p>
 <pre><code>Clean up iosxr get_config_diff function (#57589)
 
 This fixes an index error issue when running tests on zuul.ansible.com
 for iosxr. We can fix this by getting the last element in the list.
 </code></pre></li>
 </ol>
-
 <h2 id="fix-typos-by-amending-or-rebasing">Fix typos by amending or rebasing</h2>
-
 <p>If before your pull request has merged you realize you need to fix a typo or other error, do not create a new commit with the correction.</p>
-
 <p>If the typo is in the most recent commit, simply fix it, <code>git add</code> the change, and then use <code>git commit --amend</code> to update the latest commit.</p>
-
 <p>If the typo is <strong>not</strong> in the latest commit, then use <code>git rebase</code> to edit the commit. The procedure will look something like this:</p>
-
 <ol>
-<li><p>Assuming that your branch is based on <code>origin/master</code>, run <code>git rebase -i origin/master</code>. This will bring up the &ldquo;pick list&rdquo;, which allows you to select among various actions for each commit between <code>origin/master</code> and your current branch. For example:</p>
-
+<li>
+<p>Assuming that your branch is based on <code>origin/master</code>, run <code>git rebase -i origin/master</code>. This will bring up the &ldquo;pick list&rdquo;, which allows you to select among various actions for each commit between <code>origin/master</code> and your current branch. For example:</p>
 <pre><code>pick 6ca99d673 Add release note updating status of smartnics
 pick c2ab34a8c Do not log an exception if Allocation is deleted during handling.
 pick 87464fbbc Change constraints opendev.org to release.openstack.org
 pick 43f7bf9f0 Fix :param: in docstring
 </code></pre></li>
-
-<li><p>Change <code>pick</code> to <code>edit</code> for the commit you wish to edit, then exit your editor.</p></li>
-
-<li><p>Make the necessary change, then <code>git add</code> your modified files and then <code>git rebase --continue</code>.</p></li>
+<li>
+<p>Change <code>pick</code> to <code>edit</code> for the commit you wish to edit, then exit your editor.</p>
+</li>
+<li>
+<p>Make the necessary change, then <code>git add</code> your modified files and then <code>git rebase --continue</code>.</p>
+</li>
 </ol>
-
 <p>In either of the above situations, when you have committed the changes locally, run <code>git push -f</code> to update the remote branch on GitHub (which will in turn update your pull request).</p>
-
 <h2 id="have-one-commit-per-logical-change-and-one-major-feature-per-pull-request">Have one commit per logical change and one major feature per pull request</h2>
-
 <p>When you submit a pull request, all the commits associated with that pull request should be related to the same major feature. For example, if you made the follow changes:</p>
-
 <ul>
 <li>Fixed bug #1234</li>
 <li>Wrote new feature discussed at last planning session</li>
 </ul>
-
 <p>Those should be two separate pull requests.  On the other hand, if you have instead made these changes:</p>
-
 <ul>
 <li>Wrote new feature discussed at last planning session</li>
 <li>Wrote documentation for new feature</li>
 <li>Wrote tests for new feature</li>
 </ul>
-
 <p>Those could all be made part of the same pull request.</p>
-
 <p>Within your pull request, there should be a single commit for each logical change.  For example rather than:</p>
-
 <ul>
 <li>Started documentation for new feature</li>
 <li>Made changes to documentation based on review</li>
 <li>Reformatted documentation to fix syntax error</li>
 </ul>
-
 <p>You should have a single commit:</p>
-
 <ul>
 <li>Write documentation for new feature</li>
 </ul>
-
 <p>You should use <code>git commit --amend</code> or <code>git rebase</code>, as discussed earlier, to keep your commits topical and organized.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

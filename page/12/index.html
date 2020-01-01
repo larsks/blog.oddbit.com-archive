@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -104,6 +105,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Direct access to Nova metadata</h4>
+        <time class="post-stub-date" datetime="2014-01-14">Published Tue, Jan 14, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    When you boot a virtual instance under OpenStack, your instance has access to certain instance metadata via the Nova metadata service, which is canonically available at http://169.254.169.254/.
+In an environment running Neutron, a request from your instance must traverse a number of steps:
+ From the instance to a router, Through a NAT rule in the router namespace, To an instance of the neutron-ns-metadata-proxy, To the actual Nova metadata service  When there are problem accessing the metadata, it can be helpful to verify that the metadata service itself is configured correctly and returning meaningful information.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-01-13-rdo-bug-triage/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">RDO Bug Triage</h4>
         <time class="post-stub-date" datetime="2014-01-13">Published Mon, Jan 13, 2014</time>
@@ -112,7 +137,7 @@
 
     
     <p class="post-stub-summary">
-    This Wednesday, January 15, at 14:00 UTC (that&rsquo;s 9AM US/Eastern, or date -d &quot;14:00 UTC&quot; in your local timezone) I will be helping out with the RDO bug triage day. We&rsquo;ll be trying to validate all the untriaged bugs opened against RDO.
+    This Wednesday, January 15, at 14:00 UTC (that's 9AM US/Eastern, or date -d &quot;14:00 UTC&quot; in your local timezone) I will be helping out with the RDO bug triage day. We'll be trying to validate all the untriaged bugs opened against RDO.
 Feel free to drop by on #rdo and help out or ask questions.
     </p>
 
@@ -135,8 +160,8 @@ Feel free to drop by on #rdo and help out or ask questions.
 
     
     <p class="post-stub-summary">
-    I&rsquo;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
-In this post I&rsquo;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
+    I've put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
+In this post I'm going to look at a tool that will help you visualize the connectivity of network devices on your system.
 mk-network-dot There are a lot of devices involved in your Neutron network configuration.
     </p>
 
@@ -207,8 +232,8 @@ Writing templates Because Heat began life as an analog of AWS CloudFormation, it
 
     
     <p class="post-stub-summary">
-    In this post I&rsquo;m going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.
-My pubsub_example repository on GitHub has a complete project that implements the ideas discussed in this article. This project can be deployed directly on OpenShift if you want to try things out on your own.
+    In this post I'm going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.
+My pubsub_example repository on GitHub has a complete project that implements the ideas discussed in this article. This project can be deployed directly on OpenShift if you want to try things out on your own. You can also try it out online at http://pubsub.
     </p>
 
     
@@ -232,7 +257,7 @@ My pubsub_example repository on GitHub has a complete project that implements th
     <p class="post-stub-summary">
     In this article, a followup to my previous post regarding long-poll servers and Python, we investigate the code changes that were necessary to make the code work when deployed on OpenShift.
 In the previous post, we implemented IO polling to watch for client disconnects at the same time we were waiting for messages on a message bus:
-poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.POLLIN) events = dict(poll.poll()) . . .
+poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.POLLIN) events = dict(poll.poll()) . . .  If you were to try this at home, you would find that everything worked as described&hellip;but if you were to deploy the same code to OpenShift, you would find that the problem we were trying to solve (the server holding file descriptors open after a client disconnected) would still exist.
     </p>
 
     
@@ -255,9 +280,9 @@ poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.
     
     <p class="post-stub-summary">
     The python-openstackclient project, by Dean Troyer and others, is a new command line tool to replace the existing command line clients (including commands such as nova, keystone, cinder, etc).
-This tool solves two problems I&rsquo;ve encountered in the past:
- Command line options between different command line clients are sometimes inconsistent.
- The output from the legacy command line tools is not designed to be machine parse-able (and yet people do it anyway).
+This tool solves two problems I've encountered in the past:
+  Command line options between different command line clients are sometimes inconsistent.
+  The output from the legacy command line tools is not designed to be machine parse-able (and yet people do it anyway).
     </p>
 
     
@@ -279,7 +304,7 @@ This tool solves two problems I&rsquo;ve encountered in the past:
 
     
     <p class="post-stub-summary">
-    I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&rsquo;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&rsquo;s the perfect place to insert generated content that must be kept in sync with posts on the blog.
+    I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I'm using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it's the perfect place to insert generated content that must be kept in sync with posts on the blog.
     </p>
 
     
@@ -301,36 +326,12 @@ This tool solves two problems I&rsquo;ve encountered in the past:
 
     
     <p class="post-stub-summary">
-    I&rsquo;ve enabled blog comments using Disqus. This is something of an experiment, since (a) I&rsquo;m not really happy with how Disqus is handling user registration these days and (b) I don&rsquo;t know that I have the time to moderate anything. But we&rsquo;ll see.
+    I've enabled blog comments using Disqus. This is something of an experiment, since (a) I'm not really happy with how Disqus is handling user registration these days and (b) I don't know that I have the time to moderate anything. But we'll see.
     </p>
 
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-11-18-enabled-comments/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-11-17-json-tools/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">json-tools: cli for generating and filtering json</h4>
-        <time class="post-stub-date" datetime="2013-11-17">Published Sun, Nov 17, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Interacting with JSON-based APIs from the command line can be difficult, and OpenStack is filled with REST APIs that consume or produce JSON. I&rsquo;ve just put pair of tools for generating and filtering JSON on the command line, called collectively json-tools.
-Both make use of the Python dpath module to populate or filter JSON objects.
-The jsong command generates JSON on stdout. You provide /-delimited paths on the command line to represent the JSON structure.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-11-17-json-tools/">(Read more...)</a>
     </p>
     
     

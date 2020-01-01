@@ -8,7 +8,7 @@
  Libvirt runs dnsmasq for the default network, and saves leases in a local file (/var/lib/libvirt/dnsmasq/default.leases under RHEL). You can get the MAC address assigned to a virtual machine by querying the domain XML description.  Putting this together gets us something along the lines of:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,11 +116,12 @@
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>If you are starting virtual machines via <code>libvirt</code>, and you have
 attached them to the <code>default</code> network, there is a very simple method
 you can use to determine the address assigned to your running
 instance:</p>
-
 <ul>
 <li>Libvirt runs <code>dnsmasq</code> for the <code>default</code> network, and saves leases
 in a local file (<code>/var/lib/libvirt/dnsmasq/default.leases</code> under
@@ -127,9 +129,7 @@ RHEL).</li>
 <li>You can get the MAC address assigned to a virtual machine by
 querying the domain XML description.</li>
 </ul>
-
 <p>Putting this together gets us something along the lines of:</p>
-
 <pre><code>#!/bin/sh
 
 # Get the MAC address of the first interface.
@@ -141,22 +141,19 @@ mac=$(virsh dumpxml $1 |
 ip=$(awk -vmac=$mac '$2 == mac {print $3}' /var/lib/libvirt/dnsmasq/default.leases )
 echo $ip
 </code></pre>
-
 <p>(<a href="https://gist.github.com/4300055">gist</a>)</p>
-
 <p>This uses <a href="http://ofb.net/~egnor/xml2/">xml2</a> to transform the XML description into something
 more amendable to processing in a shell script.  You could accomplish
 much the same thing using some sort of XPath based tool.  For example:</p>
-
 <pre><code>mac=$(virsh dumpxml $1 |
   xmllint --xpath //interface'[1]/mac/@address' - |
   sed 's/.*=&quot;\([^&quot;]*\)&quot;/\1/'
   )
 </code></pre>
-
 <p><code>xmllint</code> is part of <a href="http://www.xmlsoft.org/">libxml2</a>.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

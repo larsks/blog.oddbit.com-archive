@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Fedora and OVS Bridge Interfaces &middot; The Odd Bit</title>
-        <meta name="description" content="I run OpenStack on my laptop, and I&rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
+        <meta name="description" content="I run OpenStack on my laptop, and I&#39;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
 This is the network configuration file for br-ex on my system:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.">
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,15 +117,15 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.">
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>I run OpenStack on my laptop, and I&rsquo;ve been chasing down a pernicious
+    
+
+    <p>I run OpenStack on my laptop, and I've been chasing down a pernicious
 problem with OVS bridge interfaces under both F19 and F20.  My
 OpenStack environment relies on an OVS bridge device named <code>br-ex</code> for
 external connectivity and for making services available to OpenStack
 instances, but after rebooting, <code>br-ex</code> was consistently unconfigured,
 which caused a variety of problems.</p>
-
 <p>This is the network configuration file for <code>br-ex</code> on my system:</p>
-
 <pre><code>DEVICE=br-ex
 DEVICETYPE=ovs
 TYPE=OVSBridge
@@ -135,40 +136,37 @@ ONBOOT=yes
 NM_CONTROLLED=no
 ZONE=openstack
 </code></pre>
-
 <p>Running <code>ifup br-ex</code> would also fail to configure the interface, but
 running <code>ifdown br-ex; ifup br-ex</code> would configure things
 appropriately.</p>
-
 <p>I finally got fed up with this behavior and spent some time chasing
 down the problem, and this is what I found:</p>
-
 <ul>
-<li>Calling <code>ifup br-ex</code> passes control to
-<code>/etc/sysconfig/network-scripts/ifup-ovs</code>.</li>
-
-<li><p><code>ifup-ovs</code> calls the <code>check_device_down</code> function from
+<li>
+<p>Calling <code>ifup br-ex</code> passes control to
+<code>/etc/sysconfig/network-scripts/ifup-ovs</code>.</p>
+</li>
+<li>
+<p><code>ifup-ovs</code> calls the <code>check_device_down</code> function from
 <code>network-functions</code>, which looks like:</p>
-
-<pre><code>check_device_down ()
-{
-     [ ! -d /sys/class/net/$1 ] &amp;&amp; return 0
-     if LC_ALL=C ip -o link show dev $1 2&gt;/dev/null | grep -q &quot;,UP&quot; ; then
-        return 1
-     else
-        return 0
-     fi
-}
-</code></pre></li>
+<pre><code>  check_device_down ()
+  {
+       [ ! -d /sys/class/net/$1 ] &amp;&amp; return 0
+       if LC_ALL=C ip -o link show dev $1 2&gt;/dev/null | grep -q &quot;,UP&quot; ; then
+          return 1
+       else
+          return 0
+       fi
+  }
+</code></pre>
+</li>
 </ul>
-
 <p>This returns failure (=1) if the interface flags contain <code>,UP</code>.
 Unfortunately, since information about this device is stored
 persistently in <code>ovsdb</code>, the device is already <code>UP</code> when <code>ifup</code> is
 called, which causes <code>ifup-ovs</code> to skip further device
 configuration.  The logic that calls <code>check_device_down</code> looks like
 this:</p>
-
 <pre><code>if check_device_down &quot;${DEVICE}&quot;; then
         ovs-vsctl -t ${TIMEOUT} -- --may-exist add-br &quot;$DEVICE&quot; $OVS_OPTIONS \
         ${OVS_EXTRA+-- $OVS_EXTRA} \
@@ -177,36 +175,30 @@ else
         OVSBRIDGECONFIGURED=&quot;yes&quot;
 fi
 </code></pre>
-
 <p>This sets <code>OVSBRIDGECONFIGURED</code> if it believes the device is <code>UP</code>,
 which causes <code>ifup-ovs</code> to skip the call to <code>ifup-eth</code> to configure
 the interface:</p>
-
 <pre><code>if [ &quot;${OVSBOOTPROTO}&quot; != &quot;dhcp&quot; ] &amp;&amp; [ -z &quot;${OVSINTF}&quot; ] &amp;&amp; \
         [ &quot;${OVSBRIDGECONFIGURED}&quot; != &quot;yes&quot; ]; then
         ${OTHERSCRIPT} ${CONFIG}
 fi
 </code></pre>
-
 <p>I have found that the simplest solution to this problem is to disable
 the logic that sets <code>OVSBRIDGECONFIGURED</code>, by changing this:</p>
-
 <pre><code>else
         OVSBRIDGECONFIGURED=&quot;yes&quot;
 fi
 </code></pre>
-
 <p>To this:</p>
-
 <pre><code>else
         : OVSBRIDGECONFIGURED=&quot;yes&quot;
 fi
 </code></pre>
-
 <p>With this change in place, <code>br-ex</code> is correctly configured after a
 reboot.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

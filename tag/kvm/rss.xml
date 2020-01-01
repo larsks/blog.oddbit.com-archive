@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kvm on The Odd Bit</title>
@@ -27,7 +27,7 @@
       
       <guid>https://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/</guid>
       <description>Occasionally we will deploy a virtual instance into our KVM infrastructure and realize after the fact that we need more local disk space available. This is the process we use to expand the disk image. This process assumes the following:
- You&amp;rsquo;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&amp;rsquo;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).</description>
+ You&#39;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&#39;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).</description>
     </item>
     
   </channel>

@@ -5,20 +5,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Annotated documentation for DockerInc::Docker::Container &middot; The Odd Bit</title>
         <meta name="description" content="This is a companion to my article on the Docker plugin for Heat.
-DockerInc::Docker::Container Properties  cmd : List
+DockerInc::Docker::Container Properties   cmd : List
 Command to run after spawning the container.
 Optional property.
 Example:
-cmd: [ &#39;thttpd&#39;, &#39;-C&#39;, &#39;/etc/thttpd.conf&#39;, &#39;-D&#39;, &#39;-c&#39;, &#39;*.cgi&#39;]  dns : List
+ cmd: [ &#39;thttpd&#39;, &#39;-C&#39;, &#39;/etc/thttpd.conf&#39;, &#39;-D&#39;, &#39;-c&#39;, &#39;*.cgi&#39;]    dns : List
 Set custom DNS servers.
 Example:
-dns: - 8.8.8.8 - 8.8.4.4  docker_endopint : String
-Docker daemon endpoint. By default the local Docker daemon will be used.
-Example:
-docker_endpoint: tcp://192.">
+ dns: - 8.8.8.8 - 8.8.4.4    docker_endopint : String
+Docker daemon endpoint. By default the local Docker daemon will be used.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -34,6 +32,7 @@ docker_endpoint: tcp://192.">
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -127,347 +126,280 @@ docker_endpoint: tcp://192.">
 
     
 
-<p>This is a companion to my <a href="https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/">article on the Docker plugin for Heat</a>.</p>
-
-<h2 id="dockerinc-docker-container">DockerInc::Docker::Container</h2>
-
+    <p>This is a companion to my <a href="https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/">article on the Docker plugin for Heat</a>.</p>
+<h2 id="dockerincdockercontainer">DockerInc::Docker::Container</h2>
 <h3 id="properties">Properties</h3>
-
 <ul>
-<li><p><code>cmd</code> : List</p>
-
+<li>
+<p><code>cmd</code> : List</p>
 <p>Command to run after spawning the container.</p>
-
 <p>Optional property.</p>
-
 <p>Example:</p>
-
-<pre><code>cmd: [ 'thttpd', '-C', '/etc/thttpd.conf', '-D', '-c', '*.cgi']
-</code></pre></li>
-
-<li><p><code>dns</code> : List</p>
-
+<pre><code>  cmd: [ 'thttpd', '-C', '/etc/thttpd.conf', '-D', '-c', '*.cgi']
+</code></pre>
+</li>
+<li>
+<p><code>dns</code> : List</p>
 <p>Set custom DNS servers.</p>
-
 <p>Example:</p>
-
-<pre><code>dns:
-  - 8.8.8.8
-  - 8.8.4.4
-</code></pre></li>
-
-<li><p><code>docker_endopint</code> : String</p>
-
+<pre><code>  dns:
+    - 8.8.8.8
+    - 8.8.4.4
+</code></pre>
+</li>
+<li>
+<p><code>docker_endopint</code> : String</p>
 <p>Docker daemon endpoint.  By default the local Docker daemon will
 be used.</p>
-
 <p>Example:</p>
-
-<pre><code>docker_endpoint: tcp://192.168.1.100:2375
-</code></pre></li>
-
-<li><p><code>env</code> : String</p>
-
+<pre><code>  docker_endpoint: tcp://192.168.1.100:2375
+</code></pre>
+</li>
+<li>
+<p><code>env</code> : String</p>
 <p>Set environment variables.</p>
-
 <p>Example:</p>
-
-<pre><code>env:
-  - MYSQL_ROOT_PASSWORD=secret
-  - &quot;ANOTHER_VARIABLE=something long with spaces&quot;
-</code></pre></li>
-
-<li><p><code>hostname</code> : String</p>
-
+<pre><code>  env:
+    - MYSQL_ROOT_PASSWORD=secret
+    - &quot;ANOTHER_VARIABLE=something long with spaces&quot;
+</code></pre>
+</li>
+<li>
+<p><code>hostname</code> : String</p>
 <p>Hostname of the container.</p>
-
 <p>Example:</p>
-
-<pre><code>hostname: mywebserver
-</code></pre></li>
-
-<li><p><code>image</code> : String</p>
-
+<pre><code>  hostname: mywebserver
+</code></pre>
+</li>
+<li>
+<p><code>image</code> : String</p>
 <p>Image name to boot.</p>
-
 <p>Example:</p>
-
-<pre><code>image: mysql
-</code></pre></li>
-
-<li><p><code>links</code> : Mapping</p>
-
+<pre><code>  image: mysql
+</code></pre>
+</li>
+<li>
+<p><code>links</code> : Mapping</p>
 <p>Links to other containers.</p>
-
 <p>Example:</p>
-
-<pre><code>links:
-  name_in_this_container: name_of_that_container
-</code></pre></li>
-
-<li><p><code>memory</code> : Number</p>
-
+<pre><code>  links:
+    name_in_this_container: name_of_that_container
+</code></pre>
+</li>
+<li>
+<p><code>memory</code> : Number</p>
 <p>Memory limit in bytes.</p>
-
 <p>Example:</p>
-
-<pre><code># 512 MB
-memory: 536870912
-</code></pre></li>
-
-<li><p><code>name</code> : String</p>
-
+<pre><code>  # 512 MB
+  memory: 536870912
+</code></pre>
+</li>
+<li>
+<p><code>name</code> : String</p>
 <p>Name of the container.</p>
-
 <p>Example:</p>
-
-<pre><code>name: dbserver
-</code></pre></li>
-
-<li><p><code>open_stdin</code> : Boolean</p>
-
+<pre><code>  name: dbserver
+</code></pre>
+</li>
+<li>
+<p><code>open_stdin</code> : Boolean</p>
 <p>True to open <code>stdin</code>.</p>
-
 <p>Example:</p>
-
-<pre><code>open_stdin: true
-</code></pre></li>
-
-<li><p><code>port_bindings</code> : Map</p>
-
+<pre><code>  open_stdin: true
+</code></pre>
+</li>
+<li>
+<p><code>port_bindings</code> : Map</p>
 <p>TCP/UDP port bindings.</p>
-
 <p>Example:</p>
-
-<pre><code># bind port 8080 in the container to port 80 on the host
-port_bindings:
-  8080: 80
-</code></pre></li>
-
-<li><p><code>port_specs</code> : List</p>
-
+<pre><code>  # bind port 8080 in the container to port 80 on the host
+  port_bindings:
+    8080: 80
+</code></pre>
+</li>
+<li>
+<p><code>port_specs</code> : List</p>
 <p>List of TCP/UDP ports exposed by the container.</p>
-
 <p>Example:</p>
-
-<pre><code>port_specs:
-  - 80
-  - 53/udp
-</code></pre></li>
-
-<li><p><code>privileged</code> : Boolean</p>
-
+<pre><code>  port_specs:
+    - 80
+    - 53/udp
+</code></pre>
+</li>
+<li>
+<p><code>privileged</code> : Boolean</p>
 <p>Enable extended privileges.</p>
-
 <p>Example:</p>
-
-<pre><code>privileged: true
-</code></pre></li>
-
-<li><p><code>stdin_once</code> : Boolean</p>
-
+<pre><code>  privileged: true
+</code></pre>
+</li>
+<li>
+<p><code>stdin_once</code> : Boolean</p>
 <p>If <code>true</code>, close <code>stdin</code> after the one attached client disconnects.</p>
-
 <p>Example:</p>
-
-<pre><code>stdin_once: true
-</code></pre></li>
-
-<li><p><code>tty</code> : Boolean</p>
-
+<pre><code>  stdin_once: true
+</code></pre>
+</li>
+<li>
+<p><code>tty</code> : Boolean</p>
 <p>Allocate a pseudo-tty if <code>true</code>.</p>
-
 <p>Example:</p>
-
-<pre><code>tty: true
-</code></pre></li>
-
-<li><p><code>user</code> : String</p>
-
+<pre><code>  tty: true
+</code></pre>
+</li>
+<li>
+<p><code>user</code> : String</p>
 <p>Username or UID for running the container.</p>
-
 <p>Example:</p>
-
-<pre><code>username: apache
-</code></pre></li>
-
-<li><p><code>volumes</code> : Map</p>
-
+<pre><code>  username: apache
+</code></pre>
+</li>
+<li>
+<p><code>volumes</code> : Map</p>
 <p>Create a bind mount.</p>
-
 <p>Example:</p>
-
-<pre><code>volumes:
-    /var/tmp/data_on_host: /srv/data_in_container
-</code></pre></li>
-
-<li><p><code>volumes_from</code> : String</p>
-
+<pre><code>  volumes:
+      /var/tmp/data_on_host: /srv/data_in_container
+</code></pre>
+</li>
+<li>
+<p><code>volumes_from</code> : String</p>
 <p><em>This option is broken in the current version of the Docker
-plugin.</em></p></li>
+plugin.</em></p>
+</li>
 </ul>
-
 <h3 id="attributes">Attributes</h3>
-
 <ul>
-<li><p><code>info</code> : Map</p>
-
+<li>
+<p><code>info</code> : Map</p>
 <p>Information about the container.</p>
-
 <p>Example:</p>
-
-<pre><code>info:
-  value: {get_attr: [&quot;docker_dbserver&quot;, &quot;info&quot;]}
+<pre><code>  info:
+    value: {get_attr: [&quot;docker_dbserver&quot;, &quot;info&quot;]}
 </code></pre>
-
 <p>Output:</p>
-
-<pre><code>{
-  &quot;HostsPath&quot;: &quot;/var/lib/docker/containers/d6d84d1bbf2984fa3e04cea36c8d10d27d318b6d96b57c41fca2cbc1da23bf71/hosts&quot;,
-  &quot;Created&quot;: &quot;2014-09-01T14:21:02.7577874Z&quot;,
-  &quot;Image&quot;: &quot;a950533b3019d8f6dfdcb8fdc42ef810b930356619b3e4786d4f2acec514238d&quot;,
-  &quot;Args&quot;: [
-    &quot;mysqld&quot;,
-    &quot;--datadir=/var/lib/mysql&quot;,
-    &quot;--user=mysql&quot;
-  ],
-  &quot;Driver&quot;: &quot;devicemapper&quot;,
-  &quot;HostConfig&quot;: {
-    &quot;CapDrop&quot;: null,
-    &quot;PortBindings&quot;: {
-      &quot;3306/tcp&quot;: [
-        {
-          &quot;HostPort&quot;: &quot;3306&quot;,
-          &quot;HostIp&quot;: &quot;&quot;
-        }
-      ]
-    },
-    &quot;NetworkMode&quot;: &quot;&quot;,
-    .
-    .
-    .
-</code></pre></li>
-
-<li><p><code>logs</code> : String</p>
-
+<pre><code>  {
+    &quot;HostsPath&quot;: &quot;/var/lib/docker/containers/d6d84d1bbf2984fa3e04cea36c8d10d27d318b6d96b57c41fca2cbc1da23bf71/hosts&quot;,
+    &quot;Created&quot;: &quot;2014-09-01T14:21:02.7577874Z&quot;,
+    &quot;Image&quot;: &quot;a950533b3019d8f6dfdcb8fdc42ef810b930356619b3e4786d4f2acec514238d&quot;,
+    &quot;Args&quot;: [
+      &quot;mysqld&quot;,
+      &quot;--datadir=/var/lib/mysql&quot;,
+      &quot;--user=mysql&quot;
+    ],
+    &quot;Driver&quot;: &quot;devicemapper&quot;,
+    &quot;HostConfig&quot;: {
+      &quot;CapDrop&quot;: null,
+      &quot;PortBindings&quot;: {
+        &quot;3306/tcp&quot;: [
+          {
+            &quot;HostPort&quot;: &quot;3306&quot;,
+            &quot;HostIp&quot;: &quot;&quot;
+          }
+        ]
+      },
+      &quot;NetworkMode&quot;: &quot;&quot;,
+      .
+      .
+      .
+</code></pre>
+</li>
+<li>
+<p><code>logs</code> : String</p>
 <p>Logs from the container.</p>
-
 <p>Example:</p>
-
-<pre><code> logs:
-   value: {get_attr: [&quot;docker_dbserver&quot;, &quot;logs&quot;]}
-</code></pre></li>
-
-<li><p><code>logs_head</code> : String</p>
-
+<pre><code>   logs:
+     value: {get_attr: [&quot;docker_dbserver&quot;, &quot;logs&quot;]}
+</code></pre>
+</li>
+<li>
+<p><code>logs_head</code> : String</p>
 <p>Most recent log line from the container.</p>
-
 <p>Example:</p>
-
-<pre><code> logs:
-   value: {get_attr: [&quot;docker_dbserver&quot;, &quot;logs_head&quot;]}
+<pre><code>   logs:
+     value: {get_attr: [&quot;docker_dbserver&quot;, &quot;logs_head&quot;]}
 </code></pre>
-
 <p>Output:</p>
-
-<pre><code> &quot;2014-09-01 14:21:04 0 [Warning] TIMESTAMP with implicit DEFAULT
- value is deprecated. Please use --explicit_defaults_for_timestamp
- server option (see documentation for more details).&quot;
-</code></pre></li>
-
-<li><p><code>network_gateway</code> : String</p>
-
+<pre><code>   &quot;2014-09-01 14:21:04 0 [Warning] TIMESTAMP with implicit DEFAULT
+   value is deprecated. Please use --explicit_defaults_for_timestamp
+   server option (see documentation for more details).&quot;
+</code></pre>
+</li>
+<li>
+<p><code>network_gateway</code> : String</p>
 <p>IP address of the network gateway for the container.</p>
-
 <p>Example:</p>
-
-<pre><code> network_gateway:
-   value: {get_attr: [&quot;docker_dbserver&quot;, &quot;network_gateway&quot;]}
+<pre><code>   network_gateway:
+     value: {get_attr: [&quot;docker_dbserver&quot;, &quot;network_gateway&quot;]}
 </code></pre>
-
 <p>Output:</p>
-
-<pre><code>&quot;172.17.42.1&quot;
-</code></pre></li>
-
-<li><p><code>network_info</code> : Map</p>
-
+<pre><code>  &quot;172.17.42.1&quot;
+</code></pre>
+</li>
+<li>
+<p><code>network_info</code> : Map</p>
 <p>Information about the network configuration of the container.</p>
-
 <p>Example:</p>
-
-<pre><code> network_info:
-   value: {get_attr: [&quot;docker_dbserver&quot;, &quot;network_info&quot;]}
+<pre><code>   network_info:
+     value: {get_attr: [&quot;docker_dbserver&quot;, &quot;network_info&quot;]}
 </code></pre>
-
 <p>Output:</p>
-
-<pre><code> {
-   &quot;Bridge&quot;: &quot;docker0&quot;,
-   &quot;TcpPorts&quot;: &quot;3306&quot;,
-   &quot;PortMapping&quot;: null,
-   &quot;IPPrefixLen&quot;: 16,
-   &quot;UdpPorts&quot;: &quot;&quot;,
-   &quot;IPAddress&quot;: &quot;172.17.0.10&quot;,
-   &quot;Gateway&quot;: &quot;172.17.42.1&quot;,
-   &quot;Ports&quot;: {
-     &quot;3306/tcp&quot;: [
-       {
-         &quot;HostPort&quot;: &quot;3306&quot;,
-         &quot;HostIp&quot;: &quot;0.0.0.0&quot;
-       }
-     ]
+<pre><code>   {
+     &quot;Bridge&quot;: &quot;docker0&quot;,
+     &quot;TcpPorts&quot;: &quot;3306&quot;,
+     &quot;PortMapping&quot;: null,
+     &quot;IPPrefixLen&quot;: 16,
+     &quot;UdpPorts&quot;: &quot;&quot;,
+     &quot;IPAddress&quot;: &quot;172.17.0.10&quot;,
+     &quot;Gateway&quot;: &quot;172.17.42.1&quot;,
+     &quot;Ports&quot;: {
+       &quot;3306/tcp&quot;: [
+         {
+           &quot;HostPort&quot;: &quot;3306&quot;,
+           &quot;HostIp&quot;: &quot;0.0.0.0&quot;
+         }
+       ]
+     }
    }
- }
-</code></pre></li>
-
-<li><p><code>network_ip</code> : String</p>
-
+</code></pre>
+</li>
+<li>
+<p><code>network_ip</code> : String</p>
 <p>IP address assigned to the container.</p>
-
 <p>Example:</p>
-
-<pre><code>network_ip:
-  value: {get_attr: [&quot;docker_dbserver&quot;, &quot;network_ip&quot;]}
+<pre><code>  network_ip:
+    value: {get_attr: [&quot;docker_dbserver&quot;, &quot;network_ip&quot;]}
 </code></pre>
-
 <p>Output:</p>
-
-<pre><code>&quot;172.17.0.10&quot;
-</code></pre></li>
-
-<li><p><code>network_tcp_ports</code> : String</p>
-
+<pre><code>  &quot;172.17.0.10&quot;
+</code></pre>
+</li>
+<li>
+<p><code>network_tcp_ports</code> : String</p>
 <p>A comma delimited list of TCP ports exposed by the container.</p>
-
 <p>Example:</p>
-
-<pre><code>network_tcp_ports:
-  value: {get_attr: [&quot;docker_dbserver&quot;, &quot;network_tcp_ports&quot;]}
+<pre><code>  network_tcp_ports:
+    value: {get_attr: [&quot;docker_dbserver&quot;, &quot;network_tcp_ports&quot;]}
 </code></pre>
-
 <p>Output:</p>
-
-<pre><code>&quot;8443,8080&quot;
-</code></pre></li>
-
-<li><p><code>network_udp_ports</code> : String</p>
-
+<pre><code>  &quot;8443,8080&quot;
+</code></pre>
+</li>
+<li>
+<p><code>network_udp_ports</code> : String</p>
 <p>A comma delimited list of TCP ports exposed by the container.</p>
-
 <p>Example:</p>
-
-<pre><code>network_udp_ports:
-  value: {get_attr: [&quot;docker_dbserver&quot;, &quot;network_udp_ports&quot;]}
+<pre><code>  network_udp_ports:
+    value: {get_attr: [&quot;docker_dbserver&quot;, &quot;network_udp_ports&quot;]}
 </code></pre>
-
 <p>Output:</p>
-
-<pre><code>&quot;8443,8080&quot;
-</code></pre></li>
+<pre><code>  &quot;8443,8080&quot;
+</code></pre>
+</li>
 </ul>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

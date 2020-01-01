@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Stupid Pacemaker XML tricks &middot; The Odd Bit</title>
-        <meta name="description" content="I&rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
+        <meta name="description" content="I&#39;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
 Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;//resource[@active=&quot;false&quot;]&#39; - &gt;&amp;/dev/null &amp;&amp; echo &quot;There are inactive resources&quot;  This selects any resource (//resource) in the output of pcs status xml that has the attribute active set to false.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,46 +118,34 @@ Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;
 
     
 
-<p>I&rsquo;ve recently spent some time working with <a href="http://clusterlabs.org/">Pacemaker</a>, and ended up
+    <p>I've recently spent some time working with <a href="http://clusterlabs.org/">Pacemaker</a>, and ended up
 with an interesting collection of <a href="http://www.w3.org/TR/xpath/">XPath</a> snippets that I am publishing
 here for your use and/or amusement.</p>
-
 <h2 id="check-if-there-are-any-inactive-resources">Check if there are any inactive resources</h2>
-
 <pre><code>pcs status xml |
   xmllint --xpath '//resource[@active=&quot;false&quot;]' - &gt;&amp;/dev/null &amp;&amp;
   echo &quot;There are inactive resources&quot;
 </code></pre>
-
-<p>This selects <em>any</em> resource (<code>//resource</code>) in the output of <code>pcs
-status xml</code> that has the attribute <code>active</code> set to <code>false</code>.  If there
+<p>This selects <em>any</em> resource (<code>//resource</code>) in the output of <code>pcs status xml</code> that has the attribute <code>active</code> set to <code>false</code>.  If there
 are no matches to this query, <code>xmllint</code> exits with an error code.</p>
-
 <h2 id="get-a-list-of-inactive-resources">Get a list of inactive resources</h2>
-
 <pre><code>pcs status xml |
   xmllint --xpath '//resource[@active=&quot;false&quot;]/@id' - |
   tr ' ' '\n' |
   cut -f2 -d'&quot;'
 </code></pre>
-
 <p>This uses the same xpath query as the previous snippet, but here we
 then extract the <code>id</code> attribute of the matches and then print out all
 the resulting ids, one per line.</p>
-
 <h2 id="check-if-there-are-no-inactive-resources">Check if there are <em>no</em> inactive resources</h2>
-
 <pre><code>! pcs status xml |
   xmllint --xpath '//resource[@active=&quot;false&quot;]' - &amp;&amp;
   echo &quot;There are no inactive resources&quot;
 </code></pre>
-
 <p>This is the opposite of our earlier snippet, and demonstrates the use
 of <code>!</code> in a shell script to negate the success/failure of a shell
 pipeline.</p>
-
 <h2 id="check-top-level-resources">Check top-level resources</h2>
-
 <pre><code>tmpfile=$(mktemp xmlXXXXXX)
 trap &quot;rm -f $tmpfile&quot; EXIT
 
@@ -174,60 +163,48 @@ while read id; do
   fi
 done
 </code></pre>
-
 <p>This snippet checks that each top-level resource or resource container
 (clone, resource group, etc.) has at least one active resources.
 First we extract the <code>id</code> attribute from the just the top-level
 contents of <code>/cr_mon/resources</code>:</p>
-
 <pre><code>/crm_mon/resources/*/@id
 </code></pre>
-
 <p>And then we iterate over the extracted ids, and for each one, we check
 if either (a) a resource with that id is active, or (b) if any child
 of a resource with that id is active:</p>
-
 <pre><code>/crm_mon/resources/*[@id='$id' and @active='true']|
 /crm_mon/resources/*[@id='$id']/*[@active='true']
 </code></pre>
-
 <h1 id="wait-for-all-resources-to-become-inactive">Wait for all resources to become inactive</h1>
-
 <pre><code>pcs set property stop-all-resources=true
 while pcs status xml |
     xmllint --xpath '//resource[@active=&quot;true&quot;]' -; do
   sleep 1
 done
 </code></pre>
-
 <p>This is a good way to programatically wait for Pacemaker to finish
 responding to setting <code>stop-all-resources=true</code>.</p>
-
 <h1 id="get-a-list-of-all-top-level-resources">Get a list of all top-level resources</h1>
-
 <pre><code>cibadmin -Q |
   xmllint --xpath '/cib/configuration/resources/*/@id' - |
   tr ' ' '\n' |
   cut -f2 -d'&quot;'
 </code></pre>
-
 <p>This generates a list of the ids of &ldquo;top-level&rdquo; resources (either
 standalone resources, or resource containers such as groups or
 clones).</p>
-
 <h1 id="wait-for-all-members-of-a-resource-container-to-become-active">Wait for all members of a resource container to become active</h1>
-
 <pre><code>id='neutron-scale-clone'
 while pcs status xml |
     xmllint --xpath &quot;//clone[@id='$id']/resource[@active='false']&quot; -; do
   sleep 1
 done
 </code></pre>
-
 <p>This waits until all children of the specified resource id become
 active.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

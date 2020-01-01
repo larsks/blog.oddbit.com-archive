@@ -1,0 +1,192 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Tags on The Odd Bit</title>
+
+  
+  <link rel="self" href="https://blog.oddbit.com/tags/atom.xml"/>
+  
+  <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
+
+  <updated>2019-12-19T00:00:00Z</updated>
+  <id>https://blog.oddbit.com/tags/</id>
+  
+  <entry>
+    <title>networking</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/networking/"/>
+    <id>https://blog.oddbit.com/tag/networking/</id>
+    <published>2019-12-19T00:00:00Z</published>
+    <updated>2019-12-19T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>openstack</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/openstack/"/>
+    <id>https://blog.oddbit.com/tag/openstack/</id>
+    <published>2019-12-19T00:00:00Z</published>
+    <updated>2019-12-19T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>openvswitch</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/openvswitch/"/>
+    <id>https://blog.oddbit.com/tag/openvswitch/</id>
+    <published>2019-12-19T00:00:00Z</published>
+    <updated>2019-12-19T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>ovn</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/ovn/"/>
+    <id>https://blog.oddbit.com/tag/ovn/</id>
+    <published>2019-12-19T00:00:00Z</published>
+    <updated>2019-12-19T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>hamradio</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/hamradio/"/>
+    <id>https://blog.oddbit.com/tag/hamradio/</id>
+    <published>2019-10-03T00:00:00Z</published>
+    <updated>2019-10-03T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>linux</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/linux/"/>
+    <id>https://blog.oddbit.com/tag/linux/</id>
+    <published>2019-10-03T00:00:00Z</published>
+    <updated>2019-10-03T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>git</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/git/"/>
+    <id>https://blog.oddbit.com/tag/git/</id>
+    <published>2019-06-17T00:00:00Z</published>
+    <updated>2019-06-17T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>github</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/github/"/>
+    <id>https://blog.oddbit.com/tag/github/</id>
+    <published>2019-06-14T00:00:00Z</published>
+    <updated>2019-06-14T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>docker</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/docker/"/>
+    <id>https://blog.oddbit.com/tag/docker/</id>
+    <published>2019-06-07T00:00:00Z</published>
+    <updated>2019-06-07T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>docker-compose</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/docker-compose/"/>
+    <id>https://blog.oddbit.com/tag/docker-compose/</id>
+    <published>2019-06-07T00:00:00Z</published>
+    <updated>2019-06-07T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>keystone</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/keystone/"/>
+    <id>https://blog.oddbit.com/tag/keystone/</id>
+    <published>2019-06-07T00:00:00Z</published>
+    <updated>2019-06-07T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>tripleo</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/tripleo/"/>
+    <id>https://blog.oddbit.com/tag/tripleo/</id>
+    <published>2019-06-07T00:00:00Z</published>
+    <updated>2019-06-07T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>battery</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/battery/"/>
+    <id>https://blog.oddbit.com/tag/battery/</id>
+    <published>2019-05-14T00:00:00Z</published>
+    <updated>2019-05-14T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>cpap</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/cpap/"/>
+    <id>https://blog.oddbit.com/tag/cpap/</id>
+    <published>2019-05-14T00:00:00Z</published>
+    <updated>2019-05-14T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>diy</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/diy/"/>
+    <id>https://blog.oddbit.com/tag/diy/</id>
+    <published>2019-05-14T00:00:00Z</published>
+    <updated>2019-05-14T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+</feed>

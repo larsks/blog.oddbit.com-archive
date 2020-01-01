@@ -4,12 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>A first look at Arch Linux &middot; The Odd Bit</title>
-        <meta name="description" content="I decided to take a look at Arch Linux this evening. It&rsquo;s an interesting idea, but has a long way to go:
- The installer configured the wrong root= command line into my syslinux configuration, resulting in a system that wouldn&rsquo;t boot.  Update: As far as I can tell, the syslinux-install_update command doesn&rsquo;t actually make any attempt to configure syslinux.cfg at all.
- I tried to install libvirt and lxc, but there are unresolved library dependencies&hellip;the virsh command apparently requires libX11.">
+        <meta name="description" content="I decided to take a look at Arch Linux this evening. It&#39;s an interesting idea, but has a long way to go:
+  The installer configured the wrong root= command line into my syslinux configuration, resulting in a system that wouldn&#39;t boot.
+Update: As far as I can tell, the syslinux-install_update command doesn&#39;t actually make any attempt to configure syslinux.cfg at all.
+  I tried to install libvirt and lxc, but there are unresolved library dependencies&hellip;the virsh command apparently requires libX11.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +26,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,43 +118,43 @@
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>I decided to take a look at <a href="https://www.archlinux.org/">Arch Linux</a> this evening.  It&rsquo;s an
+    
+
+    <p>I decided to take a look at <a href="https://www.archlinux.org/">Arch Linux</a> this evening.  It's an
 interesting idea, but has a long way to go:</p>
-
 <ul>
-<li>The installer configured the wrong <code>root=</code> command line into my
-<code>syslinux</code> configuration, resulting in a system that wouldn&rsquo;t boot.</li>
-</ul>
-
+<li>
+<p>The installer configured the wrong <code>root=</code> command line into my
+<code>syslinux</code> configuration, resulting in a system that wouldn't boot.</p>
 <p><strong>Update</strong>: As far as I can tell, the <code>syslinux-install_update</code>
-  command doesn&rsquo;t actually make any attempt to configure
-  <code>syslinux.cfg</code> at all.</p>
-
-<ul>
-<li><p>I tried to install <code>libvirt</code> and <code>lxc</code>, but there are unresolved
+command doesn't actually make any attempt to configure
+<code>syslinux.cfg</code> at all.</p>
+</li>
+<li>
+<p>I tried to install <code>libvirt</code> and <code>lxc</code>, but there are unresolved
 library dependencies&hellip;the <code>virsh</code> command apparently requires
 <code>libX11.so.6</code>, but the package is missing the appropriate
-dependencies to pull in the necessary packages automatically.</p></li>
-
-<li><p>I tried to install <code>puppet</code>, but there is no <code>puppet</code> package in
+dependencies to pull in the necessary packages automatically.</p>
+</li>
+<li>
+<p>I tried to install <code>puppet</code>, but there is no <code>puppet</code> package in
 Arch Linux.  One apparently exists in the <a href="https://aur.archlinux.org/">Arch User
 Repository</a>, but there are no packages in Arch Linux that will
-let you install packages from the AUR.</p></li>
-</ul>
-
+let you install packages from the AUR.</p>
 <p>Arch also seems to be missing <code>chef</code>, so there go the two biggest
-  names in configuration management.</p>
-
-<ul>
-<li>There&rsquo;s no way to report bugs without first registering with the bug
-tracking system&hellip;and there&rsquo;s no federated login (e.g., with Google,
+names in configuration management.</p>
+</li>
+<li>
+<p>There's no way to report bugs without first registering with the bug
+tracking system&hellip;and there's no federated login (e.g., with Google,
 Facebook, Twitter, OpenID, etc), so this would be Yet Another
-Account to remember.</li>
+Account to remember.</p>
+</li>
 </ul>
-
 <p>So, back to Fedora, I guess.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

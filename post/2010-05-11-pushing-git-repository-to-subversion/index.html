@@ -8,7 +8,7 @@
 Git makes an excellent Subversion client. You can use the git svn &hellip; series of commands to pull a remote Subversion repository into a local git working tree and then have all the local advantages of git forcing the central code repository to change version control software.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ Git makes an excellent Subversion client. You can use the git svn &hellip; serie
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,17 +116,15 @@ Git makes an excellent Subversion client. You can use the git svn &hellip; serie
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>I recently set up a git repository server (using <a href="http://scie.nti.st/2007/11/14/hosting-git-repositories-the-easy-and-secure-way">gitosis</a> and <a href="https://git.wiki.kernel.org/index.php/Gitweb">gitweb</a>). Among the required features of the system was the ability to publish the git repository to a read-only Subversion repository. This sounds simple in principle but in practice proved to be a bit tricky.</p>
-
 <p>Git makes an excellent Subversion client. You can use the git svn &hellip; series of commands to pull a remote Subversion repository into a local git working tree and then have all the local advantages of git forcing the central code repository to change version control software. An important aspect of this model is that:</p>
-
 <ul>
 <li>The Subversion repository is the primary source of the code, and</li>
 <li>You populate your local git repository by pulling from the remote Subversion repository.</li>
 </ul>
-
 <p>It is possible to push a git change history into an empty Subversion repository. Most instructions for importing a git repository look something like this, and involve replaying your git change history on top of the Subversion change history:</p>
-
 <ul>
 <li>svn mkdir $REPO/{trunk, tags, branches}</li>
 <li>git svn init -s $REPO</li>
@@ -133,42 +132,31 @@ Git makes an excellent Subversion client. You can use the git svn &hellip; serie
 <li>git rebase trunk</li>
 <li>git svn dcommit</li>
 </ul>
-
 <p>This works, and is fine as long as there are no other clones of your git repository out there. The mechanism outlined here has a fatal flaw: it modifies the change history of the <em>master</em> branch. If you were working in a clone of a remote git repository and you were to run git status after the above steps, you would see something like:</p>
-
 <pre><code># On branch master
 # Your branch and 'origin/master' have diverged,
 # and have 3 and 2 different commit(s) each, respectively.
 </code></pre>
-
 <p>If you were then to try to push this to the remote repository, you would get an error:</p>
-
 <pre><code>$ git push
 To .../myrepo:
  ! [rejected]        master -&gt; master (non-fast forward)
 error: failed to push some refs to '.../myrepo'
 </code></pre>
-
 <p>In cases where the git change history is shared with other git repositories, we need a solution that does not modify the <em>master</em> branch. We can get this my modifying the procedure slightly.</p>
-
 <p>The initial sequence is still the same:</p>
-
 <ul>
 <li>svn mkdir $REPO/{trunk, tags, branches}</li>
 <li>git svn init -s $REPO</li>
 <li>git svn fetch</li>
 </ul>
-
 <p>But instead of rebasing onto the <em>master</em> branch, we create a local branch for managing the synchronization:</p>
-
 <ul>
 <li>git checkout -b svnsync</li>
 <li>git rebase trunk</li>
 <li>git svn dcommit</li>
 </ul>
-
 <p>At this point we have changed the history of the <em>svnsync</em> branch and we have left the <em>master</em> branch untouched. Subsequent updates look like this:</p>
-
 <ul>
 <li>git checkout master</li>
 <li>git pull</li>
@@ -177,10 +165,10 @@ error: failed to push some refs to '.../myrepo'
 <li>git rebase trunk</li>
 <li>git svn dcommit</li>
 </ul>
-
 <p>This gives us what we want: we can publish our git repository to a Subversion repository while maintaining the shared change history among our existing git clones.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

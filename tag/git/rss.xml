@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on The Odd Bit</title>
@@ -17,7 +17,7 @@
       <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-06-17-avoid-rebase-hell-squashing-wi/</guid>
-      <description>You&amp;rsquo;re working on a pull request. You&amp;rsquo;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&amp;rsquo;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I&amp;rsquo;ve marked merge commits with the text [merge]):
+      <description>You&#39;re working on a pull request. You&#39;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&#39;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I&#39;ve marked merge commits with the text [merge]):
 7e181479 Adds methods for widget sales 0487162 [merge] Merge remote-tracking branch &#39;origin/master&#39; into my_feature 76ee81c [merge] Merge branch &#39;my_feature&#39; of https://github.</description>
     </item>
     
@@ -37,7 +37,7 @@ Rebase instead of merge If you need to incorporate changes from the upstream mas
       <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</guid>
-      <description>It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
+      <description>It&#39;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
 In many cases you can alleviate this through the use of the git pre-commit hook, which will run every time you commit changes locally.</description>
     </item>
     
@@ -60,9 +60,9 @@ $ vim some/file/somewhere $ git add -u $ git fix  Which I find much more conveni
       
       <guid>https://blog.oddbit.com/post/2015-10-19-automatic-git-cache/</guid>
       <description>This post is in response to a comment someone made on irc earlier today:
- [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&amp;rsquo;re available
- In this post I present a proof-of-concept solution to this request. Please note that thisand isn&amp;rsquo;t something that has actually been used or tested anywhere!
-If you access a git repository via ssh, it&amp;rsquo;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.</description>
+ [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&#39;re available
+ In this post I present a proof-of-concept solution to this request. Please note that thisand isn&#39;t something that has actually been used or tested anywhere!
+If you access a git repository via ssh, it&#39;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@ If you access a git repository via ssh, it&amp;rsquo;s easy to provide a wrapper
       <pubDate>Fri, 08 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/</guid>
-      <description>Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &amp;ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&amp;ldquo;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).</description>
+      <description>Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &amp;ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&amp;quot;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).</description>
     </item>
     
     <item>
@@ -82,7 +82,7 @@ If you access a git repository via ssh, it&amp;rsquo;s easy to provide a wrapper
       
       <guid>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</guid>
       <description>This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!
-You are working on a wonderful open source project&amp;hellip;but you are not supposed to be working on that project! You&amp;rsquo;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
+You are working on a wonderful open source project&amp;hellip;but you are not supposed to be working on that project! You&#39;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
 And now your boss knows why the TPS reports are late.</description>
     </item>
     
@@ -93,7 +93,8 @@ And now your boss knows why the TPS reports are late.</description>
       
       <guid>https://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/</guid>
       <description>After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
-$ docker run -ti fedora /bin/bash bash-4.2# su -c &#39;uptime&#39; su: System error  Hooking up something (like, say, socat unix-listen:/dev/log -) to /dev/log revealed that the system was logging:</description>
+$ docker run -ti fedora /bin/bash bash-4.2# su -c &#39;uptime&#39; su: System error  Hooking up something (like, say, socat unix-listen:/dev/log -) to /dev/log revealed that the system was logging:
+Jul 19 14:31:18 su: PAM audit_log_acct_message() failed: Operation not permitted  Downgrading the kernel to 3.</description>
     </item>
     
     <item>
@@ -102,7 +103,7 @@ $ docker run -ti fedora /bin/bash bash-4.2# su -c &#39;uptime&#39; su: System er
       <pubDate>Fri, 22 Nov 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</guid>
-      <description>I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&amp;rsquo;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&amp;rsquo;s the perfect place to insert generated content that must be kept in sync with posts on the blog.</description>
+      <description>I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&#39;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&#39;s the perfect place to insert generated content that must be kept in sync with posts on the blog.</description>
     </item>
     
     <item>

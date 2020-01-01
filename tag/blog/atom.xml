@@ -18,7 +18,7 @@
     <id>https://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</id>
     <published>2013-11-22T00:00:00Z</published>
     <updated>2013-11-22T00:00:00Z</updated>
-    <summary type="html">I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&amp;rsquo;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&amp;rsquo;s the perfect place to insert generated content that must be kept in sync with posts on the blog.</summary>
+    <summary type="html">I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&#39;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&#39;s the perfect place to insert generated content that must be kept in sync with posts on the blog.</summary>
   </entry>
   
   <entry>
@@ -30,7 +30,7 @@
     <id>https://blog.oddbit.com/post/2013-11-18-enabled-comments/</id>
     <published>2013-11-18T00:00:00Z</published>
     <updated>2013-11-18T00:00:00Z</updated>
-    <summary type="html">I&amp;rsquo;ve enabled blog comments using Disqus. This is something of an experiment, since (a) I&amp;rsquo;m not really happy with how Disqus is handling user registration these days and (b) I don&amp;rsquo;t know that I have the time to moderate anything. But we&amp;rsquo;ll see.</summary>
+    <summary type="html">I&#39;ve enabled blog comments using Disqus. This is something of an experiment, since (a) I&#39;m not really happy with how Disqus is handling user registration these days and (b) I don&#39;t know that I have the time to moderate anything. But we&#39;ll see.</summary>
   </entry>
   
   <entry>
@@ -42,7 +42,7 @@
     <id>https://blog.oddbit.com/post/2013-11-13-moving-to-github/</id>
     <published>2013-11-13T00:00:00Z</published>
     <updated>2013-11-13T00:00:00Z</updated>
-    <summary type="html">This blog has been hosted on scriptogram for the past year or so. Unfortunately, while I like the publish-via-Dropbox mechanism, there have been enough problems recently that I&amp;rsquo;ve finally switched over to using GitHub Pages for hosting. I&amp;rsquo;ve been thinking about doing this for a while, but the things that finally pushed me to make the change were:
+    <summary type="html">This blog has been hosted on scriptogram for the past year or so. Unfortunately, while I like the publish-via-Dropbox mechanism, there have been enough problems recently that I&#39;ve finally switched over to using GitHub Pages for hosting. I&#39;ve been thinking about doing this for a while, but the things that finally pushed me to make the change were:
  Sync problems that would prevent new posts from appearing (and that at least once caused posts to disappear).</summary>
   </entry>
   

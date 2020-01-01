@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>networking on The Odd Bit</title>
@@ -6,10 +6,19 @@
     <description>Recent content in networking on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tag/networking/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OVN and DHCP: A minimal example</title>
+      <link>https://blog.oddbit.com/post/2019-12-19-ovn-and-dhcp/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2019-12-19-ovn-and-dhcp/</guid>
+      <description>Introduction A long time ago, I wrote an article all about OpenStack Neutron (which at that time was called Quantum). That served as an excellent reference for a number of years, but if you&#39;ve deployed a recent version of OpenStack you may have noticed that the network architecture looks completely different. The network namespaces previously used to implement routers and dhcp servers are gone (along with iptables rules and other features), and have been replaced by OVN (&amp;ldquo;Open Virtual Network&amp;rdquo;).</description>
+    </item>
     
     <item>
       <title>Configuring a static address for wlan0 on Raspbian Stretch</title>
@@ -18,10 +27,9 @@
       
       <guid>https://blog.oddbit.com/post/2018-06-14-configuring-a-static-address-f/</guid>
       <description>Recent releases of Raspbian have adopted the use of dhcpcd to manage both dynamic and static interface configuration. If you would prefer to use the traditional /etc/network/interfaces mechanism instead, follow these steps.
- First, disable dhcpcd and wpa_supplicant.
-systemctl disable --now dhdpcd wpa_supplicant  You will need a wpa_supplicant configuration for wlan0 in /etc/wpa_supplicant/wpa_supplicant-wlan0.conf.
-If you already have an appropriate configuration in /etc/wpa_supplicant/wpa_supplicant.conf, you can just symlink the file:
- cd /etc/wpa_supplicant ln -s wpa_supplicant.</description>
+  First, disable dhcpcd and wpa_supplicant.
+ systemctl disable --now dhdpcd wpa_supplicant    You will need a wpa_supplicant configuration for wlan0 in /etc/wpa_supplicant/wpa_supplicant-wlan0.conf.
+If you already have an appropriate configuration in /etc/wpa_supplicant/wpa_supplicant.conf, you can just symlink the file:</description>
     </item>
     
     <item>
@@ -69,8 +77,8 @@ The players This document describes the architecture that results from a particu
       <pubDate>Mon, 11 Aug 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</guid>
-      <description>Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&amp;rsquo;ve written an article about working with the macvlan driver.
-This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.</description>
+      <description>Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&#39;ve written an article about working with the macvlan driver.
+ This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.</description>
     </item>
     
     <item>
@@ -101,8 +109,7 @@ There is now a better option available.</description>
       <pubDate>Tue, 27 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</guid>
-      <description>I&amp;rsquo;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
- </description>
+      <description>I&#39;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:</description>
     </item>
     
     <item>
@@ -111,7 +118,7 @@ There is now a better option available.</description>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</guid>
-      <description>Normally I like to post solutions, but today&amp;rsquo;s post is about a vexing problem to which I have not been able to find a solution.
+      <description>Normally I like to post solutions, but today&#39;s post is about a vexing problem to which I have not been able to find a solution.
 This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.</description>
     </item>
     
@@ -121,9 +128,9 @@ This started as a simple attempt to set up external connectivity on an all-in-on
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</guid>
-      <description>In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &amp;ldquo;don&amp;rsquo;t use ip link set ...&amp;rdquo; for this purpose.
+      <description>In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &amp;ldquo;don&#39;t use ip link set ...&amp;rdquo; for this purpose.
 You can set the bridge MAC address via ovs-vsctl like this:
-ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&amp;rsquo;ve updated my ifconfig-br-ex to look like this:
+ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&#39;ve updated my ifconfig-br-ex to look like this:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPINTERFACES=eth0 MACADDR=fa:16:3e:ef:91:ec OVS_EXTRA=&amp;quot;set bridge br-ex other-config:hwaddr=$MACADDR&amp;quot;  The OVS_EXTRA parameter gets passed to the add-br call like this:</description>
     </item>
     
@@ -133,7 +140,7 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
       <pubDate>Tue, 20 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</guid>
-      <description>I run OpenStack on my laptop, and I&amp;rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
+      <description>I run OpenStack on my laptop, and I&#39;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
 This is the network configuration file for br-ex on my system:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</description>
     </item>
@@ -155,8 +162,8 @@ May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &amp;lt;info&amp;gt; Acti
       <pubDate>Mon, 23 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</guid>
-      <description>I&amp;rsquo;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
-In this post I&amp;rsquo;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
+      <description>I&#39;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
+In this post I&#39;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
 mk-network-dot There are a lot of devices involved in your Neutron network configuration.</description>
     </item>
     
@@ -179,7 +186,7 @@ mk-network-dot There are a lot of devices involved in your Neutron network confi
       <guid>https://blog.oddbit.com/post/2013-10-28-why-does-the-neutron/</guid>
       <description>The documentation for configuring Neutron recommends that a network controller has three physical interfaces:
  Before you start, set up a machine to be a dedicated network node. Dedicated network nodes should have the following NICs: the management NIC (called MGMT_INTERFACE), the data NIC (called DATA_INTERFACE), and the external NIC (called EXTERNAL_INTERFACE).
- People occasionally ask, &amp;ldquo;why three interfaces? What if I only have two?&amp;ldquo;, so I wanted to provide an extended answer that might help people understand what the interfaces are for and what trade-offs are involved in using fewer interfaces.</description>
+ People occasionally ask, &amp;ldquo;why three interfaces? What if I only have two?&amp;quot;, so I wanted to provide an extended answer that might help people understand what the interfaces are for and what trade-offs are involved in using fewer interfaces.</description>
     </item>
     
     <item>
@@ -188,10 +195,10 @@ mk-network-dot There are a lot of devices involved in your Neutron network confi
       <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</guid>
-      <description>I&amp;rsquo;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
+      <description>I&#39;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
 There are a number of common solutions proposed to this problem:
- Just wait for some period of time.
-This can work but it&amp;rsquo;s ugly, and because it doesn&amp;rsquo;t actually verify the network state it can result in things breaking if some problem prevents Windows from pulling a valid DHCP lease.</description>
+  Just wait for some period of time.
+This can work but it&#39;s ugly, and because it doesn&#39;t actually verify the network state it can result in things breaking if some problem prevents Windows from pulling a valid DHCP lease.</description>
     </item>
     
     <item>
@@ -200,7 +207,7 @@ This can work but it&amp;rsquo;s ugly, and because it doesn&amp;rsquo;t actually
       <pubDate>Mon, 30 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2012-07-30-openstack-idle-connection-timeouts/</guid>
-      <description>The original problem I&amp;rsquo;ve recently spent some time working on an OpenStack deployment. I ran into a problem in which the compute service would frequently stop communicating with the AMQP message broker (qpidd).
+      <description>The original problem I&#39;ve recently spent some time working on an OpenStack deployment. I ran into a problem in which the compute service would frequently stop communicating with the AMQP message broker (qpidd).
 In order to gather some data on the problem, I ran the following simple test:
  Wait n minutes Run nova boot ... to create an instance Wait a minute and see if the new instance becomes ACTIVE If it works, delete the instance, set n = 2n and repeat  This demonstrated that communication was failing after about an hour, which correlates rather nicely with the idle connection timeout on the firewall.</description>
     </item>
@@ -211,7 +218,7 @@ In order to gather some data on the problem, I ran the following simple test:
       <pubDate>Mon, 26 Dec 2011 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2011-12-26-simple-rate-limiting/</guid>
-      <description>I use CrashPlan as a backup service. It works and is very simple to set up, but has limited options for controlling bandwidth. In fact, if you&amp;rsquo;re running it on a headless system (e.g., a fileserver of some sort), your options are effectively &amp;ldquo;too slow&amp;rdquo; and &amp;ldquo;CONSUME EVERYTHING&amp;rdquo;. There is an open request to add time-based limitations to the application itself, but for now I&amp;rsquo;ve solved this using a very simple traffic shaping configuration.</description>
+      <description>I use CrashPlan as a backup service. It works and is very simple to set up, but has limited options for controlling bandwidth. In fact, if you&#39;re running it on a headless system (e.g., a fileserver of some sort), your options are effectively &amp;ldquo;too slow&amp;rdquo; and &amp;ldquo;CONSUME EVERYTHING&amp;rdquo;. There is an open request to add time-based limitations to the application itself, but for now I&#39;ve solved this using a very simple traffic shaping configuration.</description>
     </item>
     
     <item>
@@ -220,7 +227,7 @@ In order to gather some data on the problem, I ran the following simple test:
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</guid>
-      <description>Like many other folks out there, I have several computers in my house connected to the outside world via a Linux box acting as a NAT gateway. I often want to use application such as BitTorrent and Freenet, which require that a number of ports be forwarded from my external connection to the particular computer on which I happen to be working. It turns out there&amp;rsquo;s a protocol for this, called UPnP.</description>
+      <description>Like many other folks out there, I have several computers in my house connected to the outside world via a Linux box acting as a NAT gateway. I often want to use application such as BitTorrent and Freenet, which require that a number of ports be forwarded from my external connection to the particular computer on which I happen to be working. It turns out there&#39;s a protocol for this, called UPnP.</description>
     </item>
     
   </channel>

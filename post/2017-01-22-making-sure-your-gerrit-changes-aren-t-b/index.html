@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Making sure your Gerrit changes aren&#39;t broken &middot; The Odd Bit</title>
-        <meta name="description" content="It&rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&hellip;but you forgot to run your validations before submitting the change.
+        <meta name="description" content="It&#39;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&hellip;but you forgot to run your validations before submitting the change.
 In many cases you can alleviate this through the use of the git pre-commit hook, which will run every time you commit changes locally.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ In many cases you can alleviate this through the use of the git pre-commit hook,
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,51 +116,46 @@ In many cases you can alleviate this through the use of the git pre-commit hook,
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>It&rsquo;s a bit of an embarrassment when you submit a review to Gerrit only
+    
+
+    <p>It's a bit of an embarrassment when you submit a review to Gerrit only
 to have it fail CI checks immediately because of something as simple
 as a syntax error or pep8 failure that you should have caught yourself
 before submitting&hellip;but you forgot to run your validations before
 submitting the change.</p>
-
 <p>In many cases you can alleviate this through the use of the git
 <code>pre-commit</code> hook, which will run every time you commit changes
 locally.  You can have the hook run <code>tox</code> or whatever tool your
 project uses for validation on every commit.  This works okay for
 simple cases, but if the validation takes more than a couple of
 seconds the delay can be disruptive to the flow of your work.</p>
-
 <p>What you want is something that stays out of the way while you are
 working locally, but that will prevent you from submitting something
-for review that&rsquo;s going to fail CI immediately.  If you are using the
-<a href="http://docs.openstack.org/infra/git-review/">git-review</a> tool to interact with Gerrit (and if you&rsquo;re not, you
-should be), you&rsquo;re in luck! The <code>git-review</code> tool supports a
+for review that's going to fail CI immediately.  If you are using the
+<a href="http://docs.openstack.org/infra/git-review/">git-review</a> tool to interact with Gerrit (and if you're not, you
+should be), you're in luck! The <code>git-review</code> tool supports a
 <code>pre-review</code> hook that does exactly what we want.  <code>git-review</code> looks
 for hooks in a global location (<code>~/.config/git-review/hooks</code>) and in a
 per-project location (in <code>.git/hooks/</code>).  As with standard Git hooks,
-the <code>pre-review</code> hook must be executable (i.e., <code>chmod u+x
-.git/hooks/pre-review</code>).</p>
-
+the <code>pre-review</code> hook must be executable (i.e., <code>chmod u+x .git/hooks/pre-review</code>).</p>
 <p>The <code>pre-review</code> script will be run before attempting to submit your
 changes to Gerrit.  If the script exits successfully, the output is
 hidden and your changes will be submitted normally.  If the hook
 fails, you will see output along the lines of&hellip;</p>
-
 <pre><code>Custom script execution failed.
 The following command failed with exit code 1
     &quot;.git/hooks/pre-review&quot;
 -----------------------
 </code></pre>
-
 <p>&hellip;followed by the output of the <code>pre-review</code> script.</p>
-
 <p>For my work on the <a href="https://github.com/openstack/tripleo-quickstart">tripleo-quickstart</a> project, the contents of my
 <code>.git/hooks/pre-review</code> script is as simple as:</p>
-
 <pre><code>#!/bin/sh
 tox
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

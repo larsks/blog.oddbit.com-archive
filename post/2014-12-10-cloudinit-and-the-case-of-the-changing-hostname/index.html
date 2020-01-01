@@ -7,7 +7,7 @@
         <meta name="description" content="Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,20 +117,17 @@
 
     
 
-<h2 id="setting-the-stage">Setting the stage</h2>
-
+    <h2 id="setting-the-stage">Setting the stage</h2>
 <p>I ran into a problem earlier this week deploying RDO Icehouse under
 RHEL 6.  My target systems were a set of libvirt guests deployed from
 the RHEL 6 KVM guest image, which includes <a href="https://cloudinit.readthedocs.org/en/latest/">cloud-init</a> in order to
 support automatic configuration in cloud environments.  I take
 advantage of this when using <code>libvirt</code> by attaching a configuration
 drive so that I can pass in ssh keys and a <code>user-data</code> script.</p>
-
 <p>Once the systems were up, I used <a href="https://wiki.openstack.org/wiki/Packstack">packstack</a> to deploy OpenStack
 onto a single controller and two compute nodes, and at the conclusion
 of the <code>packstack</code> run everything was functioning correctly.  Running
 <code>neutron agent-list</code> showed all agents in good order:</p>
-
 <pre><code>+--------------------------------------+--------------------+------------+-------+----------------+
 | id                                   | agent_type         | host       | alive | admin_state_up |
 +--------------------------------------+--------------------+------------+-------+----------------+
@@ -141,12 +139,9 @@ of the <code>packstack</code> run everything was functioning correctly.  Running
 | e06575c2-43b3-4691-80bc-454f501debfe | Open vSwitch agent | compute-1  | :-)   | True           |
 +--------------------------------------+--------------------+------------+-------+----------------+
 </code></pre>
-
 <h2 id="a-problem-rears-its-ugly-head">A problem rears its ugly head</h2>
-
 <p>After rebooting the system, I found that I was missing an expected
 Neutron router namespace.  Specifically, given:</p>
-
 <pre><code># neutron router-list
 +--------------------------------------+---------+-----------------------------------------------------------------------------+
 | id                                   | name    | external_gateway_info                                                       |
@@ -154,17 +149,12 @@ Neutron router namespace.  Specifically, given:</p>
 | e83eec10-0de2-4bfa-8e58-c1bcbe702f51 | router1 | {&quot;network_id&quot;: &quot;b53a9ecd-01fc-4bee-b20d-8fbe0cd2e010&quot;, &quot;enable_snat&quot;: true} |
 +--------------------------------------+---------+-----------------------------------------------------------------------------+
 </code></pre>
-
 <p>I expected to see:</p>
-
 <pre><code># ip netns
 qrouter-e83eec10-0de2-4bfa-8e58-c1bcbe702f51
 </code></pre>
-
 <p>But the <code>qrouter</code> namespace was missing.</p>
-
 <p>The output of <code>neutron agent-list</code> shed some light on the problem:</p>
-
 <pre><code>+--------------------------------------+--------------------+------------------------+-------+----------------+
 | id                                   | agent_type         | host                   | alive | admin_state_up |
 +--------------------------------------+--------------------+------------------------+-------+----------------+
@@ -180,16 +170,12 @@ qrouter-e83eec10-0de2-4bfa-8e58-c1bcbe702f51
 | e327b7f9-c9ce-49f8-89c1-b699d9f7d253 | DHCP agent         | controller.localdomain | :-)   | True           |
 +--------------------------------------+--------------------+------------------------+-------+----------------+
 </code></pre>
-
 <p>There were two sets of Neutron agents registered using different
 hostnames &ndash; one set using the short name of the host, and the other
 set using the fully qualified hostname.</p>
-
-<h2 id="what-s-up-with-that">What&rsquo;s up with that?</h2>
-
+<h2 id="whats-up-with-that">What's up with that?</h2>
 <p>In the <code>cc_set_hostname.py</code> module, <code>cloud-init</code> performs the
 following operation:</p>
-
 <pre><code>(hostname, fqdn) = util.get_hostname_fqdn(cfg, cloud)
 try:
     log.debug(&quot;Setting the hostname to %s (%s)&quot;, fqdn, hostname)
@@ -199,19 +185,15 @@ except Exception:
                 hostname)
     raise
 </code></pre>
-
 <p>It starts by retrieving the hostname (both the qualified and
 unqualified version) from the cloud environment, and then calls
 <code>cloud.distro.set_hostname(hostname, fqdn)</code>.  This ends up calling:</p>
-
 <pre><code>def set_hostname(self, hostname, fqdn=None):
     writeable_hostname = self._select_hostname(hostname, fqdn)
     self._write_hostname(writeable_hostname, self.hostname_conf_fn)
     self._apply_hostname(hostname)
 </code></pre>
-
 <p>Where, on a RHEL system, <code>_select_hostname</code> is:</p>
-
 <pre><code>def _select_hostname(self, hostname, fqdn):
     # See: http://bit.ly/TwitgL
     # Should be fqdn if we can use it
@@ -219,27 +201,23 @@ unqualified version) from the cloud environment, and then calls
         return fqdn
     return hostname
 </code></pre>
-
 <p>So:</p>
-
 <ul>
 <li><code>cloud-init</code> sets <code>writeable_hostname</code> to the fully qualified name
 of the system (assuming it is available).</li>
 <li><code>cloud-init</code> writes the fully qualified hostname to <code>/etc/sysconfig/network</code>.</li>
 <li><code>cloud-init</code> sets the hostname to the <em>unqualified</em> hostname</li>
 </ul>
-
 <p>The result is that your system will probably have a different hostname
 after your first reboot, which throws off Neutron.</p>
-
 <h2 id="and-they-all-lived-happily-ever-after">And they all lived happily ever after?</h2>
-
 <p>It turns out this bug was reported upstream back in October of 2013 as
 <a href="https://bugs.launchpad.net/cloud-init/+bug/1246485">bug 1246485</a>, and while there are patches available the bug has
 been marked as &ldquo;low&rdquo; priority and has been fixed.  There are patches
 attached to the bug report that purport to fix the problem.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

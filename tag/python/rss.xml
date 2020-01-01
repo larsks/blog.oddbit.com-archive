@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on The Odd Bit</title>
@@ -17,7 +17,7 @@
       <pubDate>Tue, 07 May 2019 10:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</guid>
-      <description>I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&amp;rsquo;t really seem the write place for that: so, here we are.</description>
+      <description>I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&#39;t really seem the write place for that: so, here we are.</description>
     </item>
     
     <item>
@@ -35,8 +35,8 @@
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2018-05-03-using-a-tm-led-module-with-cir/</guid>
-      <description>CircuitPython is &amp;ldquo;an education friendly open source derivative of MicroPython&amp;rdquo;. MicroPython is a port of Python to microcontroller environments; it can run on boards with very few resources such as the ESP8266. I&amp;rsquo;ve recently started experimenting with CircuitPython on a Wemos D1 mini, which is a small form-factor ESP8266 board.
-I had previously been using Mike Causer&amp;rsquo;s micropython-tm1637 for MicroPython to drive a 4 digit LED display. I was hoping to get the same code working under CircuitPython, but when I tried to build an image that included the tm1637 module I ran into:</description>
+      <description>CircuitPython is &amp;ldquo;an education friendly open source derivative of MicroPython&amp;quot;. MicroPython is a port of Python to microcontroller environments; it can run on boards with very few resources such as the ESP8266. I&#39;ve recently started experimenting with CircuitPython on a Wemos D1 mini, which is a small form-factor ESP8266 board.
+I had previously been using Mike Causer&#39;s micropython-tm1637 for MicroPython to drive a 4 digit LED display. I was hoping to get the same code working under CircuitPython, but when I tried to build an image that included the tm1637 module I ran into:</description>
     </item>
     
     <item>
@@ -56,8 +56,8 @@ I had previously been using Mike Causer&amp;rsquo;s micropython-tm1637 for Micro
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/</guid>
-      <description>In this post I&amp;rsquo;m going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.
-My pubsub_example repository on GitHub has a complete project that implements the ideas discussed in this article. This project can be deployed directly on OpenShift if you want to try things out on your own.</description>
+      <description>In this post I&#39;m going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.
+My pubsub_example repository on GitHub has a complete project that implements the ideas discussed in this article. This project can be deployed directly on OpenShift if you want to try things out on your own. You can also try it out online at http://pubsub.</description>
     </item>
     
     <item>
@@ -67,7 +67,7 @@ My pubsub_example repository on GitHub has a complete project that implements th
       
       <guid>https://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/</guid>
       <description>I recently acquired both a Raspberry Pi and a PiFace IO board. I had a rough time finding examples of how to read the input ports via interrupts (rather than periodically polling for values), especially for the newer versions of the PiFace python libraries.
-After a little research, here&amp;rsquo;s some simple code that will print out pin names as you press the input buttons. Button 3 will cause the code to exit:</description>
+After a little research, here&#39;s some simple code that will print out pin names as you press the input buttons. Button 3 will cause the code to exit:</description>
     </item>
     
     <item>
@@ -77,7 +77,7 @@ After a little research, here&amp;rsquo;s some simple code that will print out p
       
       <guid>https://blog.oddbit.com/post/2010-08-10-python-ctypes-module/</guid>
       <description>I just learned about the Python ctypes module, which is a Python module for interfacing with C code. Among other things, ctypes lets you call arbitrary functions in shared libraries. This is, from my perspective, some very cool magic. I thought I would provide a short example here, since it took me a little time to get everything working smoothly.
-For this example, we&amp;rsquo;ll write a wrapper for the standard statvfs(2) function:</description>
+For this example, we&#39;ll write a wrapper for the standard statvfs(2) function:</description>
     </item>
     
     <item>
@@ -86,7 +86,7 @@ For this example, we&amp;rsquo;ll write a wrapper for the standard statvfs(2) fu
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2010-01-29-retrieving-blogger-posts-by-post-id/</guid>
-      <description>I spent some time recently trying to figure out, using Google&amp;rsquo;s gdata API, how to retrieve a post from a Blogger blog if I know corresponding post id. As far as I can tell there is no obvious way of doing this, at least not using the gdata.blogger.client api, but after much nashing of teeth I came up with the following solution.
+      <description>I spent some time recently trying to figure out, using Google&#39;s gdata API, how to retrieve a post from a Blogger blog if I know corresponding post id. As far as I can tell there is no obvious way of doing this, at least not using the gdata.blogger.client api, but after much nashing of teeth I came up with the following solution.
 Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
     </item>
     

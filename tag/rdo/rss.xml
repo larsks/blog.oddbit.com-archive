@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rdo on The Odd Bit</title>
@@ -38,8 +38,7 @@ Introducing Tripleo-Quickstart The goal of the Tripleo-Quickstart project is to 
       
       <guid>https://blog.oddbit.com/post/2014-09-05-heat-hangout/</guid>
       <description>I ran a Google Hangout this morning on Deploying with Heat. You can find the slides for the presentation on line here, and the Heat templates (as well as slide sources) are available on github.
-If you have any questions about the presentation, please feel free to ping me on irc (larsks).
- </description>
+If you have any questions about the presentation, please feel free to ping me on irc (larsks).</description>
     </item>
     
     <item>
@@ -48,10 +47,9 @@ If you have any questions about the presentation, please feel free to ping me on
       <pubDate>Thu, 27 Feb 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-02-27-multinode/</guid>
-      <description>I was the presenter for this morning&amp;rsquo;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
+      <description>I was the presenter for this morning&#39;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
 The slides are online here.
-Here&amp;rsquo;s the video (also available on the event page):
- </description>
+Here&#39;s the video (also available on the event page):</description>
     </item>
     
   </channel>

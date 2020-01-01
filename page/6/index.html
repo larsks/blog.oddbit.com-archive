@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -104,6 +105,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Stupid Ansible Tricks: Running a role from the command line</h4>
+        <time class="post-stub-date" datetime="2015-10-19">Published Mon, Oct 19, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    When writing Ansible roles I occasionally want a way to just run a role from the command line, without having to muck about with a playbook. I've seen similar requests on the mailing lists and on irc.
+I've thrown together a quick wrapper that will allow you (and me!) to do exactly that, called ansible-role. The --help output looks like this:
+usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTRA_VARS] [-i INVENTORY] [--hosts HOSTS] [--sudo] [--become] [--user USER] role positional arguments: role optional arguments: -h, --help show this help message and exit --verbose, -v --gather, -g --no-gather, -G --extra-vars EXTRA_VARS, -e EXTRA_VARS Inventory: -i INVENTORY, --inventory INVENTORY --hosts HOSTS, -H HOSTS Identity: --sudo, -s --become, -b --user USER, -u USER  Example If you have a role roles/testrole that contains the following in tasks/main.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Bootstrapping Ansible on Fedora 23</h4>
         <time class="post-stub-date" datetime="2015-10-15">Published Thu, Oct 15, 2015</time>
@@ -112,7 +137,7 @@
 
     
     <p class="post-stub-summary">
-    If you&rsquo;ve tried running Ansible against a Fedora 23 system, you may have run into the following problem:
+    If you've tried running Ansible against a Fedora 23 system, you may have run into the following problem:
 fatal: [myserver]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;failed&quot;: true, &quot;msg&quot;: &quot;/bin/sh: /usr/bin/python: No such file or directory\r\n&quot;, &quot;parsed&quot;: false}  Fedora has recently made the switch to only including Python 3 on the base system (at least for the cloud variant), while Ansible still requires Python 2. With Fedora 23, Python 3 is available as /usr/bin/python3, and /usr/bin/python is only available if you have installed the Python 2 interpreter.
     </p>
 
@@ -135,7 +160,7 @@ fatal: [myserver]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;failed&quot;
 
     
     <p class="post-stub-summary">
-    As the release of Ansible 2.0 draws closer, I&rsquo;d like to take a look at some of the new features that are coming down the pipe. In this post, we&rsquo;ll look at the docker connection driver.
+    As the release of Ansible 2.0 draws closer, I'd like to take a look at some of the new features that are coming down the pipe. In this post, we'll look at the docker connection driver.
 A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to your target hosts. These days it uses ssh by default (which relies on the OpenSSH command line client for connectivity), and it also offers the Paramiko library as an alternative ssh implementation (this was in fact the default driver in earlier versions of Ansible).
     </p>
 
@@ -158,8 +183,8 @@ A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to 
 
     
     <p class="post-stub-summary">
-    Someone asked on IRC about running ntpd in a container on Atomic, so I&rsquo;ve put together a small example. We&rsquo;ll start with a very simple Dockerfile:
-FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&quot;ntpd&quot;]  I&rsquo;m using the alpine image as my starting point because it&rsquo;s very small, which makes this whole process go a little faster. I&rsquo;m installing the openntpd package, which provides the ntpd binary.
+    Someone asked on IRC about running ntpd in a container on Atomic, so I've put together a small example. We'll start with a very simple Dockerfile:
+FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&quot;ntpd&quot;]  I'm using the alpine image as my starting point because it's very small, which makes this whole process go a little faster. I'm installing the openntpd package, which provides the ntpd binary.
     </p>
 
     
@@ -255,7 +280,7 @@ nova-manage db migrate_flavor_data --max_number 100  And that says:
 
     
     <p class="post-stub-summary">
-    I work for an organization that follows the common model of assigning people systematically generated user ids. Like most technically inclined employees of this organization, I have local accounts on my workstation that don&rsquo;t bear any relation to the generated account ids. For the most part this isn&rsquo;t a problem, except that our organization uses Kerberos to authenticate access to a variety of resources (such as the mailserver and a variety of web applications).
+    I work for an organization that follows the common model of assigning people systematically generated user ids. Like most technically inclined employees of this organization, I have local accounts on my workstation that don't bear any relation to the generated account ids. For the most part this isn't a problem, except that our organization uses Kerberos to authenticate access to a variety of resources (such as the mailserver and a variety of web applications).
     </p>
 
     
@@ -300,36 +325,14 @@ It is possible to generate your network configuration from this configuration dr
 
     
     <p class="post-stub-summary">
-    Next week is the Red Hat Summit in Boston, and I&rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
-As part of that presentation, I&rsquo;ve put together a short demonstration video:
- This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).
+    Next week is the Red Hat Summit in Boston, and I'll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
+As part of that presentation, I've put together a short demonstration video:
+This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).
     </p>
 
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Teach git about GIT_SSL_CIPHER_LIST</h4>
-        <time class="post-stub-date" datetime="2015-05-08">Published Fri, May 8, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&ldquo;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/">(Read more...)</a>
     </p>
     
     

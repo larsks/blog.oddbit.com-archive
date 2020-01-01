@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>attiny85 on The Odd Bit</title>
@@ -18,7 +18,7 @@
       
       <guid>https://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/</guid>
       <description>How big is an enum? I noticed something odd while browsing through the assembly output of some AVR C code I wrote recently. In the code, I have the following expression:
-int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&amp;rsquo;t want to clutter this post with unnecessary code listings):</description>
+int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&#39;t want to clutter this post with unnecessary code listings):</description>
     </item>
     
     <item>
@@ -29,7 +29,7 @@ int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is 
       <guid>https://blog.oddbit.com/post/2019-01-28-losing-malloc/</guid>
       <description>Pssst! Hey&amp;hellip;hey, buddy, wanna get an extra KB for cheap?
 When I write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
-Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&amp;rsquo;s exactly what I did.</description>
+Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&#39;s exactly what I did.</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)
       
       <guid>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</guid>
       <description>In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
-I&amp;rsquo;ve split this into three posts:</description>
+I&#39;ve split this into three posts:</description>
     </item>
     
     <item>
@@ -49,11 +49,11 @@ I&amp;rsquo;ve split this into three posts:</description>
       
       <guid>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-2/</guid>
       <description>This is the second of three posts about using gdb and simavr to debug AVR code. The complete series is:
- Part 1: Using GDB
+  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
- Part 2: Automating GDB with scripts
+  Part 2: Automating GDB with scripts
 Creating GDB scripts to automatically test the behavior of our code.
- Part 3: Tracing with simavr
+  Part 3: Tracing with simavr
 Using simavr to collect information about the state of microcontroller pins while our code is running.</description>
     </item>
     
@@ -64,11 +64,11 @@ Using simavr to collect information about the state of microcontroller pins whil
       
       <guid>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/</guid>
       <description>This is the third of three posts about using gdb and simavr to debug AVR code. The complete series is:
- Part 1: Using GDB
+  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
- Part 2: Automating GDB with scripts
+  Part 2: Automating GDB with scripts
 Creating GDB scripts to automatically test the behavior of our code.
- Part 3: Tracing with simavr
+  Part 3: Tracing with simavr
 Using simavr to collect information about the state of microcontroller pins while our code is running.</description>
     </item>
     
@@ -78,7 +78,7 @@ Using simavr to collect information about the state of microcontroller pins whil
       <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</guid>
-      <description>I have a Raspberry Pi running RetroPie hooked up to a television. It&amp;rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&amp;rsquo;re pulling the plug on the Pi. While there haven&amp;rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</description>
+      <description>I have a Raspberry Pi running RetroPie hooked up to a television. It&#39;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&#39;re pulling the plug on the Pi. While there haven&#39;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</description>
     </item>
     
   </channel>

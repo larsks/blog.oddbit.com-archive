@@ -18,9 +18,9 @@
     <id>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
     <published>2015-06-19T00:00:00Z</published>
     <updated>2015-06-19T00:00:00Z</updated>
-    <summary type="html">Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
-As part of that presentation, I&amp;rsquo;ve put together a short demonstration video:
- This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</summary>
+    <summary type="html">Next week is the Red Hat Summit in Boston, and I&#39;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
+As part of that presentation, I&#39;ve put together a short demonstration video:
+This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</summary>
   </entry>
   
   <entry>
@@ -33,7 +33,7 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
     <published>2015-02-10T00:00:00Z</published>
     <updated>2015-02-10T00:00:00Z</updated>
     <summary type="html">I have recently started running some &amp;ldquo;real&amp;rdquo; services (that is, &amp;ldquo;services being consumed by someone other than myself&amp;rdquo;) on top of Kubernetes (running on bare metal), which means I suddenly had to confront the question of how to provide external access to Kubernetes hosted services. Kubernetes provides two solutions to this problem, neither of which is particularly attractive out of the box:
- There is a field createExternalLoadBalancer that can be set in a service description.</summary>
+  There is a field createExternalLoadBalancer that can be set in a service description.</summary>
   </entry>
   
   <entry>

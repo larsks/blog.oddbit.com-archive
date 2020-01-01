@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -103,6 +104,28 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Teach git about GIT_SSL_CIPHER_LIST</h4>
+        <time class="post-stub-date" datetime="2015-05-08">Published Fri, May 8, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&quot;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-04-27-suggestions-for-the-docker-maintainer-directive/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Suggestions for the Docker MAINTAINER directive</h4>
         <time class="post-stub-date" datetime="2015-04-27">Published Mon, Apr 27, 2015</time>
@@ -137,7 +160,7 @@ The MAINTAINER instruction allows you to set the Author field of the generated i
     
     <p class="post-stub-summary">
     This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!
-You are working on a wonderful open source project&hellip;but you are not supposed to be working on that project! You&rsquo;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
+You are working on a wonderful open source project&hellip;but you are not supposed to be working on that project! You're supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
 And now your boss knows why the TPS reports are late.
     </p>
 
@@ -254,7 +277,7 @@ The graph-constraints.py script in that repository consumes the output of cibadm
 
     
     <p class="post-stub-summary">
-    I&rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
+    I've recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
 Check if there are any inactive resources pcs status xml | xmllint --xpath '//resource[@active=&quot;false&quot;]' - &gt;&amp;/dev/null &amp;&amp; echo &quot;There are inactive resources&quot;  This selects any resource (//resource) in the output of pcs status xml that has the attribute active set to false.
     </p>
 
@@ -277,8 +300,8 @@ Check if there are any inactive resources pcs status xml | xmllint --xpath '//re
 
     
     <p class="post-stub-summary">
-    In some ways, the most exciting thing about Docker isn&rsquo;t the ability to start containers. That&rsquo;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
-I was taking a closer at the systemd-nspawn command, which it seems has been developing it&rsquo;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.
+    In some ways, the most exciting thing about Docker isn't the ability to start containers. That's been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
+I was taking a closer at the systemd-nspawn command, which it seems has been developing it's own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.
     </p>
 
     
@@ -301,36 +324,13 @@ I was taking a closer at the systemd-nspawn command, which it seems has been dev
     
     <p class="post-stub-summary">
     This is a long-form response to this question, and describes how to get the nova-docker driver up running with devstack under Ubuntu 14.04 (Trusty). I wrote a similar post for Fedora 21, although that one was using the RDO Juno packages, while this one is using devstack and the upstream sources.
-Getting started We&rsquo;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
-First, let&rsquo;s install a few prerequisites:
+Getting started We'll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
+First, let's install a few prerequisites:
     </p>
 
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">External networking for Kubernetes services</h4>
-        <time class="post-stub-date" datetime="2015-02-10">Published Tue, Feb 10, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I have recently started running some &ldquo;real&rdquo; services (that is, &ldquo;services being consumed by someone other than myself&rdquo;) on top of Kubernetes (running on bare metal), which means I suddenly had to confront the question of how to provide external access to Kubernetes hosted services. Kubernetes provides two solutions to this problem, neither of which is particularly attractive out of the box:
- There is a field createExternalLoadBalancer that can be set in a service description.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/">(Read more...)</a>
     </p>
     
     

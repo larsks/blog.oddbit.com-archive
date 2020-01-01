@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Stupid command line tricks: Quickly share screen captures &middot; The Odd Bit</title>
-        <meta name="description" content="Sometimes you want to quickly share a screenshot with someone. Here&rsquo;s my favorite mechanism, which assumes you have installed both curl and the ImageMagick suite.
+        <meta name="description" content="Sometimes you want to quickly share a screenshot with someone. Here&#39;s my favorite mechanism, which assumes you have installed both curl and the ImageMagick suite.
 $ import png:- | curl -T- -s chunk.io http://chunk.io/f/76ea98ea081748e19de4507fde3c2c65  When you run this command, you cursor will change into crosshairs. Click on a window, and this will grab a png image of that window and send it to chunk.io using curl.
-You&rsquo;ll get back a URL that you can use to share the image with people.">
+You&#39;ll get back a URL that you can use to share the image with people.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ You&rsquo;ll get back a URL that you can use to share the image with people.">
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,21 +117,21 @@ You&rsquo;ll get back a URL that you can use to share the image with people.">
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>Sometimes you want to quickly share a screenshot with someone.  Here&rsquo;s
+    
+
+    <p>Sometimes you want to quickly share a screenshot with someone.  Here's
 my favorite mechanism, which assumes you have installed both <code>curl</code>
 and the <a href="http://www.imagemagick.org/">ImageMagick</a> suite.</p>
-
 <pre><code>$ import png:- | curl -T- -s chunk.io
 http://chunk.io/f/76ea98ea081748e19de4507fde3c2c65  
 </code></pre>
-
 <p>When you run this command, you cursor will change into crosshairs.
 Click on a window, and this will grab a png image of that window and
 send it to <a href="http://chunk.io/">chunk.io</a> using curl.</p>
-
-<p>You&rsquo;ll get back a URL that you can use to share the image with people.</p>
+<p>You'll get back a URL that you can use to share the image with people.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

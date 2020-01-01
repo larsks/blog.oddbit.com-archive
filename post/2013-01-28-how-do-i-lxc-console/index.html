@@ -9,7 +9,7 @@ When you boot an LXC container, the console appears to be attached to a pts devi
 # lxc-start -n node0 ... node0 login: root Last login: Mon Jan 28 16:35:19 on tty1 [root@node0 ~]# tty /dev/console [root@node0 ~]# ls -l /dev/console crw------- 1 root tty 136, 12 Jan 28 16:36 /dev/console  This is also true when you attach to a container using lxc-console:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ When you boot an LXC container, the console appears to be attached to a pts devi
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,13 +117,13 @@ When you boot an LXC container, the console appears to be attached to a pts devi
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>It took me an unreasonably long time to boot an LXC container with
 working console access.  For the record:</p>
-
 <p>When you boot an LXC container, the console appears to be attached to
 a <code>pts</code> device.  For example, when booting with the console attached to
 your current terminal:</p>
-
 <pre><code># lxc-start -n node0
 ...
 node0 login: root
@@ -132,9 +133,7 @@ Last login: Mon Jan 28 16:35:19 on tty1
 [root@node0 ~]# ls -l /dev/console
 crw------- 1 root tty 136, 12 Jan 28 16:36 /dev/console
 </code></pre>
-
 <p>This is also true when you attach to a container using <code>lxc-console</code>:</p>
-
 <pre><code># lxc-start -n node0 -d
 # lxc-console -n node0
 Type &lt;Ctrl+a q&gt; to exit the console
@@ -146,19 +145,16 @@ Last login: Mon Jan 28 16:36:00 on console
 [root@node0 ~]# ls -l /dev/tty1
 crw------- 1 root tty 136, 6 Jan 28 16:37 /dev/tty1
 </code></pre>
-
 <p>In both cases, the devices have major number <code>136</code>, which is the <code>pts</code>
 driver.  This means that if your LXC configuration file has this:</p>
-
 <pre><code>lxc.cgroup.devices.deny = a
 </code></pre>
-
 <p>Then your LXC configuration file will also need:</p>
-
 <pre><code>lxc.cgroup.devices.allow = c 136:* rwm
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

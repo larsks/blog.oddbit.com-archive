@@ -9,7 +9,7 @@ In order to serve out SSL services from an OpenStack instance, you will generall
 Assumptions This article assumes that the following resources exist:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ Assumptions This article assumes that the following resources exist:">
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -118,18 +119,14 @@ Assumptions This article assumes that the following resources exist:">
 
     
 
-<p>This article expands on my answer to <a href="https://ask.openstack.org/en/question/30690/add-multiple-specific-ips-to-instance/">Add multiple specific IPs to
+    <p>This article expands on my answer to <a href="https://ask.openstack.org/en/question/30690/add-multiple-specific-ips-to-instance/">Add multiple specific IPs to
 instance</a>, a question posted to <a href="https://ask.openstack.org/">ask.openstack.org</a>.</p>
-
 <p>In order to serve out SSL services from an OpenStack instance, you
 will generally want one local ip address for each SSL virtual host you
 support.  It is possible to create an instance with multiple fixed
 addresses, but there are a few complications to watch out for.</p>
-
 <h1 id="assumptions">Assumptions</h1>
-
 <p>This article assumes that the following resources exist:</p>
-
 <ul>
 <li>a private network <code>net0</code>.</li>
 <li>a private network <code>net0-subnet0</code>, associated with <code>net0</code>, assigned
@@ -138,19 +135,14 @@ the range <code>10.0.0.0/24</code>.</li>
 <li>an image named <code>fedora-20-x86_64</code>, with hopefully self-evident
 contents.</li>
 </ul>
-
 <h1 id="creating-a-port">Creating a port</h1>
-
 <p>Start by creating a port in Neutron:</p>
-
 <pre><code>$ neutron port-create net0 \
   --fixed-ip subnet_id=net0-subnet0 \
   --fixed-ip subnet_id=net0-subnet0
 </code></pre>
-
 <p>This will create a neutron port to which have been allocated to fixed
 ip addresses from <code>net0-subnet0</code>:</p>
-
 <pre><code>+-----------------------+----------------------------------------------------------------------------------+
 | Field                 | Value                                                                            |
 +-----------------------+----------------------------------------------------------------------------------+
@@ -170,37 +162,29 @@ ip addresses from <code>net0-subnet0</code>:</p>
 | tenant_id             | 4dfe8e38f68449b6a0c9cd73037726f7                                                 |
 +-----------------------+----------------------------------------------------------------------------------+
 </code></pre>
-
 <p>If you want, you can specify an explicit set of addresses rather than
 having neutron allocate them for you:</p>
-
 <pre><code>$ neutron port-create net0 \
   --fixed-ip subnet_id=net0-subnet0,ip_address=10.0.0.18 \
   --fixed-ip subnet_id=net0-subnet0,ip_address=10.0.0.19
 </code></pre>
-
 <h1 id="boot-an-instance">Boot an instance</h1>
-
 <p>You can boot an instance using this port using the <code>port-id=...</code>
 parameter to the <code>--nic</code> option:</p>
-
 <pre><code>$ nova boot \
   --nic port-id=3c564dd5-fd45-4f61-88df-715f71667b3b \
   --flavor m1.tiny \
   --image fedora-20-x86_64 \
   --key-name lars test0
 </code></pre>
-
 <p>This is where the first complication arises: the instance will boot
 and receive a DHCP lease for one of the fixed addresses you created,
-but you don&rsquo;t know which one.  This isn&rsquo;t an insurmountable problem;
+but you don't know which one.  This isn't an insurmountable problem;
 you can assign floating ips to each one and then try logging in to
 both and see which works.</p>
-
 <p>Rather than playing network roulette, you can pass in a script via the
 <code>--user-data</code> option that will take care of configuring the network
 correctly.  For example, something like this:</p>
-
 <pre><code>#!/bin/sh
 
 cat &gt; /etc/sysconfig/network-scripts/ifcfg-eth0 &lt;&lt;EOF
@@ -225,22 +209,17 @@ ifdown eth0
 ifup eth0
 ifup eth0:0
 </code></pre>
-
 <p>And boot the instance like this:</p>
-
 <pre><code>$ nova boot --nic port-id=3c564dd5-fd45-4f61-88df-715f71667b3b \
   --flavor m1.tiny --image fedora-20-x86_64 --key-name lars \
   --user-data userdata.txt test0
 </code></pre>
-
 <p>Assuming that your image uses <a href="http://cloudinit.readthedocs.org/en/latest/">cloud-init</a> or something similar, it
 should execute the <code>user-data</code> script at boot and set up the
 persistent network configuration.</p>
-
 <p>At this stage, you can verify that both addresses have been assigned
 by using the <code>ip netns</code> command to run <code>ping</code> inside an appropriate
 namespace.  Something like:</p>
-
 <pre><code>$ sudo ip netns exec qdhcp-bb4e5e37-74e1-41bd-880e-b59e94236c5e ping -c1 10.0.0.18
 PING 10.0.0.18 (10.0.0.18) 56(84) bytes of data.
 64 bytes from 10.0.0.18: icmp_seq=1 ttl=64 time=1.60 ms
@@ -257,30 +236,22 @@ PING 10.0.0.19 (10.0.0.19) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 1.701/1.701/1.701/0.000 ms
 </code></pre>
-
 <p>This assumes that the UUID of the <code>net0</code> network is <code>bb4e5e37-74e1-41bd-880e-b59e94236c5e</code>.  On your system, the namespace will be something different.</p>
-
 <h1 id="assign-floating-ips">Assign floating ips</h1>
-
 <p>Assign a floating ip address to each of the fixed addresses.  You will
 need to use the <code>--fixed-address</code> option to <code>nova add-floating-ip</code>:</p>
-
 <pre><code>$ nova add-floating-ip --fixed-address 10.0.0.19 test0 192.168.200.6
 $ nova add-floating-ip --fixed-address 10.0.0.18 test0 192.168.200.4
 </code></pre>
-
 <p>With these changes in place, the system is accessible via either
 address:</p>
-
 <pre><code>$ ssh fedora@192.168.200.4 uptime
   14:51:52 up 4 min,  0 users,  load average: 0.00, 0.02, 0.02
 $ ssh fedora@192.168.200.6 uptime
   14:51:54 up 4 min,  0 users,  load average: 0.00, 0.02, 0.02
 </code></pre>
-
 <p>And looking at the network configuration on the system, we can see
 that both addresses have been assigned to <code>eth0</code> as expected:</p>
-
 <pre><code>$ ssh fedora@192.168.200.4 /sbin/ip a
 [...]
 2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
@@ -292,6 +263,7 @@ that both addresses have been assigned to <code>eth0</code> as expected:</p>
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

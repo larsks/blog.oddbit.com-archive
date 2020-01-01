@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -103,6 +104,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Fedora Atomic, OpenStack, and Kubernetes (oh my)</h4>
+        <time class="post-stub-date" datetime="2014-11-24">Published Mon, Nov 24, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    While experimenting with Fedora Atomic, I was looking for an elegant way to automatically deploy Atomic into an OpenStack environment and then automatically schedule some Docker containers on the Atomic host. This post describes my solution.
+Like many other cloud-targeted distributions, Fedora Atomic runs cloud-init when the system boots. We can take advantage of this to configure the system at first boot by providing a user-data blob to Nova when we boot the instance.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Creating a Windows image for OpenStack</h4>
         <time class="post-stub-date" datetime="2014-11-15">Published Sat, Nov 15, 2014</time>
@@ -135,7 +159,7 @@ The CloudBase repository is an excellent source of information, but I wanted to 
 
     
     <p class="post-stub-summary">
-    I like Docker, but I&rsquo;m not a huge fan of using shell scripts for complex system configuration&hellip;and Dockerfiles are basically giant shell scripts.
+    I like Docker, but I'm not a huge fan of using shell scripts for complex system configuration&hellip;and Dockerfiles are basically giant shell scripts.
 I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
 I started with a manifest like this (in puppet/node.pp):
 class { 'ssh': }  And a Dockerfile like this:
@@ -183,9 +207,9 @@ class { 'ssh': }  And a Dockerfile like this:
 
     
     <p class="post-stub-summary">
-    Would you like to run some custom Python code when Nova creates and destroys virtual instances on your compute hosts? This is possible using Nova&rsquo;s support for hooks, but the existing documentation is somewhat short on examples, so I&rsquo;ve spent some time trying to get things working.
+    Would you like to run some custom Python code when Nova creates and destroys virtual instances on your compute hosts? This is possible using Nova's support for hooks, but the existing documentation is somewhat short on examples, so I've spent some time trying to get things working.
 The demo_nova_hooks repository contains a working example of the techniques discussed in this article.
-What&rsquo;s a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to attach a class of your own design to a particular function or method call in Nova.
+What's a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to attach a class of your own design to a particular function or method call in Nova.
     </p>
 
     
@@ -207,9 +231,9 @@ What&rsquo;s a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to
 
     
     <p class="post-stub-summary">
-    Sometimes you want to quickly share a screenshot with someone. Here&rsquo;s my favorite mechanism, which assumes you have installed both curl and the ImageMagick suite.
+    Sometimes you want to quickly share a screenshot with someone. Here's my favorite mechanism, which assumes you have installed both curl and the ImageMagick suite.
 $ import png:- | curl -T- -s chunk.io http://chunk.io/f/76ea98ea081748e19de4507fde3c2c65  When you run this command, you cursor will change into crosshairs. Click on a window, and this will grab a png image of that window and send it to chunk.io using curl.
-You&rsquo;ll get back a URL that you can use to share the image with people.
+You'll get back a URL that you can use to share the image with people.
     </p>
 
     
@@ -233,7 +257,6 @@ You&rsquo;ll get back a URL that you can use to share the image with people.
     <p class="post-stub-summary">
     I ran a Google Hangout this morning on Deploying with Heat. You can find the slides for the presentation on line here, and the Heat templates (as well as slide sources) are available on github.
 If you have any questions about the presentation, please feel free to ping me on irc (larsks).
- 
     </p>
 
     
@@ -255,7 +278,7 @@ If you have any questions about the presentation, please feel free to ping me on
 
     
     <p class="post-stub-summary">
-    I spent some time today learning about Heat autoscaling groups, which are incredibly nifty but a little opaque from the Heat command line, since commands such as heat resource-list don&rsquo;t recurse into nested stacks. It is possible to introspect these resources (you can pass the physical resource id of a nested stack to heat resource-list, for example)&hellip;
+    I spent some time today learning about Heat autoscaling groups, which are incredibly nifty but a little opaque from the Heat command line, since commands such as heat resource-list don't recurse into nested stacks. It is possible to introspect these resources (you can pass the physical resource id of a nested stack to heat resource-list, for example)&hellip;
 &hellip;but I really like visualizing things, so I wrote a quick hack called dotstack that will generate dot language output from a Heat stack.
     </p>
 
@@ -279,12 +302,12 @@ If you have any questions about the presentation, please feel free to ping me on
     
     <p class="post-stub-summary">
     This is a companion to my article on the Docker plugin for Heat.
-While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&rsquo;ve submitted patches for most of the issues I encountered:
-Bugs in the Heat plugin  https://bugs.launchpad.net/heat/+bug/1364017
+While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I've submitted patches for most of the issues I encountered:
+Bugs in the Heat plugin   https://bugs.launchpad.net/heat/+bug/1364017
 docker plugin fails to delete a container resource in CREATE_FAILED state.
- https://bugs.launchpad.net/heat/+bug/1364041
+  https://bugs.launchpad.net/heat/+bug/1364041
 docker plugin volumes_from parameter should be a list.
- https://bugs.launchpad.net/heat/+bug/1364039
+  https://bugs.
     </p>
 
     
@@ -307,45 +330,20 @@ docker plugin volumes_from parameter should be a list.
     
     <p class="post-stub-summary">
     This is a companion to my article on the Docker plugin for Heat.
-DockerInc::Docker::Container Properties  cmd : List
+DockerInc::Docker::Container Properties   cmd : List
 Command to run after spawning the container.
 Optional property.
 Example:
-cmd: [ 'thttpd', '-C', '/etc/thttpd.conf', '-D', '-c', '*.cgi']  dns : List
+ cmd: [ 'thttpd', '-C', '/etc/thttpd.conf', '-D', '-c', '*.cgi']    dns : List
 Set custom DNS servers.
 Example:
-dns: - 8.8.8.8 - 8.8.4.4  docker_endopint : String
+ dns: - 8.8.8.8 - 8.8.4.4    docker_endopint : String
 Docker daemon endpoint. By default the local Docker daemon will be used.
-Example:
-docker_endpoint: tcp://192.
     </p>
 
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Docker plugin for OpenStack Heat</h4>
-        <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
-The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/">(Read more...)</a>
     </p>
     
     

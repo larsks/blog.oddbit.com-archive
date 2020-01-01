@@ -8,7 +8,7 @@
 The players This document describes the architecture that results from a particular OpenStack configuration, specifically:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ The players This document describes the architecture that results from a particu
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,38 +118,29 @@ The players This document describes the architecture that results from a particu
 
     
 
-<p>In <a href="https://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/">Quantum in Too Much Detail</a>, I discussed the architecture of a
+    <p>In <a href="https://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/">Quantum in Too Much Detail</a>, I discussed the architecture of a
 Neutron deployment in detail.  Since that article was published,
 Neutron gained the ability to handle multiple external networks with a
 single L3 agent.  While I <a href="https://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/">wrote about that</a> back in 2014, I
 covered the configuration side of it in much more detail than I
 discussed the underlying network architecture.  This post addresses
 the architecture side.</p>
-
 <h2 id="the-players">The players</h2>
-
 <p>This document describes the architecture that results from a
 particular OpenStack configuration, specifically:</p>
-
 <ul>
 <li>Neutron networking using VXLAN or GRE tunnels;</li>
 <li>A dedicated network controller;</li>
 <li>Two external networks</li>
 </ul>
-
 <h2 id="the-lay-of-the-land">The lay of the land</h2>
-
 <p>This is a simplified architecture diagram of the network connectivity
 in this scenario:</p>
 
-
-
 <p>Everything on the compute hosts is identical to <a href="https://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/">my previous
 article</a>, so I will only be discussing the network host here.</p>
-
 <p>For the purposes of this article, we have two external networks and
 two internal networks defined:</p>
-
 <pre><code>$ neutron net-list
 +--------------------------------------+-----------+----------...------------------+
 | id                                   | name      | subnets  ...                  |
@@ -159,9 +151,7 @@ two internal networks defined:</p>
 | 973a6eb3-eaf8-4697-b90b-b30315b0e05d | external1 | fe8e8193-... 172.24.4.224/28  |
 +--------------------------------------+-----------+----------...------------------+
 </code></pre>
-
 <p>And two routers:</p>
-
 <pre><code>$ neutron router-list
 +--------------------------------------+---------+-----------------------...-------------------+...
 | id                                   | name    | external_gateway_info ...                   |...
@@ -170,9 +160,7 @@ two internal networks defined:</p>
 | e2117de3-58ca-420d-9ac6-c4eccf5e7a53 | router1 | {&quot;network_id&quot;: &quot;973a6e... &quot;172.24.4.227&quot;}]} |...
 +--------------------------------------+---------+-----------------------...-------------------+...
 </code></pre>
-
 <p>And our logical connectivity is:</p>
-
 <pre><code>+---------+    +----------+    +-------------+
 |         |    |          |    |             |
 |  net1   +----&gt; router1  +----&gt;  external1  |
@@ -185,20 +173,16 @@ two internal networks defined:</p>
 |         |    |          |    |             |
 +---------+    +----------+    +-------------+
 </code></pre>
-
 <h2 id="router-attachments-to-integration-bridge">Router attachments to integration bridge</h2>
-
 <p>In the <a href="https://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/">legacy model</a>, in which an L3 agent supported a single
 external network, the <code>qrouter-...</code> namespaces that implement Neutron
 routers were attached to both the integration bridge <code>br-int</code> and the
 external network bridge (the <code>external_network_bridge</code> configuration
 option from your <code>l3_agent.ini</code>, often named <code>br-ex</code>).</p>
-
 <p>In the provider network model, <em>both</em> interfaces in a <code>qrouter</code>
 namespace are attached to the integration bridge.  For the
-configuration we&rsquo;ve described above, the configuration of the
+configuration we've described above, the configuration of the
 integration bridge ends up looking something like:</p>
-
 <pre><code>Bridge br-int
     fail_mode: secure
     Port &quot;qvoc532d46c-33&quot;
@@ -247,12 +231,10 @@ integration bridge ends up looking something like:</p>
         Interface &quot;tap0881edf5-e5&quot;
             type: internal
 </code></pre>
-
 <p>The <code>qr-...</code> interface on each router is attached to an internal
 network.  The VLAN tag associated with this interface is whatever VLAN
 Neutron has selected internally for the private network.  In the above
 output, these ports are on the network named <code>net1</code>:</p>
-
 <pre><code>Port &quot;qr-affdbcee-5c&quot;
     tag: 3
     Interface &quot;qr-affdbcee-5c&quot;
@@ -262,36 +244,29 @@ Port &quot;tap0881edf5-e5&quot;
     Interface &quot;tap0881edf5-e5&quot;
         type: internal
 </code></pre>
-
-<p>Where <code>qr-affdbcee-5c</code> is <code>router1</code>&rsquo;s interface on that network, and
+<p>Where <code>qr-affdbcee-5c</code> is <code>router1</code>'s interface on that network, and
 <code>tap0881edf5-e5</code> is the port attached to a <code>dhcp-...</code> namespace.  The
 same router is attached to the <code>external1</code> network; this attachment is
 represented by:</p>
-
 <pre><code>Port &quot;qg-09e9da38-fb&quot;
     tag: 4
     Interface &quot;qg-09e9da38-fb&quot;
         type: internal
 </code></pre>
-
 <p>The external bridges are connected to the integration bridge using OVS
 &ldquo;patch&rdquo; interfaces (the <code>int-br-ex1</code> on the integration bridge and the
 <code>phy-br-ex1</code> interface on the <code>br-ex1</code>).</p>
-
 <h2 id="from-here-to-there">From here to there</h2>
-
 <p>Connectivity between the <code>qg-...</code> interface and the appropriate
 external bridge (<code>br-ex1</code> in this case) happens due to the VLAN tag
 assigned on egress by the <code>qg-...</code> interface and the following
 OpenFlow rules associated with <code>br-ex1</code>:</p>
-
 <pre><code># ovs-ofctl dump-flows br-ex1
 NXST_FLOW reply (xid=0x4):
  cookie=0x0, duration=794.876s, table=0, n_packets=0, n_bytes=0, idle_age=794, priority=1 actions=NORMAL
  cookie=0x0, duration=785.833s, table=0, n_packets=0, n_bytes=0, idle_age=785, priority=4,in_port=3,dl_vlan=4 actions=strip_vlan,NORMAL
  cookie=0x0, duration=792.945s, table=0, n_packets=24, n_bytes=1896, idle_age=698, priority=2,in_port=3 actions=drop
 </code></pre>
-
 <p>Each of these rules contains some state information (like the
 packet/byte counts), some conditions (like
 <code>priority=4,in_port=3,dl_vlan=4</code>) and one or more actions (like
@@ -299,36 +274,38 @@ packet/byte counts), some conditions (like
 packets associated with VLAN tag 4 and strips the VLAN tag (after
 which the packet is delivered to any physical interfaces that are
 attached to this OVS bridge).</p>
-
 <p>Putting this all together:</p>
-
 <ol>
-<li><p>An outbound packet from a Nova server running on a compute node
-enters via <code>br-tun</code> (<strong>H</strong>)</p></li>
-
-<li><p>Flow rules on <code>br-tun</code> translate the tunnel id into an internal
-VLAN tag.</p></li>
-
-<li><p>The packet gets delivered to the <code>qr-...</code> interface of the
-appropriate router. (<strong>O</strong>)</p></li>
-
-<li><p>The packet exits the <code>qg-...</code> interface of the router (where it
+<li>
+<p>An outbound packet from a Nova server running on a compute node
+enters via <code>br-tun</code> (<strong>H</strong>)</p>
+</li>
+<li>
+<p>Flow rules on <code>br-tun</code> translate the tunnel id into an internal
+VLAN tag.</p>
+</li>
+<li>
+<p>The packet gets delivered to the <code>qr-...</code> interface of the
+appropriate router. (<strong>O</strong>)</p>
+</li>
+<li>
+<p>The packet exits the <code>qg-...</code> interface of the router (where it
 is assigned the VLAN tag associated with the external network).
-(<strong>N</strong>)</p></li>
-
-<li><p>The packet is delivered to the external bridge, where a flow rule
-strip the VLAN tag. (<strong>P</strong>)</p></li>
-
-<li><p>The packet is sent out the physical interface associated with the
-bridge.</p></li>
+(<strong>N</strong>)</p>
+</li>
+<li>
+<p>The packet is delivered to the external bridge, where a flow rule
+strip the VLAN tag. (<strong>P</strong>)</p>
+</li>
+<li>
+<p>The packet is sent out the physical interface associated with the
+bridge.</p>
+</li>
 </ol>
-
 <h2 id="for-the-sake-of-completeness">For the sake of completeness</h2>
-
 <p>The second private network, <code>net2</code>, is attached to <code>router2</code> on the
 <code>qr-b37877cd-42</code> interface.  It exits on the <code>qg-19250d3f-5c</code>
 interface, where packets will be assigned to VLAN 1:</p>
-
 <pre><code>Port &quot;qr-b37877cd-42&quot;
     tag: 2
     Interface &quot;qr-b37877cd-42&quot;
@@ -338,10 +315,8 @@ Port &quot;qg-19250d3f-5c&quot;
     Interface &quot;qg-19250d3f-5c&quot;
         type: internal
 </code></pre>
-
 <p>The network interface configuration in the associated router namespace
 looks like this:</p>
-
 <pre><code># ip netns exec qrouter-1b19e179-5d67-4d80-8449-bab42119a4c5 ip a
 30: qg-19250d3f-5c: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN 
     link/ether fa:16:3e:01:e9:e3 brd ff:ff:ff:ff:ff:ff
@@ -356,22 +331,20 @@ looks like this:</p>
     inet6 fe80::f816:3eff:fe4c:6cf2/64 scope link 
        valid_lft forever preferred_lft forever
 </code></pre>
-
 <p>OpenFlow rules attached to <code>br-ex2</code> will match these packets:</p>
-
 <pre><code># ovs-ofctl dump-flows br-ex2
 NXST_FLOW reply (xid=0x4):
  cookie=0x0, duration=3841.678s, table=0, n_packets=0, n_bytes=0, idle_age=3841, priority=1 actions=NORMAL
  cookie=0x0, duration=3831.396s, table=0, n_packets=0, n_bytes=0, idle_age=3831, priority=4,in_port=3,dl_vlan=1 actions=strip_vlan,NORMAL
  cookie=0x0, duration=3840.085s, table=0, n_packets=26, n_bytes=1980, idle_age=3742, priority=2,in_port=3 actions=drop
 </code></pre>
-
 <p>We can see that the second rule here will patch traffic on VLAN 1
 (<code>priority=4,in_port=3,dl_vlan=1</code>) and strip the VLAN tag, after which
 the packet will be delivered to any other interfaces attached to this
 bridge.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

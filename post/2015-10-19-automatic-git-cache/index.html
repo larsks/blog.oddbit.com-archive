@@ -5,12 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Automatic git cache &middot; The Odd Bit</title>
         <meta name="description" content="This post is in response to a comment someone made on irc earlier today:
- [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&rsquo;re available
- In this post I present a proof-of-concept solution to this request. Please note that thisand isn&rsquo;t something that has actually been used or tested anywhere!
-If you access a git repository via ssh, it&rsquo;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.">
+ [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&#39;re available
+ In this post I present a proof-of-concept solution to this request. Please note that thisand isn&#39;t something that has actually been used or tested anywhere!
+If you access a git repository via ssh, it&#39;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -26,6 +26,7 @@ If you access a git repository via ssh, it&rsquo;s easy to provide a wrapper for
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,26 +118,23 @@ If you access a git repository via ssh, it&rsquo;s easy to provide a wrapper for
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>This post is in response to a comment someone made on irc earlier
 today:</p>
-
 <blockquote>
 <p>[I] would really like a git lookaside cache which operated on an upstream
-repo, but pulled objects locally when they&rsquo;re available</p>
+repo, but pulled objects locally when they're available</p>
 </blockquote>
-
 <p>In this post I present a proof-of-concept solution to this request.
-Please note that thisand isn&rsquo;t something that has actually been used
+Please note that thisand isn't something that has actually been used
 or tested anywhere!</p>
-
-<p>If you access a git repository via <code>ssh</code>, it&rsquo;s easy to provide a
+<p>If you access a git repository via <code>ssh</code>, it's easy to provide a
 wrapper for git operations via the <code>command=</code> option in an
 <code>authorized_keys</code> file.  We can take advantage of this to update a a
 local &ldquo;cache&rdquo; repository prior to responding to a <code>clone</code>/<code>pull</code>/etc.
 operation.</p>
-
 <p>A simple wrapper might look like this:</p>
-
 <pre><code>#!/bin/bash
 
 [ &quot;$SSH_ORIGINAL_COMMAND&quot; ] || exit 1
@@ -148,7 +146,7 @@ cd repos
 case $1 in
   (git-receive-pack|git-upload-pack)
     :;;
-  (*)   echo &quot;*** Unrecognized command.&quot; &gt;&amp;2
+  (*)	echo &quot;*** Unrecognized command.&quot; &gt;&amp;2
     exit 1
     ;;
 esac
@@ -165,52 +163,42 @@ fi
 
 exec &quot;$@&quot;
 </code></pre>
-
 <p>If we have a <code>git</code> user locally, we can place the above script into
 <code>/home/git/bin/gitwrapper</code>, and then set up a <code>.ssh/authorized_keys</code>
 file that looks something like this:</p>
-
 <pre><code>command=&quot;/home/git/bin/gitwrapper&quot; ssh-rsa AAAAB3NzaC...
 </code></pre>
-
-<p>Let&rsquo;s set up a local repository mirror:</p>
-
+<p>Let's set up a local repository mirror:</p>
 <pre><code># su - git
 git$ mkdir repos
 git$ cd repos
 git$ git clone --mirror http://github.com/openstack-dev/devstack.git
 </code></pre>
-
 <p>In order to tell the wrapper script that it should perform the
 automatic update logic on this repository, we need to touch the
 appropriate flag file:</p>
-
 <pre><code>git$ touch devstack.git/git-auto-update
 </code></pre>
-
 <p>If we then attempt to clone that repository:</p>
-
 <pre><code>lars$ git clone git@localhost:devstack.git
 </code></pre>
-
 <p>The wrapper script will check for the presence of that flag file, and
 if it exists it will first perform a <code>git remote update</code> before
 responding to the <code>clone</code> operation.  This ensures that any new
 objects are fetched, while ensuring fast transfer of objects that are
 already available locally.  The output we see after running the above
 <code>git clone</code> looks something like:</p>
-
 <pre><code>Fetching origin
 From http://github.com/openstack-dev/devstack
    8ce00ac..0ba1848  master     -&gt; master
 First, rewinding head to replay your work on top of it...
 Fast-forwarded master to 0ba18481672964808bbbc4160643387dc931c654.
 </code></pre>
-
 <p>The first three lines are the result <code>git remote update</code> operation in
 our cache repository.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Ansible 2.0: The Docker connection driver &middot; The Odd Bit</title>
-        <meta name="description" content="As the release of Ansible 2.0 draws closer, I&rsquo;d like to take a look at some of the new features that are coming down the pipe. In this post, we&rsquo;ll look at the docker connection driver.
+        <meta name="description" content="As the release of Ansible 2.0 draws closer, I&#39;d like to take a look at some of the new features that are coming down the pipe. In this post, we&#39;ll look at the docker connection driver.
 A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to your target hosts. These days it uses ssh by default (which relies on the OpenSSH command line client for connectivity), and it also offers the Paramiko library as an alternative ssh implementation (this was in fact the default driver in earlier versions of Ansible).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to 
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,10 +116,11 @@ A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to 
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>As the release of <a href="http://ansible.com/">Ansible</a> 2.0 draws closer, I&rsquo;d like to take a
-look at some of the new features that are coming down the pipe.  In
-this post, we&rsquo;ll look at the <code>docker</code> connection driver.</p>
+    
 
+    <p>As the release of <a href="http://ansible.com/">Ansible</a> 2.0 draws closer, I'd like to take a
+look at some of the new features that are coming down the pipe.  In
+this post, we'll look at the <code>docker</code> connection driver.</p>
 <p>A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to
 your target hosts.  These days it uses <code>ssh</code> by default (which relies
 on the OpenSSH command line client for connectivity), and it also
@@ -128,20 +130,16 @@ Alternative drivers offered by recent versions of ansible included the
 <code>winrm</code> driver, for accessing Windows hosts, the <code>fireball</code> driver, a
 (deprecated) driver that used <a href="http://zeromq.org/">0mq</a> for communication, and <code>jail</code>, a
 driver for connecting to FreeBSD jails.</p>
-
 <p>Ansible 2.0 will offer a <code>docker</code> connection driver, which can be used
 to connect to Docker containers via the <code>docker exec</code> command.
 Assuming you have a running container named <code>target</code>, you can run an
 ad-hoc command like this:</p>
-
 <pre><code>$ ansible all -i target, -c docker -m command -a 'uptime'
 target | SUCCESS | rc=0 &gt;&gt;
  03:54:21 up 7 days, 15:00,  0 users,  load average: 0.81, 0.60, 0.46
 </code></pre>
-
 <p>You can specify the connection driver as part of a play in your
 playbook:</p>
-
 <pre><code>- hosts: target
   connection: docker
   tasks:
@@ -149,29 +147,21 @@ playbook:</p>
         name: git
         state: latest
 </code></pre>
-
-<p>Or as a variable in your inventory.  Here&rsquo;s an example that has both a
+<p>Or as a variable in your inventory.  Here's an example that has both a
 docker container and an ssh-accessible host:</p>
-
 <pre><code>target ansible_connection=docker
 server ansible_host=192.168.1.20 ansible_user=root
 </code></pre>
-
 <p>Given the following playbook:</p>
-
 <pre><code>- hosts: all
   tasks:
     - ping:
 </code></pre>
-
 <p>If we run it like this, assuming the above inventory is in the file
 <code>inventory</code>:</p>
-
 <pre><code>$ ansible-playbook -i inventory playbook.yml
 </code></pre>
-
 <p>The output will look something like:</p>
-
 <pre><code>TASK [ping] ********************************************************************
 &lt;192.168.1.20&gt; ESTABLISH SSH CONNECTION FOR USER: root
 &lt;192.168.1.20&gt; SSH: EXEC ssh -C -q -o ControlMaster=auto -o ControlPersist=60s ... 192.168.1.20 ...
@@ -190,11 +180,11 @@ PLAY RECAP *********************************************************************
 server                     : ok=2    changed=0    unreachable=0    failed=0   
 target                     : ok=2    changed=0    unreachable=0    failed=0   
 </code></pre>
-
 <p>Now you have a unified mechanism for managing configuration changes in
 traditional hosts as well as in Docker containers.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

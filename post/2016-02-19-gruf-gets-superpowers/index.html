@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Gruf gets superpowers &middot; The Odd Bit</title>
         <meta name="description" content="In my last article article I introduced Gruf, a command line tool for interacting with Gerrit. Since then, Gruf has gained a few important new features.
-Caching Gruf will now by default cache results for five minutes. This avoids repeatedly querying the server for the same information when you&rsquo;re just displaying it with different templates (for example, if you run a gruf query open here followed by a gruf -t patches query open here).">
+Caching Gruf will now by default cache results for five minutes. This avoids repeatedly querying the server for the same information when you&#39;re just displaying it with different templates (for example, if you run a gruf query open here followed by a gruf -t patches query open here).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ Caching Gruf will now by default cache results for five minutes. This avoids rep
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,91 +118,38 @@ Caching Gruf will now by default cache results for five minutes. This avoids rep
 
     
 
-<p>In my <a href="https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/">last article</a> article I introduced <a href="http://github.com/larsks/gruf">Gruf</a>, a command line
+    <p>In my <a href="https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/">last article</a> article I introduced <a href="http://github.com/larsks/gruf">Gruf</a>, a command line
 tool for interacting with <a href="https://www.gerritcodereview.com/">Gerrit</a>.  Since then, Gruf has gained a
 few important new features.</p>
-
 <h2 id="caching">Caching</h2>
-
 <p>Gruf will now by default cache results for five minutes.  This avoids
-repeatedly querying the server for the same information when you&rsquo;re
+repeatedly querying the server for the same information when you're
 just displaying it with different templates (for example, if you run a
-<code>gruf query open here</code> followed by a <code>gruf -t patches query open
-here</code>).</p>
-
+<code>gruf query open here</code> followed by a <code>gruf -t patches query open here</code>).</p>
 <p>The cache lifetime can be tuned on the command line (with the
 <code>--cache-lifetime</code> option) or in the <code>gruf.yml</code> configuration file (as
 the <code>cache_lifetime</code> parameter).  Gruf has also learned the
 <code>invalidate-cache</code> command if you want to clear out the cache.</p>
-
 <h2 id="better-streaming">Better streaming</h2>
-
 <p>I have substantially enhanced the support for the Gerrit
 <a href="https://gerrit.googlecode.com/svn/documentation/2.1.2/cmd-stream-events.html">stream-events</a> command.</p>
-
 <h3 id="automatic-reconnection">Automatic reconnection</h3>
-
 <p>Gruf will now automatically reconnect to the Gerrit server if the
 connection is lost while streaming events.</p>
-
 <h3 id="better-default-templates">Better default templates</h3>
-
 <p>The default <code>stream-events</code> template now produces colorized output,
 and there is also a <code>short</code> template that produces one or two line
 output for each event that can be useful if you just want to see
-what&rsquo;s going on.</p>
-
+what's going on.</p>
 <p>The default output looks like this:</p>
-
-<pre>
-[<span style="color:#00f0f0;">PATCH</span>     ] 282340,1 openstack/gnocchi
-           URL: https://review.openstack.org/282340
-           Author: Chaozhe Chen(ccz) (Chaozhe.Chen) &lt;chaozhe.chen&#64;easystack.cn&gt;
-           Topic: update-flake8
-           Subject: Use '#flake8: noqa' to skip file check
-
-[<span style="color:#00f0f0;">PATCH</span>     ] 281835,2 openstack/nova
-           URL: https://review.openstack.org/281835
-           Author: Roman Dobosz (gryf) &lt;roman.dobosz&#64;intel.com&gt;
-           Topic: bug-1546433
-           Subject: Add annotation to the kill() method
-
-[<span style="color:#f0f000;">COMMENT</span>   ] 282324,3 openstack/fuel-octane
-           URL: https://review.openstack.org/282324
-           Author: Yuriy Taraday (yorik-sar) &lt;yorik.sar&#64;gmail.com&gt;
-           Topic: 282317
-           Subject: Remove unused password param from restore command
-
-    Patch Set 3: Code-Review+2 Workflow+1
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>The short output looks something like this:</p>
-
-<pre>
-[<span style="color:#00f0f0;">PATCH</span>     ] 240944,24 openstack/python-ironicclient sturivnyi <span style="color:#0000f0;">https://review.openstack.org/240944</span>
-             Add sanity tests for testing actions with Port
-[<span style="color:#f0f000;">COMMENT</span>   ] 282334,1 openstack/fuel-octane gelbuhos <span style="color:#0000f0;">https://review.openstack.org/282334</span>
-             Workflow 1 Code-Review 2 
-[<span style="color:#f0f000;">COMMENT</span>   ] 282334,1 openstack/fuel-octane gelbuhos <span style="color:#0000f0;">https://review.openstack.org/282334</span>
-[<span style="color:#f0f000;">COMMENT</span>   ] 275844,23 openstack/kolla elemoine <span style="color:#0000f0;">https://review.openstack.org/275844</span>
-             Workflow 1 Code-Review 2 
-[<span style="color:#f0f000;">COMMENT</span>   ] 279478,3 openstack/fuel-octane gelbuhos <span style="color:#0000f0;">https://review.openstack.org/279478</span>
-             Verified 2 
-[<span style="color:#00f000;">MERGED</span>    ] 279478,3 openstack/fuel-octane gelbuhos <span style="color:#0000f0;">https://review.openstack.org/279478</span>
-[<span style="color:#f0f000;">COMMENT</span>   ] 248938,29 openstack/neutron slaweq <span style="color:#0000f0;">https://review.openstack.org/248938</span>
-[<span style="color:#f0f000;">COMMENT</span>   ] 279478,3 openstack/fuel-octane gelbuhos <span style="color:#0000f0;">https://review.openstack.org/279478</span>
-[<span style="color:#f0f000;">COMMENT</span>   ] 279478,3 openstack/fuel-octane gelbuhos <span style="color:#0000f0;">https://review.openstack.org/279478</span>
-[<span style="color:#f0f000;">COMMENT</span>   ] 276419,1 openstack/glance siuzannatb <span style="color:#0000f0;">https://review.openstack.org/276419</span>
-             Workflow 1 Code-Review 2 
-[<span style="color:#f0f000;">COMMENT</span>   ] 276814,18 openstack/fuel-web vkramskikh <span style="color:#0000f0;">https://review.openstack.org/276814</span>
-             Verified 1 
-[<span style="color:#f0f000;">COMMENT</span>   ] 276419,1 openstack/glance siuzannatb <span style="color:#0000f0;">https://review.openstack.org/276419</span>
-[<span style="color:#f0f000;">COMMENT</span>   ] 281472,2 openstack/ironic-webclient krotscheck <span style="color:#0000f0;">https://review.openstack.org/281472</span>
-             Verified 1 
-[<span style="color:#f0f000;">COMMENT</span>   ] 282331,1 openstack/fuel-qa apanchenko <span style="color:#0000f0;">https://review.openstack.org/282331</span>
-</pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

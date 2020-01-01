@@ -14,7 +14,7 @@ Missing arguments: max_number  So just for kicks you try:
 nova-manage db migrate_flavor_data --max_number 100  And that says:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -30,6 +30,7 @@ nova-manage db migrate_flavor_data --max_number 100  And that says:">
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -121,56 +122,41 @@ nova-manage db migrate_flavor_data --max_number 100  And that says:">
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>So, the Kilo release notes say:</p>
+    
 
+    <p>So, the Kilo release notes say:</p>
 <pre><code>nova-manage migrate-flavor-data
 </code></pre>
-
 <p>But nova-manage says:</p>
-
 <pre><code>nova-manage db migrate_flavor_data
 </code></pre>
-
 <p>But that says:</p>
-
 <pre><code>Missing arguments: max_number
 </code></pre>
-
 <p>And the help says:</p>
-
 <pre><code>usage: nova-manage db migrate_flavor_data [-h]
   [--max-number &lt;number&gt;]
 </code></pre>
-
 <p>Which indicates that &ndash;max-number is optional, but whatever, so you
 try:</p>
-
 <pre><code>nova-manage db migrate_flavor_data --max-number 100
 </code></pre>
-
 <p>And that says:</p>
-
 <pre><code>Missing arguments: max_number
 </code></pre>
-
 <p>So just for kicks you try:</p>
-
 <pre><code>nova-manage db migrate_flavor_data --max_number 100
 </code></pre>
-
 <p>And that says:</p>
-
 <pre><code>nova-manage: error: unrecognized arguments: --max_number
 </code></pre>
-
 <p>So finally you try:</p>
-
 <pre><code>nova-manage db migrate_flavor_data 100
 </code></pre>
-
 <p>And holy poorly implement client, Batman, it works.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

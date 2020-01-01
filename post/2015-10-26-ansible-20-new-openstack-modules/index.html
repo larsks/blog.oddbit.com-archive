@@ -8,7 +8,7 @@
 In versions of Ansible prior to 2.0, there was a small collection of OpenStack modules.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ In versions of Ansible prior to 2.0, there was a small collection of OpenStack m
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,27 +118,23 @@ In versions of Ansible prior to 2.0, there was a small collection of OpenStack m
 
     
 
-<p>This is the second in a loose sequence of articles looking at new
+    <p>This is the second in a loose sequence of articles looking at new
 features in Ansible 2.0.  In the previous article I looked at the
 <a href="https://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/">Docker connection driver</a>.  In this article, I would like to
 provide an overview of the new-and-much-improved suite of modules for
 interacting with an <a href="http://www.openstack.org/">OpenStack</a> environment, and provide a few
 examples of their use.</p>
-
 <p>In versions of Ansible prior to 2.0, there was a small collection of
 OpenStack modules.  There was the minimum necessary to boot a Nova
 instance:</p>
-
 <ul>
 <li><code>glance_image.py</code></li>
 <li><code>keystone_user.py</code></li>
 <li><code>nova_compute.py</code></li>
 <li><code>nova_keypair.py</code></li>
 </ul>
-
 <p>And a collection of modules for interacting with <a href="https://wiki.openstack.org/wiki/Neutron">Neutron</a> (previously
 Quantum):</p>
-
 <ul>
 <li><code>quantum_floating_ip_associate.py</code></li>
 <li><code>quantum_floating_ip.py</code></li>
@@ -147,7 +144,6 @@ Quantum):</p>
 <li><code>quantum_router.py</code></li>
 <li><code>quantum_subnet.py</code></li>
 </ul>
-
 <p>While functional, these modules did not provide very comprehensive
 coverage of even basic OpenStack services, and they suffered from
 having a great deal of duplicated code (which made ensuring
@@ -155,9 +151,7 @@ consistent behavior across all the modules more difficult).  The
 behavior of these modules was not always what you would expect (e.g.,
 the <code>nova_compute</code> module would return information in different forms
 depending on whether it had to create an instance or not).</p>
-
 <h2 id="throwing-shade">Throwing Shade</h2>
-
 <p>The situation is much improved in Ansible 2.0, which introduces a new
 suite of OpenStack modules in which the common code has been factored
 out into the <a href="https://pypi.python.org/pypi/shade">Shade</a> project, a Python package that provides a
@@ -165,31 +159,23 @@ simpler interface to OpenStack than is available using the native
 clients.  Collecting this code in one place will help ensure both that
 these Ansible modules share consistent behavior and that they are
 easier to maintain.</p>
-
 <p>There are modules for managing Keystone:</p>
-
 <ul>
 <li><code>os_auth.py</code></li>
 <li><code>os_user_group.py</code></li>
 <li><code>os_user.py</code></li>
 </ul>
-
 <p>Glance:</p>
-
 <ul>
 <li><code>os_image_facts.py</code></li>
 <li><code>os_image.py</code></li>
 </ul>
-
 <p>Cinder:</p>
-
 <ul>
 <li><code>os_server_volume.py</code></li>
 <li><code>os_volume.py</code></li>
 </ul>
-
 <p>Nova:</p>
-
 <ul>
 <li><code>os_keypair.py</code></li>
 <li><code>os_nova_flavor.py</code></li>
@@ -197,16 +183,12 @@ easier to maintain.</p>
 <li><code>os_server_facts.py</code></li>
 <li><code>os_server.py</code></li>
 </ul>
-
 <p>Ironic:</p>
-
 <ul>
 <li><code>os_ironic_node.py</code></li>
 <li><code>os_ironic.py</code></li>
 </ul>
-
 <p>Neutron and Nova Networking:</p>
-
 <ul>
 <li><code>os_floating_ip.py</code></li>
 <li><code>os_network.py</code></li>
@@ -218,27 +200,20 @@ easier to maintain.</p>
 <li><code>os_subnet.py</code></li>
 <li><code>os_subnets_facts.py</code></li>
 </ul>
-
 <p>and Swift:</p>
-
 <ul>
 <li><code>os_object.py</code></li>
 </ul>
-
 <h2 id="authentication">Authentication</h2>
-
 <p>Shade uses the <a href="https://pypi.python.org/pypi/os-client-config/">os-client-config</a> library to configure
 authentication credentials for  your OpenStack environment.</p>
-
 <p>In the absence of any authentication information provided in your
 Ansible playbook, these modules will attempt to use the standard suite
 of <code>OS_*</code> variables (<code>OS_USERNAME</code>, <code>OS_PASSWORD</code>, etc).  This is fine
 for testing, but you usually want to provide some sort of
 authentication configuration in your Ansible environment.</p>
-
 <p>You can provide credentials directly in your plays by providing an
 <code>auth</code> argument to any of the modules.  For example:</p>
-
 <pre><code>- os_image:
     auth:
       auth_url: http://openstack.local:5000/v2.0
@@ -247,22 +222,18 @@ authentication configuration in your Ansible environment.</p>
       project_name: admin
     [...]
 </code></pre>
-
 <p>But that can get complicated, especially if you are maintaining
 multiple sets of credentials.  The <code>shade</code> library allows you to
 manage credentials in a file named (by default) <code>clouds.yml</code>, which
 <code>shade</code> searches for in:</p>
-
 <ul>
 <li>The current directory</li>
 <li><code>$HOME/.config/openstack/</code></li>
 <li><code>/etc/xdg/openstack/</code></li>
 <li><code>/etc/openstack</code></li>
 </ul>
-
 <p>This file may contain credentials for one or more cloud environments,
 for example:</p>
-
 <pre><code>clouds:
   testing:
     auth:
@@ -271,40 +242,31 @@ for example:</p>
       password: secret
       project_name: admin
 </code></pre>
-
 <p>If you have the above in <code>clouds.yml</code> along with your playbook, the
 above <code>os_image</code> example can be rewritten as:</p>
-
 <pre><code>- os_image:
     cloud: testing
     [...]
 </code></pre>
-
 <h2 id="return-values">Return values</h2>
-
 <p>The new modules all return useful information about the objects they
 have created.  For example, if you create a network using
 <a href="http://docs.ansible.com/ansible/os_network_module.html">os_network</a> and register that result:</p>
-
 <pre><code>- os_network:
     cloud: testing
     name: mynetwork
   register: mynetwork
 </code></pre>
-
-<p>You&rsquo;ll get back a dictionary containing a top-level <code>id</code> attribute,
+<p>You'll get back a dictionary containing a top-level <code>id</code> attribute,
 which is the UUID of the created network, along with a <code>network</code>
 attribute containing a dictionary of information about the created
 object.  The <a href="http://docs.ansible.com/ansible/debug_module.html">debug</a> module is an excellent tool for exploring these
 return values.  If we put the following in our playbook immediately
 after the above task:</p>
-
 <pre><code>- debug:
     var: mynetwork
 </code></pre>
-
 <p>We would get output that looks something like:</p>
-
 <pre><code>ok: [localhost] =&gt; {
     &quot;changed&quot;: false, 
     &quot;mynetwork&quot;: {
@@ -334,22 +296,16 @@ after the above task:</p>
     }
 }
 </code></pre>
-
 <h2 id="examples">Examples</h2>
-
 <p>I have written a set of basic <a href="https://github.com/ansible/ansible/pull/12875">integration tests</a> for these modules.
 I hope the pull request is merged, but even if not it provides an
 example of how to make use of many of these new modules.</p>
-
-<p>I&rsquo;d like to present a few brief examples here to give you a sense of
+<p>I'd like to present a few brief examples here to give you a sense of
 what working with the new modules is like.</p>
-
 <h3 id="uploading-an-image-to-glance">Uploading an image to Glance</h3>
-
 <p>The <a href="http://docs.ansible.com/ansible/os_image_module.html">os_image</a> module is used to upload an image to Glance.  Assuming
 that you have file named <code>cirros.qcow2</code> available locally, this will
 create an image named <code>cirros</code> in Glance:</p>
-
 <pre><code>- os_image:
     cloud: testing
     name: cirros
@@ -358,13 +314,10 @@ create an image named <code>cirros</code> in Glance:</p>
     container_format: bare
     filename: cirros.qcow2
 </code></pre>
-
 <h3 id="booting-a-nova-server">Booting a Nova server</h3>
-
 <p>The <a href="http://docs.ansible.com/ansible/os_server_module.html">os_server</a> module, which is used for booting virtual servers
 (&ldquo;instances&rdquo;) in Nova, replaces the <a href="http://docs.ansible.com/ansible/nova_compute_module.html">nova_compute</a> module available
 in Ansible versions before 2.0:</p>
-
 <pre><code>- name: create a nova server
   os_server:
     cloud: testing
@@ -376,47 +329,36 @@ in Ansible versions before 2.0:</p>
     flavor: m1.small
     key_name: my_ssh_key
 </code></pre>
-
 <p>The <code>nics</code> parameter can accept net names, net ids, port names, and
 port ids.  So you could also do this (assuming you were attaching your
 server to two different tenant networks):</p>
-
 <pre><code>nics:
   - net-id: c875770c-a20b-45b5-a9da-5aca97153053
   - net-name: private
 </code></pre>
-
 <p>The above examples are using a YAML list of dictionaries to provide
 the information.  You can also pass in a comma-delimited key=value
 string, like this:</p>
-
 <pre><code>nics: net-name=private,net-name=database
 </code></pre>
-
 <p>This syntax is particular useful if you are running ad-hoc commands on
 the command line:</p>
-
 <pre><code>ansible localhost -m os_server -a '
   cloud=testing name=myserver nics=net-name=private
   image=cirros flavor=m1.small key_name=my_ssh_key'
 </code></pre>
-
 <h3 id="adding-a-nova-server-to-your-ansible-inventory">Adding a Nova server to your Ansible inventory</h3>
-
-<p>I&rsquo;d like to conclude this post with a longer example, that
+<p>I'd like to conclude this post with a longer example, that
 demonstrates how you can use the <a href="http://docs.ansible.com/ansible/add_host_module.html">add_host</a> module to add a freshly
 created server to your inventory, and then target that new server in
-your playbook.  I&rsquo;ve split up this playbook with commentary; in
+your playbook.  I've split up this playbook with commentary; in
 practice, the pre-formatted text in this section would all be in a
 single playbook (like <a href="/assets/2015/10/26/playbook.yml">this</a>).</p>
-
 <pre><code>- hosts: localhost
   tasks:                                                                    
 </code></pre>
-
 <p>This first task boots the server. The values for <code>image</code>, <code>nics</code>, and
 `key_name will need to be adjusted for your environment.</p>
-
 <pre><code>    - os_server:
         cloud: testing
         name: myserver
@@ -428,20 +370,16 @@ single playbook (like <a href="/assets/2015/10/26/playbook.yml">this</a>).</p>
         auto_ip: true
       register: myserver
 </code></pre>
-
 <p>This <code>debug</code> entry simply shows us what values were returned in the
 <code>myserver</code> variable.</p>
-
 <pre><code>    - debug:
         var: myserver
 </code></pre>
-
 <p>Now we add the new host to our Ansible inventory.  For this to work,
 you need to have assigned a floating ip to the server (either using
 <code>auto_ip</code>, as in this example, or by assigning one explicitly), and
 you need to be running this playbook somewhere that has a route to the
 floating ip address.</p>
-
 <pre><code>    - add_host:
         name: myserver
         groups: openstack
@@ -449,23 +387,19 @@ floating ip address.</p>
         ansible_user: centos
         ansible_become: true
 </code></pre>
-
-<p>Note that in the above play you can&rsquo;t use information from the
-inventory because that new host won&rsquo;t exist in the inventory until
+<p>Note that in the above play you can't use information from the
+inventory because that new host won't exist in the inventory until
 <em>after</em> this play completes.</p>
-
-<p>We&rsquo;ll need to wait for the server to finish booting and provisioning
+<p>We'll need to wait for the server to finish booting and provisioning
 before we are able to target it with ansible.  A typical cloud image
 is configured to run <a href="https://cloudinit.readthedocs.org/en/latest/">cloud-init</a> when it boots, which will take
 care of a number of initial configuration tasks, including
 provisioning the ssh key we configured using <code>os_server</code>.  Until this
-process is complete, we won&rsquo;t have remote access to the server.</p>
-
-<p>We can&rsquo;t use the <code>wait_for</code> module because that will only
+process is complete, we won't have remote access to the server.</p>
+<p>We can't use the <code>wait_for</code> module because that will only
 check for an open port. Instead, we use a <a href="http://docs.ansible.com/ansible/playbooks_loops.html#do-until-loops">do-until loop</a> to
 wait until we are able to successfully run a command on the server via
 ssh.</p>
-
 <pre><code>    - command: &gt;
         ssh -o BatchMode=yes
         centos@{{myserver.server.public_v4}} true
@@ -474,10 +408,8 @@ ssh.</p>
       retries: 300
       delay: 5
 </code></pre>
-
 <p>Now that we have added the new server to our inventory
 we can target it in subsequent plays (such as this one):</p>
-
 <pre><code>- hosts: myserver
   tasks:
 
@@ -488,6 +420,7 @@ we can target it in subsequent plays (such as this one):</p>
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

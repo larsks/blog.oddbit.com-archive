@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Starting systemd services without blocking &middot; The Odd Bit</title>
-        <meta name="description" content="Recently, I&rsquo;ve been playing around with Fedora Atomic and Kubernetes. I ran into a frustrating problem in which I would attempt to start a service from within a script launched by cloud-init, only to have have systemctl block indefinitely because the service I was attempting to start was dependent on cloud-init finishing first.
+        <meta name="description" content="Recently, I&#39;ve been playing around with Fedora Atomic and Kubernetes. I ran into a frustrating problem in which I would attempt to start a service from within a script launched by cloud-init, only to have have systemctl block indefinitely because the service I was attempting to start was dependent on cloud-init finishing first.
 It turns out that systemctl has a flag meant exactly for this situation:
  --no-block Do not synchronously wait for the requested operation to finish.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ It turns out that systemctl has a flag meant exactly for this situation:
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,27 +117,26 @@ It turns out that systemctl has a flag meant exactly for this situation:
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>Recently, I&rsquo;ve been playing around with <a href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/">Fedora Atomic and
+    
+
+    <p>Recently, I've been playing around with <a href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/">Fedora Atomic and
 Kubernetes</a>.  I ran into a frustrating problem in which I
 would attempt to start a service from within a script launched by
 <a href="http://cloudinit.readthedocs.org/">cloud-init</a>, only to have have <code>systemctl</code> block indefinitely
 because the service I was attempting to start was dependent on
 <code>cloud-init</code> finishing first.</p>
-
 <p>It turns out that <code>systemctl</code> has a flag meant exactly for this
 situation:</p>
-
 <pre><code>   --no-block
        Do not synchronously wait for the requested operation to finish. If
        this is not specified, the job will be verified, enqueued and
        systemctl will wait until it is completed. By passing this
        argument, it is only verified and enqueued.
 </code></pre>
-
-<p>Replacing <code>systemctl start &lt;service&gt;</code> with <code>systemctl start --no-block
-&lt;service&gt;</code> has solved that particular problem.</p>
+<p>Replacing <code>systemctl start &lt;service&gt;</code> with <code>systemctl start --no-block &lt;service&gt;</code> has solved that particular problem.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

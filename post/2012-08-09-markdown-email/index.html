@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Markdown in your Email &middot; The Odd Bit</title>
         <meta name="description" content="I really like Markdown, a minimal markup language designed to be readable as plain text that can be rendered into structurally valid HTML. Markdown is already used on sites such as GitHub and all the StackExchange sites.
-I use Markdown often enough that it&rsquo;s become ingrained in my fingers, to the point that I&rsquo;ve started unconsciously using Markdown syntax in my email. This isn&rsquo;t particularly useful by itself, although it means that I can take a message and render it to something pretty if I decide it needs to go somewhere other than my sent mail folder.">
+I use Markdown often enough that it&#39;s become ingrained in my fingers, to the point that I&#39;ve started unconsciously using Markdown syntax in my email. This isn&#39;t particularly useful by itself, although it means that I can take a message and render it to something pretty if I decide it needs to go somewhere other than my sent mail folder.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ I use Markdown often enough that it&rsquo;s become ingrained in my fingers, to t
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,12 +116,11 @@ I use Markdown often enough that it&rsquo;s become ingrained in my fingers, to t
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>I really like <a href="http://daringfireball.net/projects/markdown/">Markdown</a>, a minimal markup language designed to be readable as plain text that can be rendered into structurally valid HTML. Markdown is already used on sites such as <a href="http://github.com/">GitHub</a> and all the <a href="http://stackexchange.com/sites">StackExchange</a> sites.</p>
-
-<p>I use Markdown often enough that it&rsquo;s become ingrained in my fingers, to the point that I&rsquo;ve started unconsciously using Markdown syntax in my email. This isn&rsquo;t particularly useful by itself, although it means that I can take a message and render it to something pretty if I decide it needs to go somewhere other than my sent mail folder.</p>
-
+<p>I use Markdown often enough that it's become ingrained in my fingers, to the point that I've started unconsciously using Markdown syntax in my email. This isn't particularly useful by itself, although it means that I can take a message and render it to something pretty if I decide it needs to go somewhere other than my sent mail folder.</p>
 <p>I thought it would be fun to implement something that would actually render Markdown syntax in my outbound email and render it into an HTML attachment. I spent a little time last night putting together a <a href="https://github.com/larsks/mutt-utils/blob/master/markdownmail.py">small Python script</a> that does exactly that:</p>
-
 <ul>
 <li>It looks for a leading <code>&lt;!-- markdown --&gt;</code> in a message body.</li>
 <li>It renders the markdown to HTML.</li>
@@ -129,20 +129,14 @@ I use Markdown often enough that it&rsquo;s become ingrained in my fingers, to t
 <li>It attaches the original message as <code>text/plain</code>.</li>
 <li>It attaches any signature that was found in the original message as <code>text/plain</code></li>
 </ul>
-
 <p>I have Mutt configured to pass outbound email through this filter by setting the <code>sendmail</code> variable&hellip;</p>
-
 <pre><code>set sendmail=&quot;~/.mutt/bin/sendmail&quot;  
 </code></pre>
-
 <p>&hellip;to point to a small shell script that passes everything off to <a href="http://www.procmail.org/">procmail</a>:</p>
-
 <pre><code>#!/bin/sh
 exec procmail -m msmtp_args=&quot;$*&quot; $HOME/.procmail/rc.sent
 </code></pre>
-
 <p>And then <code>procmail</code> filters outbound messages before sending them via <code>msmtp</code>:</p>
-
 <pre><code># Render markdown email to HTML
 :0f
 | $HOME/.mutt/bin/markdownmail
@@ -151,10 +145,10 @@ exec procmail -m msmtp_args=&quot;$*&quot; $HOME/.procmail/rc.sent
 :0w
 | msmtp $msmtp_args
 </code></pre>
-
-<p>It&rsquo;s not especially robust but it seems to work so far.</p>
+<p>It's not especially robust but it seems to work so far.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

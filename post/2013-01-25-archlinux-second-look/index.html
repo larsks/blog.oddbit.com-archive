@@ -5,11 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>A second look at Arch Linux &middot; The Odd Bit</title>
         <meta name="description" content="This is a followup to an earlier post about Arch Linux.
-I&rsquo;ve since spent a little more time working with Arch, and these are the things I like:
- The base system is very small and has a very short boot time. I replaced Ubuntu on my old Eee PC with Arch and suddenly the boot time is reasonable (&lt; 10 seconds to a text prompt, &lt; 30 seconds to a full GUI login).">
+I&#39;ve since spent a little more time working with Arch, and these are the things I like:
+  The base system is very small and has a very short boot time. I replaced Ubuntu on my old Eee PC with Arch and suddenly the boot time is reasonable (&lt; 10 seconds to a text prompt, &lt; 30 seconds to a full GUI login).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,43 +117,47 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
         <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
+
     <p>This is a followup to an <a href="/post/a-first-look-at-arch-linux">earlier post about Arch Linux</a>.</p>
-
-<p>I&rsquo;ve since spent a little more time working with Arch, and these are
+<p>I've since spent a little more time working with Arch, and these are
 the things I like:</p>
-
 <ul>
-<li><p>The base system is very small and has a very short boot time.  I
+<li>
+<p>The base system is very small and has a very short boot time.  I
 replaced Ubuntu on my old <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC#Eee_900_series">Eee PC</a> with Arch and suddenly the boot
 time is reasonable (&lt; 10 seconds to a text prompt, &lt; 30 seconds to a
-full GUI login).</p></li>
-
-<li><p>I feel better about the Arch installation process after seeing what
-happened to Anaconda (the Fedora installer) in Fedora 18.</p></li>
-
-<li><p>I have been pleasantly surprised at the speed with which bug reports
-have been addressed.</p></li>
-
-<li><p>I really like the fact that Arch has completely converted over to
+full GUI login).</p>
+</li>
+<li>
+<p>I feel better about the Arch installation process after seeing what
+happened to Anaconda (the Fedora installer) in Fedora 18.</p>
+</li>
+<li>
+<p>I have been pleasantly surprised at the speed with which bug reports
+have been addressed.</p>
+</li>
+<li>
+<p>I really like the fact that Arch has completely converted over to
 <a href="http://www.freedesktop.org/wiki/Software/systemd">systemd</a>.  There are no legacy init scripts, the base system
-relies on the systemd journal for logging, etc.</p></li>
+relies on the systemd journal for logging, etc.</p>
+</li>
 </ul>
-
-<p>I run a KVM-based virtualization environment at home, and I&rsquo;ve
+<p>I run a KVM-based virtualization environment at home, and I've
 switched to Arch on the physical host because of its small footprint
 (and because it tends to have very recent versions of the various
 libvirt-related tools).</p>
-
 <p>Things that still bother me:</p>
-
 <ul>
-<li><p>The <a href="https://aur.archlinux.org/">Arch User Repository</a> is a train wreck.  The fact that
+<li>
+<p>The <a href="https://aur.archlinux.org/">Arch User Repository</a> is a train wreck.  The fact that
 there are no tools in the standard repositories for working with the
 AUR is a good sign that nobody really trusts it, and despite
 language to the contrary there does not appear to be much movement
-from the AUR in to the Community repository.</p></li>
-
-<li><p>Packages in general are not curated with same care as in Fedora.  It
+from the AUR in to the Community repository.</p>
+</li>
+<li>
+<p>Packages in general are not curated with same care as in Fedora.  It
 is much more common in Arch to find packages that either have broken
 dependencies (e.g., they require a shared library that is not
 actually installed) or they have unreasonably broad dependencies
@@ -162,13 +167,14 @@ particular, my experience here highlights the value of (a) the
 automatic dependency mechanisms invoked by <code>rpmbuild</code> (finding
 shared libraries, Python/Perl/Ruby modules required by scripts, etc)
 and (b) the use of a tool such as <code>mock</code> for building packages in a
-&ldquo;pristine&rdquo; environment.</p></li>
-
-<li><p>The average age on <a href="https://wiki.archlinux.org/index.php/IRC_Channel">#archlinux</a> appears to be 13.  I&rsquo;m not sure
-what&rsquo;s up with that (does anyone maintain age demographics for Linux
-distributions?). Do we really need &ldquo;b00bs&rdquo; in the <code>/topic</code>?</p></li>
+&ldquo;pristine&rdquo; environment.</p>
+</li>
+<li>
+<p>The average age on <a href="https://wiki.archlinux.org/index.php/IRC_Channel">#archlinux</a> appears to be 13.  I'm not sure
+what's up with that (does anyone maintain age demographics for Linux
+distributions?). Do we really need &ldquo;b00bs&rdquo; in the <code>/topic</code>?</p>
+</li>
 </ul>
-
 <p>Also, and this is completely unrelated to anything else, I am terribly
 disappointed that the Arch forums are hosted at
 <a href="http://bbs.archlinux.org">http://bbs.archlinux.org</a> but there is no actual BBS
@@ -176,6 +182,7 @@ disappointed that the Arch forums are hosted at
 port 23.  Because that would be cool.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

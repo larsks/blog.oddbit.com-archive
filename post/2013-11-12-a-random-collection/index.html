@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>A random collection of OpenStack Tools &middot; The Odd Bit</title>
-        <meta name="description" content="I&rsquo;ve been working with OpenStack a lot recently, and I&rsquo;ve ended up with a small collection of utilities that make my life easier. On the odd chance that they&rsquo;ll make your life easier, too, I thought I&rsquo;d hilight them here.
+        <meta name="description" content="I&#39;ve been working with OpenStack a lot recently, and I&#39;ve ended up with a small collection of utilities that make my life easier. On the odd chance that they&#39;ll make your life easier, too, I thought I&#39;d hilight them here.
 Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Instead of a sequence of keystone command, you can provision new tenants, users, and roles with a single comand.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Inst
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,45 +118,30 @@ Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Inst
 
     
 
-<p>I&rsquo;ve been working with <a href="http://openstack.org/">OpenStack</a> a lot recently, and I&rsquo;ve ended up with a small collection of utilities that make my life easier.  On the odd chance that they&rsquo;ll make your life easier, too, I thought I&rsquo;d hilight them here.</p>
-
-<!-- more -->
-
+    <p>I've been working with <a href="http://openstack.org/">OpenStack</a> a lot recently, and I've ended up with a small collection of utilities that make my life easier.  On the odd chance that they'll make your life easier, too, I thought I'd hilight them here.</p>
+<!-- raw HTML omitted -->
 <h2 id="crux">Crux</h2>
-
 <p><a href="http://github.com/larsks/crux">Crux</a> is a tool for provisioning tenants, users, and roles in keystone.  Instead of a sequence of keystone command, you can provision new tenants, users, and roles with a single comand.</p>
-
 <p>For example, to create user <code>demo</code> in the <code>demo</code> tenant with password secret:</p>
-
 <pre><code># crux --user demo:demo::secret
 2013-10-21 crux WARNING creating tenant demo
 2013-10-21 crux WARNING creating user demo with password secret
 </code></pre>
-
 <p>Crux is in general idempotent; if we were to run the same command a second time we woudl see:</p>
-
 <pre><code># crux --user demo:demo::secret
 2013-10-21 crux WARNING set password for user demo to secret
 </code></pre>
-
 <p>Crux can also take input from a configuration file, so you can quickly set up a complex set of tenants and users.</p>
-
 <h2 id="sqlcli">Sqlcli</h2>
-
 <p><a href="http://github.com/larsks/sqlcli">Sqlcli</a> uses <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> to run SQL queries against a variety of backends specified by SQL connection URLs.  I wrote this to perform queries and simple maintenance against the various databases used by OpenStack.  For example, you can get a list of networks from the Neutron database with a command like this:</p>
-
 <pre><code># sqlcli -f /etc/neutron/plugin.ini -i DATABASE/sql_connection \
   'select name,cidr from subnets'
 </code></pre>
-
 <p>And get output like this:</p>
-
 <pre><code>public,172.24.4.224/28
 net0-subnet0,10.0.0.0/24
 </code></pre>
-
 <p>You can add the <code>--pretty</code> flag and get output like this:</p>
-
 <pre><code>+--------------+-----------------+
 |     name     |       cidr      |
 +--------------+-----------------+
@@ -163,23 +149,16 @@ net0-subnet0,10.0.0.0/24
 | net0-subnet0 |   10.0.0.0/24   |
 +--------------+-----------------+
 </code></pre>
-
 <h2 id="openstack-service">openstack-service</h2>
-
 <p>The <a href="http://github.com/larsks/osctl">openstack-service</a> command is a convenience tool for managing OpenStack services.  It lets you start/stop or query the status of groups of related services.  For example, if you want to see the status of all your Cinder services, you can run:</p>
-
 <pre><code># openstack-service status cinder
 </code></pre>
-
 <p>And get:</p>
-
 <pre><code>openstack-cinder-api (pid  11644) is running...
 openstack-cinder-scheduler (pid  11790) is running...
 openstack-cinder-volume (pid  11712) is running...
 </code></pre>
-
 <p>You can stop all Cinder and Glance services like this:</p>
-
 <pre><code># openstack-service stop cinder glance
 Stopping openstack-cinder-api: [  OK  ]
 Stopping openstack-cinder-scheduler: [  OK  ]
@@ -187,9 +166,7 @@ Stopping openstack-cinder-volume: [  OK  ]
 Stopping openstack-glance-api: [  OK  ]
 Stopping openstack-glance-registry: [  OK  ]
 </code></pre>
-
 <p>And start them back up again the same way:</p>
-
 <pre><code># openstack-service start cinder glance
 Starting openstack-cinder-api: [  OK  ]
 Starting openstack-cinder-scheduler: [  OK  ]
@@ -197,10 +174,10 @@ Starting openstack-cinder-volume: [  OK  ]
 Starting openstack-glance-api: [  OK  ]
 Starting openstack-glance-registry: [  OK  ]
 </code></pre>
-
 <p>Without any additional arguments <code>openstack-service stop</code> will stop all OpenStack services on the current host.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

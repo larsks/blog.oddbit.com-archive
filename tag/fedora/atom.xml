@@ -32,7 +32,7 @@ CFLAGS=-I/usr/include pip install pyspatialite  At this point, you should be abl
     <id>https://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</id>
     <published>2015-10-15T00:00:00Z</published>
     <updated>2015-10-15T00:00:00Z</updated>
-    <summary type="html">If you&amp;rsquo;ve tried running Ansible against a Fedora 23 system, you may have run into the following problem:
+    <summary type="html">If you&#39;ve tried running Ansible against a Fedora 23 system, you may have run into the following problem:
 fatal: [myserver]: FAILED! =&amp;gt; {&amp;quot;changed&amp;quot;: false, &amp;quot;failed&amp;quot;: true, &amp;quot;msg&amp;quot;: &amp;quot;/bin/sh: /usr/bin/python: No such file or directory\r\n&amp;quot;, &amp;quot;parsed&amp;quot;: false}  Fedora has recently made the switch to only including Python 3 on the base system (at least for the cloud variant), while Ansible still requires Python 2. With Fedora 23, Python 3 is available as /usr/bin/python3, and /usr/bin/python is only available if you have installed the Python 2 interpreter.</summary>
   </entry>
   
@@ -71,7 +71,7 @@ Like many other cloud-targeted distributions, Fedora Atomic runs cloud-init when
     <id>https://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</id>
     <published>2014-05-20T00:00:00Z</published>
     <updated>2014-05-20T00:00:00Z</updated>
-    <summary type="html">I run OpenStack on my laptop, and I&amp;rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
+    <summary type="html">I run OpenStack on my laptop, and I&#39;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
 This is the network configuration file for br-ex on my system:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</summary>
   </entry>

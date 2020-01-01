@@ -6,8 +6,20 @@
   
   <link href="https://blog.oddbit.com/tag/openvswitch/" rel="alternate"></link>
 
-  <updated>2016-05-19T00:00:00Z</updated>
+  <updated>2019-12-19T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/openvswitch/</id>
+  
+  <entry>
+    <title>OVN and DHCP: A minimal example</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-12-19-ovn-and-dhcp/"/>
+    <id>https://blog.oddbit.com/post/2019-12-19-ovn-and-dhcp/</id>
+    <published>2019-12-19T00:00:00Z</published>
+    <updated>2019-12-19T00:00:00Z</updated>
+    <summary type="html">Introduction A long time ago, I wrote an article all about OpenStack Neutron (which at that time was called Quantum). That served as an excellent reference for a number of years, but if you&#39;ve deployed a recent version of OpenStack you may have noticed that the network architecture looks completely different. The network namespaces previously used to implement routers and dhcp servers are gone (along with iptables rules and other features), and have been replaced by OVN (&amp;ldquo;Open Virtual Network&amp;rdquo;).</summary>
+  </entry>
   
   <entry>
     <title>Connecting another vm to your tripleo-quickstart deployment</title>
@@ -18,8 +30,8 @@
     <id>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</id>
     <published>2016-05-19T00:00:00Z</published>
     <updated>2016-05-19T00:00:00Z</updated>
-    <summary type="html">Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
-For a concrete example, let&amp;rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:</summary>
+    <summary type="html">Let&#39;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
+For a concrete example, let&#39;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:</summary>
   </entry>
   
   <entry>
@@ -44,8 +56,8 @@ The players This document describes the architecture that results from a particu
     <id>https://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</id>
     <published>2014-08-11T00:00:00Z</published>
     <updated>2014-08-11T00:00:00Z</updated>
-    <summary type="html">Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&amp;rsquo;ve written an article about working with the macvlan driver.
-This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.</summary>
+    <summary type="html">Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&#39;ve written an article about working with the macvlan driver.
+ This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.</summary>
   </entry>
   
   <entry>
@@ -57,8 +69,7 @@ This article discusses four ways to make a Docker container appear on a local ne
     <id>https://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</id>
     <published>2014-05-27T00:00:00Z</published>
     <updated>2014-05-27T00:00:00Z</updated>
-    <summary type="html">I&amp;rsquo;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
- </summary>
+    <summary type="html">I&#39;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:</summary>
   </entry>
   
   <entry>
@@ -70,7 +81,7 @@ This article discusses four ways to make a Docker container appear on a local ne
     <id>https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/</id>
     <published>2014-05-23T00:00:00Z</published>
     <updated>2014-05-23T00:00:00Z</updated>
-    <summary type="html">Normally I like to post solutions, but today&amp;rsquo;s post is about a vexing problem to which I have not been able to find a solution.
+    <summary type="html">Normally I like to post solutions, but today&#39;s post is about a vexing problem to which I have not been able to find a solution.
 This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.</summary>
   </entry>
   
@@ -83,9 +94,9 @@ This started as a simple attempt to set up external connectivity on an all-in-on
     <id>https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</id>
     <published>2014-05-23T00:00:00Z</published>
     <updated>2014-05-23T00:00:00Z</updated>
-    <summary type="html">In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &amp;ldquo;don&amp;rsquo;t use ip link set ...&amp;rdquo; for this purpose.
+    <summary type="html">In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &amp;ldquo;don&#39;t use ip link set ...&amp;rdquo; for this purpose.
 You can set the bridge MAC address via ovs-vsctl like this:
-ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&amp;rsquo;ve updated my ifconfig-br-ex to look like this:
+ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&#39;ve updated my ifconfig-br-ex to look like this:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPINTERFACES=eth0 MACADDR=fa:16:3e:ef:91:ec OVS_EXTRA=&amp;quot;set bridge br-ex other-config:hwaddr=$MACADDR&amp;quot;  The OVS_EXTRA parameter gets passed to the add-br call like this:</summary>
   </entry>
   
@@ -98,7 +109,7 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
     <id>https://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</id>
     <published>2014-05-20T00:00:00Z</published>
     <updated>2014-05-20T00:00:00Z</updated>
-    <summary type="html">I run OpenStack on my laptop, and I&amp;rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
+    <summary type="html">I run OpenStack on my laptop, and I&#39;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
 This is the network configuration file for br-ex on my system:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</summary>
   </entry>

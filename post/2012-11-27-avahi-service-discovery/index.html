@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Service discovery in the cloud using Avahi &middot; The Odd Bit</title>
-        <meta name="description" content="I&rsquo;m been writing a provisioning tool for OpenStack recently, and I&rsquo;ve put together a demo configuration that installs a simple cluster consisting of three backend nodes and a front-end http proxy. I needed a way for the backend servers to discover the ip address of the frontend server. Since in my target environment everything would be on the same layer-2 network segment, service discovery with multicast DNS (mDNS) seemed like the way to go.">
+        <meta name="description" content="I&#39;m been writing a provisioning tool for OpenStack recently, and I&#39;ve put together a demo configuration that installs a simple cluster consisting of three backend nodes and a front-end http proxy. I needed a way for the backend servers to discover the ip address of the frontend server. Since in my target environment everything would be on the same layer-2 network segment, service discovery with multicast DNS (mDNS) seemed like the way to go.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -114,62 +115,52 @@
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>I&rsquo;m been writing <a href="http://github.com/larsks/drifter">a provisioning tool</a> for OpenStack
-recently, and I&rsquo;ve put together a demo configuration that installs a
+    
+
+    <p>I'm been writing <a href="http://github.com/larsks/drifter">a provisioning tool</a> for OpenStack
+recently, and I've put together a demo configuration that installs a
 simple cluster consisting of three backend nodes and a front-end http
 proxy.  I needed a way for the backend servers to discover the ip
 address of the frontend server.  Since in my target environment
 everything would be on the same layer-2 network segment, service
 discovery with multicast DNS (mDNS) seemed like the way to go.</p>
-
 <p><a href="http://avahi.org/">Avahi</a> is the canonical mDNS implementation for Linux, and it comes
 with command-line tools for interacting with the Avahi server.  There
 is also a DBUS interface and appropriate Python bindings for taking
 advantage of it.</p>
-
 <p>It is relatively simple to publish a service with Avahi; you can
-simply drop an XML file into <code>/etc/avahi/services</code> and you&rsquo;re done.
+simply drop an XML file into <code>/etc/avahi/services</code> and you're done.
 Discovering services on the client is a little bit more complicated.
 Doing it right would involve a chunk of code that interacts with DBUS
 in an event-driven environment with lots of callbacks.  It seemed like
 a big hammer for my little problem, so I ended up parsing the output
 of <code>avahi-browse</code> instead.  This turns out to be a little tricker than
 you might think, since:</p>
-
 <ul>
 <li>The master node might come up <em>after</em> the backend nodes, so we need
 to wait for it to publish the service registration.</li>
 <li>The registration process on the backends might run before the local
 <code>avahi-daemon</code> has started.</li>
 </ul>
-
 <p>The <code>-p</code> flag to <code>avahi-browse</code> produces parsable output, like this:</p>
-
 <pre><code>$ avahi-browse -p _http._tcp
 +;eth0;IPv4;master-cluster-lars;Web Site;local
 </code></pre>
-
 <p>The <code>-r</code> flag performs name-&gt;address resolution:</p>
-
 <pre><code>$ avahi-browse -rp _http._tcp
 +;eth0;IPv4;master-cluster-lars;Web Site;local
 =;eth0;IPv4;master-cluster-lars;Web Site;local;master.local;172.16.10.56;80;
 </code></pre>
-
 <p>The <code>-t</code> flag asks <code>avahi-browse</code> to terminate after receiving &ldquo;all&rdquo;
 entries, and <code>-f</code> causes <code>avahi-browse</code> to retry a connection to
 <code>avahi-daemon</code> rather than failing if the daemon is not available. Pu
 tall together, we get:</p>
-
 <pre><code>$ avahi-browse -rptf _http._tcp
 </code></pre>
-
 <p>We can use <code>awk</code> to get the information we need, and <code>timeout</code> from
 GNU coreutils to take care of the situation I encountered in which
 <code>avahi-browse</code> would never exit.</p>
-
 <p>The final solution look something like this:</p>
-
 <pre><code>master_name=&quot;master-cluster-lars&quot;
 
 while ! [ &quot;$master_ip&quot; ] ; do
@@ -179,19 +170,17 @@ while ! [ &quot;$master_ip&quot; ] ; do
     ')
 done
 </code></pre>
-
 <p>The value of <code>$master_ip</code> is then used to <code>POST</code> a notification to the
 master server with <code>curl</code>:</p>
-
 <pre><code>curl --silent -X POST \
          &quot;http://$master_ip/proxy/backend/$(facter macaddress)&quot;
 </code></pre>
-
 <p>The master service is running <a href="http://github.com/larsks/dynproxy-http">dynproxy</a>, which is responsible for
 maintaining a list of backend servers that can be queried by other
 tools (such as Apache).</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

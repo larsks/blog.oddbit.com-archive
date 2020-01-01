@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on The Odd Bit</title>
@@ -6,10 +6,46 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>networking</title>
+      <link>https://blog.oddbit.com/tag/networking/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openstack</title>
+      <link>https://blog.oddbit.com/tag/openstack/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/openstack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openvswitch</title>
+      <link>https://blog.oddbit.com/tag/openvswitch/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/openvswitch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ovn</title>
+      <link>https://blog.oddbit.com/tag/ovn/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/ovn/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hamradio</title>
@@ -71,15 +107,6 @@
       <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/keystone/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>openstack</title>
-      <link>https://blog.oddbit.com/tag/openstack/</link>
-      <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/openstack/</guid>
       <description></description>
     </item>
     
@@ -318,15 +345,6 @@
     </item>
     
     <item>
-      <title>networking</title>
-      <link>https://blog.oddbit.com/tag/networking/</link>
-      <pubDate>Thu, 14 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/networking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>adafruit</title>
       <link>https://blog.oddbit.com/tag/adafruit/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
@@ -530,15 +548,6 @@
       <pubDate>Thu, 11 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/yaql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>openvswitch</title>
-      <link>https://blog.oddbit.com/tag/openvswitch/</link>
-      <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/openvswitch/</guid>
       <description></description>
     </item>
     
@@ -858,20 +867,20 @@
     </item>
     
     <item>
-      <title>NetworkManager</title>
-      <link>https://blog.oddbit.com/tag/networkmanager/</link>
-      <pubDate>Tue, 20 May 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/networkmanager/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>firewalld</title>
       <link>https://blog.oddbit.com/tag/firewalld/</link>
       <pubDate>Tue, 20 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/firewalld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NetworkManager</title>
+      <link>https://blog.oddbit.com/tag/networkmanager/</link>
+      <pubDate>Tue, 20 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/networkmanager/</guid>
       <description></description>
     </item>
     

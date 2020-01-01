@@ -9,7 +9,7 @@ $ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something
  https://raw.github.com/larsks/virt-utils/master/virt-hosts  Run by itself, with no options, virt-hosts will scan through your running domains for interfaces on the libvirt default network, look up those MAC addresses up in the corresponding default.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ $ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -118,65 +119,51 @@ $ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something
 
     
 
-<p>Have you ever wished that you could use <code>libvirt</code> domain names as
+    <p>Have you ever wished that you could use <code>libvirt</code> domain names as
 hostnames?  So that you could do something like this:</p>
-
 <pre><code>$ virt-install -n anewhost ...
 $ ssh clouduser@anewhost
 </code></pre>
-
 <p>Since this is something that would certainly make my life convenient,
 I put together a small script called <a href="https://raw.github.com/larsks/virt-utils/master/virt-hosts">virt-hosts</a> that makes this
 possible.  You can find <a href="https://raw.github.com/larsks/virt-utils/master/virt-hosts">virt-hosts</a> in my <a href="https://raw.github.com/larsks/virt-utils/">virt-utils</a> GitHub
 repository:</p>
-
 <ul>
 <li><a href="https://raw.github.com/larsks/virt-utils/master/virt-hosts">https://raw.github.com/larsks/virt-utils/master/virt-hosts</a></li>
 </ul>
-
 <p>Run by itself, with no options, <code>virt-hosts</code> will scan through your
 running domains for interfaces on the libvirt <code>default</code> network, look
 up those MAC addresses up in the corresponding <code>default.leases</code> file,
 and then generate a hosts file on <code>stdout</code> like this:</p>
-
 <pre><code>$ virt-hosts
-192.168.122.221 compute-tmp0-net0.default.virt compute-tmp0.default.virt
-192.168.122.101 centos-0-net0.default.virt centos-0.default.virt
-192.168.122.214 controller-tmp-net0.default.virt controller-tmp.default.virt
+192.168.122.221	compute-tmp0-net0.default.virt compute-tmp0.default.virt
+192.168.122.101	centos-0-net0.default.virt centos-0.default.virt
+192.168.122.214	controller-tmp-net0.default.virt controller-tmp.default.virt
 </code></pre>
-
 <p>Each address will be assigned the name
 <code>&lt;domain_name&gt;-&lt;interface_name&gt;.&lt;network_name&gt;.virt</code>.  The first
 interface on the network will also be given the alias
 <code>&lt;domain_name&gt;.&lt;network_name&gt;.virt</code>, so a host with multiple
 interfaces on the same network would look like this:</p>
-
 <pre><code>$ virt-hosts
-192.168.122.221 host0-net0.default.virt host0.default.virt
-192.168.122.110 host0-net1.default.virt
+192.168.122.221	host0-net0.default.virt host0.default.virt
+192.168.122.110	host0-net1.default.virt
 </code></pre>
-
 <p>Of course, this is only half the solution: having generated a hosts
 file we need to put it somewhere where your system can find it.</p>
-
 <h2 id="an-aside-incron">An aside: incron</h2>
-
 <p>Both of the following solutions rely on <a href="http://inotify.aiken.cz/?section=incron&amp;page=about&amp;lang=en">incron</a>, a tool that uses
 the Linux <a href="http://en.wikipedia.org/wiki/Inotify">inotify</a> subsystem to trigger scripts in reaction to
-events on file and directories.  In this case, we&rsquo;ll be using <code>incron</code>
+events on file and directories.  In this case, we'll be using <code>incron</code>
 to monitor the dnsmasq <code>default.leases</code> file and firing off a script
 when it changes.</p>
-
 <p>You could accomplish the same thing using the <code>inotifywait</code> program
 from the <a href="https://github.com/rvoicilas/inotify-tools/wiki">inotify-tools</a> package and a small wrapper script, or you
 could hook up something to the libvirt events framework.</p>
-
-<h2 id="using-etc-hosts">Using /etc/hosts</h2>
-
+<h2 id="using-etchosts">Using /etc/hosts</h2>
 <p>If you want to update your <code>/etc/hosts</code> file, you can place the
 following into a script called <code>update-virt-hosts</code> (somewhere in
-root&rsquo;s <code>PATH</code>) and run that via <a href="http://inotify.aiken.cz/?section=incron&amp;page=about&amp;lang=en">incron</a>:</p>
-
+root's <code>PATH</code>) and run that via <a href="http://inotify.aiken.cz/?section=incron&amp;page=about&amp;lang=en">incron</a>:</p>
 <pre><code>#!/bin/sh
 
 sed -i '/^# BEGIN VIRT HOSTS/,/^# END VIRT HOSTS/ d' /etc/hosts
@@ -186,32 +173,23 @@ $(virt-hosts)
 # END VIRT HOSTS
 EOF
 </code></pre>
-
 <p>Make sure you have <code>incron</code> installed, and add the following to
 <code>/etc/incron.d/virt-hosts</code>:</p>
-
 <pre><code>/var/lib/libvirt/dnsmasq/default.leases IN_MODIFY update-virt-hosts
 </code></pre>
-
 <p>This will cause <code>incron</code> to run your <code>update-virt-hosts</code> script
 whenever it sees an <code>IN_MODIFY</code> event on the <code>default.leases</code> file.</p>
-
-<h2 id="using-networkmanager-dnsmasq">Using NetworkManager + dnsmasq</h2>
-
+<h2 id="using-networkmanager--dnsmasq">Using NetworkManager + dnsmasq</h2>
 <p>I am running NetworkManager with the <code>dnsmasq</code> dns plugin. I created
 the file <code>/etc/NetworkManager/dnsmasq.d/virthosts</code> containing:</p>
-
 <pre><code>addn-hosts=/var/lib/libvirt/dnsmasq/default.addnhosts
 </code></pre>
-
 <p>This will cause the <code>dnsmasq</code> process started by <code>NetworkManager</code> to
 use that file as an additional hosts file.  I then installed the
 <code>incron</code> package and dropped the following in
 <code>/etc/incron.d/virt-hosts</code>:</p>
-
 <pre><code>/var/lib/libvirt/dnsmasq/default.leases IN_MODIFY /usr/local/bin/virt-hosts -ur
 </code></pre>
-
 <p>This has <code>incron</code> listen for changes to the <code>default.leases</code> file, and
 whenever it receives the <code>IN_MODIFY</code> event it runs <code>virt-hosts</code> with
 the <code>-u</code> (aka <code>--update</code>) and <code>-r</code> (aka <code>--reload-dnsmasq</code>) flags.
@@ -221,6 +199,7 @@ the latter does a <code>killall -HUP dnsmasq</code> after installing the new
 hosts file.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

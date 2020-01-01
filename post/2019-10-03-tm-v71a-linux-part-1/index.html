@@ -7,7 +7,7 @@
         <meta name="description" content="I recently acquired my Technician amateur radio license, and like many folks my first radio purchase was a Baofeng UV-5R. Due to its low cost, this is a very popular radio, and there is excellent open source software available for programming it in the form of the CHIRP project. After futzing around with the UV-5R for a while, I wanted to get something a little nicer for use at home, so I purchased a Kenwood TM-V71A.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,45 +117,32 @@
 
     
 
-<p>I recently acquired my Technician amateur radio license, and like many folks my first radio purchase was a <a href="https://baofengtech.com/uv-5r?PageSpeed=noscript">Baofeng UV-5R</a>. Due to its low cost, this is a very popular radio, and there is excellent open source software available for programming it in the form of the <a href="https://chirp.danplanet.com/projects/chirp/wiki/Home">CHIRP</a> project. After futzing around with the UV-5R for a while, I wanted to get something a little nicer for use at home, so I purchased a <a href="https://www.kenwood.com/usa/com/amateur/tm-v71a/">Kenwood TM-V71A</a>. CHIRP claims to have support for this radio as well, but it turns out it&rsquo;s not very good: it uses a &ldquo;live&rdquo; connection so every time you edit a channel it tries to update the radio. This result in a slow and flaky UI, especially when trying to make bulk changes (like relocating a block of channels). I ended up using Kenwood&rsquo;s official <a href="https://www.kenwood.com/i/products/info/amateur/mcp_2a.html">MCP-2A</a> software running on a Windows guest on my system, which works but isn&rsquo;t ideal. I decided to learn more about how the radio interacts with the computer to see if I could improve the situation.</p>
-
-<hr />
-
+    <p>I recently acquired my Technician amateur radio license, and like many folks my first radio purchase was a <a href="https://baofengtech.com/uv-5r?PageSpeed=noscript">Baofeng UV-5R</a>. Due to its low cost, this is a very popular radio, and there is excellent open source software available for programming it in the form of the <a href="https://chirp.danplanet.com/projects/chirp/wiki/Home">CHIRP</a> project. After futzing around with the UV-5R for a while, I wanted to get something a little nicer for use at home, so I purchased a <a href="https://www.kenwood.com/usa/com/amateur/tm-v71a/">Kenwood TM-V71A</a>. CHIRP claims to have support for this radio as well, but it turns out it's not very good: it uses a &ldquo;live&rdquo; connection so every time you edit a channel it tries to update the radio. This result in a slow and flaky UI, especially when trying to make bulk changes (like relocating a block of channels). I ended up using Kenwood's official <a href="https://www.kenwood.com/i/products/info/amateur/mcp_2a.html">MCP-2A</a> software running on a Windows guest on my system, which works but isn't ideal. I decided to learn more about how the radio interacts with the computer to see if I could improve the situation.</p>
+<hr>
 <h2 id="existing-solutions">Existing solutions</h2>
-
 <p>The <a href="https://hamlib.github.io/">Hamlib</a> project has an <a href="https://github.com/Hamlib/Hamlib/blob/master/kenwood/tmd710.c">existing TM-D710 driver</a> that also support the TM-V71. Using either the <code>rigctl</code> command line tool or using the Hamlib API, it is possible to&hellip;</p>
-
 <ul>
 <li>Control PTT on the radio</li>
 <li>Tune to a specific frequency</li>
 <li>Tune to a specific memory channel</li>
 <li>Change the current modulation (AM/FM/NFM)</li>
 </ul>
-
-<p>&hellip;and perform a few other actions. However, neither the command line tool nor the API appear to provide facilities for importing/exporting channels, editing channels, performing a memory backup and restore, and so forth.  Additionaly, I do most of development these days in Python. While there exists a Python binding for Hamlib, it&rsquo;s not terrible intuitive.</p>
-
+<p>&hellip;and perform a few other actions. However, neither the command line tool nor the API appear to provide facilities for importing/exporting channels, editing channels, performing a memory backup and restore, and so forth.  Additionaly, I do most of development these days in Python. While there exists a Python binding for Hamlib, it's not terrible intuitive.</p>
 <h2 id="programming-mode">Programming mode</h2>
-
-<p>The way the MCP-2A program interacts with the TM-V71 is via a memory dump and restore process (which is much like how CHIRP interacts with Baofeng radios). This makes use of the radio&rsquo;s &ldquo;programming mode&rdquo;, and support for that in Hamlib doesn&rsquo;t exist.  In fact, while the control commands for the radio have been documented in various places (such as LA3QMA&rsquo;s <a href="https://github.com/LA3QMA/TM-V71_TM-D710-Kenwood/blob/master/commands/MR.md">TM-V71_TM-D710-Kenwood repository</a>), I was not able to find any documentation that described how to interact with the radio in programming mode.  In order to figure out how things work, I would need to trace the interaction between MCP-2A and the radio.</p>
-
+<p>The way the MCP-2A program interacts with the TM-V71 is via a memory dump and restore process (which is much like how CHIRP interacts with Baofeng radios). This makes use of the radio's &ldquo;programming mode&rdquo;, and support for that in Hamlib doesn't exist.  In fact, while the control commands for the radio have been documented in various places (such as LA3QMA's <a href="https://github.com/LA3QMA/TM-V71_TM-D710-Kenwood/blob/master/commands/MR.md">TM-V71_TM-D710-Kenwood repository</a>), I was not able to find any documentation that described how to interact with the radio in programming mode.  In order to figure out how things work, I would need to trace the interaction between MCP-2A and the radio.</p>
 <p>I run MCP-2A in a Windows 10 guest on my Linux host. Normally, when configuring the radio, I expose the USB serial adapter to the Windows guest using the USB redirection feature offered by libvirt.  In order to trace the interaction between the software and the radio, I need to stick something in between that will log the data being sent back and forth.</p>
-
 <p>I started by configuring a serial port on the Windows guest that was connected to a Unix socket:</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;serial</span> <span class="na">type=</span><span class="s">&#39;unix&#39;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;source</span> <span class="na">mode=</span><span class="s">&#39;bind&#39;</span> <span class="na">path=</span><span class="s">&#39;/tmp/win10-serial&#39;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;target</span> <span class="na">type=</span><span class="s">&#39;isa-serial&#39;</span> <span class="na">port=</span><span class="s">&#39;1&#39;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;model</span> <span class="na">name=</span><span class="s">&#39;isa-serial&#39;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;/target&gt;</span>
-<span class="nt">&lt;/serial&gt;</span></code></pre></div>
-<p>This exposes a Unix socket at <code>/tmp/win10-serial</code> when the guest is running. On the host, I use <a href="http://www.dest-unreach.org/socat/">socat</a> as a proxy between that socket and the actual serial port. I ended up running <code>socat</code> like this:</p>
-
+<span class="nt">&lt;/serial&gt;</span>
+</code></pre></div><p>This exposes a Unix socket at <code>/tmp/win10-serial</code> when the guest is running. On the host, I use <a href="http://www.dest-unreach.org/socat/">socat</a> as a proxy between that socket and the actual serial port. I ended up running <code>socat</code> like this:</p>
 <pre><code>socat -x -v \
         /dev/ttyUSB1,b57600,crtscts=1,raw,echo=0 \
         unix-connect:/tmp/win10-serial
-</code></pre>
-
-<p>The <code>-x</code> and <code>-v</code> options instruct <code>socat</code> to log on stdout data passing through the proxy, in both raw and hexadecimal format. With the proxy running, I started MCP-2A on the Windows guest and performed a &ldquo;Read data from the transceiver&rdquo; operation.  This resulted in a log that looks like the following:</p>
-
+</code></pre><p>The <code>-x</code> and <code>-v</code> options instruct <code>socat</code> to log on stdout data passing through the proxy, in both raw and hexadecimal format. With the proxy running, I started MCP-2A on the Windows guest and performed a &ldquo;Read data from the transceiver&rdquo; operation.  This resulted in a log that looks like the following:</p>
 <pre><code>&lt; 2019/09/28 14:42:32.732010  length=1 from=0 to=0
  49                                               I
 --
@@ -167,10 +155,7 @@
 &gt; 2019/09/28 14:42:33.069589  length=10 from=0 to=9
  49 44 20 54 4d 2d 56 37 31 0d                    ID TM-V71.
 [...]
-</code></pre>
-
-<p>In this output, chunks marked with <code>&lt;</code> represent data sent FROM the software TO the radio, and chunks marked with <code>&gt;</code> represent data sent FROM the radio TO the software.  The information we need is there, but the output is a little too cluttered, making it hard to interpret. I wrote a quick script to clean it up; after processing, the beginning of the transaction look like this (where <code>&lt;&lt;&lt;</code> represents date being sent to the radio, and <code>&gt;&gt;&gt;</code> represents data received from the radio):</p>
-
+</code></pre><p>In this output, chunks marked with <code>&lt;</code> represent data sent FROM the software TO the radio, and chunks marked with <code>&gt;</code> represent data sent FROM the radio TO the software.  The information we need is there, but the output is a little too cluttered, making it hard to interpret. I wrote a quick script to clean it up; after processing, the beginning of the transaction look like this (where <code>&lt;&lt;&lt;</code> represents date being sent to the radio, and <code>&gt;&gt;&gt;</code> represents data received from the radio):</p>
 <pre><code>&lt;&lt;&lt; 00000000: 49                                                I
 &lt;&lt;&lt; 00000000: 44                                                D
 &lt;&lt;&lt; 00000000: 0D                                                .
@@ -213,10 +198,7 @@
 &lt;&lt;&lt; 00000000: 00 00                                             ..
 &gt;&gt;&gt; 00000000: 57 01 00 00 FF FF FF FF  FF FF FF FF FF FF FF FF  W...............
 [...]
-</code></pre>
-
-<p>And the end of the transaction looks like this:</p>
-
+</code></pre><p>And the end of the transaction looks like this:</p>
 <pre><code>[...]
 &lt;&lt;&lt; 00000000: 52 7E 00                                          R~.
 &lt;&lt;&lt; 00000000: 00                                                .
@@ -242,50 +224,34 @@
 &lt;&lt;&lt; 00000000: 45                                                E
 &gt;&gt;&gt; 00000000: 06 0D                                             ..
 &gt;&gt;&gt; 00000000: 00                                                .
-</code></pre>
-
-<p>This is a lot easier to read. We can see the software initially sends some commands to identify the radio:</p>
-
+</code></pre><p>This is a lot easier to read. We can see the software initially sends some commands to identify the radio:</p>
 <ul>
 <li><code>ID</code> to get the radio model</li>
 <li><code>TY</code> to get the radio type</li>
 <li><code>FV 0</code> to get the firmware version</li>
 </ul>
-
 <p>And then enters programming mode by sending <code>0M PROGRAM</code>. Inspecting the remainder of the dump  shows us that the software makes a series of read requests that look like:</p>
-
 <pre><code>&lt;&lt;&lt; 00000000: 52 00                                             R.
 &lt;&lt;&lt; 00000000: 00 00                                             ..
-</code></pre>
-
-<p>That is, a four byte request of the form:</p>
-
+</code></pre><p>That is, a four byte request of the form:</p>
 <ol>
 <li><code>R</code></li>
 <li>Address (2 bytes)</li>
 <li>Size</li>
 </ol>
-
 <p>When a read request has a size of <code>0</code>, that means <code>read 256 bytes</code>.</p>
-
 <p>The response to a read request looks like:</p>
-
 <pre><code>&gt;&gt;&gt; 00000000: 57 00 00 00 00 4B 01 FF  FF FF FF FF FF FF FF FF  W....K..........
 &gt;&gt;&gt; 00000000: FF 00 FF FF 00 00 39 31  35 01 00 00 00 00 01 01  ......915.......
 &gt;&gt;&gt; ...
-</code></pre>
-
-<p>That is:</p>
-
+</code></pre><p>That is:</p>
 <ol>
 <li><code>W</code></li>
 <li>Address (2 bytes)</li>
 <li>Size</li>
 <li><code>&lt;Size&gt;</code> bytes of data</li>
 </ol>
-
 <p>It turns out that the response to the read request is exactly the syntax used to perform a write request. The log of the write operation starts like this:</p>
-
 <pre><code>&lt;&lt;&lt; 00000000: 54 43 20                                          TC 
 &lt;&lt;&lt; 00000000: 31 0D                                             1.
 &gt;&gt;&gt; 00000000: 3F 0D                                             ?.
@@ -329,10 +295,7 @@
 &lt;&lt;&lt; 00000040: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF     ...............
 &gt;&gt;&gt; 00000000: 06                                                .
 [...]
-</code></pre>
-
-<p>And concludes with:</p>
-
+</code></pre><p>And concludes with:</p>
 <pre><code>[...]
 &lt;&lt;&lt; 00000000: 57 00                                             W.
 &lt;&lt;&lt; 00000000: 00 04 00 4B 01 FF                                 ...K..
@@ -340,35 +303,23 @@
 &lt;&lt;&lt; 00000000: 45                                                E
 &gt;&gt;&gt; 00000000: 06 0D                                             ..
 &gt;&gt;&gt; 00000000: 00                                                .
-</code></pre>
-
-<p>In this log, we see a series of write requests; for example:</p>
-
+</code></pre><p>In this log, we see a series of write requests; for example:</p>
 <pre><code>&lt;&lt;&lt; 00000000: 57 00                                             W.
 &lt;&lt;&lt; 00000000: 00 01 FF                                          ...
 &gt;&gt;&gt; 00000000: 06                                                .
-</code></pre>
-
-<p>In the above trace, the software is first writing one byte (<code>0xFF</code>) to address <code>0x0</code>. The radio acknowledges a write request with a response byte (<code>0x06</code>).</p>
-
-<p>By experimenting a bit, it seems as if writing <code>0xFF</code> to <code>0x0</code>, will cause the radio to reset to defaults when you exit programming mode. That&rsquo;s why at the conclusion of the write operation, we see the following:</p>
-
+</code></pre><p>In the above trace, the software is first writing one byte (<code>0xFF</code>) to address <code>0x0</code>. The radio acknowledges a write request with a response byte (<code>0x06</code>).</p>
+<p>By experimenting a bit, it seems as if writing <code>0xFF</code> to <code>0x0</code>, will cause the radio to reset to defaults when you exit programming mode. That's why at the conclusion of the write operation, we see the following:</p>
 <pre><code>&lt;&lt;&lt; 00000000: 57 00                                             W.
 &lt;&lt;&lt; 00000000: 00 04 00 4B 01 FF                                 ...K..
 &gt;&gt;&gt; 00000000: 06                                                .
-</code></pre>
-
-<p>That is, the software is rewriting the first four bytes of memory with their original contents.</p>
-
+</code></pre><p>That is, the software is rewriting the first four bytes of memory with their original contents.</p>
 <h3 id="a-warning-about-manual-interaction">A warning about manual interaction</h3>
-
 <p>If you manually place the radio into programming mode, you will see that after entering <code>0M PROGRAM</code> the radio displays <code>PROG MCP</code>. Unless you are a preternaturally fast typist, the radio display will shortly switch to <code>PROG ERR</code> because of the delay between entering programming mode and any read or write transactions. In this state, you will still be able to enter read or write commands, but the status byte in response to a successful write command will be <code>0x15</code> instead of <code>0x06</code>.</p>
-
-<hr />
-
-<p>I&rsquo;ve summarized this information in a document that I submitted as a pull request to <a href="https://github.com/LA3QMA/TM-V71_TM-D710-Kenwood/">https://github.com/LA3QMA/TM-V71_TM-D710-Kenwood/</a>. You can read it <a href="https://github.com/LA3QMA/TM-V71_TM-D710-Kenwood/blob/master/PROGRAMMING_MODE.md">here</a>.</p>
+<hr>
+<p>I've summarized this information in a document that I submitted as a pull request to <a href="https://github.com/LA3QMA/TM-V71_TM-D710-Kenwood/">https://github.com/LA3QMA/TM-V71_TM-D710-Kenwood/</a>. You can read it <a href="https://github.com/LA3QMA/TM-V71_TM-D710-Kenwood/blob/master/PROGRAMMING_MODE.md">here</a>.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

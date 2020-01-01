@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -103,6 +104,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-11-17-json-tools/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">json-tools: cli for generating and filtering json</h4>
+        <time class="post-stub-date" datetime="2013-11-17">Published Sun, Nov 17, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Interacting with JSON-based APIs from the command line can be difficult, and OpenStack is filled with REST APIs that consume or produce JSON. I've just put pair of tools for generating and filtering JSON on the command line, called collectively json-tools.
+Both make use of the Python dpath module to populate or filter JSON objects.
+The jsong command generates JSON on stdout. You provide /-delimited paths on the command line to represent the JSON structure.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-11-17-json-tools/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Quantum in Too Much Detail</h4>
         <time class="post-stub-date" datetime="2013-11-14">Published Thu, Nov 14, 2013</time>
@@ -135,7 +160,7 @@
 
     
     <p class="post-stub-summary">
-    This blog has been hosted on scriptogram for the past year or so. Unfortunately, while I like the publish-via-Dropbox mechanism, there have been enough problems recently that I&rsquo;ve finally switched over to using GitHub Pages for hosting. I&rsquo;ve been thinking about doing this for a while, but the things that finally pushed me to make the change were:
+    This blog has been hosted on scriptogram for the past year or so. Unfortunately, while I like the publish-via-Dropbox mechanism, there have been enough problems recently that I've finally switched over to using GitHub Pages for hosting. I've been thinking about doing this for a while, but the things that finally pushed me to make the change were:
  Sync problems that would prevent new posts from appearing (and that at least once caused posts to disappear).
     </p>
 
@@ -158,7 +183,7 @@
 
     
     <p class="post-stub-summary">
-    I&rsquo;ve been working with OpenStack a lot recently, and I&rsquo;ve ended up with a small collection of utilities that make my life easier. On the odd chance that they&rsquo;ll make your life easier, too, I thought I&rsquo;d hilight them here.
+    I've been working with OpenStack a lot recently, and I've ended up with a small collection of utilities that make my life easier. On the odd chance that they'll make your life easier, too, I thought I'd hilight them here.
 Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Instead of a sequence of keystone command, you can provision new tenants, users, and roles with a single comand.
     </p>
 
@@ -183,7 +208,7 @@ Crux Crux is a tool for provisioning tenants, users, and roles in keystone. Inst
     <p class="post-stub-summary">
     The documentation for configuring Neutron recommends that a network controller has three physical interfaces:
  Before you start, set up a machine to be a dedicated network node. Dedicated network nodes should have the following NICs: the management NIC (called MGMT_INTERFACE), the data NIC (called DATA_INTERFACE), and the external NIC (called EXTERNAL_INTERFACE).
- People occasionally ask, &ldquo;why three interfaces? What if I only have two?&ldquo;, so I wanted to provide an extended answer that might help people understand what the interfaces are for and what trade-offs are involved in using fewer interfaces.
+ People occasionally ask, &ldquo;why three interfaces? What if I only have two?&quot;, so I wanted to provide an extended answer that might help people understand what the interfaces are for and what trade-offs are involved in using fewer interfaces.
     </p>
 
     
@@ -230,7 +255,7 @@ $ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something
     
     <p class="post-stub-summary">
     I recently acquired both a Raspberry Pi and a PiFace IO board. I had a rough time finding examples of how to read the input ports via interrupts (rather than periodically polling for values), especially for the newer versions of the PiFace python libraries.
-After a little research, here&rsquo;s some simple code that will print out pin names as you press the input buttons. Button 3 will cause the code to exit:
+After a little research, here's some simple code that will print out pin names as you press the input buttons. Button 3 will cause the code to exit:
     </p>
 
     
@@ -304,29 +329,6 @@ After a little research, here&rsquo;s some simple code that will print out pin n
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">I2C on the Raspberry Pi</h4>
-        <time class="post-stub-date" datetime="2013-03-12">Published Tue, Mar 12, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I&rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
-The design of the I2C bus is such that the only device driving a voltage on the bus is the master (in this case, the Raspberry Pi), via pull-up resistors.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/">(Read more...)</a>
     </p>
     
     

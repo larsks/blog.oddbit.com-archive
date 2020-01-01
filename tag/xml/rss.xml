@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>xml on The Odd Bit</title>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</guid>
-      <description>I&amp;rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
+      <description>I&#39;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
 Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;//resource[@active=&amp;quot;false&amp;quot;]&#39; - &amp;gt;&amp;amp;/dev/null &amp;amp;&amp;amp; echo &amp;quot;There are inactive resources&amp;quot;  This selects any resource (//resource) in the output of pcs status xml that has the attribute active set to false.</description>
     </item>
     
@@ -28,7 +28,7 @@ Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;
       
       <guid>https://blog.oddbit.com/post/2012-09-10-awk-parsing-xml/</guid>
       <description>Recently, changes from the xmlgawk project have been integrated into GNU awk, and xmlgawk has been renamed to gawkextlib. With both a recent (post-4.0.70) gawk and gawkextlib built and installed correctly, you can write simple XML parsing scripts using gawk.
-For example, let&amp;rsquo;s say you would like to generate a list of disk image files associated with a KVM virtual instance. You can use the virsh dumpxml command to get output like the following:</description>
+For example, let&#39;s say you would like to generate a list of disk image files associated with a KVM virtual instance. You can use the virsh dumpxml command to get output like the following:</description>
     </item>
     
     <item>

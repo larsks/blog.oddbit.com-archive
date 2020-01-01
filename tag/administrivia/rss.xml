@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>administrivia on The Odd Bit</title>
@@ -17,7 +17,7 @@
       <pubDate>Tue, 07 May 2019 09:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-05-07-new-comment-system/</guid>
-      <description>As long as I&amp;rsquo;m switching site generators, it seems like a good idea to refresh the comment system as well. I&amp;rsquo;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.
+      <description>As long as I&#39;m switching site generators, it seems like a good idea to refresh the comment system as well. I&#39;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.
 That means that comments will finally be stored in the same place as the blog content, which I think is a happy state of affairs.</description>
     </item>
     
@@ -27,7 +27,7 @@ That means that comments will finally be stored in the same place as the blog co
       <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-05-06-new-static-site-generator/</guid>
-      <description>I&amp;rsquo;ve switched my static site generator from Pelican to Hugo. I&amp;rsquo;ve tried to ensure that all the old links continue to work correctly, but if you notice anything missing or otherwise not working as intended, please let me know by opening an issue. Thanks!</description>
+      <description>I&#39;ve switched my static site generator from Pelican to Hugo. I&#39;ve tried to ensure that all the old links continue to work correctly, but if you notice anything missing or otherwise not working as intended, please let me know by opening an issue. Thanks!</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@ That means that comments will finally be stored in the same place as the blog co
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2018-01-26-administrivia/</guid>
-      <description>I&amp;rsquo;ve just refreshed the version of Pelican used to generate this blog, along with the associated themes and plugins. It all seems to be working, but if you spot a problem feel free to drop me a line.</description>
+      <description>I&#39;ve just refreshed the version of Pelican used to generate this blog, along with the associated themes and plugins. It all seems to be working, but if you spot a problem feel free to drop me a line.</description>
     </item>
     
   </channel>

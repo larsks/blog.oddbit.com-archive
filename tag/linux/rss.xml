@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on The Odd Bit</title>
@@ -26,7 +26,7 @@
       <pubDate>Mon, 26 Dec 2011 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2011-12-26-simple-rate-limiting/</guid>
-      <description>I use CrashPlan as a backup service. It works and is very simple to set up, but has limited options for controlling bandwidth. In fact, if you&amp;rsquo;re running it on a headless system (e.g., a fileserver of some sort), your options are effectively &amp;ldquo;too slow&amp;rdquo; and &amp;ldquo;CONSUME EVERYTHING&amp;rdquo;. There is an open request to add time-based limitations to the application itself, but for now I&amp;rsquo;ve solved this using a very simple traffic shaping configuration.</description>
+      <description>I use CrashPlan as a backup service. It works and is very simple to set up, but has limited options for controlling bandwidth. In fact, if you&#39;re running it on a headless system (e.g., a fileserver of some sort), your options are effectively &amp;ldquo;too slow&amp;rdquo; and &amp;ldquo;CONSUME EVERYTHING&amp;rdquo;. There is an open request to add time-based limitations to the application itself, but for now I&#39;ve solved this using a very simple traffic shaping configuration.</description>
     </item>
     
     <item>
@@ -46,7 +46,7 @@ I just released a patch to gPXE that modifies the dhcp command so that it can it
       
       <guid>https://blog.oddbit.com/post/2010-02-04-vnc-blockingrst/</guid>
       <description>VNC clients use the RFB protocol to provide virtual display capabilities. The RFB protocol, as implemented by most clients, provides very poor authentication options. While passwords are not actually sent &amp;ldquo;in the clear&amp;rdquo;, it is possible to brute force them based on information available on the wire. The RFB 3.x protocol limits passwords to a maximum of eight characters, so the potential key space is relatively small.
-It&amp;rsquo;s possible to securely connect to a remote VNC server by tunneling your connection using ssh port forwarding (or setting up some sort of SSL proxy).</description>
+It&#39;s possible to securely connect to a remote VNC server by tunneling your connection using ssh port forwarding (or setting up some sort of SSL proxy).</description>
     </item>
     
     <item>
@@ -55,7 +55,7 @@ It&amp;rsquo;s possible to securely connect to a remote VNC server by tunneling 
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2010-01-29-linux-upnp-gateway/</guid>
-      <description>Like many other folks out there, I have several computers in my house connected to the outside world via a Linux box acting as a NAT gateway. I often want to use application such as BitTorrent and Freenet, which require that a number of ports be forwarded from my external connection to the particular computer on which I happen to be working. It turns out there&amp;rsquo;s a protocol for this, called UPnP.</description>
+      <description>Like many other folks out there, I have several computers in my house connected to the outside world via a Linux box acting as a NAT gateway. I often want to use application such as BitTorrent and Freenet, which require that a number of ports be forwarded from my external connection to the particular computer on which I happen to be working. It turns out there&#39;s a protocol for this, called UPnP.</description>
     </item>
     
   </channel>

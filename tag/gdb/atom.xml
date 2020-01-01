@@ -19,7 +19,7 @@
     <published>2019-01-22T00:00:00Z</published>
     <updated>2019-01-22T00:00:00Z</updated>
     <summary type="html">In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
-I&amp;rsquo;ve split this into three posts:</summary>
+I&#39;ve split this into three posts:</summary>
   </entry>
   
   <entry>
@@ -32,11 +32,11 @@ I&amp;rsquo;ve split this into three posts:</summary>
     <published>2019-01-22T00:00:00Z</published>
     <updated>2019-01-22T00:00:00Z</updated>
     <summary type="html">This is the second of three posts about using gdb and simavr to debug AVR code. The complete series is:
- Part 1: Using GDB
+  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
- Part 2: Automating GDB with scripts
+  Part 2: Automating GDB with scripts
 Creating GDB scripts to automatically test the behavior of our code.
- Part 3: Tracing with simavr
+  Part 3: Tracing with simavr
 Using simavr to collect information about the state of microcontroller pins while our code is running.</summary>
   </entry>
   
@@ -50,11 +50,11 @@ Using simavr to collect information about the state of microcontroller pins whil
     <published>2019-01-22T00:00:00Z</published>
     <updated>2019-01-22T00:00:00Z</updated>
     <summary type="html">This is the third of three posts about using gdb and simavr to debug AVR code. The complete series is:
- Part 1: Using GDB
+  Part 1: Using GDB
 A walkthrough of using GDB to manually inspect the behavior of our code.
- Part 2: Automating GDB with scripts
+  Part 2: Automating GDB with scripts
 Creating GDB scripts to automatically test the behavior of our code.
- Part 3: Tracing with simavr
+  Part 3: Tracing with simavr
 Using simavr to collect information about the state of microcontroller pins while our code is running.</summary>
   </entry>
   

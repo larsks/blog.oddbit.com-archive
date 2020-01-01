@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Unpacking Docker images with Undocker &middot; The Odd Bit</title>
-        <meta name="description" content="In some ways, the most exciting thing about Docker isn&rsquo;t the ability to start containers. That&rsquo;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
-I was taking a closer at the systemd-nspawn command, which it seems has been developing it&rsquo;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.">
+        <meta name="description" content="In some ways, the most exciting thing about Docker isn&#39;t the ability to start containers. That&#39;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
+I was taking a closer at the systemd-nspawn command, which it seems has been developing it&#39;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ I was taking a closer at the systemd-nspawn command, which it seems has been dev
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,34 +118,29 @@ I was taking a closer at the systemd-nspawn command, which it seems has been dev
 
     
 
-<p>In some ways, the most exciting thing about <a href="http://docker.com/">Docker</a> isn&rsquo;t the ability
-to start containers.  That&rsquo;s been around for a long time in various
+    <p>In some ways, the most exciting thing about <a href="http://docker.com/">Docker</a> isn't the ability
+to start containers.  That's been around for a long time in various
 forms, such as <a href="https://linuxcontainers.org/">LXC</a> or <a href="http://openvz.org/Main_Page">OpenVZ</a>.  What Docker brought to the
 party was a convenient method of building and distributing the
 filesystems necessary for running containers.  Suddenly, it was easy
 to build a containerized service <em>and</em> to share it with other people.</p>
-
 <p>I was taking a closer at the <a href="http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html">systemd-nspawn</a> command, which it
-seems has been developing it&rsquo;s own set of container-related
+seems has been developing it's own set of container-related
 superpowers recently, including a number of options for setting up the
 network environment of a container.  Like Docker, <code>systemd-nspawn</code>
 needs a filesystem on which to operate, but <em>unlike</em> Docker, there is
 no convenient distribution mechanism and no ecosystem of existing
 images.  In fact, the official documentation seems to assume that
-you&rsquo;ll be building your own from scratch.  Ain&rsquo;t nobody got time for
+you'll be building your own from scratch.  Ain't nobody got time for
 that&hellip;</p>
-
 <p>&hellip;but with that attracting Docker image ecosystem sitting right next
 door, surely there was something we can do?</p>
-
 <h2 id="the-format-of-a-docker-image">The format of a Docker image</h2>
-
 <p>A Docker image is a tar archive that contains a top level
 <code>repositories</code> files, and then a number of layers stored as
 directories containing a <code>json</code> file with some metadata about the
 layer and a tar file named <code>layer.tar</code> with the layer content.  For
 example, if you <code>docker save busybox</code>, you get:</p>
-
 <pre><code>4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125/
 4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125/VERSION
 4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125/json
@@ -163,39 +159,30 @@ ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2/json
 ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2/layer.tar
 repositories
 </code></pre>
-
 <p>In order to re-create the filesystem that would result from starting a
 Docker container with this image, you need to unpack the <code>layer.tar</code>
 files from the bottom up.  You can find the topmost layer in the
 <code>repositories</code> file, which looks like this:</p>
-
 <p>{
-  &ldquo;busybox&rdquo;: {
-    &ldquo;latest&rdquo;: &ldquo;4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125&rdquo;
-  }
+&ldquo;busybox&rdquo;: {
+&ldquo;latest&rdquo;: &ldquo;4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125&rdquo;
+}
 }</p>
-
 <p>From there, you can investigate the <code>json</code> file for each layer looking
 for the <code>parent</code> tag.</p>
-
 <h2 id="introducing-undocker">Introducing undocker</h2>
-
 <p>I wrote the <a href="http://github.com/larsks/undocker/">undocker</a> command to extract all or part of the layers
 of a Docker image onto the local filesystem.  In other words, if you
 want to use the <code>busybox</code> Docker image, you can fetch and unpack the
 image:</p>
-
 <pre><code># docker pull busybox
 # docker save busybox | undocker -o busybox
 </code></pre>
-
 <p>This will first look in the <code>repositories</code> file for the <code>busybox</code>
 entry with the <code>latest</code> tag, then build the necessary chain of layers
 and unpack them in the correct order.</p>
-
 <p>Once you have the filesystem extracted, you can boot it with
 <code>systemd-nspawn</code>:</p>
-
 <pre><code># systemd-nspawn -D busybox /bin/sh
 Spawning container busybox on /root/busybox.
 Press ^] three times within 1s to kill container.
@@ -204,58 +191,44 @@ Failed to copy /etc/resolv.conf to /root/busybox/etc/resolv.conf: Too many level
 /bin/sh: can't access tty; job control turned off
 / # 
 </code></pre>
-
 <p>Undocker is able to extract specific layers from the image as well.
 We can get a list of layers with the <code>--layers</code> option:</p>
-
 <pre><code>$ docker save busybox | undocker --layers
 511136ea3c5a64f264b78b5433614aec563103b4d4702f3ba7d4d2698e22c158
 df7546f9f060a2268024c8a230d8639878585defcc1bc6f79d2728a13957871b
 ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2
 4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125
 </code></pre>
-
 <p>And we can extract one or more specific layers with the <code>--layer</code>
 (<code>-l</code>) option:</p>
-
 <pre><code>$ docker save busybox |
   undocker -vi -o busybox -l ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2
 INFO:undocker:extracting image busybox (4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125)
 INFO:undocker:extracting layer ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2
 </code></pre>
-
-<p>I&rsquo;m using the <code>-i</code> (<code>--ignore-errors</code>) option here because this layer
+<p>I'm using the <code>-i</code> (<code>--ignore-errors</code>) option here because this layer
 contains a device node (<code>/dev/console</code>), and I am running this as an
 unprivileged user.  Without the <code>-i</code> option, we would see:</p>
-
 <pre><code>OSError: [Errno 1] Operation not permitted
 </code></pre>
-
 <p>A Docker image archive can actually contain multiple images, each with
 multiple tags.  For a single image, <code>undocker</code> will default to
-extracting the <code>latest</code> tag.  If the <code>latest</code> tag doesn&rsquo;t exist,
-you&rsquo;ll see:</p>
-
+extracting the <code>latest</code> tag.  If the <code>latest</code> tag doesn't exist,
+you'll see:</p>
 <pre><code># docker pull fedora:20
 # docker save fedora:20 | undocker -o fedora
 ERROR:undocker:failed to find image fedora with tag latest
 </code></pre>
-
 <p>You can specify an explicit tag in the same way you provide one to
 Docker:</p>
-
 <pre><code># docker save fedora:20 | undocker -o fedora fedora:20
 </code></pre>
-
-<p>If an archive contains multiple images, you&rsquo;ll get a different error:</p>
-
+<p>If an archive contains multiple images, you'll get a different error:</p>
 <pre><code># docker save busybox larsks/thttpd | undocker -o busybox
 ERROR:undocker:No image name specified and multiple images contained in archive
 </code></pre>
-
 <p>You can get a list of available images and tags with the <code>--list</code>
 option:</p>
-
 <pre><code># docker save busybox larsks/thttpd | undocker --list
 larsks/thttpd: latest
 busybox: latest
@@ -263,13 +236,12 @@ busybox: latest
 # docker save fedora | undocker --list
 fedora: heisenbug 20 21 rawhide latest
 </code></pre>
-
 <p>You can specify the image (and tag) to extract on the command line:</p>
-
 <pre><code># docker save busybox larsks/thttpd | undocker -o busybox busybox
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

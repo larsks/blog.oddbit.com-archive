@@ -5,11 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>ATOMIC_BLOCK magic in avr-libc &middot; The Odd Bit</title>
         <meta name="description" content="The AVR C library, avr-libc, provide an ATOMIC_BLOCK macro that you can use to wrap critical sections of your code to ensure that interrupts are disabled while the code executes. At high level, the ATOMIC_BLOCK macro (when called using ATOMIC_FORCEON) does something like this:
-cli(); ...your code here... seti();  But it&rsquo;s more than that. If you read the documentation for the macro, it says:
+cli(); ...your code here... seti();  But it&#39;s more than that. If you read the documentation for the macro, it says:
  Creates a block of code that is guaranteed to be executed atomically.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ cli(); ...your code here... seti();  But it&rsquo;s more than that. If you read 
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -116,23 +117,20 @@ cli(); ...your code here... seti();  But it&rsquo;s more than that. If you read 
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>The AVR C library, <a href="https://www.nongnu.org/avr-libc/">avr-libc</a>, provide an <code>ATOMIC_BLOCK</code> macro that you can use to wrap critical sections of your code to ensure that interrupts are disabled while the code executes.  At high level, the <code>ATOMIC_BLOCK</code> macro (when called using <code>ATOMIC_FORCEON</code>) does something like this:</p>
+    
 
+    <p>The AVR C library, <a href="https://www.nongnu.org/avr-libc/">avr-libc</a>, provide an <code>ATOMIC_BLOCK</code> macro that you can use to wrap critical sections of your code to ensure that interrupts are disabled while the code executes.  At high level, the <code>ATOMIC_BLOCK</code> macro (when called using <code>ATOMIC_FORCEON</code>) does something like this:</p>
 <pre><code>cli();
 
 ...your code here...
 
 seti();
 </code></pre>
-
-<p>But it&rsquo;s more than that.  If you read <a href="https://www.nongnu.org/avr-libc/user-manual/group__util__atomic.html#gaaaea265b31dabcfb3098bec7685c39e4">the documentation</a> for the macro, it says:</p>
-
+<p>But it's more than that.  If you read <a href="https://www.nongnu.org/avr-libc/user-manual/group__util__atomic.html#gaaaea265b31dabcfb3098bec7685c39e4">the documentation</a> for the macro, it says:</p>
 <blockquote>
 <p>Creates a block of code that is guaranteed to be executed atomically. Upon entering the block the Global Interrupt Status flag in SREG is disabled, and re-enabled upon exiting the block <strong>from any exit path</strong>.</p>
 </blockquote>
-
-<p>I didn&rsquo;t really think much about the bit that I&rsquo;ve highlighted until I wrote some code that looked something like this:</p>
-
+<p>I didn't really think much about the bit that I've highlighted until I wrote some code that looked something like this:</p>
 <pre><code>ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
       while(some_condition) {
         if (something_failed)
@@ -145,49 +143,34 @@ seti();
 fail:
   return false;
 </code></pre>
-
-<p>There&rsquo;s a <code>goto</code> statement there; that&rsquo;s an unconditional jump to the <code>fail</code> label outside the <code>ATOMIC_BLOCK</code> block. There isn&rsquo;t really any opportunity there for anything to re-enable interrupts, and yet, my code worked just fine. What&rsquo;s going on?</p>
-
+<p>There's a <code>goto</code> statement there; that's an unconditional jump to the <code>fail</code> label outside the <code>ATOMIC_BLOCK</code> block. There isn't really any opportunity there for anything to re-enable interrupts, and yet, my code worked just fine. What's going on?</p>
 <p>It turns out that this is due to GCC magic.  If you look at the expansion of the <code>ATOMIC_BLOCK</code> macro, it looks like this:</p>
-
 <pre><code>#define ATOMIC_BLOCK(type) for ( type, __ToDo = __iCliRetVal(); \
                            __ToDo ; __ToDo = 0 )
 </code></pre>
-
 <p>It accepts a <code>type</code> parameter which can be one of <code>ATOMIC_RESTORESTATE</code> or <code>ATOMIC_FORCEON</code>, which look like this:</p>
-
 <pre><code>#define ATOMIC_RESTORESTATE uint8_t sreg_save \
     __attribute__((__cleanup__(__iRestore))) = SREG
 </code></pre>
-
 <p>And this:</p>
-
 <pre><code>#define ATOMIC_FORCEON uint8_t sreg_save \
     __attribute__((__cleanup__(__iSeiParam))) = 0
 </code></pre>
-
 <p>The magic is the <code>__attribute__</code> keyword: GCC supports <a href="https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html">custom attributes</a> on variables that can change the way the variable is stored or used.  In this case, the code is using the <code>__cleanup__</code> attribute, which:</p>
-
 <blockquote>
 <p>&hellip;runs a function when the variable goes out of scope.</p>
 </blockquote>
-
 <p>So when we write:</p>
-
 <pre><code>ATOMIC_BLOCK(ATOMIC_FORCEON) {
   do_something_here();
 }
 </code></pre>
-
 <p>That becomes:</p>
-
 <pre><code>for ( uint8_t sreg_save __attribute__((__cleanup__(__iSeiParam))) = 0, __ToDo = __iCliRetVal(); __ToDo ; __ToDo = 0 ) {
     do_something_here();
 }
 </code></pre>
-
 <p>Which instructs GCC to ensure that the <code>iSeiParam</code> function is run whenever the <code>sreg_save</code> variable goes out of scope.  The <code>iSeiParam()</code> method looks like:</p>
-
 <pre><code>static __inline__ void __iSeiParam(const uint8_t *__s)
 {
   __asm__ __volatile__ (&quot;sei&quot; ::: &quot;memory&quot;);
@@ -195,10 +178,10 @@ fail:
   (void)__s;
 }
 </code></pre>
-
-<p>In other words, this is very much like a <code>try</code>/<code>finally</code> block in Python, although the cleanup action is attached to a particular variable rather than to the block of code itself.  I think that&rsquo;s pretty neat.</p>
+<p>In other words, this is very much like a <code>try</code>/<code>finally</code> block in Python, although the cleanup action is attached to a particular variable rather than to the block of code itself.  I think that's pretty neat.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

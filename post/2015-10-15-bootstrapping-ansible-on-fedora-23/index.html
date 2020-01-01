@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Bootstrapping Ansible on Fedora 23 &middot; The Odd Bit</title>
-        <meta name="description" content="If you&rsquo;ve tried running Ansible against a Fedora 23 system, you may have run into the following problem:
+        <meta name="description" content="If you&#39;ve tried running Ansible against a Fedora 23 system, you may have run into the following problem:
 fatal: [myserver]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;failed&quot;: true, &quot;msg&quot;: &quot;/bin/sh: /usr/bin/python: No such file or directory\r\n&quot;, &quot;parsed&quot;: false}  Fedora has recently made the switch to only including Python 3 on the base system (at least for the cloud variant), while Ansible still requires Python 2. With Fedora 23, Python 3 is available as /usr/bin/python3, and /usr/bin/python is only available if you have installed the Python 2 interpreter.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ fatal: [myserver]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;failed&quot;
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,51 +116,43 @@ fatal: [myserver]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;failed&quot;
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>If you&rsquo;ve tried running <a href="http://ansible.com/">Ansible</a> against a <a href="http://fedoraproject.org/">Fedora</a> 23 system,
-you may have run into the following problem:</p>
+    
 
+    <p>If you've tried running <a href="http://ansible.com/">Ansible</a> against a <a href="http://fedoraproject.org/">Fedora</a> 23 system,
+you may have run into the following problem:</p>
 <pre><code>fatal: [myserver]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;failed&quot;: true,
 &quot;msg&quot;: &quot;/bin/sh: /usr/bin/python: No such file or directory\r\n&quot;,
 &quot;parsed&quot;: false}
 </code></pre>
-
 <p>Fedora has recently made the switch to only including Python 3 on the
 base system (at least for the <a href="https://getfedora.org/en/cloud/prerelease/">cloud</a> variant), while Ansible still
 requires Python 2.  With Fedora 23, Python 3 is available as
 <code>/usr/bin/python3</code>, and <code>/usr/bin/python</code> is only available if you
 have installed the Python 2 interpreter.</p>
-
-<p>This is not an insurmountable problem; Ansible&rsquo;s <a href="http://docs.ansible.com/ansible/raw_module.html">raw</a> module can be
+<p>This is not an insurmountable problem; Ansible's <a href="http://docs.ansible.com/ansible/raw_module.html">raw</a> module can be
 used to run arbitrary commands on a remote host without requiring an
 installed Python interpreter.  This gives us everything we need to
 bootstrap the remote environment.</p>
-
 <p>The simplest playbook might look something like:</p>
-
 <pre><code>- hosts: all
   tasks:
     - name: install packages for ansible support
       raw: dnf -y -e0 -d0 install python python-dnf
 </code></pre>
-
 <p>(The <code>python-dnf</code> package is required if you want to install packages
 using the <code>dnf</code> module.)</p>
-
 <p>So you drop this into a playbook and run it and&hellip;it still fails, with
 the same error.  This is because Ansible will, by default, attempt to
 gather facts from the remote host by running the <code>setup</code> module, which
 requires Python.  So we modify our playbook to look like this:</p>
-
 <pre><code>- hosts: all
   gather_facts: false
   tasks:
     - name: install packages for ansible support
       raw: dnf -y -e0 -d0 install python python-dnf
 </code></pre>
-
 <p>Setting <code>gather_facts: false</code> inhibits this initial fact collection;
 with this change, the playbook should run successfully:</p>
-
 <pre><code>$ ansible-playbook playbook.yml
 PLAY ***************************************************************************
 
@@ -169,10 +162,8 @@ ok: [myserver -&gt; localhost]
 PLAY RECAP *********************************************************************
 myserver                   : ok=1    changed=0    unreachable=0    failed=0   
 </code></pre>
-
 <p>Having installed the basics, you can now use many of the standard
 Ansible modules:</p>
-
 <pre><code>- hosts: all
   gather_facts: true
   tasks:
@@ -184,18 +175,17 @@ Ansible modules:</p>
         name: git
         state: present
 </code></pre>
-
 <p>As the above example demonstrates, now that the necessary Python stack
 is installed on the remote Fedora 23 host, Ansible is is able to
 gather <a href="http://docs.ansible.com/ansible/playbooks_variables.html#information-discovered-from-systems-facts">facts</a> about the host that can be used in tasks, templates,
 etc.</p>
-
 <p>Note that with the <code>raw</code> module I had to use the <code>dnf</code> command
 explicitly, while in the above playbook I can use the <code>package</code> module
 for package installation, which relies on available facts to determine
 the correct package module.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

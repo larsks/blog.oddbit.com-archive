@@ -6,8 +6,20 @@
   
   <link href="https://blog.oddbit.com/tag/openstack/" rel="alternate"></link>
 
-  <updated>2019-06-07T00:00:00Z</updated>
+  <updated>2019-12-19T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/openstack/</id>
+  
+  <entry>
+    <title>OVN and DHCP: A minimal example</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2019-12-19-ovn-and-dhcp/"/>
+    <id>https://blog.oddbit.com/post/2019-12-19-ovn-and-dhcp/</id>
+    <published>2019-12-19T00:00:00Z</published>
+    <updated>2019-12-19T00:00:00Z</updated>
+    <summary type="html">Introduction A long time ago, I wrote an article all about OpenStack Neutron (which at that time was called Quantum). That served as an excellent reference for a number of years, but if you&#39;ve deployed a recent version of OpenStack you may have noticed that the network architecture looks completely different. The network namespaces previously used to implement routers and dhcp servers are gone (along with iptables rules and other features), and have been replaced by OVN (&amp;ldquo;Open Virtual Network&amp;rdquo;).</summary>
+  </entry>
   
   <entry>
     <title>Running Keystone with Docker Compose</title>
@@ -18,8 +30,8 @@
     <id>https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/</id>
     <published>2019-06-07T00:00:00Z</published>
     <updated>2019-06-07T00:00:00Z</updated>
-    <summary type="html">In this article, we will look at what is necessary to run OpenStack&amp;rsquo;s Keystone service (and the requisite database server) in containers using Docker Compose.
-Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&amp;rsquo;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:</summary>
+    <summary type="html">In this article, we will look at what is necessary to run OpenStack&#39;s Keystone service (and the requisite database server) in containers using Docker Compose.
+Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&#39;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:</summary>
   </entry>
   
   <entry>
@@ -31,8 +43,8 @@ Running MariaDB The standard mariadb docker image can be configured via a number
     <id>https://blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/</id>
     <published>2018-02-26T00:00:00Z</published>
     <updated>2018-02-26T00:00:00Z</updated>
-    <summary type="html">In this article, we&amp;rsquo;re going to ask Gnocchi (the OpenStack telemetry storage service) how much memory was used, on average, over the course of each day by each project in an OpenStack environment.
-Environment I&amp;rsquo;m working with an OpenStack &amp;ldquo;Pike&amp;rdquo; deployment, which means I have Gnocchi 4.0.x. More recent versions of Gnocchi (4.1.x and later) have a new aggregation API called dynamic aggregates, but that isn&amp;rsquo;t available in 4.0.x so in this article we&amp;rsquo;ll be using the legacy /v1/aggregations API.</summary>
+    <summary type="html">In this article, we&#39;re going to ask Gnocchi (the OpenStack telemetry storage service) how much memory was used, on average, over the course of each day by each project in an OpenStack environment.
+Environment I&#39;m working with an OpenStack &amp;ldquo;Pike&amp;rdquo; deployment, which means I have Gnocchi 4.0.x. More recent versions of Gnocchi (4.1.x and later) have a new aggregation API called dynamic aggregates, but that isn&#39;t available in 4.0.x so in this article we&#39;ll be using the legacy /v1/aggregations API.</summary>
   </entry>
   
   <entry>
@@ -58,7 +70,7 @@ TASK [shut down server] ************************************* fatal: [myserver]:
     <id>https://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</id>
     <published>2017-08-02T00:00:00Z</published>
     <updated>2017-08-02T00:00:00Z</updated>
-    <summary type="html">At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&amp;ldquo;your clocks aren&amp;rsquo;t in sync&amp;rdquo; or &amp;ldquo;your filesystem is full&amp;rdquo; or &amp;ldquo;you haven&amp;rsquo;t installed a critical update&amp;rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues.</summary>
+    <summary type="html">At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&amp;ldquo;your clocks aren&#39;t in sync&amp;rdquo; or &amp;ldquo;your filesystem is full&amp;rdquo; or &amp;ldquo;you haven&#39;t installed a critical update&amp;rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues. Fundamentally, we want something that acts like a typical code test suite, but for infrastructure.</summary>
   </entry>
   
   <entry>
@@ -70,7 +82,7 @@ TASK [shut down server] ************************************* fatal: [myserver]:
     <id>https://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</id>
     <published>2017-06-14T00:00:00Z</published>
     <updated>2017-06-14T00:00:00Z</updated>
-    <summary type="html">I&amp;rsquo;ve been thinking about logging in the context of OpenStack and containerized service deployments. I&amp;rsquo;d like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.
+    <summary type="html">I&#39;ve been thinking about logging in the context of OpenStack and containerized service deployments. I&#39;d like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.
 There are effectively three different mechanisms that an application can use to emit log messages:
  Via some logging-specific API, such as the legacy syslog API By writing a byte stream to stdout/stderr By writing a byte stream to a file  A substantial advantage to the first mechanism (using a logging API) is that the application is logging messages rather than bytes.</summary>
   </entry>
@@ -84,7 +96,7 @@ There are effectively three different mechanisms that an application can use to 
     <id>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</id>
     <published>2017-01-22T00:00:00Z</published>
     <updated>2017-01-22T00:00:00Z</updated>
-    <summary type="html">It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
+    <summary type="html">It&#39;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
 In many cases you can alleviate this through the use of the git pre-commit hook, which will run every time you commit changes locally.</summary>
   </entry>
   
@@ -97,7 +109,7 @@ In many cases you can alleviate this through the use of the git pre-commit hook,
     <id>https://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</id>
     <published>2016-08-11T00:00:00Z</published>
     <updated>2016-08-11T00:00:00Z</updated>
-    <summary type="html">The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&amp;rsquo;s more advanced features.
+    <summary type="html">The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&#39;s more advanced features.
 I am working on a Fluentd composable service for TripleO. I want to allow each service to specify a logging source configuration fragment, for example:
 parameters: NovaAPILoggingSource: type: json description: Fluentd logging configuration for nova-api.</summary>
   </entry>
@@ -111,8 +123,8 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
     <id>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</id>
     <published>2016-05-19T00:00:00Z</published>
     <updated>2016-05-19T00:00:00Z</updated>
-    <summary type="html">Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
-For a concrete example, let&amp;rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:</summary>
+    <summary type="html">Let&#39;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
+For a concrete example, let&#39;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:</summary>
   </entry>
   
   <entry>
@@ -197,20 +209,6 @@ nova-manage db migrate_flavor_data --max_number 100  And that says:</summary>
     <updated>2015-06-26T00:00:00Z</updated>
     <summary type="html">In an OpenStack environment, cloud-init generally fetches information from the metadata service provided by Nova. It also has support for reading this information from a configuration drive, which under OpenStack means a virtual CD-ROM device attached to your instance containing the same information that would normally be available via the metadata service.
 It is possible to generate your network configuration from this configuration drive, rather than relying on the DHCP server provided by your OpenStack environment.</summary>
-  </entry>
-  
-  <entry>
-    <title>Heat-kubernetes Demo with Autoscaling</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/"/>
-    <id>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
-    <published>2015-06-19T00:00:00Z</published>
-    <updated>2015-06-19T00:00:00Z</updated>
-    <summary type="html">Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
-As part of that presentation, I&amp;rsquo;ve put together a short demonstration video:
- This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</summary>
   </entry>
   
 </feed>

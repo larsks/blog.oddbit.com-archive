@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>nova-docker and environment variables &middot; The Odd Bit</title>
-        <meta name="description" content="I&rsquo;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
+        <meta name="description" content="I&#39;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
 The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker containers instead of hypervisor-based servers. For certain workloads, this leads to better resource utilization than you would get with a hypervisor-based solution, while at the same time givin you better support for multi-tenancy and flexible networking than you get with Docker by itself.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker co
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -115,60 +116,52 @@ The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker co
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>I&rsquo;ve been playing with <a href="https://docker.com/">Docker</a> a bit recently, and decided to take
-a look at the <a href="https://github.com/stackforge/nova-docker">nova-docker</a> driver for <a href="http://openstack.org/">OpenStack</a>.</p>
+    
 
+    <p>I've been playing with <a href="https://docker.com/">Docker</a> a bit recently, and decided to take
+a look at the <a href="https://github.com/stackforge/nova-docker">nova-docker</a> driver for <a href="http://openstack.org/">OpenStack</a>.</p>
 <p>The <code>nova-docker</code> driver lets Nova, the OpenStack Compute service,
 spawn Docker containers instead of hypervisor-based servers.  For
 certain workloads, this leads to better resource utilization than you
 would get with a hypervisor-based solution, while at the same time
 givin you better support for multi-tenancy and flexible networking
 than you get with Docker by itself.</p>
-
 <p>The <a href="https://wiki.openstack.org/wiki/Docker">Docker driver wiki</a> was mostly sufficient for getting the
 <code>nova-docker</code> driver installed in my existing OpenStack deployment,
 although I did make a few <a href="https://wiki.openstack.org/w/index.php?title=Docker&amp;diff=61664&amp;oldid=58546">small changes</a> to the wiki to reflect
 some missing steps.  Other than that, the installation was relatively
-simple and I was soon able to spin up Docker containers using <code>nova
-boot ...</code></p>
-
+simple and I was soon able to spin up Docker containers using <code>nova boot ...</code></p>
 <p>The one problem I encountered is that it is not possible to pass
 environment variable to Docker containers via the <code>nova-docker</code>
 driver.  Many existing images (such as the <a href="https://registry.hub.docker.com/_/mysql/">official MySQL image</a>)
 expect configuration information to be passed in using environment
 variables; for example, the <code>mysql</code> image expects to be started like
 this:</p>
-
 <pre><code>docker run --name some-mysql \
   -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
 </code></pre>
-
 <p>I have proposed a <a href="https://review.openstack.org/#/c/117583/">patch</a> to the <code>nova-docker</code> driver that permits
 one to provide environment variables via the Nova metadata service.
 With this patch in place, I would start the <code>mysql</code> container like
 this:</p>
-
 <pre><code>nova boot --image mysql --flavor m1.small \
   --meta ENV_MYSQL_ROOT_PASSWORD=mysecretpassword \
   some-mysql
 </code></pre>
-
 <p>That is, the driver looks for metadata items that begin with <code>ENV_</code>
 and transforms these into Docker environment variables after stripping
 <code>ENV_</code> from the name.</p>
-
-<p>While this patch works great in my testing environment, it&rsquo;s unlikely
+<p>While this patch works great in my testing environment, it's unlikely
 to get accepted.  Generally, the metadata provided by Nova belongs to
 the tenant and is not meant to be operationally significant to the
 compute driver itself.</p>
-
 <p>It sounds as if there is a lot of work going on right now regarding
 container support in OpenStack, so it is very likely that a better
 solution will show up in the near future.</p>
-
 <p>In the absence of that support, I hope others find this patch helpful.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

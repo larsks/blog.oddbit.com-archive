@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OVN and DHCP: A minimal example &middot; The Odd Bit</title>
+        <meta name="description" content="Introduction A long time ago, I wrote an article all about OpenStack Neutron (which at that time was called Quantum). That served as an excellent reference for a number of years, but if you&#39;ve deployed a recent version of OpenStack you may have noticed that the network architecture looks completely different. The network namespaces previously used to implement routers and dhcp servers are gone (along with iptables rules and other features), and have been replaced by OVN (&ldquo;Open Virtual Network&rdquo;).">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">OVN and DHCP: A minimal example</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2019-12-19" itemprop="datePublished">Thu, Dec 19, 2019</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+    <aside>
+        <header>
+        <h2>Contents</h2>
+        </header>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#so-what-is-ovn-anyway">So what is OVN anyway?</a></li>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#concepts">Concepts</a></li>
+        <li><a href="#test-environment">Test environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#setting-up-ovn">Setting up OVN</a>
+      <ul>
+        <li><a href="#initial-configuration-steps">Initial configuration steps</a></li>
+        <li><a href="#configuring-the-controller">Configuring the controller</a></li>
+        <li><a href="#connecting-nodes-to-the-controller">Connecting nodes to the controller</a></li>
+      </ul>
+    </li>
+    <li><a href="#creating-a-virtual-network">Creating a virtual network</a>
+      <ul>
+        <li><a href="#create-a-logical-switch">Create a logical switch</a></li>
+        <li><a href="#create-dhcp-options">Create DHCP options</a></li>
+        <li><a href="#create-logical-ports">Create logical ports</a></li>
+        <li><a href="#simulating-a-dhcp-request-with-ovn-trace">Simulating a DHCP request with ovn-trace</a></li>
+      </ul>
+    </li>
+    <li><a href="#attaching-network-interfaces">Attaching network interfaces</a>
+      <ul>
+        <li><a href="#create-an-ovs-port">Create an OVS port</a></li>
+        <li><a href="#configure-the-port-using-dhcp">Configure the port using DHCP</a></li>
+        <li><a href="#configuring-port2-on-ovn1">Configuring port2 on ovn1</a></li>
+        <li><a href="#configuring-port3-on-ovn2">Configuring port3 on ovn2</a></li>
+        <li><a href="#verify-connectivity">Verify connectivity</a></li>
+      </ul>
+    </li>
+    <li><a href="#thats-all-folks">That's all folks!</a>
+      <ul>
+        <li><a href="#other-resources">Other resources</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+    
+
+    <h1 id="introduction">Introduction</h1>
+<p>A long time ago, I wrote an article <a href="https://blog.oddbit.com/post/2013-11-14-quantum-in-too-much-detail/">all about OpenStack Neutron</a> (which at that time was called Quantum). That served as an excellent reference for a number of years, but if you've deployed a recent version of OpenStack you may have noticed that the network architecture looks completely different. The network namespaces previously used to implement routers and dhcp servers are gone (along with iptables rules and other features), and have been replaced by OVN (&ldquo;Open Virtual Network&rdquo;). What is OVN? How does it work? In this article, I'd like to explore a minimal OVN installation to help answer these questions.</p>
+<h2 id="goals">Goals</h2>
+<p>We're going to create a single OVN logical switch to which we will attach a few ports. We will demonstrate how we can realize a port on a physical node and configure it using DHCP, using a virtual DHCP server provided by OVN.</p>
+<p>Let's get started!</p>
+<h2 id="so-what-is-ovn-anyway">So what is OVN anyway?</h2>
+<p>If you're just getting started with OVN, you'll find that's a hard question to answer: there is no dedicated OVN website; there's no OVN landing page at <a href="http://openvswitch.org">http://openvswitch.org</a>; in fact, there's really no documentation for OVN at all other than the man pages. The only high-level description you'll find comes from the <code>ovn-architecture(7)</code> man page:</p>
+<blockquote>
+<p>OVN,  the  Open Virtual Network, is a system to support virtual network
+abstraction. OVN complements the existing capabilities of  OVS  to  add
+native support for virtual network abstractions, such as virtual L2 and L3
+overlays and security groups.</p>
+</blockquote>
+<p>Where Open vSwitch (OVS) provides a virtual switch on a single host, OVN extends this abstraction to span multiple hosts. You can create virtual switches that span many physical nodes, and OVN will take care of creating overlay networks to support this abstraction. While OVS is primarily just a layer 2 device, OVN also operates at layer 3: you can create virtual routers to connect your virtual networks as well a variety of access control mechanisms such as security groups and ACLs.</p>
+<h2 id="requirements">Requirements</h2>
+<p>You're going to need a recent version of OVN. Packages are available for <a href="http://docs.openvswitch.org/en/latest/intro/install/distributions/">most major distributions</a>. I used <a href="https://getfedora.org/">Fedora 31</a> for my testing, which includes OVS and OVN version 2.12.0. You can of course also <a href="http://docs.openvswitch.org/en/latest/intro/install/">install from source</a>.</p>
+<p>This post assumes that you are logged in to your system as the <code>root</code> user. Most of the commands require root access in order to function correctly.</p>
+<h2 id="concepts">Concepts</h2>
+<p>OVN operates with a pair of databases. The <em>Northbound</em> database contains the <em>logical</em> structure of your networks: this is where you define switches, routers, ports, and so on.</p>
+<p>The <em>Southbound</em> database is concerned with the <em>physical</em> structure of your network. This database maintains information about which ports are realized on which hosts.</p>
+<p>The <a href="http://www.openvswitch.org/support/dist-docs/ovn-northd.8.html"><code>ovn-northd</code></a> service &ldquo;translates  the logical network configuration in terms of conventional network concepts, taken from the OVN  North‐ bound  Database,  into  logical datapath flows in the OVN Southbound Database below it.&rdquo; (<a href="http://www.openvswitch.org/support/dist-docs/ovn-architecture.7.html">ovn-architecture(7)</a>)</p>
+<p>The <a href="http://www.openvswitch.org/support/dist-docs/ovn-controller.8.html"><code>ovn-controller</code></a> service running on each host connects to the Southbound database and is responsible for configuring OVS as instructed by the database configuration.</p>
+<h2 id="test-environment">Test environment</h2>
+<p>This article assumes a test environment with three nodes running Fedora 31. All nodes have a single interface connecting to a shared layer 2 network:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>MAC address</th>
+<th>IP address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ovn0</td>
+<td>de:ca:ff:00:00:64</td>
+<td>192.168.122.100</td>
+</tr>
+<tr>
+<td>ovn1</td>
+<td>de:ca:ff:00:00:65</td>
+<td>192.168.122.101</td>
+</tr>
+<tr>
+<td>ovn2</td>
+<td>de:ca:ff:00:00:66</td>
+<td>192.168.122.102</td>
+</tr>
+</tbody>
+</table>
+<h1 id="setting-up-ovn">Setting up OVN</h1>
+<h2 id="initial-configuration-steps">Initial configuration steps</h2>
+<p>Our first step will be to activate <code>openvswitch</code> and <code>ovn-controller</code> on all of the nodes in our test environment. On all nodes, run the following command:</p>
+<pre><code>systemctl enable --now openvswitch ovn-controller
+</code></pre><p>The <code>--now</code> flag causes <code>systemd</code> to start the service as well as enabling it in future boots.</p>
+<p>By default, OVN manages an <code>openvswitch</code> bridge named <code>br-int</code> (for &ldquo;integration&rdquo;). We'll need to create this on all of our nodes. On all nodes, run:</p>
+<pre><code>ovs-vsctl add-br br-int
+</code></pre><h2 id="configuring-the-controller">Configuring the controller</h2>
+<p>We will designate the node <code>ovn0</code> as our controller (which simply means &ldquo;this node will run <code>ovn-northd</code>). The first thing we need to do is enable the <code>ovn-northd</code> service. On node <code>ovn0</code>, run:</p>
+<pre><code>systemctl enable --now ovn-northd
+</code></pre><p>In addition to starting the <code>ovn-northd</code> service itself, this will also starts two instances of <a href="http://www.openvswitch.org/support/dist-docs/ovsdb-server.1.html"><code>ovsdb-server</code></a>: one serving the Northbound database, listening on <code>/run/ovn/ovnnb_db.sock</code>, and the second for the Southbound database, listening on <code>/run/ovn/ovnsb_db.sock</code>. In order for the <code>ovn-controller</code> service on the other nodes to connect to the Southbound database, we will need to configure that instance of <code>ovsdb-server</code> to listen for tcp connections.  We can do that using the <code>ovn-sbctl set-connection</code> command:</p>
+<pre><code>ovn-sbctl set-connection ptcp:6642
+</code></pre><p>The <code>ptcp</code> in the above setting means &ldquo;passive tcp&rdquo;, which means &ldquo;listen on port 6642 for connections&rdquo;. After running the above command, we see that there is now an <code>ovsdb-server</code> instance listening on port 6642:</p>
+<pre><code>[root@ovn0 ~]# ss -tlnp | grep 6642
+LISTEN    0         10                 0.0.0.0:6642             0.0.0.0:*        users:((&quot;ovsdb-server&quot;,pid=1798,fd=21))
+</code></pre><h2 id="connecting-nodes-to-the-controller">Connecting nodes to the controller</h2>
+<p>Now that we have our controller configured, we have to connect the <code>ovn-controller</code> service on our nodes to the Southbound database. We do this by creating several entries in the <code>external_ids</code> column of the OVS <code>open_vswitch</code> database on each host:</p>
+<ul>
+<li><code>ovn-remote</code> &ndash; this is the address of the controller</li>
+<li><code>ovn-encap-ip</code> &ndash; this is the local address that will be used for tunnel endpoints</li>
+<li><code>ovn-encap-type</code> &ndash; the encapsulation mechanism to use for tunnels</li>
+<li><code>system-id</code> &ndash; a unique identifier for the local host</li>
+</ul>
+<p>On all nodes, run the following command:</p>
+<pre><code>ovs-vsctl set open-vswitch .  \
+  external_ids:ovn-remote=192.168.122.100 \
+  external_ids:ovn-encap-ip=$(ip addr show eth0 | awk '$1 == &quot;inet&quot; {print $2}' | cut -f1 -d/) \
+  external_ids:ovn-encap-type=geneve \
+  external_ids:system-id=$(hostname)
+</code></pre><p>This points <code>ovn-remote</code> at the address of the controller, sets <code>ovn-encap-ip</code> to the address of <code>eth0</code> on the local host, , sets <code>systemd-id</code> to the local hostname, and selects <a href="https://tools.ietf.org/html/draft-ietf-nvo3-geneve-08">geneve</a> encapsulation for tunnels (see <a href="https://blog.russellbryant.net/2017/05/30/ovn-geneve-vs-vxlan-does-it-matter/">this post</a> for information on why OVN prefers Geneve encapsulation).</p>
+<p>We can verify these settings by using the <code>ovn-vsctl list</code> command:</p>
+<pre><code>[root@ovn1 ~]# ovs-vsctl --columns external_ids list open_vswitch
+external_ids        : {hostname=&quot;ovn1.virt&quot;, ovn-encap-ip=&quot;192.168.122.101&quot;, ovn-encap-type=geneve, ovn-remote=&quot;192.168.122.100&quot;, rundir=&quot;/var/run/openvswitch&quot;, system-id=&quot;ovn1&quot;}
+</code></pre><p>After running the above commands, each node should now have tunnels interfaces connecting to the other nodes in the test environment. For example, running <code>ovs-vsctl show</code> on node <code>ovn1</code> looks like this:</p>
+<pre><code>f0087676-7f93-419c-9da0-32321d2d3668
+    Bridge br-int
+        fail_mode: secure
+        Port &quot;ovn-ovn0-0&quot;
+            Interface &quot;ovn-ovn0-0&quot;
+                type: geneve
+                options: {csum=&quot;true&quot;, key=flow, remote_ip=&quot;192.168.122.100&quot;}
+        Port br-int
+            Interface br-int
+                type: internal
+        Port &quot;ovn-ovn2-0&quot;
+            Interface &quot;ovn-ovn2-0&quot;
+                type: geneve
+                options: {csum=&quot;true&quot;, key=flow, remote_ip=&quot;192.168.122.102&quot;}
+    ovs_version: &quot;2.12.0&quot;
+</code></pre><h1 id="creating-a-virtual-network">Creating a virtual network</h1>
+<p>Now that we have a functioning OVN environment, we're ready to create our virtual network.</p>
+<h2 id="create-a-logical-switch">Create a logical switch</h2>
+<p>We'll start by creating a logical switch, which we will call <code>net0</code>. We create that using the <code>ovn-nbctl ls-add</code> command. Run the following on <code>ovn0</code>:</p>
+<pre><code>ovn-nbctl ls-add net0
+</code></pre><p>After running the above command, the output of <code>ovn-nbctl show</code> will look something like this:</p>
+<pre><code>[root@ovn0 ~]# ovn-nbctl show
+switch d8d96fb2-e1e7-469d-8c72-b7e891fb16ba (net0)
+</code></pre><p>Next, we need to set some configuration options on the switch that will be used to set the range from which we allocate addresses via DHCP.  We're going to have OVN manage the <code>10.0.0.0/24</code> network, which means we need to set <code>other_config:subnet</code> to <code>10.0.0.0/24</code>. I generally like to reserve some addresses from the DHCP range to use for static allocations, so I have also set <code>other_config:exclude_ips</code> to <code>10.0.0.1..10.0.0.10</code>. This means that DHCP allocations will come from the range <code>10.0.0.11</code> - <code>10.0.0.254</code>.</p>
+<p>To apply these settings, run the following commands on <code>ovn0</code>:</p>
+<pre><code>ovn-nbctl set logical_switch net0 \
+  other_config:subnet=&quot;10.0.0.0/24&quot; \
+  other_config:exclude_ips=&quot;10.0.0.1..10.0.0.10&quot;
+</code></pre><h2 id="create-dhcp-options">Create DHCP options</h2>
+<p>Each port that we want to configure using DHCP needs to be associated with a set of DHCP options. We accomplish this by creating a new entry in the Northbound <code>dhcp_options</code> table, and then set the <code>dhcp_options</code> column of the port to the id of the object we created in the <code>dhcp_options</code> table.</p>
+<p>Looking at <a href="https://github.com/ovn-org/ovn/blob/master/northd/ovn-northd.c#L4113">the source</a>, there are three required options that must be set in order for DHCP to operate:</p>
+<ul>
+<li><code>server_id</code> &ndash; the ip address of the virtual dhcp server</li>
+<li><code>server_mac</code> &ndash; the MAC address of the virtual dhcp server</li>
+<li><code>lease_time</code> &ndash; the lifetime of DHCP leases</li>
+</ul>
+<p>While not actually required, we can also set the <code>router</code> key to provide information about the default gateway. We're not going to make use of it in this example, but in practice you will probably want to set the <code>router</code> option.</p>
+<p>We also need to set the CIDR range that will be served by the DHCP server.</p>
+<p>We can create the appropriate options using the <code>ovn-nbctl dhcp-options-create</code> command. Run the following on <code>ovn0</code>:</p>
+<pre><code>ovn-nbctl dhcp-options-create 10.0.0.0/24 \
+  lease_time=3600 \
+  router=10.0.0.1 \
+  server_id=10.0.0.1 \
+  server_mac=c0:ff:ee:00:00:01
+</code></pre><p>We can get the id of the new row with the <code>ovn-nbctl dhcp-options-list</code> command:</p>
+<pre><code>[root@ovn0 ~]# ovn-nbctl dhcp-options-list
+f8a6abc5-b8e4-4209-8809-b95435b4d48b
+</code></pre><p>Alternately, we can use the database <code>list</code> command to inspect the <code>dhcp_options</code> table:</p>
+<pre><code>[root@ovn0 ~]# ovn-nbctl list dhcp_options
+_uuid               : f8a6abc5-b8e4-4209-8809-b95435b4d48b
+cidr                : &quot;10.0.0.0/24&quot;
+external_ids        : {lease_time=&quot;3600&quot;, router=&quot;10.0.0.1&quot;, server_id=&quot;10.0.0.1&quot;, server_mac=&quot;c0:ff:ee:00:00:01&quot;}
+options             : {}
+</code></pre><p>Instead of using the <code>dhcp-options-create</code> command, as we did in this section, we could instead have used the database <code>create</code> command. The quoting requirements for that command are a little more complex, but unlike the <code>dhcp-options-create</code> command the <code>create</code> command returns the id of the row it creates. This can be useful if you're using the command as part of a script. The equivalent <code>create</code> command would look like:</p>
+<pre><code>ovn-nbctl create dhcp_options \
+  cidr=10.0.0.0/24 \
+  options='&quot;lease_time&quot;=&quot;3600&quot; &quot;router&quot;=&quot;10.0.0.1&quot; &quot;server_id&quot;=&quot;10.0.0.1&quot; &quot;server_mac&quot;=&quot;c0:ff:ee:00:00:01&quot;'
+</code></pre><h2 id="create-logical-ports">Create logical ports</h2>
+<p>Let's add the following three logical ports to the switch:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>MAC Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>port1</td>
+<td>c0:ff:ee:00:00:11</td>
+</tr>
+<tr>
+<td>port2</td>
+<td>c0:ff:ee:00:00:12</td>
+</tr>
+<tr>
+<td>port3</td>
+<td>c0:ff:ee:00:00:13</td>
+</tr>
+</tbody>
+</table>
+<p>For each port, we'll need to run three commands. First, we create the port on the switch:</p>
+<pre><code>ovn-nbctl lsp-add net0 port1
+</code></pre><p>Next, we set the port addresses. For this example, I'm using static MAC addresses and dynamic (assigned by DHCP) IP addresses, so the command will look like:</p>
+<pre><code>ovn-nbctl lsp-set-addresses port1 &quot;c0:ff:ee:00:00:10 dynamic&quot;
+</code></pre><p>If you want OVN to set MAC addresses for the ports as well, you would instead run:</p>
+<pre><code>ovn-nbctl lsp-set-addresses port1 &quot;dynamic&quot;
+</code></pre><p>Finally, we associate the port with the DHCP options we created in the previous section:</p>
+<pre><code>ovn-nbctl lsp-set-dhcpv4-options port1 f8a6abc5-b8e4-4209-8809-b95435b4d48b
+</code></pre><p>Repeat the above sequence for <code>port2</code> and <code>port3</code>, and when you're done, <code>ovn-nbctl show</code> should return output similar to the following:</p>
+<pre><code>switch 3c03342f-f762-410b-9f4e-572d266c8ff7 (net0)
+    port port2
+        addresses: [&quot;c0:ff:ee:00:00:12 dynamic&quot;]
+    port port3
+        addresses: [&quot;c0:ff:ee:00:00:13 dynamic&quot;]
+    port port1
+        addresses: [&quot;c0:ff:ee:00:00:11 dynamic&quot;]
+</code></pre><p>We can see additional details using the database command <code>ovn-nbctl list logical_switch_ports</code>.  The entry for <code>port1</code> might look like this:</p>
+<pre><code>_uuid               : 8ad6a4c0-4c7b-4817-bf13-8e7b1a86bab1
+addresses           : [&quot;c0:ff:ee:00:00:11 dynamic&quot;]
+dhcpv4_options      : f8a6abc5-b8e4-4209-8809-b95435b4d48b
+dhcpv6_options      : []
+dynamic_addresses   : &quot;c0:ff:ee:00:00:11 10.0.0.11&quot;
+enabled             : []
+external_ids        : {}
+ha_chassis_group    : []
+name                : port1
+options             : {}
+parent_name         : []
+port_security       : []
+tag                 : []
+tag_request         : []
+type                : &quot;&quot;
+up                  : false
+</code></pre><p>Looking at the <code>dynamic_addresses</code> column we can see that <code>port1</code> has been assigned the ip address <code>10.0.0.11</code>. We can see the assigned addresses for all of our ports like this:</p>
+<pre><code>[root@ovn0 ~]# ovn-nbctl --columns dynamic_addresses list logical_switch_port
+dynamic_addresses   : &quot;c0:ff:ee:00:00:13 10.0.0.13&quot;
+
+dynamic_addresses   : &quot;c0:ff:ee:00:00:11 10.0.0.11&quot;
+
+dynamic_addresses   : &quot;c0:ff:ee:00:00:12 10.0.0.12&quot;
+</code></pre><h2 id="simulating-a-dhcp-request-with-ovn-trace">Simulating a DHCP request with ovn-trace</h2>
+<p>At this point, we have a functioning switch, although we haven't actually realized the ports anywhere yet. This is the perfect time to introduce the <code>ovn-trace</code> tool, which can be used to simulate how your OVN network will handle a packet of data.</p>
+<p>We can show how OVN will respond to a DHCP <code>DISCOVER</code> message with the following command:</p>
+<pre><code>ovn-trace --summary net0 '
+  inport==&quot;port1&quot; &amp;&amp; 
+  eth.src==c0:ff:ee:00:00:11 &amp;&amp; 
+  ip4.src==0.0.0.0 &amp;&amp; 
+  ip.ttl==1 &amp;&amp; 
+  ip4.dst==255.255.255.255 &amp;&amp; 
+  udp.src==68 &amp;&amp; 
+  udp.dst==67'
+</code></pre><p>The above command simulates a packet originating on <code>port1</code> with the appropriate MAC address (<code>eth.src</code>, <code>c0:ff:ee:00:00:11</code>) and a source address (<code>ip4.src</code>) of <code>0.0.0.0</code> (port 68 (<code>udp.src</code>)), targeting (<code>ip4.dst</code>) the broadcast address <code>255.255.255.255</code> (port 67 (<code>udp.dst</code>)).</p>
+<p>Assuming everything is functioning correctly, this should produce the following output:</p>
+<pre><code># udp,reg14=0x2,vlan_tci=0x0000,dl_src=c0:ff:ee:00:00:11,dl_dst=c0:ff:ee:00:00:01,nw_src=0.0.0.0,nw_dst=255.255.255.255,nw_tos=0,nw_ecn=0,nw_ttl=1,tp_src=68,tp_dst=67
+ingress(dp=&quot;net0&quot;, inport=&quot;port1&quot;) {
+    next;
+    reg0[3] = put_dhcp_opts(offerip = 10.0.0.11, lease_time = 3600, netmask = 255.255.255.0, router = 10.0.0.1, server_id = 10.0.0.1);
+    /* We assume that this packet is DHCPDISCOVER or DHCPREQUEST. */;
+    next;
+    eth.dst = eth.src;
+    eth.src = c0:ff:ee:00:00:01;
+    ip4.dst = 10.0.0.11;
+    ip4.src = 10.0.0.1;
+    udp.src = 67;
+    udp.dst = 68;
+    outport = inport;
+    flags.loopback = 1;
+    output;
+    egress(dp=&quot;net0&quot;, inport=&quot;port1&quot;, outport=&quot;port1&quot;) {
+        next;
+        output;
+        /* output to &quot;port1&quot;, type &quot;&quot; */;
+    };
+};
+</code></pre><p>In the above output, you can see that OVN is filling in the details of the DHCP lease (that's the <code>put_dhcp_options</code> command), and then sending the packet back out <code>port1</code> with the ethernet source and destination addresses reversed (so that the destination address is now the MAC address of <code>port1</code>).</p>
+<p>It looks like everything is working in theory. Let's attach some actual network interfaces and see what happens!</p>
+<h1 id="attaching-network-interfaces">Attaching network interfaces</h1>
+<p>In this section, we will attach network interfaces to our logical switch and demonstrate that they can be properly configured using DHCP.</p>
+<h2 id="create-an-ovs-port">Create an OVS port</h2>
+<p>On host <code>ovn1</code>, let's create port <code>port1</code>. We'll want to ensure that (a) the MAC address of this port matches the MAC address we configured earlier (<code>c0:ff:ee:00:00:11</code>), and we need to make sure that the <code>iface-id</code> external id matches the port name we registered in the Northbound database. We can do that with the following command:</p>
+<pre><code>ovs-vsctl add-port br-int port1 -- \
+  set interface port1 \
+    type=internal \
+    mac='[&quot;c0:ff:ee:00:00:11&quot;]' \
+    external_ids:iface-id=port1
+</code></pre><p>After running this command, running <code>ovs-vsctl show</code> on <code>ovn1</code> should produce:</p>
+<pre><code>[root@ovn1 ~]# ovs-vsctl show
+f359ad7a-5fcd-49b3-8557-e61be3a0b130
+    Bridge br-int
+        fail_mode: secure
+        Port br-int
+            Interface br-int
+                type: internal
+        Port &quot;port1&quot;
+            Interface &quot;port1&quot;
+                type: internal
+        Port &quot;ovn-ovn2-0&quot;
+            Interface &quot;ovn-ovn2-0&quot;
+                type: geneve
+                options: {csum=&quot;true&quot;, key=flow, remote_ip=&quot;192.168.122.102&quot;}
+        Port &quot;ovn-ovn0-0&quot;
+            Interface &quot;ovn-ovn0-0&quot;
+                type: geneve
+                options: {csum=&quot;true&quot;, key=flow, remote_ip=&quot;192.168.122.100&quot;}
+    ovs_version: &quot;2.12.0&quot;
+</code></pre><p>Furthermore, OVN should also be aware of this port. If we run <code>ovn-sbctl show</code> on <code>ovn0</code>, we see a binding for host <code>ovn1</code> (look for the <code>Port_Binding port1</code> line under <code>Chassis ovn1</code>):</p>
+<pre><code>[root@ovn0 ~]# ovn-sbctl show
+Chassis ovn0
+    hostname: ovn0.virt
+    Encap geneve
+        ip: &quot;192.168.122.100&quot;
+        options: {csum=&quot;true&quot;}
+Chassis ovn1
+    hostname: ovn1.virt
+    Encap geneve
+        ip: &quot;192.168.122.101&quot;
+        options: {csum=&quot;true&quot;}
+    Port_Binding port1
+Chassis ovn2
+    hostname: ovn2.virt
+    Encap geneve
+        ip: &quot;192.168.122.102&quot;
+        options: {csum=&quot;true&quot;}
+</code></pre><h2 id="configure-the-port-using-dhcp">Configure the port using DHCP</h2>
+<p>We can now try to configure this interface with DHCP. Let's first move the interface into a network namespace; this means we don't need to worry about messing up routing on the host. We'll create a namespace named <code>vm1</code> and make <code>port1</code> part of that namespace:</p>
+<pre><code>ip netns add vm1
+ip link set netns vm1 port1
+</code></pre><p>Now if we attempt to configure the interface using <code>dhclient</code>, we see that it is able to successfully request an address:</p>
+<pre><code>[root@ovn1 ~]# ip netns exec vm1 dhclient -v -i port1 --no-pid
+Internet Systems Consortium DHCP Client 4.4.1
+Copyright 2004-2018 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+Listening on LPF/port1/c0:ff:ee:00:00:11
+Sending on   LPF/port1/c0:ff:ee:00:00:11
+Sending on   Socket/fallback
+Created duid &quot;\000\004\344J\012\236\007\033AF\261\354\246\273\206\011\226g&quot;.
+DHCPDISCOVER on port1 to 255.255.255.255 port 67 interval 7 (xid=0xffc0820a)
+DHCPOFFER of 10.0.0.11 from 10.0.0.1
+DHCPREQUEST for 10.0.0.11 on port1 to 255.255.255.255 port 67 (xid=0xffc0820a)
+DHCPACK of 10.0.0.11 from 10.0.0.1 (xid=0xffc0820a)
+bound to 10.0.0.11 -- renewal in 1378 seconds.
+</code></pre><p>And it has correctly configured the interface:</p>
+<pre><code>[root@ovn1 ~]# ip netns exec vm1 ip addr show port1
+6: port1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether c0:ff:ee:00:00:11 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.0.11/24 brd 10.0.0.255 scope global dynamic port1
+       valid_lft 577sec preferred_lft 577sec
+    inet6 fe80::c2ff:eeff:fe00:11/64 scope link
+       valid_lft forever preferred_lft forever
+</code></pre><h2 id="configuring-port2-on-ovn1">Configuring port2 on ovn1</h2>
+<p>Let's repeat the above process with <code>port2</code>, again using host <code>ovn1</code>. First we add the port:</p>
+<pre><code>ovs-vsctl add-port br-int port2 -- \
+  set interface port2 \
+    type=internal \
+    mac='[&quot;c0:ff:ee:00:00:12&quot;]' \
+    external_ids:iface-id=port2
+</code></pre><p>Add it to a namespace:</p>
+<pre><code>ip netns add vm2
+ip link set netns vm2 port2
+</code></pre><p>Configure it using <code>dhclient</code>:</p>
+<pre><code>[root@ovn1 ~]# ip netns exec vm2 dhclient -v -i port2 --no-pid
+Internet Systems Consortium DHCP Client 4.4.1
+Copyright 2004-2018 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+Listening on LPF/port2/c0:ff:ee:00:00:12
+Sending on   LPF/port2/c0:ff:ee:00:00:12
+Sending on   Socket/fallback
+DHCPDISCOVER on port2 to 255.255.255.255 port 67 interval 6 (xid=0x34e82271)
+DHCPOFFER of 10.0.0.12 from 10.0.0.1
+DHCPREQUEST for 10.0.0.12 on port2 to 255.255.255.255 port 67 (xid=0x34e82271)
+DHCPACK of 10.0.0.12 from 10.0.0.1 (xid=0x34e82271)
+bound to 10.0.0.12 -- renewal in 1494 seconds.
+</code></pre><p>And finally look at the OVN port bindings on <code>ovn0</code>:</p>
+<pre><code>[root@ovn0 ~]# ovn-sbctl show
+Chassis ovn1
+    hostname: ovn1.virt
+    Encap geneve
+        ip: &quot;192.168.122.101&quot;
+        options: {csum=&quot;true&quot;}
+    Port_Binding port2
+    Port_Binding port1
+Chassis ovn0
+    hostname: ovn0.virt
+    Encap geneve
+        ip: &quot;192.168.122.100&quot;
+        options: {csum=&quot;true&quot;}
+Chassis ovn2
+    hostname: ovn2.virt
+    Encap geneve
+        ip: &quot;192.168.122.102&quot;
+        options: {csum=&quot;true&quot;}
+</code></pre><h2 id="configuring-port3-on-ovn2">Configuring port3 on ovn2</h2>
+<p>Finally, let's repeat the above process for <code>port3</code> on host <code>ovn2</code>. When we're done, <code>ovn-sbctl show</code> looks like:</p>
+<pre><code>[root@ovn0 ~]# ovn-sbctl show
+Chassis ovn1
+    hostname: ovn1.virt
+    Encap geneve
+        ip: &quot;192.168.122.101&quot;
+        options: {csum=&quot;true&quot;}
+    Port_Binding port2
+    Port_Binding port1
+Chassis ovn0
+    hostname: ovn0.virt
+    Encap geneve
+        ip: &quot;192.168.122.100&quot;
+        options: {csum=&quot;true&quot;}
+Chassis ovn2
+    hostname: ovn2.virt
+    Encap geneve
+        ip: &quot;192.168.122.102&quot;
+        options: {csum=&quot;true&quot;}
+    Port_Binding port3
+</code></pre><h2 id="verify-connectivity">Verify connectivity</h2>
+<p>We can verify that the network namespaces we've created in the above examples are able to communicate with eachother regardless of the host on which they have been created.  For example, if we log into <code>ovn2</code> we can show that we are able to reach the address of <code>port1</code> (<code>10.0.0.11</code>) from <code>port3</code>:</p>
+<pre><code>[root@ovn2 ~]# ip netns exec vm3 ping -c1 10.0.0.11
+PING 10.0.0.11 (10.0.0.11) 56(84) bytes of data.
+64 bytes from 10.0.0.11: icmp_seq=1 ttl=64 time=0.266 ms
+
+--- 10.0.0.11 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.266/0.266/0.266/0.000 ms
+</code></pre><h1 id="thats-all-folks">That's all folks!</h1>
+<p>I hope this post helps you understand how to set up a simple OVN environment with DHCP. Please feel free to leave comments and questions!</p>
+<h2 id="other-resources">Other resources</h2>
+<p>Below are some of the resources to which I referred while figuring out how to put this all together:</p>
+<ul>
+<li><a href="https://developers.redhat.com/blog/2018/09/03/ovn-dynamic-ip-address-management/">Dynamic IP address management in Open Virtual Network (OVN): Part One</a></li>
+<li><a href="https://developers.redhat.com/blog/2018/09/27/dynamic-ip-address-management-in-open-virtual-network-ovn-part-two/">Dynamic IP address management in Open Virtual Network (OVN): Part Two</a></li>
+<li><a href="https://qyx.me/2018/07/10/run-and-test-ovn/">Run Open Virtual Network (OVN) in Ubuntu</a></li>
+<li><a href="http://dani.foroselectronica.es/simple-ovn-setup-in-5-minutes-491/">Simple OVN setup in 5 minutes</a></li>
+</ul>
+
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/openstack/">openstack</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/ovn/">ovn</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/openvswitch/">openvswitch</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/networking/">networking</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=OVN%20and%20DHCP%3a%20A%20minimal%20example&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2019-12-19-ovn-and-dhcp%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

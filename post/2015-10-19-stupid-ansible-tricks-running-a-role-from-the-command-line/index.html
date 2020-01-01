@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Stupid Ansible Tricks: Running a role from the command line &middot; The Odd Bit</title>
-        <meta name="description" content="When writing Ansible roles I occasionally want a way to just run a role from the command line, without having to muck about with a playbook. I&rsquo;ve seen similar requests on the mailing lists and on irc.
-I&rsquo;ve thrown together a quick wrapper that will allow you (and me!) to do exactly that, called ansible-role. The --help output looks like this:
+        <meta name="description" content="When writing Ansible roles I occasionally want a way to just run a role from the command line, without having to muck about with a playbook. I&#39;ve seen similar requests on the mailing lists and on irc.
+I&#39;ve thrown together a quick wrapper that will allow you (and me!) to do exactly that, called ansible-role. The --help output looks like this:
 usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTRA_VARS] [-i INVENTORY] [--hosts HOSTS] [--sudo] [--become] [--user USER] role positional arguments: role optional arguments: -h, --help show this help message and exit --verbose, -v --gather, -g --no-gather, -G --extra-vars EXTRA_VARS, -e EXTRA_VARS Inventory: -i INVENTORY, --inventory INVENTORY --hosts HOSTS, -H HOSTS Identity: --sudo, -s --become, -b --user USER, -u USER  Example If you have a role roles/testrole that contains the following in tasks/main.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -25,6 +25,7 @@ usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTR
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -118,15 +119,13 @@ usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTR
 
     
 
-<p>When writing <a href="http://www.ansible.com/">Ansible</a> roles I occasionally want a way to just run a
+    <p>When writing <a href="http://www.ansible.com/">Ansible</a> roles I occasionally want a way to just run a
 role from the command line, without having to muck about with a
-playbook.  I&rsquo;ve seen <a href="https://groups.google.com/forum/#!topic/ansible-project/h-SGLuPDRrs">similar</a> <a href="https://groups.google.com/forum/#!topic/ansible-devel/GqzZ6zsn6eY">requests</a> on the mailing lists
+playbook.  I've seen <a href="https://groups.google.com/forum/#!topic/ansible-project/h-SGLuPDRrs">similar</a> <a href="https://groups.google.com/forum/#!topic/ansible-devel/GqzZ6zsn6eY">requests</a> on the mailing lists
 and on irc.</p>
-
-<p>I&rsquo;ve thrown together a quick wrapper that will allow you (and me!) to
+<p>I've thrown together a quick wrapper that will allow you (and me!) to
 do exactly that, called <a href="http://github.com/larsks/ansible-role">ansible-role</a>.  The <code>--help</code> output looks
 like this:</p>
-
 <pre><code>usage: ansible-role [-h] [--verbose] [--gather] [--no-gather]
                     [--extra-vars EXTRA_VARS] [-i INVENTORY] [--hosts HOSTS]
                     [--sudo] [--become] [--user USER]
@@ -151,12 +150,9 @@ Identity:
   --become, -b
   --user USER, -u USER
 </code></pre>
-
 <h2 id="example">Example</h2>
-
 <p>If you have a role <code>roles/testrole</code> that contains the following in
 <code>tasks/main.yml</code>:</p>
-
 <pre><code>- name: figure out who I am
   command: whoami
   register: whoami
@@ -165,14 +161,10 @@ Identity:
   debug:
     msg: &quot;I am {{whoami.stdout}}&quot;
 </code></pre>
-
 <p>You could run it like this:</p>
-
 <pre><code>$ ansible-role testrole -i localhost,
 </code></pre>
-
 <p>Which would get you:</p>
-
 <pre><code>PLAY ***************************************************************************
 
 TASK [setup] *******************************************************************
@@ -190,22 +182,17 @@ ok: [localhost -&gt; localhost] =&gt; {
 PLAY RECAP *********************************************************************
 localhost                  : ok=3    changed=1    unreachable=0    failed=0   
 </code></pre>
-
 <p>You can use the <code>-b</code> (formerly <code>-s</code>) flag to enable privilege
 escalation via <code>sudo</code>:</p>
-
 <pre><code>$ ansible-role testrole -i localhost, -s
 </code></pre>
-
 <p>Which will work as expected:</p>
-
 <pre><code>TASK [testrole : show who I am] ************************************************
 ok: [localhost -&gt; localhost] =&gt; {
     &quot;changed&quot;: false, 
     &quot;msg&quot;: &quot;I am root&quot;
 }
 </code></pre>
-
 <p>The <code>ansible-role</code> command does not currently provide proxy arguments
 for <em>all</em> of the options supported by <code>ansible-playbook</code>, but
 hopefully it supports enough to be useful.  If you have bug reports or
@@ -213,6 +200,7 @@ pull requests, feel free to leave them <a href="http://github.com/larsks/ansible
 repository</a>.</p>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

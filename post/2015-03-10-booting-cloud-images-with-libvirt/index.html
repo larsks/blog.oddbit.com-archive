@@ -8,7 +8,7 @@
 Because of their small size and support for automatic configuration (including such useful tasks as provisioning ssh keys), these images are attractive for use outside of a cloud environment.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.55.5" />
+        <meta name="generator" content="Hugo 0.62.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,6 +24,7 @@ Because of their small size and support for automatic configuration (including s
         <link rel="stylesheet" href="/css/sx.css">
 <link rel="stylesheet" href="/css/pull-request.css">
 <link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
         
     </head>
@@ -117,12 +118,11 @@ Because of their small size and support for automatic configuration (including s
 
     
 
-<p>Most major distributions now provide &ldquo;cloud-enabled&rdquo; images designed
+    <p>Most major distributions now provide &ldquo;cloud-enabled&rdquo; images designed
 for use in cloud environments like OpenStack and AWS.  These images
 are usually differentiated by (a) being relatively small, and (b) running
 <a href="http://cloudinit.readthedocs.org/">cloud-init</a> at boot to perform initial system configuration tasks
 using metadata provided by the cloud environment.</p>
-
 <p>Because of their small size and support for automatic configuration
 (including such useful tasks as provisioning ssh keys), these images
 are attractive for use <em>outside</em> of a cloud environment.
@@ -131,54 +131,41 @@ frustration as first the image takes forever to boot as it tries to
 contact a non-existent metadata service, and then when it finally does
 boot they are unable to log in because the images typically only
 support key-based login.</p>
-
 <p>Fortunately, there are ways to work around these issues.  In addition
 to working with various network-accessible metadata services,
 <a href="http://cloudinit.readthedocs.org/">cloud-init</a> is also able to read configuration information from an
 attached [virtual] CD-ROM device.  This is known as a &ldquo;configuration
 drive&rdquo;, and it is relatively easy to create.</p>
-
-<p>For this purpose, the simplest solution is use <a href="http://cloudinit.readthedocs.org/">cloud-init</a>&rsquo;s &ldquo;no
+<p>For this purpose, the simplest solution is use <a href="http://cloudinit.readthedocs.org/">cloud-init</a>&lsquo;s &ldquo;no
 cloud&rdquo; data source.  For this, we need to create an ISO filesystem
 creating two files, <code>meta-data</code> and (optionally) <code>user-data</code>.</p>
-
 <h2 id="the-meta-data-file">The meta-data file</h2>
-
 <p>The <code>meta-data</code> file is effectively a YAML version of the data
 typically available in the EC2 metadata service, and will look
 something like this:</p>
-
 <pre><code>instance-id: my-instance-id
 local-hostname: my-host-name
 </code></pre>
-
 <p>The <code>instance-id</code> key is required. You can also include SSH public
 keys in this file, like this:</p>
-
 <pre><code>instance-id: my-instance-id
 local-hostname: my-host-name
 public-keys:
   - ssh-rsa AAAAB3NzaC1...
 </code></pre>
-
 <p>You will see examples that place ssh keys in the <code>user-data</code> file
 instead, but I believe this is the wrong solution, since it forces you
 to use a &ldquo;cloud-config&rdquo; format <code>user-data</code> file.  Putting ssh keys
 into the <code>meta-data</code> provides you more flexibility with your
 <code>user-data</code> content.</p>
-
 <h2 id="the-user-data-file">The user-data file</h2>
-
 <p>The <code>user-data</code> can be any of the various formats <a href="http://cloudinit.readthedocs.org/en/latest/topics/format.html">supported by
 cloud-init</a>.  For example, it could simply be a shell script:</p>
-
 <pre><code>#!/bin/sh
 
 yum -y install some-critical-package
 </code></pre>
-
 <p>Or it could be a <a href="http://cloudinit.readthedocs.org/en/latest/topics/examples.html#yaml-examples">cloud-config</a> YAML document:</p>
-
 <pre><code>#cloud-config
 
 write-files:
@@ -189,33 +176,24 @@ write-files:
 runcmd:
   - setenforce 1
 </code></pre>
-
 <h2 id="putting-it-all-together">Putting it all together</h2>
-
 <p>Once you have created your <code>meta-data</code> and <code>user-data</code> files, you can
 create the configuration drive like this:</p>
-
 <pre><code>genisoimage -o config.iso -V cidata -r -J meta-data user-data
 </code></pre>
-
 <p>To boot an instance using this configuration drive, you could do
 something like this:</p>
-
 <pre><code>virt-install -n example -r 512 -w network=default \
   --disk vol=default/fedora-21-cloud.qcow2 --import \
   --disk path=config.iso,device=cdrom
 </code></pre>
-
 <p>(This assumes, obviously, that you have an image named
-<code>fedora-21-cloud.qcow2</code> available in libvirt&rsquo;s <code>default</code> storage
+<code>fedora-21-cloud.qcow2</code> available in libvirt's <code>default</code> storage
 pool.)</p>
-
 <h2 id="a-little-automation">A little automation</h2>
-
 <p>I have written a <a href="https://github.com/larsks/virt-utils/blob/master/create-config-drive">create-config-drive</a> script that will automate
 this process.  With this script available, the above process is
 simply:</p>
-
 <pre><code>create-config-drive -k ~/.ssh/id_rsa.pub -u user-data config.iso
 adding pubkey from /home/lars/.ssh/id_rsa.pub
 adding user data from userdata
@@ -223,6 +201,7 @@ generating configuration image at config.iso
 </code></pre>
 
 </div>
+
 
         <footer class="post-footer clearfix">
     

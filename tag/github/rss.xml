@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>github on The Odd Bit</title>
@@ -27,7 +27,7 @@ Rebase instead of merge If you need to incorporate changes from the upstream mas
       <pubDate>Tue, 07 May 2019 09:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-05-07-new-comment-system/</guid>
-      <description>As long as I&amp;rsquo;m switching site generators, it seems like a good idea to refresh the comment system as well. I&amp;rsquo;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.
+      <description>As long as I&#39;m switching site generators, it seems like a good idea to refresh the comment system as well. I&#39;ve been using Disqus for a while, since when I started it was one of the only games in town. There are now alternatives of different sorts, and one in particular caught my eye: Utterances uses GitHub issues for storing comments, which seems like a fantastic idea.
 That means that comments will finally be stored in the same place as the blog content, which I think is a happy state of affairs.</description>
     </item>
     
