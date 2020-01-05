@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Ansible: passing a list of objects to a python script python ansible  Installing Xfce on CentOS 7 via ansible yum ssh ansible centos7 yum  Where does `set -x` cause bash to print to? bash  Ansible : How to copy everything from &amp;#34;Files&amp;#34; folders of a specific role ansible ansible-2.x ansible-facts  Sequentially apply files to DB in specific order using Python python python-3.x  Changing capitalization of filenames in Git git rename case-sensitive file-rename  Dynamically adding methods to the object doesn&amp;#39;t work correctly (setattr) python python-3.</description>
+      <description>Ansible: How to get the interface name of the host machine where ansible connect from? ansible  Docker run --mount make all files available in a different folder during RUN docker dockerfile docker-buildkit  Split results in Python for CPU usage python-3.x linux pip raspberry-pi3  Python custom module and import python  How to convert a list of variable length lists into a CSV file? python python-3.x list file csv  Ansible: passing a list of objects to a python script python ansible  Python - reading non well formed xml file python xml elementtree  SystemD Setup Can&amp;#39;t Find Python?</description>
     </item>
     
   </channel>
