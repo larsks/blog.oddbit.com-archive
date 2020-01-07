@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Why can I connect through SSH without using the required private key? ssh  How to store output for every xargs instance separately linux bash  Loops within loops ansible  Increase Docker container storage size on CentOS docker centos  Docker remote daemon (TCP): Cannot connect to the Docker daemon docker tcp ubuntu-18.04 docker-daemon  Ansible: How to get the interface name of the host machine where ansible connect from?</description>
+      <description>A way for client to trigger Ansible Playbook? automation ansible  Ubuntu unattended upgrades conflict with startup script on google cloud compute engine bash google-cloud-platform google-compute-engine ubuntu-18.04 apt  Why can I connect through SSH without using the required private key? ssh  How to store output for every xargs instance separately linux bash  Loops within loops ansible  Increase Docker container storage size on CentOS docker centos  Docker remote daemon (TCP): Cannot connect to the Docker daemon docker tcp ubuntu-18.</description>
     </item>
     
   </channel>
