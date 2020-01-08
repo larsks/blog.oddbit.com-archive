@@ -1943,7 +1943,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>A way for client to trigger Ansible Playbook? automation ansible  Ubuntu unattended upgrades conflict with startup script on google cloud compute engine bash google-cloud-platform google-compute-engine ubuntu-18.04 apt  Why can I connect through SSH without using the required private key? ssh  How to store output for every xargs instance separately linux bash  Loops within loops ansible  Increase Docker container storage size on CentOS docker centos  Docker remote daemon (TCP): Cannot connect to the Docker daemon docker tcp ubuntu-18.</description>
+      <description>Running python scripts remotely using API and subprocess does not work python linux python-2.7  Linux: Get &amp;#34;user-friendly&amp;#34; network interface name linux networking network-interface  How to get folder name, in which given file resides, from pathlib.path? python filenames pathlib  Dockerfile VOLUME instruction clears data docker docker-compose dockerfile  How to avoid size accumulation in git repositories while replacing files many times? git github  Jinja2 - sum legnth of list in object in list python python-3.</description>
     </item>
     
   </channel>
