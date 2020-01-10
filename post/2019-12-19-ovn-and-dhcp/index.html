@@ -240,7 +240,7 @@ LISTEN    0         10                 0.0.0.0:6642             0.0.0.0:*       
 </ul>
 <p>On all nodes, run the following command:</p>
 <pre><code>ovs-vsctl set open-vswitch .  \
-  external_ids:ovn-remote=192.168.122.100 \
+  external_ids:ovn-remote=tcp:192.168.122.100:6642 \
   external_ids:ovn-encap-ip=$(ip addr show eth0 | awk '$1 == &quot;inet&quot; {print $2}' | cut -f1 -d/) \
   external_ids:ovn-encap-type=geneve \
   external_ids:system-id=$(hostname)
@@ -288,24 +288,25 @@ switch d8d96fb2-e1e7-469d-8c72-b7e891fb16ba (net0)
 <p>While not actually required, we can also set the <code>router</code> key to provide information about the default gateway. We're not going to make use of it in this example, but in practice you will probably want to set the <code>router</code> option.</p>
 <p>We also need to set the CIDR range that will be served by the DHCP server.</p>
 <p>We can create the appropriate options using the <code>ovn-nbctl dhcp-options-create</code> command. Run the following on <code>ovn0</code>:</p>
-<pre><code>ovn-nbctl dhcp-options-create 10.0.0.0/24 \
+<pre><code>ovn-nbctl dhcp-options-create 10.0.0.0/24
+</code></pre><p>Despite the name of that command, it doesn't actually let us set DHCP options. For that, we need to first look up the uuid of our newly created entry in the <code>dhcp_options</code> table. Let's store that in the <code>CIDR_UUID</code> variable, which we will use in a few places in the remainder of this post:</p>
+<p>CIDR_UUID=$(ovn-nbctl &ndash;bare &ndash;columns=_uuid find dhcp_options cidr=&quot;10.0.0.0/24&rdquo;)</p>
+<p>With that uuid in hand, we can now set the required options:</p>
+<pre><code>ovn-nbctl dhcp-options-set-options ${CIDR_UUID} \
   lease_time=3600 \
   router=10.0.0.1 \
   server_id=10.0.0.1 \
   server_mac=c0:ff:ee:00:00:01
-</code></pre><p>We can get the id of the new row with the <code>ovn-nbctl dhcp-options-list</code> command:</p>
-<pre><code>[root@ovn0 ~]# ovn-nbctl dhcp-options-list
-f8a6abc5-b8e4-4209-8809-b95435b4d48b
-</code></pre><p>Alternately, we can use the database <code>list</code> command to inspect the <code>dhcp_options</code> table:</p>
+</code></pre><p>We can use the database <code>list</code> command to inspect the <code>dhcp_options</code> table to verify that things look as we expect:</p>
 <pre><code>[root@ovn0 ~]# ovn-nbctl list dhcp_options
 _uuid               : f8a6abc5-b8e4-4209-8809-b95435b4d48b
 cidr                : &quot;10.0.0.0/24&quot;
 external_ids        : {lease_time=&quot;3600&quot;, router=&quot;10.0.0.1&quot;, server_id=&quot;10.0.0.1&quot;, server_mac=&quot;c0:ff:ee:00:00:01&quot;}
 options             : {}
 </code></pre><p>Instead of using the <code>dhcp-options-create</code> command, as we did in this section, we could instead have used the database <code>create</code> command. The quoting requirements for that command are a little more complex, but unlike the <code>dhcp-options-create</code> command the <code>create</code> command returns the id of the row it creates. This can be useful if you're using the command as part of a script. The equivalent <code>create</code> command would look like:</p>
-<pre><code>ovn-nbctl create dhcp_options \
+<pre><code>CIDR_UUID=$(ovn-nbctl create dhcp_options \
   cidr=10.0.0.0/24 \
-  options='&quot;lease_time&quot;=&quot;3600&quot; &quot;router&quot;=&quot;10.0.0.1&quot; &quot;server_id&quot;=&quot;10.0.0.1&quot; &quot;server_mac&quot;=&quot;c0:ff:ee:00:00:01&quot;'
+  options='&quot;lease_time&quot;=&quot;3600&quot; &quot;router&quot;=&quot;10.0.0.1&quot; &quot;server_id&quot;=&quot;10.0.0.1&quot; &quot;server_mac&quot;=&quot;c0:ff:ee:00:00:01&quot;')
 </code></pre><h2 id="create-logical-ports">Create logical ports</h2>
 <p>Let's add the following three logical ports to the switch:</p>
 <table>
@@ -333,11 +334,11 @@ options             : {}
 <p>For each port, we'll need to run three commands. First, we create the port on the switch:</p>
 <pre><code>ovn-nbctl lsp-add net0 port1
 </code></pre><p>Next, we set the port addresses. For this example, I'm using static MAC addresses and dynamic (assigned by DHCP) IP addresses, so the command will look like:</p>
-<pre><code>ovn-nbctl lsp-set-addresses port1 &quot;c0:ff:ee:00:00:10 dynamic&quot;
+<pre><code>ovn-nbctl lsp-set-addresses port1 &quot;c0:ff:ee:00:00:11 dynamic&quot;
 </code></pre><p>If you want OVN to set MAC addresses for the ports as well, you would instead run:</p>
 <pre><code>ovn-nbctl lsp-set-addresses port1 &quot;dynamic&quot;
 </code></pre><p>Finally, we associate the port with the DHCP options we created in the previous section:</p>
-<pre><code>ovn-nbctl lsp-set-dhcpv4-options port1 f8a6abc5-b8e4-4209-8809-b95435b4d48b
+<pre><code>ovn-nbctl lsp-set-dhcpv4-options port1 $CIDR_UUID
 </code></pre><p>Repeat the above sequence for <code>port2</code> and <code>port3</code>, and when you're done, <code>ovn-nbctl show</code> should return output similar to the following:</p>
 <pre><code>switch 3c03342f-f762-410b-9f4e-572d266c8ff7 (net0)
     port port2
@@ -346,7 +347,7 @@ options             : {}
         addresses: [&quot;c0:ff:ee:00:00:13 dynamic&quot;]
     port port1
         addresses: [&quot;c0:ff:ee:00:00:11 dynamic&quot;]
-</code></pre><p>We can see additional details using the database command <code>ovn-nbctl list logical_switch_ports</code>.  The entry for <code>port1</code> might look like this:</p>
+</code></pre><p>We can see additional details using the database command <code>ovn-nbctl list logical_switch_port</code>.  The entry for <code>port1</code> might look like this:</p>
 <pre><code>_uuid               : 8ad6a4c0-4c7b-4817-bf13-8e7b1a86bab1
 addresses           : [&quot;c0:ff:ee:00:00:11 dynamic&quot;]
 dhcpv4_options      : f8a6abc5-b8e4-4209-8809-b95435b4d48b
