@@ -375,12 +375,12 @@ dynamic_addresses   : &quot;c0:ff:ee:00:00:12 10.0.0.12&quot;
 <p>At this point, we have a functioning switch, although we haven't actually realized the ports anywhere yet. This is the perfect time to introduce the <code>ovn-trace</code> tool, which can be used to simulate how your OVN network will handle a packet of data.</p>
 <p>We can show how OVN will respond to a DHCP <code>DISCOVER</code> message with the following command:</p>
 <pre><code>ovn-trace --summary net0 '
-  inport==&quot;port1&quot; &amp;&amp; 
-  eth.src==c0:ff:ee:00:00:11 &amp;&amp; 
-  ip4.src==0.0.0.0 &amp;&amp; 
-  ip.ttl==1 &amp;&amp; 
-  ip4.dst==255.255.255.255 &amp;&amp; 
-  udp.src==68 &amp;&amp; 
+  inport==&quot;port1&quot; &amp;&amp;
+  eth.src==c0:ff:ee:00:00:11 &amp;&amp;
+  ip4.src==0.0.0.0 &amp;&amp;
+  ip.ttl==1 &amp;&amp;
+  ip4.dst==255.255.255.255 &amp;&amp;
+  udp.src==68 &amp;&amp;
   udp.dst==67'
 </code></pre><p>The above command simulates a packet originating on <code>port1</code> with the appropriate MAC address (<code>eth.src</code>, <code>c0:ff:ee:00:00:11</code>) and a source address (<code>ip4.src</code>) of <code>0.0.0.0</code> (port 68 (<code>udp.src</code>)), targeting (<code>ip4.dst</code>) the broadcast address <code>255.255.255.255</code> (port 67 (<code>udp.dst</code>)).</p>
 <p>Assuming everything is functioning correctly, this should produce the following output:</p>
@@ -458,7 +458,11 @@ Chassis ovn2
 <p>We can now try to configure this interface with DHCP. Let's first move the interface into a network namespace; this means we don't need to worry about messing up routing on the host. We'll create a namespace named <code>vm1</code> and make <code>port1</code> part of that namespace:</p>
 <pre><code>ip netns add vm1
 ip link set netns vm1 port1
-</code></pre><p>Now if we attempt to configure the interface using <code>dhclient</code>, we see that it is able to successfully request an address:</p>
+ip -n vm1 addr add 127.0.0.1/8 dev lo
+ip -n vm1 link set lo up
+</code></pre><p>We can now configure the interface using DHCP by running the <code>dhclient</code> command:</p>
+<pre><code>ip netns exec vm1 dhclient -v -i port1 --no-pid
+</code></pre><p>After <code>dhclient</code> goes to the background, we see that it was able to successfully request an address:</p>
 <pre><code>[root@ovn1 ~]# ip netns exec vm1 dhclient -v -i port1 --no-pid
 Internet Systems Consortium DHCP Client 4.4.1
 Copyright 2004-2018 Internet Systems Consortium.
@@ -492,21 +496,10 @@ bound to 10.0.0.11 -- renewal in 1378 seconds.
 </code></pre><p>Add it to a namespace:</p>
 <pre><code>ip netns add vm2
 ip link set netns vm2 port2
+ip -n vm2 addr add 127.0.0.1/8 dev lo
+ip -n vm2 link set lo up
 </code></pre><p>Configure it using <code>dhclient</code>:</p>
-<pre><code>[root@ovn1 ~]# ip netns exec vm2 dhclient -v -i port2 --no-pid
-Internet Systems Consortium DHCP Client 4.4.1
-Copyright 2004-2018 Internet Systems Consortium.
-All rights reserved.
-For info, please visit https://www.isc.org/software/dhcp/
-
-Listening on LPF/port2/c0:ff:ee:00:00:12
-Sending on   LPF/port2/c0:ff:ee:00:00:12
-Sending on   Socket/fallback
-DHCPDISCOVER on port2 to 255.255.255.255 port 67 interval 6 (xid=0x34e82271)
-DHCPOFFER of 10.0.0.12 from 10.0.0.1
-DHCPREQUEST for 10.0.0.12 on port2 to 255.255.255.255 port 67 (xid=0x34e82271)
-DHCPACK of 10.0.0.12 from 10.0.0.1 (xid=0x34e82271)
-bound to 10.0.0.12 -- renewal in 1494 seconds.
+<pre><code>ip netns exec vm2 dhclient -v -i port2 --no-pid
 </code></pre><p>And finally look at the OVN port bindings on <code>ovn0</code>:</p>
 <pre><code>[root@ovn0 ~]# ovn-sbctl show
 Chassis ovn1
@@ -527,7 +520,7 @@ Chassis ovn2
         ip: &quot;192.168.122.102&quot;
         options: {csum=&quot;true&quot;}
 </code></pre><h2 id="configuring-port3-on-ovn2">Configuring port3 on ovn2</h2>
-<p>Finally, let's repeat the above process for <code>port3</code> on host <code>ovn2</code>. When we're done, <code>ovn-sbctl show</code> looks like:</p>
+<p>Lastly, let's repeat the above process for <code>port3</code> on host <code>ovn2</code>. When we're done, <code>ovn-sbctl show</code> looks like:</p>
 <pre><code>[root@ovn0 ~]# ovn-sbctl show
 Chassis ovn1
     hostname: ovn1.virt
