@@ -239,7 +239,7 @@ LISTEN    0         10                 0.0.0.0:6642             0.0.0.0:*       
 <li><code>system-id</code> &ndash; a unique identifier for the local host</li>
 </ul>
 <p>On all nodes, run the following command:</p>
-<pre><code>ovs-vsctl set open-vswitch .  \
+<pre><code>ovs-vsctl set open_vswitch .  \
   external_ids:ovn-remote=tcp:192.168.122.100:6642 \
   external_ids:ovn-encap-ip=$(ip addr show eth0 | awk '$1 == &quot;inet&quot; {print $2}' | cut -f1 -d/) \
   external_ids:ovn-encap-type=geneve \
@@ -264,6 +264,8 @@ external_ids        : {hostname=&quot;ovn1.virt&quot;, ovn-encap-ip=&quot;192.16
                 type: geneve
                 options: {csum=&quot;true&quot;, key=flow, remote_ip=&quot;192.168.122.102&quot;}
     ovs_version: &quot;2.12.0&quot;
+</code></pre><p>Due to what appears to be some sort of race condition in OVN, you may not see the geneve tunnels in the <code>ovs-vsctl show</code> output.  If this is the case, restart <code>ovn-controller</code> on your ovn nodes:</p>
+<pre><code>systemctl restart ovn-controller
 </code></pre><h1 id="creating-a-virtual-network">Creating a virtual network</h1>
 <p>Now that we have a functioning OVN environment, we're ready to create our virtual network.</p>
 <h2 id="create-a-logical-switch">Create a logical switch</h2>
