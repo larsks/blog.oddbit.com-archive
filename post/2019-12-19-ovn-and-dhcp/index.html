@@ -264,9 +264,10 @@ external_ids        : {hostname=&quot;ovn1.virt&quot;, ovn-encap-ip=&quot;192.16
                 type: geneve
                 options: {csum=&quot;true&quot;, key=flow, remote_ip=&quot;192.168.122.102&quot;}
     ovs_version: &quot;2.12.0&quot;
-</code></pre><p>Due to what appears to be some sort of race condition in OVN, you may not see the geneve tunnels in the <code>ovs-vsctl show</code> output.  If this is the case, restart <code>ovn-controller</code> on your ovn nodes:</p>
+</code></pre><p>Due to what appears to be <a href="https://mail.openvswitch.org/pipermail/ovs-discuss/2020-January/049692.html">some sort of race condition in OVN</a>, you may not see the geneve tunnels in the <code>ovs-vsctl show</code> output.  If this is the case, restart <code>ovn-controller</code> on all your ovn nodes:</p>
 <pre><code>systemctl restart ovn-controller
-</code></pre><h1 id="creating-a-virtual-network">Creating a virtual network</h1>
+</code></pre><p>The issue with the geneve tunnels appears to be resolved by <a href="https://patchwork.ozlabs.org/patch/1222380/">this patch</a>, which will hopefully land in OVN in the near future.</p>
+<h1 id="creating-a-virtual-network">Creating a virtual network</h1>
 <p>Now that we have a functioning OVN environment, we're ready to create our virtual network.</p>
 <h2 id="create-a-logical-switch">Create a logical switch</h2>
 <p>We'll start by creating a logical switch, which we will call <code>net0</code>. We create that using the <code>ovn-nbctl ls-add</code> command. Run the following on <code>ovn0</code>:</p>
@@ -561,7 +562,7 @@ Chassis ovn2
         options: {csum=&quot;true&quot;}
     Port_Binding port3
 </code></pre><h2 id="verify-connectivity">Verify connectivity</h2>
-<p>We can verify that the network namespaces we've created in the above examples are able to communicate with eachother regardless of the host on which they have been created.  For example, if we log into <code>ovn2</code> we can show that we are able to reach the address of <code>port1</code> (<code>10.0.0.11</code>) from <code>port3</code>:</p>
+<p>We can verify that the network namespaces we've created in the above examples are able to communicate with each other regardless of the host on which they have been created.  For example, if we log into <code>ovn2</code> we can show that we are able to reach the address of <code>port1</code> (<code>10.0.0.11</code>) from <code>port3</code>:</p>
 <pre><code>[root@ovn2 ~]# ip netns exec vm3 ping -c1 10.0.0.11
 PING 10.0.0.11 (10.0.0.11) 56(84) bytes of data.
 64 bytes from 10.0.0.11: icmp_seq=1 ttl=64 time=0.266 ms
@@ -574,6 +575,7 @@ rtt min/avg/max/mdev = 0.266/0.266/0.266/0.000 ms
 <h2 id="thanks-to">Thanks to</h2>
 <ul>
 <li><a href="https://github.com/LorenzoBianconi">Lorenzo Bianconi</a> for helping sort this out over email.</li>
+<li><a href="https://twitter.com/zhouhanok">Han Zhou</a> for helping solve the issue around Geneve tunnels coming up appropriately.</li>
 </ul>
 <h2 id="see-also">See also</h2>
 <p>Below are some of the resources to which I referred while figuring out how to put this all together:</p>
