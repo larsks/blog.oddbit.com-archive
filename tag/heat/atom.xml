@@ -34,7 +34,7 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
     <updated>2015-06-19T00:00:00Z</updated>
     <summary type="html">Next week is the Red Hat Summit in Boston, and I&#39;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
 As part of that presentation, I&#39;ve put together a short demonstration video:
-This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</summary>
+ This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</summary>
   </entry>
   
   <entry>
@@ -47,7 +47,8 @@ This shows off the autoscaling behavior available with recent versions of these 
     <published>2014-09-05T00:00:00Z</published>
     <updated>2014-09-05T00:00:00Z</updated>
     <summary type="html">I ran a Google Hangout this morning on Deploying with Heat. You can find the slides for the presentation on line here, and the Heat templates (as well as slide sources) are available on github.
-If you have any questions about the presentation, please feel free to ping me on irc (larsks).</summary>
+If you have any questions about the presentation, please feel free to ping me on irc (larsks).
+ </summary>
   </entry>
   
   <entry>

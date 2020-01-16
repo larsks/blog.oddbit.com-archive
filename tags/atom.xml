@@ -6,8 +6,32 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2019-12-19T00:00:00Z</updated>
+  <updated>2020-01-15T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  
+  <entry>
+    <title>literate-programming</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/literate-programming/"/>
+    <id>https://blog.oddbit.com/tag/literate-programming/</id>
+    <published>2020-01-15T00:00:00Z</published>
+    <updated>2020-01-15T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>markdown</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/markdown/"/>
+    <id>https://blog.oddbit.com/tag/markdown/</id>
+    <published>2020-01-15T00:00:00Z</published>
+    <updated>2020-01-15T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
   
   <entry>
     <title>networking</title>
@@ -160,30 +184,6 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/battery/"/>
     <id>https://blog.oddbit.com/tag/battery/</id>
-    <published>2019-05-14T00:00:00Z</published>
-    <updated>2019-05-14T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>cpap</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/cpap/"/>
-    <id>https://blog.oddbit.com/tag/cpap/</id>
-    <published>2019-05-14T00:00:00Z</published>
-    <updated>2019-05-14T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>diy</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/diy/"/>
-    <id>https://blog.oddbit.com/tag/diy/</id>
     <published>2019-05-14T00:00:00Z</published>
     <updated>2019-05-14T00:00:00Z</updated>
     <summary type="html"></summary>

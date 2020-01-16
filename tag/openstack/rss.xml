@@ -176,7 +176,7 @@ It is possible to generate your network configuration from this configuration dr
       <guid>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</guid>
       <description>Next week is the Red Hat Summit in Boston, and I&#39;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
 As part of that presentation, I&#39;ve put together a short demonstration video:
-This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</description>
+ This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</description>
     </item>
     
     <item>
@@ -289,7 +289,8 @@ What&#39;s a hook? A Nova &amp;ldquo;hook&amp;rdquo; is a mechanism that allows 
       
       <guid>https://blog.oddbit.com/post/2014-09-05-heat-hangout/</guid>
       <description>I ran a Google Hangout this morning on Deploying with Heat. You can find the slides for the presentation on line here, and the Heat templates (as well as slide sources) are available on github.
-If you have any questions about the presentation, please feel free to ping me on irc (larsks).</description>
+If you have any questions about the presentation, please feel free to ping me on irc (larsks).
+ </description>
     </item>
     
     <item>
@@ -394,7 +395,8 @@ There is now a better option available.</description>
       <pubDate>Tue, 27 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</guid>
-      <description>I&#39;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:</description>
+      <description>I&#39;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
+ </description>
     </item>
     
     <item>
@@ -460,7 +462,8 @@ neutron net-create external -- --router:external=true \ --provider:network_type=
       <guid>https://blog.oddbit.com/post/2014-02-27-multinode/</guid>
       <description>I was the presenter for this morning&#39;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
 The slides are online here.
-Here&#39;s the video (also available on the event page):</description>
+Here&#39;s the video (also available on the event page):
+ </description>
     </item>
     
     <item>

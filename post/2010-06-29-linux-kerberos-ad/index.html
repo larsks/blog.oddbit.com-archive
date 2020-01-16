@@ -235,8 +235,11 @@ expired, she will experience degraded behavior, since many name lookup
 operations will timeout. Similarly, local system accounts that do not have
 valid Kerberos credentials will experience similar behavior (and will thus only
 be able to see local users and groups).</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+An alternate solution to this problem would run a local LDAP proxy that (a)
+uses the system keytab to authenticate to AD, and (b) allows anonymous LDAP
+queries from localhost. I will discuss this configuration in a future post.
+-->
 
 </div>
 
@@ -311,7 +314,7 @@ be able to see local users and groups).</p>
                 </div>
 
                 <p class="footer-copyright">
-                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                    <span>&copy; 2020 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
                 </p>
                 <p class="footer-copyright">
                     <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>

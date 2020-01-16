@@ -6,10 +6,19 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/post/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Snarl: A tool for literate blogging</title>
+      <link>https://blog.oddbit.com/post/2020-01-15-snarl-a-tool-for-literate-blog/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2020-01-15-snarl-a-tool-for-literate-blog/</guid>
+      <description>Literate programming is a programming paradigm introduced by Donald Knuth in which a program is combined with its documentation to form a single document. Tools are then used to extract the documentation for viewing or typesetting or to extract the program code so it can be compiled and/or run. While I have never been very enthusiastic about literate programming as a development methodology, I was recently inspired to explore these ideas as they relate to the sort of technical writing I do for this blog.</description>
+    </item>
     
     <item>
       <title>OVN and DHCP: A minimal example</title>
@@ -630,7 +639,7 @@ It is possible to generate your network configuration from this configuration dr
       <guid>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</guid>
       <description>Next week is the Red Hat Summit in Boston, and I&#39;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
 As part of that presentation, I&#39;ve put together a short demonstration video:
-This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</description>
+ This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</description>
     </item>
     
     <item>
@@ -912,7 +921,8 @@ You&#39;ll get back a URL that you can use to share the image with people.</desc
       
       <guid>https://blog.oddbit.com/post/2014-09-05-heat-hangout/</guid>
       <description>I ran a Google Hangout this morning on Deploying with Heat. You can find the slides for the presentation on line here, and the Heat templates (as well as slide sources) are available on github.
-If you have any questions about the presentation, please feel free to ping me on irc (larsks).</description>
+If you have any questions about the presentation, please feel free to ping me on irc (larsks).
+ </description>
     </item>
     
     <item>
@@ -1058,7 +1068,8 @@ There is now a better option available.</description>
       <pubDate>Tue, 27 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/</guid>
-      <description>I&#39;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:</description>
+      <description>I&#39;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
+ </description>
     </item>
     
     <item>
@@ -1144,7 +1155,8 @@ neutron net-create external -- --router:external=true \ --provider:network_type=
       <guid>https://blog.oddbit.com/post/2014-02-27-multinode/</guid>
       <description>I was the presenter for this morning&#39;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
 The slides are online here.
-Here&#39;s the video (also available on the event page):</description>
+Here&#39;s the video (also available on the event page):
+ </description>
     </item>
     
     <item>

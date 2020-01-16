@@ -6,10 +6,19 @@
     <description>Recent content in markdown on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Nov 2012 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tag/markdown/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Snarl: A tool for literate blogging</title>
+      <link>https://blog.oddbit.com/post/2020-01-15-snarl-a-tool-for-literate-blog/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2020-01-15-snarl-a-tool-for-literate-blog/</guid>
+      <description>Literate programming is a programming paradigm introduced by Donald Knuth in which a program is combined with its documentation to form a single document. Tools are then used to extract the documentation for viewing or typesetting or to extract the program code so it can be compiled and/or run. While I have never been very enthusiastic about literate programming as a development methodology, I was recently inspired to explore these ideas as they relate to the sort of technical writing I do for this blog.</description>
+    </item>
     
     <item>
       <title>Converting HTML to Markdown</title>

@@ -186,7 +186,7 @@ since we're not booting in a cloud environment:</p>
 virsh vol-upload --pool oooq_pool centos-7-cloud.qcow2 \
   CentOS-7-x86_64-GenericCloud.qcow2
 </code></pre>
-<h2 id="a-idboot-the-vmboot-the-vma"><!-- raw HTML omitted -->Boot the vm<!-- raw HTML omitted --></h2>
+<h2 id="a-idboot-the-vmboot-the-vma"><a id="boot-the-vm">Boot the vm</a></h2>
 <p>I like to boot from a copy-on-write clone of the image, so that I can
 use the base image multiple times or quickly revert to a pristine
 state, so let's first create that clone:</p>
@@ -196,7 +196,7 @@ state, so let's first create that clone:</p>
   --backing-vol-format qcow2
 </code></pre>
 <p>And then boot our vm:
-<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<a id="virt-install"></a></p>
 <pre><code>virt-install --disk vol=oooq_pool/myguest.qcow2,bus=virtio \
   --import \
   -r 2048 -n myguest --cpu host \
@@ -376,7 +376,7 @@ Determining IP information for eth1... done.
                 </div>
 
                 <p class="footer-copyright">
-                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                    <span>&copy; 2020 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
                 </p>
                 <p class="footer-copyright">
                     <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>

@@ -122,7 +122,7 @@ poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.
     <p>In this article, a followup to my <a href="https://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/">previous post</a> regarding
 long-poll servers and Python, we investigate the code changes that
 were necessary to make the code work when deployed on OpenShift.</p>
-<!-- raw HTML omitted -->
+<!-- more -->
 <p>In the previous post, we implemented IO polling to watch for client
 disconnects at the same time we were waiting for messages on a message
 bus:</p>
@@ -288,7 +288,7 @@ expected&hellip;</p>
                 </div>
 
                 <p class="footer-copyright">
-                    <span>&copy; 2019 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                    <span>&copy; 2020 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
                 </p>
                 <p class="footer-copyright">
                     <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>literate-programming on The Odd Bit</title>
+    <link>https://blog.oddbit.com/tag/literate-programming/</link>
+    <description>Recent content in literate-programming on The Odd Bit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/literate-programming/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Snarl: A tool for literate blogging</title>
+      <link>https://blog.oddbit.com/post/2020-01-15-snarl-a-tool-for-literate-blog/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2020-01-15-snarl-a-tool-for-literate-blog/</guid>
+      <description>Literate programming is a programming paradigm introduced by Donald Knuth in which a program is combined with its documentation to form a single document. Tools are then used to extract the documentation for viewing or typesetting or to extract the program code so it can be compiled and/or run. While I have never been very enthusiastic about literate programming as a development methodology, I was recently inspired to explore these ideas as they relate to the sort of technical writing I do for this blog.</description>
+    </item>
+    
+  </channel>
+</rss>
