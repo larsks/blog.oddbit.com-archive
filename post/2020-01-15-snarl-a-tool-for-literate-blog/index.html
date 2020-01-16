@@ -268,10 +268,10 @@ ovs-vsctl set open_vswitch .  \
 <pre><code>snarl tangle -t setup 2019-12-19-ovn-and-dhcp.snarl.md
 </code></pre><h2 id="including-files">Including files</h2>
 <p>While the main focus of Snarl is extracting code from documentation, sometimes you want to go in the other direction. Snarl supports an <code>include</code> directive that will include the content of another file in the current document. The <code>include</code> directive is written as an HTML comment:</p>
-<pre><code>&lt;!-- include filename [options] --&gt;
+<pre><code>&lt;!-- include &lt;path&gt; [--escape-html] [--verbatim] --&gt;
 </code></pre><p>A simple example might look like:</p>
 <pre><code>&lt;!-- include anotherfile.md --&gt;
-</code></pre><p>By default, the file contents will be processed as if they were part of the existing document. That means that your included file may itself contain Snarl directives. This isn't always the behavior that you want.</p>
+</code></pre><p>By default, the file contents will be processed as if they were part of the existing document. That means that your included file may itself contain Snarl directives. This isn't always the behavior that you want, so there are a couple of options available that modify the behavior of <code>include</code>.</p>
 <p>In order to embed Snarl samples in this post, I am using the HTML <code>&lt;pre&gt;</code> element to wrap the sample text, which I am including in this document via the <code>include</code> directive. I don't want to interpret Snarl directives in these included files.  The <code>--verbatim</code> (or <code>-v</code>) option will include the literal content of the named file without looking for Snarl directives.</p>
 <p>An unfortunate side effect of using the <code>&lt;pre&gt;</code> element is that I have to escape any <code>&lt;</code> characters that appear in the included content. The <code>--escape-html</code> (or <code>-e</code>) option performs the necessary HTML escaping on the included file so that it will display as intended.</p>
 <p>For example, the example Snarl source presented earlier in this document was included using the following syntax:</p>
