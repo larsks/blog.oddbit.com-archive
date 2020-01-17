@@ -130,12 +130,11 @@
 </ul>
 <h2 id="code-blocks">Code blocks</h2>
 <p>The heart of Snarl is the code block, which uses an extended form of the standard Markdown fenced code block:</p>
-<pre>
-```[&lt;language&gt;]=&lt;label&gt; [--file] [--hide] [--tag tag [...]] [--replace
+<pre><code>```[&lt;language&gt;]=&lt;label&gt; [--file] [--hide] [--tag tag [...]] [--replace
 &lt;pattern&gt; &lt;substitution&gt;]
 ...code goes here...
 ```
-</pre>
+</code></pre>
 <p>The <code>&lt;language&gt;</code> information is optional and is ignored by Snarl; this is standard syntax for providing syntax coloring hints for fenced code blocks. The value is passed on to the rendered Markdown when running <code>snarl weave</code>.</p>
 <p>Everything after the <code>=</code> is interpreted using a standard command-line option parser (Python's <a href="https://docs.python.org/3/library/argparse.html">argparse</a> module), which means that <code>&lt;label&gt;</code> may contain whitespace as long as you quote it.</p>
 <p>The options are:</p>
@@ -240,16 +239,14 @@ the `stdio.h` header file before referring to the `printf` function:
 <p>The <a href="https://raw.githubusercontent.com/larsks/blog.oddbit.com-snarl/master/ovn-and-dhcp/2019-12-19-ovn-and-dhcp.snarl.md">source</a> to my earlier blog post on <a href="https://blog.oddbit.com/post/2019-12-19-ovn-and-dhcp/">OVN and DHCP</a> provides a less contrived example. In addition to the document source itself, you can see the framework I used for running the scripts presented in the post and testing the environment afterwards.</p>
 <h3 id="using-replace">Using replace</h3>
 <p>That post provides an example of using the <code>--replace</code> flag on a code block. For the purposes of the article, I was using fixed IP addresses for the nodes involved, but when setting up a virtual environment for testing it was easier to just let the nodes pick up addresses dynamically. In order to test the code that uses a static ip address, I replace that address with a variable reference when generating the script files:</p>
-<pre>
-```=configure_ovs_external_ids --replace 192.168.122.100 ${OVN0_ADDRESS}
+<pre><code>```=configure_ovs_external_ids --replace 192.168.122.100 ${OVN0_ADDRESS}
 ovs-vsctl set open_vswitch .  \
   external_ids:ovn-remote=tcp:192.168.122.100:6642 \
-  external_ids:ovn-encap-ip=$(ip addr show eth0 | awk &#x27;$1 == &quot;inet&quot; {print $2}&#x27; | cut -f1 -d/) \
+  external_ids:ovn-encap-ip=$(ip addr show eth0 | awk '$1 == &quot;inet&quot; {print $2}' | cut -f1 -d/) \
   external_ids:ovn-encap-type=geneve \
   external_ids:system-id=$(hostname)
 ```
-
-</pre>
+</code></pre>
 <p>When running <code>snarl tangle</code> on that document, the above text renders as:</p>
 <pre><code>ovs-vsctl set open_vswitch .  \
   external_ids:ovn-remote=tcp:${OVN0_ADDRESS}:6642 \
@@ -258,12 +255,11 @@ ovs-vsctl set open_vswitch .  \
   external_ids:system-id=$(hostname)
 </code></pre><h3 id="using-tags">Using tags</h3>
 <p>If you look at the files embedded in that post, you will find that they are tagged using the <code>--tag</code> (<code>-t</code>) option:</p>
-<pre>
-```=configure-common.sh --file --hide -t setup
+<pre><code>```=configure-common.sh --file --hide -t setup
 &lt;&lt;enable_common_services&gt;&gt;
 &lt;&lt;add_br_int&gt;&gt;
 ```
-</pre>
+</code></pre>
 <p>This permits me to extract a subset of files. For example, to extract just the files tagged <code>setup</code>, I would run:</p>
 <pre><code>snarl tangle -t setup 2019-12-19-ovn-and-dhcp.snarl.md
 </code></pre><h2 id="including-files">Including files</h2>
