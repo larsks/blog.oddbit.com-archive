@@ -6,10 +6,46 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>climate</title>
+      <link>https://blog.oddbit.com/tag/climate/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/climate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>datascience</title>
+      <link>https://blog.oddbit.com/tag/datascience/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/datascience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pandas</title>
+      <link>https://blog.oddbit.com/tag/pandas/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://blog.oddbit.com/tag/python/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>literate-programming</title>
@@ -170,15 +206,6 @@
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/medical/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://blog.oddbit.com/tag/python/</link>
-      <pubDate>Tue, 07 May 2019 10:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/python/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,19 @@
     <description>Recent content in python on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 May 2019 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tag/python/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Computing longest consecutive sequence of values matching a condition</title>
+      <link>https://blog.oddbit.com/post/2020-01-23-computing-longest-consecutive/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2020-01-23-computing-longest-consecutive/</guid>
+      <description>We&#39;ve had some wacky weather recently. In the space of a week, the temperature went from a high of about 75°F to a low around 15°F. This got me to thinking about what constitutes &amp;ldquo;normal&amp;rdquo; weather here in the Boston area, and in particular, how common it is to have a string of consecutive days in which the high temperature stays below freezing. While this was an interesting question in itself, it also seemed like a great opportunity to learn a little about Pandas, the Python data analysis framework.</description>
+    </item>
     
     <item>
       <title>Unpacking a Python regular expression</title>

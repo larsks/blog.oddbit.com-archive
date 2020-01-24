@@ -105,6 +105,34 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Docker plugin bugs</h4>
+        <time class="post-stub-date" datetime="2014-09-01">Published Mon, Sep 1, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is a companion to my article on the Docker plugin for Heat.
+While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I've submitted patches for most of the issues I encountered:
+Bugs in the Heat plugin   https://bugs.launchpad.net/heat/+bug/1364017
+docker plugin fails to delete a container resource in CREATE_FAILED state.
+  https://bugs.launchpad.net/heat/+bug/1364041
+docker plugin volumes_from parameter should be a list.
+  https://bugs.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Annotated documentation for DockerInc::Docker::Container</h4>
         <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
@@ -315,30 +343,6 @@ Assumptions This article assumes that the following resources exist:
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Multiple external networks with a single L3 agent</h4>
-        <time class="post-stub-date" datetime="2014-05-28">Published Wed, May 28, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    In the old days (so, like, last year), Neutron supported a single external network per L3 agent. You would run something like this&hellip;
-$ neutron net-create external --router:external=true  &hellip;and neutron would map this to the bridge defined in external_network_bridge in /etc/neutron/l3_agent.ini. If you wanted to support more than a single external network, you would need to run multiple L3 agents, each with a unique value for external_network_bridge.
-There is now a better option available.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/">(Read more...)</a>
     </p>
     
     
