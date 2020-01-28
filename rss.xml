@@ -1964,7 +1964,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Unable to structure and read data from include_vars file in Ansible file variables ansible  How to deploy local Api docker-compose project to remote host via SSH? docker ssh docker-compose  Simple counter loop in Jinja? jinja2  How to get file name and path out of a full path in bash regex bash  Is there a way to create Docker volume and prepopulate it with data? docker docker-compose dockerfile  Docker - no matching manifest for docker-compose build but docker build works when using non-default docker context docker docker-compose  Write Ansible playbooks using Python dictionary python ansible ansible-runner  Use folder size in conditional ansible ansible-2.</description>
+      <description>Docker port conflict even without binding the port docker  Unable to structure and read data from include_vars file in Ansible file variables ansible  How to deploy local Api docker-compose project to remote host via SSH? docker ssh docker-compose  Simple counter loop in Jinja? jinja2  How to get file name and path out of a full path in bash regex bash  Is there a way to create Docker volume and prepopulate it with data?</description>
     </item>
     
   </channel>
