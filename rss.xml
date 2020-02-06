@@ -1964,7 +1964,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>HTTP basic authentication not working in python 3.4 python basic-authentication  Python ldap3 print entries based on variable python-3.x function ldap  autoconf ignoring CFLAGS? c gcc autotools autoconf  Docker port conflict even without binding the port docker  Unable to structure and read data from include_vars file in Ansible file variables ansible  How to deploy local Api docker-compose project to remote host via SSH? docker ssh docker-compose  Simple counter loop in Jinja?</description>
+      <description>ansible playhhbook for startup script with arguments ansible  HTTP basic authentication not working in python 3.4 python basic-authentication  Python ldap3 print entries based on variable python-3.x function ldap  autoconf ignoring CFLAGS? c gcc autotools autoconf  Docker port conflict even without binding the port docker  Unable to structure and read data from include_vars file in Ansible file variables ansible  How to deploy local Api docker-compose project to remote host via SSH?</description>
     </item>
     
   </channel>
