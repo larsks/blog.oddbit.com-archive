@@ -1,0 +1,40 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>bad_ideas on The Odd Bit</title>
+
+  
+  <link rel="self" href="https://blog.oddbit.com/tag/bad_ideas/atom.xml"/>
+  
+  <link href="https://blog.oddbit.com/tag/bad_ideas/" rel="alternate"></link>
+
+  <updated>2015-04-10T00:00:00Z</updated>
+  <id>https://blog.oddbit.com/tag/bad_ideas/</id>
+  
+  <entry>
+    <title>Using tools badly: time shifting git commits with Workinghours
+</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/"/>
+    <id>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</id>
+    <published>2015-04-10T00:00:00Z</published>
+    <updated>2015-04-10T00:00:00Z</updated>
+    <summary type="html">This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!
+You are working on a wonderful open source project&amp;hellip;but you are not supposed to be working on that project! You&#39;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
+And now your boss knows why the TPS reports are late.</summary>
+  </entry>
+  
+  <entry>
+    <title>Fixing RPM with evil magic</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2011-07-26-fixing-rpm-with-evil-magic/"/>
+    <id>https://blog.oddbit.com/post/2011-07-26-fixing-rpm-with-evil-magic/</id>
+    <published>2011-07-26T00:00:00Z</published>
+    <updated>2011-07-26T00:00:00Z</updated>
+    <summary type="html">Fixing rpmsign with evil magic At my office we are developing a deployment mechanism for RPM packages. The general workflow looks like this:
+ You build a source rpm on your own machine. You sign the rpm with your GPG key. You submit the source RPM to our buildserver. The buildserver validates your signature and then builds the package. The buildserver signs the package using a master signing key.  The last step in that sequence represents a problem, because the rpmsign command will always, always prompt for a password and read the response from /dev/tty.</summary>
+  </entry>
+  
+</feed>

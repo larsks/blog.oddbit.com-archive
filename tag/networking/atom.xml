@@ -6,8 +6,20 @@
   
   <link href="https://blog.oddbit.com/tag/networking/" rel="alternate"></link>
 
-  <updated>2019-12-19T00:00:00Z</updated>
+  <updated>2020-02-15T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/networking/</id>
+  
+  <entry>
+    <title>Configuring Open vSwitch with nmcli</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-02-15-configuring-open-vswitch-with/"/>
+    <id>https://blog.oddbit.com/post/2020-02-15-configuring-open-vswitch-with/</id>
+    <published>2020-02-15T00:00:00Z</published>
+    <updated>2020-02-15T00:00:00Z</updated>
+    <summary type="html">I recently acquired a managed switch for my home office in order to segment a few devices off onto their own isolated vlan. As part of this, I want to expose these vlans on my desktop using Open vSwitch (OVS), and I wanted to implement the configuration using NetworkManager rather than either relying on the legacy /etc/sysconfig/network-scripts scripts or rolling my own set of services. These are my notes in case I ever have to do this again.</summary>
+  </entry>
   
   <entry>
     <title>OVN and DHCP: A minimal example</title>
@@ -195,20 +207,6 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</summary>
     <summary type="html">These are my notes on making OpenStack play well with firewalld and NetworkManager.
 NetworkManager By default, NetworkManager attempts to start a DHCP client on every new available interface. Since booting a single instance in OpenStack can result in the creation of several virtual interfaces, this results in a lot of:
 May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &amp;lt;info&amp;gt; Activation (qvb512640bd-ee) starting connection &#39;Wired connection 2&#39;  You can disable this behavior by adding the following to /etc/NetworkManager/NetworkManager.</summary>
-  </entry>
-  
-  <entry>
-    <title>Visualizing Neutron Networking with GraphViz</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/"/>
-    <id>https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</id>
-    <published>2013-12-23T00:00:00Z</published>
-    <updated>2013-12-23T00:00:00Z</updated>
-    <summary type="html">I&#39;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
-In this post I&#39;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
-mk-network-dot There are a lot of devices involved in your Neutron network configuration.</summary>
   </entry>
   
 </feed>

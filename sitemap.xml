@@ -4,7 +4,42 @@
   
   <url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2020-02-15-configuring-open-vswitch-with/</loc>
+    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/networking/</loc>
+    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/networkmanager/</loc>
+    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/nmcli/</loc>
+    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/openvswitch/</loc>
+    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/</loc>
+    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -33,16 +68,6 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/</loc>
-    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.oddbit.com/tag/literate-programming/</loc>
     <lastmod>2020-01-15T00:00:00+00:00</lastmod>
   </url>
@@ -58,17 +83,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/tag/networking/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.oddbit.com/tag/openstack/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/openvswitch/</loc>
     <lastmod>2019-12-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -758,6 +773,11 @@
   </url>
   
   <url>
+    <loc>https://blog.oddbit.com/tag/bad_ideas/</loc>
+    <lastmod>2015-04-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.oddbit.com/tag/hack/</loc>
     <lastmod>2015-04-10T00:00:00+00:00</lastmod>
   </url>
@@ -1064,11 +1084,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/</loc>
-    <lastmod>2014-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/networkmanager/</loc>
     <lastmod>2014-05-20T00:00:00+00:00</lastmod>
   </url>
   

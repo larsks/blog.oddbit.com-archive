@@ -1,0 +1,24 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>nmcli on The Odd Bit</title>
+
+  
+  <link rel="self" href="https://blog.oddbit.com/tag/nmcli/atom.xml"/>
+  
+  <link href="https://blog.oddbit.com/tag/nmcli/" rel="alternate"></link>
+
+  <updated>2020-02-15T00:00:00Z</updated>
+  <id>https://blog.oddbit.com/tag/nmcli/</id>
+  
+  <entry>
+    <title>Configuring Open vSwitch with nmcli</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-02-15-configuring-open-vswitch-with/"/>
+    <id>https://blog.oddbit.com/post/2020-02-15-configuring-open-vswitch-with/</id>
+    <published>2020-02-15T00:00:00Z</published>
+    <updated>2020-02-15T00:00:00Z</updated>
+    <summary type="html">I recently acquired a managed switch for my home office in order to segment a few devices off onto their own isolated vlan. As part of this, I want to expose these vlans on my desktop using Open vSwitch (OVS), and I wanted to implement the configuration using NetworkManager rather than either relying on the legacy /etc/sysconfig/network-scripts scripts or rolling my own set of services. These are my notes in case I ever have to do this again.</summary>
+  </entry>
+  
+</feed>
