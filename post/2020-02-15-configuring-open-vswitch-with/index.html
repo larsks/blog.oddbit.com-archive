@@ -149,7 +149,7 @@
 <pre><code>nmcli c add type ovs-bridge conn.interface br-house con-name br-house
 nmcli c add type ovs-port conn.interface br-house master br-house con-name ovs-port-br-house
 nmcli c add type ovs-interface slave-type ovs-port conn.interface br-house master ovs-port-br-house  con-name ovs-if-br-house
-</code></pre><p>Unlike <code>ovs-vsctl</code>, creating the bridge won't automatically create an interface for you. The following two commands get us an actual interface named <code>br-house</code> (configured using DHCP, because we didn't explicitly set <code>ipv4.method</code> on the interface).</p>
+</code></pre><p>Unlike <code>ovs-vsctl</code>, creating the bridge won't automatically create an interface for you. The two additional commands above get us an actual interface named <code>br-house</code> (configured using DHCP, because we didn't explicitly set <code>ipv4.method</code> on the interface).</p>
 <p>Next, we add <code>eth0</code> to the bridge:</p>
 <pre><code>nmcli c add type ovs-port conn.interface eth0 master br-house con-name ovs-port-eth0
 nmcli c add type ethernet conn.interface eth0 master ovs-port-eth0 con-name ovs-if-eth0
