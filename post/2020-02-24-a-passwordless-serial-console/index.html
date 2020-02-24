@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>A passwordless serial console for your Raspberry Pi &middot; The Odd Bit</title>
+        <meta name="description" content="legendre on #raspbian asked:
+ How can i config rasp lite to open a shell on the serial uart on boot? Params are 1200-8-N-1 Dont want login running, just straight to sh
+ The process is fairly simple. First, you need to ensure you have a functional serial port. If you&#39;re on a Raspberry Pi 3 (or later), you may need to explicitly enable the serial port by adding enable_uart=1 to /boot/config.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">A passwordless serial console for your Raspberry Pi</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-02-24" itemprop="datePublished">Mon, Feb 24, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+    <p><code>legendre</code> on <code>#raspbian</code> asked:</p>
+<blockquote>
+<p>How can i config rasp lite to open a shell on the serial uart on boot? Params
+are 1200-8-N-1 Dont want login running, just straight to sh</p>
+</blockquote>
+<p>The process is fairly simple.  First, you need to ensure you have a functional serial port. If you're on a Raspberry Pi 3 (or later), you may need to <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=141195">explicitly enable the serial port</a> by adding <code>enable_uart=1</code> to <code>/boot/config.txt</code>. If you make this change, reboot your Pi before continuing.</p>
+<h2 id="modify-the-serial-gettyttys0-unit">Modify the serial-getty@ttyS0 unit</h2>
+<p>In this section, we will modify the service unit responsible for starting the getty on the serial port. The service is started automatically by Raspbian when a serial port is available, so you should see an <code>agetty</code> process associated with your serial port when you run <code>ps -fe</code>.  For example:</p>
+<pre><code>root@raspberrypi:/etc/systemd/system# ps -fe | grep agetty | grep ttyS0
+root      1138     1  0 00:24 ttyS0    00:00:00 /sbin/agetty -o -p -- \u --keep-baud 115200,38400,9600 ttyS0 vt220
+</code></pre><p>We need to modify the service unit so that it will configure <code>agetty</code> to automatically log in the <code>root</code> user:</p>
+<ul>
+<li>
+<p>Run <code>systemctl edit serial-getty@ttyS0</code>.</p>
+<p>This will bring up an editor (<code>nano</code> by default, unless you have set <code>VISUAL</code> in your environment to point at a different editor) in which you will be editing a drop-in configuration for the <code>serial-getty@ttyS0.service</code> unit.</p>
+</li>
+<li>
+<p>Enter the following content:</p>
+<pre><code>[Service]
+ExecStart=
+ExecStart=/sbin/agetty -o '-p -- \u' --keep-baud 115200,38400,9600 --noclear --autologin root ttyS0 vt220
+</code></pre></li>
+<li>
+<p>Save the file, then reload <code>systemd</code> by running <code>systemctl daemon-reload</code>.</p>
+</li>
+<li>
+<p>Finally, restart the <code>serial-getty@ttys0</code> service:</p>
+<pre><code>systemctl restart serial-getty@ttyS0
+</code></pre></li>
+</ul>
+<h2 id="configure-passwordless-root-login-on-the-console">Configure passwordless root login on the console</h2>
+<p>With just the change to the service unit, <code>agetty</code> will attempt to log in the <code>root</code> user on the console but will prompt for a password. That looks like:</p>
+<pre><code>Raspbian GNU/Linux 10 raspberrypi ttyS0
+
+raspberrypi login: root (automatic login)
+
+Password:
+</code></pre><p>To configure passwordless login, add the following to the top of <code>/etc/pam.d/login</code>:</p>
+<pre><code>auth sufficient pam_listfile.so item=tty sense=allow file=/etc/rootshelltty onerr=fail apply=root
+</code></pre><p>This configures <code>login</code> to permit a login for the <code>root</code> user if it finds the login tty in the file <code>/etc/rootshelltty</code>.</p>
+<p>Now, add the serial port device to <code>/etc/rootshelltty</code>:</p>
+<pre><code>root@raspberrypi:/etc# echo /dev/ttyS0 &gt; /etc/rootshelltty
+</code></pre><p>These changes will take affect as soon as <code>agetty</code> restarts. You can wait for the <code>Password:</code> prompt to timeout, or just restart the service by running <code>systemctl restart serial-getty@ttyS0</code>.</p>
+<hr>
+<p>With these changes, the Pi will now automatically start a <code>root</code> shell on the serial port without prompting for a password:</p>
+<pre><code>Raspbian GNU/Linux 10 raspberrypi ttyS0
+
+raspberrypi login: root (automatic login)
+
+Last login: Mon Feb 24 00:29:00 EST 2020 on ttyS0
+Linux raspberrypi 4.19.97-v7+ #1294 SMP Thu Jan 30 13:15:58 GMT 2020 armv7l
+
+[...]
+
+root@raspberrypi:~#
+
+</code></pre>
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/raspiberrypi/">raspiberrypi</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/serial/">serial</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=A%20passwordless%20serial%20console%20for%20your%20Raspberry%20Pi&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2020-02-24-a-passwordless-serial-console%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2020 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+
