@@ -20,7 +20,8 @@
     <updated>2020-02-24T00:00:00Z</updated>
     <summary type="html">legendre on #raspbian asked:
  How can i config rasp lite to open a shell on the serial uart on boot? Params are 1200-8-N-1 Dont want login running, just straight to sh
- The process is fairly simple. First, you need to ensure you have a functional serial port. If you&#39;re on a Raspberry Pi 3 (or later), you may need to explicitly enable the serial port by adding enable_uart=1 to /boot/config.</summary>
+ In this article, we&#39;ll walk through one way of implementing this configuration.
+Activate the serial port Raspbian automatically starts a getty on the serial port if one is available. You should see an agetty process associated with your serial port when you run ps -ef.</summary>
   </entry>
   
   <entry>
