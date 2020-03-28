@@ -6,8 +6,68 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2020-02-24T00:00:00Z</updated>
+  <updated>2020-03-20T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  
+  <entry>
+    <title>arduino</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/arduino/"/>
+    <id>https://blog.oddbit.com/tag/arduino/</id>
+    <published>2020-03-20T00:00:00Z</published>
+    <updated>2020-03-20T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>esp8266</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/esp8266/"/>
+    <id>https://blog.oddbit.com/tag/esp8266/</id>
+    <published>2020-03-20T00:00:00Z</published>
+    <updated>2020-03-20T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>micropython</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/micropython/"/>
+    <id>https://blog.oddbit.com/tag/micropython/</id>
+    <published>2020-03-20T00:00:00Z</published>
+    <updated>2020-03-20T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>python</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/python/"/>
+    <id>https://blog.oddbit.com/tag/python/</id>
+    <published>2020-03-20T00:00:00Z</published>
+    <updated>2020-03-20T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>wifi</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/wifi/"/>
+    <id>https://blog.oddbit.com/tag/wifi/</id>
+    <published>2020-03-20T00:00:00Z</published>
+    <updated>2020-03-20T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
   
   <entry>
     <title>raspiberrypi</title>
@@ -118,18 +178,6 @@
   </entry>
   
   <entry>
-    <title>python</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/python/"/>
-    <id>https://blog.oddbit.com/tag/python/</id>
-    <published>2020-01-23T00:00:00Z</published>
-    <updated>2020-01-23T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
     <title>literate-programming</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
@@ -138,54 +186,6 @@
     <id>https://blog.oddbit.com/tag/literate-programming/</id>
     <published>2020-01-15T00:00:00Z</published>
     <updated>2020-01-15T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>markdown</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/markdown/"/>
-    <id>https://blog.oddbit.com/tag/markdown/</id>
-    <published>2020-01-15T00:00:00Z</published>
-    <updated>2020-01-15T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>openstack</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/openstack/"/>
-    <id>https://blog.oddbit.com/tag/openstack/</id>
-    <published>2019-12-19T00:00:00Z</published>
-    <updated>2019-12-19T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>ovn</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/ovn/"/>
-    <id>https://blog.oddbit.com/tag/ovn/</id>
-    <published>2019-12-19T00:00:00Z</published>
-    <updated>2019-12-19T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>hamradio</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/hamradio/"/>
-    <id>https://blog.oddbit.com/tag/hamradio/</id>
-    <published>2019-10-03T00:00:00Z</published>
-    <updated>2019-10-03T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   

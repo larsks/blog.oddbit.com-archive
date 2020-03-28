@@ -104,6 +104,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">OpenStack, Containers, and Logging</h4>
+        <time class="post-stub-date" datetime="2017-06-14">Published Wed, Jun 14, 2017</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I've been thinking about logging in the context of OpenStack and containerized service deployments. I'd like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.
+There are effectively three different mechanisms that an application can use to emit log messages:
+ Via some logging-specific API, such as the legacy syslog API By writing a byte stream to stdout/stderr By writing a byte stream to a file  A substantial advantage to the first mechanism (using a logging API) is that the application is logging messages rather than bytes.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2017-05-25-faa-cannot-require-drone-registration/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">FAA Cannot Require Drone Registration</h4>
         <time class="post-stub-date" datetime="2017-05-25">Published Thu, May 25, 2017</time>
@@ -307,29 +331,6 @@ Ansible already has a chroot module, of course, but for some situations &ndash; 
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Folding long lines in Ansible inventory files</h4>
-        <time class="post-stub-date" datetime="2016-02-07">Published Sun, Feb 7, 2016</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    If you have an Ansible inventory file that includes lots of per host variables, it's not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
-I've just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/">(Read more...)</a>
     </p>
     
     

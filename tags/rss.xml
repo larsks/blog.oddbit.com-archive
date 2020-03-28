@@ -6,10 +6,55 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>arduino</title>
+      <link>https://blog.oddbit.com/tag/arduino/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/arduino/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>esp8266</title>
+      <link>https://blog.oddbit.com/tag/esp8266/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/esp8266/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>micropython</title>
+      <link>https://blog.oddbit.com/tag/micropython/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/micropython/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://blog.oddbit.com/tag/python/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wifi</title>
+      <link>https://blog.oddbit.com/tag/wifi/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/wifi/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>raspiberrypi</title>
@@ -89,15 +134,6 @@
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/pandas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://blog.oddbit.com/tag/python/</link>
-      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/python/</guid>
       <description></description>
     </item>
     
@@ -381,15 +417,6 @@
     </item>
     
     <item>
-      <title>arduino</title>
-      <link>https://blog.oddbit.com/tag/arduino/</link>
-      <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/arduino/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>raspberrypi</title>
       <link>https://blog.oddbit.com/tag/raspberrypi/</link>
       <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
@@ -440,24 +467,6 @@
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/circuitpython/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>esp8266</title>
-      <link>https://blog.oddbit.com/tag/esp8266/</link>
-      <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/esp8266/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>micropython</title>
-      <link>https://blog.oddbit.com/tag/micropython/</link>
-      <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/micropython/</guid>
       <description></description>
     </item>
     

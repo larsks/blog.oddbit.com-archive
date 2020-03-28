@@ -4,7 +4,47 @@
   
   <url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/arduino/</loc>
+    <lastmod>2020-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/esp8266/</loc>
+    <lastmod>2020-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2020-03-20-i-see-you-have-the-machine-tha/</loc>
+    <lastmod>2020-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/micropython/</loc>
+    <lastmod>2020-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/python/</loc>
+    <lastmod>2020-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2020-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/</loc>
+    <lastmod>2020-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/wifi/</loc>
+    <lastmod>2020-03-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -19,16 +59,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/tag/serial/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -74,11 +104,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/tag/pandas/</loc>
-    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/python/</loc>
     <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -348,11 +373,6 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/tag/arduino/</loc>
-    <lastmod>2019-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</loc>
     <lastmod>2019-01-19T00:00:00+00:00</lastmod>
   </url>
@@ -399,16 +419,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/tag/circuitpython/</loc>
-    <lastmod>2018-05-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/esp8266/</loc>
-    <lastmod>2018-05-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/micropython/</loc>
     <lastmod>2018-05-03T00:00:00+00:00</lastmod>
   </url>
   

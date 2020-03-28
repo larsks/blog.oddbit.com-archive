@@ -6,10 +6,19 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/post/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>I see you have the machine that goes ping...</title>
+      <link>https://blog.oddbit.com/post/2020-03-20-i-see-you-have-the-machine-tha/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2020-03-20-i-see-you-have-the-machine-tha/</guid>
+      <description>We&#39;re all looking for ways to keep ourselves occupied these days, and for me that means leaping at the chance to turn a small problem into a slightly ridiculous electronics project. For reasons that I won&#39;t go into here I wanted to generate an alert when a certain WiFi BSSID becomes visible. A simple solution to this problem would have been a few lines of shell script to send me an email&amp;hellip;but this article isn&#39;t about simple solutions!</description>
+    </item>
     
     <item>
       <title>A passwordless serial console for your Raspberry Pi</title>
