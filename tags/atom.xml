@@ -22,6 +22,18 @@
   </entry>
   
   <entry>
+    <title>keyboards</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/keyboards/"/>
+    <id>https://blog.oddbit.com/tag/keyboards/</id>
+    <published>2020-04-15T00:00:00Z</published>
+    <updated>2020-04-15T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
     <title>sponsored</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
@@ -172,18 +184,6 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/datascience/"/>
     <id>https://blog.oddbit.com/tag/datascience/</id>
-    <published>2020-01-23T00:00:00Z</published>
-    <updated>2020-01-23T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>pandas</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/pandas/"/>
-    <id>https://blog.oddbit.com/tag/pandas/</id>
     <published>2020-01-23T00:00:00Z</published>
     <updated>2020-01-23T00:00:00Z</updated>
     <summary type="html"></summary>
