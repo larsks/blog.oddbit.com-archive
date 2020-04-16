@@ -6,7 +6,7 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2020-03-20T00:00:00Z</updated>
+  <updated>2020-04-15T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
   
   <entry>
@@ -16,8 +16,20 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/arduino/"/>
     <id>https://blog.oddbit.com/tag/arduino/</id>
-    <published>2020-03-20T00:00:00Z</published>
-    <updated>2020-03-20T00:00:00Z</updated>
+    <published>2020-04-15T00:00:00Z</published>
+    <updated>2020-04-15T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>sponsored</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/sponsored/"/>
+    <id>https://blog.oddbit.com/tag/sponsored/</id>
+    <published>2020-04-15T00:00:00Z</published>
+    <updated>2020-04-15T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   
@@ -174,18 +186,6 @@
     <id>https://blog.oddbit.com/tag/pandas/</id>
     <published>2020-01-23T00:00:00Z</published>
     <updated>2020-01-23T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>literate-programming</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/literate-programming/"/>
-    <id>https://blog.oddbit.com/tag/literate-programming/</id>
-    <published>2020-01-15T00:00:00Z</published>
-    <updated>2020-01-15T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   

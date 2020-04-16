@@ -6,7 +6,7 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>arduino</title>
       <link>https://blog.oddbit.com/tag/arduino/</link>
-      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/arduino/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sponsored</title>
+      <link>https://blog.oddbit.com/tag/sponsored/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/sponsored/</guid>
       <description></description>
     </item>
     
