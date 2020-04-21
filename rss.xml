@@ -2012,7 +2012,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How do I get into a Docker container&amp;#39;s shell? docker docker-container  Confused with encode and decode python  How to git-pull a given patch set from Gerrit? git gerrit  How to delete all objects from a folder/directory in open stack swift using rest api? api openstack openstack-swift object-storage  Understanding the role of automatic variables in make/makefile linux macos shell unix makefile  Is there a way to see what pending pull requests affect a particular file?</description>
+      <description>Verifiy content of docker image docker  How do I get into a Docker container&amp;#39;s shell? docker docker-container  Confused with encode and decode python  How to git-pull a given patch set from Gerrit? git gerrit  How to delete all objects from a folder/directory in open stack swift using rest api? api openstack openstack-swift object-storage  Understanding the role of automatic variables in make/makefile linux macos shell unix makefile  Is there a way to see what pending pull requests affect a particular file?</description>
     </item>
     
   </channel>
