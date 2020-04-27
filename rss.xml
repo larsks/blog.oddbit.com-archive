@@ -2012,7 +2012,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Grafana config volume mapping not working while running from Docker docker grafana  How to launch Docker Containers using Ansible docker docker-compose ansible dockerfile  Why am I getting a syntax error with RSelenium in Docker? docker rselenium  LED to blink when a push button is NOT pressed and to be continually on when the button IS pressed (Python) python button tkinter light  Continual listening of a linux device file in Python3 python linux file  Ansible - Deploy to same host with using mutiple values for same variable ansible ansible-2.</description>
+      <description>Possible to use Jinja2 expressions in role vars file ansible jinja2 ansible-2.x ansible-template  Can&amp;#39;t communicate midi through USB (python) python raspberry-pi midi  Jinja2 select all values from list of dirs ansible jinja2  Docker : Add a regular .service file inside Docker container docker  How do I disable all the docker rules that are added to iptables for public accces? docker docker-compose iptables  How can I pass an accepted socket from a parent process to its child process?</description>
     </item>
     
   </channel>
