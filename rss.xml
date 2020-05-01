@@ -2012,7 +2012,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to read packets with VLAN layer python wireshark pcap vlan  How do I have control over the pipe created by popen()? c unix process pipe popen  Is there any way to get output of top 5 servers only among all hosts in ansible-playbook loops ansible conditional-statements  How do i open all files of the format &amp;#34;test*.txt&amp;#34; in golang regex go unix grep go-flag  How can I split parsed text by &amp;#34;blocks&amp;#34; of text?</description>
+      <description>Communication between 2 APIs that are inside two different containers python docker flask  Using sed or awk to extract text from xml file xml shell awk sed xml-parsing  Ansible merge 2 arrays json ansible  How can I increase ansible speed? ansible  Ansible, counting occurence of a word in a string ansible  Sending image through MQTT raspberry-pi mqtt  How to read packets with VLAN layer python wireshark pcap vlan  How do I have control over the pipe created by popen()?</description>
     </item>
     
   </channel>
