@@ -2012,7 +2012,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Communication between 2 APIs that are inside two different containers python docker flask  Using sed or awk to extract text from xml file xml shell awk sed xml-parsing  Ansible merge 2 arrays json ansible  How can I increase ansible speed? ansible  Ansible, counting occurence of a word in a string ansible  Sending image through MQTT raspberry-pi mqtt  How to read packets with VLAN layer python wireshark pcap vlan  How do I have control over the pipe created by popen()?</description>
+      <description>Unable to run pgadmin4 docker on Ubuntu 18.04 LTS docker ubuntu ubuntu-18.04 pgadmin pgadmin-4  ansible same playbook for different linux distribution ubuntu module ansible centos  Ansible: Stop and Disable services if they are present ansible ansible-2.x  Communication between 2 APIs that are inside two different containers python docker flask  Using sed or awk to extract text from xml file xml shell awk sed xml-parsing  Ansible merge 2 arrays json ansible  How can I increase ansible speed?</description>
     </item>
     
   </channel>
