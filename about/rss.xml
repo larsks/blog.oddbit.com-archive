@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Stopping all existing docker containers with ansible docker ansible  Shell - Get interface name of IP address bash shell  How to parse final domain from URL python url  Deactivate the Current Ansible User with Ansible ansible  Return code of subprocess.run when using shell pipes python subprocess  Pre-receive hook, Bash &amp;#43; Git json bash git  Understanding Ansible conditionals ansible  Print lines between two patterns along with the header awk sed  Where is the header socket.</description>
+      <description>Project including multiple Dockerfiles and apps sharing some files. How to construct it? docker dockerfile  Why isn&amp;#39;t this docker-compose yml file executing the command detailed in this dockerfile? docker docker-compose  Error with simple subclassing of pathlib.Path: no _flavour attribute python  Stopping all existing docker containers with ansible docker ansible  Shell - Get interface name of IP address bash shell  How to parse final domain from URL python url  Deactivate the Current Ansible User with Ansible ansible  Return code of subprocess.</description>
     </item>
     
   </channel>
