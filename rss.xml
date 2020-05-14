@@ -2012,7 +2012,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to remove double quote square bracket &amp;amp; single quote? ansible  Is there any way to iterate 2 item lists in same ansible task. I want to iterate ip and port ansible  Ansible lookup, escaping single quotes ansible ansible-2.x  Ansible datetime timezone conversion datetime ansible  Show roles in Ansible output? ansible  New Python Programmer - trying to add a ValueError exception to a number guessing game python  Mutagen: Save ID3 tag to variable python id3 mutagen id3v2  consumer: Cannot connect to amqp://user:**@rabbit1:5672//: failed to resolve broker hostname python-3.</description>
+      <description>New Line in an Ansible String ansible  No module error after docker-compose up with Python package from git docker docker-compose pip  How to remove double quote square bracket &amp;amp; single quote? ansible  Is there any way to iterate 2 item lists in same ansible task. I want to iterate ip and port ansible  Ansible lookup, escaping single quotes ansible ansible-2.x  Ansible datetime timezone conversion datetime ansible  Show roles in Ansible output?</description>
     </item>
     
   </channel>
