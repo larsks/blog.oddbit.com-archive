@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/arduino/" rel="alternate"></link>
 
-  <updated>2020-04-15T00:00:00Z</updated>
+  <updated>2020-06-07T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/arduino/</id>
+  
+  <entry>
+    <title>Grove Beginner Kit for Arduino (part 2): First look</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-06-07-first-look-seed-grove-beginner/"/>
+    <id>https://blog.oddbit.com/post/2020-06-07-first-look-seed-grove-beginner/</id>
+    <published>2020-06-07T00:00:00Z</published>
+    <updated>2020-06-07T00:00:00Z</updated>
+    <summary type="html">The folks at Seeed Studio were kind enough to send me a Grove Beginner Kit for Arduino for review. That&#39;s a mouthful of a name for a compact little kit!
+The Grove Beginner Kit for Arduino (henceforth &amp;ldquo;the Kit&amp;rdquo;, because ain&#39;t nobody got time to type that out more than a few times in a single article) is about 8.5 x 5 x 1 inches. Closed, you could fit two of them on a piece of 8.</summary>
+  </entry>
   
   <entry>
     <title>Grove Beginner Kit for Arduino (part 1)</title>

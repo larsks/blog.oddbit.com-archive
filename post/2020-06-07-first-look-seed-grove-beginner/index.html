@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Grove Beginner Kit for Arduino (part 2): First look &middot; The Odd Bit</title>
+        <meta name="description" content="The folks at Seeed Studio were kind enough to send me a Grove Beginner Kit for Arduino for review. That&#39;s a mouthful of a name for a compact little kit!
+The Grove Beginner Kit for Arduino (henceforth &ldquo;the Kit&rdquo;, because ain&#39;t nobody got time to type that out more than a few times in a single article) is about 8.5 x 5 x 1 inches. Closed, you could fit two of them on a piece of 8.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Grove Beginner Kit for Arduino (part 2): First look</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-06-07" itemprop="datePublished">Sun, Jun 7, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/lars" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+    <p>The folks at <a href="https://seeedstudio.com">Seeed Studio</a> were kind enough to send me a <a href="https://www.seeedstudio.com/Grove-Beginner-Kit-for-Arduino-p-4549.html">Grove
+Beginner Kit for Arduino</a> for review. That's a mouthful of a name
+for a compact little kit!</p>
+<p>The Grove Beginner Kit for Arduino (henceforth &ldquo;the Kit&rdquo;, because ain't
+nobody got time to type that out more than a few times in a single
+article) is about 8.5 x 5 x 1 inches. Closed, you could fit two of
+them on a piece of 8.5x11 paper with a little room leftover.</p>
+<figure><a href="/assets/2020/06/07/grove-closed.jpg">
+    <img src="/assets/2020/06/07/grove-closed.jpg" width="400"/> </a>
+</figure>
+
+<p>Opening the top of the box, we see the board itself.  The kit is targeted
+straight at the STEM market, and as we'll in the following paragraphs there are
+a number of features that make it particularly appropriate for this niche.</p>
+<figure><a href="/assets/2020/06/07/grove-open.jpg">
+    <img src="/assets/2020/06/07/grove-open.jpg" width="400"/> </a>
+</figure>
+
+<p>The kit comes with a wide variety of sensors, inputs, and outputs (see
+the <a href="#sensors">Sensors</a> and <a href="#inputoutput">Input/Output</a> sections,
+below, for an overview). To make it easy to get started, everything
+you see is pre-wired (via traces on the PCB) to the microcontroller.
+That means you don't need soldering or connection cables to use
+anything on the board.</p>
+<p>Every sensor also has a <a href="https://wiki.seeedstudio.com/Grove_System/">Grove</a> connector on it, and the main board
+&ndash; in addition to Arduino-compatible headers &ndash; has 12 Grove
+connectors. The individual sensor boards are designed so that you can
+cut them off the PCB and use them on their own.  If you open the
+left-hand side of the kit, you'll find a collection of six Grove
+connection cables if you choose to go this route.</p>
+<p>Using the Grove connectors makes it very easy to add additional
+sensors to your projects (it looks like there are about <a href="https://www.seeedstudio.com/category/Sensor-for-Grove-c-24.html.">150 sensor
+modules available</a> in the Seeed Studio store).</p>
+<figure><a href="/assets/2020/06/07/grove-lh.jpg">
+    <img src="/assets/2020/06/07/grove-lh.jpg" width="400"/> </a>
+</figure>
+
+<p>The right-hand side of the case contains a micro USB cable for power
+and for connecting the kit to your computer for programming using the
+Arduino IDE.</p>
+<figure><a href="/assets/2020/06/07/grove-rh.jpg">
+    <img src="/assets/2020/06/07/grove-rh.jpg" width="400"/> </a>
+</figure>
+
+<!--
+<figure><a href="/assets/2020/06/07/grove-closeup.jpg">
+    <img src="/assets/2020/06/07/grove-closeup.jpg" width="400"/> </a>
+</figure>
+
+-->
+<h2 id="sensors">Sensors</h2>
+<p>The Kit ships with a variety of sensors. In addition to simple light
+and sound sensors, the kit also has:</p>
+<ul>
+<li>
+<p>DHT11 Temperature and Humidity Sensor</p>
+<p>The <a href="/assets/2020/06/07/DHT11-Technical-Data-Sheet.pdf">DHT11</a> is the less expensive cousin of the DHT22. The
+DHT11 can measure temperature from 0-50 °C with an accuracy of ±2 °C,
+and humidity from 20-80% with an accuracy of ±5% (the DHT22, in
+comparison, has a slightly wider ranger for both temperature and
+humidity, and substantially better accuracy).</p>
+</li>
+<li>
+<p>BMP280 Air Pressure Sensor</p>
+<p>The <a href="/assets/2020/06/07/Grove-Barometer_Sensor-BMP280-BMP280-DS001-12_Datasheet.pdf">BMP280</a> can measure pressure from -500 m below sea level to 9000 m
+above sea level, with a relative accuracy of ±1 m (that's 300-1100 hPa
+with a relative accuracy of ±0.12 hPa). &ldquo;Relative
+accuracy&rdquo; means that it's good at detecting pressure <em>changes</em>, but
+it's less accurate if your goal is to read the absolute air pressure
+(the accuracy in that case is ±1 hPa, or roughly ±8 m).</p>
+</li>
+<li>
+<p>LIS3DHTR 3-Axis Accelerometer</p>
+<p>The <a href="/assets/2020/06/07/LIS3DHTR_datasheet.pdf">LIS3DHTR</a> has user-selectable scales of ±2 g/±4 g/±8 g/±16 g and
+is capable of measuring accelerations with output data rates from 1
+Hz to 5.3 kHz.</p>
+</li>
+</ul>
+<h2 id="inputoutput">Input/Output</h2>
+<ul>
+<li>
+<p>OLED Display</p>
+<p>There's a 0.96&rdquo; I2C addressable <a href="/assets/2020/06/07/OLED_Display_Module.pdf">OLED Display Module</a> built around
+the SSD1315 chip. You can see this display in action <a href="#video">at the bottom
+of this post</a>.</p>
+</li>
+<li>
+<p>LED</p>
+</li>
+<li>
+<p>Buzzer</p>
+</li>
+<li>
+<p>Button</p>
+</li>
+<li>
+<p>Potentiometer</p>
+</li>
+</ul>
+<h2 id="lcd-demo">LCD Demo</h2>
+<p>In the next couple of weeks I hope to do something more interesting
+with this board, but as a first step I thought it would be fun to
+scroll something across the LCD screen. I slapped the following code
+together after reading the [u8g2 docs][] for a couple of minutes, so I
+can guarantee that it's not optimal, but it's a start:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;U8g2lib.h&gt;</span><span class="cp">
+</span><span class="cp"></span> 
+<span class="cp">#</span><span class="cp">ifdef U8X8_HAVE_HW_SPI</span><span class="cp">
+</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;SPI.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="cp">#</span><span class="cp">endif</span><span class="cp">
+</span><span class="cp"></span><span class="cp">#</span><span class="cp">ifdef U8X8_HAVE_HW_I2C</span><span class="cp">
+</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="cp">#</span><span class="cp">endif</span><span class="cp">
+</span><span class="cp"></span>
+<span class="n">U8G2_SSD1306_128X64_NONAME_F_SW_I2C</span> <span class="nf">u8g2</span><span class="p">(</span><span class="n">U8G2_R2</span><span class="p">,</span> <span class="cm">/* clock=*/</span> <span class="n">SCL</span><span class="p">,</span> <span class="cm">/* data=*/</span> <span class="n">SDA</span><span class="p">,</span> <span class="cm">/* reset=*/</span> <span class="n">U8X8_PIN_NONE</span><span class="p">)</span><span class="p">;</span>
+
+<span class="kt">char</span> <span class="o">*</span><span class="n">text</span> <span class="o">=</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">blog.oddbit.com</span><span class="s">&#34;</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">u8g2</span><span class="p">.</span><span class="n">setBusClock</span><span class="p">(</span><span class="mi">4000000</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">u8g2</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">u8g2</span><span class="p">.</span><span class="n">setFontMode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+ 
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">u8g2_uint_t</span> <span class="n">x</span><span class="p">;</span>
+
+  <span class="n">u8g2</span><span class="p">.</span><span class="n">firstPage</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="k">do</span> <span class="p">{</span>
+    <span class="n">u8g2</span><span class="p">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">u8g2_font_luBIS18_tf</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">u8g2</span><span class="p">.</span><span class="n">drawStr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">x</span> <span class="o">-</span><span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">u8g2</span><span class="p">.</span><span class="n">nextPage</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><a name="video">
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/nKpmQ2GZ98M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+</a>
+
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/arduino/">arduino</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/review/">review</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Grove%20Beginner%20Kit%20for%20Arduino%20%28part%202%29%3a%20First%20look&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2020-06-07-first-look-seed-grove-beginner%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2020 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

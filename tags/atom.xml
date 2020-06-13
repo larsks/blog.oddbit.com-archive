@@ -6,7 +6,7 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2020-04-15T00:00:00Z</updated>
+  <updated>2020-06-07T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
   
   <entry>
@@ -16,8 +16,20 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/arduino/"/>
     <id>https://blog.oddbit.com/tag/arduino/</id>
-    <published>2020-04-15T00:00:00Z</published>
-    <updated>2020-04-15T00:00:00Z</updated>
+    <published>2020-06-07T00:00:00Z</published>
+    <updated>2020-06-07T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>review</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/review/"/>
+    <id>https://blog.oddbit.com/tag/review/</id>
+    <published>2020-06-07T00:00:00Z</published>
+    <updated>2020-06-07T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   
@@ -172,18 +184,6 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/climate/"/>
     <id>https://blog.oddbit.com/tag/climate/</id>
-    <published>2020-01-23T00:00:00Z</published>
-    <updated>2020-01-23T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>datascience</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/datascience/"/>
-    <id>https://blog.oddbit.com/tag/datascience/</id>
     <published>2020-01-23T00:00:00Z</published>
     <updated>2020-01-23T00:00:00Z</updated>
     <summary type="html"></summary>
