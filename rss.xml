@@ -2022,7 +2022,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>I&amp;#39;m unable to install opencv-contrib-python in docker python docker opencv  How to filter remove square bracket in json_query? ansible json-query  Ansible &amp;#39;NoneType&amp;#39; object is not iterable&amp;#34; error when during a json_query ansible json-query  Permanently change PATH in Dockerfile with dynamic value docker  Ansible prompt to verify selected hosts ansible  Python tempfile module&amp;#39;s temporary directory issues python temporary-files python-3.5  How to store MySQL password on remote host in Ansible?</description>
+      <description>Is it possible to start a stopped container from another container docker docker-container  I&amp;#39;m unable to install opencv-contrib-python in docker python docker opencv  How to filter remove square bracket in json_query? ansible json-query  Ansible &amp;#39;NoneType&amp;#39; object is not iterable&amp;#34; error when during a json_query ansible json-query  Permanently change PATH in Dockerfile with dynamic value docker  Ansible prompt to verify selected hosts ansible  Python tempfile module&amp;#39;s temporary directory issues python temporary-files python-3.</description>
     </item>
     
   </channel>
