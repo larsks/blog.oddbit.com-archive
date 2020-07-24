@@ -8,7 +8,7 @@
   There is a field createExternalLoadBalancer that can be set in a service description.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -143,13 +143,13 @@ appropriate local <code>kube-proxy</code> port.</p>
 simply list the public IP addresses of your Kubernetes minions in the
 <code>publicIPs</code> field, everything would Just Work.  That is, inbound
 traffic to the appropriate port on your minions would get directed to
-<code>kube-proxy</code> by the <code>nat</code> rules.  That's great for simple cases, but
+<code>kube-proxy</code> by the <code>nat</code> rules.  That&rsquo;s great for simple cases, but
 in practice it means that you cannot have more that <em>N</em> services
 exposed on a given port where <em>N</em> is the number of minions in your
 cluster.  That limit is difficult if you &ndash; like I do &ndash; have an
 all-in-one (e.g., on a single host) Kubernetes deployment on which you
 wish to host multiple web services exposed on port 80 (and even in a
-larger environment, you really don't want &ldquo;number of things on port
+larger environment, you really don&rsquo;t want &ldquo;number of things on port
 XX&rdquo; tightly coupled to &ldquo;number of minions&rdquo;).</p>
 <h2 id="introducing-kiwi">Introducing Kiwi</h2>
 <p>To overcome this problem, I wrote <a href="http://github.com/larsks/kiwi/">Kiwi</a>, a service that listens to

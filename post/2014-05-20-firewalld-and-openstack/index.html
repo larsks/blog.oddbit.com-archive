@@ -9,7 +9,7 @@ NetworkManager By default, NetworkManager attempts to start a DHCP client on eve
 May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &lt;info&gt; Activation (qvb512640bd-ee) starting connection &#39;Wired connection 2&#39;  You can disable this behavior by adding the following to /etc/NetworkManager/NetworkManager.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -136,10 +136,10 @@ no-auto-default=*
 </code></pre>
 <p>From <code>NetworkManager.conf(5)</code>:</p>
 <blockquote>
-<p>Comma-separated list of devices for which NetworkManager shouldn't
+<p>Comma-separated list of devices for which NetworkManager shouldn&rsquo;t
 create default wired connection (Auto eth0). By default,
 NetworkManager creates a temporary wired connection for any
-Ethernet device that is managed and doesn't have a connection
+Ethernet device that is managed and doesn&rsquo;t have a connection
 configured. List a device in this option to inhibit creating the
 default connection for the device. May have the special value * to
 apply to all devices.</p>
@@ -156,9 +156,9 @@ apply to all devices.</p>
 &lt;/zone&gt;
 </code></pre>
 <p>After populating this file, you need to run <code>firewall-cmd --reload</code>
-to make the zone available.  Note that if you're already running
+to make the zone available.  Note that if you&rsquo;re already running
 OpenStack this will hose any rules set up by Neutron or Nova, so
-you'll probably want to restart those services:</p>
+you&rsquo;ll probably want to restart those services:</p>
 <pre><code># openstack-service restart nova neutron
 </code></pre>
 <p>I then add <code>br-ex</code> to this zone, where <code>br-ex</code> is the OVS bridge my
@@ -170,7 +170,7 @@ instances to connect, so I need to add the <code>dns</code> service to this zone
 <pre><code># firewall-cmd --zone openstack --add-service dns
 # firewall-cmd --zone openstack --add-service dns --permanent
 </code></pre>
-<p>I'm running <code>firewall-cmd</code> twice here: the first time modifies the
+<p>I&rsquo;m running <code>firewall-cmd</code> twice here: the first time modifies the
 currently running configuration, while the second makes the change
 persistent across reboots.</p>
 <p>On my laptop, I handle external connectivity through NAT rather than

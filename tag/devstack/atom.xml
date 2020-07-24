@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>devstack on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/devstack/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2015-02-11T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/devstack/</id>
-  
   <entry>
     <title>Installing nova-docker with devstack</title>
     <author>
@@ -19,8 +18,8 @@
     <published>2015-02-11T00:00:00Z</published>
     <updated>2015-02-11T00:00:00Z</updated>
     <summary type="html">This is a long-form response to this question, and describes how to get the nova-docker driver up running with devstack under Ubuntu 14.04 (Trusty). I wrote a similar post for Fedora 21, although that one was using the RDO Juno packages, while this one is using devstack and the upstream sources.
-Getting started We&#39;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
-First, let&#39;s install a few prerequisites:</summary>
+Getting started We&amp;rsquo;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
+First, let&amp;rsquo;s install a few prerequisites:</summary>
   </entry>
   
 </feed>

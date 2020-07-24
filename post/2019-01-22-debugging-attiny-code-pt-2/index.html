@@ -13,7 +13,7 @@ Creating GDB scripts to automatically test the behavior of our code.
 Using simavr to collect information about the state of microcontroller pins while our code is running.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -142,11 +142,11 @@ Using simavr to collect information about the state of microcontroller pins whil
 <p>In these posts, I will be referencing the code from my <a href="https://github.com/larsks/pipower">pipower</a> project that I discussed in [an earlier post][pipower-post]. If you want to follow along, start by cloning that repository:</p>
 <pre><code>git clone https://github.com/larsks/pipower
 </code></pre>
-<p>You'll also want to be familiar with the <a href="https://www.microchip.com/wwwproducts/en/ATtiny85">attiny85</a> or a similar AVR microcontroller, since I'll be referring to register names (like <code>PORTB</code>) without additional explanation.</p>
+<p>You&rsquo;ll also want to be familiar with the <a href="https://www.microchip.com/wwwproducts/en/ATtiny85">attiny85</a> or a similar AVR microcontroller, since I&rsquo;ll be referring to register names (like <code>PORTB</code>) without additional explanation.</p>
 <h2 id="goals">Goals</h2>
 <p>In <a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/">the first post</a> on this topic, we looked at how one can use <code>gdb</code> and <a href="https://github.com/buserror/simavr">simavr</a> to debug your attiny85 (or other AVR code) without flashing it to a device. In this post, I would like to extend that by looking at how we can automate some aspects of the debugging process.</p>
 <h2 id="sending-commands-to-gdb">Sending commands to gdb</h2>
-<p>In the previous post, we were entering commands into <code>gdb</code> manually. It is also possible to provide <code>gdb</code> with a script of commands to execute. Let's assume we have a file that contains the following commands:</p>
+<p>In the previous post, we were entering commands into <code>gdb</code> manually. It is also possible to provide <code>gdb</code> with a script of commands to execute. Let&rsquo;s assume we have a file that contains the following commands:</p>
 <pre><code>file pipower.elf
 target remote :1234
 load
@@ -198,12 +198,12 @@ Transfer rate: 431 KB/sec, 31 bytes/write.
 <pre><code>b loop if state == STATE_POWEROFF2
 </code></pre>
 <p>This breakpoint will only trigger if the expression (<code>state == STATE_POWEROFF2</code>) evaluates to true.</p>
-<p>Sometimes, we don't want a persistent breakpoint: we want the code to stop once at a given point, and then continue executing afterwards without stopping again at the same place.  We can accomplish this by setting a temporary breakpoint using the <code>tb</code> command.  If we were to write the previous example like this&hellip;</p>
+<p>Sometimes, we don&rsquo;t want a persistent breakpoint: we want the code to stop once at a given point, and then continue executing afterwards without stopping again at the same place.  We can accomplish this by setting a temporary breakpoint using the <code>tb</code> command.  If we were to write the previous example like this&hellip;</p>
 <pre><code>tb loop if state == STATE_POWEROFF2
 </code></pre>
 <p>&hellip;then the code would stop <em>once</em> at the given breakpoint, but subsequently iterations of the loop would continue merrily on their way.</p>
 <h2 id="defining-new-commands">Defining new commands</h2>
-<p>The <code>gdb</code> scripting language permits us to create new commands with the <code>define</code> command. In the previous post, I simulated the passage of time by iterating through the main loop using a command such as <code>c 100</code>. This works, but isn't particularly accurate and may make it difficult if one wants to run for a specific amount of time (for example, to run out a timer). We can define a new <code>wait_for</code> command that will let us wait for a given number of milliseconds:</p>
+<p>The <code>gdb</code> scripting language permits us to create new commands with the <code>define</code> command. In the previous post, I simulated the passage of time by iterating through the main loop using a command such as <code>c 100</code>. This works, but isn&rsquo;t particularly accurate and may make it difficult if one wants to run for a specific amount of time (for example, to run out a timer). We can define a new <code>wait_for</code> command that will let us wait for a given number of milliseconds:</p>
 <pre><code># wait for &lt;n&gt; milliseconds
 define wait_for
     disable 1
@@ -287,14 +287,14 @@ b loop
 <p>And then start things running.  This will stop at the top of <code>loop()</code>:</p>
 <pre><code>c
 </code></pre>
-<p>In order to see how things are progressing as the script runs, let's arrange to display the current value of the global <code>state</code> variable as well as the <code>PORTB</code> and <code>PINB</code> registers every time we hit a breakpoint:</p>
+<p>In order to see how things are progressing as the script runs, let&rsquo;s arrange to display the current value of the global <code>state</code> variable as well as the <code>PORTB</code> and <code>PINB</code> registers every time we hit a breakpoint:</p>
 <pre><code># set up some information to display at each breakpoint
 display state
 display /t PORTB
 display /t PINB
 display
 </code></pre>
-<p>Now that our displays are setup, let's run the code for a bit and then set <code>PIN_USB</code> high (this would indicate that external power is available to our device):</p>
+<p>Now that our displays are setup, let&rsquo;s run the code for a bit and then set <code>PIN_USB</code> high (this would indicate that external power is available to our device):</p>
 <pre><code># let the code advance for 100ms
 wait_for 100
 
@@ -302,7 +302,7 @@ wait_for 100
 log &quot;setting PIN_USB&quot;
 set PINB=PINB | 1&lt;&lt;PIN_USB
 </code></pre>
-<p>We'll use the <code>run_until_state</code> command that we defined earlier in the file to execute until we reach the <code>STATE_BOOTWAIT1</code> state:</p>
+<p>We&rsquo;ll use the <code>run_until_state</code> command that we defined earlier in the file to execute until we reach the <code>STATE_BOOTWAIT1</code> state:</p>
 <pre><code>run_until_state STATE_BOOTWAIT1
 wait_for 100
 </code></pre>
@@ -312,7 +312,7 @@ log &quot;resetting PIN_BOOT&quot;
 set PINB=PINB &amp; ~(1&lt;&lt;PIN_BOOT)
 run_until_state STATE_BOOT
 </code></pre>
-<p>Once the Pi has booted successfully and provided the <code>BOOT</code> signal to our code, we enter the <code>STATE_BOOT</code> state.  Let's run in this state for a second&hellip;</p>
+<p>Once the Pi has booted successfully and provided the <code>BOOT</code> signal to our code, we enter the <code>STATE_BOOT</code> state.  Let&rsquo;s run in this state for a second&hellip;</p>
 <pre><code>##
 ## ...the pi has booted...
 ##
@@ -331,7 +331,7 @@ wait_for 100
 log &quot;setting PIN_BOOT&quot;
 set PINB=PINB | 1&lt;&lt;PIN_BOOT
 </code></pre>
-<p>Once we receive the successful shutdown signal, the code enters the poweroff phase, during which it will wait <code>TIMER_POWEROFF</code> milliseconds before cutting the power.  Let's walk through the poweroff state transitions:</p>
+<p>Once we receive the successful shutdown signal, the code enters the poweroff phase, during which it will wait <code>TIMER_POWEROFF</code> milliseconds before cutting the power.  Let&rsquo;s walk through the poweroff state transitions:</p>
 <pre><code># step through state transitions until we reach
 # STATE_IDLE2
 run_until_state STATE_POWEROFF0

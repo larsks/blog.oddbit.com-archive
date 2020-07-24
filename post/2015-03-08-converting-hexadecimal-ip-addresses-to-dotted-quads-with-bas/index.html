@@ -8,7 +8,7 @@
 I wanted to read routing information directly from /proc/net/route using bash, because you never know what may or may not be available in the minimal environment of a Docker container (for example, the iproute package is not installed by default in the Fedora Docker images). The contents of /proc/net/route looks something like:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -140,7 +140,7 @@ hexadecimal form like this:</p>
 need to convert this into a sequence of individual octets, reverse the
 order, and produce the decimal equivalent of each octet.</p>
 <p>The following gives us the octets in the correct order, prefixed by
-<code>0x</code> (which we're going to want in the next step):</p>
+<code>0x</code> (which we&rsquo;re going to want in the next step):</p>
 <pre><code>awk '$2 == &quot;00000000&quot; {print $3}' /proc/net/route |
   sed 's/../0x&amp; /g' | tr ' ' '\n' | tac
 </code></pre>

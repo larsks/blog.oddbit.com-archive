@@ -5,11 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Installing nova-docker with devstack &middot; The Odd Bit</title>
         <meta name="description" content="This is a long-form response to this question, and describes how to get the nova-docker driver up running with devstack under Ubuntu 14.04 (Trusty). I wrote a similar post for Fedora 21, although that one was using the RDO Juno packages, while this one is using devstack and the upstream sources.
-Getting started We&#39;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
-First, let&#39;s install a few prerequisites:">
+Getting started We&rsquo;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
+First, let&rsquo;s install a few prerequisites:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -125,9 +125,9 @@ under Ubuntu 14.04 (Trusty).  I wrote a <a href="https://blog.oddbit.com/post/20
 21, although that one was using the <a href="http://openstack.redhat.com/">RDO</a> Juno packages, while this
 one is using <a href="http://devstack.org/">devstack</a> and the upstream sources.</p>
 <h2 id="getting-started">Getting started</h2>
-<p>We'll be using the <a href="https://cloud-images.ubuntu.com/trusty/current/">Ubuntu 14.04 cloud image</a> (because my test
+<p>We&rsquo;ll be using the <a href="https://cloud-images.ubuntu.com/trusty/current/">Ubuntu 14.04 cloud image</a> (because my test
 environment runs on <a href="http://www.openstack.org/">OpenStack</a>).</p>
-<p>First, let's install a few prerequisites:</p>
+<p>First, let&rsquo;s install a few prerequisites:</p>
 <pre><code>$ sudo apt-get update
 $ sudo apt-get -y install git git-review python-pip python-dev
 </code></pre>
@@ -135,7 +135,7 @@ $ sudo apt-get -y install git git-review python-pip python-dev
 <pre><code>$ sudo apt-get -y upgrade
 </code></pre>
 <h2 id="installing-docker">Installing Docker</h2>
-<p>We need to install Docker if we're going to use <code>nova-docker</code>.</p>
+<p>We need to install Docker if we&rsquo;re going to use <code>nova-docker</code>.</p>
 <p>Ubuntu 14.04 includes a fairly dated version of Docker, so I followed
 <a href="https://docs.docker.com/installation/ubuntulinux/#docker-maintained-package-installation">the instructions</a> on the Docker website for installing the current
 version of Docker on Ubuntu; this ultimately got me:</p>
@@ -152,8 +152,8 @@ Go version (server): go1.4.1
 Git commit (server): a8a31ef
 </code></pre>
 <p>Docker by default creates its socket (<code>/var/run/docker.socket</code>) with
-<code>root:root</code> ownership.  We're going to be running devstack as the
-<code>ubuntu</code> user, so let's change that by editing <code>/etc/default/docker</code>
+<code>root:root</code> ownership.  We&rsquo;re going to be running devstack as the
+<code>ubuntu</code> user, so let&rsquo;s change that by editing <code>/etc/default/docker</code>
 and setting:</p>
 <pre><code>DOCKER_OPTS='-G ubuntu'
 </code></pre>
@@ -167,7 +167,7 @@ Client API version: 1.17
 [...]
 </code></pre>
 <h2 id="installing-nova-docker">Installing nova-docker</h2>
-<p>As the <code>ubuntu</code> user, let's get the <code>nova-docker</code> source code:</p>
+<p>As the <code>ubuntu</code> user, let&rsquo;s get the <code>nova-docker</code> source code:</p>
 <pre><code>$ git clone http://github.com/stackforge/nova-docker.git
 $ cd nova-docker
 </code></pre>
@@ -185,7 +185,7 @@ necessary.  With the patch we applied, we can install the
 <pre><code>$ sudo pip install .
 </code></pre>
 <h2 id="configuring-devstack">Configuring devstack</h2>
-<p>Now we're ready to get devstack up and running.  Start by cloning the
+<p>Now we&rsquo;re ready to get devstack up and running.  Start by cloning the
 repository:</p>
 <pre><code>$ git clone https://git.openstack.org/openstack-dev/devstack
 $ cd devstack
@@ -238,7 +238,7 @@ compute_driver=novadocker.virt.docker.DockerDriver
 <code>$HOME/stack</code>.  We enable Neutron and leave pretty much everything
 else set to default values.</p>
 <h2 id="start-the-installation">Start the installation</h2>
-<p>So, now we're all ready to roll!</p>
+<p>So, now we&rsquo;re all ready to roll!</p>
 <pre><code>$ ./stack.sh
 [Call Trace]
 ./stack.sh:151:source
@@ -260,13 +260,13 @@ configuration file for <code>nova-docker</code>:</p>
 </code></pre>
 <h2 id="starting-a-docker-container">Starting a Docker container</h2>
 <p>Now that our environment is up and running, we should be able to start
-a container.  We'll start by grabbing some admin credentials for our
+a container.  We&rsquo;ll start by grabbing some admin credentials for our
 OpenStack environment:</p>
 <pre><code>$ . openrc admin
 </code></pre>
 <p>Next, we need an appropriate image; my <a href="https://registry.hub.docker.com/u/larsks/thttpd/">larsks/thttpd</a> image
-is small (so it's quick to download) and does not require any
-interactive terminal (so it's appropriate for nova-docker), so let's
+is small (so it&rsquo;s quick to download) and does not require any
+interactive terminal (so it&rsquo;s appropriate for nova-docker), so let&rsquo;s
 start with that:</p>
 <pre><code>$ docker pull larsks/thttpd
 $ docker save larsks/thttpd |
@@ -274,7 +274,7 @@ $ docker save larsks/thttpd |
     --is-public true --container-format docker \
     --disk-format raw
 </code></pre>
-<p>And now we'll boot it up.  I like to do this as a non-admin user:</p>
+<p>And now we&rsquo;ll boot it up.  I like to do this as a non-admin user:</p>
 <pre><code>$ . openrc demo
 $ nova boot --image larsks/thttpd --flavor m1.small test0
 </code></pre>
@@ -286,7 +286,7 @@ $ nova boot --image larsks/thttpd --flavor m1.small test0
 | 0c3...| test0 | ACTIVE |...| Running     | private=10.254.1.4 |
 +----...+-------+--------+...+-------------+--------------------+
 </code></pre>
-<p>Let's create a floating ip address:</p>
+<p>Let&rsquo;s create a floating ip address:</p>
 <pre><code>$ nova floating-ip-create
 +------------+-----------+----------+--------+
 | Ip         | Server Id | Fixed Ip | Pool   |

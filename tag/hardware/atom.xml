@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>hardware on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/hardware/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2018-03-27T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/hardware/</id>
-  
   <entry>
     <title>Multiple 1-Wire Buses on the Raspberry Pi</title>
     <author>
@@ -18,7 +17,7 @@
     <id>https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</id>
     <published>2018-03-27T00:00:00Z</published>
     <updated>2018-03-27T00:00:00Z</updated>
-    <summary type="html">The DS18B20 is a popular temperature sensor that uses the 1-Wire protocol for communication. Recent versions of the Linux kernel include a kernel driver for this protocol, making it relatively convenient to connect one or more of these devices to a Raspberry Pi or similar device. 1-Wire devices can be daisy chained, so it is possible to connect several devices to your Pi using only a single GPIO pin, and you&#39;ll find many articles out there that describe how to do so.</summary>
+    <summary type="html">The DS18B20 is a popular temperature sensor that uses the 1-Wire protocol for communication. Recent versions of the Linux kernel include a kernel driver for this protocol, making it relatively convenient to connect one or more of these devices to a Raspberry Pi or similar device. 1-Wire devices can be daisy chained, so it is possible to connect several devices to your Pi using only a single GPIO pin, and you&amp;rsquo;ll find many articles out there that describe how to do so.</summary>
   </entry>
   
   <entry>
@@ -30,7 +29,7 @@
     <id>https://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</id>
     <published>2013-03-12T00:00:00Z</published>
     <updated>2013-03-12T00:00:00Z</updated>
-    <summary type="html">I&#39;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&#39;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
+    <summary type="html">I&amp;rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&amp;rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
 The design of the I2C bus is such that the only device driving a voltage on the bus is the master (in this case, the Raspberry Pi), via pull-up resistors.</summary>
   </entry>
   
@@ -56,7 +55,7 @@ The design of the I2C bus is such that the only device driving a voltage on the 
     <id>https://blog.oddbit.com/post/2013-03-07-controlling-a-servo/</id>
     <published>2013-03-07T00:00:00Z</published>
     <updated>2013-03-07T00:00:00Z</updated>
-    <summary type="html">I&#39;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
+    <summary type="html">I&amp;rsquo;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
 I was fiddling around with this exercise, which uses the SoftwareServo library to control a servo. Using this library, you just pass it an angle and the library takes care of everything else, e.</summary>
   </entry>
   

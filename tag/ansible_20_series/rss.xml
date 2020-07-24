@@ -27,7 +27,7 @@ In versions of Ansible prior to 2.0, there was a small collection of OpenStack m
       <pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</guid>
-      <description>As the release of Ansible 2.0 draws closer, I&#39;d like to take a look at some of the new features that are coming down the pipe. In this post, we&#39;ll look at the docker connection driver.
+      <description>As the release of Ansible 2.0 draws closer, I&amp;rsquo;d like to take a look at some of the new features that are coming down the pipe. In this post, we&amp;rsquo;ll look at the docker connection driver.
 A &amp;ldquo;connection driver&amp;rdquo; is the mechanism by which Ansible connects to your target hosts. These days it uses ssh by default (which relies on the OpenSSH command line client for connectivity), and it also offers the Paramiko library as an alternative ssh implementation (this was in fact the default driver in earlier versions of Ansible).</description>
     </item>
     

@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>I see you have the machine that goes ping... &middot; The Odd Bit</title>
-        <meta name="description" content="We&#39;re all looking for ways to keep ourselves occupied these days, and for me that means leaping at the chance to turn a small problem into a slightly ridiculous electronics project. For reasons that I won&#39;t go into here I wanted to generate an alert when a certain WiFi BSSID becomes visible. A simple solution to this problem would have been a few lines of shell script to send me an email&hellip;but this article isn&#39;t about simple solutions!">
+        <meta name="description" content="We&rsquo;re all looking for ways to keep ourselves occupied these days, and for me that means leaping at the chance to turn a small problem into a slightly ridiculous electronics project. For reasons that I won&rsquo;t go into here I wanted to generate an alert when a certain WiFi BSSID becomes visible. A simple solution to this problem would have been a few lines of shell script to send me an email&hellip;but this article isn&rsquo;t about simple solutions!">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -117,17 +117,17 @@
 
     
 
-    <p>We're all looking for ways to keep ourselves occupied these days, and
+    <p>We&rsquo;re all looking for ways to keep ourselves occupied these days, and
 for me that means leaping at the chance to turn a small problem into a
-slightly ridiculous electronics project. For reasons that I won't go
+slightly ridiculous electronics project. For reasons that I won&rsquo;t go
 into here I wanted to generate an alert when a certain WiFi BSSID
 becomes visible. A simple solution to this problem would have been a
-few lines of shell script to send me an email&hellip;but this article isn't
+few lines of shell script to send me an email&hellip;but this article isn&rsquo;t
 about simple solutions!</p>
 <p>I thought it would be fun to put together a physical device of some
 sort that would sound an alarm when the network in question was
-visible. There weren't too many options floating around the house &ndash; I
-found a <a href="https://www.amazon.com/RuiLing-Decibels-Continuous-Sounder-Electronic/dp/B07NK8MGL9">small buzzer</a>, but it wasn't very loud so wasn't much use
+visible. There weren&rsquo;t too many options floating around the house &ndash; I
+found a <a href="https://www.amazon.com/RuiLing-Decibels-Continuous-Sounder-Electronic/dp/B07NK8MGL9">small buzzer</a>, but it wasn&rsquo;t very loud so wasn&rsquo;t much use
 unless I was right next to it.  I needed something a little more
 dramatic, and found it in the old chime doorbell I had floating
 around the basement. This means the problem statement became:</p>
@@ -136,10 +136,10 @@ around the basement. This means the problem statement became:</p>
 becomes visible.</p>
 </blockquote>
 <p>(Why a BSSID? The BSSID is the hardware address of the access point.
-In most cases, it's easy to change the name of a WiFi network &ndash; the
+In most cases, it&rsquo;s easy to change the name of a WiFi network &ndash; the
 SSID &ndash; but somewhat more difficult to change the BSSID.)</p>
 <h1 id="tldr">TL;DR</h1>
-<p>Before looking at the implementation in more detail, let's take a look
+<p>Before looking at the implementation in more detail, let&rsquo;s take a look
 at the finished project. When the device detects a target BSSID, it
 rings the bell twice and lights the <code>ALARM</code> LED:</p>
 
@@ -155,7 +155,7 @@ cancels the alarm and extinguishes the <code>ALARM</code> LED:</p>
   <iframe src="https://www.youtube.com/embed/XY6YKFK2qv4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<p>If the doorbell proves annoying, there's a switch that activates
+<p>If the doorbell proves annoying, there&rsquo;s a switch that activates
 silent mode:</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -169,8 +169,8 @@ without sounding the bell:</p>
   <iframe src="https://www.youtube.com/embed/xRxxqKiiYVc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<h2 id="but-wait-theres-more">But wait, there's more!</h2>
-<p>There's also a web interface that allows one to monitor and configure
+<h2 id="but-wait-theres-more">But wait, there&rsquo;s more!</h2>
+<p>There&rsquo;s also a web interface that allows one to monitor and configure
 the device. The web interface allows one to:</p>
 <ul>
 <li>See a list of visible networks</li>
@@ -179,14 +179,14 @@ the device. The web interface allows one to:</p>
 <li>See whether or not the scanning &ldquo;thread&rdquo; is active</li>
 <li>See whether or not there is currently an active alarm</li>
 </ul>
-<p>Here's a video of it in action:</p>
+<p>Here&rsquo;s a video of it in action:</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/TtDwYMXy-b8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<h2 id="and-thats-not-all">And that's not all!</h2>
-<p>In order to support the UI, there's a simple HTTP API that permits
+<h2 id="and-thats-not-all">And that&rsquo;s not all!</h2>
+<p>In order to support the UI, there&rsquo;s a simple HTTP API that permits
 programmatic interaction with the device. The API supports the
 following endpoints:</p>
 <ul>
@@ -200,7 +200,7 @@ the scan is running</li>
 <li><code>GET /api/scan/start</code> &ndash; start the scan</li>
 <li><code>GET /api/scan/stop</code> &ndash; stop the scan</li>
 </ul>
-<p>There are a couple of other methods, too, but they're more for
+<p>There are a couple of other methods, too, but they&rsquo;re more for
 debugging than anything else.</p>
 <h2 id="show-me-the-code">Show me the code!</h2>
 <p>The code for this project is all online at
@@ -209,7 +209,7 @@ debugging than anything else.</p>
 <h2 id="software-notes">Software notes</h2>
 <p>My initial inclination was to implement the entire solution in
 <a href="https://micropython.org/">MicroPython</a> on an <a href="https://docs.wemos.cc/en/latest/d1/d1_mini.html">Wemos D1 mini</a> (an <a href="https://en.wikipedia.org/wiki/ESP8266">esp8266</a> development
-board), but this proved problematic: MicroPython's <code>network.WLAN.scan</code>
+board), but this proved problematic: MicroPython&rsquo;s <code>network.WLAN.scan</code>
 method is a blocking operation, by which I mean it blocks
 <em>everything</em>, including interrupt handling, timer tasks, etc.  This
 made it difficult to handle some physical UI aspects, such as button
@@ -222,7 +222,7 @@ the LEDs, and the relay attached to the doorbell.</p>
 interface (because of course it does), so in addition to the WiFi
 scanning the ESP8266 now hosts a simple web server. Because of the
 blocking nature of the WiFi scan, this means the web server may
-occasionally pause for a few seconds, but this hasn't proven to be a
+occasionally pause for a few seconds, but this hasn&rsquo;t proven to be a
 problem.</p>
 <p>In the end, I have four major blocks of code in three different languages:</p>
 <ul>
@@ -240,11 +240,11 @@ once every 10 seconds (and takes a little over 2 seconds to complete).</p>
 servicing multiple clients (very, very slowly). I was interested in an
 <code>asyncio</code> implementation, but at the time the only <code>asyncio</code>
 module for MicroPython was the one in <a href="https://github.com/micropython/micropython-lib">micropython-lib</a>, which
-hadn't been touched in several years. A new <code>asyncio</code> module has
+hadn&rsquo;t been touched in several years. A new <code>asyncio</code> module has
 recently been <a href="https://github.com/micropython/micropython/commit/1d4d688b3b251120f5827a3605ec232d977eaa0f">added to micropython</a>, but that post-dates the
 implementation of this project.</p>
 <p>The server uses a very simple route-registration mechanism that should
-be familiar if you've worked with various other Python web frameworks.
+be familiar if you&rsquo;ve worked with various other Python web frameworks.
 It would be relatively easy to repurpose it for something other than
 this project.</p>
 <h2 id="the-hardware">The hardware</h2>
@@ -256,22 +256,22 @@ doorbell itself:</p>
     <img src="/assets/2020/03/20/detector-outside-labelled.png"/> 
 </figure>
 
-<p>On the inside, you'll find the Arduino Uno, the Wemos D1 mini, the
+<p>On the inside, you&rsquo;ll find the Arduino Uno, the Wemos D1 mini, the
 relay, and a step-down converter:</p>
 <figure>
     <img src="/assets/2020/03/20/detector-inside-labelled.png"/> 
 </figure>
 
-<p>The step-down converter isn't actually necessary: when I put things
-together, I didn't realize that the Uno would accept up to 12V into
+<p>The step-down converter isn&rsquo;t actually necessary: when I put things
+together, I didn&rsquo;t realize that the Uno would accept up to 12V into
 its regulator. Since I already had the step-down converter in place,
-I'm feeding about 7.5v to the Uno. The doorbell gets 12V.</p>
+I&rsquo;m feeding about 7.5v to the Uno. The doorbell gets 12V.</p>
 <p>I initially prototyped the circuit in <a href="https://www.tinkercad.com/things/cpRuevAoV5L-max-detector">Tinkercad Circuits</a>, where
 everything worked just fine. But after wiring things up and testing out
 the device, it would start ringing endlessly. Upon inspection, this
 was because the Uno was resetting every time the doorbell chimed. This
 was due to flyback voltage from the relay, which is simple to fix if
-you happen to have an appropriate diode handy&hellip;but if you don't, it
+you happen to have an appropriate diode handy&hellip;but if you don&rsquo;t, it
 means calling around to all your aquaintenances to find someone who
 happens to have some lying around. With a diode in place, everything
 worked swimmingly.</p>

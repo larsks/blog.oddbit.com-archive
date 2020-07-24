@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -112,7 +112,7 @@
 
     
     <p class="post-stub-summary">
-    I've been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
+    I&rsquo;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
 The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker containers instead of hypervisor-based servers. For certain workloads, this leads to better resource utilization than you would get with a hypervisor-based solution, while at the same time givin you better support for multi-tenancy and flexible networking than you get with Docker by itself.
     </p>
 
@@ -158,7 +158,7 @@ I came across Richard Jones&rsquo; article discussing the recent work to integra
 
     
     <p class="post-stub-summary">
-    Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I've written an article about working with the macvlan driver.
+    Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&rsquo;ve written an article about working with the macvlan driver.
  This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.
     </p>
 
@@ -181,8 +181,8 @@ I came across Richard Jones&rsquo; article discussing the recent work to integra
 
     
     <p class="post-stub-summary">
-    For a small project I'm working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
-Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn't want to write something that was tied closely to my project&hellip;
+    For a small project I&rsquo;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
+Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&rsquo;t want to write something that was tied closely to my project&hellip;
     </p>
 
     
@@ -276,7 +276,7 @@ There is now a better option available.
 
     
     <p class="post-stub-summary">
-    I've just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
+    I&rsquo;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
  
     </p>
 
@@ -299,7 +299,7 @@ There is now a better option available.
 
     
     <p class="post-stub-summary">
-    Normally I like to post solutions, but today's post is about a vexing problem to which I have not been able to find a solution.
+    Normally I like to post solutions, but today&rsquo;s post is about a vexing problem to which I have not been able to find a solution.
 This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.
     </p>
 
@@ -322,9 +322,9 @@ This started as a simple attempt to set up external connectivity on an all-in-on
 
     
     <p class="post-stub-summary">
-    In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &ldquo;don't use ip link set ...&rdquo; for this purpose.
+    In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &ldquo;don&rsquo;t use ip link set ...&rdquo; for this purpose.
 You can set the bridge MAC address via ovs-vsctl like this:
-ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I've updated my ifconfig-br-ex to look like this:
+ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&rsquo;ve updated my ifconfig-br-ex to look like this:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPINTERFACES=eth0 MACADDR=fa:16:3e:ef:91:ec OVS_EXTRA=&quot;set bridge br-ex other-config:hwaddr=$MACADDR&quot;  The OVS_EXTRA parameter gets passed to the add-br call like this:
     </p>
 

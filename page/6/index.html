@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -114,7 +114,7 @@
     
     <p class="post-stub-summary">
     In my last article article I introduced Gruf, a command line tool for interacting with Gerrit. Since then, Gruf has gained a few important new features.
-Caching Gruf will now by default cache results for five minutes. This avoids repeatedly querying the server for the same information when you're just displaying it with different templates (for example, if you run a gruf query open here followed by a gruf -t patches query open here).
+Caching Gruf will now by default cache results for five minutes. This avoids repeatedly querying the server for the same information when you&rsquo;re just displaying it with different templates (for example, if you run a gruf query open here followed by a gruf -t patches query open here).
     </p>
 
     
@@ -137,7 +137,7 @@ Caching Gruf will now by default cache results for five minutes. This avoids rep
     
     <p class="post-stub-summary">
     (See also the followup to this article.)
-I've recently started spending more time interacting with Gerrit, the code review tool used both by OpenStack, at review.openstack.org, and by a variety of other open source projects at GerritForge's GitHub-linked review.gerrithub.io. I went looking for command line tools and was largely disappointed with what I found. Many of the solutions out there assume that you're regularly interacting with a single Gerrit instance, and that's seldom the case: more often, the Gerrit server in use varies from project to project.
+I&rsquo;ve recently started spending more time interacting with Gerrit, the code review tool used both by OpenStack, at review.openstack.org, and by a variety of other open source projects at GerritForge&rsquo;s GitHub-linked review.gerrithub.io. I went looking for command line tools and was largely disappointed with what I found. Many of the solutions out there assume that you&rsquo;re regularly interacting with a single Gerrit instance, and that&rsquo;s seldom the case: more often, the Gerrit server in use varies from project to project.
     </p>
 
     
@@ -159,7 +159,7 @@ I've recently started spending more time interacting with Gerrit, the code revie
 
     
     <p class="post-stub-summary">
-    I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I'm a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
+    I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I&rsquo;m a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
 Ansible already has a chroot module, of course, but for some situations &ndash; such as targeting an emulated chroot environment &ndash; that just means a lot of extra work.
     </p>
 
@@ -182,8 +182,8 @@ Ansible already has a chroot module, of course, but for some situations &ndash; 
 
     
     <p class="post-stub-summary">
-    If you have an Ansible inventory file that includes lots of per host variables, it's not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
-I've just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.
+    If you have an Ansible inventory file that includes lots of per host variables, it&rsquo;s not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
+I&rsquo;ve just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.
     </p>
 
     
@@ -205,7 +205,7 @@ I've just submitted pull request #14359 to Ansible which implements support for 
 
     
     <p class="post-stub-summary">
-    systemd-nspawn has been called &ldquo;chroot on steroids&rdquo;, but if you think of it as Docker with a slightly different target you wouldn't be far wrong, either. It can be used to spawn containers on your host, and has a variety of options for configuring the containerized environment through the use of private networking, bind mounts, capability controls, and a variety of other facilities that give you flexible container management.
+    systemd-nspawn has been called &ldquo;chroot on steroids&rdquo;, but if you think of it as Docker with a slightly different target you wouldn&rsquo;t be far wrong, either. It can be used to spawn containers on your host, and has a variety of options for configuring the containerized environment through the use of private networking, bind mounts, capability controls, and a variety of other facilities that give you flexible container management.
 There are many different ways in which it can be used.
     </p>
 
@@ -276,9 +276,9 @@ In versions of Ansible prior to 2.0, there was a small collection of OpenStack m
     
     <p class="post-stub-summary">
     This post is in response to a comment someone made on irc earlier today:
- [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they're available
- In this post I present a proof-of-concept solution to this request. Please note that thisand isn't something that has actually been used or tested anywhere!
-If you access a git repository via ssh, it's easy to provide a wrapper for git operations via the command= option in an authorized_keys file.
+ [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&rsquo;re available
+ In this post I present a proof-of-concept solution to this request. Please note that thisand isn&rsquo;t something that has actually been used or tested anywhere!
+If you access a git repository via ssh, it&rsquo;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.
     </p>
 
     
@@ -300,8 +300,8 @@ If you access a git repository via ssh, it's easy to provide a wrapper for git o
 
     
     <p class="post-stub-summary">
-    When writing Ansible roles I occasionally want a way to just run a role from the command line, without having to muck about with a playbook. I've seen similar requests on the mailing lists and on irc.
-I've thrown together a quick wrapper that will allow you (and me!) to do exactly that, called ansible-role. The --help output looks like this:
+    When writing Ansible roles I occasionally want a way to just run a role from the command line, without having to muck about with a playbook. I&rsquo;ve seen similar requests on the mailing lists and on irc.
+I&rsquo;ve thrown together a quick wrapper that will allow you (and me!) to do exactly that, called ansible-role. The --help output looks like this:
 usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTRA_VARS] [-i INVENTORY] [--hosts HOSTS] [--sudo] [--become] [--user USER] role positional arguments: role optional arguments: -h, --help show this help message and exit --verbose, -v --gather, -g --no-gather, -G --extra-vars EXTRA_VARS, -e EXTRA_VARS Inventory: -i INVENTORY, --inventory INVENTORY --hosts HOSTS, -H HOSTS Identity: --sudo, -s --become, -b --user USER, -u USER  Example If you have a role roles/testrole that contains the following in tasks/main.
     </p>
 
@@ -324,7 +324,7 @@ usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTR
 
     
     <p class="post-stub-summary">
-    If you've tried running Ansible against a Fedora 23 system, you may have run into the following problem:
+    If you&rsquo;ve tried running Ansible against a Fedora 23 system, you may have run into the following problem:
 fatal: [myserver]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;failed&quot;: true, &quot;msg&quot;: &quot;/bin/sh: /usr/bin/python: No such file or directory\r\n&quot;, &quot;parsed&quot;: false}  Fedora has recently made the switch to only including Python 3 on the base system (at least for the cloud variant), while Ansible still requires Python 2. With Fedora 23, Python 3 is available as /usr/bin/python3, and /usr/bin/python is only available if you have installed the Python 2 interpreter.
     </p>
 

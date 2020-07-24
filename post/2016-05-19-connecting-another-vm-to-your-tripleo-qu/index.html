@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Connecting another vm to your tripleo-quickstart deployment &middot; The Odd Bit</title>
-        <meta name="description" content="Let&#39;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &ldquo;external&rdquo; connectivity (&ldquo;external&rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
-For a concrete example, let&#39;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:">
+        <meta name="description" content="Let&rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &ldquo;external&rdquo; connectivity (&ldquo;external&rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
+For a concrete example, let&rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,13 +118,13 @@ For a concrete example, let&#39;s presume you have deployed an environment using
 
     
 
-    <p>Let's say that you have set up an environment using
+    <p>Let&rsquo;s say that you have set up an environment using
 <a href="https://github.com/openstack/tripleo-quickstart/">tripleo-quickstart</a> and you would like to add another virtual
 machine to the mix that has both &ldquo;external&rdquo; connectivity (&ldquo;external&rdquo;
 in quotes because I am using it in the same way as the quickstart does
 w/r/t the undercloud) and connectivity to the overcloud nodes.  How
 would you go about setting that up?</p>
-<p>For a concrete example, let's presume you have deployed an environment
+<p>For a concrete example, let&rsquo;s presume you have deployed an environment
 using the default tripleo-quickstart configuration, which looks like
 this:</p>
 <pre><code>overcloud_nodes:
@@ -146,12 +146,12 @@ isolation.  When your deployment is complete, networking from the
 perspective of the undercloud looks like this:</p>
 <ul>
 <li>
-<p><code>eth0</code> is connected to the host's <code>brext</code> bridge and gives the
+<p><code>eth0</code> is connected to the host&rsquo;s <code>brext</code> bridge and gives the
 undercloud NAT access to the outside world.  The interface will have
 an address on the <code>192.168.23.0/24</code> network.</p>
 </li>
 <li>
-<p><code>eth1</code> is connected to the host's <code>brovc</code> bridge, which is the
+<p><code>eth1</code> is connected to the host&rsquo;s <code>brovc</code> bridge, which is the
 internal network for the overcloud.  The interface is attached to
 the OVS bridge <code>br-ctlplane</code>.</p>
 <p>The <code>br-ctlplane</code> bridge has the address <code>192.0.2.1</code>.</p>
@@ -169,17 +169,17 @@ the OVS bridge <code>br-ctlplane</code>.</p>
 <p>We want to set up a new machine that has the same connectivity as the
 undercloud.</p>
 <h2 id="upload-an-image">Upload an image</h2>
-<p>Before we can boot a new vm we'll need an image; let's start with the
-standard CentOS 7 cloud image.  First we'll download it:</p>
+<p>Before we can boot a new vm we&rsquo;ll need an image; let&rsquo;s start with the
+standard CentOS 7 cloud image.  First we&rsquo;ll download it:</p>
 <pre><code>curl -O http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2
 </code></pre>
-<p>Let's add a root password to the image and disable <a href="https://cloudinit.readthedocs.io/en/latest/">cloud-init</a>,
-since we're not booting in a cloud environment:</p>
+<p>Let&rsquo;s add a root password to the image and disable <a href="https://cloudinit.readthedocs.io/en/latest/">cloud-init</a>,
+since we&rsquo;re not booting in a cloud environment:</p>
 <pre><code>virt-customize -a CentOS-7-x86_64-GenericCloud.qcow2 \
   --root-password password:changeme \
   --run-command &quot;yum -y remove cloud-init&quot;
 </code></pre>
-<p>Now let's upload it to libvirt:</p>
+<p>Now let&rsquo;s upload it to libvirt:</p>
 <pre><code>virsh vol-create-as oooq_pool centos-7-cloud.qcow2 8G \
   --format qcow2 \
   --allocation 0
@@ -189,7 +189,7 @@ virsh vol-upload --pool oooq_pool centos-7-cloud.qcow2 \
 <h2 id="a-idboot-the-vmboot-the-vma"><a id="boot-the-vm">Boot the vm</a></h2>
 <p>I like to boot from a copy-on-write clone of the image, so that I can
 use the base image multiple times or quickly revert to a pristine
-state, so let's first create that clone:</p>
+state, so let&rsquo;s first create that clone:</p>
 <pre><code>virsh vol-create-as oooq_pool myguest.qcow2 10G \
   --allocation 0 --format qcow2 \
   --backing-vol centos-7-cloud.qcow2 \
@@ -216,7 +216,7 @@ which create interfaces attached to the named bridges.</p>
 localhost login: root
 Password:
 </code></pre>
-<p>We'll see that the system already has an ip address on the &ldquo;external&rdquo;
+<p>We&rsquo;ll see that the system already has an ip address on the &ldquo;external&rdquo;
 network:</p>
 <pre><code>[root@localhost ~]# ip addr show eth0
 2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
@@ -235,7 +235,7 @@ PING google.com (216.58.219.206) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 20.684/20.684/20.684/0.000 ms
 </code></pre>
-<p>Let's give <code>eth1</code> an address on the ctlplane network:</p>
+<p>Let&rsquo;s give <code>eth1</code> an address on the ctlplane network:</p>
 <pre><code>[root@localhost ~]# ip addr add 192.0.2.254/24 dev eth1
 [root@localhost ~]# ip link set eth1 up
 </code></pre>
@@ -259,7 +259,7 @@ PING 192.0.2.1 (192.0.2.1) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.464/0.464/0.464/0.000 ms
 </code></pre>
 <h2 id="allocating-an-address-using-dhcp">Allocating an address using DHCP</h2>
-<p>In the above instructions we've manually assigned an ip address on the
+<p>In the above instructions we&rsquo;ve manually assigned an ip address on the
 ctlplane network.  This works fine for testing, but it could
 ultimately prove problematic if neutron were to allocate the same
 address to another overcloud host.  We can use neutron to configure a

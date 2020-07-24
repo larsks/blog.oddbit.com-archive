@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Avoid rebase hell: squashing without rebasing &middot; The Odd Bit</title>
-        <meta name="description" content="You&#39;re working on a pull request. You&#39;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&#39;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I&#39;ve marked merge commits with the text [merge]):
+        <meta name="description" content="You&rsquo;re working on a pull request. You&rsquo;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&rsquo;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I&rsquo;ve marked merge commits with the text [merge]):
 7e181479 Adds methods for widget sales 0487162 [merge] Merge remote-tracking branch &#39;origin/master&#39; into my_feature 76ee81c [merge] Merge branch &#39;my_feature&#39; of https://github.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,7 +118,7 @@
 
     
 
-    <p>You're working on a pull request. You've been working on a pull request for a while, and due to lack of sleep or inebriation you've been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I've marked merge commits with the text <code>[merge]</code>):</p>
+    <p>You&rsquo;re working on a pull request. You&rsquo;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&rsquo;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I&rsquo;ve marked merge commits with the text <code>[merge]</code>):</p>
 <pre><code>7e181479 Adds methods for widget sales
 0487162 [merge] Merge remote-tracking branch 'origin/master' into my_feature
 76ee81c [merge] Merge branch 'my_feature' of https://github.com/my_user_name/widgets into my_feature
@@ -134,13 +134,13 @@ c43bade Adds api for creating widgets
 deaa962 Adds all get methods for listing widgets
 9de79ab Adds api for showing a widget and simple data model
 8288ab1 Adds api framework for widget service
-</code></pre><p>You know that's a mess, so you try to fix it by running <code>git rebase -i master</code> and squashing everything together&hellip;and you find yourself stuck in an endless maze of merge conflicts. There has to be a better way!</p>
+</code></pre><p>You know that&rsquo;s a mess, so you try to fix it by running <code>git rebase -i master</code> and squashing everything together&hellip;and you find yourself stuck in an endless maze of merge conflicts. There has to be a better way!</p>
 <p><em>(voiceover: there is a better way&hellip;)</em></p>
 <h2 id="option-1-merge---squash">Option 1: merge &ndash;squash</h2>
 <p>In this method, you will create a temporary branch and use <code>git merge --squash</code> to squash together the changes in your pull request.</p>
 <ol>
 <li>
-<p>Check out a new branch based on <code>master</code> (or the appropriate base branch if your feature branch isn't based on <code>master</code>):</p>
+<p>Check out a new branch based on <code>master</code> (or the appropriate base branch if your feature branch isn&rsquo;t based on <code>master</code>):</p>
 <pre><code>git checkout -b work master
 </code></pre><p>(This creates a new branch called <code>work</code> and makes that your current branch.)</p>
 </li>

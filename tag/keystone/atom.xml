@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>keystone on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/keystone/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2019-06-07T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/keystone/</id>
-  
   <entry>
     <title>Running Keystone with Docker Compose</title>
     <author>
@@ -18,8 +17,8 @@
     <id>https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/</id>
     <published>2019-06-07T00:00:00Z</published>
     <updated>2019-06-07T00:00:00Z</updated>
-    <summary type="html">In this article, we will look at what is necessary to run OpenStack&#39;s Keystone service (and the requisite database server) in containers using Docker Compose.
-Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&#39;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:</summary>
+    <summary type="html">In this article, we will look at what is necessary to run OpenStack&amp;rsquo;s Keystone service (and the requisite database server) in containers using Docker Compose.
+Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&amp;rsquo;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:</summary>
   </entry>
   
 </feed>

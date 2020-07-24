@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Docker build learns about secrets and ssh agent forwarding &middot; The Odd Bit</title>
-        <meta name="description" content="A common problem for folks working with Docker is accessing resources which require authentication during the image build step. A particularly common use case is getting access to private git repositories using ssh key-based authentication. Until recently there hasn&#39;t been a great solution:
- you can embed secrets in your image, but now you can&#39;t share the image with anybody. you can use build arguments, but this requires passing in an unenecrypted private key on the docker build command line, which is suboptimal for a number of reasons you can perform all the steps requiring authentication at runtime, but this can needlessly complicate your container startup process.">
+        <meta name="description" content="A common problem for folks working with Docker is accessing resources which require authentication during the image build step. A particularly common use case is getting access to private git repositories using ssh key-based authentication. Until recently there hasn&rsquo;t been a great solution:
+ you can embed secrets in your image, but now you can&rsquo;t share the image with anybody. you can use build arguments, but this requires passing in an unenecrypted private key on the docker build command line, which is suboptimal for a number of reasons you can perform all the steps requiring authentication at runtime, but this can needlessly complicate your container startup process.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,9 +118,9 @@
 
     
 
-    <p>A common problem for folks working with Docker is accessing resources which require authentication during the image build step.  A particularly common use case is getting access to private git repositories using ssh key-based authentication.  Until recently there hasn't been a great solution:</p>
+    <p>A common problem for folks working with Docker is accessing resources which require authentication during the image build step.  A particularly common use case is getting access to private git repositories using ssh key-based authentication.  Until recently there hasn&rsquo;t been a great solution:</p>
 <ul>
-<li>you can embed secrets in your image, but now you can't share the image with anybody.</li>
+<li>you can embed secrets in your image, but now you can&rsquo;t share the image with anybody.</li>
 <li>you can use build arguments, but this requires passing in an unenecrypted private key on the <code>docker build</code> command line, which is suboptimal for a number of reasons</li>
 <li>you can perform all the steps requiring authentication at runtime, but this can needlessly complicate your container startup process.</li>
 </ul>
@@ -164,8 +164,8 @@ RUN --mount=type=ssh git clone git@github.com:moby/buildkit
 docker build --ssh default -t buildtest .
 </code></pre>
 <p>&hellip;then our <code>git clone</code> operation will successfully authenticate with github using our ssh private key, assuming that we had one loaded into our local ssh agent.</p>
-<h2 id="but-wait-theres-more">But wait, there's more</h2>
-<p>In the previous example line, the <code>--ssh default</code> option requests <code>docker build</code> to forward your default ssh agent. There may be situations in which this isn't appropriate (for example, maybe you need to use a key that isn't loaded into your default agent).  You can provide the <code>--ssh</code> option with one or more paths to ssh agent sockets or (unencrypted) private key files.  Let's say you have two service-specific private keys:</p>
+<h2 id="but-wait-theres-more">But wait, there&rsquo;s more</h2>
+<p>In the previous example line, the <code>--ssh default</code> option requests <code>docker build</code> to forward your default ssh agent. There may be situations in which this isn&rsquo;t appropriate (for example, maybe you need to use a key that isn&rsquo;t loaded into your default agent).  You can provide the <code>--ssh</code> option with one or more paths to ssh agent sockets or (unencrypted) private key files.  Let&rsquo;s say you have two service-specific private keys:</p>
 <ul>
 <li>For GitHub, you need to use <code>$HOME/.ssh/github_rsa</code></li>
 <li>For BitBucket, you need to use <code>$HOME/.ssh/bitbucket_rsa</code></li>
@@ -192,7 +192,7 @@ RUN --mount=type=ssh,id=github git clone git@github.com:some/project
 RUN --mount=type=ssh,id=bitbucket git clone git@bitbucket.com:other/project
 </code></pre>
 <h2 id="other-secrets">Other secrets</h2>
-<p>In this post I've looked specfically at providing <code>docker build</code> with access to your ssh keys.  Docker 18.09 also introduces support for exposing other secrets to the build process; see the official announcement (linked above) for details.</p>
+<p>In this post I&rsquo;ve looked specfically at providing <code>docker build</code> with access to your ssh keys.  Docker 18.09 also introduces support for exposing other secrets to the build process; see the official announcement (linked above) for details.</p>
 
 </div>
 

@@ -8,7 +8,7 @@
 This post began life as an email summarizing the various configuration changes we made on the systems to get things up and running.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -151,7 +151,7 @@ consoles.</li>
 the top level of the <code>novaconsole</code> source.  Normally one would just
 <code>pip install .</code> from the source directory, but <code>python-pip</code> was not
 available on our platform.</p>
-<p>That wasn't a big issue because we <em>did</em> have <code>python-setuptools</code>
+<p>That wasn&rsquo;t a big issue because we <em>did</em> have <code>python-setuptools</code>
 available, so I was able to simply run (inside the <code>novaconsole</code>
 source directory):</p>
 <pre><code>python setup.py install
@@ -168,7 +168,7 @@ instance name.)</p>
 <p>The controller did not have the <code>openstack-nova-serialproxy</code> package
 installed, which provides the <code>nova-serialproxy</code> service.  This service
 provides the websocket endpoint used by clients, so without this
-service you you won't be able to connect to serial consoles.</p>
+service you you won&rsquo;t be able to connect to serial consoles.</p>
 <p>Installing the service was a simple matter of:</p>
 <pre><code>yum -y install openstack-nova-serialproxy
 systemctl enable openstack-nova-serialproxy
@@ -301,7 +301,7 @@ limits the action to services that match that name, so in addition to
 services, etc.</p>
 <h3 id="iptables-and-the-case-of-the-missing-packets">Iptables and the case of the missing packets</h3>
 <p>After diagnosing the selinux issue noted above, virtual networking
-layer looked fine, but we still weren't able to get traffic between
+layer looked fine, but we still weren&rsquo;t able to get traffic between
 the test instance and the router/dhcp server on the controller.</p>
 <p>Traffic was clearly traversing the VXLAN tunnels, as revealed by
 running <code>tcpdump</code> on both ends of the tunnel (where 4789 is the vxlan
@@ -337,8 +337,8 @@ host was being rejected by the kernel.  I added a new rule to match
 vxlan traffic from the compute host:</p>
 <pre><code># iptables -I INPUT 18 -s 10.16.184.118/32 -p udp -m multiport --dports 4789 ...
 </code></pre>
-<p>This seemed to take care of things, but it's a bit of a mystery why
-this wasn't configured for us in the first place by the installer.
+<p>This seemed to take care of things, but it&rsquo;s a bit of a mystery why
+this wasn&rsquo;t configured for us in the first place by the installer.
 This may have been a bug in <a href="https://wiki.openstack.org/wiki/Packstack">packstack</a>; we would need to do clean
 re-deploy to verify this behavior.</p>
 <h3 id="access-to-floating-ip-addresses">Access to floating ip addresses</h3>
@@ -367,7 +367,7 @@ IPADDR=172.24.4.225
 NETMASK=255.255.255.240
 ONBOOT=yes
 </code></pre>
-<p>If you're not able to map CIDR prefixes to dotted-quad netmasks in
+<p>If you&rsquo;re not able to map CIDR prefixes to dotted-quad netmasks in
 your head, the <code>ipcalc</code> tool is useful:</p>
 <pre><code>$ ipcalc -m 172.24.4.224/28
 NETMASK=255.255.255.240

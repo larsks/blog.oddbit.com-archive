@@ -8,7 +8,7 @@
 One of my favorite pastebin services is termbin.com, because it works from the command line using tools you probably already have installed.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -134,7 +134,7 @@ http://termbin.com/gjfp
 </code></pre>
 <p>Visiting <a href="http://termbin.com/gjfp">http://termbin.com/gjfp</a> would show the output of that
 command.</p>
-<p>It's very convenient, but I found myself wondering: would it be
+<p>It&rsquo;s very convenient, but I found myself wondering: would it be
 possible to configure things such that a service like <a href="https://github.com/solusipse/fiche">fiche</a>
 could listen on <em>any</em> port?</p>
 <p>I started by looking into <a href="https://en.wikipedia.org/wiki/Network_socket#Raw_socket">raw sockets</a>, but that turned out to be a
@@ -151,7 +151,7 @@ very easy.</p>
 ============================================================
 </code></pre>
 <p>And we add an additional address to one of our network interfaces.
-I'm adding <code>192.168.1.250</code> to <code>eth0</code> on my local system:</p>
+I&rsquo;m adding <code>192.168.1.250</code> to <code>eth0</code> on my local system:</p>
 <pre><code>$ sudo ip addr add 192.168.1.250/32 dev eth0
 </code></pre>
 <p>Next, we create two firewall rules:</p>

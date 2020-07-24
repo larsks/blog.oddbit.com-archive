@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -112,7 +112,7 @@
 
     
     <p class="post-stub-summary">
-    As the release of Ansible 2.0 draws closer, I'd like to take a look at some of the new features that are coming down the pipe. In this post, we'll look at the docker connection driver.
+    As the release of Ansible 2.0 draws closer, I&rsquo;d like to take a look at some of the new features that are coming down the pipe. In this post, we&rsquo;ll look at the docker connection driver.
 A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to your target hosts. These days it uses ssh by default (which relies on the OpenSSH command line client for connectivity), and it also offers the Paramiko library as an alternative ssh implementation (this was in fact the default driver in earlier versions of Ansible).
     </p>
 
@@ -135,8 +135,8 @@ A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to 
 
     
     <p class="post-stub-summary">
-    Someone asked on IRC about running ntpd in a container on Atomic, so I've put together a small example. We'll start with a very simple Dockerfile:
-FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&quot;ntpd&quot;]  I'm using the alpine image as my starting point because it's very small, which makes this whole process go a little faster. I'm installing the openntpd package, which provides the ntpd binary.
+    Someone asked on IRC about running ntpd in a container on Atomic, so I&rsquo;ve put together a small example. We&rsquo;ll start with a very simple Dockerfile:
+FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&quot;ntpd&quot;]  I&rsquo;m using the alpine image as my starting point because it&rsquo;s very small, which makes this whole process go a little faster. I&rsquo;m installing the openntpd package, which provides the ntpd binary.
     </p>
 
     
@@ -232,7 +232,7 @@ nova-manage db migrate_flavor_data --max_number 100  And that says:
 
     
     <p class="post-stub-summary">
-    I work for an organization that follows the common model of assigning people systematically generated user ids. Like most technically inclined employees of this organization, I have local accounts on my workstation that don't bear any relation to the generated account ids. For the most part this isn't a problem, except that our organization uses Kerberos to authenticate access to a variety of resources (such as the mailserver and a variety of web applications).
+    I work for an organization that follows the common model of assigning people systematically generated user ids. Like most technically inclined employees of this organization, I have local accounts on my workstation that don&rsquo;t bear any relation to the generated account ids. For the most part this isn&rsquo;t a problem, except that our organization uses Kerberos to authenticate access to a variety of resources (such as the mailserver and a variety of web applications).
     </p>
 
     
@@ -277,8 +277,8 @@ It is possible to generate your network configuration from this configuration dr
 
     
     <p class="post-stub-summary">
-    Next week is the Red Hat Summit in Boston, and I'll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
-As part of that presentation, I've put together a short demonstration video:
+    Next week is the Red Hat Summit in Boston, and I&rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
+As part of that presentation, I&rsquo;ve put together a short demonstration video:
  This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).
     </p>
 
@@ -301,7 +301,7 @@ As part of that presentation, I've put together a short demonstration video:
 
     
     <p class="post-stub-summary">
-    Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&quot;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).
+    Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&rdquo;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).
     </p>
 
     

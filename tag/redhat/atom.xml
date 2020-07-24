@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>redhat on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/redhat/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2014-01-13T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/redhat/</id>
-  
   <entry>
     <title>RDO Bug Triage</title>
     <author>
@@ -18,7 +17,7 @@
     <id>https://blog.oddbit.com/post/2014-01-13-rdo-bug-triage/</id>
     <published>2014-01-13T00:00:00Z</published>
     <updated>2014-01-13T00:00:00Z</updated>
-    <summary type="html">This Wednesday, January 15, at 14:00 UTC (that&#39;s 9AM US/Eastern, or date -d &amp;quot;14:00 UTC&amp;quot; in your local timezone) I will be helping out with the RDO bug triage day. We&#39;ll be trying to validate all the untriaged bugs opened against RDO.
+    <summary type="html">This Wednesday, January 15, at 14:00 UTC (that&amp;rsquo;s 9AM US/Eastern, or date -d &amp;quot;14:00 UTC&amp;quot; in your local timezone) I will be helping out with the RDO bug triage day. We&amp;rsquo;ll be trying to validate all the untriaged bugs opened against RDO.
 Feel free to drop by on #rdo and help out or ask questions.</summary>
   </entry>
   

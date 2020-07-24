@@ -9,7 +9,7 @@
  The traditional asynchronous delivery mechanism can be tricky to get right, whereas this provides a convenient fd interface that integrates nicely with your existing event-based code.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -149,7 +149,7 @@ tries to follow; the first two read as follows:</p>
 <blockquote>
 <ul>
 <li>The goal is to call C code from Python. You should be able to do so without learning a 3rd language: every alternative requires you to learn their own language (Cython, SWIG) or API (ctypes)&hellip;</li>
-<li>Keep all the Python-related logic in Python so that you don't need to write much C code (unlike CPython native C extensions).</li>
+<li>Keep all the Python-related logic in Python so that you don&rsquo;t need to write much C code (unlike CPython native C extensions).</li>
 </ul>
 </blockquote>
 <p>In practice, what this means is that if the C API documentation for a
@@ -176,11 +176,11 @@ slightly more complicated when you function prototype looks like this:</p>
        int signalfd(int fd, const sigset_t *mask, int flags);
 ''')
 </code></pre>
-<p>You'll run into an error:</p>
+<p>You&rsquo;ll run into an error:</p>
 <pre><code>cffi.api.CDefError: cannot parse &quot;#include &lt;sys/signalfd.h&gt;&quot;
 :3: Directives not supported yet
 </code></pre>
-<p>You can try that without the <code>#include</code> statement, but you'll just get
+<p>You can try that without the <code>#include</code> statement, but you&rsquo;ll just get
 a new error:</p>
 <pre><code>cffi.api.CDefError: cannot parse &quot;int signalfd(int fd, const sigset_t *mask, int flags);&quot;
 :3:37: before: *
@@ -247,7 +247,7 @@ int sigismember(const sigset_t *set, int signum);
 int sigprocmask(int how, const sigset_t *set, sigset_t *oldset);
 ''')
 </code></pre>
-<p>Now we're all set to call these functions through the <code>crt</code> variable
+<p>Now we&rsquo;re all set to call these functions through the <code>crt</code> variable
 we created ealier (by calling <code>ffi.dlopen(None)</code>):</p>
 <pre><code>&gt;&gt;&gt; import signal
 &gt;&gt;&gt; mask = ffi.new('sigset_t *')
@@ -271,7 +271,7 @@ we created ealier (by calling <code>ffi.dlopen(None)</code>):</p>
 ^C[(3, 1)]
 &gt;&gt;&gt; 
 </code></pre>
-<p>In case it's not obvious from the above example, when I typed
+<p>In case it&rsquo;s not obvious from the above example, when I typed
 <code>CONTROL-C</code> on my keyboard, sending a <code>SIGINT</code> to the Python shell, it
 caused the <code>p.poll()</code> method to exit, reporting activity on fd 3
 (which is the fd we were given by <code>signalfd()</code>).  We call
@@ -281,7 +281,7 @@ and generating a <code>KeyboardInterrupt</code> exception.</p>
 <p>You can find this all packaged up nicely with a slightly more pythonic
 interface in my <a href="https://github.com/larsks/python-signalfd">python-signalfd</a> repository on GitHub.</p>
 <hr>
-<p><a href="http://gabrbedd.wordpress.com/">Gabe's Geek Log</a> has an <a href="http://gabrbedd.wordpress.com/2013/07/29/handling-signals-with-signalfd/">article about signalfd</a> that is also
+<p><a href="http://gabrbedd.wordpress.com/">Gabe&rsquo;s Geek Log</a> has an <a href="http://gabrbedd.wordpress.com/2013/07/29/handling-signals-with-signalfd/">article about signalfd</a> that is also
 worth reading.</p>
 
 </div>

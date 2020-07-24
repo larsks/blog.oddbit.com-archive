@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Docker plugin for OpenStack Heat &middot; The Odd Bit</title>
-        <meta name="description" content="I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&#39;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
+        <meta name="description" content="I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
 The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -120,7 +120,7 @@ The release announcement on the Docker blog includes an example Heat template, b
 
     <p>I have been looking at both Docker and OpenStack recently. In my <a href="https://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/">last
 post</a> I talked a little about the <a href="https://github.com/stackforge/nova-docker">Docker driver for Nova</a>; in
-this post I'll be taking an in-depth look at the Docker plugin for
+this post I&rsquo;ll be taking an in-depth look at the Docker plugin for
 Heat, which has been available <a href="https://blog.docker.com/2014/03/docker-will-be-in-openstack-icehouse/">since the Icehouse release</a> but is
 surprisingly under-documented.</p>
 <p>The <a href="https://blog.docker.com/2014/03/docker-will-be-in-openstack-icehouse/">release announcement</a> on the Docker blog includes an
@@ -145,7 +145,7 @@ plugin to launch some containers on that server.</p>
 <h2 id="installing-the-docker-plugin">Installing the Docker plugin</h2>
 <p>The first thing we need to do is install the Docker plugin.  I am
 running <a href="http://openstack.redhat.com/">RDO</a> packages for Icehouse locally, which do not include
-the Docker plugin.  We'r going to install the plugin from the Heat
+the Docker plugin.  We&rsquo;r going to install the plugin from the Heat
 sources.</p>
 <ol>
 <li>
@@ -172,7 +172,7 @@ working directory.  Change into this directory:</p>
 repository; this is the most recent code committed to the project.
 At this point we could check out the <code>stable/icehouse</code> branch of
 the repository to get the version of the plugin released at the
-same time as the version of Heat that we're running, but we would
+same time as the version of Heat that we&rsquo;re running, but we would
 find that the Docker plugin was, at that point in time, somewhat
 crippled; in particular:</p>
 <ul>
@@ -187,7 +187,7 @@ you must arrange to run <code>docker pull</code> a priori for each image you
 plan to use in your Heat template.</p>
 </li>
 </ul>
-<p>That would make us sad, so instead we're going to use the plugin
+<p>That would make us sad, so instead we&rsquo;re going to use the plugin
 from the <code>master</code> branch, which only requires a trivial change in
 order to work with the Icehouse release of Heat.</p>
 <p>Look at the file
@@ -200,7 +200,7 @@ this:</p>
 <pre><code> attributes.Schema = lambda x: x
  attributes_schema = {
 </code></pre>
-<p>If you're curious, here is what we accomplished with that
+<p>If you&rsquo;re curious, here is what we accomplished with that
 additional line:</p>
 <p>The code following that point contains multiple stanzas of the
 form:</p>
@@ -210,9 +210,9 @@ form:</p>
 </code></pre>
 <p>In Icehouse, the <code>heat.engine.attributes</code> module does not have a
 <code>Schema</code> class so this fails.  Our patch above adds a module
-member named <code>Schema</code> that simply returns it's arguments (that
+member named <code>Schema</code> that simply returns it&rsquo;s arguments (that
 is, it is an identity function).</p>
-<p>(<strong>NB</strong>: At the time this was written, Heat's <code>master</code> branch was
+<p>(<strong>NB</strong>: At the time this was written, Heat&rsquo;s <code>master</code> branch was
 at <code>a767880</code>.)</p>
 </li>
 <li>
@@ -222,8 +222,8 @@ the <code>plugin_dirs</code> directive in <code>/etc/heat/heat.conf</code>):</p>
 <pre><code> $ rsync -a --exclude=tests/ contrib/heat_docker/heat_docker \
      /usr/lib/heat
 </code></pre>
-<p>We're excluding the <code>tests</code> directory here because it has
-additional prerequisites that aren't operationally necessary but
+<p>We&rsquo;re excluding the <code>tests</code> directory here because it has
+additional prerequisites that aren&rsquo;t operationally necessary but
 that will prevent Heat from starting up if they are missing.</p>
 </li>
 <li>
@@ -253,7 +253,7 @@ this (the <code>|</code> introduces a block of literal text):</p>
   #include https://get.docker.io
 </code></pre>
 <p>Or possibly like this, although this would restrict you to a single
-line and thus wouldn't be used much in practice:</p>
+line and thus wouldn&rsquo;t be used much in practice:</p>
 <pre><code>user_data: &quot;#include https://get.docker.io&quot;
 </code></pre>
 <p>And, all other things being correct, this would install Docker on a
@@ -296,7 +296,7 @@ done
 </code></pre>
 <p>This takes care of making sure our packages are current, installing
 Docker, and arranging for it to listen on a tcp socket.  For that last
-bit, we're creating a new <code>systemd</code> socket file
+bit, we&rsquo;re creating a new <code>systemd</code> socket file
 (<code>/etc/systemd/system/docker-tcp.socket</code>), which means that <code>systemd</code>
 will actually open the socket for listening and start <code>docker</code> if
 necessary when a client connects.</p>
@@ -327,9 +327,9 @@ resources.  For example, if we have:</p>
   depends_on: 
     - docker_server
 </code></pre>
-<p>Looks good, but this does not, in fact, help us.  From Heat's
+<p>Looks good, but this does not, in fact, help us.  From Heat&rsquo;s
 perspective, the dependency is satisfied as soon as the Nova server
-<em>boots</em>, so really we're back where we started.</p>
+<em>boots</em>, so really we&rsquo;re back where we started.</p>
 <p>The Heat solution to this is the <code>AWS::CloudFormation::WaitCondition</code>
 resource (and its boon companion, the and
 <code>AWS::CloudFormation::WaitConditionHandle</code> resource).  A
@@ -356,7 +356,7 @@ docker_wait_condition:
 <p>With this in place, Heat will not attempt to create the Docker
 container until we signal the wait condition resource.  In order to do
 that, we need to modify our <code>user_data</code> script to embed the
-notification URL generated by heat.  We'll use both the <code>get_resource</code>
+notification URL generated by heat.  We&rsquo;ll use both the <code>get_resource</code>
 and <code>str_replace</code> <a href="http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#intrinsic-functions">intrinsic function</a> in order to generate the appropriate
 script:</p>
 <pre><code>  user_data:
@@ -417,7 +417,7 @@ in the <code>template</code>.</p>
 <p>We use <code>str_replace</code> to substitute the token <code>$WAIT_HANDLE</code> with the
 result of calling <code>get_resource</code> on our <code>docker_wait_handle</code> resource.
 This results in a URL that contains an EC2-style signed URL that will
-deliver the necessary notification to Heat.  In this example we're
+deliver the necessary notification to Heat.  In this example we&rsquo;re
 using the <code>cfn-signal</code> tool, which is included in the Fedora cloud
 images, but you could accomplish the same thing with <code>curl</code>:</p>
 <pre><code>curl -X PUT -H 'Content-Type: application/json' \
@@ -427,7 +427,7 @@ images, but you could accomplish the same thing with <code>curl</code>:</p>
   &quot;$WAIT_HANDLE&quot;
 </code></pre>
 <p>You need to have correctly configured Heat in order for this to work;
-I've written a short <a href="https://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/">companion article</a> that contains a checklist
+I&rsquo;ve written a short <a href="https://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/">companion article</a> that contains a checklist
 and pointers to additional documentation to help work around some
 common issues.</p>
 <h2 id="templates-defining-docker-containers">Templates: Defining Docker containers</h2>
@@ -557,7 +557,7 @@ definition:</p>
     port_bindings:
       3306: 3306
 </code></pre>
-<p>Take a close look at how we're setting the <code>docker_endpoint</code> property:</p>
+<p>Take a close look at how we&rsquo;re setting the <code>docker_endpoint</code> property:</p>
 <pre><code>docker_endpoint:
   str_replace:
     template: &quot;tcp://$HOST:2375&quot;

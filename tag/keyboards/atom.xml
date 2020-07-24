@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>keyboards on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/keyboards/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2020-04-15T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/keyboards/</id>
-  
   <entry>
     <title>Some thoughts on Mechanical Keyboards</title>
     <author>
@@ -18,7 +17,7 @@
     <id>https://blog.oddbit.com/post/2020-04-15-some-thoughts-on-mechanical-ke/</id>
     <published>2020-04-15T00:00:00Z</published>
     <updated>2020-04-15T00:00:00Z</updated>
-    <summary type="html">Since we&#39;re all stuck in the house and working from home these days, I&#39;ve had to make some changes to my home office. One change in particular was requested by my wife, who now shares our rather small home office space with me: after a week or so of calls with me clattering away on my old Das Keyboard 3 Professional in the background, she asked if I could get something that was maybe a little bit quieter.</summary>
+    <summary type="html">Since we&amp;rsquo;re all stuck in the house and working from home these days, I&amp;rsquo;ve had to make some changes to my home office. One change in particular was requested by my wife, who now shares our rather small home office space with me: after a week or so of calls with me clattering away on my old Das Keyboard 3 Professional in the background, she asked if I could get something that was maybe a little bit quieter.</summary>
   </entry>
   
 </feed>

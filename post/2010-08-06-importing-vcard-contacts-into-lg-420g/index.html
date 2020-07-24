@@ -7,7 +7,7 @@
         <meta name="description" content="Alix recently acquired an LG 420G from TracFone. She was interested in getting all of her contacts onto the phone, which at first seemed like a simple task &ndash; transfer a vCard (.vcf) file to the phone via Bluetooth, and the phone would import all the contacts. This turned out to be a great idea in theory, but in practice there was a fatal flaw &ndash; while the phone did indeed import the contacts, it only imported names and the occasional note or email address.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -120,7 +120,7 @@
     <p>Alix recently acquired an LG 420G from <a href="http://www.tracfone.com/">TracFone</a>. She was interested in getting all of her contacts onto the phone, which at first seemed like a simple task &ndash; transfer a vCard (.vcf) file to the phone via Bluetooth, and the phone would import all the contacts. This turned out to be a great idea in theory, but in practice there was a fatal flaw &ndash; while the phone did indeed import the contacts, it only imported names and the occasional note or email address. There were no phone numbers.</p>
 <p>Thus began the long investigation to find out exactly what the phone expected the contacts to look like.</p>
 <h1 id="eol-format">EOL format</h1>
-<p>The LG 420G needs DOS end-of-line (CRLF), otherwise it won't recognize more than a single contact in your file. There are a number of ways to convert EOL style in a text document; I used the unix2dos tool.</p>
+<p>The LG 420G needs DOS end-of-line (CRLF), otherwise it won&rsquo;t recognize more than a single contact in your file. There are a number of ways to convert EOL style in a text document; I used the unix2dos tool.</p>
 <h1 id="phone-number-labels">Phone number labels</h1>
 <p>In our source vCard files, telephone numbers were typically listed with one qualifier, like this:</p>
 <pre><code>TEL;WORK:555-555-5555
@@ -191,7 +191,7 @@ BEGIN {
   print
 }
 </code></pre>
-<h1 id="and-were-off">And we're off!</h1>
+<h1 id="and-were-off">And we&rsquo;re off!</h1>
 <p>With these transformations in place, the LG 420G was able to successfully import the contacts. I automated the whole process with the following Makefile:</p>
 <pre><code>SED = gsed
 AWK = awk

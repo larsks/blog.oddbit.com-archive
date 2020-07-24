@@ -9,7 +9,7 @@
  Quantum networking using GRE tunnels; A dedicated network controller; A single instance running on a compute host  Much of the document will be relevant to other configurations, but details will vary based on your choice of layer 2 connectivity, number of running instances, and so forth.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -159,7 +159,7 @@ this bridge device for? From the <a href="http://docs.openstack.org/network-admi
 Guide</a>:</p>
 <blockquote>
 <p>Ideally, the TAP device vnet0 would be connected directly to the
-integration bridge, br-int. Unfortunately, this isn't possible because
+integration bridge, br-int. Unfortunately, this isn&rsquo;t possible because
 of how OpenStack security groups are currently implemented. OpenStack
 uses iptables rules on the TAP devices such as vnet0 to implement
 security groups, and Open vSwitch is not compatible with iptables
@@ -167,7 +167,7 @@ rules that are applied directly on TAP devices that are connected to
 an Open vSwitch port.</p>
 </blockquote>
 <p>Because this bridge device exists primarily to support firewall rules,
-I'm going to refer to it as the &ldquo;firewall bridge&rdquo;.</p>
+I&rsquo;m going to refer to it as the &ldquo;firewall bridge&rdquo;.</p>
 <p>If you examine the firewall rules on your compute host, you will find
 that there are several rules associated with this <code>tap</code> device:</p>
 <pre><code># iptables -S | grep tap7c7ae61e-05
@@ -229,7 +229,7 @@ and carries traffic to and from the firewall bridge. The <code>tag: 1</code> you
 see in the above output integrates that this is an access port
 attached to VLAN 1.  Untagged outbound traffic from this instance will be
 assigned VLAN ID 1, and inbound traffic with VLAN ID 1 will
-stripped of it's VLAN tag and sent out this port.</p>
+stripped of it&rsquo;s VLAN tag and sent out this port.</p>
 <p>Each network you create (with <code>neutron net-create</code>) will be assigned a
 different VLAN ID.</p>
 <p>The interface named <code>patch-tun</code> connects the integration bridge to the
@@ -478,7 +478,7 @@ configuration.</p>
 </code></pre>
 <p>Then you can create forwarding and NAT rules that will cause
 &ldquo;external&rdquo; traffic from your instances to get rewritten to your
-network controller's ip address and sent out on the network:</p>
+network controller&rsquo;s ip address and sent out on the network:</p>
 <pre><code># iptables -A FORWARD -d 172.24.4.224/28 -j ACCEPT 
 # iptables -A FORWARD -s 172.24.4.224/28 -j ACCEPT 
 # iptables -t nat -I POSTROUTING 1 -s 172.24.4.224/28 -j MASQUERADE

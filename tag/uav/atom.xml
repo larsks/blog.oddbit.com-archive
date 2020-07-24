@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>uav on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/uav/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2017-05-25T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/uav/</id>
-  
   <entry>
     <title>FAA Cannot Require Drone Registration</title>
     <author>
@@ -18,7 +17,7 @@
     <id>https://blog.oddbit.com/post/2017-05-25-faa-cannot-require-drone-registration/</id>
     <published>2017-05-25T00:00:00Z</published>
     <updated>2017-05-25T00:00:00Z</updated>
-    <summary type="html">This is now old news if you&#39;re already following the drone industry, but if you&#39;re not, I&#39;d like to highlight a recent decision made by the US Court of Appeals regarding the FAA&#39;s drone registration requirements.
+    <summary type="html">This is now old news if you&amp;rsquo;re already following the drone industry, but if you&amp;rsquo;re not, I&amp;rsquo;d like to highlight a recent decision made by the US Court of Appeals regarding the FAA&amp;rsquo;s drone registration requirements.
 To place this in context, back in 2015 the FAA established a new set of regulations (the &amp;ldquo;Registration Rule&amp;rdquo;) requiring anyone with a UAV (&amp;ldquo;unmanned aerial vehicle&amp;rdquo;, or &amp;ldquo;drone&amp;rdquo;) weighing between 0.5 and 55 lbs to register with the FAA.</summary>
   </entry>
   

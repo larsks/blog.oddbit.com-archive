@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Stupid Pacemaker XML tricks &middot; The Odd Bit</title>
-        <meta name="description" content="I&#39;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
+        <meta name="description" content="I&rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
 Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;//resource[@active=&quot;false&quot;]&#39; - &gt;&amp;/dev/null &amp;&amp; echo &quot;There are inactive resources&quot;  This selects any resource (//resource) in the output of pcs status xml that has the attribute active set to false.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,7 +118,7 @@ Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;
 
     
 
-    <p>I've recently spent some time working with <a href="http://clusterlabs.org/">Pacemaker</a>, and ended up
+    <p>I&rsquo;ve recently spent some time working with <a href="http://clusterlabs.org/">Pacemaker</a>, and ended up
 with an interesting collection of <a href="http://www.w3.org/TR/xpath/">XPath</a> snippets that I am publishing
 here for your use and/or amusement.</p>
 <h2 id="check-if-there-are-any-inactive-resources">Check if there are any inactive resources</h2>

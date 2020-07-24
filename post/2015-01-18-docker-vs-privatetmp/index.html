@@ -8,7 +8,7 @@
 The PrivateTmp directive, if true, &ldquo;sets up a new file system namespace for the executed processes and mounts private /tmp and /var/tmp directories inside it that is not shared by processes outside of the namespace&rdquo;. This is a great idea from a security perspective, but can cause some unanticipated consequences.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -195,7 +195,7 @@ remove the mountpoint directory:</p>
 </li>
 </ol>
 <p>Now the mountpoint can be deleted.</p>
-<h2 id="its-not-just-docker">It's not just Docker</h2>
+<h2 id="its-not-just-docker">It&rsquo;s not just Docker</h2>
 <p>While I ran into this problem while working with Docker, there is
 nothing particularly Docker-specific about the problem.  You can
 replicate this behavior by hand without involving either <code>systemd</code> or
@@ -241,8 +241,8 @@ Docker:</p>
 </code></pre>
 </li>
 </ol>
-<h2 id="so-whats-going-on-here">So what's going on here?</h2>
-<p>To understand what's going on in these examples, you probably want to
+<h2 id="so-whats-going-on-here">So what&rsquo;s going on here?</h2>
+<p>To understand what&rsquo;s going on in these examples, you probably want to
 start by at least glancing through the <a href="https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt">sharedsubtree.txt</a> kernel
 documentation.</p>
 <p>The Docker <code>devicemapper</code> driver creates a <em>private</em> mount on

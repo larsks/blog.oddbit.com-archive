@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Running dhcpcd under LXC &middot; The Odd Bit</title>
-        <meta name="description" content="I&#39;ve been working with Arch Linux recently, which uses dhcpcd as its default DHCP agent. If you try booting Arch inside an LXC container, you will find that dhcpcd is unable to configure your network interfaces. Running it by hand you will first see the following error:
+        <meta name="description" content="I&rsquo;ve been working with Arch Linux recently, which uses dhcpcd as its default DHCP agent. If you try booting Arch inside an LXC container, you will find that dhcpcd is unable to configure your network interfaces. Running it by hand you will first see the following error:
 # dhcpcd eth0 dhcpcd[492]: version 5.6.4 starting dhcpcd[492]: eth0: if_init: Read-only file system dhcpcd[492]: eth0: interface not found or invalid  This happens because dhcpcd is trying to modify a sysctl value.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,7 +118,7 @@
 
     
 
-    <p>I've been working with <a href="http://www.archlinux.org/">Arch Linux</a> recently, which uses <a href="http://roy.marples.name/projects/dhcpcd/">dhcpcd</a>
+    <p>I&rsquo;ve been working with <a href="http://www.archlinux.org/">Arch Linux</a> recently, which uses <a href="http://roy.marples.name/projects/dhcpcd/">dhcpcd</a>
 as its default DHCP agent.  If you try booting Arch inside an <a href="http://lxc.sourceforge.net/">LXC</a>
 container, you will find that <code>dhcpcd</code> is unable to configure your
 network interfaces.  Running it by hand you will first see the
@@ -137,11 +137,11 @@ container environment (to prevent the container from modifying things
 that would potentially affect the host system).</p>
 <p>We can use a &ldquo;bind mount&rdquo; to solve this problem.  A &ldquo;bind mount&rdquo;
 allows you to mount part of a filesystem on another part of the
-filesystem.  In this case, we're going to mask that value in <code>/proc</code>
+filesystem.  In this case, we&rsquo;re going to mask that value in <code>/proc</code>
 by bind mounting a file on top of it.</p>
 <ul>
 <li>
-<p>First, we create the file we'll use as a mask:</p>
+<p>First, we create the file we&rsquo;ll use as a mask:</p>
 <pre><code>  # echo 0 &gt; /var/tmp/promote_secondaries
 </code></pre>
 </li>

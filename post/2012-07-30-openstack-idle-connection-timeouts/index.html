@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Chasing OpenStack idle connection timeouts &middot; The Odd Bit</title>
-        <meta name="description" content="The original problem I&#39;ve recently spent some time working on an OpenStack deployment. I ran into a problem in which the compute service would frequently stop communicating with the AMQP message broker (qpidd).
+        <meta name="description" content="The original problem I&rsquo;ve recently spent some time working on an OpenStack deployment. I ran into a problem in which the compute service would frequently stop communicating with the AMQP message broker (qpidd).
 In order to gather some data on the problem, I ran the following simple test:
  Wait n minutes Run nova boot ... to create an instance Wait a minute and see if the new instance becomes ACTIVE If it works, delete the instance, set n = 2n and repeat  This demonstrated that communication was failing after about an hour, which correlates rather nicely with the idle connection timeout on the firewall.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -120,7 +120,7 @@ In order to gather some data on the problem, I ran the following simple test:
     
 
     <h2 id="the-original-problem">The original problem</h2>
-<p>I've recently spent some time working on an OpenStack deployment. I ran into a
+<p>I&rsquo;ve recently spent some time working on an OpenStack deployment. I ran into a
 problem in which the <a href="http://docs.openstack.org/trunk/openstack-compute/starter/content/Compute_Worker_nova-compute_-d1e232.html">compute service</a> would frequently stop communicating
 with the <a href="http://www.amqp.org/">AMQP</a> message broker (<code>qpidd</code>).</p>
 <p>In order to gather some data on the problem, I ran the following simple test:</p>
@@ -209,7 +209,7 @@ firewall appliance to exempt AMQ packets from the normal TCP state
 processing.</p>
 </li>
 </ul>
-<p>I'm not going to look at either of these solution in detail, since this whole
+<p>I&rsquo;m not going to look at either of these solution in detail, since this whole
 issue was secondary to the initial idle connection timeout problem, which has a
 different set of solutions.</p>
 <h2 id="dealing-with-connection-timeouts">Dealing with connection timeouts</h2>
@@ -244,28 +244,28 @@ man page (or the <code>HOWTO</code> document):</p>
 <blockquote>
 <p>Keep-alives are only sent when the <code>SO_KEEPALIVE</code> socket option is enabled.</p>
 </blockquote>
-<p>If your application doesn't already set <code>SO_KEEPALIVE</code> (or give you an option
-for doing do), you're mostly out of luck. While it would certainly be possible
+<p>If your application doesn&rsquo;t already set <code>SO_KEEPALIVE</code> (or give you an option
+for doing do), you&rsquo;re mostly out of luck. While it would certainly be possible
 to modify either the OpenStack source or the QPID source to set the appropriate
-option on AMQ sockets, I don't really want to put myself in the position of
+option on AMQ sockets, I don&rsquo;t really want to put myself in the position of
 having to maintain this sort of one-off patch.</p>
 <p>But all is not lost! It is possible to override functions in dynamic
 executables using a mechanism called <a href="http://www.jayconrod.com/cgi/view_post.py?23">function interposition</a>. Create a
 library that implements the function you want to override, and then preload it
 when running an application via the <code>LD_PRELOAD</code> environment variable (or
 <code>/etc/ld.so.preload</code>, if you want it to affect everything).</p>
-<p>It can be tricky to correctly implement function interposition, so I'm
+<p>It can be tricky to correctly implement function interposition, so I&rsquo;m
 fortunate that the <a href="http://libkeepalive.sourceforge.net">libkeepalive</a> project has already taken care of this. By
 installing <code>libkeepalive</code> and adding <code>libkeepalive.so</code> to <code>/etc/ld.so.preload</code>,
 it is possible to have the <code>SO_KEEPALIVE</code> option set by default on all sockets.
 <code>libkeepalive</code> implements a wrapper to the <code>socket</code> system call that calls
 <code>setsockopt</code> with the <code>SO_KEEPALIVE</code> option for all TCP sockets.</p>
-<p>Here's what setting up a listening socket with [netcat][] looks like before
+<p>Here&rsquo;s what setting up a listening socket with [netcat][] looks like before
 installing <code>libkeepalive</code>:</p>
 <pre><code>$ strace -e trace=setsockopt nc -l 8080
 setsockopt(3, SOL_SOCKET, SO_REUSEADDR, [1], 4) = 0
 </code></pre>
-<p>And here's what things look like after adding <code>libkeepalive.so</code> to
+<p>And here&rsquo;s what things look like after adding <code>libkeepalive.so</code> to
 <code>/etc/ld.so.preload</code>:</p>
 <pre><code>$ strace -e trace=setsockopt nc -l 8080
 setsockopt(3, SOL_SOCKET, SO_KEEPALIVE, [1], 4) = 0
@@ -275,13 +275,13 @@ setsockopt(3, SOL_SOCKET, SO_REUSEADDR, [1], 4) = 0
 <p>Many applications implement their own keepalive mechanism. For example,
 <a href="http://openssh.org/">OpenSSH</a> provides the <a href="http://dan.hersam.com/2007/03/05/how-to-avoid-ssh-timeouts/">ClientAliveInterval</a> configuration setting to
 control how often keepalive packets are sent by the server to a connected
-client. When this option is available it's probably the best choice, since it
+client. When this option is available it&rsquo;s probably the best choice, since it
 has been designed with the particular application in mind.</p>
 <p>OpenStack in theory provides the <a href="http://docs.openstack.org/essex/openstack-compute/admin/content/configuration-qpid.html">qpid_heartbeat</a> setting, which is meant
 to provide a heartbeat for AMQ connections to the <code>qpidd</code> process. According to
 the documentation, the default behavior of QPID clients in the OpenStack
 framework is to send heartbeat packets every five seconds.</p>
-<p>When first testing this option it was obvious that things weren't working as
+<p>When first testing this option it was obvious that things weren&rsquo;t working as
 documented. Querying the connection table on the firewall would often should
 connections with more than five seconds of idle time:</p>
 <pre><code>% show conn lport 5672
@@ -306,7 +306,7 @@ index 289f21b..e19079e 100644
          self.connection.protocol = FLAGS.qpid_protocol
          self.connection.tcp_nodelay = FLAGS.qpid_tcp_nodelay
 </code></pre>
-<p>If it's not obvious, <code>heartbeat</code> was mispelled <code>hearbeat</code> in the above block of
+<p>If it&rsquo;s not obvious, <code>heartbeat</code> was mispelled <code>hearbeat</code> in the above block of
 code. Putting this change into production has completely resolved the idle
 connection timeout problem.</p>
 

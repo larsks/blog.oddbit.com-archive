@@ -19,7 +19,7 @@
       <guid>https://blog.oddbit.com/post/2020-02-24-a-passwordless-serial-console/</guid>
       <description>legendre on #raspbian asked:
  How can i config rasp lite to open a shell on the serial uart on boot? Params are 1200-8-N-1 Dont want login running, just straight to sh
- In this article, we&#39;ll walk through one way of implementing this configuration.
+ In this article, we&amp;rsquo;ll walk through one way of implementing this configuration.
 Activate the serial port Raspbian automatically starts a getty on the serial port if one is available. You should see an agetty process associated with your serial port when you run ps -ef.</description>
     </item>
     
@@ -29,7 +29,7 @@ Activate the serial port Raspbian automatically starts a getty on the serial por
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</guid>
-      <description>The DS18B20 is a popular temperature sensor that uses the 1-Wire protocol for communication. Recent versions of the Linux kernel include a kernel driver for this protocol, making it relatively convenient to connect one or more of these devices to a Raspberry Pi or similar device. 1-Wire devices can be daisy chained, so it is possible to connect several devices to your Pi using only a single GPIO pin, and you&#39;ll find many articles out there that describe how to do so.</description>
+      <description>The DS18B20 is a popular temperature sensor that uses the 1-Wire protocol for communication. Recent versions of the Linux kernel include a kernel driver for this protocol, making it relatively convenient to connect one or more of these devices to a Raspberry Pi or similar device. 1-Wire devices can be daisy chained, so it is possible to connect several devices to your Pi using only a single GPIO pin, and you&amp;rsquo;ll find many articles out there that describe how to do so.</description>
     </item>
     
   </channel>

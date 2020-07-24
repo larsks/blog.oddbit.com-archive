@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Running Keystone with Docker Compose &middot; The Odd Bit</title>
-        <meta name="description" content="In this article, we will look at what is necessary to run OpenStack&#39;s Keystone service (and the requisite database server) in containers using Docker Compose.
-Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&#39;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:">
+        <meta name="description" content="In this article, we will look at what is necessary to run OpenStack&rsquo;s Keystone service (and the requisite database server) in containers using Docker Compose.
+Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&rsquo;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,9 +118,9 @@ Running MariaDB The standard mariadb docker image can be configured via a number
 
     
 
-    <p>In this article, we will look at what is necessary to run OpenStack's <a href="https://docs.openstack.org/keystone/latest/">Keystone</a> service (and the requisite database server) in containers using <a href="https://docs.docker.com/compose/">Docker Compose</a>.</p>
+    <p>In this article, we will look at what is necessary to run OpenStack&rsquo;s <a href="https://docs.openstack.org/keystone/latest/">Keystone</a> service (and the requisite database server) in containers using <a href="https://docs.docker.com/compose/">Docker Compose</a>.</p>
 <h2 id="running-mariadb">Running MariaDB</h2>
-<p>The standard <a href="https://hub.docker.com/_/mariadb/">mariadb docker image</a> can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don't want to lose your data when you remove a container. A simple <code>docker</code> command line for starting MariaDB might look something like:</p>
+<p>The standard <a href="https://hub.docker.com/_/mariadb/">mariadb docker image</a> can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&rsquo;t want to lose your data when you remove a container. A simple <code>docker</code> command line for starting MariaDB might look something like:</p>
 <pre><code>docker run \
   -v mariadb_data:/var/lib/mysql \
   -e MYSQL_ROOT_PASSWORD=secret.password
@@ -162,7 +162,7 @@ volumes:
   mariadb_data:
 </code></pre><p>When the <code>database</code> service starts up, it will create a <code>keystone</code> database accessible by the <code>keystone</code> user.</p>
 <h3 id="parameterize-all-the-things">Parameterize all the things</h3>
-<p>The above example is pretty much what we want, but there is one problem: we've hardcoded our passwords (and database name) into the <code>docker-compose.yml</code> file, which makes it hard to share: it would be unsuitable for hosting on a public git repository, because anybody who wanted to use it would need to modify the file first, which would make it difficult to contribute changes or bring in new changes from the upstream repository. We can solve that problem by using environment variables in our <code>docker-compose.yml</code>. Much like the shell, <code>docker-compose</code> will replace an expression of the form <code>${MY_VARIABLE}</code> with the value of the <code>MY_VARIABLE</code> environment variable. It is possible to provide a fallback value in the event that an environment variable is undefined by writing <code>${MY_VARIABLE:-some_default_value}</code>.</p>
+<p>The above example is pretty much what we want, but there is one problem: we&rsquo;ve hardcoded our passwords (and database name) into the <code>docker-compose.yml</code> file, which makes it hard to share: it would be unsuitable for hosting on a public git repository, because anybody who wanted to use it would need to modify the file first, which would make it difficult to contribute changes or bring in new changes from the upstream repository. We can solve that problem by using environment variables in our <code>docker-compose.yml</code>. Much like the shell, <code>docker-compose</code> will replace an expression of the form <code>${MY_VARIABLE}</code> with the value of the <code>MY_VARIABLE</code> environment variable. It is possible to provide a fallback value in the event that an environment variable is undefined by writing <code>${MY_VARIABLE:-some_default_value}</code>.</p>
 <p>You have a couple options for providing values for this variables. You can of course simply set them in the environment, either like this:</p>
 <pre><code>export MY_VARIABLE=some_value
 </code></pre>
@@ -239,7 +239,7 @@ COPY keystone-wsgi-main.conf /etc/httpd/conf.d/keystone-wsgi-main.conf
       args:
         KEYSTONE_IMAGE_TAG: current-tripleo
 [...]
-</code></pre><p>This tells <code>docker-compose</code> to use the <code>Dockerfile</code> in the current directory (and to set the <code>KEYSTONE_IMAGE_TAG</code> build argument to <code>current-tripleo</code>). Note that <code>docker-compose</code> will only build this image for us by default if it doesn't already exist; we can ask <code>docker-compose</code> to build it explicitly by running <code>docker-compose build</code>, or by providing the <code>--build</code> option to <code>docker-compose up</code>.</p>
+</code></pre><p>This tells <code>docker-compose</code> to use the <code>Dockerfile</code> in the current directory (and to set the <code>KEYSTONE_IMAGE_TAG</code> build argument to <code>current-tripleo</code>). Note that <code>docker-compose</code> will only build this image for us by default if it doesn&rsquo;t already exist; we can ask <code>docker-compose</code> to build it explicitly by running <code>docker-compose build</code>, or by providing the <code>--build</code> option to <code>docker-compose up</code>.</p>
 <h3 id="configuring-at-build-time-vs-run-time">Configuring at build time vs run time</h3>
 <p>In the previous section, we used a <code>Dockerfile</code> to build on a selected base image by adding custom content. Other sorts of configuration must happen when the container starts up (for example, we probably want to be able to set passwords at runtime). One way of solving this problem is to embed some scripts into our custom image and then run them when the container starts in order to perform any necessary initialization.</p>
 <p>I have placed some custom scripts and templates into the <code>runtime</code> directory and arranged to copy that directory into the custom image like this:</p>
@@ -281,10 +281,10 @@ provider = fernet
 </code></pre></li>
 <li>
 <p>Generates <code>/root/clouds.yaml</code> from <code>/runtime/clouds.j2.yaml</code>.</p>
-<p>The <code>clouds.yaml</code> file can be used with to provide authentication information to the <code>openshift</code> command line client (and other applications that use the OpenStack Python SDK). We'll see an example of this further on in this article.</p>
+<p>The <code>clouds.yaml</code> file can be used with to provide authentication information to the <code>openshift</code> command line client (and other applications that use the OpenStack Python SDK). We&rsquo;ll see an example of this further on in this article.</p>
 </li>
 <li>
-<p>Initializes Keystone's fernet token mechanism by running <code>keystone-manage fernet_setup</code>.</p>
+<p>Initializes Keystone&rsquo;s fernet token mechanism by running <code>keystone-manage fernet_setup</code>.</p>
 <p>Keystone supports various token generation mechanisms. Fernet tokens provide some advantages over the older UUID token mechanism. From the <a href="fernet-faq">FAQ</a>:</p>
 <blockquote>
 <p>Even though fernet tokens operate very similarly to UUID tokens, they do not require persistence or leverage the configured token persistence driver in any way. The keystone token database no longer suffers bloat as a side effect of authentication. Pruning expired tokens from the token database is no longer required when using fernet tokens. Because fernet tokens do not require persistence, they do not have to be replicated. As long as each keystone node shares the same key repository, fernet tokens can be created and validated instantly across nodes.</p>
@@ -303,7 +303,7 @@ provider = fernet
 </li>
 </ol>
 <h3 id="avoiding-race-conditions">Avoiding race conditions</h3>
-<p>When we run <code>docker-compose up</code>, it will bring up both the <code>keystone</code> container and the <code>database</code> container in parallel. This is going to cause problems if we try to initialize the Keystone database schema before the database server is actually up and running. There is a <code>depends_on</code> keyword that can be used to order the startup of containers in your <code>docker-compose.yml</code> file, but this isn't useful to us: this only delays the startup of the dependent container until the indicated container is <em>running</em>. It doesn't know anything about application startup, and so it would not wait for the database to be ready.</p>
+<p>When we run <code>docker-compose up</code>, it will bring up both the <code>keystone</code> container and the <code>database</code> container in parallel. This is going to cause problems if we try to initialize the Keystone database schema before the database server is actually up and running. There is a <code>depends_on</code> keyword that can be used to order the startup of containers in your <code>docker-compose.yml</code> file, but this isn&rsquo;t useful to us: this only delays the startup of the dependent container until the indicated container is <em>running</em>. It doesn&rsquo;t know anything about application startup, and so it would not wait for the database to be ready.</p>
 <p>We need to explicitly wait until we can successfully connect to the database before we can complete initializing the Keystone service. It turns out the easiest solution to this problem is to imply run the database schema initialization in a loop until it is successful, like this:</p>
 <pre><code>echo &quot;* initializing database schema&quot;
 while ! keystone-manage db_sync; do

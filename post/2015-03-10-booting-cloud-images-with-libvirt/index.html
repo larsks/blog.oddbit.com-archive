@@ -8,7 +8,7 @@
 Because of their small size and support for automatic configuration (including such useful tasks as provisioning ssh keys), these images are attractive for use outside of a cloud environment.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -136,7 +136,7 @@ to working with various network-accessible metadata services,
 <a href="http://cloudinit.readthedocs.org/">cloud-init</a> is also able to read configuration information from an
 attached [virtual] CD-ROM device.  This is known as a &ldquo;configuration
 drive&rdquo;, and it is relatively easy to create.</p>
-<p>For this purpose, the simplest solution is use <a href="http://cloudinit.readthedocs.org/">cloud-init</a>&lsquo;s &ldquo;no
+<p>For this purpose, the simplest solution is use <a href="http://cloudinit.readthedocs.org/">cloud-init</a>&rsquo;s &ldquo;no
 cloud&rdquo; data source.  For this, we need to create an ISO filesystem
 creating two files, <code>meta-data</code> and (optionally) <code>user-data</code>.</p>
 <h2 id="the-meta-data-file">The meta-data file</h2>
@@ -188,7 +188,7 @@ something like this:</p>
   --disk path=config.iso,device=cdrom
 </code></pre>
 <p>(This assumes, obviously, that you have an image named
-<code>fedora-21-cloud.qcow2</code> available in libvirt's <code>default</code> storage
+<code>fedora-21-cloud.qcow2</code> available in libvirt&rsquo;s <code>default</code> storage
 pool.)</p>
 <h2 id="a-little-automation">A little automation</h2>
 <p>I have written a <a href="https://github.com/larsks/virt-utils/blob/master/create-config-drive">create-config-drive</a> script that will automate

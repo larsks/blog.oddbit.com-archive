@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Visualizing Neutron Networking with GraphViz &middot; The Odd Bit</title>
-        <meta name="description" content="I&#39;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
-In this post I&#39;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
+        <meta name="description" content="I&rsquo;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
+In this post I&rsquo;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
 mk-network-dot There are a lot of devices involved in your Neutron network configuration.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -119,18 +119,18 @@ mk-network-dot There are a lot of devices involved in your Neutron network confi
 
     
 
-    <p>I've put together a few tools to help gather information about your
+    <p>I&rsquo;ve put together a few tools to help gather information about your
 Neutron and network configuration and visualize it in different ways.
 All of these tools are available as part of my <a href="http://github.com/larsks/neutron-diag/">neutron-diag</a>
 repository on GitHub.</p>
-<p>In this post I'm going to look at a tool that will help you visualize
+<p>In this post I&rsquo;m going to look at a tool that will help you visualize
 the connectivity of network devices on your system.</p>
 <!-- more -->
 <h2 id="mk-network-dot">mk-network-dot</h2>
 <p>There are a lot of devices involved in your Neutron network
 configuration.  Information originating in one of your instances has
 two traverse <em>at least</em> seven network devices before seeing the light
-of day.  Understanding how everything connects is critical if you're
+of day.  Understanding how everything connects is critical if you&rsquo;re
 trying to debug problems in your envionment.</p>
 <p>The <code>mk-network-dot</code> tool interrogates your system for information
 about network devices and generates <a href="http://en.wikipedia.org/wiki/DOT_%28graph_description_language%29">dot format</a> output showing how
@@ -159,11 +159,11 @@ looks like this:</p>
 
 <p>There are a few caveats with this tool:</p>
 <ul>
-<li>As of this writing, it doesn't know about either bond interfaces or
+<li>As of this writing, it doesn&rsquo;t know about either bond interfaces or
 VLAN interfaces.</li>
-<li>It's had only limited testing.</li>
+<li>It&rsquo;s had only limited testing.</li>
 </ul>
-<p>If you try this out and something doesn't work as you expect, please
+<p>If you try this out and something doesn&rsquo;t work as you expect, please
 open a new issues on the <a href="https://github.com/larsks/neutron-diag/issues">GitHub issues page</a>.</p>
 
 </div>

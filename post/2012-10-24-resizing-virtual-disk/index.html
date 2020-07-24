@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Growing a filesystem on a virtual disk &middot; The Odd Bit</title>
         <meta name="description" content="Occasionally we will deploy a virtual instance into our KVM infrastructure and realize after the fact that we need more local disk space available. This is the process we use to expand the disk image. This process assumes the following:
- You&#39;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&#39;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).">
+ You&rsquo;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&rsquo;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -123,15 +123,15 @@ infrastructure and realize after the fact that we need more local disk
 space available.  This is the process we use to expand the disk image.
 This process assumes the following:</p>
 <ul>
-<li>You're using legacy disk partitions.  The process for LVM is similar
-and I will describe that in another post (it's generally identical
+<li>You&rsquo;re using legacy disk partitions.  The process for LVM is similar
+and I will describe that in another post (it&rsquo;s generally identical
 except for an additional <code>pvresize</code> thrown in and <code>lvextend</code> in
 place of <code>resize2fs</code>).</li>
 <li>The partition you need to resize is the last partition on the disk.</li>
 </ul>
 <p>This process will work with either a <code>qcow2</code> or <code>raw</code> disk image.  For
 <code>raw</code> images you can also run <code>fdisk</code> on the host, potentially saving
-yourself a reboot, but that's less convenient for <code>qcow2</code> format
+yourself a reboot, but that&rsquo;s less convenient for <code>qcow2</code> format
 images.</p>
 <hr>
 <p>We start with a 5.5G root filesystem with 4.4G free:</p>
@@ -166,7 +166,7 @@ Kernel 3.6.2-4.fc17.x86_64 on an x86_64 (ttyS0)
 localhost login: root
 Password:
 </code></pre>
-<p>We're going to use <code>fdisk</code> to modify the partition layout.  Run
+<p>We&rsquo;re going to use <code>fdisk</code> to modify the partition layout.  Run
 <code>fdisk</code> on the system disk:</p>
 <pre><code>[root@localhost ~]# fdisk /dev/vda
 Welcome to fdisk (util-linux 2.21.2).

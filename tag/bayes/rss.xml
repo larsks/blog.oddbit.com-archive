@@ -17,7 +17,7 @@
       <pubDate>Thu, 08 Nov 2012 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2012-11-08-popfile-document-classification/</guid>
-      <description>I recently embarked upon a quest to categorize a year&#39;s worth of trouble tickets (around 15000 documents total). We wanted to see what sort of things are generating the most work for our helpdesk staff so that we can identify areas in which improvements would have the biggest impact. One of my colleagues took a first pass at the data by manually categorizing the tickets based on their subject. This resulted in some useful data, but in the end just over 40% of the tickets are still uncategorized.</description>
+      <description>I recently embarked upon a quest to categorize a year&amp;rsquo;s worth of trouble tickets (around 15000 documents total). We wanted to see what sort of things are generating the most work for our helpdesk staff so that we can identify areas in which improvements would have the biggest impact. One of my colleagues took a first pass at the data by manually categorizing the tickets based on their subject. This resulted in some useful data, but in the end just over 40% of the tickets are still uncategorized.</description>
     </item>
     
   </channel>

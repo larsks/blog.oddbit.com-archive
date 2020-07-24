@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Unpacking a Python regular expression &middot; The Odd Bit</title>
-        <meta name="description" content="I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &ndash; which I claim to be functional, but probably not optimal &ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&#39;t really seem the write place for that: so, here we are.">
+        <meta name="description" content="I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &ndash; which I claim to be functional, but probably not optimal &ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&rsquo;t really seem the write place for that: so, here we are.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -117,7 +117,7 @@
 
     
 
-    <p>I recently answered <a href="https://stackoverflow.com/q/55965819/147356">a question</a> from <a href="https://stackoverflow.com/users/7738974/harsha-nalore">Harsha Nalore</a> on <a href="https://stackoverflow.com/">StackOverflow</a> that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &ndash; which I claim to be functional, but probably not optimal &ndash; involved writing an <a href="https://ansible.com/">Ansible</a> filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn't really seem the write place for that: so, here we are.</p>
+    <p>I recently answered <a href="https://stackoverflow.com/q/55965819/147356">a question</a> from <a href="https://stackoverflow.com/users/7738974/harsha-nalore">Harsha Nalore</a> on <a href="https://stackoverflow.com/">StackOverflow</a> that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &ndash; which I claim to be functional, but probably not optimal &ndash; involved writing an <a href="https://ansible.com/">Ansible</a> filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&rsquo;t really seem the write place for that: so, here we are.</p>
 <p>The output in question looks like this:</p>
 <pre><code>gtm wideip a wideip {
     description wideip
@@ -131,72 +131,72 @@
         }
     }
 }
-</code></pre><p>The goal is to return a list of pool names. You can see the complete solution in <a href="https://stackoverflow.com/a/55970019/147356">my answer</a>; for the purposes of this post we're interesting in the following two regular expressions:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_pools</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;&#39;&#39;</span><span class="s1">
-</span><span class="s1"></span><span class="s1">gtm </span><span class="s1">\</span><span class="s1">s+ wideip </span><span class="s1">\</span><span class="s1">s+ a </span><span class="s1">\</span><span class="s1">s+ (</span><span class="s1">\</span><span class="s1">S+) </span><span class="s1">\</span><span class="s1">s+ { </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">(?P&lt;parameters&gt;(</span><span class="s1">\</span><span class="s1">S+ </span><span class="s1">\</span><span class="s1">s+ </span><span class="s1">\</span><span class="s1">S+ </span><span class="s1">\</span><span class="s1">s+)*)</span><span class="s1">
-</span><span class="s1"></span><span class="s1">pools </span><span class="s1">\</span><span class="s1">s+ { </span><span class="s1">\</span><span class="s1">s+ (?P&lt;pools&gt;</span><span class="s1">
-</span><span class="s1"></span><span class="s1">(?:</span><span class="s1">
-</span><span class="s1"></span><span class="s1">\</span><span class="s1">S+ </span><span class="s1">\</span><span class="s1">s+ {  </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">[^}]* </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">} </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">)+ </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">)</span><span class="s1">
-</span><span class="s1"></span><span class="s1">}</span><span class="s1">
-</span><span class="s1"></span><span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+</code></pre><p>The goal is to return a list of pool names. You can see the complete solution in <a href="https://stackoverflow.com/a/55970019/147356">my answer</a>; for the purposes of this post we&rsquo;re interesting in the following two regular expressions:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_pools</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;
+</span><span class="s1">gtm \s+ wideip \s+ a \s+ (\S+) \s+ { \s+
+</span><span class="s1">(?P&lt;parameters&gt;(\S+ \s+ \S+ \s+)*)
+</span><span class="s1">pools \s+ { \s+ (?P&lt;pools&gt;
+</span><span class="s1">(?:
+</span><span class="s1">\S+ \s+ {  \s+
+</span><span class="s1">[^}]* \s+
+</span><span class="s1">} \s+
+</span><span class="s1">)+ \s+
+</span><span class="s1">)
+</span><span class="s1">}
+</span><span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
 
-<span class="n">re_pool</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;&#39;&#39;</span><span class="s1">
-</span><span class="s1"></span><span class="s1">(</span><span class="s1">\</span><span class="s1">S+) </span><span class="s1">\</span><span class="s1">s+ { </span><span class="s1">\</span><span class="s1">s+ [^}]* </span><span class="s1">\</span><span class="s1">s+ } </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+<span class="n">re_pool</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;
+</span><span class="s1">(\S+) \s+ { \s+ [^}]* \s+ } \s+
+</span><span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
 </code></pre></div><h1 id="verbose-mode">VERBOSE mode</h1>
-<p>The first thing to note is that I'm using <code>VERBOSE</code> syntax for both of these expressions. That means that whitespace must be included explicitly in the expression. That's what all of those <code>\s+</code> markers are &ndash; that means &ldquo;any white space character, one or more times&rdquo;. For example, consider the following simple expression:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">this is a test</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">this is a test</span><span class="s1">&#39;</span><span class="p">)</span>
+<p>The first thing to note is that I&rsquo;m using <code>VERBOSE</code> syntax for both of these expressions. That means that whitespace must be included explicitly in the expression. That&rsquo;s what all of those <code>\s+</code> markers are &ndash; that means &ldquo;any white space character, one or more times&rdquo;. For example, consider the following simple expression:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;this is a test&#39;</span><span class="p">,</span> <span class="s1">&#39;this is a test&#39;</span><span class="p">)</span>
 </code></pre></div><p>The pattern matches the string just fine. But if we were to enable the <code>VERBOSE</code> flag, the pattern would no longer match:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">this is a test</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">this is a test</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;this is a test&#39;</span><span class="p">,</span> <span class="s1">&#39;this is a test&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
 </code></pre></div><p>We would instead need to write it like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">this </span><span class="s1">\</span><span class="s1">s is </span><span class="s1">\</span><span class="s1">s a </span><span class="s1">\</span><span class="s1">s test</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">this is a test</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;this \s is \s a \s test&#39;</span><span class="p">,</span> <span class="s1">&#39;this is a test&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
 </code></pre></div><p>The advantage to <code>VERBOSE</code> mode is that you can split your regular expression across multiple lines for legibility:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;&#39;&#39;</span><span class="s1">
-</span><span class="s1"></span><span class="s1">... this </span><span class="s1">\</span><span class="s1">s</span><span class="s1">
-</span><span class="s1"></span><span class="s1">... is </span><span class="s1">\</span><span class="s1">s</span><span class="s1">
-</span><span class="s1"></span><span class="s1">... a </span><span class="s1">\</span><span class="s1">s</span><span class="s1">
-</span><span class="s1"></span><span class="s1">... test</span><span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">this is a test</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;
+</span><span class="s1">... this \s
+</span><span class="s1">... is \s
+</span><span class="s1">... a \s
+</span><span class="s1">... test&#39;&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;this is a test&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
 </code></pre></div><h2 id="capture-groups">Capture groups</h2>
-<p>In order to make it easier to extract information from the results of a match, I'm using named capture groups. A &ldquo;capture group&rdquo; is a part of the expression inside parentheses that can be extracted from the resulting match object.  Unnamed groups can be extracted using their index.  If we wanted to match the phrase <code>this is a &lt;noun&gt;</code>, rather than <code>this is a test</code>, and we wanted to extract the noun, we might write something like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">re_example</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">this is a (</span><span class="s1">\</span><span class="s1">S+)</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">match</span> <span class="o">=</span> <span class="n">re_example</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">this is a frog</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">(</span><span class="p">)</span>
-<span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">frog</span><span class="s1">&#39;</span><span class="p">,</span><span class="p">)</span>
-<span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="sa"></span><span class="s1">&#39;</span><span class="s1">frog</span><span class="s1">&#39;</span>
+<p>In order to make it easier to extract information from the results of a match, I&rsquo;m using named capture groups. A &ldquo;capture group&rdquo; is a part of the expression inside parentheses that can be extracted from the resulting match object.  Unnamed groups can be extracted using their index.  If we wanted to match the phrase <code>this is a &lt;noun&gt;</code>, rather than <code>this is a test</code>, and we wanted to extract the noun, we might write something like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">re_example</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;this is a (\S+)&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">match</span> <span class="o">=</span> <span class="n">re_example</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;this is a frog&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+<span class="p">(</span><span class="s1">&#39;frog&#39;</span><span class="p">,)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="s1">&#39;frog&#39;</span>
 </code></pre></div><p>The expression <code>(\S+)</code> is a capture group that will match any string of non-whitespace characters.  This works fine for a simple expression, but keeping the index straight in a complex expression can be difficult.  This is where named capture groups become useful.  We could rewrite the above like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">re_example</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">this is a (?P&lt;noun&gt;</span><span class="s1">\</span><span class="s1">S+)</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">match</span> <span class="o">=</span> <span class="n">re_example</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">this is a frog</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">(</span><span class="p">)</span>
-<span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">noun</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">frog</span><span class="s1">&#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">noun</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="sa"></span><span class="s1">&#39;</span><span class="s1">frog</span><span class="s1">&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">re_example</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;this is a (?P&lt;noun&gt;\S+)&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">match</span> <span class="o">=</span> <span class="n">re_example</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;this is a frog&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+<span class="p">{</span><span class="s1">&#39;noun&#39;</span><span class="p">:</span> <span class="s1">&#39;frog&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;noun&#39;</span><span class="p">)</span>
+<span class="s1">&#39;frog&#39;</span>
 </code></pre></div><h2 id="non-capture-groups">Non-capture groups</h2>
 <p>Sometimes, you want to group part of a regular expression in a way that does not result in another capture group.  This is what the <code>(?: ...)</code> expression is for.  For example, we we were to write:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">re_example</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">this (?:is|was) a (?P&lt;noun&gt;</span><span class="s1">\</span><span class="s1">S+)</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">re_example</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;this (?:is|was) a (?P&lt;noun&gt;\S+)&#39;</span><span class="p">)</span>
 </code></pre></div><p>Then we could match the phrase <code>this is a test</code> or <code>this was a test</code>, but we would still only have a single capture group:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">match</span> <span class="o">=</span> <span class="n">re_example</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">this is a test</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">(</span><span class="p">)</span>
-<span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">noun</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">test</span><span class="s1">&#39;</span><span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">match</span> <span class="o">=</span> <span class="n">re_example</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;this is a test&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+<span class="p">{</span><span class="s1">&#39;noun&#39;</span><span class="p">:</span> <span class="s1">&#39;test&#39;</span><span class="p">}</span>
 </code></pre></div><h2 id="putting-it-all-together">Putting it all together</h2>
-<p>With all that in mind, let's take a look at the regular expression in my answer:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_pools</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;&#39;&#39;</span><span class="s1">
-</span><span class="s1"></span><span class="s1">gtm </span><span class="s1">\</span><span class="s1">s+ wideip </span><span class="s1">\</span><span class="s1">s+ a </span><span class="s1">\</span><span class="s1">s+ (</span><span class="s1">\</span><span class="s1">S+) </span><span class="s1">\</span><span class="s1">s+ { </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">(?P&lt;parameters&gt;(</span><span class="s1">\</span><span class="s1">S+ </span><span class="s1">\</span><span class="s1">s+ </span><span class="s1">\</span><span class="s1">S+ </span><span class="s1">\</span><span class="s1">s+)*)</span><span class="s1">
-</span><span class="s1"></span><span class="s1">pools </span><span class="s1">\</span><span class="s1">s+ { </span><span class="s1">\</span><span class="s1">s+ (?P&lt;pools&gt;</span><span class="s1">
-</span><span class="s1"></span><span class="s1">(?:</span><span class="s1">
-</span><span class="s1"></span><span class="s1">\</span><span class="s1">S+ </span><span class="s1">\</span><span class="s1">s+ {  </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">[^}]* </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">} </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">)+ </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">)</span><span class="s1">
-</span><span class="s1"></span><span class="s1">}</span><span class="s1">
-</span><span class="s1"></span><span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+<p>With all that in mind, let&rsquo;s take a look at the regular expression in my answer:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_pools</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;
+</span><span class="s1">gtm \s+ wideip \s+ a \s+ (\S+) \s+ { \s+
+</span><span class="s1">(?P&lt;parameters&gt;(\S+ \s+ \S+ \s+)*)
+</span><span class="s1">pools \s+ { \s+ (?P&lt;pools&gt;
+</span><span class="s1">(?:
+</span><span class="s1">\S+ \s+ {  \s+
+</span><span class="s1">[^}]* \s+
+</span><span class="s1">} \s+
+</span><span class="s1">)+ \s+
+</span><span class="s1">)
+</span><span class="s1">}
+</span><span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
 </code></pre></div><p>The first line matches <code>gtm wideip a &lt;something&gt; {</code>:</p>
 <pre><code>gtm \s+ wideip \s+ a \s+ (\S+) \s+ { \s+
 </code></pre>
@@ -227,7 +227,7 @@ pool-lb-mode topology
 <pre><code>}
 </code></pre>
 <p>When that expression matches, we end up with a match object that has a <code>pools</code> match group that will look like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">pools</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;pools&#39;</span><span class="p">))</span>
 <span class="n">test1</span><span class="o">-</span><span class="n">pool</span> <span class="p">{</span>
             <span class="n">order</span> <span class="mi">1</span>
         <span class="p">}</span>
@@ -236,13 +236,13 @@ pool-lb-mode topology
         <span class="p">}</span>
 
 </code></pre></div><p>We now use a much simpler regular expression to extract the pool names from that content:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_pool</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;&#39;&#39;</span><span class="s1">
-</span><span class="s1"></span><span class="s1">(</span><span class="s1">\</span><span class="s1">S+) </span><span class="s1">\</span><span class="s1">s+ { </span><span class="s1">\</span><span class="s1">s+ [^}]* </span><span class="s1">\</span><span class="s1">s+ } </span><span class="s1">\</span><span class="s1">s+</span><span class="s1">
-</span><span class="s1"></span><span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_pool</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;
+</span><span class="s1">(\S+) \s+ { \s+ [^}]* \s+ } \s+
+</span><span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
 </code></pre></div><p>That has a single capture group (<code>(\S+)</code>) that will match the pool name; the remainder of the expression takes care of matching the <code>{ &lt;anythingthing not '}'&gt; }</code> part.  We use <code>re.findall</code> to get <em>all</em> of the matches in one go:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;</span><span class="o">&gt;</span> <span class="n">re_pool</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">pools</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
-<span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">test1-pool</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">test2-pool</span><span class="s1">&#39;</span><span class="p">]</span>
-</code></pre></div><p>And that's it!</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">re_pool</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;pools&#39;</span><span class="p">))</span>
+<span class="p">[</span><span class="s1">&#39;test1-pool&#39;</span><span class="p">,</span> <span class="s1">&#39;test2-pool&#39;</span><span class="p">]</span>
+</code></pre></div><p>And that&rsquo;s it!</p>
 <h2 id="for-more-information">For more information</h2>
 <p>For more information on Python regular expressions:</p>
 <ul>

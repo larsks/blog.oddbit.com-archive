@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>firewalld on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/firewalld/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2014-05-20T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/firewalld/</id>
-  
   <entry>
     <title>Firewalld, NetworkManager, and OpenStack</title>
     <author>

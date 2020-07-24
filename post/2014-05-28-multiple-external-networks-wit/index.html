@@ -9,7 +9,7 @@ $ neutron net-create external --router:external=true  &hellip;and neutron would 
 There is now a better option available.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -130,10 +130,10 @@ to run multiple L3 agents, each with a unique value for
 <code>external_network_bridge</code>.</p>
 <p>There is now a better option available.</p>
 <h2 id="assumptions">Assumptions</h2>
-<p>In this post, I'm assuming:</p>
+<p>In this post, I&rsquo;m assuming:</p>
 <ul>
-<li>You're using the ML2 plugin for Neutron.</li>
-<li>You're using the Open vSwitch mechanism driver for the ML2 plugin</li>
+<li>You&rsquo;re using the ML2 plugin for Neutron.</li>
+<li>You&rsquo;re using the Open vSwitch mechanism driver for the ML2 plugin</li>
 <li>You have <code>eth1</code> and <code>eth2</code> connected directly to networks that you
 would like to make available as external networks in OpenStack.</li>
 </ul>
@@ -146,8 +146,8 @@ to <code>eth1</code> and a network attached to <code>eth2</code> available to te
 # ovs-vsctl add-br br-eth2
 # ovs-vsctl add-port br-eth2 eth2
 </code></pre>
-<p>Realistically, you would accomplish this via your system's native
-network configuration mechanism, but I'm going to gloss over that
+<p>Realistically, you would accomplish this via your system&rsquo;s native
+network configuration mechanism, but I&rsquo;m going to gloss over that
 detail for now.</p>
 <h2 id="configure-the-l3-agent">Configure the L3 Agent</h2>
 <p>Start with the following comment in <code>l3_agent.ini</code>:</p>
@@ -195,7 +195,7 @@ neutron  12529     1  0 09:50 ?        00:00:08 /usr/bin/python /usr/bin/neutron
 <p>&hellip;then you would make the changes to <code>/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini</code>.</p>
 <h2 id="restart-neutron">Restart Neutron</h2>
 <p>You will need to restart both the l3 agent and the openvswitch agent.
-If you're on a recent Fedora/RHEL/CentOS, you can restart all Neutron
+If you&rsquo;re on a recent Fedora/RHEL/CentOS, you can restart all Neutron
 services like this:</p>
 <pre><code># openstack-service restart neutron
 </code></pre>
@@ -311,7 +311,7 @@ $ neutron subnet-create --disable-dhcp external2 10.2.0.0/24
 <code>10.1.0.0/24</code> and <code>eth2</code> is connected to a network using
 <code>10.2.0.0/24</code>, and that each network has a gateway sitting at the
 corresponding <code>.1</code> address.</p>
-<p>And you're all set!</p>
+<p>And you&rsquo;re all set!</p>
 
 </div>
 

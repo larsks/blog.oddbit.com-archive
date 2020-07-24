@@ -9,7 +9,7 @@
 TASK [shut down server] ************************************* fatal: [myserver]: UNREACHABLE! =&gt; {&quot;changed&quot;: false, &quot;msg&quot;: &quot;Failed to connect to the host via ssh: Shared connection to 10.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -134,7 +134,7 @@ fatal: [myserver]: UNREACHABLE! =&gt; {&quot;changed&quot;: false, &quot;msg&quo
 &quot;Failed to connect to the host via ssh: Shared connection to
 10.0.0.103 closed.\r\n&quot;, &quot;unreachable&quot;: true}
 </code></pre>
-<p>This happens because running <code>poweroff</code> immediately closes Ansible's
+<p>This happens because running <code>poweroff</code> immediately closes Ansible&rsquo;s
 ssh connection.  The workaround here is to use a &ldquo;fire-and-forget&rdquo;
 <a href="http://docs.ansible.com/ansible/latest/playbooks_async.html">asynchronous task</a>:</p>
 <pre><code>- hosts: myserver
@@ -145,15 +145,15 @@ ssh connection.  The workaround here is to use a &ldquo;fire-and-forget&rdquo;
        async: 30
        poll: 0
 </code></pre>
-<p>The <code>poll: 0</code> means that Ansible won't wait around to check the result
+<p>The <code>poll: 0</code> means that Ansible won&rsquo;t wait around to check the result
 of this task.  Control will return to ansible immediately, so our
 playbook can continue without errors resulting from the closed
 connection.</p>
-<p>Now that we've started the shutdown process on the host, how do we
-wait for it to complete?  You'll see people solve this with a
-<a href="http://docs.ansible.com/ansible/latest/pause_module.html">pause</a> task, but that's fragile because the timing there can be
+<p>Now that we&rsquo;ve started the shutdown process on the host, how do we
+wait for it to complete?  You&rsquo;ll see people solve this with a
+<a href="http://docs.ansible.com/ansible/latest/pause_module.html">pause</a> task, but that&rsquo;s fragile because the timing there can be
 tricky to get right.</p>
-<p>Another option is to use something like Ansible's <a href="http://docs.ansible.com/ansible/latest/wait_for_module.html">wait_for</a> module.
+<p>Another option is to use something like Ansible&rsquo;s <a href="http://docs.ansible.com/ansible/latest/wait_for_module.html">wait_for</a> module.
 For example, we could wait for <code>sshd</code> to become unresponsive:</p>
 <pre><code>- name: wait for server to finishing shutting down
   wait_for:
@@ -164,15 +164,15 @@ For example, we could wait for <code>sshd</code> to become unresponsive:</p>
 a connection, and <code>sshd</code> may shut down long before the system shutdown
 process completes.</p>
 <p>The best option is to ask Nova.  We can query Nova for information
-about a server using the Ansible's <a href="http://docs.ansible.com/ansible/latest/os_server_facts_module.html">os_server_facts</a> module.  Like
+about a server using the Ansible&rsquo;s <a href="http://docs.ansible.com/ansible/latest/os_server_facts_module.html">os_server_facts</a> module.  Like
 the other OpenStack modules, this uses <a href="https://docs.openstack.org/os-client-config/latest/">os-client-config</a> to find
-authentication credentials for your OpenStack environment.  If you're
+authentication credentials for your OpenStack environment.  If you&rsquo;re
 not explicitly providing authentication information in your playbook,
 the module will use the <code>OS_*</code> environment variables that are commonly
 used with the OpenStack command line tools.</p>
 <p>The <code>os_server_facts</code> module creates an <code>openstack_servers</code> fact, the
 value of which is a list of dictionaries which contains keys like
-<code>status</code>, which is the one in which we're interested.  A running
+<code>status</code>, which is the one in which we&rsquo;re interested.  A running
 server has <code>status == &quot;ACTIVE&quot;</code> and a server that has been powered off
 has <code>status == &quot;SHUTOFF</code>.</p>
 <p>Given the above, the &ldquo;wait for shutdown&rdquo; task would look something
@@ -187,10 +187,10 @@ like the following:</p>
        retries: 120
        delay: 5
 </code></pre>
-<p>You'll note that I'm targeting <code>localhost</code> right now, because my local
+<p>You&rsquo;ll note that I&rsquo;m targeting <code>localhost</code> right now, because my local
 system has access to my OpenStack environment and I have the necessary
 credentials in my environment.  If you need to run these tasks
-elsewhere, you'll want to read up on how to provide credentials in
+elsewhere, you&rsquo;ll want to read up on how to provide credentials in
 your playbook.</p>
 <p>This task will retry up to <code>120</code> times, waiting <code>5</code> seconds between
 tries, until the server reaches the desired state.</p>
@@ -203,8 +203,8 @@ also runs on <code>localhost</code>:</p>
      action: start
 </code></pre>
 <p>Finally, we want to wait for the host to come back up before we run
-any additional tasks on it.  In this case, we can't just look at the
-status reported by Nova: the host will be <code>ACTIVE</code> from Nova's
+any additional tasks on it.  In this case, we can&rsquo;t just look at the
+status reported by Nova: the host will be <code>ACTIVE</code> from Nova&rsquo;s
 perspective long before it is ready to accept <code>ssh</code> connections.  Nor
 can we use the <code>wait_for</code> module, since the <code>ssh</code> port may be open
 before we are actually able to log in.  The solution to this is the
@@ -218,7 +218,7 @@ successful execute an action on the target host:</p>
 </code></pre>
 <p>We need to set <code>gather_facts: false</code> here because fact gathering
 requires a functioning connection to the target host.</p>
-<p>And that's it: a recipe for gently shutting down a remote host,
+<p>And that&rsquo;s it: a recipe for gently shutting down a remote host,
 waiting for the shutdown to complete, then later on spinning it back
 up and waiting until subsequent Ansible tasks will work correctly.</p>
 

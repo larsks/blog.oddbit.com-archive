@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Open vSwitch and persistent MAC addresses &middot; The Odd Bit</title>
-        <meta name="description" content="Normally I like to post solutions, but today&#39;s post is about a vexing problem to which I have not been able to find a solution.
+        <meta name="description" content="Normally I like to post solutions, but today&rsquo;s post is about a vexing problem to which I have not been able to find a solution.
 This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,7 +118,7 @@ This started as a simple attempt to set up external connectivity on an all-in-on
 
     
 
-    <p>Normally I like to post solutions, but today's post is about a
+    <p>Normally I like to post solutions, but today&rsquo;s post is about a
 vexing problem to which I have not been able to find a solution.</p>
 <p>This started as a simple attempt to set up external connectivity on
 an all-in-one Icehouse install deployed on an OpenStack instance.  I
@@ -146,7 +146,7 @@ a rule like this:</p>
 </code></pre>
 <p>But things quickly got weird.  Some testing demonstrated that the MAC
 address was changing when starting <code>neutron-openvswitch-agent</code>, but a
-thorough inspection of the code didn't yield any obvious culprits for
+thorough inspection of the code didn&rsquo;t yield any obvious culprits for
 this behavior.</p>
 <p>I liberally sprinkled the agent with the following (incrementing the
 argument to <code>echo</code> each time to uniquely identify each message):</p>
@@ -182,9 +182,9 @@ create a new OVS bridge:</p>
 <p>In other words, creating a new bridge caused the MAC address on
 <code>br-ex</code> to revert.  Other operations (e.g., deleting a port on an
 unrelated switch) will cause the same behavior.</p>
-<p>I've seen this behavior on both versions <code>1.11.0</code> and <code>2.0.1</code>.</p>
-<p>So far everyone I've asked about this behavior has been stumped.  If I
-am able to figure out what's going on I will update this post.  Thanks
+<p>I&rsquo;ve seen this behavior on both versions <code>1.11.0</code> and <code>2.0.1</code>.</p>
+<p>So far everyone I&rsquo;ve asked about this behavior has been stumped.  If I
+am able to figure out what&rsquo;s going on I will update this post.  Thanks
 for reading!</p>
 
 </div>

@@ -9,7 +9,7 @@ In an environment running Neutron, a request from your instance must traverse a 
  From the instance to a router, Through a NAT rule in the router namespace, To an instance of the neutron-ns-metadata-proxy, To the actual Nova metadata service  When there are problem accessing the metadata, it can be helpful to verify that the metadata service itself is configured correctly and returning meaningful information.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -156,9 +156,9 @@ returning meaningful information.</p>
 </code></pre>
 <p>You can retry your request with an appropraite <code>X-Instance-ID</code> header
 (<code>-H 'x-instance-id: 32d0524b-314d-4594-b3a3-607e3f2354f8'</code>), but
-ultimately (after also adding the tenant id), you'll find that you
+ultimately (after also adding the tenant id), you&rsquo;ll find that you
 need to add an <code>x-instance-id-signature</code> header.  If you investigate
-the <a href="https://github.com/openstack/nova/blob/master/nova/api/metadata/handler.py">Nova source code</a>, you'll find that this header is calculated
+the <a href="https://github.com/openstack/nova/blob/master/nova/api/metadata/handler.py">Nova source code</a>, you&rsquo;ll find that this header is calculated
 via an HMAC over the instance ID and a shared secret:</p>
 <pre><code>expected_signature = hmac.new(
     CONF.neutron_metadata_proxy_shared_secret,
@@ -205,7 +205,7 @@ public-keys/
 ramdisk-id
 reservation-id
 </code></pre>
-<p>And you're done!</p>
+<p>And you&rsquo;re done!</p>
 
 </div>
 

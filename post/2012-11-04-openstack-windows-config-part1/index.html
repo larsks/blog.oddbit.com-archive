@@ -8,7 +8,7 @@
 Motivations Like many organizations, we have a mix of Linux and Windows in our environment. Some folks in my group felt that it would be nice to let our Windows admins take advantage of OpenStack for prototyping and sandboxing in the same ways our Linux admins can use it.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -131,7 +131,7 @@ sandboxing in the same ways our Linux admins can use it.</p>
 OpenStack (there are downloadable images from several distributions that
 will magically configure themselves on first boot), getting Windows
 systems set up is a little trickier.  There are no pre-configured
-images to download, and it looks as if there aren't that many people
+images to download, and it looks as if there aren&rsquo;t that many people
 trying to run Windows under OpenStack right now so there is a lot less
 common experience to reference.</p>
 <h2 id="like-the-cool-kids-do-it">Like the cool kids do it</h2>
@@ -143,10 +143,10 @@ instances to act just like our Linux instances:</p>
 <li>Have the system pull down an SSH public key on first boot and use
 this for administrative access.</li>
 </ul>
-<p>This worked reasonably well, but many people felt that this wasn't a
-great solution because it wouldn't feel natural to a typical Windows
+<p>This worked reasonably well, but many people felt that this wasn&rsquo;t a
+great solution because it wouldn&rsquo;t feel natural to a typical Windows
 administrator.  It also required a full Cygwin install to drive
-things, which isn't terrible but still feels like a pretty big hammer.</p>
+things, which isn&rsquo;t terrible but still feels like a pretty big hammer.</p>
 <p>As an alternative, we decided we needed some way to either (a) allow
 the user to pass a password into the instance environment, or (b)
 provide some way for the instance to communicate a generated password
@@ -184,7 +184,7 @@ with the following description:</p>
 <blockquote>
 <p>(BoolOpt) Inject the admin password at boot time, without an agent.</p>
 </blockquote>
-<p>&hellip;but that still didn't actually explain how it worked, so I went
+<p>&hellip;but that still didn&rsquo;t actually explain how it worked, so I went
 diving through the code.  The <code>libvirt_inject_password</code> option appears
 in only a single file, <code>nova/virt/libvirt/connection.py</code>, so I knew
 where to start.  This led me to the <code>_create_image</code> method, which
@@ -222,8 +222,8 @@ os.unlink(tmp_passwd)
 utils.execute('cp', tmp_shadow, shadow_path, run_as_root=True)
 os.unlink(tmp_shadow)
 </code></pre>
-<p>Do you see a problem here, given that I'm working with a Windows
-instance?  First, it's possible that the host will be unable to mount
+<p>Do you see a problem here, given that I&rsquo;m working with a Windows
+instance?  First, it&rsquo;s possible that the host will be unable to mount
 the NTFS filesystem, and secondly, there are no <code>passwd</code> or <code>shadow</code>
 files of any use on the target.</p>
 <p>You can pass <code>--config-drive=True</code> to <code>nova boot</code> and it will use a
@@ -232,13 +232,13 @@ data (and make this available as a block device when the system
 boots), but this fails, hard: most of the code treats this as being
 identical to the original root filesystem, so it still tries to
 perform the modifications to <code>/etc/passwd</code> and <code>/etc/shadow</code> which, of
-course, don't exist.</p>
+course, don&rsquo;t exist.</p>
 <p>I whipped some quick
 <a href="https://github.com/seas-computing/nova/commits/lars/admin_pass">patches</a>
 that would write the configuration data (such as <code>admin_pass</code>) to
 simple files at the root of the configuration drive&hellip;but then I ran
 into a new problem:</p>
-<p>Windows doesn't know how to deal with whole-disk filesystems (nor,
+<p>Windows doesn&rsquo;t know how to deal with whole-disk filesystems (nor,
 apparently, do many <a href="http://serverfault.com/questions/444446/mounting-whole-disk-filesystems-in-windows-2008/444448#comment481758_444448">windows
 admins</a>).
 In the absence of a partition map, Windows assumes that the device is

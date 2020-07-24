@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>bad_ideas on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/bad_ideas/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2015-04-10T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/bad_ideas/</id>
-  
   <entry>
     <title>Using tools badly: time shifting git commits with Workinghours
 </title>
@@ -20,7 +19,7 @@
     <published>2015-04-10T00:00:00Z</published>
     <updated>2015-04-10T00:00:00Z</updated>
     <summary type="html">This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!
-You are working on a wonderful open source project&amp;hellip;but you are not supposed to be working on that project! You&#39;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
+You are working on a wonderful open source project&amp;hellip;but you are not supposed to be working on that project! You&amp;rsquo;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
 And now your boss knows why the TPS reports are late.</summary>
   </entry>
   

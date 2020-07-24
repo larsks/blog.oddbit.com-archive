@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>kubernetes on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/kubernetes/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2015-06-19T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/kubernetes/</id>
-  
   <entry>
     <title>Heat-kubernetes Demo with Autoscaling</title>
     <author>
@@ -18,8 +17,8 @@
     <id>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
     <published>2015-06-19T00:00:00Z</published>
     <updated>2015-06-19T00:00:00Z</updated>
-    <summary type="html">Next week is the Red Hat Summit in Boston, and I&#39;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
-As part of that presentation, I&#39;ve put together a short demonstration video:
+    <summary type="html">Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
+As part of that presentation, I&amp;rsquo;ve put together a short demonstration video:
  This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</summary>
   </entry>
   

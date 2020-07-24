@@ -28,8 +28,8 @@
       <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/</guid>
-      <description>Bitwarden is a password management service (like LastPass or 1Password). It&#39;s unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.
-At $WORK(-ish) we&#39;re looking into Bitwarden because we want a password sharing and management solution that was better than dropping files into directories on remote hosts or sharing things over Slack.</description>
+      <description>Bitwarden is a password management service (like LastPass or 1Password). It&amp;rsquo;s unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.
+At $WORK(-ish) we&amp;rsquo;re looking into Bitwarden because we want a password sharing and management solution that was better than dropping files into directories on remote hosts or sharing things over Slack.</description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@ At $WORK(-ish) we&#39;re looking into Bitwarden because we want a password shari
       <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</guid>
-      <description>I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I&#39;m a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
+      <description>I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I&amp;rsquo;m a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
 Ansible already has a chroot module, of course, but for some situations &amp;ndash; such as targeting an emulated chroot environment &amp;ndash; that just means a lot of extra work.</description>
     </item>
     
@@ -48,8 +48,8 @@ Ansible already has a chroot module, of course, but for some situations &amp;nda
       <pubDate>Sun, 07 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</guid>
-      <description>If you have an Ansible inventory file that includes lots of per host variables, it&#39;s not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
-I&#39;ve just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.</description>
+      <description>If you have an Ansible inventory file that includes lots of per host variables, it&amp;rsquo;s not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
+I&amp;rsquo;ve just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ In versions of Ansible prior to 2.0, there was a small collection of OpenStack m
       <pubDate>Fri, 08 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/</guid>
-      <description>Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &amp;ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&amp;quot;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).</description>
+      <description>Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &amp;ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&amp;rdquo;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).</description>
     </item>
     
     <item>
@@ -78,7 +78,7 @@ In versions of Ansible prior to 2.0, there was a small collection of OpenStack m
       
       <guid>https://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</guid>
       <description>This is a companion to my article on the Docker plugin for Heat.
-While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&#39;ve submitted patches for most of the issues I encountered:
+While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&amp;rsquo;ve submitted patches for most of the issues I encountered:
 Bugs in the Heat plugin   https://bugs.launchpad.net/heat/+bug/1364017
 docker plugin fails to delete a container resource in CREATE_FAILED state.
   https://bugs.launchpad.net/heat/+bug/1364041
@@ -92,7 +92,7 @@ docker plugin volumes_from parameter should be a list.
       <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</guid>
-      <description>I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&#39;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
+      <description>I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&amp;rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
 The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.</description>
     </item>
     

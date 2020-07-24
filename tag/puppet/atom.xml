@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>puppet on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/puppet/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2014-10-22T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/puppet/</id>
-  
   <entry>
     <title>Building Docker images with Puppet</title>
     <author>
@@ -18,7 +17,7 @@
     <id>https://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</id>
     <published>2014-10-22T00:00:00Z</published>
     <updated>2014-10-22T00:00:00Z</updated>
-    <summary type="html">I like Docker, but I&#39;m not a huge fan of using shell scripts for complex system configuration&amp;hellip;and Dockerfiles are basically giant shell scripts.
+    <summary type="html">I like Docker, but I&amp;rsquo;m not a huge fan of using shell scripts for complex system configuration&amp;hellip;and Dockerfiles are basically giant shell scripts.
 I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
 I started with a manifest like this (in puppet/node.pp):
 class { &#39;ssh&#39;: }  And a Dockerfile like this:</summary>
@@ -46,7 +45,7 @@ class { &#39;ssh&#39;: }  And a Dockerfile like this:</summary>
     <id>https://blog.oddbit.com/post/2013-02-25-puppet-xmlrpc-quote/</id>
     <published>2013-02-25T00:00:00Z</published>
     <updated>2013-02-25T00:00:00Z</updated>
-    <summary type="html">I&#39;ve been reading up on Puppet 3 lately, and came across the following:
+    <summary type="html">I&amp;rsquo;ve been reading up on Puppet 3 lately, and came across the following:
  XMLRPC was the new hotness when development on Puppet started. Now, XMLRPC is that horrible thing with the XML and the angle brackets and the pain and sad.
  (from http://somethingsinistral.net/blog/the-angry-guide-to-puppet-3/)
 &amp;hellip;which also accurately sums up my feelings when I come across yet another piece of software where someone has decided that XML (or even JSON) is a good user-facing configuration syntax.</summary>
@@ -61,7 +60,7 @@ class { &#39;ssh&#39;: }  And a Dockerfile like this:</summary>
     <id>https://blog.oddbit.com/post/2011-08-16-puppet-scope-and-inheritance/</id>
     <published>2011-08-16T00:00:00Z</published>
     <updated>2011-08-16T00:00:00Z</updated>
-    <summary type="html">I note this here because it wasn&#39;t apparent to me from the Puppet documentation.
+    <summary type="html">I note this here because it wasn&amp;rsquo;t apparent to me from the Puppet documentation.
 If you have a Puppet class like this:
 class foo { File { ensure =&amp;gt; file, mode =&amp;gt; 600, } }  And you use it like this:
 class bar { include foo file { &#39;/tmp/myfile&#39;: } }  Then /tmp/myfile will not be created. But if instead you do this:

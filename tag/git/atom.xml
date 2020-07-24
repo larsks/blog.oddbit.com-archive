@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>git on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/git/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2019-06-17T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/git/</id>
-  
   <entry>
     <title>Avoid rebase hell: squashing without rebasing</title>
     <author>
@@ -18,7 +17,7 @@
     <id>https://blog.oddbit.com/post/2019-06-17-avoid-rebase-hell-squashing-wi/</id>
     <published>2019-06-17T00:00:00Z</published>
     <updated>2019-06-17T00:00:00Z</updated>
-    <summary type="html">You&#39;re working on a pull request. You&#39;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&#39;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I&#39;ve marked merge commits with the text [merge]):
+    <summary type="html">You&amp;rsquo;re working on a pull request. You&amp;rsquo;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&amp;rsquo;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I&amp;rsquo;ve marked merge commits with the text [merge]):
 7e181479 Adds methods for widget sales 0487162 [merge] Merge remote-tracking branch &#39;origin/master&#39; into my_feature 76ee81c [merge] Merge branch &#39;my_feature&#39; of https://github.</summary>
   </entry>
   
@@ -44,7 +43,7 @@ Rebase instead of merge If you need to incorporate changes from the upstream mas
     <id>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</id>
     <published>2017-01-22T00:00:00Z</published>
     <updated>2017-01-22T00:00:00Z</updated>
-    <summary type="html">It&#39;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
+    <summary type="html">It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
 In many cases you can alleviate this through the use of the git pre-commit hook, which will run every time you commit changes locally.</summary>
   </entry>
   
@@ -73,9 +72,9 @@ $ vim some/file/somewhere $ git add -u $ git fix  Which I find much more conveni
     <published>2015-10-19T00:00:00Z</published>
     <updated>2015-10-19T00:00:00Z</updated>
     <summary type="html">This post is in response to a comment someone made on irc earlier today:
- [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&#39;re available
- In this post I present a proof-of-concept solution to this request. Please note that thisand isn&#39;t something that has actually been used or tested anywhere!
-If you access a git repository via ssh, it&#39;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.</summary>
+ [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&amp;rsquo;re available
+ In this post I present a proof-of-concept solution to this request. Please note that thisand isn&amp;rsquo;t something that has actually been used or tested anywhere!
+If you access a git repository via ssh, it&amp;rsquo;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.</summary>
   </entry>
   
   <entry>
@@ -87,7 +86,7 @@ If you access a git repository via ssh, it&#39;s easy to provide a wrapper for g
     <id>https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/</id>
     <published>2015-05-08T00:00:00Z</published>
     <updated>2015-05-08T00:00:00Z</updated>
-    <summary type="html">Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &amp;ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&amp;quot;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).</summary>
+    <summary type="html">Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &amp;ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&amp;rdquo;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).</summary>
   </entry>
   
   <entry>
@@ -101,7 +100,7 @@ If you access a git repository via ssh, it&#39;s easy to provide a wrapper for g
     <published>2015-04-10T00:00:00Z</published>
     <updated>2015-04-10T00:00:00Z</updated>
     <summary type="html">This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!
-You are working on a wonderful open source project&amp;hellip;but you are not supposed to be working on that project! You&#39;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
+You are working on a wonderful open source project&amp;hellip;but you are not supposed to be working on that project! You&amp;rsquo;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
 And now your boss knows why the TPS reports are late.</summary>
   </entry>
   
@@ -128,7 +127,7 @@ Jul 19 14:31:18 su: PAM audit_log_acct_message() failed: Operation not permitted
     <id>https://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/</id>
     <published>2013-11-22T00:00:00Z</published>
     <updated>2013-11-22T00:00:00Z</updated>
-    <summary type="html">I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&#39;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&#39;s the perfect place to insert generated content that must be kept in sync with posts on the blog.</summary>
+    <summary type="html">I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&amp;rsquo;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&amp;rsquo;s the perfect place to insert generated content that must be kept in sync with posts on the blog.</summary>
   </entry>
   
   <entry>

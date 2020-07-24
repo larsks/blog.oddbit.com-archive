@@ -8,7 +8,7 @@
 A solution We can provide a level of redundancy by passing the LDAP connections through a load balancing proxy. While this makes the proxy a single point of failure, it is (a) a very simple tool and thus less prone to complex failure modes, (b) running on the same host as the web application, and (c) is completely under our control.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -127,7 +127,7 @@ A solution We can provide a level of redundancy by passing the LDAP connections 
 <p>Balance is configured completely on the command line. To provide round-robin access to a suite of three directory servers running LDAP over SSL, you might use the following command line:</p>
 <pre><code>balance -b 127.0.0.1 636 10.1.1.1 10.1.1.2
 </code></pre>
-<p>Using balance's terminology, this creates one <em>group</em> of two <em>channels</em>. Balance will round-robin among the channels in this group. Note that here and in subsequent examples we are binding the proxy to the loopback interface so that it is only available to applications running on the same host.</p>
+<p>Using balance&rsquo;s terminology, this creates one <em>group</em> of two <em>channels</em>. Balance will round-robin among the channels in this group. Note that here and in subsequent examples we are binding the proxy to the loopback interface so that it is only available to applications running on the same host.</p>
 <p>If you would prefer to preferentially send all the requests to the first server, and only use the second server if the first is unavailable, you could use a configuration like this:</p>
 <pre><code>balance -b 127.0.0.1 636 10.1.1.1 \! 10.1.1.2
 </code></pre>

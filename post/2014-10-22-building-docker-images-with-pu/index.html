@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Building Docker images with Puppet &middot; The Odd Bit</title>
-        <meta name="description" content="I like Docker, but I&#39;m not a huge fan of using shell scripts for complex system configuration&hellip;and Dockerfiles are basically giant shell scripts.
+        <meta name="description" content="I like Docker, but I&rsquo;m not a huge fan of using shell scripts for complex system configuration&hellip;and Dockerfiles are basically giant shell scripts.
 I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
 I started with a manifest like this (in puppet/node.pp):
 class { &#39;ssh&#39;: }  And a Dockerfile like this:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -120,7 +120,7 @@ class { &#39;ssh&#39;: }  And a Dockerfile like this:">
 
     
 
-    <p>I like <a href="http://docker.com/">Docker</a>, but I'm not a huge fan of using shell scripts for
+    <p>I like <a href="http://docker.com/">Docker</a>, but I&rsquo;m not a huge fan of using shell scripts for
 complex system configuration&hellip;and Dockerfiles are basically giant
 shell scripts.</p>
 <p>I was curious whether or not it would be possible to use Puppet during
@@ -180,7 +180,7 @@ Failed to get D-Bus connection: No connection to service manager.
 the corresponding service resource, but there is no service manager
 (e.g., &ldquo;systemd&rdquo; or &ldquo;upstart&rdquo;, etc) inside the container.</p>
 <p>Some modules provide a module parameter to disable service management,
-but that solution isn't available in this module.  Instead, I created
+but that solution isn&rsquo;t available in this module.  Instead, I created
 a &ldquo;dummy&rdquo; service provider.  The &ldquo;code&rdquo; (or lack thereof) looks like
 this:</p>
 <pre><code>Puppet::Type.type(:service).provide :dummy, :parent =&gt; :base do

@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>subversion on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/subversion/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2010-05-11T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/subversion/</id>
-  
   <entry>
     <title>Pushing a Git repository to Subversion</title>
     <author>

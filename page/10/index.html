@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -113,7 +113,7 @@
 
     
     <p class="post-stub-summary">
-    I like Docker, but I'm not a huge fan of using shell scripts for complex system configuration&hellip;and Dockerfiles are basically giant shell scripts.
+    I like Docker, but I&rsquo;m not a huge fan of using shell scripts for complex system configuration&hellip;and Dockerfiles are basically giant shell scripts.
 I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
 I started with a manifest like this (in puppet/node.pp):
 class { 'ssh': }  And a Dockerfile like this:
@@ -161,9 +161,9 @@ class { 'ssh': }  And a Dockerfile like this:
 
     
     <p class="post-stub-summary">
-    Would you like to run some custom Python code when Nova creates and destroys virtual instances on your compute hosts? This is possible using Nova's support for hooks, but the existing documentation is somewhat short on examples, so I've spent some time trying to get things working.
+    Would you like to run some custom Python code when Nova creates and destroys virtual instances on your compute hosts? This is possible using Nova&rsquo;s support for hooks, but the existing documentation is somewhat short on examples, so I&rsquo;ve spent some time trying to get things working.
 The demo_nova_hooks repository contains a working example of the techniques discussed in this article.
-What's a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to attach a class of your own design to a particular function or method call in Nova.
+What&rsquo;s a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to attach a class of your own design to a particular function or method call in Nova.
     </p>
 
     
@@ -185,9 +185,9 @@ What's a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to attac
 
     
     <p class="post-stub-summary">
-    Sometimes you want to quickly share a screenshot with someone. Here's my favorite mechanism, which assumes you have installed both curl and the ImageMagick suite.
+    Sometimes you want to quickly share a screenshot with someone. Here&rsquo;s my favorite mechanism, which assumes you have installed both curl and the ImageMagick suite.
 $ import png:- | curl -T- -s chunk.io http://chunk.io/f/76ea98ea081748e19de4507fde3c2c65  When you run this command, you cursor will change into crosshairs. Click on a window, and this will grab a png image of that window and send it to chunk.io using curl.
-You'll get back a URL that you can use to share the image with people.
+You&rsquo;ll get back a URL that you can use to share the image with people.
     </p>
 
     
@@ -233,7 +233,7 @@ If you have any questions about the presentation, please feel free to ping me on
 
     
     <p class="post-stub-summary">
-    I spent some time today learning about Heat autoscaling groups, which are incredibly nifty but a little opaque from the Heat command line, since commands such as heat resource-list don't recurse into nested stacks. It is possible to introspect these resources (you can pass the physical resource id of a nested stack to heat resource-list, for example)&hellip;
+    I spent some time today learning about Heat autoscaling groups, which are incredibly nifty but a little opaque from the Heat command line, since commands such as heat resource-list don&rsquo;t recurse into nested stacks. It is possible to introspect these resources (you can pass the physical resource id of a nested stack to heat resource-list, for example)&hellip;
 &hellip;but I really like visualizing things, so I wrote a quick hack called dotstack that will generate dot language output from a Heat stack.
     </p>
 
@@ -257,7 +257,7 @@ If you have any questions about the presentation, please feel free to ping me on
     
     <p class="post-stub-summary">
     This is a companion to my article on the Docker plugin for Heat.
-While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I've submitted patches for most of the issues I encountered:
+While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&rsquo;ve submitted patches for most of the issues I encountered:
 Bugs in the Heat plugin   https://bugs.launchpad.net/heat/+bug/1364017
 docker plugin fails to delete a container resource in CREATE_FAILED state.
   https://bugs.launchpad.net/heat/+bug/1364041
@@ -315,7 +315,7 @@ Docker daemon endpoint. By default the local Docker daemon will be used.
 
     
     <p class="post-stub-summary">
-    I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I'll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
+    I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
 The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.
     </p>
 

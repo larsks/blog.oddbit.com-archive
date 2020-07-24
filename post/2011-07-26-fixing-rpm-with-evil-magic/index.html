@@ -8,7 +8,7 @@
  You build a source rpm on your own machine. You sign the rpm with your GPG key. You submit the source RPM to our buildserver. The buildserver validates your signature and then builds the package. The buildserver signs the package using a master signing key.  The last step in that sequence represents a problem, because the rpmsign command will always, always prompt for a password and read the response from /dev/tty.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -130,13 +130,13 @@ general workflow looks like this:</p>
 </ul>
 <p>The last step in that sequence represents a problem, because the <code>rpmsign</code>
 command will always, always prompt for a password and read the response from
-<code>/dev/tty</code>. This means that (a) you can't easily provide the password on stdin,
-and (b) you can't fix the problem using a passwordless key.</p>
-<p>Other people have <a href="http://jrmonk-techzine.blogspot.com/2010/06/how-to-sign-rpm-files-in-batch-mode.html">solved this problem using expect</a>, but I've opted for
+<code>/dev/tty</code>. This means that (a) you can&rsquo;t easily provide the password on stdin,
+and (b) you can&rsquo;t fix the problem using a passwordless key.</p>
+<p>Other people have <a href="http://jrmonk-techzine.blogspot.com/2010/06/how-to-sign-rpm-files-in-batch-mode.html">solved this problem using expect</a>, but I&rsquo;ve opted for
 another solution which in some ways seems cleaner and in others seems like a
 terrible idea: function interposition using <code>LD_PRELOAD</code>.</p>
 <p>The <code>rpmsign</code> command prompts for (and reads) a password using the <code>getpass()</code>
-function call. If you look at the <code>getpass(3)</code> man page, you'll see that the
+function call. If you look at the <code>getpass(3)</code> man page, you&rsquo;ll see that the
 function is defined like this:</p>
 <pre><code>#include &lt;unistd.h&gt;
 char *getpass( const char *prompt); 
@@ -150,7 +150,7 @@ char *getpass( const char *prompt) {
  return &quot;&quot;;
 }
 </code></pre>
-<p>This &ndash; when properly loaded &ndash; will replace the standard C library <code>getpass()</code> function with our own version, which simply returns an empty string. This of course means we'll be using a passwordless key, but you could obviously have our replacement function return an actual password instead of an empty string. I would argue that by doing so you would not substantially increase the security of your solution.</p>
+<p>This &ndash; when properly loaded &ndash; will replace the standard C library <code>getpass()</code> function with our own version, which simply returns an empty string. This of course means we&rsquo;ll be using a passwordless key, but you could obviously have our replacement function return an actual password instead of an empty string. I would argue that by doing so you would not substantially increase the security of your solution.</p>
 <p>Next we create a shared library:</p>
 <pre><code>$ cc -fPIC -g   -c -o getpass.o getpass.c
 $ ld -shared -o getpass.so getpass.o

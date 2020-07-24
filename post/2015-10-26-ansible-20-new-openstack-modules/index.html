@@ -8,7 +8,7 @@
 In versions of Ansible prior to 2.0, there was a small collection of OpenStack modules.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -257,7 +257,7 @@ have created.  For example, if you create a network using
     name: mynetwork
   register: mynetwork
 </code></pre>
-<p>You'll get back a dictionary containing a top-level <code>id</code> attribute,
+<p>You&rsquo;ll get back a dictionary containing a top-level <code>id</code> attribute,
 which is the UUID of the created network, along with a <code>network</code>
 attribute containing a dictionary of information about the created
 object.  The <a href="http://docs.ansible.com/ansible/debug_module.html">debug</a> module is an excellent tool for exploring these
@@ -300,7 +300,7 @@ after the above task:</p>
 <p>I have written a set of basic <a href="https://github.com/ansible/ansible/pull/12875">integration tests</a> for these modules.
 I hope the pull request is merged, but even if not it provides an
 example of how to make use of many of these new modules.</p>
-<p>I'd like to present a few brief examples here to give you a sense of
+<p>I&rsquo;d like to present a few brief examples here to give you a sense of
 what working with the new modules is like.</p>
 <h3 id="uploading-an-image-to-glance">Uploading an image to Glance</h3>
 <p>The <a href="http://docs.ansible.com/ansible/os_image_module.html">os_image</a> module is used to upload an image to Glance.  Assuming
@@ -348,10 +348,10 @@ the command line:</p>
   image=cirros flavor=m1.small key_name=my_ssh_key'
 </code></pre>
 <h3 id="adding-a-nova-server-to-your-ansible-inventory">Adding a Nova server to your Ansible inventory</h3>
-<p>I'd like to conclude this post with a longer example, that
+<p>I&rsquo;d like to conclude this post with a longer example, that
 demonstrates how you can use the <a href="http://docs.ansible.com/ansible/add_host_module.html">add_host</a> module to add a freshly
 created server to your inventory, and then target that new server in
-your playbook.  I've split up this playbook with commentary; in
+your playbook.  I&rsquo;ve split up this playbook with commentary; in
 practice, the pre-formatted text in this section would all be in a
 single playbook (like <a href="/assets/2015/10/26/playbook.yml">this</a>).</p>
 <pre><code>- hosts: localhost
@@ -387,16 +387,16 @@ floating ip address.</p>
         ansible_user: centos
         ansible_become: true
 </code></pre>
-<p>Note that in the above play you can't use information from the
-inventory because that new host won't exist in the inventory until
+<p>Note that in the above play you can&rsquo;t use information from the
+inventory because that new host won&rsquo;t exist in the inventory until
 <em>after</em> this play completes.</p>
-<p>We'll need to wait for the server to finish booting and provisioning
+<p>We&rsquo;ll need to wait for the server to finish booting and provisioning
 before we are able to target it with ansible.  A typical cloud image
 is configured to run <a href="https://cloudinit.readthedocs.org/en/latest/">cloud-init</a> when it boots, which will take
 care of a number of initial configuration tasks, including
 provisioning the ssh key we configured using <code>os_server</code>.  Until this
-process is complete, we won't have remote access to the server.</p>
-<p>We can't use the <code>wait_for</code> module because that will only
+process is complete, we won&rsquo;t have remote access to the server.</p>
+<p>We can&rsquo;t use the <code>wait_for</code> module because that will only
 check for an open port. Instead, we use a <a href="http://docs.ansible.com/ansible/playbooks_loops.html#do-until-loops">do-until loop</a> to
 wait until we are able to successfully run a command on the server via
 ssh.</p>

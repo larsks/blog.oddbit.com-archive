@@ -9,7 +9,7 @@ There are two different ways of configuring this support. The first only allows 
  Enable the dwc2 overlay in /boot/config.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -133,10 +133,10 @@ boils down to:</p>
 <p>This process is more fully documented <a href="https://learn.adafruit.com/turning-your-raspberry-pi-zero-into-a-usb-gadget/overview">here</a>.</p>
 <p>The second mechanism makes use of the <code>libcomposite</code> driver to create
 multifunction gadgets.  The manual procedure is documented in <a href="https://www.kernel.org/doc/Documentation/usb/gadget_configfs.txt">the
-kernel documentation</a>. While it's a useful feature, the
+kernel documentation</a>. While it&rsquo;s a useful feature, the
 configuration process requires several steps and if you only do it
 infrequently it can be easy to forget.</p>
-<p>In order to make this easier for me to manage, I've wrapped the
+<p>In order to make this easier for me to manage, I&rsquo;ve wrapped the
 process up in a <a href="https://fedoramagazine.org/systemd-template-unit-files/">systemd template unit</a> that takes care of the
 various steps necessary to both create and remove a multifunction USB
 gadget.</p>

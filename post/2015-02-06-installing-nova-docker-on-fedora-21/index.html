@@ -5,11 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Installing nova-docker on Fedora 21/RDO Juno &middot; The Odd Bit</title>
         <meta name="description" content="This post comes about indirectly by a request on IRC in #rdo for help getting nova-docker installed on Fedora 21. I ran through the process from start to finish and decided to write everything down for posterity.
-Getting started I started with the Fedora 21 Cloud Image, because I&#39;m installing onto OpenStack and the cloud images include some features that are useful in this environment.
-We&#39;ll be using OpenStack packages from the RDO Juno repository.">
+Getting started I started with the Fedora 21 Cloud Image, because I&rsquo;m installing onto OpenStack and the cloud images include some features that are useful in this environment.
+We&rsquo;ll be using OpenStack packages from the RDO Juno repository.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -121,12 +121,12 @@ We&#39;ll be using OpenStack packages from the RDO Juno repository.">
 
     <p>This post comes about indirectly by a request on IRC in <code>#rdo</code> for help getting <a href="https://github.com/stackforge/nova-docker">nova-docker</a> installed on Fedora 21.  I ran through the process from start to finish and decided to write everything down for posterity.</p>
 <h2 id="getting-started">Getting started</h2>
-<p>I started with the <a href="https://getfedora.org/en/cloud/download/">Fedora 21 Cloud Image</a>, because I'm
+<p>I started with the <a href="https://getfedora.org/en/cloud/download/">Fedora 21 Cloud Image</a>, because I&rsquo;m
 installing onto OpenStack and the cloud images include
 some features that are useful in this environment.</p>
-<p>We'll be using OpenStack packages from the <a href="https://repos.fedorapeople.org/repos/openstack/openstack-juno/">RDO Juno</a> repository.
+<p>We&rsquo;ll be using OpenStack packages from the <a href="https://repos.fedorapeople.org/repos/openstack/openstack-juno/">RDO Juno</a> repository.
 Because there is often some skew between the RDO packages and the
-current Fedora selinux policy, we're going to start by putting SELinux
+current Fedora selinux policy, we&rsquo;re going to start by putting SELinux
 into permissive mode (sorry, Dan):</p>
 <pre><code># setenforce 0
 # sed -i '/^SELINUX=/ s/=.*/=permissive/' /etc/selinux/config
@@ -139,7 +139,7 @@ into permissive mode (sorry, Dan):</p>
 <pre><code># yum -y upgrade
 </code></pre>
 <h2 id="install-openstack">Install OpenStack</h2>
-<p>We'll be using <a href="https://wiki.openstack.org/wiki/Packstack">packstack</a> to install OpenStack onto this host.
+<p>We&rsquo;ll be using <a href="https://wiki.openstack.org/wiki/Packstack">packstack</a> to install OpenStack onto this host.
 Start by installing the package:</p>
 <pre><code># yum -y install openstack-packstack
 </code></pre>
@@ -154,7 +154,7 @@ prerequisites for <a href="https://github.com/stackforge/nova-docker">nova-docke
   docker-io fedora-repos-rawhide
 </code></pre>
 <p>The <code>fedora-repos-rawhide</code> package provides a yum configuration for the
-<code>rawhide</code> repository (disabled by default).  We're going to need that
+<code>rawhide</code> repository (disabled by default).  We&rsquo;re going to need that
 to pick up more recent versions of <code>systemd</code> (because of <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1187882">this
 bug</a>) and
 <code>python-six</code> (because <code>nova-docker</code> needs the <code>six.add_metaclass</code>
@@ -190,7 +190,7 @@ like:</p>
 <pre><code># git clone http://github.com/stackforge/nova-docker.git
 # cd nova-docker
 </code></pre>
-<p>And check out the <code>stable/juno</code> branch, since we're operating with an
+<p>And check out the <code>stable/juno</code> branch, since we&rsquo;re operating with an
 OpenStack Juno environment:</p>
 <pre><code># git checkout stable/juno
 </code></pre>
@@ -213,18 +213,18 @@ Edit <code>/etc/glance/glance-api.conf</code>, and add the following line to the
 </code></pre>
 <p>Next, we need to augment the <code>rootwrap</code> configuration such that
 <code>nova-docker</code> is able run the <code>ln</code> command with <code>root</code> privileges.
-We'll install the <a href="https://github.com/stackforge/nova-docker/blob/master/etc/nova/rootwrap.d/docker.filters">docker.filters</a> file from the <code>nova-docker</code>
+We&rsquo;ll install the <a href="https://github.com/stackforge/nova-docker/blob/master/etc/nova/rootwrap.d/docker.filters">docker.filters</a> file from the <code>nova-docker</code>
 source:</p>
 <pre><code># mkdir -p /etc/nova/rootwrap.d
 # cp etc/nova/rootwrap.d/docker.filters \
   /etc/nova/rootwrap.d/docker.filters
 </code></pre>
-<p>We've changed a number of configuration files, so we should restart
+<p>We&rsquo;ve changed a number of configuration files, so we should restart
 the affected services:</p>
 <pre><code># openstack-service restart nova glance
 </code></pre>
 <h2 id="testing-things-out">Testing things out</h2>
-<p>Let's try starting a container!  We need to select one that will run
+<p>Let&rsquo;s try starting a container!  We need to select one that will run
 in the <code>nova-docker</code> environment.  Generally, that means one that does
 not expect to have an interactive terminal and that will automatically
 start some sort of web-accessible service.  I have a <a href="https://registry.hub.docker.com/u/larsks/thttpd/">minimal thttpd
@@ -252,8 +252,8 @@ CONTAINER ID        IMAGE                  COMMAND                CREATED       
 ee864da30cf1        larsks/thttpd:latest   &quot;/thttpd -D -l /dev/   7 hours ago         Up 7 hours                              nova-430a197e-a0ca-4e72-a7db-1969d0773cf7   
 </code></pre>
 <h2 id="getting-connected">Getting connected</h2>
-<p>At this point, the container will <em>not</em> be network accessible; it's
-attached to a private tenant network.  Let's assign it a floating ip
+<p>At this point, the container will <em>not</em> be network accessible; it&rsquo;s
+attached to a private tenant network.  Let&rsquo;s assign it a floating ip
 address:</p>
 <pre><code># nova floating-ip-create public
 +--------------+-----------+----------+--------+
@@ -263,7 +263,7 @@ address:</p>
 +--------------+-----------+----------+--------+
 # nova floating-ip-associate test0 172.24.4.229
 </code></pre>
-<p>This isn't going to be immediately accessible because Packstack left
+<p>This isn&rsquo;t going to be immediately accessible because Packstack left
 us without a route to the floating ip network.  We can fix that
 temporarily like this:</p>
 <pre><code># ip addr add 172.24.4.225/28 dev br-ex

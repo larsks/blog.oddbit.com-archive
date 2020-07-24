@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>A systemd-nspawn connection driver for Ansible &middot; The Odd Bit</title>
-        <meta name="description" content="I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I&#39;m a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
+        <meta name="description" content="I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I&rsquo;m a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
 Ansible already has a chroot module, of course, but for some situations &ndash; such as targeting an emulated chroot environment &ndash; that just means a lot of extra work.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -120,13 +120,13 @@ Ansible already has a chroot module, of course, but for some situations &ndash; 
 
     <p>I wrote <a href="https://blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/">earlier</a> about <a href="https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html">systemd-nspawn</a>, and how it can take much
 of the fiddly work out of setting up functional <code>chroot</code> environments.
-I'm a regular <a href="http://ansible.com/">Ansible</a> user, and I wanted to be able to apply some
+I&rsquo;m a regular <a href="http://ansible.com/">Ansible</a> user, and I wanted to be able to apply some
 of those techniques to my playbooks.</p>
 <p>Ansible already has a <code>chroot</code> module, of course, but for some
 situations &ndash; such as targeting an emulated <code>chroot</code> environment &ndash;
 that just means a lot of extra work.  Using <code>systemd-nspawn</code> makes
 this trivial.</p>
-<p>I've submitted 
+<p>I&rsquo;ve submitted 
 <a href="https://github.com/ansible/ansible/pull/14334" class="pull-request">#14334</a>
  to the Ansible project,
 which introduces a new connection driver named <code>nspawn</code>.  It acts very
@@ -145,7 +145,7 @@ setting this will <em>append</em> the values to the default
 </li>
 </ul>
 <h2 id="advantages-over-chroot">Advantages over chroot</h2>
-<p>Let's say we had a Fedora filesystem mounted on <code>/fedora</code> and we want
+<p>Let&rsquo;s say we had a Fedora filesystem mounted on <code>/fedora</code> and we want
 to run the following playbook:</p>
 <pre><code>- hosts: /fedora
   tasks:
@@ -191,7 +191,7 @@ apply the same idea to Ansible with an inventory entry like this:</p>
   ansible_nspawn_extra_args=&quot;--bind /usr/bin/qemu-arm&quot;
 </code></pre>
 <p>The above will allow you to run a playbook against a filesystem
-containing ARM architecture binaries, even though you're running on an
+containing ARM architecture binaries, even though you&rsquo;re running on an
 x86_64 host.</p>
 
 </div>

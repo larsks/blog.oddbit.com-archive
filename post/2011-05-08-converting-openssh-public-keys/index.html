@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Converting OpenSSH public keys &middot; The Odd Bit</title>
-        <meta name="description" content="I&#39;ve posted a followup to this article that discusses ssh-agent.
+        <meta name="description" content="I&rsquo;ve posted a followup to this article that discusses ssh-agent.
  For reasons best left to another post, I wanted to convert an SSH public key into a PKCS#1 PEM-encoded public key. That is, I wanted to go from this:
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD7EZn/BzP26AWk/Ts2ymjpTXuXRiEWIWn HFTilOTcuJ/P1HfOwiy4RHC1rv59Yh/E6jbTx623&#43;OGySJWh1IS3dAEaHhcGKnJaikrBn3c cdoNVkAAuL/YD7FMG1Z0SjtcZS6MoO8Lb9pkq6R&#43;Ok6JQjwCEsB&#43;OaVwP9RnVA&#43;HSYeyCVE 0KakLCbBJcD1U2aHP4&#43;IH4OaXhZacpb9Ueja6NNfGrv558xTgfZ&#43;fLdJ7cpg6wU8UZnVM1B JiUW5KFasc&#43;2IuZR0&#43;g/oJXaYwvW2T6XsMgipetCEtQoMAJ4zmugzHSQuFRYHw/7S6PUI2U 03glFmULvEV&#43;qIxsVFT1ng3pj lars@tiamat.house  To this:
 -----BEGIN RSA PUBLIC KEY----- MIIBCgKCAQEA&#43;xGZ/wcz9ugFpP07Nspo6U17l0YhFiFpxxU4pTk3Lifz9R3zsIsu ERwta7&#43;fWIfxOo208ett/jhskiVodSEt3QBGh4XBipyWopKwZ93HHaDVZAALi/2A &#43;xTBtWdEo7XGUujKDvC2/aZKukfjpOiUI8AhLAfjmlcD/UZ1QPh0mHsglRNCmpCw mwSXA9VNmhz&#43;PiB&#43;Dml4WWnKW/VHo2ujTXxq7&#43;efMU4H2fny3Se3KYOsFPFGZ1TN QSYlFuShWrHPtiLmUdPoP6CV2mML1tk&#43;l7DIIqXrQhLUKDACeM5roMx0kLhUWB8P &#43;0uj1CNlNN4JRZlC7xFfqiMbFRU9Z4N6YwIDAQAB -----END RSA PUBLIC KEY-----  If you have a recent version of OpenSSH (where recent means 5.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -121,7 +121,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD7EZn/BzP26AWk/Ts2ymjpTXuXRiEWIWn HFTilOTc
     
 
     <blockquote>
-<p>I've posted a <a href="http://blog.oddbit.com/2011/05/09/signing-data-with-ssh-agent/">followup</a> to this article that discusses ssh-agent.</p>
+<p>I&rsquo;ve posted a <a href="http://blog.oddbit.com/2011/05/09/signing-data-with-ssh-agent/">followup</a> to this article that discusses ssh-agent.</p>
 </blockquote>
 <p>For reasons best left to another post, I wanted to convert an SSH public key into a PKCS#1 PEM-encoded public key. That is, I wanted to go from this:</p>
 <pre><code>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD7EZn/BzP26AWk/Ts2ymjpTXuXRiEWIWn
@@ -144,7 +144,7 @@ QSYlFuShWrHPtiLmUdPoP6CV2mML1tk+l7DIIqXrQhLUKDACeM5roMx0kLhUWB8P
 <p>If you have a recent version of OpenSSH (where recent means 5.6 or later), you can just do this:</p>
 <pre><code>ssh-keygen -f key.pub -e -m pem
 </code></pre>
-<p>If you don't have that, read on.</p>
+<p>If you don&rsquo;t have that, read on.</p>
 <h1 id="openssh-public-key-format">OpenSSH Public Key Format</h1>
 <p>The OpenSSH public key format is fully documented <a href="http://tools.ietf.org/html/rfc4253#section-6.6">RFC 4253</a>. Briefly, an OpenSSH public key consists of three fields:</p>
 <ul>
@@ -205,7 +205,7 @@ n_val = eval('0x' + ''.join(['%02X' % struct.unpack('B', x)[0] for x in
 <p>The data in a PKCS#1 key is encoded using DER, which is a set of rules for serializing ASN.1 data. For more information see:</p>
 <ul>
 <li>The WikiPedia entry for <a href="http://en.wikipedia.org/wiki/Distinguished_Encoding_Rules">Distinguished Encoding Rules</a></li>
-<li><a href="http://luca.ntop.org/Teaching/Appunti/asn1.html">A Layman's Guide to a Subset of ASN.1, BER, and DER</a></li>
+<li><a href="http://luca.ntop.org/Teaching/Appunti/asn1.html">A Layman&rsquo;s Guide to a Subset of ASN.1, BER, and DER</a></li>
 </ul>
 <p>Basically, ASN.1 is a standard for describing abstract data types, and DER is a set of rules for transforming an ASN.1 data type into a series of octets.</p>
 <p>According to the <a href="ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-1/pkcs-1v2-1.asn">ASN module for PKCS#1</a>, a PKCS#1 public key looks like this:</p>
@@ -214,7 +214,7 @@ n_val = eval('0x' + ''.join(['%02X' % struct.unpack('B', x)[0] for x in
     publicExponent    INTEGER   -- e
 }
 </code></pre>
-<p>We can generate this from our key data using Python's <a href="http://pyasn1.sourceforge.net/">PyASN1</a> module:</p>
+<p>We can generate this from our key data using Python&rsquo;s <a href="http://pyasn1.sourceforge.net/">PyASN1</a> module:</p>
 <pre><code>from pyasn1.type import univ
 
 pkcs1_seq = univ.Sequence()

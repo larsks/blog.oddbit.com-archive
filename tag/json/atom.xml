@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>json on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/json/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2013-11-17T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/json/</id>
-  
   <entry>
     <title>json-tools: cli for generating and filtering json</title>
     <author>
@@ -18,7 +17,7 @@
     <id>https://blog.oddbit.com/post/2013-11-17-json-tools/</id>
     <published>2013-11-17T00:00:00Z</published>
     <updated>2013-11-17T00:00:00Z</updated>
-    <summary type="html">Interacting with JSON-based APIs from the command line can be difficult, and OpenStack is filled with REST APIs that consume or produce JSON. I&#39;ve just put pair of tools for generating and filtering JSON on the command line, called collectively json-tools.
+    <summary type="html">Interacting with JSON-based APIs from the command line can be difficult, and OpenStack is filled with REST APIs that consume or produce JSON. I&amp;rsquo;ve just put pair of tools for generating and filtering JSON on the command line, called collectively json-tools.
 Both make use of the Python dpath module to populate or filter JSON objects.
 The jsong command generates JSON on stdout. You provide /-delimited paths on the command line to represent the JSON structure.</summary>
   </entry>

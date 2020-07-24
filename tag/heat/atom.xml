@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>heat on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/heat/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2016-08-11T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/heat/</id>
-  
   <entry>
     <title>Exploring YAQL Expressions</title>
     <author>
@@ -18,7 +17,7 @@
     <id>https://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</id>
     <published>2016-08-11T00:00:00Z</published>
     <updated>2016-08-11T00:00:00Z</updated>
-    <summary type="html">The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&#39;s more advanced features.
+    <summary type="html">The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&amp;rsquo;s more advanced features.
 I am working on a Fluentd composable service for TripleO. I want to allow each service to specify a logging source configuration fragment, for example:
 parameters: NovaAPILoggingSource: type: json description: Fluentd logging configuration for nova-api.</summary>
   </entry>
@@ -32,8 +31,8 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
     <id>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
     <published>2015-06-19T00:00:00Z</published>
     <updated>2015-06-19T00:00:00Z</updated>
-    <summary type="html">Next week is the Red Hat Summit in Boston, and I&#39;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
-As part of that presentation, I&#39;ve put together a short demonstration video:
+    <summary type="html">Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
+As part of that presentation, I&amp;rsquo;ve put together a short demonstration video:
  This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</summary>
   </entry>
   
@@ -60,7 +59,7 @@ If you have any questions about the presentation, please feel free to ping me on
     <id>https://blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/</id>
     <published>2014-09-02T00:00:00Z</published>
     <updated>2014-09-02T00:00:00Z</updated>
-    <summary type="html">I spent some time today learning about Heat autoscaling groups, which are incredibly nifty but a little opaque from the Heat command line, since commands such as heat resource-list don&#39;t recurse into nested stacks. It is possible to introspect these resources (you can pass the physical resource id of a nested stack to heat resource-list, for example)&amp;hellip;
+    <summary type="html">I spent some time today learning about Heat autoscaling groups, which are incredibly nifty but a little opaque from the Heat command line, since commands such as heat resource-list don&amp;rsquo;t recurse into nested stacks. It is possible to introspect these resources (you can pass the physical resource id of a nested stack to heat resource-list, for example)&amp;hellip;
 &amp;hellip;but I really like visualizing things, so I wrote a quick hack called dotstack that will generate dot language output from a Heat stack.</summary>
   </entry>
   
@@ -74,7 +73,7 @@ If you have any questions about the presentation, please feel free to ping me on
     <published>2014-09-01T00:00:00Z</published>
     <updated>2014-09-01T00:00:00Z</updated>
     <summary type="html">This is a companion to my article on the Docker plugin for Heat.
-While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&#39;ve submitted patches for most of the issues I encountered:
+While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&amp;rsquo;ve submitted patches for most of the issues I encountered:
 Bugs in the Heat plugin   https://bugs.launchpad.net/heat/+bug/1364017
 docker plugin fails to delete a container resource in CREATE_FAILED state.
   https://bugs.launchpad.net/heat/+bug/1364041
@@ -112,7 +111,7 @@ Docker daemon endpoint. By default the local Docker daemon will be used.</summar
     <id>https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</id>
     <published>2014-08-30T00:00:00Z</published>
     <updated>2014-08-30T00:00:00Z</updated>
-    <summary type="html">I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&#39;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
+    <summary type="html">I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&amp;rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
 The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.</summary>
   </entry>
   

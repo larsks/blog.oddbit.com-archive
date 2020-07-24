@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Grove Beginner Kit for Arduino (part 2): First look &middot; The Odd Bit</title>
-        <meta name="description" content="The folks at Seeed Studio were kind enough to send me a Grove Beginner Kit for Arduino for review. That&#39;s a mouthful of a name for a compact little kit!
-The Grove Beginner Kit for Arduino (henceforth &ldquo;the Kit&rdquo;, because ain&#39;t nobody got time to type that out more than a few times in a single article) is about 8.5 x 5 x 1 inches. Closed, you could fit two of them on a piece of 8.">
+        <meta name="description" content="The folks at Seeed Studio were kind enough to send me a Grove Beginner Kit for Arduino for review. That&rsquo;s a mouthful of a name for a compact little kit!
+The Grove Beginner Kit for Arduino (henceforth &ldquo;the Kit&rdquo;, because ain&rsquo;t nobody got time to type that out more than a few times in a single article) is about 8.5 x 5 x 1 inches. Closed, you could fit two of them on a piece of 8.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -119,9 +119,9 @@ The Grove Beginner Kit for Arduino (henceforth &ldquo;the Kit&rdquo;, because ai
     
 
     <p>The folks at <a href="https://seeedstudio.com">Seeed Studio</a> were kind enough to send me a <a href="https://www.seeedstudio.com/Grove-Beginner-Kit-for-Arduino-p-4549.html">Grove
-Beginner Kit for Arduino</a> for review. That's a mouthful of a name
+Beginner Kit for Arduino</a> for review. That&rsquo;s a mouthful of a name
 for a compact little kit!</p>
-<p>The Grove Beginner Kit for Arduino (henceforth &ldquo;the Kit&rdquo;, because ain't
+<p>The Grove Beginner Kit for Arduino (henceforth &ldquo;the Kit&rdquo;, because ain&rsquo;t
 nobody got time to type that out more than a few times in a single
 article) is about 8.5 x 5 x 1 inches. Closed, you could fit two of
 them on a piece of 8.5x11 paper with a little room leftover.</p>
@@ -130,7 +130,7 @@ them on a piece of 8.5x11 paper with a little room leftover.</p>
 </figure>
 
 <p>Opening the top of the box, we see the board itself.  The kit is targeted
-straight at the STEM market, and as we'll in the following paragraphs there are
+straight at the STEM market, and as we&rsquo;ll in the following paragraphs there are
 a number of features that make it particularly appropriate for this niche.</p>
 <figure><a href="/assets/2020/06/07/grove-open.jpg">
     <img src="/assets/2020/06/07/grove-open.jpg" width="400"/> </a>
@@ -140,13 +140,13 @@ a number of features that make it particularly appropriate for this niche.</p>
 the <a href="#sensors">Sensors</a> and <a href="#inputoutput">Input/Output</a> sections,
 below, for an overview). To make it easy to get started, everything
 you see is pre-wired (via traces on the PCB) to the microcontroller.
-That means you don't need soldering or connection cables to use
+That means you don&rsquo;t need soldering or connection cables to use
 anything on the board.</p>
 <p>Every sensor also has a <a href="https://wiki.seeedstudio.com/Grove_System/">Grove</a> connector on it, and the main board
 &ndash; in addition to Arduino-compatible headers &ndash; has 12 Grove
 connectors. The individual sensor boards are designed so that you can
 cut them off the PCB and use them on their own.  If you open the
-left-hand side of the kit, you'll find a collection of six Grove
+left-hand side of the kit, you&rsquo;ll find a collection of six Grove
 connection cables if you choose to go this route.</p>
 <p>Using the Grove connectors makes it very easy to add additional
 sensors to your projects (it looks like there are about <a href="https://www.seeedstudio.com/category/Sensor-for-Grove-c-24.html.">150 sensor
@@ -183,10 +183,10 @@ humidity, and substantially better accuracy).</p>
 <li>
 <p>BMP280 Air Pressure Sensor</p>
 <p>The <a href="/assets/2020/06/07/Grove-Barometer_Sensor-BMP280-BMP280-DS001-12_Datasheet.pdf">BMP280</a> can measure pressure from -500 m below sea level to 9000 m
-above sea level, with a relative accuracy of ±1 m (that's 300-1100 hPa
+above sea level, with a relative accuracy of ±1 m (that&rsquo;s 300-1100 hPa
 with a relative accuracy of ±0.12 hPa). &ldquo;Relative
-accuracy&rdquo; means that it's good at detecting pressure <em>changes</em>, but
-it's less accurate if your goal is to read the absolute air pressure
+accuracy&rdquo; means that it&rsquo;s good at detecting pressure <em>changes</em>, but
+it&rsquo;s less accurate if your goal is to read the absolute air pressure
 (the accuracy in that case is ±1 hPa, or roughly ±8 m).</p>
 </li>
 <li>
@@ -200,7 +200,7 @@ Hz to 5.3 kHz.</p>
 <ul>
 <li>
 <p>OLED Display</p>
-<p>There's a 0.96&rdquo; I2C addressable <a href="/assets/2020/06/07/OLED_Display_Module.pdf">OLED Display Module</a> built around
+<p>There&rsquo;s a 0.96&rdquo; I2C addressable <a href="/assets/2020/06/07/OLED_Display_Module.pdf">OLED Display Module</a> built around
 the SSD1315 chip. You can see this display in action <a href="#video">at the bottom
 of this post</a>.</p>
 </li>
@@ -222,37 +222,37 @@ of this post</a>.</p>
 with this board, but as a first step I thought it would be fun to
 scroll something across the LCD screen. I slapped the following code
 together after reading the [u8g2 docs][] for a couple of minutes, so I
-can guarantee that it's not optimal, but it's a start:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;U8g2lib.h&gt;</span><span class="cp">
+can guarantee that it&rsquo;s not optimal, but it&rsquo;s a start:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;U8g2lib.h&gt;</span><span class="cp">
 </span><span class="cp"></span> 
-<span class="cp">#</span><span class="cp">ifdef U8X8_HAVE_HW_SPI</span><span class="cp">
-</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;SPI.h&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="cp">#</span><span class="cp">endif</span><span class="cp">
-</span><span class="cp"></span><span class="cp">#</span><span class="cp">ifdef U8X8_HAVE_HW_I2C</span><span class="cp">
-</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="cp">#</span><span class="cp">endif</span><span class="cp">
+<span class="cp">#ifdef U8X8_HAVE_HW_SPI
+</span><span class="cp">#include</span> <span class="cpf">&lt;SPI.h&gt;</span><span class="cp">
+</span><span class="cp">#endif
+</span><span class="cp">#ifdef U8X8_HAVE_HW_I2C
+</span><span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp">
+</span><span class="cp">#endif
 </span><span class="cp"></span>
-<span class="n">U8G2_SSD1306_128X64_NONAME_F_SW_I2C</span> <span class="nf">u8g2</span><span class="p">(</span><span class="n">U8G2_R2</span><span class="p">,</span> <span class="cm">/* clock=*/</span> <span class="n">SCL</span><span class="p">,</span> <span class="cm">/* data=*/</span> <span class="n">SDA</span><span class="p">,</span> <span class="cm">/* reset=*/</span> <span class="n">U8X8_PIN_NONE</span><span class="p">)</span><span class="p">;</span>
+<span class="n">U8G2_SSD1306_128X64_NONAME_F_SW_I2C</span> <span class="nf">u8g2</span><span class="p">(</span><span class="n">U8G2_R2</span><span class="p">,</span> <span class="cm">/* clock=*/</span> <span class="n">SCL</span><span class="p">,</span> <span class="cm">/* data=*/</span> <span class="n">SDA</span><span class="p">,</span> <span class="cm">/* reset=*/</span> <span class="n">U8X8_PIN_NONE</span><span class="p">);</span>
 
-<span class="kt">char</span> <span class="o">*</span><span class="n">text</span> <span class="o">=</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">blog.oddbit.com</span><span class="s">&#34;</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#34;blog.oddbit.com&#34;</span><span class="p">;</span>
 
 <span class="kt">void</span> <span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">u8g2</span><span class="p">.</span><span class="n">setBusClock</span><span class="p">(</span><span class="mi">4000000</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">u8g2</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">u8g2</span><span class="p">.</span><span class="n">setFontMode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">u8g2</span><span class="p">.</span><span class="n">setBusClock</span><span class="p">(</span><span class="mi">4000000</span><span class="p">);</span>
+  <span class="n">u8g2</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+  <span class="n">u8g2</span><span class="p">.</span><span class="n">setFontMode</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
  
 <span class="kt">void</span> <span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">u8g2_uint_t</span> <span class="n">x</span><span class="p">;</span>
 
-  <span class="n">u8g2</span><span class="p">.</span><span class="n">firstPage</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">u8g2</span><span class="p">.</span><span class="n">firstPage</span><span class="p">();</span>
 
   <span class="k">do</span> <span class="p">{</span>
-    <span class="n">u8g2</span><span class="p">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">u8g2_font_luBIS18_tf</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">u8g2</span><span class="p">.</span><span class="n">drawStr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">x</span> <span class="o">-</span><span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">u8g2</span><span class="p">.</span><span class="n">nextPage</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">u8g2</span><span class="p">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">u8g2_font_luBIS18_tf</span><span class="p">);</span>
+    <span class="n">u8g2</span><span class="p">.</span><span class="n">drawStr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">text</span><span class="p">);</span>
+    <span class="n">x</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">u8g2</span><span class="p">.</span><span class="n">nextPage</span><span class="p">());</span>
 <span class="p">}</span>
 </code></pre></div><a name="video">
 

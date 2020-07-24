@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Integrating Bitwarden with Ansible &middot; The Odd Bit</title>
-        <meta name="description" content="Bitwarden is a password management service (like LastPass or 1Password). It&#39;s unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.
-At $WORK(-ish) we&#39;re looking into Bitwarden because we want a password sharing and management solution that was better than dropping files into directories on remote hosts or sharing things over Slack.">
+        <meta name="description" content="Bitwarden is a password management service (like LastPass or 1Password). It&rsquo;s unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.
+At $WORK(-ish) we&rsquo;re looking into Bitwarden because we want a password sharing and management solution that was better than dropping files into directories on remote hosts or sharing things over Slack.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -119,11 +119,11 @@ At $WORK(-ish) we&#39;re looking into Bitwarden because we want a password shari
     
 
     <p><a href="https://bitwarden.com">Bitwarden</a> is a password management service (like <a href="https://www.lastpass.com/">LastPass</a> or
-<a href="https://1password.com/">1Password</a>). It's unique in that it is built entirely on open
+<a href="https://1password.com/">1Password</a>). It&rsquo;s unique in that it is built entirely on open
 source software.  In addition to the the web UI and mobile apps that
 you would expect, Bitwarden also provides a <a href="https://help.bitwarden.com/article/cli/">command-line tool</a> for
 interacting with the your password store.</p>
-<p>At $WORK(-ish) we're looking into Bitwarden because we want a password
+<p>At $WORK(-ish) we&rsquo;re looking into Bitwarden because we want a password
 sharing and management solution that was better than dropping files
 into  directories on remote hosts or sharing things over Slack.  At
 the same time, we are also thinking about bringing more automation to
@@ -133,7 +133,7 @@ Bitwarden as a credential storage mechanism for Ansible playbooks, so
 I set out to write a lookup plugin to implement the integration&hellip;</p>
 <p>&hellip;only to find that I was not the first person to have this idea;
 Matt Stofko <a href="https://github.com/c0sco/ansible-modules-bitwarden/">beat me to it</a>.  While it worked, the directory
-structure of Matt's repository made it difficult to integrate into an
+structure of Matt&rsquo;s repository made it difficult to integrate into an
 existing Ansible project. It was also missing some convenience
 features I wanted to see, so I have submitted 
 <a href="https://github.com/c0sco/ansible-modules-bitwarden/pull/1" class="pull-request">#1</a>
@@ -152,7 +152,7 @@ will be available to any playbooks you run on your system.</p>
 <h2 id="add-explicit-support-for-custom-fields">Add explicit support for custom fields</h2>
 <p>While it was possible to access custom fields by fetching the complete
 JSON representation of an item in Bitwarden and then querying the
-resulting document, it wasn't particularly graceful.  I've added
+resulting document, it wasn&rsquo;t particularly graceful.  I&rsquo;ve added
 explicit support for looking up custom fields.  Whereas the normal
 lookup will the specific keys that Bitwarden supports in the <code>bw get</code>:</p>
 <pre><code>lookup('bitwarden', 'Google', field=username)
@@ -172,7 +172,7 @@ before querying Bitwarden for data:</p>
 <pre><code>lookup('bitwarden', 'Google', field=username, sync=true)
 </code></pre>
 <h2 id="using-the-lookup-module-in-practice">Using the lookup module in practice</h2>
-<p>We're using <a href="https://docs.openstack.org/tripleo-docs/latest/">TripleO</a> to deploy OpenStack. TripleO requires as input
+<p>We&rsquo;re using <a href="https://docs.openstack.org/tripleo-docs/latest/">TripleO</a> to deploy OpenStack. TripleO requires as input
 to the deployment process a number of parameters, including various
 credentials.  For example, to set the password that will be assigned
 to the Keystone admin user, one would pass in a file that looks
@@ -181,9 +181,9 @@ something like:</p>
 parameter_defaults:
   AdminPassword: &quot;secret.password.goes.here&quot;
 </code></pre>
-<p>Because our deployment configuration is public, we don't want to store
-credentials there.  We've been copying around a credentials file that
-lives outside the repository, but that's not a great solution.</p>
+<p>Because our deployment configuration is public, we don&rsquo;t want to store
+credentials there.  We&rsquo;ve been copying around a credentials file that
+lives outside the repository, but that&rsquo;s not a great solution.</p>
 <p>Using the Bitwarden lookup module, we can replace the above with:</p>
 <pre><code>---
 parameter_defaults:
@@ -204,7 +204,7 @@ CephClusterFSID: &quot;{{ ((lookup('bitwarden', 'ceph client key', field='cluste
 <p>Before you can run a playbook making use of the Bitwarden lookup
 module, you need to <a href="https://help.bitwarden.com/article/cli/#download--install">install</a> the Bitwarden CLI.  This is as simple
 as grabbing an appropriate binary and dropping it somewhere in
-your <code>$PATH</code>.  I've been doing this:</p>
+your <code>$PATH</code>.  I&rsquo;ve been doing this:</p>
 <pre><code>$ curl -L 'https://vault.bitwarden.com/download/?app=cli&amp;platform=linux' |
   funzip &gt; $HOME/bin/bw
 $ chmod 755 $HOME/bin/bw

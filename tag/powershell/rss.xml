@@ -27,10 +27,10 @@ Function New-RandomComplexPassword ($length=8) { $Assembly = Add-Type -AssemblyN
       <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/</guid>
-      <description>I&#39;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
+      <description>I&amp;rsquo;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
 There are a number of common solutions proposed to this problem:
   Just wait for some period of time.
-This can work but it&#39;s ugly, and because it doesn&#39;t actually verify the network state it can result in things breaking if some problem prevents Windows from pulling a valid DHCP lease.</description>
+This can work but it&amp;rsquo;s ugly, and because it doesn&amp;rsquo;t actually verify the network state it can result in things breaking if some problem prevents Windows from pulling a valid DHCP lease.</description>
     </item>
     
   </channel>

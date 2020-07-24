@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>gpio on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/gpio/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2014-07-26T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/gpio/</id>
-  
   <entry>
     <title>gpio-watch: Run scripts in response to GPIO signals</title>
     <author>
@@ -18,8 +17,8 @@
     <id>https://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/</id>
     <published>2014-07-26T00:00:00Z</published>
     <updated>2014-07-26T00:00:00Z</updated>
-    <summary type="html">For a small project I&#39;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
-Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&#39;t want to write something that was tied closely to my project&amp;hellip;</summary>
+    <summary type="html">For a small project I&amp;rsquo;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
+Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&amp;rsquo;t want to write something that was tied closely to my project&amp;hellip;</summary>
   </entry>
   
 </feed>

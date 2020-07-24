@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Ansible 2.0: The Docker connection driver &middot; The Odd Bit</title>
-        <meta name="description" content="As the release of Ansible 2.0 draws closer, I&#39;d like to take a look at some of the new features that are coming down the pipe. In this post, we&#39;ll look at the docker connection driver.
+        <meta name="description" content="As the release of Ansible 2.0 draws closer, I&rsquo;d like to take a look at some of the new features that are coming down the pipe. In this post, we&rsquo;ll look at the docker connection driver.
 A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to your target hosts. These days it uses ssh by default (which relies on the OpenSSH command line client for connectivity), and it also offers the Paramiko library as an alternative ssh implementation (this was in fact the default driver in earlier versions of Ansible).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,9 +118,9 @@ A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to 
 
     
 
-    <p>As the release of <a href="http://ansible.com/">Ansible</a> 2.0 draws closer, I'd like to take a
+    <p>As the release of <a href="http://ansible.com/">Ansible</a> 2.0 draws closer, I&rsquo;d like to take a
 look at some of the new features that are coming down the pipe.  In
-this post, we'll look at the <code>docker</code> connection driver.</p>
+this post, we&rsquo;ll look at the <code>docker</code> connection driver.</p>
 <p>A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to
 your target hosts.  These days it uses <code>ssh</code> by default (which relies
 on the OpenSSH command line client for connectivity), and it also
@@ -147,7 +147,7 @@ playbook:</p>
         name: git
         state: latest
 </code></pre>
-<p>Or as a variable in your inventory.  Here's an example that has both a
+<p>Or as a variable in your inventory.  Here&rsquo;s an example that has both a
 docker container and an ssh-accessible host:</p>
 <pre><code>target ansible_connection=docker
 server ansible_host=192.168.1.20 ansible_user=root

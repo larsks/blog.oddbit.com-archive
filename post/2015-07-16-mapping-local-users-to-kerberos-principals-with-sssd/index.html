@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Mapping local users to Kerberos principals with SSSD &middot; The Odd Bit</title>
-        <meta name="description" content="I work for an organization that follows the common model of assigning people systematically generated user ids. Like most technically inclined employees of this organization, I have local accounts on my workstation that don&#39;t bear any relation to the generated account ids. For the most part this isn&#39;t a problem, except that our organization uses Kerberos to authenticate access to a variety of resources (such as the mailserver and a variety of web applications).">
+        <meta name="description" content="I work for an organization that follows the common model of assigning people systematically generated user ids. Like most technically inclined employees of this organization, I have local accounts on my workstation that don&rsquo;t bear any relation to the generated account ids. For the most part this isn&rsquo;t a problem, except that our organization uses Kerberos to authenticate access to a variety of resources (such as the mailserver and a variety of web applications).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -120,30 +120,30 @@
     <p>I work for an organization that follows the common model of assigning
 people systematically generated user ids.  Like most technically
 inclined employees of this organization, I have local accounts on my
-workstation that don't bear any relation to the generated account ids.
-For the most part this isn't a problem, except that our organization
+workstation that don&rsquo;t bear any relation to the generated account ids.
+For the most part this isn&rsquo;t a problem, except that our organization
 uses Kerberos to authenticate access to a variety of resources (such
 as the mailserver and a variety of web applications).</p>
-<p>In the past, I've gotten along by running an explicit <code>kinit lkellogg@EXAMPLE.COM</code> on the command line once in a while, and that
-works, but it's not particularly graceful.</p>
-<p>I'm running Fedora, which of course ships with <a href="https://fedorahosted.org/sssd/">SSSD</a>.  Two of the
+<p>In the past, I&rsquo;ve gotten along by running an explicit <code>kinit lkellogg@EXAMPLE.COM</code> on the command line once in a while, and that
+works, but it&rsquo;s not particularly graceful.</p>
+<p>I&rsquo;m running Fedora, which of course ships with <a href="https://fedorahosted.org/sssd/">SSSD</a>.  Two of the
 neat features available through SSSD are (a) you can have it acquire a
 token for you automatically when you authenticate and (b) renew that
 token periodically, assuming that you have a renewable token.</p>
 <p>There are two problems that were preventing me from taking advantage
 of this service.</p>
 <h2 id="combining-kerberos-with-local-accounts">Combining Kerberos with local accounts</h2>
-<p>The first problem is that there is a general assumption that if you're
+<p>The first problem is that there is a general assumption that if you&rsquo;re
 using Kerberos for authentication, you are also using some sort of
 enterprise-wide identity service like LDAP.  The practical evidence of
-this in SSSD is that you can't use Kerberos as an <code>auth_provider</code> if
+this in SSSD is that you can&rsquo;t use Kerberos as an <code>auth_provider</code> if
 you are using the <code>local</code> <code>id_provider</code>.  If you attempt a naive
 configuration that includes the following:</p>
 <pre><code>[domain/local]
 id_provider = local
 auth_provider = krb5
 </code></pre>
-<p>You'll get:</p>
+<p>You&rsquo;ll get:</p>
 <pre><code>(Thu Jul 16 22:19:44:802460 2015) [sssd] [confdb_get_domain_internal]
 (0x0010): Local ID provider does not support [krb5] as an AUTH provider.
 </code></pre>
@@ -178,7 +178,7 @@ auth_provider = krb5
 username (<code>lars</code>) to the organizational Kerberos principal
 (<code>lkellogg@EXAMPLE.COM</code>).  I had originally been looking at solutions
 involving <code>kinit</code>, but despite promising verbage in the
-<a href="http://web.mit.edu/kerberos/krb5-1.12/doc/user/user_config/k5identity.html">k5identity(5</a> man page, I wasn't meeting with much success.</p>
+<a href="http://web.mit.edu/kerberos/krb5-1.12/doc/user/user_config/k5identity.html">k5identity(5</a> man page, I wasn&rsquo;t meeting with much success.</p>
 <p>It turns out that SSSD has the <code>krb5_map_user</code> option for exactly this
 purpose; the syntax looks like:</p>
 <pre><code>krb5_map_user = &lt;local name&gt;:&lt;principal name&gt;
@@ -188,7 +188,7 @@ purpose; the syntax looks like:</p>
 </code></pre>
 <h2 id="automatic-ticket-renewal">Automatic ticket renewal</h2>
 <p>SSSD is able to automatically renew your Kerberos tickets for you,
-provided that you're able to acquire a renewable ticket.  You can
+provided that you&rsquo;re able to acquire a renewable ticket.  You can
 check for this by running <code>klist</code> and seeing if your ticket has a
 <code>renew until</code> date in the future, as in the following example:</p>
 <pre><code>Ticket cache: KEYRING:persistent:1000:krb_ccache_rOS6mR8
@@ -243,16 +243,16 @@ krb5_renewable_lifetime = 7d
 krb5_renew_interval = 30m
 </code></pre>
 <h2 id="configuring-pam">Configuring PAM</h2>
-<p>You're not done yet!  Once you have SSSD configured correctly, you
+<p>You&rsquo;re not done yet!  Once you have SSSD configured correctly, you
 need to configure your system to make use of it for authentication.
-First, you'll want to ensure that your <code>/etc/nsswitch.conf</code> file is
-configured to use SSSD.  You'll want at least the <code>passwd</code>, <code>shadow</code>,
+First, you&rsquo;ll want to ensure that your <code>/etc/nsswitch.conf</code> file is
+configured to use SSSD.  You&rsquo;ll want at least the <code>passwd</code>, <code>shadow</code>,
 and <code>group</code> databases configured to use SSSD:</p>
 <pre><code>passwd:     files sss
 shadow:     files sss
 group:      files sss
 </code></pre>
-<p>Next, you'll want configure PAM.  On my system, I need to change two
+<p>Next, you&rsquo;ll want configure PAM.  On my system, I need to change two
 configuration files:</p>
 <ul>
 <li><code>/etc/pam.d/system-auth</code>, which is the default for many services,

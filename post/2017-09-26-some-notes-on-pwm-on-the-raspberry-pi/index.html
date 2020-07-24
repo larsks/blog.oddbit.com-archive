@@ -8,7 +8,7 @@
 You drive a piezo buzzer by generating a PWM signal with the appropriate frequency. The RPi.GPIO module implements PWM via software, which is tricky on a non-realtime system.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -124,9 +124,9 @@ was already using the <a href="https://pypi.python.org/pypi/RPi.GPIO">RPi.GPIO</
 like a logical place to start, but I ran into a few issues.</p>
 <p>You drive a piezo buzzer by generating a <a href="https://learn.sparkfun.com/tutorials/pulse-width-modulation">PWM</a> signal with the
 appropriate frequency.  The <code>RPi.GPIO</code> module implements PWM via
-software, which is tricky on a non-realtime system.  It's difficult to
+software, which is tricky on a non-realtime system.  It&rsquo;s difficult to
 get the timing completely accurate, which results in sounds that are a
-little wobbly at best.  Since I'm simply generating tones with a
+little wobbly at best.  Since I&rsquo;m simply generating tones with a
 buzzer (rather than, say, controlling a servo) this is mostly just an
 annoyance.</p>
 <p>The second more significant problem is that the <code>RPi.GPIO</code> seems to be
@@ -191,9 +191,9 @@ for that frequency:</p>
 <pre><code>echo $period &gt; /sys/class/pwm/pwmchip0/pwm1/period
 echo $duty_cycle &gt; /sys/class/pwm/pwmchip0/pwm1/duty_cycle
 </code></pre>
-<p>You'll want to set <code>period</code> first.  The value of <code>duty_cycle</code> must
+<p>You&rsquo;ll want to set <code>period</code> first.  The value of <code>duty_cycle</code> must
 always be lower than <code>period</code>, so if you try setting <code>duty_cycle</code>
-first it's possible you will get an error.</p>
+first it&rsquo;s possible you will get an error.</p>
 <p>To actually generate the tone, you need to enable the output:</p>
 <pre><code>echo 1 &gt; /sys/class/pwm/pwmchip0/pwm1/enable
 </code></pre>
@@ -207,7 +207,7 @@ is a set of udev rules proposed at
 <a href="https://www.spinics.net/lists/linux-pwm/msg06081.html">kernel issue</a>, no udev events are sent when exporting pins so the
 rules have no impact on permissions in the <code>pwm0</code> and <code>pwm1</code>
 directories.</p>
-<p>Until the necessary patch has merged, I've worked around this issue by
+<p>Until the necessary patch has merged, I&rsquo;ve worked around this issue by
 creating a systemd unit that takes care of exporting the pins and
 setting permissions correctly.  The unit is very simple:</p>
 <pre><code>[Unit]
@@ -235,7 +235,7 @@ chmod -R g+rwX $PWM/*
 <p>The <code>Before=myapp.service</code> in the unit file ensures that this unit
 will run before my application starts up.  To use the above, drop the
 unit file into <code>/etc/systemd/system/rpi-configure-pwm.service</code>, and
-drop the script into <code>/usr/bin/rpi-configure-pwm</code>.  Don't forget to
+drop the script into <code>/usr/bin/rpi-configure-pwm</code>.  Don&rsquo;t forget to
 <code>systemctl enable rpi-configure-pwm</code>.</p>
 
 </div>

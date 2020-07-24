@@ -17,8 +17,8 @@
       <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/</guid>
-      <description>In this article, we&#39;re going to ask Gnocchi (the OpenStack telemetry storage service) how much memory was used, on average, over the course of each day by each project in an OpenStack environment.
-Environment I&#39;m working with an OpenStack &amp;ldquo;Pike&amp;rdquo; deployment, which means I have Gnocchi 4.0.x. More recent versions of Gnocchi (4.1.x and later) have a new aggregation API called dynamic aggregates, but that isn&#39;t available in 4.0.x so in this article we&#39;ll be using the legacy /v1/aggregations API.</description>
+      <description>In this article, we&amp;rsquo;re going to ask Gnocchi (the OpenStack telemetry storage service) how much memory was used, on average, over the course of each day by each project in an OpenStack environment.
+Environment I&amp;rsquo;m working with an OpenStack &amp;ldquo;Pike&amp;rdquo; deployment, which means I have Gnocchi 4.0.x. More recent versions of Gnocchi (4.1.x and later) have a new aggregation API called dynamic aggregates, but that isn&amp;rsquo;t available in 4.0.x so in this article we&amp;rsquo;ll be using the legacy /v1/aggregations API.</description>
     </item>
     
   </channel>

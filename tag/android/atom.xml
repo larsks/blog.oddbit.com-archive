@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>android on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/android/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2010-02-08T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/android/</id>
-  
   <entry>
     <title>Funny usage message</title>
     <author>
@@ -18,8 +17,8 @@
     <id>https://blog.oddbit.com/post/2010-02-08-funny-usage-message/</id>
     <published>2010-02-08T00:00:00Z</published>
     <updated>2010-02-08T00:00:00Z</updated>
-    <summary type="html">I was poking around in a command shell on my Droid to see what was available. While it&#39;s a pretty restricted environment, there&#39;s a number of commands available in /system/bin, including dexopt.
-Apparently dexopt isn&#39;t something I&#39;m supposed to poke at:
+    <summary type="html">I was poking around in a command shell on my Droid to see what was available. While it&amp;rsquo;s a pretty restricted environment, there&amp;rsquo;s a number of commands available in /system/bin, including dexopt.
+Apparently dexopt isn&amp;rsquo;t something I&amp;rsquo;m supposed to poke at:
 $ dexopt Usage: don&#39;t use this  Hah.</summary>
   </entry>
   
@@ -32,8 +31,8 @@ $ dexopt Usage: don&#39;t use this  Hah.</summary>
     <id>https://blog.oddbit.com/post/2010-01-24-fring-how-not-to-handle-registration/</id>
     <published>2010-01-24T00:00:00Z</published>
     <updated>2010-01-24T00:00:00Z</updated>
-    <summary type="html">I thought I&#39;d give Fring a try after seeing some favorable reviews on other sites. If you haven&#39;t previously heard of Fring, the following blurb from their website might be helpful:
- Using your handset&#39;s internet connection, you can interact with friends on all your favourite social networks including Skype, MSN Messenger, Google Talk, ICQ, SIP, Twitter, Yahoo! and AIM. You can listen to music with your Last.fm friends, check out what each other are up to on Facebook, receive alerts of new Google Mail and tailor make your very own fring by adding more cool experiences from fringAdd-ons</summary>
+    <summary type="html">I thought I&amp;rsquo;d give Fring a try after seeing some favorable reviews on other sites. If you haven&amp;rsquo;t previously heard of Fring, the following blurb from their website might be helpful:
+ Using your handset&amp;rsquo;s internet connection, you can interact with friends on all your favourite social networks including Skype, MSN Messenger, Google Talk, ICQ, SIP, Twitter, Yahoo! and AIM. You can listen to music with your Last.fm friends, check out what each other are up to on Facebook, receive alerts of new Google Mail and tailor make your very own fring by adding more cool experiences from fringAdd-ons</summary>
   </entry>
   
 </feed>

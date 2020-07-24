@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Teach git about GIT_SSL_CIPHER_LIST &middot; The Odd Bit</title>
-        <meta name="description" content="Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&quot;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).">
+        <meta name="description" content="Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&rdquo;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -117,7 +117,7 @@
 
     
 
-    <p>Someone named <a href="https://stackoverflow.com/users/4713895/hithard">hithard</a> on <a href="https://stackoverflow.com/">StackOverflow</a> was trying to clone a git repository via https, and was <a href="https://stackoverflow.com/a/30090725/147356">running into an odd error</a>: &ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&quot;. This was due to the fact that the server (<code>openhatch.org</code>) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either <a href="https://www.openssl.org/">OpenSSL</a> or <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS">NSS</a>, depending on how git was built).</p>
+    <p>Someone named <a href="https://stackoverflow.com/users/4713895/hithard">hithard</a> on <a href="https://stackoverflow.com/">StackOverflow</a> was trying to clone a git repository via https, and was <a href="https://stackoverflow.com/a/30090725/147356">running into an odd error</a>: &ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&rdquo;. This was due to the fact that the server (<code>openhatch.org</code>) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either <a href="https://www.openssl.org/">OpenSSL</a> or <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS">NSS</a>, depending on how git was built).</p>
 <p>Many applications allow the user to configure an explicit list of ciphers to consider when negotiating a secure connection. For example, <a href="https://curl.haxx.se/">curl</a> has the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSL_CIPHER_LIST.html">CURLOPT_SSL_CIPHER_LIST</a> option. This turns out to be especially relevant because git relies on <a href="https://curl.haxx.se/libcurl/">libcurl</a> for all of its http operations, which means all we need to do is (a) create a new configuration option for git, and then (b) pass that value through to libcurl.</p>
 <p>I took a look at the code and it turned out to be surprisingly easy. The functional part of the patch ends up being less than 10 lines total:</p>
 <pre><code>diff --git a/http.c b/http.c

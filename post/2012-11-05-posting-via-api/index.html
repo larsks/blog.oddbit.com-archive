@@ -6,10 +6,10 @@
         <title>Posting to Scriptogr.am using the API &middot; The Odd Bit</title>
         <meta name="description" content="Scriptogr.am has a very simple api that allows one to POST and DELETE articles. POSTing an article will place it in the appropriate Dropbox directory and make it available on your blog all in one step.
 Here is how you could use this API via Curl:
-curl \ -d app_key=$APP_KEY \ -d user_id=$USER_ID \ -d name=&quot;${title:-$1}&quot; \ --data-urlencode text@$tmpfile \ \ http://scriptogr.am/api/article/post/  This assumes that you&#39;ve registered for an application key and that you have configured the value into $APP_KEY and your Scriptogr.">
+curl \ -d app_key=$APP_KEY \ -d user_id=$USER_ID \ -d name=&quot;${title:-$1}&quot; \ --data-urlencode text@$tmpfile \ \ http://scriptogr.am/api/article/post/  This assumes that you&rsquo;ve registered for an application key and that you have configured the value into $APP_KEY and your Scriptogr.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -132,12 +132,12 @@ in one step.</p>
        \
        http://scriptogr.am/api/article/post/
 </code></pre>
-<p>This assumes that you've registered for an application key and that
+<p>This assumes that you&rsquo;ve registered for an application key and that
 you have configured the value into <code>$APP_KEY</code> and your Scriptogr.am
 user id into <code>$USER_ID</code>.</p>
 <p>The <code>name</code> attribute is both the title of your article <em>and also</em> the
 filename (normalized and with a <code>.md</code> extension).  Your article <em>must
-not</em> contain the metadata values that are allowed when you're editing
+not</em> contain the metadata values that are allowed when you&rsquo;re editing
 files directly in the Dropbox directory.</p>
 
 </div>

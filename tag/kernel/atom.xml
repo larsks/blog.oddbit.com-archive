@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>kernel on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/kernel/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2014-07-21T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/kernel/</id>
-  
   <entry>
     <title>Tracking down a kernel bug with git bisect</title>
     <author>

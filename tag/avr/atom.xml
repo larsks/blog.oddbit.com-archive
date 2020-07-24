@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>avr on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/avr/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2019-02-11T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/avr/</id>
-  
   <entry>
     <title>In which I PEBKAC so you don&#39;t have to</title>
     <author>
@@ -33,7 +32,7 @@ avr-gcc -mmcu=atmega328p -DF_CPU=16000000 -Os -c blink.c  If you were to forget 
     <published>2019-02-01T00:00:00Z</published>
     <updated>2019-02-01T00:00:00Z</updated>
     <summary type="html">The AVR C library, avr-libc, provide an ATOMIC_BLOCK macro that you can use to wrap critical sections of your code to ensure that interrupts are disabled while the code executes. At high level, the ATOMIC_BLOCK macro (when called using ATOMIC_FORCEON) does something like this:
-cli(); ...your code here... seti();  But it&#39;s more than that. If you read the documentation for the macro, it says:
+cli(); ...your code here... seti();  But it&amp;rsquo;s more than that. If you read the documentation for the macro, it says:
  Creates a block of code that is guaranteed to be executed atomically.</summary>
   </entry>
   
@@ -47,7 +46,7 @@ cli(); ...your code here... seti();  But it&#39;s more than that. If you read th
     <published>2019-01-28T00:00:00Z</published>
     <updated>2019-01-28T00:00:00Z</updated>
     <summary type="html">How big is an enum? I noticed something odd while browsing through the assembly output of some AVR C code I wrote recently. In the code, I have the following expression:
-int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&#39;t want to clutter this post with unnecessary code listings):</summary>
+int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&amp;rsquo;t want to clutter this post with unnecessary code listings):</summary>
   </entry>
   
   <entry>
@@ -61,7 +60,7 @@ int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is 
     <updated>2019-01-28T00:00:00Z</updated>
     <summary type="html">Pssst! Hey&amp;hellip;hey, buddy, wanna get an extra KB for cheap?
 When I write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
-Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&#39;s exactly what I did.</summary>
+Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&amp;rsquo;s exactly what I did.</summary>
   </entry>
   
   <entry>
@@ -74,7 +73,7 @@ Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)
     <published>2019-01-22T00:00:00Z</published>
     <updated>2019-01-22T00:00:00Z</updated>
     <summary type="html">In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
-I&#39;ve split this into three posts:</summary>
+I&amp;rsquo;ve split this into three posts:</summary>
   </entry>
   
   <entry>

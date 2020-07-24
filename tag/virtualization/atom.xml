@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>virtualization on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/virtualization/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2013-10-04T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/virtualization/</id>
-  
   <entry>
     <title>Automatic hostname entries for libvirt domains</title>
     <author>
@@ -45,7 +44,7 @@ $ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something
     <published>2012-10-24T00:00:00Z</published>
     <updated>2012-10-24T00:00:00Z</updated>
     <summary type="html">Occasionally we will deploy a virtual instance into our KVM infrastructure and realize after the fact that we need more local disk space available. This is the process we use to expand the disk image. This process assumes the following:
- You&#39;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&#39;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).</summary>
+ You&amp;rsquo;re using legacy disk partitions. The process for LVM is similar and I will describe that in another post (it&amp;rsquo;s generally identical except for an additional pvresize thrown in and lvextend in place of resize2fs).</summary>
   </entry>
   
 </feed>

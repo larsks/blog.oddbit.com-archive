@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Markdown in your Email &middot; The Odd Bit</title>
         <meta name="description" content="I really like Markdown, a minimal markup language designed to be readable as plain text that can be rendered into structurally valid HTML. Markdown is already used on sites such as GitHub and all the StackExchange sites.
-I use Markdown often enough that it&#39;s become ingrained in my fingers, to the point that I&#39;ve started unconsciously using Markdown syntax in my email. This isn&#39;t particularly useful by itself, although it means that I can take a message and render it to something pretty if I decide it needs to go somewhere other than my sent mail folder.">
+I use Markdown often enough that it&rsquo;s become ingrained in my fingers, to the point that I&rsquo;ve started unconsciously using Markdown syntax in my email. This isn&rsquo;t particularly useful by itself, although it means that I can take a message and render it to something pretty if I decide it needs to go somewhere other than my sent mail folder.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -119,7 +119,7 @@ I use Markdown often enough that it&#39;s become ingrained in my fingers, to the
     
 
     <p>I really like <a href="http://daringfireball.net/projects/markdown/">Markdown</a>, a minimal markup language designed to be readable as plain text that can be rendered into structurally valid HTML. Markdown is already used on sites such as <a href="http://github.com/">GitHub</a> and all the <a href="http://stackexchange.com/sites">StackExchange</a> sites.</p>
-<p>I use Markdown often enough that it's become ingrained in my fingers, to the point that I've started unconsciously using Markdown syntax in my email. This isn't particularly useful by itself, although it means that I can take a message and render it to something pretty if I decide it needs to go somewhere other than my sent mail folder.</p>
+<p>I use Markdown often enough that it&rsquo;s become ingrained in my fingers, to the point that I&rsquo;ve started unconsciously using Markdown syntax in my email. This isn&rsquo;t particularly useful by itself, although it means that I can take a message and render it to something pretty if I decide it needs to go somewhere other than my sent mail folder.</p>
 <p>I thought it would be fun to implement something that would actually render Markdown syntax in my outbound email and render it into an HTML attachment. I spent a little time last night putting together a <a href="https://github.com/larsks/mutt-utils/blob/master/markdownmail.py">small Python script</a> that does exactly that:</p>
 <ul>
 <li>It looks for a leading <code>&lt;!-- markdown --&gt;</code> in a message body.</li>
@@ -145,7 +145,7 @@ exec procmail -m msmtp_args=&quot;$*&quot; $HOME/.procmail/rc.sent
 :0w
 | msmtp $msmtp_args
 </code></pre>
-<p>It's not especially robust but it seems to work so far.</p>
+<p>It&rsquo;s not especially robust but it seems to work so far.</p>
 
 </div>
 

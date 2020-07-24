@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Systemd-nspawn for fun and...well, mostly for fun &middot; The Odd Bit</title>
-        <meta name="description" content="systemd-nspawn has been called &ldquo;chroot on steroids&rdquo;, but if you think of it as Docker with a slightly different target you wouldn&#39;t be far wrong, either. It can be used to spawn containers on your host, and has a variety of options for configuring the containerized environment through the use of private networking, bind mounts, capability controls, and a variety of other facilities that give you flexible container management.
+        <meta name="description" content="systemd-nspawn has been called &ldquo;chroot on steroids&rdquo;, but if you think of it as Docker with a slightly different target you wouldn&rsquo;t be far wrong, either. It can be used to spawn containers on your host, and has a variety of options for configuring the containerized environment through the use of private networking, bind mounts, capability controls, and a variety of other facilities that give you flexible container management.
 There are many different ways in which it can be used.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -120,14 +120,14 @@ There are many different ways in which it can be used.">
 
     <p><code>systemd-nspawn</code> has been called <a href="https://wiki.archlinux.org/index.php/Systemd-nspawn">&ldquo;chroot on steroids&rdquo;</a>,
 but if you think of it as <a href="http://docker.com">Docker</a> with a slightly different target
-you wouldn't be far wrong, either.  It can be used to spawn containers
+you wouldn&rsquo;t be far wrong, either.  It can be used to spawn containers
 on your host, and has a variety of options for configuring the
 containerized environment through the use of private networking, bind
 mounts, capability controls, and a variety of other facilities that
 give you flexible container management.</p>
-<p>There are many different ways in which it can be used.  I'm going to
-focus on one that's a bit of a corner use case that I find
-particularly interesting.  In this article we're going to explore how
+<p>There are many different ways in which it can be used.  I&rsquo;m going to
+focus on one that&rsquo;s a bit of a corner use case that I find
+particularly interesting.  In this article we&rsquo;re going to explore how
 we can use <a href="https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html">systemd-nspawn</a> to spawn lightweight containers for
 architectures other than that of our host system.</p>
 <h2 id="why-systemd-nspawn">Why systemd-nspawn?</h2>
@@ -136,7 +136,7 @@ through the use of <code>chroot</code> and a chunk of additional configuration,
 using <code>systemd-nspawn</code> makes it much easier.  For example,
 <code>systemd-nspawn</code> takes care of making virtual filesystems like
 <code>/proc</code>, <code>/sys</code>, and a minimal <code>/dev</code> available inside the container
-(without which some programs simply won't work).  And of course
+(without which some programs simply won&rsquo;t work).  And of course
 <code>systemd-nspawn</code> takes care of cleaning up these mounts when the
 container exits.  For a simple container, this:</p>
 <pre><code># systemd-nspawn -D /mnt /some/command
@@ -154,23 +154,23 @@ container exits.  For a simple container, this:</p>
 # umount /mnt/proc
 </code></pre>
 <p><code>systemd-nspawn</code> does all of this for us, and does much of it via
-private mount namespaces so that the temporary filesystems aren't
+private mount namespaces so that the temporary filesystems aren&rsquo;t
 visible from the host.</p>
 <h2 id="in-which-we-perform-magic">In which we perform magic</h2>
 <p>Linux allows you to run binaries intended for other architectures
 via the <a href="https://www.kernel.org/doc/Documentation/binfmt_misc.txt">binfmt-misc</a> subsystem, which allows you to use bits at the
 beginning of a file to match against an appropriate interpreter.  This
 can be used, for example, to make Java binaries directly executable.
-We're going to use this technique to accomplish the following:</p>
+We&rsquo;re going to use this technique to accomplish the following:</p>
 <ul>
 <li>Teach our system how to run Raspberry Pi ARM binaries, and</li>
 <li>Allow us to spawn a <code>systemd-nspawn</code> container into a Raspberry Pi
 filesystem.</li>
 </ul>
 <p>When a <code>systemd</code>-based system boots, the <a href="https://www.freedesktop.org/software/systemd/man/binfmt.d.html">systemd-binfmt</a> service
-(if it's enabled) will automatically register configurations found in
+(if it&rsquo;s enabled) will automatically register configurations found in
 <code>/etc/binfmt.d</code> or <code>/usr/lib/binfmt.d</code>.  You can set these up by hand,
-of course, but we're going to take the easy route and install the
+of course, but we&rsquo;re going to take the easy route and install the
 <code>qemu-user-static</code> package, which includes both the necessary <code>binfmt.d</code>
 configuration files as well as the associated emulators:</p>
 <pre><code># dnf -y install qemu-user-static
@@ -183,7 +183,7 @@ configuration files as well as the associated emulators:</p>
 informs the kernel that there is a new binfmt called <code>qemu-arm</code>, and
 that files that contain the specified byte pattern in the header
 should be handled with <code>/usr/bin/qemu-arm-static</code>.</p>
-<p>With all this set up, we can mount a Raspberry Pi filesystem (I'm
+<p>With all this set up, we can mount a Raspberry Pi filesystem (I&rsquo;m
 starting with <a href="https://minibianpi.wordpress.com/">minibian</a>)&hellip;</p>
 <pre><code># tar xf 2015-11-12-jessie-minibian.tar.gz
 # losetup -fP --show 2015-11-12-jessie-minibian.img
@@ -197,7 +197,7 @@ Spawning container mnt on /mnt.
 Press ^] three times within 1s to kill container.
 root@mnt:~#
 </code></pre>
-<p>And there we are!  We're now running a shell inside a container
+<p>And there we are!  We&rsquo;re now running a shell inside a container
 running an ARM userspace.  We can modify the image by installing or
 udpating packages or making any other necessary configuration changes:</p>
 <pre><code>root@mnt:/# apt-get install raspberrypi-bootloader
@@ -213,7 +213,7 @@ Need to get 32.5 MB of archives.
 After this operation, 827 kB of additional disk space will be used.
 Do you want to continue? [Y/n] 
 </code></pre>
-<p>When we're done, we exit our container:</p>
+<p>When we&rsquo;re done, we exit our container:</p>
 <pre><code>root#mnt:/# exit
 </code></pre>
 <p>Unmount the directory:o</p>
@@ -224,17 +224,17 @@ Do you want to continue? [Y/n]
 </code></pre>
 <p>Now we have an updated image file that we can write to an SD card and
 use to boot our Raspberry Pi.</p>
-<p><strong>NB</strong> You'll note that in this document I'm mounting <code>loop1p2</code> on <code>/</code>
-and <code>loop1p1</code> on <code>/boot</code>.  You obviously don't need <code>/boot</code> in your
+<p><strong>NB</strong> You&rsquo;ll note that in this document I&rsquo;m mounting <code>loop1p2</code> on <code>/</code>
+and <code>loop1p1</code> on <code>/boot</code>.  You obviously don&rsquo;t need <code>/boot</code> in your
 container in order for things to run, but you will regret not mounting
 it if you happen to install an updated kernel package, which needs to
 populate <code>/boot</code> with the new kernel image.</p>
 <h2 id="bonus-growing-the-image">Bonus: growing the image</h2>
-<p>The stock <a href="https://minibianpi.wordpress.com/">minibian</a> image doesn't have much free space on it; this
-is intentional, and in general you're expected to grow the root
+<p>The stock <a href="https://minibianpi.wordpress.com/">minibian</a> image doesn&rsquo;t have much free space on it; this
+is intentional, and in general you&rsquo;re expected to grow the root
 partition and resize the filesystem after booting on your Pi.
-However, if we're going to use the above process to pre-configure our
-image, there's a good chance we'll need more space immediately.  We
+However, if we&rsquo;re going to use the above process to pre-configure our
+image, there&rsquo;s a good chance we&rsquo;ll need more space immediately.  We
 start by growing the size of the image file itself; you can that with
 <code>qemu-img</code>, like this:</p>
 <pre><code># qemu-img resize 2015-11-12-jessie-minibian.img 2G

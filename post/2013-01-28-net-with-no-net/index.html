@@ -8,7 +8,7 @@
  systemd opens a socket on the host and listens for connections. When a client connections, systemd spawns a new container. The host systemd passes the connected socket to the container systemd. Services in the container receive these sockets from the container systemd.  This is a very neat idea, since it delegates all the socket listening to the host and only spins up container and service resources when necessary.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -130,7 +130,7 @@
 <p>This is a very neat idea, since it delegates all the socket listening
 to the host and only spins up container and service resources when
 necessary.</p>
-<p>An interesting corollary to this is that the service container doesn't
+<p>An interesting corollary to this is that the service container doesn&rsquo;t
 actually need any networking: since the <em>host</em> is responsible for
 opening the socket and listening for connections, and the container
 receives an already connected socket, you can create containers that
@@ -143,7 +143,7 @@ fine if you change this:</p>
 <p>To this:</p>
 <pre><code>ExecStart=/usr/bin/systemd-nspawn --private-network -jbD /srv/mycontainer 3
 </code></pre>
-<p>After this change, if you connect to this container you'll see:</p>
+<p>After this change, if you connect to this container you&rsquo;ll see:</p>
 <pre><code># ip addr
 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN 
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -155,8 +155,8 @@ fine if you change this:</p>
 &ldquo;endpoint&rdquo; containers that offer services over the network but are
 able to limit the scope of a compromised service.  Because
 <code>systemd-nspawn</code> has been designed as more of a convenice tool than a
-full container solution, we'll need to wait for <code>libvirt</code> and <code>lxc</code> to
-introduce this socket-passing feature before it's more than an
+full container solution, we&rsquo;ll need to wait for <code>libvirt</code> and <code>lxc</code> to
+introduce this socket-passing feature before it&rsquo;s more than an
 interesting idea.</p>
 
 </div>

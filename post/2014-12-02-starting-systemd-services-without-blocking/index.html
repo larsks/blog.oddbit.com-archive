@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Starting systemd services without blocking &middot; The Odd Bit</title>
-        <meta name="description" content="Recently, I&#39;ve been playing around with Fedora Atomic and Kubernetes. I ran into a frustrating problem in which I would attempt to start a service from within a script launched by cloud-init, only to have have systemctl block indefinitely because the service I was attempting to start was dependent on cloud-init finishing first.
+        <meta name="description" content="Recently, I&rsquo;ve been playing around with Fedora Atomic and Kubernetes. I ran into a frustrating problem in which I would attempt to start a service from within a script launched by cloud-init, only to have have systemctl block indefinitely because the service I was attempting to start was dependent on cloud-init finishing first.
 It turns out that systemctl has a flag meant exactly for this situation:
  --no-block Do not synchronously wait for the requested operation to finish.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -119,7 +119,7 @@ It turns out that systemctl has a flag meant exactly for this situation:
 
     
 
-    <p>Recently, I've been playing around with <a href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/">Fedora Atomic and
+    <p>Recently, I&rsquo;ve been playing around with <a href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/">Fedora Atomic and
 Kubernetes</a>.  I ran into a frustrating problem in which I
 would attempt to start a service from within a script launched by
 <a href="http://cloudinit.readthedocs.org/">cloud-init</a>, only to have have <code>systemctl</code> block indefinitely

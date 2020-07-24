@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Creating minimal Docker images from dynamically linked ELF binaries &middot; The Odd Bit</title>
-        <meta name="description" content="In this post, we&#39;ll look at a method for building minimal Docker images for dynamically linked ELF binaries, and then at a tool for automating this process.
+        <meta name="description" content="In this post, we&rsquo;ll look at a method for building minimal Docker images for dynamically linked ELF binaries, and then at a tool for automating this process.
 It is tempting, when creating a simple Docker image, to start with one of the images provided by the major distributions. For example, if you need an image that provides tcpdump for use on your Atomic host, you might do something like:
 FROM fedora RUN yum -y install tcpdump  And while this will work, you end up consuming 250MB for tcpdump.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -119,7 +119,7 @@ FROM fedora RUN yum -y install tcpdump  And while this will work, you end up con
 
     
 
-    <p>In this post, we'll look at a method for building minimal Docker
+    <p>In this post, we&rsquo;ll look at a method for building minimal Docker
 images for dynamically linked ELF binaries, and then at <a href="https://github.com/larsks/dockerize">a
 tool</a> for automating this process.</p>
 <p>It is tempting, when creating a simple Docker image, to start with one
@@ -204,7 +204,7 @@ ENTRYPOINT [&quot;/usr/sbin/tcpdump&quot;]
 $ docker run tcpdump tcpdump -i eth0 -n
 tcpdump: Couldn't find user 'tcpdump'
 </code></pre>
-<p>Well, so let's create an <code>/etc/passwd</code> file with the <code>tcpdump</code> user
+<p>Well, so let&rsquo;s create an <code>/etc/passwd</code> file with the <code>tcpdump</code> user
 and add that to our collection:</p>
 <pre><code>$ mkdir etc
 $ grep tcpdump /etc/passwd &gt; etc/passwd
@@ -213,10 +213,10 @@ $ docker build -t tcpdump .
 $ docker run tcpdump tcpdump -i eth0 -n
 tcpdump: Couldn't find user 'tcpdump'
 </code></pre>
-<p>And <em>this</em> is because most programs don't reference files like
+<p>And <em>this</em> is because most programs don&rsquo;t reference files like
 <code>/etc/passwd</code> directly, but instead delegate this task to the C
 library, which relies on the <a href="http://www.gnu.org/software/libc/manual/html_node/Name-Service-Switch.html">name service switch</a> (nss)
-mechanism to support multiple sources of information.  Let's add the
+mechanism to support multiple sources of information.  Let&rsquo;s add the
 nss libraries necessary for supporting legacy files (<code>/etc/passwd</code>,
 etc) and DNS for hostname lookups:</p>
 <ul>
@@ -230,7 +230,7 @@ files in <code>/etc</code>, such as <code>/etc/passwd</code>, <code>/etc/group</
 dns.</p>
 </li>
 </ul>
-<p>And we'll also need <code>/etc/nsswitch.conf</code> to go along with that:</p>
+<p>And we&rsquo;ll also need <code>/etc/nsswitch.conf</code> to go along with that:</p>
 <pre><code>passwd:     files
 shadow:     files
 group:      files
@@ -251,11 +251,11 @@ etc/passwd
 etc/group
 etc/nsswitch.conf
 </code></pre>
-<p>Let's rebuild the image and run it one more time:</p>
+<p>Let&rsquo;s rebuild the image and run it one more time:</p>
 <pre><code>$ docker build -t tcpdump .
 $ docker run tcpdump -i eth0 -n
 </code></pre>
-<p>And now, finally it runs.  Wouldn't it be nice if that process were
+<p>And now, finally it runs.  Wouldn&rsquo;t it be nice if that process were
 easier?</p>
 <h2 id="introducing-dockerize">Introducing Dockerize</h2>
 <p><a href="https://github.com/larsks/dockerize">Dockerize</a> is a tool that largely automates the above process.  To
@@ -263,7 +263,7 @@ build a minimal <code>tcpdump</code> image, for example, you would run:</p>
 <pre><code>$ dockerize -u tcpdump -t tcpdump /usr/sbin/tcpdump
 </code></pre>
 <p>This would include the <code>tcpdump</code> user (<code>-u tcpdump</code>) from your local
-system, as well as <code>/usr/sbin/tcpdump</code>, all it's dependencies, and
+system, as well as <code>/usr/sbin/tcpdump</code>, all it&rsquo;s dependencies, and
 file-based nss support, and build an image tagged <code>tcpdump</code> (<code>-t tcpdump</code>).  When you build an image from a single command, like this,
 Dockerize will up that command as the Docker <code>ENTRYPOINT</code>, so you can
 run it like this:</p>

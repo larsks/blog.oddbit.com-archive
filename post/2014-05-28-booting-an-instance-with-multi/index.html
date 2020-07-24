@@ -9,7 +9,7 @@ In order to serve out SSL services from an OpenStack instance, you will generall
 Assumptions This article assumes that the following resources exist:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -179,7 +179,7 @@ parameter to the <code>--nic</code> option:</p>
 </code></pre>
 <p>This is where the first complication arises: the instance will boot
 and receive a DHCP lease for one of the fixed addresses you created,
-but you don't know which one.  This isn't an insurmountable problem;
+but you don&rsquo;t know which one.  This isn&rsquo;t an insurmountable problem;
 you can assign floating ips to each one and then try logging in to
 both and see which works.</p>
 <p>Rather than playing network roulette, you can pass in a script via the

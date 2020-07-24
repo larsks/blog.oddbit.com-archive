@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -135,7 +135,7 @@ You drive a piezo buzzer by generating a PWM signal with the appropriate frequen
 
     
     <p class="post-stub-summary">
-    At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&ldquo;your clocks aren't in sync&rdquo; or &ldquo;your filesystem is full&rdquo; or &ldquo;you haven't installed a critical update&rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues. Fundamentally, we want something that acts like a typical code test suite, but for infrastructure.
+    At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&ldquo;your clocks aren&rsquo;t in sync&rdquo; or &ldquo;your filesystem is full&rdquo; or &ldquo;you haven&rsquo;t installed a critical update&rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues. Fundamentally, we want something that acts like a typical code test suite, but for infrastructure.
     </p>
 
     
@@ -179,7 +179,7 @@ You drive a piezo buzzer by generating a PWM signal with the appropriate frequen
 
     
     <p class="post-stub-summary">
-    I've been thinking about logging in the context of OpenStack and containerized service deployments. I'd like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.
+    I&rsquo;ve been thinking about logging in the context of OpenStack and containerized service deployments. I&rsquo;d like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.
 There are effectively three different mechanisms that an application can use to emit log messages:
  Via some logging-specific API, such as the legacy syslog API By writing a byte stream to stdout/stderr By writing a byte stream to a file  A substantial advantage to the first mechanism (using a logging API) is that the application is logging messages rather than bytes.
     </p>
@@ -203,7 +203,7 @@ There are effectively three different mechanisms that an application can use to 
 
     
     <p class="post-stub-summary">
-    This is now old news if you're already following the drone industry, but if you're not, I'd like to highlight a recent decision made by the US Court of Appeals regarding the FAA's drone registration requirements.
+    This is now old news if you&rsquo;re already following the drone industry, but if you&rsquo;re not, I&rsquo;d like to highlight a recent decision made by the US Court of Appeals regarding the FAA&rsquo;s drone registration requirements.
 To place this in context, back in 2015 the FAA established a new set of regulations (the &ldquo;Registration Rule&rdquo;) requiring anyone with a UAV (&ldquo;unmanned aerial vehicle&rdquo;, or &ldquo;drone&rdquo;) weighing between 0.5 and 55 lbs to register with the FAA.
     </p>
 
@@ -226,7 +226,7 @@ To place this in context, back in 2015 the FAA established a new set of regulati
 
     
     <p class="post-stub-summary">
-    It's a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&hellip;but you forgot to run your validations before submitting the change.
+    It&rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&hellip;but you forgot to run your validations before submitting the change.
 In many cases you can alleviate this through the use of the git pre-commit hook, which will run every time you commit changes locally.
     </p>
 
@@ -249,7 +249,7 @@ In many cases you can alleviate this through the use of the git pre-commit hook,
 
     
     <p class="post-stub-summary">
-    The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql's more advanced features.
+    The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&rsquo;s more advanced features.
 I am working on a Fluentd composable service for TripleO. I want to allow each service to specify a logging source configuration fragment, for example:
 parameters: NovaAPILoggingSource: type: json description: Fluentd logging configuration for nova-api.
     </p>
@@ -273,8 +273,8 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
 
     
     <p class="post-stub-summary">
-    Let's say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &ldquo;external&rdquo; connectivity (&ldquo;external&rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
-For a concrete example, let's presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:
+    Let&rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &ldquo;external&rdquo; connectivity (&ldquo;external&rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
+For a concrete example, let&rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:
     </p>
 
     

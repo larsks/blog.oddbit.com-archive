@@ -9,7 +9,7 @@ You can augment the output from these commands with rule numbers with the follow
 #!/bin/awk -f state == 0 &amp;&amp; /^-A/ {state=1; chain=$2; counter=1; printf &quot;\n&quot;} state == 1 &amp;&amp; $2 !">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -165,7 +165,7 @@ state == 0 {print}
 [007] -A DOCKER-ISOLATION -i br-438e4f71d66d -o docker0 -j DROP
 [008] -A DOCKER-ISOLATION -i docker0 -o br-438e4f71d66d -j DROP
 </code></pre>
-<p>That makes it much easier if you're trying to insert or delete rules
+<p>That makes it much easier if you&rsquo;re trying to insert or delete rules
 by index (as in <code>iptables -I INPUT 7 ...</code>).  I keep the awk code itself
 in a script named <code>number-rules</code> so that running it locally usually
 looks like:</p>

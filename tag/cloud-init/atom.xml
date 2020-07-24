@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>cloud-init on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/cloud-init/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2015-06-26T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/cloud-init/</id>
-  
   <entry>
     <title>OpenStack Networking without DHCP</title>
     <author>

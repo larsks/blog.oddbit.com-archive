@@ -5,12 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Automatic git cache &middot; The Odd Bit</title>
         <meta name="description" content="This post is in response to a comment someone made on irc earlier today:
- [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&#39;re available
- In this post I present a proof-of-concept solution to this request. Please note that thisand isn&#39;t something that has actually been used or tested anywhere!
-If you access a git repository via ssh, it&#39;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.">
+ [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&rsquo;re available
+ In this post I present a proof-of-concept solution to this request. Please note that thisand isn&rsquo;t something that has actually been used or tested anywhere!
+If you access a git repository via ssh, it&rsquo;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -124,12 +124,12 @@ If you access a git repository via ssh, it&#39;s easy to provide a wrapper for g
 today:</p>
 <blockquote>
 <p>[I] would really like a git lookaside cache which operated on an upstream
-repo, but pulled objects locally when they're available</p>
+repo, but pulled objects locally when they&rsquo;re available</p>
 </blockquote>
 <p>In this post I present a proof-of-concept solution to this request.
-Please note that thisand isn't something that has actually been used
+Please note that thisand isn&rsquo;t something that has actually been used
 or tested anywhere!</p>
-<p>If you access a git repository via <code>ssh</code>, it's easy to provide a
+<p>If you access a git repository via <code>ssh</code>, it&rsquo;s easy to provide a
 wrapper for git operations via the <code>command=</code> option in an
 <code>authorized_keys</code> file.  We can take advantage of this to update a a
 local &ldquo;cache&rdquo; repository prior to responding to a <code>clone</code>/<code>pull</code>/etc.
@@ -168,7 +168,7 @@ exec &quot;$@&quot;
 file that looks something like this:</p>
 <pre><code>command=&quot;/home/git/bin/gitwrapper&quot; ssh-rsa AAAAB3NzaC...
 </code></pre>
-<p>Let's set up a local repository mirror:</p>
+<p>Let&rsquo;s set up a local repository mirror:</p>
 <pre><code># su - git
 git$ mkdir repos
 git$ cd repos

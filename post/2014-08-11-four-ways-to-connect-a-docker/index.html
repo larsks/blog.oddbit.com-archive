@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Four ways to connect a docker container to a local network &middot; The Odd Bit</title>
-        <meta name="description" content="Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&#39;ve written an article about working with the macvlan driver.
+        <meta name="description" content="Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&rsquo;ve written an article about working with the macvlan driver.
  This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -122,7 +122,7 @@
 Docker has developed the <a href="https://docs.docker.com/network/macvlan/">macvlan network
 driver</a>. That gives you a
 <em>supported</em> mechanism for direct connectivity to a local layer 2
-network.  I've <a href="/2018/03/12/using-docker-macvlan-networks/">written an article about working with the macvlan
+network.  I&rsquo;ve <a href="/2018/03/12/using-docker-macvlan-networks/">written an article about working with the macvlan
 driver</a>.</p>
 <hr>
 <p>This article discusses four ways to make a Docker container appear on
@@ -137,7 +137,7 @@ the 10.12.0.0/21 network.  We are creating a Docker container that we
 want to expose as 10.12.0.117.</p>
 <p>I am running Fedora 20 with Docker 1.1.2.  This means, in particular,
 that my <code>utils-linux</code> package is recent enough to include the
-<a href="http://man7.org/linux/man-pages/man1/nsenter.1.html">nsenter</a> command. If you don't have that handy, there is a
+<a href="http://man7.org/linux/man-pages/man1/nsenter.1.html">nsenter</a> command. If you don&rsquo;t have that handy, there is a
 convenient Docker recipe to build it for you at <a href="https://github.com/jpetazzo/nsenter">jpetazzo/nsenter</a>
 on GitHub.</p>
 <h2 id="a-little-help-along-the-way">A little help along the way</h2>
@@ -190,7 +190,7 @@ chain (which is run from the <code>PREROUTING</code> chain):</p>
 <p>This matches traffic TO our target address (<code>-d 10.12.0.117/32</code>) not
 originating on the <code>docker0</code> bridge (<code>! -i docker0</code>) destined for
 <code>tcp</code> port <code>80</code> (<code>-p tcp -m tcp --dport 80</code>).  Matching traffic has
-it's destination set to the address of our docker container (<code>-j DNAT --to-destination 172.17.0.4:80</code>).</p>
+it&rsquo;s destination set to the address of our docker container (<code>-j DNAT --to-destination 172.17.0.4:80</code>).</p>
 <p>From a host elsewhere on the network, we can now access the web server
 at our selected ip address:</p>
 <pre><code>$ curl http://10.12.0.117/hello.html
@@ -219,16 +219,16 @@ container will appear to come from 10.12.0.117.</p>
 <p>The previous example was relatively easy to configure, but has a few
 shortcomings.  If you need to configure an interface using DHCP, or if
 you have an application that needs to be on the same layer 2 broadcast
-domain as other devices on your network, NAT rules aren't going to
+domain as other devices on your network, NAT rules aren&rsquo;t going to
 work out.</p>
 <p>This solution uses a Linux bridge device, created using <code>brctl</code>, to
 connect your containers directly to a physical network.</p>
-<p>Start by creating a new bridge device.  In this example, we'll create
+<p>Start by creating a new bridge device.  In this example, we&rsquo;ll create
 one called <code>br-em1</code>:</p>
 <pre><code># brctl addbr br-em1
 # ip link set br-em1 up
 </code></pre>
-<p>We're going to add <code>em1</code> to this bridge, and move the ip address from
+<p>We&rsquo;re going to add <code>em1</code> to this bridge, and move the ip address from
 <code>em1</code> onto the bridge.</p>
 <p><strong>WARNING</strong>: This is not something you should do remotely, especially
 for the first time, and making this persistent varies from
@@ -276,7 +276,7 @@ like this:</p>
 <pre><code># docker run -d --name web larsks/simpleweb
 </code></pre>
 <p>This will give us the normal <code>eth0</code> interface inside the container,
-but we're going to ignore that and add a new one.</p>
+but we&rsquo;re going to ignore that and add a new one.</p>
 <p>Create a <a href="http://lwn.net/Articles/232688/">veth</a> interface pair:</p>
 <pre><code># ip link add web-int type veth peer name web-ext
 </code></pre>
@@ -286,7 +286,7 @@ but we're going to ignore that and add a new one.</p>
 <p>And add the <code>web-int</code> interface to the namespace of the container:</p>
 <pre><code># ip link set netns $(docker-pid web) dev web-int
 </code></pre>
-<p>Next, we'll use the <a href="http://man7.org/linux/man-pages/man1/nsenter.1.html">nsenter</a> command (part of the <code>util-linux</code> package) to run some commands inside the <code>web</code> container.  Start by bringing up the link inside the container:</p>
+<p>Next, we&rsquo;ll use the <a href="http://man7.org/linux/man-pages/man1/nsenter.1.html">nsenter</a> command (part of the <code>util-linux</code> package) to run some commands inside the <code>web</code> container.  Start by bringing up the link inside the container:</p>
 <pre><code># nsenter -t $(docker-pid web) -n ip link set web-int up
 </code></pre>
 <p>Assign our target ip address to the interface:</p>
@@ -380,7 +380,7 @@ network interface.</p>
 name it anything you want) associated with interface <code>em1</code>.  We are
 setting it up in <code>bridge</code> mode, which permits all <code>macvlan</code> interfaces
 to communicate with eachother.</p>
-<p>Add this interface to the container's network namespace:</p>
+<p>Add this interface to the container&rsquo;s network namespace:</p>
 <pre><code># ip link set netns $(docker-pid web) em1p0
 </code></pre>
 <p>Bring up the link:</p>

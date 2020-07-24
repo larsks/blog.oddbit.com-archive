@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>I2C on the Raspberry Pi &middot; The Odd Bit</title>
-        <meta name="description" content="I&#39;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&#39;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
+        <meta name="description" content="I&rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
 The design of the I2C bus is such that the only device driving a voltage on the bus is the master (in this case, the Raspberry Pi), via pull-up resistors.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,24 +118,24 @@ The design of the I2C bus is such that the only device driving a voltage on the 
 
     
 
-    <p>I've set up my <a href="http://www.raspberrypi.org/">Raspberry Pi</a> to communicate with my <a href="http://www.arduino.cc/">Arduino</a> via
+    <p>I&rsquo;ve set up my <a href="http://www.raspberrypi.org/">Raspberry Pi</a> to communicate with my <a href="http://www.arduino.cc/">Arduino</a> via
 <a href="http://en.wikipedia.org/wiki/I%C2%B2C">I2C</a>.  The Raspberry Pi is a 3.3v device and the Arduino is a 5v
 device.  While in general this means that you need to use a level
-converter when connecting the two devices, <strong>you don't need to use a
+converter when connecting the two devices, <strong>you don&rsquo;t need to use a
 level converter when connecting the Arduino to the Raspberry Pi via
 I2C.</strong></p>
 <p>The design of the I2C bus is such that the only device driving a
 voltage on the bus is the master (in this case, the Raspberry Pi), via
 pull-up resistors.  So when &ldquo;idle&rdquo;, the bus is pulled to 3.3v volts by
 the Pi, which is perfectly safe for the Arduino (and compatible with
-it's 5v signaling).  To transmit data on the bus, a device brings the
+it&rsquo;s 5v signaling).  To transmit data on the bus, a device brings the
 bus low by connecting it to ground.  In other words, slave devices
 <em>never</em> drive the bus high.  This means that the Raspberry Pi will
 never see a 5v signal from the Arduino&hellip;unless, of course, you make a
 mistake and accidentally <code>digitalWrite</code> a <code>HIGH</code> value on one of the
-Arduino's <code>I2C</code> pins.  So don't do that.</p>
+Arduino&rsquo;s <code>I2C</code> pins.  So don&rsquo;t do that.</p>
 <p>Note that the built-in pull-up resistors are <em>only</em> available on the
-Pi's I2C pins (Pins 3 (<code>SDA</code>) and 5 (<code>SCL</code>), aka BCM <code>GPIO0</code> and
+Pi&rsquo;s I2C pins (Pins 3 (<code>SDA</code>) and 5 (<code>SCL</code>), aka BCM <code>GPIO0</code> and
 <code>GPIO1</code> on a Rev. 1 board, <code>GPIO2</code> and <code>GPIOP3</code> on a Rev. 2 board):</p>
 <p><img src="/assets/2013/03/12/raspberry-pi-i2c-pins.jpg" alt="Raspberry Pi Pins"></p>
 <p>On the Arduino Uno, the <code>I2C</code> pins are pins <code>A4</code> (<code>SDA</code>) and <code>A5</code>

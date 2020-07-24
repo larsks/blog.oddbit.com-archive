@@ -6,10 +6,10 @@
         <title>AVR micro-optimization: Losing malloc &middot; The Odd Bit</title>
         <meta name="description" content="Pssst! Hey&hellip;hey, buddy, wanna get an extra KB for cheap?
 When I write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
-Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&#39;s exactly what I did.">
+Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&rsquo;s exactly what I did.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -128,12 +128,12 @@ Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)
     return button;
 }
 </code></pre>
-<p>And when initially writing <a href="https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/">pipower</a>, that's exactly what I did.  But while thinking about it after the fact, I realized the following:</p>
+<p>And when initially writing <a href="https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/">pipower</a>, that&rsquo;s exactly what I did.  But while thinking about it after the fact, I realized the following:</p>
 <ul>
-<li>I'm designing for a fixed piece of hardware. I have a fixed number of inputs; I don't actually need to create new <code>Button</code> variables dynamically at runtime.</li>
+<li>I&rsquo;m designing for a fixed piece of hardware. I have a fixed number of inputs; I don&rsquo;t actually need to create new <code>Button</code> variables dynamically at runtime.</li>
 <li>The ATtiny85 only has 8KB of memory.  Do I really need the overhead of <code>malloc()</code>?</li>
 </ul>
-<p>The answer, of course, is that no, I don't, so I rewrote the code so that it only has statically allocated structures.  This reduced the size of the resulting binary from this:</p>
+<p>The answer, of course, is that no, I don&rsquo;t, so I rewrote the code so that it only has statically allocated structures.  This reduced the size of the resulting binary from this:</p>
 <pre><code>AVR Memory Usage
 ----------------
 Device: attiny85
@@ -155,18 +155,18 @@ Program:    3146 bytes (38.4% Full)
 Data:         29 bytes (5.7% Full)
 (.data + .bss + .noinit)
 </code></pre>
-<p>That's a savings of just under 800 bytes, which on the one hand doesn't seem like it a lot&hellip;but on the other hand saves 10% of the available memory!</p>
+<p>That&rsquo;s a savings of just under 800 bytes, which on the one hand doesn&rsquo;t seem like it a lot&hellip;but on the other hand saves 10% of the available memory!</p>
 <h2 id="debugging-caveat">Debugging caveat</h2>
 <p>If you remove <code>malloc()</code> from your code and then try to debug it with <code>gdb</code>, you may find yourself staring at the following error:</p>
 <pre><code>evaluation of this expression requires the program to have a function &quot;malloc&quot;.
 </code></pre>
 <p>This will happen if you ask <code>gdb</code> to do something that requires allocating memory for e.g., a string buffer.  The solution is to ensure that <code>malloc()</code> is linked into your code when you build for debugging. I use something like the following:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#</span><span class="cp">ifdef DEBUG</span><span class="cp">
-</span><span class="cp"></span><span class="n">__attribute__</span><span class="p">(</span><span class="p">(</span><span class="n">optimize</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">O0</span><span class="s">&#34;</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
-<span class="kt">void</span> <span class="n">_force_malloc</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">malloc</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#ifdef DEBUG
+</span><span class="cp"></span><span class="n">__attribute__</span><span class="p">((</span><span class="n">optimize</span><span class="p">(</span><span class="s">&#34;O0&#34;</span><span class="p">)))</span>
+<span class="kt">void</span> <span class="n">_force_malloc</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">malloc</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="cp">#</span><span class="cp">endif</span><span class="cp">
+<span class="cp">#endif
 </span></code></pre></div><p>The <code>__attribute__((optimize(&quot;O0&quot;)))</code> directive disables all optimizations for this function, which should prevent gcc from optimizing out the reference to <code>malloc()</code>.</p>
 
 </div>

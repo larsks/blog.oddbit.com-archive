@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>ssh on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/ssh/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2011-05-09T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/ssh/</id>
-  
   <entry>
     <title>Signing data with ssh-agent</title>
     <author>

@@ -7,7 +7,7 @@
         <meta name="description" content="Many of the upgrade guides for OpenStack focus on in-place upgrades to your OpenStack environment. Some organizations may opt for a less risky (but more hardware intensive) option of setting up a parallel environment, and then migrating data into the new environment. In this article, we look at how to use Cinder backups with a shared NFS volume to facilitate the migration of Cinder volumes between two different OpenStack environments.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -125,7 +125,7 @@ this article, we look at how to use Cinder backups with a shared NFS
 volume to facilitate the migration of Cinder volumes between two
 different OpenStack environments.</p>
 <h2 id="overview">Overview</h2>
-<p>This is how we're going to proceed:</p>
+<p>This is how we&rsquo;re going to proceed:</p>
 <p>In the source environment:</p>
 <ol>
 <li>Configure Cinder for NFS backups</li>
@@ -140,7 +140,7 @@ different OpenStack environments.</p>
 <li>Restore the backup to the new volume</li>
 </ol>
 <h2 id="cinder-configuration">Cinder configuration</h2>
-<p>We'll be using the NFS backup driver for cinder, which means
+<p>We&rsquo;ll be using the NFS backup driver for cinder, which means
 <code>cinder.conf</code> must contain:</p>
 <pre><code>backup_driver=cinder.backup.drivers.nfs
 </code></pre>

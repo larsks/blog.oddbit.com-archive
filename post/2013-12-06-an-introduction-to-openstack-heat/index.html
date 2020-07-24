@@ -9,7 +9,7 @@ In this article I will introduce Heat templates and the heat command line client
 Writing templates Because Heat began life as an analog of AWS CloudFormation, it supports the template formats used by the CloudFormation (CFN) tools. It also supports its own native template format, called HOT (&ldquo;Heat Orchestration Templates&rdquo;).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -188,7 +188,7 @@ this:</p>
       &lt;property name&gt;: &lt;property value&gt;
     # more resource specific metadata
 </code></pre>
-<p>Here's a simple example that would create a single server:</p>
+<p>Here&rsquo;s a simple example that would create a single server:</p>
 <pre><code>resources:
   instance0:
     type: OS::Nova::Server
@@ -200,9 +200,9 @@ this:</p>
 </code></pre>
 <p>The complete list of resources and their available properties can be
 found <a href="http://docs.openstack.org/developer/heat/template_guide/openstack.html">in the documentation</a>.</p>
-<p>You'll notice that the above example is static: it will always result
+<p>You&rsquo;ll notice that the above example is static: it will always result
 in an instance using the <code>cirros</code> image and the <code>m1.tiny</code> flavor.
-This isn't terribly useful, so let's redefine this example assuming
+This isn&rsquo;t terribly useful, so let&rsquo;s redefine this example assuming
 that we have available the <code>parameter</code> section from the previous
 example:</p>
 <pre><code>resources:
@@ -226,7 +226,7 @@ assigned to your instances.  The <code>outputs</code> section definition is:</p>
     description: &lt;description&gt;
     value: &lt;parameter value&gt;
 </code></pre>
-<p>In order to make the <code>outputs</code> section useful, we'll need another
+<p>In order to make the <code>outputs</code> section useful, we&rsquo;ll need another
 template function, <a href="http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#get-attr">get_attr</a>.  Where <code>get_param</code> accesses values from
 your <code>parameters</code> section, <code>get_attr</code> accesses attributes of your
 resources.  For example:</p>
@@ -237,14 +237,14 @@ resources.  For example:</p>
 <p>You will again want to refer to the <a href="http://docs.openstack.org/developer/heat/template_guide/openstack.html">list of resource types</a>
 for a list of available attributes.</p>
 <h3 id="putting-it-all-together">Putting it all together</h3>
-<p>Using the above information, let's put together a slightly more
+<p>Using the above information, let&rsquo;s put together a slightly more
 complete template.  This example will:</p>
 <ul>
 <li>Deploy a single instance</li>
 <li>Assign it a floating ip address</li>
 <li>Ensure ssh access via an ssh key published to Nova</li>
 </ul>
-<p>We'll get the flavor name, image name, key name, and network
+<p>We&rsquo;ll get the flavor name, image name, key name, and network
 information from user-provided parameters.</p>
 <p>Since this is a complete example, we need to add the
 <code>heat_template_version</code> key to our template:</p>
@@ -330,11 +330,11 @@ command line option, which takes a semicolon-delimited list of
 <code>name=value</code> pairs:</p>
 <pre><code>heat stack-create -P 'param1=value1;param2=value2' ...
 </code></pre>
-<p>While this works, it's not terribly useful, especially as the
+<p>While this works, it&rsquo;s not terribly useful, especially as the
 parameter list grows long. You can also provide parameters via an
 <a href="https://wiki.openstack.org/wiki/Heat/Environments">environment file</a>, which a YAML configuration file containing a
 <code>parameters</code> key (you can use environment files for other things, too,
-but here we're going to focus on their use for template parameters).
+but here we&rsquo;re going to focus on their use for template parameters).
 A sample file, equivalent to arguments to <code>-P</code> in the above command
 line, might look like:</p>
 <pre><code>parameters:
@@ -374,7 +374,7 @@ values of your outputs &ndash; using the <code>stack-show</code> subcommand:</p>
 </code></pre>
 <p>(The output is a little too verbose to include here.)</p>
 <p>If you want more convenient access to the values of your outputs,
-you're going to have to either make direct use of the Heat <a href="http://api.openstack.org/api-ref-orchestration.html">REST
+you&rsquo;re going to have to either make direct use of the Heat <a href="http://api.openstack.org/api-ref-orchestration.html">REST
 API</a>, or wait for my <a href="https://review.openstack.org/#/c/60591/">proposed change</a> to the
 <a href="https://launchpad.net/python-heatclient">python-heatclient</a> package, which will add the <code>output-list</code> and
 <code>output-get</code> subcommands:</p>

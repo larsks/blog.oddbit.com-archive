@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Rate limiting made simple &middot; The Odd Bit</title>
-        <meta name="description" content="I use CrashPlan as a backup service. It works and is very simple to set up, but has limited options for controlling bandwidth. In fact, if you&#39;re running it on a headless system (e.g., a fileserver of some sort), your options are effectively &ldquo;too slow&rdquo; and &ldquo;CONSUME EVERYTHING&rdquo;. There is an open request to add time-based limitations to the application itself, but for now I&#39;ve solved this using a very simple traffic shaping configuration.">
+        <meta name="description" content="I use CrashPlan as a backup service. It works and is very simple to set up, but has limited options for controlling bandwidth. In fact, if you&rsquo;re running it on a headless system (e.g., a fileserver of some sort), your options are effectively &ldquo;too slow&rdquo; and &ldquo;CONSUME EVERYTHING&rdquo;. There is an open request to add time-based limitations to the application itself, but for now I&rsquo;ve solved this using a very simple traffic shaping configuration.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,12 +118,12 @@
     
 
     <p>I use <a href="http://www.crashplan.com/">CrashPlan</a> as a backup service. It works and is very simple to set
-up, but has limited options for controlling bandwidth. In fact, if you're
+up, but has limited options for controlling bandwidth. In fact, if you&rsquo;re
 running it on a headless system (e.g., a fileserver of some sort), your options
 are effectively &ldquo;too slow&rdquo; and &ldquo;CONSUME EVERYTHING&rdquo;. There is an <a href="https://crashplan.zendesk.com/entries/446273-throttle-bandwidth-by-hours?page=1#post_20799486">open
 request</a> to add time-based limitations to the application itself, but for
-now I've solved this using a very simple traffic shaping configuration.
-Because the learning curve for &ldquo;tc&rdquo; and friends is surprisingly high, I'm
+now I&rsquo;ve solved this using a very simple traffic shaping configuration.
+Because the learning curve for &ldquo;tc&rdquo; and friends is surprisingly high, I&rsquo;m
 putting <a href="https://gist.github.com/larsks/4014881">my script</a> here in the hopes
 that other people might find it useful, and so that I can find it when I need
 to do this again someday.</p>

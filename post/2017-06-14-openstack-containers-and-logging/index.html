@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>OpenStack, Containers, and Logging &middot; The Odd Bit</title>
-        <meta name="description" content="I&#39;ve been thinking about logging in the context of OpenStack and containerized service deployments. I&#39;d like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.
+        <meta name="description" content="I&rsquo;ve been thinking about logging in the context of OpenStack and containerized service deployments. I&rsquo;d like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.
 There are effectively three different mechanisms that an application can use to emit log messages:
  Via some logging-specific API, such as the legacy syslog API By writing a byte stream to stdout/stderr By writing a byte stream to a file  A substantial advantage to the first mechanism (using a logging API) is that the application is logging messages rather than bytes.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -119,7 +119,7 @@ There are effectively three different mechanisms that an application can use to 
 
     
 
-    <p>I've been thinking about logging in the context of OpenStack and containerized service deployments.  I'd like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.</p>
+    <p>I&rsquo;ve been thinking about logging in the context of OpenStack and containerized service deployments.  I&rsquo;d like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.</p>
 <p>There are effectively three different mechanisms that an application can use to emit log messages:</p>
 <ul>
 <li>Via some logging-specific API, such as the legacy syslog API</li>
@@ -129,10 +129,10 @@ There are effectively three different mechanisms that an application can use to 
 <p>A substantial advantage to the first mechanism (using a logging API) is that the application is logging <em>messages</em> rather than <em>bytes</em>.  This means that if you log a message containing embedded newlines (e.g., python or java tracebacks), you can collect that as a single message rather than having to impose some sort of structure on the byte stream after the fact in order to reconstruct those message.</p>
 <p>Another advantage to the use of a logging API is that whatever is receiving logs from your application may be able to annotate the message in various interesting ways.</p>
 <h2 id="requirements">Requirements</h2>
-<p>We're probably going to need to support all three of the above mechanisms.  Some applications (such as <code>haproxy</code>) will only log to syslog.  Others may only log to files (such as <code>mariadb</code>), and still others may only log to stdout.</p>
+<p>We&rsquo;re probably going to need to support all three of the above mechanisms.  Some applications (such as <code>haproxy</code>) will only log to syslog.  Others may only log to files (such as <code>mariadb</code>), and still others may only log to stdout.</p>
 <h2 id="comparing-different-log-mechanisms">Comparing different log mechanisms</h2>
 <h3 id="logging-via-syslog">Logging via syslog</h3>
-<p>In RHEL, the <code>journald</code> process is what listens to <code>/dev/log</code>.  If you bind mount journald's <code>/dev/log</code> inside a container and then run the following Python code inside that container&hellip;</p>
+<p>In RHEL, the <code>journald</code> process is what listens to <code>/dev/log</code>.  If you bind mount journald&rsquo;s <code>/dev/log</code> inside a container and then run the following Python code inside that container&hellip;</p>
 <pre><code>import logging
 import logging.handlers
 

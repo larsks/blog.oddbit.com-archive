@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -112,7 +112,7 @@
 
     
     <p class="post-stub-summary">
-    I've recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
+    I&rsquo;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
 I was fiddling around with this exercise, which uses the SoftwareServo library to control a servo. Using this library, you just pass it an angle and the library takes care of everything else, e.
     </p>
 
@@ -135,7 +135,7 @@ I was fiddling around with this exercise, which uses the SoftwareServo library t
 
     
     <p class="post-stub-summary">
-    I've been reading up on Puppet 3 lately, and came across the following:
+    I&rsquo;ve been reading up on Puppet 3 lately, and came across the following:
  XMLRPC was the new hotness when development on Puppet started. Now, XMLRPC is that horrible thing with the XML and the angle brackets and the pain and sad.
  (from http://somethingsinistral.net/blog/the-angry-guide-to-puppet-3/)
 &hellip;which also accurately sums up my feelings when I come across yet another piece of software where someone has decided that XML (or even JSON) is a good user-facing configuration syntax.
@@ -160,8 +160,8 @@ I was fiddling around with this exercise, which uses the SoftwareServo library t
 
     
     <p class="post-stub-summary">
-    In Fedora 17 there are still a number of services that either have not been ported over to systemd or that do not take full advantage of systemd. I've been investigating some IP failover solutions recently, including ucarp, which includes only a System-V style init script.
-I've created a template service for ucarp that will let you start a specific virtual ip like this:
+    In Fedora 17 there are still a number of services that either have not been ported over to systemd or that do not take full advantage of systemd. I&rsquo;ve been investigating some IP failover solutions recently, including ucarp, which includes only a System-V style init script.
+I&rsquo;ve created a template service for ucarp that will let you start a specific virtual ip like this:
 systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/vip-001.
     </p>
 
@@ -184,7 +184,7 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
 
     
     <p class="post-stub-summary">
-    I've been working with Arch Linux recently, which uses dhcpcd as its default DHCP agent. If you try booting Arch inside an LXC container, you will find that dhcpcd is unable to configure your network interfaces. Running it by hand you will first see the following error:
+    I&rsquo;ve been working with Arch Linux recently, which uses dhcpcd as its default DHCP agent. If you try booting Arch inside an LXC container, you will find that dhcpcd is unable to configure your network interfaces. Running it by hand you will first see the following error:
 # dhcpcd eth0 dhcpcd[492]: version 5.6.4 starting dhcpcd[492]: eth0: if_init: Read-only file system dhcpcd[492]: eth0: interface not found or invalid  This happens because dhcpcd is trying to modify a sysctl value.
     </p>
 
@@ -279,7 +279,7 @@ When you boot an LXC container, the console appears to be attached to a pts devi
     
     <p class="post-stub-summary">
     This is a followup to an earlier post about Arch Linux.
-I've since spent a little more time working with Arch, and these are the things I like:
+I&rsquo;ve since spent a little more time working with Arch, and these are the things I like:
   The base system is very small and has a very short boot time. I replaced Ubuntu on my old Eee PC with Arch and suddenly the boot time is reasonable (&lt; 10 seconds to a text prompt, &lt; 30 seconds to a full GUI login).
     </p>
 
@@ -302,8 +302,8 @@ I've since spent a little more time working with Arch, and these are the things 
 
     
     <p class="post-stub-summary">
-    I've been playing around with the LXC support in libvirt recently, and I'm trying to use a model where each LXC instance is backed by a dedicated LVM volume. This means that the process of starting an instance is:
- mount the instance root filesystem if necessary start the instance  It's annoying to have to do this by hand. I could simply add all the LXC filesystems to /etc/fstab, but this would mean and extra step when creating and deleting each instance.
+    I&rsquo;ve been playing around with the LXC support in libvirt recently, and I&rsquo;m trying to use a model where each LXC instance is backed by a dedicated LVM volume. This means that the process of starting an instance is:
+ mount the instance root filesystem if necessary start the instance  It&rsquo;s annoying to have to do this by hand. I could simply add all the LXC filesystems to /etc/fstab, but this would mean and extra step when creating and deleting each instance.
     </p>
 
     

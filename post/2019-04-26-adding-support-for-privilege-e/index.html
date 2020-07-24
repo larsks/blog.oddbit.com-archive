@@ -9,7 +9,7 @@
 --- - hosts: all gather_facts: false become: true tasks: - ping:  And an inventory like this:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -144,7 +144,7 @@
     server3:
       ansible_host: sudostuff_server3_1
 </code></pre>
-<p>And containers with <code>sudo</code> configured to require a password, Ansible would fail like this (note that I've configured Ansible to use the <code>debug</code> plugin for <code>stdout_callback</code>):</p>
+<p>And containers with <code>sudo</code> configured to require a password, Ansible would fail like this (note that I&rsquo;ve configured Ansible to use the <code>debug</code> plugin for <code>stdout_callback</code>):</p>
 <pre><code>fatal: [server1]: FAILED! =&gt; {
     &quot;changed&quot;: false,
     &quot;rc&quot;: 1
@@ -167,7 +167,7 @@ Administrator. It usually boils down to these three things:
     #3) With great power comes great responsibility.
 
 [sudo via ansible, key=rzrfiifcqoggklmehivtcrrlnnbphwbp] password:
-</code></pre><p>In the above output, you'll note that there are no actual errors, but unexpectedly we're seeing the privilege escalation prompt show up in the <code>stderr</code> of the command.  A quick search revealed bugs <a href="https://github.com/ansible/ansible/issues/31759">#31759</a> and <a href="https://github.com/ansible/ansible/issues/53385">#53385</a>, both of which confirm that privilege escalation simply doesn't work using the <code>docker</code> connection plugin.</p>
+</code></pre><p>In the above output, you&rsquo;ll note that there are no actual errors, but unexpectedly we&rsquo;re seeing the privilege escalation prompt show up in the <code>stderr</code> of the command.  A quick search revealed bugs <a href="https://github.com/ansible/ansible/issues/31759">#31759</a> and <a href="https://github.com/ansible/ansible/issues/53385">#53385</a>, both of which confirm that privilege escalation simply doesn&rsquo;t work using the <code>docker</code> connection plugin.</p>
 <h2 id="use-the-source-luke">Use the source, Luke</h2>
 <figure>
     <img src="/assets/2019/04/26/sausage.jpg"
@@ -176,7 +176,7 @@ Administrator. It usually boils down to these three things:
         </figcaption>
 </figure>
 
-<p>Looking at the source, I was surprised: while Ansible has individual plugins for different privilege escalation methods, it is entirely up to the individual connection plugin to implement the logic necessary to make use of these mechanisms. I had expected privilege escalation support to be implemented in the base connection plugin (<code>ConnectionBase</code> in <code>lib/ansible/plugins/connection/__init__.py</code>), but it's not.  So while the <a href="https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/connection/ssh.py">ssh plugin</a> has a fairly complex set of logic for handing the <code>become</code> prompt, and the <a href="https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/connection/local.py">local plugin</a> had a relatively simple solution, the <code>docker</code> connection had none.</p>
+<p>Looking at the source, I was surprised: while Ansible has individual plugins for different privilege escalation methods, it is entirely up to the individual connection plugin to implement the logic necessary to make use of these mechanisms. I had expected privilege escalation support to be implemented in the base connection plugin (<code>ConnectionBase</code> in <code>lib/ansible/plugins/connection/__init__.py</code>), but it&rsquo;s not.  So while the <a href="https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/connection/ssh.py">ssh plugin</a> has a fairly complex set of logic for handing the <code>become</code> prompt, and the <a href="https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/connection/local.py">local plugin</a> had a relatively simple solution, the <code>docker</code> connection had none.</p>
 <p>Fortunately, in many ways the <code>docker</code> plugin is almost identical to the <code>local</code> plugin, which means that rather than doing actual work I was able to largely cut-and-paste the privilege escalation support from the <code>local</code> plugin into the <code>docker</code> plugin.  You can find this work in pull request 
 <a href="https://github.com/ansible/ansible/pull/55816" class="pull-request">#55816</a>
 .</p>

@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Bootstrapping Ansible on Fedora 23 &middot; The Odd Bit</title>
-        <meta name="description" content="If you&#39;ve tried running Ansible against a Fedora 23 system, you may have run into the following problem:
+        <meta name="description" content="If you&rsquo;ve tried running Ansible against a Fedora 23 system, you may have run into the following problem:
 fatal: [myserver]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;failed&quot;: true, &quot;msg&quot;: &quot;/bin/sh: /usr/bin/python: No such file or directory\r\n&quot;, &quot;parsed&quot;: false}  Fedora has recently made the switch to only including Python 3 on the base system (at least for the cloud variant), while Ansible still requires Python 2. With Fedora 23, Python 3 is available as /usr/bin/python3, and /usr/bin/python is only available if you have installed the Python 2 interpreter.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,7 +118,7 @@ fatal: [myserver]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;failed&quot;
 
     
 
-    <p>If you've tried running <a href="http://ansible.com/">Ansible</a> against a <a href="http://fedoraproject.org/">Fedora</a> 23 system,
+    <p>If you&rsquo;ve tried running <a href="http://ansible.com/">Ansible</a> against a <a href="http://fedoraproject.org/">Fedora</a> 23 system,
 you may have run into the following problem:</p>
 <pre><code>fatal: [myserver]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;failed&quot;: true,
 &quot;msg&quot;: &quot;/bin/sh: /usr/bin/python: No such file or directory\r\n&quot;,
@@ -129,7 +129,7 @@ base system (at least for the <a href="https://getfedora.org/en/cloud/prerelease
 requires Python 2.  With Fedora 23, Python 3 is available as
 <code>/usr/bin/python3</code>, and <code>/usr/bin/python</code> is only available if you
 have installed the Python 2 interpreter.</p>
-<p>This is not an insurmountable problem; Ansible's <a href="http://docs.ansible.com/ansible/raw_module.html">raw</a> module can be
+<p>This is not an insurmountable problem; Ansible&rsquo;s <a href="http://docs.ansible.com/ansible/raw_module.html">raw</a> module can be
 used to run arbitrary commands on a remote host without requiring an
 installed Python interpreter.  This gives us everything we need to
 bootstrap the remote environment.</p>

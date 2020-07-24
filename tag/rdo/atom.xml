@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>rdo on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/rdo/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2016-02-19T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/rdo/</id>
-  
   <entry>
     <title>Deploying an HA OpenStack development environment with tripleo-quickstart
 </title>
@@ -58,9 +57,9 @@ If you have any questions about the presentation, please feel free to ping me on
     <id>https://blog.oddbit.com/post/2014-02-27-multinode/</id>
     <published>2014-02-27T00:00:00Z</published>
     <updated>2014-02-27T00:00:00Z</updated>
-    <summary type="html">I was the presenter for this morning&#39;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
+    <summary type="html">I was the presenter for this morning&amp;rsquo;s RDO hangout, where I ran through a simple demonstration of setting up a multinode OpenStack deployment using packstack.
 The slides are online here.
-Here&#39;s the video (also available on the event page):
+Here&amp;rsquo;s the video (also available on the event page):
  </summary>
   </entry>
   

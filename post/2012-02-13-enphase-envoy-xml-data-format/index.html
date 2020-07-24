@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Enphase Envoy XML Data Format &middot; The Odd Bit</title>
-        <meta name="description" content="We recently installed a (photovoltaic) solar array on our house. The system uses Enphase microinverters, and includes a monitoring device called the &ldquo;Envoy&quot;. The Envoy collects data from the microinverters and sends it back to Enphase. Enphase performs monitoring services for the array and also provides access to the data collected by the Envoy product.
-I&#39;m interested in getting direct access to the data provided by the Envoy. In pursuit of that goal, I set up a man-in-the-middle proxy server on my home network to intercept the communication from the Envoy to the Enphase servers.">
+        <meta name="description" content="We recently installed a (photovoltaic) solar array on our house. The system uses Enphase microinverters, and includes a monitoring device called the &ldquo;Envoy&rdquo;. The Envoy collects data from the microinverters and sends it back to Enphase. Enphase performs monitoring services for the array and also provides access to the data collected by the Envoy product.
+I&rsquo;m interested in getting direct access to the data provided by the Envoy. In pursuit of that goal, I set up a man-in-the-middle proxy server on my home network to intercept the communication from the Envoy to the Enphase servers.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,9 +118,9 @@ I&#39;m interested in getting direct access to the data provided by the Envoy. I
 
     
 
-    <p>We recently installed a (photovoltaic) solar array on our house.  The system uses <a href="http://enphase.com/">Enphase</a> microinverters, and includes a monitoring device called the &ldquo;<a href="http://enphase.com/products/envoy/">Envoy</a>&quot;.  The Envoy collects data from the microinverters and sends it back to Enphase.  Enphase performs monitoring services for the array and also provides access to the data collected by the Envoy product.</p>
-<p>I'm interested in getting direct access to the data provided by the Envoy.  In pursuit of that goal, I set up a man-in-the-middle proxy server on my home network to intercept the communication from the Envoy to the Enphase servers.  I'm documenting the results of my exploration here in case somebody else finds the information useful.</p>
-<p>The Envoy sends deflate-encoded XML data to the Enphase servers. You can decompress the data using Python's <code>zlib</code> module like this:</p>
+    <p>We recently installed a (photovoltaic) solar array on our house.  The system uses <a href="http://enphase.com/">Enphase</a> microinverters, and includes a monitoring device called the &ldquo;<a href="http://enphase.com/products/envoy/">Envoy</a>&rdquo;.  The Envoy collects data from the microinverters and sends it back to Enphase.  Enphase performs monitoring services for the array and also provides access to the data collected by the Envoy product.</p>
+<p>I&rsquo;m interested in getting direct access to the data provided by the Envoy.  In pursuit of that goal, I set up a man-in-the-middle proxy server on my home network to intercept the communication from the Envoy to the Enphase servers.  I&rsquo;m documenting the results of my exploration here in case somebody else finds the information useful.</p>
+<p>The Envoy sends deflate-encoded XML data to the Enphase servers. You can decompress the data using Python&rsquo;s <code>zlib</code> module like this:</p>
 <pre><code>import zlib
 xml_data = zlib.decompress(deflate_compressed_data)
 </code></pre>
@@ -314,7 +314,7 @@ Content-Type: application/x-deflate; charset=utf-8
   &lt;/events_processed&gt;
 &lt;/perf_report_response&gt;
 </code></pre>
-<p>My goal is to set up a simple proxy that in addition to passing the information along to Enphase will also collect it locally. I'll update the blog if I make progress on that front.</p>
+<p>My goal is to set up a simple proxy that in addition to passing the information along to Enphase will also collect it locally. I&rsquo;ll update the blog if I make progress on that front.</p>
 
 </div>
 

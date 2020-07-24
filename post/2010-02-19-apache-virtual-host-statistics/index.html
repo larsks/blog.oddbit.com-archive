@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Apache virtual host statistics &middot; The Odd Bit</title>
-        <meta name="description" content="As part of a project I&#39;m working on I wanted to get a rough idea of the activity of the Apache virtual hosts on the system. I wasn&#39;t able to find exactly what I wanted, so I refreshed my memory of curses to bring you vhoststats.
+        <meta name="description" content="As part of a project I&rsquo;m working on I wanted to get a rough idea of the activity of the Apache virtual hosts on the system. I wasn&rsquo;t able to find exactly what I wanted, so I refreshed my memory of curses to bring you vhoststats.
 This tools reads an Apache log file (with support for arbitrary formats) and generates a dynamic bar chart showing the activity (in number of requests and bytes transferred) of hosts on the system.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,7 +118,7 @@ This tools reads an Apache log file (with support for arbitrary formats) and gen
 
     
 
-    <p>As part of a project I'm working on I wanted to get a rough idea of the activity of the Apache virtual hosts on the system. I wasn't able to find exactly what I wanted, so I refreshed my memory of curses to bring you <em>vhoststats</em>.</p>
+    <p>As part of a project I&rsquo;m working on I wanted to get a rough idea of the activity of the Apache virtual hosts on the system. I wasn&rsquo;t able to find exactly what I wanted, so I refreshed my memory of curses to bring you <em>vhoststats</em>.</p>
 <p>This tools reads an Apache log file (with support for arbitrary formats) and generates a dynamic bar chart showing the activity (in number of requests and bytes transferred) of hosts on the system. The output might look something like this (but with colors):</p>
 <pre><code>[2010/02/19 20:21:32] Hosts: 7 [Displayed: 7] Requests: 104
 
@@ -136,7 +136,7 @@ www.google.com       [R:32        ]  #################################
                      [B:1566614   ]  ####################################
 </code></pre>
 <p>The tool keeps running totals over a five minute window, but you can change the window size on the command line. You can tail your active access log to see live results, or for a more exciting display you can just pipe in an existing log.</p>
-<p>It's not <a href="http://code.google.com/p/logstalgia/">pong</a>, but I've found it useful.</p>
+<p>It&rsquo;s not <a href="http://code.google.com/p/logstalgia/">pong</a>, but I&rsquo;ve found it useful.</p>
 <p>You can download the code from the <a href="http://github.com/larsks/vhoststats/">project page</a> on GitHub.</p>
 
 </div>

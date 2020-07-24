@@ -9,7 +9,7 @@
 avr-gcc -mmcu=atmega328p -DF_CPU=16000000 -Os -c blink.c  If you were to forget to set the device type when compiling your .">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -153,7 +153,7 @@ In file included from blink.c:1:0:
 <pre><code>$ avr-gcc -o blink.elf blink.o
 &lt;...silence...&gt;
 </code></pre>
-<p>So you would, perhaps, be surprised when you flash this to your device and it doesn't work.  If you take a look at the assembly generated for the above command, it looks like this:</p>
+<p>So you would, perhaps, be surprised when you flash this to your device and it doesn&rsquo;t work.  If you take a look at the assembly generated for the above command, it looks like this:</p>
 <pre><code>$ avr-objdump -d blink.elf
 blink.elf:     file format elf32-avr
 
@@ -265,8 +265,8 @@ Disassembly of section .text:
 000000ae &lt;__stop_program&gt;:
   ae:	ff cf       	rjmp	.-2      	; 0xae &lt;__stop_program&gt;
 </code></pre>
-<p>You can see that this code includes things like the jump table, without which your code won't run.</p>
-<p>The moral of this story is: don't forget to set the device type.</p>
+<p>You can see that this code includes things like the jump table, without which your code won&rsquo;t run.</p>
+<p>The moral of this story is: don&rsquo;t forget to set the device type.</p>
 
 </div>
 

@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>nova-docker and environment variables &middot; The Odd Bit</title>
-        <meta name="description" content="I&#39;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
+        <meta name="description" content="I&rsquo;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
 The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker containers instead of hypervisor-based servers. For certain workloads, this leads to better resource utilization than you would get with a hypervisor-based solution, while at the same time givin you better support for multi-tenancy and flexible networking than you get with Docker by itself.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,7 +118,7 @@ The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker co
 
     
 
-    <p>I've been playing with <a href="https://docker.com/">Docker</a> a bit recently, and decided to take
+    <p>I&rsquo;ve been playing with <a href="https://docker.com/">Docker</a> a bit recently, and decided to take
 a look at the <a href="https://github.com/stackforge/nova-docker">nova-docker</a> driver for <a href="http://openstack.org/">OpenStack</a>.</p>
 <p>The <code>nova-docker</code> driver lets Nova, the OpenStack Compute service,
 spawn Docker containers instead of hypervisor-based servers.  For
@@ -151,7 +151,7 @@ this:</p>
 <p>That is, the driver looks for metadata items that begin with <code>ENV_</code>
 and transforms these into Docker environment variables after stripping
 <code>ENV_</code> from the name.</p>
-<p>While this patch works great in my testing environment, it's unlikely
+<p>While this patch works great in my testing environment, it&rsquo;s unlikely
 to get accepted.  Generally, the metadata provided by Nova belongs to
 the tenant and is not meant to be operationally significant to the
 compute driver itself.</p>

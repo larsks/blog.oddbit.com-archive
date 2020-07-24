@@ -6,11 +6,11 @@
         <title>A passwordless serial console for your Raspberry Pi &middot; The Odd Bit</title>
         <meta name="description" content="legendre on #raspbian asked:
  How can i config rasp lite to open a shell on the serial uart on boot? Params are 1200-8-N-1 Dont want login running, just straight to sh
- In this article, we&#39;ll walk through one way of implementing this configuration.
+ In this article, we&rsquo;ll walk through one way of implementing this configuration.
 Activate the serial port Raspbian automatically starts a getty on the serial port if one is available. You should see an agetty process associated with your serial port when you run ps -ef.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -125,16 +125,16 @@ Activate the serial port Raspbian automatically starts a getty on the serial por
 <p>How can i config rasp lite to open a shell on the serial uart on boot? Params
 are 1200-8-N-1 Dont want login running, just straight to sh</p>
 </blockquote>
-<p>In this article, we'll walk through one way of implementing this configuration.</p>
+<p>In this article, we&rsquo;ll walk through one way of implementing this configuration.</p>
 <h2 id="activate-the-serial-port">Activate the serial port</h2>
 <p>Raspbian automatically starts a getty on the serial port if one is available. You should see an <code>agetty</code> process associated with your serial port when you run <code>ps -ef</code>. For example:</p>
 <pre><code>root@raspberrypi:/etc/systemd/system# ps -fe | grep agetty | grep ttyS0
 root      1138     1  0 00:24 ttyS0    00:00:00 /sbin/agetty -o -p -- \u --keep-baud 115200,38400,9600 ttyS0 vt220
-</code></pre><p>If you don't see this process and you're on a Raspberry Pi 3 (or later), you may need to <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=141195">explicitly enable the serial port</a> by adding <code>enable_uart=1</code> to <code>/boot/config.txt</code>. If you make this change, reboot your Pi before continuing, then repeat the above test to make sure things are working as expected.</p>
-<p>Note that your serial port may not always be named <code>ttyS0</code>. I'm going to use the value <code>ttyS0</code> throughout this article to represent the appropriate device name. The correct device name is the penultimate argument in the above <code>agetty</code> command.</p>
+</code></pre><p>If you don&rsquo;t see this process and you&rsquo;re on a Raspberry Pi 3 (or later), you may need to <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=141195">explicitly enable the serial port</a> by adding <code>enable_uart=1</code> to <code>/boot/config.txt</code>. If you make this change, reboot your Pi before continuing, then repeat the above test to make sure things are working as expected.</p>
+<p>Note that your serial port may not always be named <code>ttyS0</code>. I&rsquo;m going to use the value <code>ttyS0</code> throughout this article to represent the appropriate device name. The correct device name is the penultimate argument in the above <code>agetty</code> command.</p>
 <h2 id="modify-the-serial-gettyttys0-unit">Modify the serial-getty@ttyS0 unit</h2>
 <p>The <code>agetty</code> process we saw in the previous section is started by the <code>serial-getty@ttyS0.service</code> service unit (which is an instance of the <code>serial-getty@.service</code> <a href="https://fedoramagazine.org/systemd-template-unit-files/">template unit</a>). We need to modify that service so that it will call <code>agetty</code> with the <code>--autologin root</code> option.</p>
-<p>Rather than editing the unit file included in Raspbian, we're going to make the changes by creating a systemd &ldquo;drop-in&rdquo; configuration to override the stock service unit.  From the <a href="https://www.freedesktop.org/software/systemd/man/systemd.unit.html">systemd.unit man page</a>:</p>
+<p>Rather than editing the unit file included in Raspbian, we&rsquo;re going to make the changes by creating a systemd &ldquo;drop-in&rdquo; configuration to override the stock service unit.  From the <a href="https://www.freedesktop.org/software/systemd/man/systemd.unit.html">systemd.unit man page</a>:</p>
 <blockquote>
 <p>Along with a unit file foo.service, a &ldquo;drop-in&rdquo; directory foo.service.d/ may exist. All files with the suffix &ldquo;.conf&rdquo; from this directory will be parsed after the unit file itself is parsed. This is useful to alter or add configuration settings for a unit, without having to modify unit files.</p>
 </blockquote>
@@ -156,7 +156,7 @@ ExecStart=/sbin/agetty -o '-p -- \u' --keep-baud 115200,38400,9600 --noclear --a
 raspberrypi login: root (automatic login)
 
 Password:
-</code></pre><p>We need to configure things such that the <code>root</code> user does not require a password when logging on the serial console. We'll do this by modifying the <a href="http://www.linux-pam.org/">PAM</a> configuration for the <code>login</code> program.</p>
+</code></pre><p>We need to configure things such that the <code>root</code> user does not require a password when logging on the serial console. We&rsquo;ll do this by modifying the <a href="http://www.linux-pam.org/">PAM</a> configuration for the <code>login</code> program.</p>
 <p>Add the following to the top of <code>/etc/pam.d/login</code>:</p>
 <pre><code>auth sufficient pam_listfile.so item=tty sense=allow file=/etc/rootshelltty onerr=fail apply=root
 </code></pre><p>This configures <code>login</code> to permit a login for the <code>root</code> user if it finds the login tty in the file <code>/etc/rootshelltty</code>.</p>

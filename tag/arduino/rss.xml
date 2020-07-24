@@ -17,8 +17,8 @@
       <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2020-06-07-first-look-seed-grove-beginner/</guid>
-      <description>The folks at Seeed Studio were kind enough to send me a Grove Beginner Kit for Arduino for review. That&#39;s a mouthful of a name for a compact little kit!
-The Grove Beginner Kit for Arduino (henceforth &amp;ldquo;the Kit&amp;rdquo;, because ain&#39;t nobody got time to type that out more than a few times in a single article) is about 8.5 x 5 x 1 inches. Closed, you could fit two of them on a piece of 8.</description>
+      <description>The folks at Seeed Studio were kind enough to send me a Grove Beginner Kit for Arduino for review. That&amp;rsquo;s a mouthful of a name for a compact little kit!
+The Grove Beginner Kit for Arduino (henceforth &amp;ldquo;the Kit&amp;rdquo;, because ain&amp;rsquo;t nobody got time to type that out more than a few times in a single article) is about 8.5 x 5 x 1 inches. Closed, you could fit two of them on a piece of 8.</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@ The Grove Beginner Kit for Arduino (henceforth &amp;ldquo;the Kit&amp;rdquo;, be
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2020-04-15-grove-beginner-kit-for-arduino/</guid>
-      <description>The folks at Seeed Studio have just released the Grove Beginner Kit for Arduino, and they asked if I would be willing to take a look at it in exchange for a free kit. At first glance it reminds me of the Radio Shack (remember when they were cool?) electronics kit I had when I was a kid &amp;ndash; but somewhat more advanced. I&#39;m excited to take a closer look, but given shipping these days means it&#39;s probably a month away at least.</description>
+      <description>The folks at Seeed Studio have just released the Grove Beginner Kit for Arduino, and they asked if I would be willing to take a look at it in exchange for a free kit. At first glance it reminds me of the Radio Shack (remember when they were cool?) electronics kit I had when I was a kid &amp;ndash; but somewhat more advanced. I&amp;rsquo;m excited to take a closer look, but given shipping these days means it&amp;rsquo;s probably a month away at least.</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@ The Grove Beginner Kit for Arduino (henceforth &amp;ldquo;the Kit&amp;rdquo;, be
       <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2020-03-20-i-see-you-have-the-machine-tha/</guid>
-      <description>We&#39;re all looking for ways to keep ourselves occupied these days, and for me that means leaping at the chance to turn a small problem into a slightly ridiculous electronics project. For reasons that I won&#39;t go into here I wanted to generate an alert when a certain WiFi BSSID becomes visible. A simple solution to this problem would have been a few lines of shell script to send me an email&amp;hellip;but this article isn&#39;t about simple solutions!</description>
+      <description>We&amp;rsquo;re all looking for ways to keep ourselves occupied these days, and for me that means leaping at the chance to turn a small problem into a slightly ridiculous electronics project. For reasons that I won&amp;rsquo;t go into here I wanted to generate an alert when a certain WiFi BSSID becomes visible. A simple solution to this problem would have been a few lines of shell script to send me an email&amp;hellip;but this article isn&amp;rsquo;t about simple solutions!</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@ The Grove Beginner Kit for Arduino (henceforth &amp;ldquo;the Kit&amp;rdquo;, be
       <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</guid>
-      <description>I have a Raspberry Pi running RetroPie hooked up to a television. It&#39;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&#39;re pulling the plug on the Pi. While there haven&#39;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</description>
+      <description>I have a Raspberry Pi running RetroPie hooked up to a television. It&amp;rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&amp;rsquo;re pulling the plug on the Pi. While there haven&amp;rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@ The Grove Beginner Kit for Arduino (henceforth &amp;ldquo;the Kit&amp;rdquo;, be
       <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</guid>
-      <description>I&#39;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&#39;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
+      <description>I&amp;rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&amp;rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
 The design of the I2C bus is such that the only device driving a voltage on the bus is the master (in this case, the Raspberry Pi), via pull-up resistors.</description>
     </item>
     
@@ -64,7 +64,7 @@ The design of the I2C bus is such that the only device driving a voltage on the 
       <pubDate>Thu, 07 Mar 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2013-03-07-controlling-a-servo/</guid>
-      <description>I&#39;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
+      <description>I&amp;rsquo;ve recently started playing with an Arduino kit I purchased a year ago (and only just now got around to unboxing). I purchased the kit from SparkFun, and it includes a motley collection of resistors, LEDs, a motor, a servo, and more.
 I was fiddling around with this exercise, which uses the SoftwareServo library to control a servo. Using this library, you just pass it an angle and the library takes care of everything else, e.</description>
     </item>
     

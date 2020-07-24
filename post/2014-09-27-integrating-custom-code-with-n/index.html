@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Integrating custom code with Nova using hooks &middot; The Odd Bit</title>
-        <meta name="description" content="Would you like to run some custom Python code when Nova creates and destroys virtual instances on your compute hosts? This is possible using Nova&#39;s support for hooks, but the existing documentation is somewhat short on examples, so I&#39;ve spent some time trying to get things working.
+        <meta name="description" content="Would you like to run some custom Python code when Nova creates and destroys virtual instances on your compute hosts? This is possible using Nova&rsquo;s support for hooks, but the existing documentation is somewhat short on examples, so I&rsquo;ve spent some time trying to get things working.
 The demo_nova_hooks repository contains a working example of the techniques discussed in this article.
-What&#39;s a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to attach a class of your own design to a particular function or method call in Nova.">
+What&rsquo;s a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to attach a class of your own design to a particular function or method call in Nova.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -121,12 +121,12 @@ What&#39;s a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to a
 
     <p>Would you like to run some custom Python code when Nova creates and
 destroys virtual instances on your compute hosts?  This is possible
-using Nova's support for <a href="http://docs.openstack.org/developer/nova/devref/hooks.html">hooks</a>, but the existing documentation is
-somewhat short on examples, so I've spent some time trying to get
+using Nova&rsquo;s support for <a href="http://docs.openstack.org/developer/nova/devref/hooks.html">hooks</a>, but the existing documentation is
+somewhat short on examples, so I&rsquo;ve spent some time trying to get
 things working.</p>
 <p>The <a href="https://github.com/larsks/demo_nova_hooks">demo_nova_hooks</a> repository contains a working example of the
 techniques discussed in this article.</p>
-<h2 id="whats-a-hook">What's a hook?</h2>
+<h2 id="whats-a-hook">What&rsquo;s a hook?</h2>
 <p>A Nova &ldquo;hook&rdquo; is a mechanism that allows you to attach a class of your
 own design to a particular function or method call in Nova.  Your
 class should define a <code>pre</code> method (that will be called before the
@@ -161,7 +161,7 @@ corresponding <code>setup.py</code> file:</p>
 <li><code>delete_instances</code></li>
 <li><code>instance_network_info</code></li>
 </ul>
-<h3 id="create-instance">create_instance</h3>
+<h3 id="create_instance">create_instance</h3>
 <p>The <code>create_instance</code> hook is attached to the Nova API <code>create</code>
 function, and will receive the following arguments:</p>
 <pre><code>def create(self, context, instance_type,
@@ -200,7 +200,7 @@ an image UUID.</p>
  'vcpus': 1L}
 </code></pre>
 <p>&hellip;corresponding to the <code>m1.small</code> flavor on my system.</p>
-<h3 id="delete-instance">delete_instance</h3>
+<h3 id="delete_instance">delete_instance</h3>
 <p>The <code>delete_instance</code> hook is attached to the <code>_delete_instance</code>
 method in the <code>nova.compute.manager.ComputeManager</code> class, which is
 called whenever Nova needs to delete an instance.  The hook will
@@ -216,7 +216,7 @@ receive the following arguments:</p>
 object, and</li>
 <li><code>quotas</code> is a <code>nova.objects.quotas.Quotas</code> object</li>
 </ul>
-<h3 id="instance-network-info">instance_network_info</h3>
+<h3 id="instance_network_info">instance_network_info</h3>
 <p>The <code>instance_network_info</code> hook is attached to the
 <code>update_instance_cache_with_nw_info</code> function in
 <code>nova.network.base_api.py</code>.  The hook will receive the following

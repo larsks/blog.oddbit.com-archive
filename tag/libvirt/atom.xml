@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>libvirt on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/libvirt/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2013-10-04T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/libvirt/</id>
-  
   <entry>
     <title>Automatic hostname entries for libvirt domains</title>
     <author>

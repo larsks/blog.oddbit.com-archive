@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>gps on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/gps/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2010-02-07T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/gps/</id>
-  
   <entry>
     <title>MBTA realtime XML feed</title>
     <author>

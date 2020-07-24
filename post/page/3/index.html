@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -137,7 +137,7 @@ avr-gcc -mmcu=atmega328p -DF_CPU=16000000 -Os -c blink.c  If you were to forget 
     
     <p class="post-stub-summary">
     The AVR C library, avr-libc, provide an ATOMIC_BLOCK macro that you can use to wrap critical sections of your code to ensure that interrupts are disabled while the code executes. At high level, the ATOMIC_BLOCK macro (when called using ATOMIC_FORCEON) does something like this:
-cli(); ...your code here... seti();  But it's more than that. If you read the documentation for the macro, it says:
+cli(); ...your code here... seti();  But it&rsquo;s more than that. If you read the documentation for the macro, it says:
  Creates a block of code that is guaranteed to be executed atomically.
     </p>
 
@@ -161,7 +161,7 @@ cli(); ...your code here... seti();  But it's more than that. If you read the do
     
     <p class="post-stub-summary">
     How big is an enum? I noticed something odd while browsing through the assembly output of some AVR C code I wrote recently. In the code, I have the following expression:
-int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn't want to clutter this post with unnecessary code listings):
+int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&rsquo;t want to clutter this post with unnecessary code listings):
     </p>
 
     
@@ -185,7 +185,7 @@ int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is 
     <p class="post-stub-summary">
     Pssst! Hey&hellip;hey, buddy, wanna get an extra KB for cheap?
 When I write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
-Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that's exactly what I did.
+Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&rsquo;s exactly what I did.
     </p>
 
     
@@ -208,7 +208,7 @@ Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)
     
     <p class="post-stub-summary">
     In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
-I've split this into three posts:
+I&rsquo;ve split this into three posts:
     </p>
 
     
@@ -286,7 +286,7 @@ Using simavr to collect information about the state of microcontroller pins whil
 
     
     <p class="post-stub-summary">
-    I have a Raspberry Pi running RetroPie hooked up to a television. It's powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we're pulling the plug on the Pi. While there haven't been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.
+    I have a Raspberry Pi running RetroPie hooked up to a television. It&rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&rsquo;re pulling the plug on the Pi. While there haven&rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.
     </p>
 
     
@@ -308,8 +308,8 @@ Using simavr to collect information about the state of microcontroller pins whil
 
     
     <p class="post-stub-summary">
-    Bitwarden is a password management service (like LastPass or 1Password). It's unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.
-At $WORK(-ish) we're looking into Bitwarden because we want a password sharing and management solution that was better than dropping files into directories on remote hosts or sharing things over Slack.
+    Bitwarden is a password management service (like LastPass or 1Password). It&rsquo;s unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.
+At $WORK(-ish) we&rsquo;re looking into Bitwarden because we want a password sharing and management solution that was better than dropping files into directories on remote hosts or sharing things over Slack.
     </p>
 
     

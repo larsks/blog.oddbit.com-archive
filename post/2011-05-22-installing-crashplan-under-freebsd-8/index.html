@@ -8,7 +8,7 @@
 Install Java I had originally thought that it might be possible to run the CrashPlan client &ldquo;natively&rdquo; under FreeBSD. CrashPlan is a Java application, so this seemed like a possible solution. Unfortunately, Java under FreeBSD 8 seems to be a lost cause.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -122,8 +122,8 @@ Install Java I had originally thought that it might be possible to run the Crash
 <h1 id="install-java">Install Java</h1>
 <p>I had originally thought that it might be possible to run the CrashPlan client &ldquo;natively&rdquo; under FreeBSD. CrashPlan is a Java application, so this seemed like a possible solution. Unfortunately, Java under FreeBSD 8 seems to be a lost cause. I finally gave up and just installed Java under Linux.</p>
 <h2 id="set-up-your-linux-compatability-environment">Set up your Linux compatability environment</h2>
-<p>The simplest way to do this is to follow the instructions in the <a href="http://www.freebsd.org/doc/handbook/linuxemu-lbc-install.html">FreeBSD Handbook</a>. This will get you a Fedora 10 based Linux userspace, which should be more than sufficient. I'm using a CentOS 5.6 userspace, but for what we're doing it shouldn't matter, modulo some minor differences in paths.</p>
-<p>Note that Linux software running in this environment will have a modified view of your filesystem. In particular, /etc will map to /compat/linux/etc, and ZFS filesystems with non-default mountpoints seem to behave oddly (they are accessible, but not necessarily visible before you access them). This may require some workarounds in CrashPlan, depending on what you're trying to back up.</p>
+<p>The simplest way to do this is to follow the instructions in the <a href="http://www.freebsd.org/doc/handbook/linuxemu-lbc-install.html">FreeBSD Handbook</a>. This will get you a Fedora 10 based Linux userspace, which should be more than sufficient. I&rsquo;m using a CentOS 5.6 userspace, but for what we&rsquo;re doing it shouldn&rsquo;t matter, modulo some minor differences in paths.</p>
+<p>Note that Linux software running in this environment will have a modified view of your filesystem. In particular, /etc will map to /compat/linux/etc, and ZFS filesystems with non-default mountpoints seem to behave oddly (they are accessible, but not necessarily visible before you access them). This may require some workarounds in CrashPlan, depending on what you&rsquo;re trying to back up.</p>
 <h2 id="install-java-jre">Install Java JRE</h2>
 <p>I installed a compatible Java environment from the CentOS package repository:</p>
 <pre><code># chroot /compat/linux bash
@@ -148,7 +148,7 @@ bash-3.2# exit
 <h1 id="compatlinuxbinbash-installsh">/compat/linux/bin/bash install.sh</h1>
 </li>
 <li>
-<p>Install CrashPlan into /usr/local. When prompted for where to locate init scripts (&ldquo;What directory contains your SYSV init scripts?&rdquo; and &ldquo;What directory contains your runlevel init links?&quot;), enter /tmp (because the installed init scripts aren't ideal for your FreeBSD environment &ndash; we'll install our own later on).</p>
+<p>Install CrashPlan into /usr/local. When prompted for where to locate init scripts (&ldquo;What directory contains your SYSV init scripts?&rdquo; and &ldquo;What directory contains your runlevel init links?&quot;), enter /tmp (because the installed init scripts aren&rsquo;t ideal for your FreeBSD environment &ndash; we&rsquo;ll install our own later on).</p>
 </li>
 </ul>
 <h2 id="fix-java">Fix Java</h2>

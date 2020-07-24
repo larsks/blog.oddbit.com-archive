@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>active_directory on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/active_directory/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2010-06-29T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/active_directory/</id>
-  
   <entry>
     <title>Kerberos authenticated queries to Active Directory</title>
     <author>
@@ -31,7 +30,7 @@
     <id>https://blog.oddbit.com/post/2010-02-16-merging-directories-with-openldap-meta/</id>
     <published>2010-02-16T00:00:00Z</published>
     <updated>2010-02-16T00:00:00Z</updated>
-    <summary type="html">This document provides an example of using OpenLDAP&#39;s meta backend to provide a unified view of two distinct LDAP directory trees. I was frustrated by the lack of simple examples available when I went looking for information on this topic, so this is my attempt to make life easier for the next person looking to do the same thing.
+    <summary type="html">This document provides an example of using OpenLDAP&amp;rsquo;s meta backend to provide a unified view of two distinct LDAP directory trees. I was frustrated by the lack of simple examples available when I went looking for information on this topic, so this is my attempt to make life easier for the next person looking to do the same thing.
 The particular use case that motiviated my interest in this topic was the need to configure web applications to (a) authenticate against an existing Active Directory server while (b) also allowing new accounts to be provisioned quickly and without granting any access in the AD environment.</summary>
   </entry>
   

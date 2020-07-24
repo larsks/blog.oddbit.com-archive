@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Puppet, scope, and inheritance &middot; The Odd Bit</title>
-        <meta name="description" content="I note this here because it wasn&#39;t apparent to me from the Puppet documentation.
+        <meta name="description" content="I note this here because it wasn&rsquo;t apparent to me from the Puppet documentation.
 If you have a Puppet class like this:
 class foo { File { ensure =&gt; file, mode =&gt; 600, } }  And you use it like this:
 class bar { include foo file { &#39;/tmp/myfile&#39;: } }  Then /tmp/myfile will not be created. But if instead you do this:
 class bar inherits foo { file { &#39;/tmp/myfile&#39;: } }  It will be created with mode 0600.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -121,7 +121,7 @@ class bar inherits foo { file { &#39;/tmp/myfile&#39;: } }  It will be created w
 
     
 
-    <p>I note this here because it wasn't apparent to me from the Puppet documentation.</p>
+    <p>I note this here because it wasn&rsquo;t apparent to me from the Puppet documentation.</p>
 <p>If you have a Puppet class like this:</p>
 <pre><code>class foo {
   File {  ensure  =&gt; file,

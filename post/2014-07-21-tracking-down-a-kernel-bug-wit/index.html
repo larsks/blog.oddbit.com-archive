@@ -9,7 +9,7 @@ $ docker run -ti fedora /bin/bash bash-4.2# su -c &#39;uptime&#39; su: System er
 Jul 19 14:31:18 su: PAM audit_log_acct_message() failed: Operation not permitted  Downgrading the kernel to 3.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -142,7 +142,7 @@ commits, which seemed like a large space to search by hand.</p>
 <p>Fortunately, <code>git bisect</code> can be easily automated via <code>git bisect run</code>
 subcommand, which after checking out a commit will run a script to
 determine if the current commit is &ldquo;good&rdquo; or &ldquo;bad&rdquo;.  So all I have to
-do is write a script&hellip;that's not so bad!</p>
+do is write a script&hellip;that&rsquo;s not so bad!</p>
 <figure>
     <img src="/assets/ha-ha.jpg" width="300"/> 
 </figure>
@@ -270,7 +270,7 @@ Generating &quot;/run/initramfs/rdsosreport.txt&quot;
 Entering emergency mode. Exit the shell to continue.
 </code></pre>
 <p>The what now?  <code>/dev/ssd/root</code> is the root device for my host system,
-but wasn't anywhere in the kernel command line I used when booting
+but wasn&rsquo;t anywhere in the kernel command line I used when booting
 qemu.  It turns out that this was embedded in the initrd image in
 <code>/etc/cmdline.d/90lvm.conf</code>.  After removing that file from the
 image&hellip;</p>
@@ -323,7 +323,7 @@ sh /root/docker-test
 cause the image to boot up, run the docker test, and then exit.</p>
 <h2 id="running-git-bisect">Running git-bisect</h2>
 <p>At this point we have just about everything we need to start running
-<code>git bisect</code>.  For the initial run, I'm going to use git tag <code>v3.14</code>
+<code>git bisect</code>.  For the initial run, I&rsquo;m going to use git tag <code>v3.14</code>
 as the &ldquo;known good&rdquo; commit and <code>v3.15</code> as the &ldquo;known bad&rdquo; commit, so
 we start <code>git bisect</code> like this:</p>
 <pre><code>$ git bisect start v3.15 v3.14
@@ -347,7 +347,7 @@ else
   exit 1
 fi
 </code></pre>
-<p>&hellip;and then we go out for a cup of coffee or something, because that's
+<p>&hellip;and then we go out for a cup of coffee or something, because that&rsquo;s
 going to take a while.</p>
 <h2 id="keep-digging-watson">Keep digging, Watson</h2>
 <p>The initial run of <code>git bisect</code> narrowed the change down to the
@@ -442,8 +442,8 @@ git bisect bad 33faba7fa7f2288d2f8aaea95958b2c97bf9ebfb
 # first bad commit: [33faba7fa7f2288d2f8aaea95958b2c97bf9ebfb] audit: listen in all network namespaces
 </code></pre>
 <p>The commit found by <code>git bisect</code> seems like a reasonable candidate;
-it's a patch against the audit subsystem and has something to do with
-namespaces, which are central to Docker's proper operation.</p>
+it&rsquo;s a patch against the audit subsystem and has something to do with
+namespaces, which are central to Docker&rsquo;s proper operation.</p>
 <h2 id="debugging-the-problem">Debugging the problem</h2>
 <p>We can boot the kernel built from 33faba7 with the <code>boot-kernel</code>
 script, adding the <code>-s</code> argument to qemu to start a <code>gdbserver</code> on
@@ -454,10 +454,10 @@ port <code>1234</code>:</p>
 <p>A caveat about attaching to qemu with gdb: qemu has a <code>-S</code> option
 that will cause the virtual machine to halt at startup, such that
 you can attach before it starts booting and &ndash; in theory &ndash; set
-breakpoints in the early boot process.  In practice this doesn't
+breakpoints in the early boot process.  In practice this doesn&rsquo;t
 work well at all (possibly because the vm switches from 32- to
 64-bit operation during the boot process, which makes gdb unhappy).
-You're better off attaching after the kernel has booted.</p>
+You&rsquo;re better off attaching after the kernel has booted.</p>
 </blockquote>
 <p>In another window, we attach <code>gdb</code> to the running <code>qemu</code> process:</p>
 <pre><code>$ gdb vmlinux
@@ -468,7 +468,7 @@ native_safe_halt () at /home/lars/src/linux/arch/x86/include/asm/irqflags.h:50
 50	}
 (gdb) 
 </code></pre>
-<p>I know we're getting the <code>EPERM</code> in response to sending audit
+<p>I know we&rsquo;re getting the <code>EPERM</code> in response to sending audit
 messages.  Looking through the code in <code>kernel/audit.c</code>, the
 <code>audit_receive_msg</code> seems like a reasonable place to start poking
 about.  At the beginning of <code>audit_receive_msg</code>, I see the following
@@ -477,7 +477,7 @@ code:</p>
 if (err)
   return err;
 </code></pre>
-<p>So let's set a breakpoint there if <code>audit_netlink_ok()</code> returns an
+<p>So let&rsquo;s set a breakpoint there if <code>audit_netlink_ok()</code> returns an
 error:</p>
 <pre><code>(gdb) br kernel/audit.c:752 if (err != 0)
 </code></pre>
@@ -497,10 +497,10 @@ Continuing.
 <pre><code>(gdb) print err
 $1 = -1
 </code></pre>
-<p>That it is, in fact, <code>-EPERM</code>, which suggests we're on the right
-track.  Taking a closer look at <code>audit_netlink_ok()</code>, it's obvious
+<p>That it is, in fact, <code>-EPERM</code>, which suggests we&rsquo;re on the right
+track.  Taking a closer look at <code>audit_netlink_ok()</code>, it&rsquo;s obvious
 that there are only three places where it can return <code>-EPERM</code>.  I
-tried setting some breakpoint in this function but they weren't
+tried setting some breakpoint in this function but they weren&rsquo;t
 working correctly, probably due to to optimizations performed when
 compiling the kernel.  So instead of <code>gdb</code>, in this step we just add a
 bunch of <code>pr_err()</code> statements to print out debugging information on
@@ -535,8 +535,8 @@ case AUDIT_FIRST_USER_MSG2 ... AUDIT_LAST_USER_MSG2:
 <pre><code>[   12.239860] currnet_user_ns() check failed
 su: System error
 </code></pre>
-<p>It looks like we've found out where it's failing!  Of course, we're
-checking code right now that is several commits behind v3.15, so let's
+<p>It looks like we&rsquo;ve found out where it&rsquo;s failing!  Of course, we&rsquo;re
+checking code right now that is several commits behind v3.15, so let&rsquo;s
 take a look the same function in the 3.15 release:</p>
 <pre><code>$ git checkout v3.15
 </code></pre>
@@ -556,7 +556,7 @@ initial check has changed:</p>
     if (current_user_ns() != &amp;init_user_ns)
             return -ECONNREFUSED;
 </code></pre>
-<p>So let's insert our print statements into this version of the code and
+<p>So let&rsquo;s insert our print statements into this version of the code and
 see if we get the same behavior:</p>
 <pre><code>if (current_user_ns() != &amp;init_user_ns) {
   pr_err(&quot;current_user-ns() check failed\n&quot;);
@@ -595,9 +595,9 @@ case AUDIT_FIRST_USER_MSG2 ... AUDIT_LAST_USER_MSG2:
 su: System error
 </code></pre>
 <p>So it looks like the intial failure in <code>audit_netlink_ok()</code> was fixed,
-but we're stilling failing the <code>CAP_AUDIT_WRITE</code> check.</p>
+but we&rsquo;re stilling failing the <code>CAP_AUDIT_WRITE</code> check.</p>
 <h3 id="summary">Summary</h3>
-<p>What's going on here?</p>
+<p>What&rsquo;s going on here?</p>
 <p>Prior to <a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=33faba7">33faba7</a>, audit messages were only accepted in the main
 network namespace.  Inside other network namespaces, processes sending
 audit messages would simply receive <code>ECONNREFUSED</code>.  For example, this

@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>malloc on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/malloc/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2019-01-28T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/malloc/</id>
-  
   <entry>
     <title>AVR micro-optimization: Losing malloc</title>
     <author>
@@ -20,7 +19,7 @@
     <updated>2019-01-28T00:00:00Z</updated>
     <summary type="html">Pssst! Hey&amp;hellip;hey, buddy, wanna get an extra KB for cheap?
 When I write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
-Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&#39;s exactly what I did.</summary>
+Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&amp;rsquo;s exactly what I did.</summary>
   </entry>
   
 </feed>

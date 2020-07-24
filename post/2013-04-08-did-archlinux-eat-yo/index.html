@@ -7,7 +7,7 @@
         <meta name="description" content="A recent update to Arch Linux replaced the qemu-kvm package with an updated version of qemu. A side effect of this change is that the qemu-kvm binary is no longer available, and any libvirt guests on your system utilizing that binary will no longer operate. As is typical with Arch, there is no announcement about this incompatible change, and queries to #archlinux will be met with the knowledge, grace and decorum you would expect of that channel:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -131,10 +131,10 @@ grace and decorum you would expect of that channel:</p>
 emulator, and typically looks something like this:</p>
 <pre><code>&lt;emulator&gt;/usr/bin/qemu-kvm&lt;/emulator&gt;
 </code></pre>
-<p>In order to get your guests working again after the upgrade you'll
+<p>In order to get your guests working again after the upgrade you&rsquo;ll
 need to replace this path with an appropriate selection from one of
 the other binaries provided by the <code>qemu</code> package, which include
-<code>qemu-system-i386</code> and <code>qemu-system-x86_64</code>.  You'll want to select
+<code>qemu-system-i386</code> and <code>qemu-system-x86_64</code>.  You&rsquo;ll want to select
 the one appropriate for your <em>guest</em> architecture.  You can do this
 manually running <code>virsh edit</code> for each affected guest, but if you have
 more than a couple that rapidly becomes annoying.</p>
@@ -160,7 +160,7 @@ extracting the <code>arch</code> attribute of the <code>domain/os/type</code> el
 
 &lt;/xsl:stylesheet&gt;
 </code></pre>
-<p>We're going to apply this to all of our (inactive) guests via the
+<p>We&rsquo;re going to apply this to all of our (inactive) guests via the
 <code>virsh edit</code> subcommand.  This command runs an editor (selected based
 on your <code>VISUAL</code> or <code>EDITOR</code> environment variables) on your domain
 XML.  We need to create an &ldquo;editor&rdquo; that will apply the above

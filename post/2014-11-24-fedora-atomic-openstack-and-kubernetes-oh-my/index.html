@@ -8,7 +8,7 @@
 Like many other cloud-targeted distributions, Fedora Atomic runs cloud-init when the system boots. We can take advantage of this to configure the system at first boot by providing a user-data blob to Nova when we boot the instance.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -128,9 +128,9 @@ on the Atomic host.  This post describes my solution.</p>
 to configure the system at first boot by providing a <code>user-data</code> blob
 to Nova when we boot the instance.  A <code>user-data</code> blob can be as
 simple as a shell script, and while we could arguably mash everything
-into a single script it wouldn't be particularly maintainable or
+into a single script it wouldn&rsquo;t be particularly maintainable or
 flexible in the face of different pod/service/etc descriptions.</p>
-<p>In order to build a more flexible solution, we're going to take
+<p>In order to build a more flexible solution, we&rsquo;re going to take
 advantage of the following features:</p>
 <ul>
 <li>
@@ -200,7 +200,7 @@ providing the generated <code>userdata</code> file as an argument to the
 <code>--key-name</code> that are appropriate for your environment.</p>
 <h2 id="details-details">Details, details</h2>
 <p>If you are experimenting with Fedora Atomic 21, you may find out that
-the above example doesn't work &ndash; the official <code>mysql</code> image generates
+the above example doesn&rsquo;t work &ndash; the official <code>mysql</code> image generates
 an selinux error.  We can switch selinux to permissive mode by putting
 the following into a file called <code>disable-selinux.sh</code>:</p>
 <pre><code>#!/bin/sh

@@ -17,8 +17,8 @@
       <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/</guid>
-      <description>In this article, we will look at what is necessary to run OpenStack&#39;s Keystone service (and the requisite database server) in containers using Docker Compose.
-Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&#39;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:</description>
+      <description>In this article, we will look at what is necessary to run OpenStack&amp;rsquo;s Keystone service (and the requisite database server) in containers using Docker Compose.
+Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&amp;rsquo;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:</description>
     </item>
     
     <item>
@@ -27,8 +27,8 @@ Running MariaDB The standard mariadb docker image can be configured via a number
       <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/</guid>
-      <description>A common problem for folks working with Docker is accessing resources which require authentication during the image build step. A particularly common use case is getting access to private git repositories using ssh key-based authentication. Until recently there hasn&#39;t been a great solution:
- you can embed secrets in your image, but now you can&#39;t share the image with anybody. you can use build arguments, but this requires passing in an unenecrypted private key on the docker build command line, which is suboptimal for a number of reasons you can perform all the steps requiring authentication at runtime, but this can needlessly complicate your container startup process.</description>
+      <description>A common problem for folks working with Docker is accessing resources which require authentication during the image build step. A particularly common use case is getting access to private git repositories using ssh key-based authentication. Until recently there hasn&amp;rsquo;t been a great solution:
+ you can embed secrets in your image, but now you can&amp;rsquo;t share the image with anybody. you can use build arguments, but this requires passing in an unenecrypted private key on the docker build command line, which is suboptimal for a number of reasons you can perform all the steps requiring authentication at runtime, but this can needlessly complicate your container startup process.</description>
     </item>
     
     <item>
@@ -46,7 +46,7 @@ Running MariaDB The standard mariadb docker image can be configured via a number
       <pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/</guid>
-      <description>As the release of Ansible 2.0 draws closer, I&#39;d like to take a look at some of the new features that are coming down the pipe. In this post, we&#39;ll look at the docker connection driver.
+      <description>As the release of Ansible 2.0 draws closer, I&amp;rsquo;d like to take a look at some of the new features that are coming down the pipe. In this post, we&amp;rsquo;ll look at the docker connection driver.
 A &amp;ldquo;connection driver&amp;rdquo; is the mechanism by which Ansible connects to your target hosts. These days it uses ssh by default (which relies on the OpenSSH command line client for connectivity), and it also offers the Paramiko library as an alternative ssh implementation (this was in fact the default driver in earlier versions of Ansible).</description>
     </item>
     
@@ -56,8 +56,8 @@ A &amp;ldquo;connection driver&amp;rdquo; is the mechanism by which Ansible conn
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/</guid>
-      <description>Someone asked on IRC about running ntpd in a container on Atomic, so I&#39;ve put together a small example. We&#39;ll start with a very simple Dockerfile:
-FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&amp;quot;ntpd&amp;quot;]  I&#39;m using the alpine image as my starting point because it&#39;s very small, which makes this whole process go a little faster. I&#39;m installing the openntpd package, which provides the ntpd binary.</description>
+      <description>Someone asked on IRC about running ntpd in a container on Atomic, so I&amp;rsquo;ve put together a small example. We&amp;rsquo;ll start with a very simple Dockerfile:
+FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&amp;quot;ntpd&amp;quot;]  I&amp;rsquo;m using the alpine image as my starting point because it&amp;rsquo;s very small, which makes this whole process go a little faster. I&amp;rsquo;m installing the openntpd package, which provides the ntpd binary.</description>
     </item>
     
     <item>
@@ -66,8 +66,8 @@ FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&amp;quot;ntpd&amp;q
       <pubDate>Fri, 19 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</guid>
-      <description>Next week is the Red Hat Summit in Boston, and I&#39;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
-As part of that presentation, I&#39;ve put together a short demonstration video:
+      <description>Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
+As part of that presentation, I&amp;rsquo;ve put together a short demonstration video:
  This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</description>
     </item>
     
@@ -98,8 +98,8 @@ I wanted to read routing information directly from /proc/net/route using bash, b
       <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2015-02-13-unpacking-docker-images/</guid>
-      <description>In some ways, the most exciting thing about Docker isn&#39;t the ability to start containers. That&#39;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
-I was taking a closer at the systemd-nspawn command, which it seems has been developing it&#39;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.</description>
+      <description>In some ways, the most exciting thing about Docker isn&amp;rsquo;t the ability to start containers. That&amp;rsquo;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
+I was taking a closer at the systemd-nspawn command, which it seems has been developing it&amp;rsquo;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.</description>
     </item>
     
     <item>
@@ -109,8 +109,8 @@ I was taking a closer at the systemd-nspawn command, which it seems has been dev
       
       <guid>https://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/</guid>
       <description>This is a long-form response to this question, and describes how to get the nova-docker driver up running with devstack under Ubuntu 14.04 (Trusty). I wrote a similar post for Fedora 21, although that one was using the RDO Juno packages, while this one is using devstack and the upstream sources.
-Getting started We&#39;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
-First, let&#39;s install a few prerequisites:</description>
+Getting started We&amp;rsquo;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
+First, let&amp;rsquo;s install a few prerequisites:</description>
     </item>
     
     <item>
@@ -130,8 +130,8 @@ First, let&#39;s install a few prerequisites:</description>
       
       <guid>https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</guid>
       <description>This post comes about indirectly by a request on IRC in #rdo for help getting nova-docker installed on Fedora 21. I ran through the process from start to finish and decided to write everything down for posterity.
-Getting started I started with the Fedora 21 Cloud Image, because I&#39;m installing onto OpenStack and the cloud images include some features that are useful in this environment.
-We&#39;ll be using OpenStack packages from the RDO Juno repository.</description>
+Getting started I started with the Fedora 21 Cloud Image, because I&amp;rsquo;m installing onto OpenStack and the cloud images include some features that are useful in this environment.
+We&amp;rsquo;ll be using OpenStack packages from the RDO Juno repository.</description>
     </item>
     
     <item>
@@ -140,7 +140,7 @@ We&#39;ll be using OpenStack packages from the RDO Juno repository.</description
       <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/</guid>
-      <description>In this post, we&#39;ll look at a method for building minimal Docker images for dynamically linked ELF binaries, and then at a tool for automating this process.
+      <description>In this post, we&amp;rsquo;ll look at a method for building minimal Docker images for dynamically linked ELF binaries, and then at a tool for automating this process.
 It is tempting, when creating a simple Docker image, to start with one of the images provided by the major distributions. For example, if you need an image that provides tcpdump for use on your Atomic host, you might do something like:
 FROM fedora RUN yum -y install tcpdump  And while this will work, you end up consuming 250MB for tcpdump.</description>
     </item>
@@ -161,7 +161,7 @@ The PrivateTmp directive, if true, &amp;ldquo;sets up a new file system namespac
       <pubDate>Sat, 17 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</guid>
-      <description>I regularly use OpenStack on my laptop with libvirt as my hypervisor. I was interested in experimenting with recent versions of the nova-docker driver, but I didn&#39;t have a spare system available on which to run the driver, and I use my regular nova-compute service often enough that I didn&#39;t want to simply disable it temporarily in favor of nova-docker.
+      <description>I regularly use OpenStack on my laptop with libvirt as my hypervisor. I was interested in experimenting with recent versions of the nova-docker driver, but I didn&amp;rsquo;t have a spare system available on which to run the driver, and I use my regular nova-compute service often enough that I didn&amp;rsquo;t want to simply disable it temporarily in favor of nova-docker.
  NB As pointed out by gustavo in the comments, running two neutron-openvswitch-agents on the same host &amp;ndash; as suggested in this article &amp;ndash; is going to lead to nothing but sadness and doom.</description>
     </item>
     
@@ -181,7 +181,7 @@ Building thttpd My go-to minimal webserver is thttpd.</description>
       <pubDate>Wed, 22 Oct 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/</guid>
-      <description>I like Docker, but I&#39;m not a huge fan of using shell scripts for complex system configuration&amp;hellip;and Dockerfiles are basically giant shell scripts.
+      <description>I like Docker, but I&amp;rsquo;m not a huge fan of using shell scripts for complex system configuration&amp;hellip;and Dockerfiles are basically giant shell scripts.
 I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
 I started with a manifest like this (in puppet/node.pp):
 class { &#39;ssh&#39;: }  And a Dockerfile like this:</description>
@@ -204,7 +204,7 @@ class { &#39;ssh&#39;: }  And a Dockerfile like this:</description>
       
       <guid>https://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/</guid>
       <description>This is a companion to my article on the Docker plugin for Heat.
-While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&#39;ve submitted patches for most of the issues I encountered:
+While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&amp;rsquo;ve submitted patches for most of the issues I encountered:
 Bugs in the Heat plugin   https://bugs.launchpad.net/heat/+bug/1364017
 docker plugin fails to delete a container resource in CREATE_FAILED state.
   https://bugs.launchpad.net/heat/+bug/1364041
@@ -236,7 +236,7 @@ Docker daemon endpoint. By default the local Docker daemon will be used.</descri
       <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/</guid>
-      <description>I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&#39;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
+      <description>I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&amp;rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
 The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.</description>
     </item>
     
@@ -246,7 +246,7 @@ The release announcement on the Docker blog includes an example Heat template, b
       <pubDate>Thu, 28 Aug 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/</guid>
-      <description>I&#39;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
+      <description>I&amp;rsquo;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
 The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker containers instead of hypervisor-based servers. For certain workloads, this leads to better resource utilization than you would get with a hypervisor-based solution, while at the same time givin you better support for multi-tenancy and flexible networking than you get with Docker by itself.</description>
     </item>
     
@@ -256,7 +256,7 @@ The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker co
       <pubDate>Mon, 11 Aug 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/</guid>
-      <description>Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&#39;ve written an article about working with the macvlan driver.
+      <description>Update (2018-03-22) Since I wrote this document back in 2014, Docker has developed the macvlan network driver. That gives you a supported mechanism for direct connectivity to a local layer 2 network. I&amp;rsquo;ve written an article about working with the macvlan driver.
  This article discusses four ways to make a Docker container appear on a local network. These are not suggested as practical solutions, but are meant to illustrate some of the underlying network technology available in Linux.</description>
     </item>
     

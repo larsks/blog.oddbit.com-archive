@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>raspberrypi on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/raspberrypi/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2019-01-19T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/raspberrypi/</id>
-  
   <entry>
     <title>PiPower: A Raspberry Pi UPS</title>
     <author>
@@ -18,7 +17,7 @@
     <id>https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</id>
     <published>2019-01-19T00:00:00Z</published>
     <updated>2019-01-19T00:00:00Z</updated>
-    <summary type="html">I have a Raspberry Pi running RetroPie hooked up to a television. It&#39;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&#39;re pulling the plug on the Pi. While there haven&#39;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</summary>
+    <summary type="html">I have a Raspberry Pi running RetroPie hooked up to a television. It&amp;rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&amp;rsquo;re pulling the plug on the Pi. While there haven&amp;rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.</summary>
   </entry>
   
   <entry>
@@ -72,7 +71,7 @@ You drive a piezo buzzer by generating a PWM signal with the appropriate frequen
     <id>https://blog.oddbit.com/post/2016-02-07-systemd-nspawn-for-fun-and-well-mostly-f/</id>
     <published>2016-02-07T00:00:00Z</published>
     <updated>2016-02-07T00:00:00Z</updated>
-    <summary type="html">systemd-nspawn has been called &amp;ldquo;chroot on steroids&amp;rdquo;, but if you think of it as Docker with a slightly different target you wouldn&#39;t be far wrong, either. It can be used to spawn containers on your host, and has a variety of options for configuring the containerized environment through the use of private networking, bind mounts, capability controls, and a variety of other facilities that give you flexible container management.
+    <summary type="html">systemd-nspawn has been called &amp;ldquo;chroot on steroids&amp;rdquo;, but if you think of it as Docker with a slightly different target you wouldn&amp;rsquo;t be far wrong, either. It can be used to spawn containers on your host, and has a variety of options for configuring the containerized environment through the use of private networking, bind mounts, capability controls, and a variety of other facilities that give you flexible container management.
 There are many different ways in which it can be used.</summary>
   </entry>
   
@@ -85,8 +84,8 @@ There are many different ways in which it can be used.</summary>
     <id>https://blog.oddbit.com/post/2014-07-26-gpiowatch-run-scripts-in-respo/</id>
     <published>2014-07-26T00:00:00Z</published>
     <updated>2014-07-26T00:00:00Z</updated>
-    <summary type="html">For a small project I&#39;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
-Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&#39;t want to write something that was tied closely to my project&amp;hellip;</summary>
+    <summary type="html">For a small project I&amp;rsquo;m working on I needed to attach a few buttons to a Raspberry Pi and have some code execute in response to the button presses.
+Normally I would reach for Python for a simple project like this, but constraints of the project made it necessary to implement something in C with minimal dependencies. I didn&amp;rsquo;t want to write something that was tied closely to my project&amp;hellip;</summary>
   </entry>
   
   <entry>
@@ -99,7 +98,7 @@ Normally I would reach for Python for a simple project like this, but constraint
     <published>2013-08-05T00:00:00Z</published>
     <updated>2013-08-05T00:00:00Z</updated>
     <summary type="html">I recently acquired both a Raspberry Pi and a PiFace IO board. I had a rough time finding examples of how to read the input ports via interrupts (rather than periodically polling for values), especially for the newer versions of the PiFace python libraries.
-After a little research, here&#39;s some simple code that will print out pin names as you press the input buttons. Button 3 will cause the code to exit:</summary>
+After a little research, here&amp;rsquo;s some simple code that will print out pin names as you press the input buttons. Button 3 will cause the code to exit:</summary>
   </entry>
   
   <entry>
@@ -111,7 +110,7 @@ After a little research, here&#39;s some simple code that will print out pin nam
     <id>https://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</id>
     <published>2013-03-12T00:00:00Z</published>
     <updated>2013-03-12T00:00:00Z</updated>
-    <summary type="html">I&#39;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&#39;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
+    <summary type="html">I&amp;rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&amp;rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
 The design of the I2C bus is such that the only device driving a voltage on the bus is the master (in this case, the Raspberry Pi), via pull-up resistors.</summary>
   </entry>
   

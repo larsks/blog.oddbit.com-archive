@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>pacemaker on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/pacemaker/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2015-02-24T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/pacemaker/</id>
-  
   <entry>
     <title>Visualizing Pacemaker resource constraints</title>
     <author>
@@ -33,7 +32,7 @@ The graph-constraints.py script in that repository consumes the output of cibadm
     <id>https://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/</id>
     <published>2015-02-19T00:00:00Z</published>
     <updated>2015-02-19T00:00:00Z</updated>
-    <summary type="html">I&#39;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
+    <summary type="html">I&amp;rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
 Check if there are any inactive resources pcs status xml | xmllint --xpath &#39;//resource[@active=&amp;quot;false&amp;quot;]&#39; - &amp;gt;&amp;amp;/dev/null &amp;amp;&amp;amp; echo &amp;quot;There are inactive resources&amp;quot;  This selects any resource (//resource) in the output of pcs status xml that has the attribute active set to false.</summary>
   </entry>
   

@@ -7,7 +7,7 @@
         <meta name="description" content="One of these things is not like the others">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -112,7 +112,7 @@
 
     
     <p class="post-stub-summary">
-    In this post, we'll look at a method for building minimal Docker images for dynamically linked ELF binaries, and then at a tool for automating this process.
+    In this post, we&rsquo;ll look at a method for building minimal Docker images for dynamically linked ELF binaries, and then at a tool for automating this process.
 It is tempting, when creating a simple Docker image, to start with one of the images provided by the major distributions. For example, if you need an image that provides tcpdump for use on your Atomic host, you might do something like:
 FROM fedora RUN yum -y install tcpdump  And while this will work, you end up consuming 250MB for tcpdump.
     </p>
@@ -136,7 +136,7 @@ FROM fedora RUN yum -y install tcpdump  And while this will work, you end up con
 
     
     <p class="post-stub-summary">
-    I saw a request from a customer float by the other day regarding the ability to filter the XML used to create Nova instances in libvirt. The customer effectively wanted to blacklist a variety of devices (and device types). The consensus seems to be &ldquo;you can't do this right now and upstream is unlikely to accept patches that implement this behavior&rdquo;, but it sounded like an interesting problem, so&hellip;
+    I saw a request from a customer float by the other day regarding the ability to filter the XML used to create Nova instances in libvirt. The customer effectively wanted to blacklist a variety of devices (and device types). The consensus seems to be &ldquo;you can&rsquo;t do this right now and upstream is unlikely to accept patches that implement this behavior&rdquo;, but it sounded like an interesting problem, so&hellip;
  https://github.
     </p>
 
@@ -182,7 +182,7 @@ The PrivateTmp directive, if true, &ldquo;sets up a new file system namespace fo
 
     
     <p class="post-stub-summary">
-    I regularly use OpenStack on my laptop with libvirt as my hypervisor. I was interested in experimenting with recent versions of the nova-docker driver, but I didn't have a spare system available on which to run the driver, and I use my regular nova-compute service often enough that I didn't want to simply disable it temporarily in favor of nova-docker.
+    I regularly use OpenStack on my laptop with libvirt as my hypervisor. I was interested in experimenting with recent versions of the nova-docker driver, but I didn&rsquo;t have a spare system available on which to run the driver, and I use my regular nova-compute service often enough that I didn&rsquo;t want to simply disable it temporarily in favor of nova-docker.
  NB As pointed out by gustavo in the comments, running two neutron-openvswitch-agents on the same host &ndash; as suggested in this article &ndash; is going to lead to nothing but sadness and doom.
     </p>
 
@@ -273,7 +273,7 @@ Configuring serial console support In previous release of OpenStack, read-only a
 
     
     <p class="post-stub-summary">
-    Recently, I've been playing around with Fedora Atomic and Kubernetes. I ran into a frustrating problem in which I would attempt to start a service from within a script launched by cloud-init, only to have have systemctl block indefinitely because the service I was attempting to start was dependent on cloud-init finishing first.
+    Recently, I&rsquo;ve been playing around with Fedora Atomic and Kubernetes. I ran into a frustrating problem in which I would attempt to start a service from within a script launched by cloud-init, only to have have systemctl block indefinitely because the service I was attempting to start was dependent on cloud-init finishing first.
 It turns out that systemctl has a flag meant exactly for this situation:
  --no-block Do not synchronously wait for the requested operation to finish.
     </p>

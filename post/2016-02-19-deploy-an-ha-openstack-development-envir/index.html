@@ -9,7 +9,7 @@
 Introducing Tripleo-Quickstart The goal of the Tripleo-Quickstart project is to replace the instack-virt-setup tool for quickly setting up virtual TripleO environments, and to ultimately become the tool used by both developers and upstream CI for this purpose. The project is a set of Ansible playbooks that will take care of:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -195,7 +195,7 @@ group.  For example:</p>
 <pre><code>[virthost]
 my.target.host ansible_user=targetuser
 </code></pre>
-<p>I'm going to assume you put this into a file named <code>inventory</code>.</p>
+<p>I&rsquo;m going to assume you put this into a file named <code>inventory</code>.</p>
 <h2 id="creating-a-playbook">Creating a playbook</h2>
 <p>A playbook tells Ansible what do to do.</p>
 <p>First, we want to tear down any existing virtual environment, and then
@@ -219,13 +219,13 @@ our deployment:</p>
   roles:
     - overcloud
 </code></pre>
-<p>Put this content in a file named <code>ha.yml</code> (the actual name doesn't
+<p>Put this content in a file named <code>ha.yml</code> (the actual name doesn&rsquo;t
 matter, but this gives us something to refer to later on in this
 article).</p>
 <h2 id="configuring-the-deployment">Configuring the deployment</h2>
 <p>Before we run tripleo-quickstart, we need to make a few configuration
-changes. We'll do this by creating a <a href="http://yaml.org/">YAML</a> file that describes our
-configuration, and we'll feed this to ansible using the <a href="http://docs.ansible.com/ansible/playbooks_variables.html#passing-variables-on-the-command-line">-e
+changes. We&rsquo;ll do this by creating a <a href="http://yaml.org/">YAML</a> file that describes our
+configuration, and we&rsquo;ll feed this to ansible using the <a href="http://docs.ansible.com/ansible/playbooks_variables.html#passing-variables-on-the-command-line">-e
 @filename.yml</a> syntax.</p>
 <h3 id="describing-your-virtual-servers">Describing your virtual servers</h3>
 <p>By default, tripleo-quickstart will deploy an environment consisting
@@ -329,7 +329,7 @@ failing because of a known issue, we could add the following to
 </code></pre>
 <h2 id="pre-caching-the-undercloud-image">Pre-caching the undercloud image</h2>
 <p>Fetching the undercloud image from the CentOS CI environment can take
-a really long time.  If you're going to be deploying often, you can
+a really long time.  If you&rsquo;re going to be deploying often, you can
 speed up this step by manually saving the image and the corresponding
 <code>.md5</code> file to a file on your target host:</p>
 <pre><code>mkdir -p /usr/share/quickstart_images/mitaka/
@@ -338,12 +338,12 @@ wget https://ci.centos.org/artifacts/rdo/images/mitaka/delorean/stable/underclou
   https://ci.centos.org/artifacts/rdo/images/mitaka/delorean/stable/undercloud.qcow2
 </code></pre>
 <p>And then providing the path to that file in the <code>url</code> variable when
-you run the playbook.  I've added the following to my <code>nodes.yml</code>
+you run the playbook.  I&rsquo;ve added the following to my <code>nodes.yml</code>
 file, but you could also do this on the command line:</p>
 <pre><code>url: file:///usr/share/quickstart_images/mitaka/undercloud.qcow2
 </code></pre>
 <h2 id="intermission">Intermission</h2>
-<p>I've made the examples presented in this article available for
+<p>I&rsquo;ve made the examples presented in this article available for
 download at the following URLs:</p>
 <ul>
 <li><a href="/assets/2016/02/19/ha.yml">ha.yml</a> playbook</li>
@@ -395,7 +395,7 @@ option to ssh to point it at that file:</p>
 automatically proxy your connection to the undercloud vm through your
 physical host.</p>
 <h2 id="accessing-the-overcloud-hosts">Accessing the overcloud hosts</h2>
-<p>Once you have logged into the undercloud, you'll need to source in
+<p>Once you have logged into the undercloud, you&rsquo;ll need to source in
 some credentials.  The file <code>stackrc</code> contains credentials for the
 undercloud:</p>
 <pre><code>. stackrc
@@ -420,7 +420,7 @@ investigate the <code>overcloud</code> heat stack, and so forth:</p>
 | 53402a35-...| overcloud-novacompute-0 | ACTIVE |...| ctlplane=192.0.2.8  |
 +----------...+-------------------------+--------+...+---------------------+
 </code></pre>
-<p>You'll use the <code>ctlplane</code> address to log into each host as the
+<p>You&rsquo;ll use the <code>ctlplane</code> address to log into each host as the
 <code>heat-admin</code> user.  For example, to log into my compute host:</p>
 <pre><code>$ ssh heat-admin@192.0.2.8
 </code></pre>
@@ -432,7 +432,7 @@ credentials for the overcloud environment:</p>
 <p>After sourcing in the overcloud credentials you can use OpenStack
 clients to interact with your deployed cloud environment.</p>
 <h2 id="if-you-find-bugs">If you find bugs</h2>
-<p>If anything in the above process doesn't work as described or
+<p>If anything in the above process doesn&rsquo;t work as described or
 expected, feel free to visit the <code>#rdo</code> channel on <a href="https://freenode.net/">freenode</a>, or
 open a bug report on the <a href="https://github.com/redhat-openstack/tripleo-quickstart/issues">issue tracker</a>.</p>
 

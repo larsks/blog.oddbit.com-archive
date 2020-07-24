@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Service discovery in the cloud using Avahi &middot; The Odd Bit</title>
-        <meta name="description" content="I&#39;m been writing a provisioning tool for OpenStack recently, and I&#39;ve put together a demo configuration that installs a simple cluster consisting of three backend nodes and a front-end http proxy. I needed a way for the backend servers to discover the ip address of the frontend server. Since in my target environment everything would be on the same layer-2 network segment, service discovery with multicast DNS (mDNS) seemed like the way to go.">
+        <meta name="description" content="I&rsquo;m been writing a provisioning tool for OpenStack recently, and I&rsquo;ve put together a demo configuration that installs a simple cluster consisting of three backend nodes and a front-end http proxy. I needed a way for the backend servers to discover the ip address of the frontend server. Since in my target environment everything would be on the same layer-2 network segment, service discovery with multicast DNS (mDNS) seemed like the way to go.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -117,8 +117,8 @@
 
     
 
-    <p>I'm been writing <a href="http://github.com/larsks/drifter">a provisioning tool</a> for OpenStack
-recently, and I've put together a demo configuration that installs a
+    <p>I&rsquo;m been writing <a href="http://github.com/larsks/drifter">a provisioning tool</a> for OpenStack
+recently, and I&rsquo;ve put together a demo configuration that installs a
 simple cluster consisting of three backend nodes and a front-end http
 proxy.  I needed a way for the backend servers to discover the ip
 address of the frontend server.  Since in my target environment
@@ -129,7 +129,7 @@ with command-line tools for interacting with the Avahi server.  There
 is also a DBUS interface and appropriate Python bindings for taking
 advantage of it.</p>
 <p>It is relatively simple to publish a service with Avahi; you can
-simply drop an XML file into <code>/etc/avahi/services</code> and you're done.
+simply drop an XML file into <code>/etc/avahi/services</code> and you&rsquo;re done.
 Discovering services on the client is a little bit more complicated.
 Doing it right would involve a chunk of code that interacts with DBUS
 in an event-driven environment with lots of callbacks.  It seemed like

@@ -7,7 +7,7 @@
         <meta name="description" content="Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -173,7 +173,7 @@ qrouter-e83eec10-0de2-4bfa-8e58-c1bcbe702f51
 <p>There were two sets of Neutron agents registered using different
 hostnames &ndash; one set using the short name of the host, and the other
 set using the fully qualified hostname.</p>
-<h2 id="whats-up-with-that">What's up with that?</h2>
+<h2 id="whats-up-with-that">What&rsquo;s up with that?</h2>
 <p>In the <code>cc_set_hostname.py</code> module, <code>cloud-init</code> performs the
 following operation:</p>
 <pre><code>(hostname, fqdn) = util.get_hostname_fqdn(cfg, cloud)

@@ -9,7 +9,7 @@ The CloudBase-provided image is built using a set of scripts and configuration f
 The CloudBase repository is an excellent source of information, but I wanted to understand the process myself.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -138,12 +138,12 @@ information to the installer that would otherwise be provided
 manually.  The installer will look in <a href="http://technet.microsoft.com/en-us/library/cc749415%28v=ws.10%29.aspx">a number of places</a> to find
 this file.  For our purposes, the important fact is that the installer
 will look for a file named <code>autounattend.xml</code> in the root of all
-available read/write or read-only media.  We'll take advantage of this
+available read/write or read-only media.  We&rsquo;ll take advantage of this
 by creating a file <code>config/autounattend.xml</code>, and then generating an
 ISO image like this:</p>
 <pre><code>mkisofs -J -r -o config.iso config
 </code></pre>
-<p>And we'll attach this ISO to a vm later on in order to provide the
+<p>And we&rsquo;ll attach this ISO to a vm later on in order to provide the
 answer file to the installer.</p>
 <p>So, what goes into this answer file?</p>
 <p>The answer file is an XML document enclosed in an
@@ -291,7 +291,7 @@ virtual serial port.  This log is available in OpenStack by running
 .
 </code></pre>
 <h2 id="putting-it-all-together">Putting it all together</h2>
-<p>I have an <a href="https://github.com/larsks/windows-openstack-image/blob/master/install">install script</a> that drives the process, but it's
+<p>I have an <a href="https://github.com/larsks/windows-openstack-image/blob/master/install">install script</a> that drives the process, but it&rsquo;s
 ultimately just a wrapper for <code>virt-install</code> and results in the
 following invocation:</p>
 <pre><code>exec virt-install -n ws2012 -r 2048 \
@@ -481,7 +481,7 @@ for later steps:</p>
   &lt;/RunSynchronous&gt;
 &lt;/component&gt;
 </code></pre>
-<p>We're using <a href="http://technet.microsoft.com/en-us/scriptcenter/powershell.aspx">Powershell</a> here because it has convenient methods
+<p>We&rsquo;re using <a href="http://technet.microsoft.com/en-us/scriptcenter/powershell.aspx">Powershell</a> here because it has convenient methods
 available for downloading URLs to local files.  This is roughly
 equivalent to using <code>curl</code> on a Linux system.</p>
 <h3 id="oobesystem">oobeSystem</h3>

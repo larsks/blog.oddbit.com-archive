@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Gruf, a Gerrit command line utility &middot; The Odd Bit</title>
         <meta name="description" content="(See also the followup to this article.)
-I&#39;ve recently started spending more time interacting with Gerrit, the code review tool used both by OpenStack, at review.openstack.org, and by a variety of other open source projects at GerritForge&#39;s GitHub-linked review.gerrithub.io. I went looking for command line tools and was largely disappointed with what I found. Many of the solutions out there assume that you&#39;re regularly interacting with a single Gerrit instance, and that&#39;s seldom the case: more often, the Gerrit server in use varies from project to project.">
+I&rsquo;ve recently started spending more time interacting with Gerrit, the code review tool used both by OpenStack, at review.openstack.org, and by a variety of other open source projects at GerritForge&rsquo;s GitHub-linked review.gerrithub.io. I went looking for command line tools and was largely disappointed with what I found. Many of the solutions out there assume that you&rsquo;re regularly interacting with a single Gerrit instance, and that&rsquo;s seldom the case: more often, the Gerrit server in use varies from project to project.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -119,13 +119,13 @@ I&#39;ve recently started spending more time interacting with Gerrit, the code r
     
 
     <p>(See also <a href="https://blog.oddbit.com/post/2016-02-19-gruf-gets-superpowers/">the followup</a> to this article.)</p>
-<p>I've recently started spending more time interacting with <a href="https://www.gerritcodereview.com/">Gerrit</a>,
+<p>I&rsquo;ve recently started spending more time interacting with <a href="https://www.gerritcodereview.com/">Gerrit</a>,
 the code review tool used both by <a href="http://openstack.org/">OpenStack</a>, at
 <a href="http://review.openstack.org/">review.openstack.org</a>, and by a variety of other open source projects
-at GerritForge's GitHub-linked <a href="http://review.gerrithub.io/">review.gerrithub.io</a>.  I went
+at GerritForge&rsquo;s GitHub-linked <a href="http://review.gerrithub.io/">review.gerrithub.io</a>.  I went
 looking for command line tools and was largely disappointed with what
-I found.  Many of the solutions out there assume that you're regularly
-interacting with a single Gerrit instance, and that's seldom the case:
+I found.  Many of the solutions out there assume that you&rsquo;re regularly
+interacting with a single Gerrit instance, and that&rsquo;s seldom the case:
 more often, the Gerrit server in use varies from project to project.<br>
 I also found that many of the tools were opinionated in what sort of
 output they would produce.</p>
@@ -225,7 +225,7 @@ like <code>git:HEAD^</code>, a branch or tag name like <code>stable/liberty</cod
 <p>The Gerrit query language supports a variety of query operators.  For
 example, you can search for reviews that you own with <code>owner:self</code> and
 you can limit results to a particular project with something like
-<code>project:redhat-openstack/triple-quickstart</code>.  While that's very
+<code>project:redhat-openstack/triple-quickstart</code>.  While that&rsquo;s very
 useful, it can be annoying if you find yourself typing the same
 operators over and over.</p>
 <p>Gruf supports a simple form of query aliasing.  There are three
@@ -358,12 +358,12 @@ given the following entry:</p>
 </li>
 </ul>
 <h2 id="future-plans">Future plans</h2>
-<p>I've already started using this regularly myself, but I'm sure that as
+<p>I&rsquo;ve already started using this regularly myself, but I&rsquo;m sure that as
 I work with Gerrit I will develop a better understanding of what I
 want in a command-line tool.  At the very least I need to implement
 some form of caching to avoid hammering the Gerrit servers with
 repeated requests for the same information.</p>
-<p>Beyond that, I'm curious if anyone else finds this useful and if there
+<p>Beyond that, I&rsquo;m curious if anyone else finds this useful and if there
 are features you would like to see.</p>
 <p>Happy hacking!</p>
 

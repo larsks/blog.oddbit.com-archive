@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Running NTP in a Container &middot; The Odd Bit</title>
-        <meta name="description" content="Someone asked on IRC about running ntpd in a container on Atomic, so I&#39;ve put together a small example. We&#39;ll start with a very simple Dockerfile:
-FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&quot;ntpd&quot;]  I&#39;m using the alpine image as my starting point because it&#39;s very small, which makes this whole process go a little faster. I&#39;m installing the openntpd package, which provides the ntpd binary.">
+        <meta name="description" content="Someone asked on IRC about running ntpd in a container on Atomic, so I&rsquo;ve put together a small example. We&rsquo;ll start with a very simple Dockerfile:
+FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&quot;ntpd&quot;]  I&rsquo;m using the alpine image as my starting point because it&rsquo;s very small, which makes this whole process go a little faster. I&rsquo;m installing the openntpd package, which provides the ntpd binary.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -119,15 +119,15 @@ FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&quot;ntpd&quot;]  I
     
 
     <p>Someone asked on IRC about running ntpd in a container on <a href="http://www.projectatomic.io/">Atomic</a>,
-so I've put together a small example.  We'll start with a very simple
+so I&rsquo;ve put together a small example.  We&rsquo;ll start with a very simple
 <code>Dockerfile</code>:</p>
 <pre><code>FROM alpine
 RUN apk update
 RUN apk add openntpd
 ENTRYPOINT [&quot;ntpd&quot;]
 </code></pre>
-<p>I'm using the <code>alpine</code> image as my starting point because it's very
-small, which makes this whole process go a little faster.  I'm
+<p>I&rsquo;m using the <code>alpine</code> image as my starting point because it&rsquo;s very
+small, which makes this whole process go a little faster.  I&rsquo;m
 installing the <a href="http://www.openntpd.org/">openntpd</a> package, which provides the <code>ntpd</code> binary.</p>
 <p>By setting an <code>ENTRYPOINT</code> here, the <code>ntpd</code> binary will be started by
 default, and any arguments passed to <code>docker run</code> after the image name
@@ -164,7 +164,7 @@ Terminating
 <p>The first few errors (&ldquo;Permission denied&rdquo;) mean that we need to pass
 <code>--privileged</code> on the <code>docker run</code> command line.  Normally, Docker
 runs containers with limited capabilities, but because an ntp service
-needs to be able to set the time in the kernel it won't run in that
+needs to be able to set the time in the kernel it won&rsquo;t run in that
 limited environment.</p>
 <p>The &ldquo;fatal: privsep dir /var/empty could not be opened&rdquo; suggests we
 need an empty directory at <code>/var/empty</code>.  With the above two facts in

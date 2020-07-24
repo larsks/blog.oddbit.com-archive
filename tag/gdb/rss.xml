@@ -18,7 +18,7 @@
       
       <guid>https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/</guid>
       <description>In a case of awful timing, after my recent project involving some attiny85 programming I finally got around to learning how to use simavr and gdb to help debug my AVR code. It was too late for me (and I will never get the time back that I spent debugging things with an LED and lots of re-flashing), but maybe this will help someone else!
-I&#39;ve split this into three posts:</description>
+I&amp;rsquo;ve split this into three posts:</description>
     </item>
     
     <item>

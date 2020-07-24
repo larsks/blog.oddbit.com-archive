@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>phone on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/phone/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2010-08-06T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/phone/</id>
-  
   <entry>
     <title>Importing vCard contacts into an LG 420G</title>
     <author>

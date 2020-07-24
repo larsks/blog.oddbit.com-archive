@@ -8,7 +8,7 @@
  bridge &ndash; connect a container to the Docker bridge host &ndash; run the container in the global network namespace container:xxx &ndash; connect a container to the network namespace of another container none &ndash; do not configure any networking  If you need something more than that, you can use a tool like pipework to provision additional network interfaces inside the container, but this leads to a synchronization problem: pipework can only be used after your container is running.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -148,7 +148,7 @@ hand</a></p>
 container with <code>--net=container:&lt;id-of-noop-container&gt;</code>.  Your service
 container will start with your configured network environment.</p>
 <p>You could, I suppose, decide to link <em>every</em> service container with
-it's own network container, but that would get messy. Kubernetes
+it&rsquo;s own network container, but that would get messy. Kubernetes
 groups containers together into &ldquo;pods&rdquo;, in which all containers in a
 pod share the same network namespace, which reduces the number of
 &ldquo;networking containers&rdquo; necessary for services that have the same

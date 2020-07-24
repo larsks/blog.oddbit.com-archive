@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>dhcp on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/dhcp/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2010-07-22T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/dhcp/</id>
-  
   <entry>
     <title>Patch to gPXE dhcp command</title>
     <author>

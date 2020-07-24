@@ -8,7 +8,7 @@
 Building thttpd My go-to minimal webserver is thttpd.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -150,15 +150,15 @@ it will fail:</p>
 <pre><code>$ sudo chroot $PWD /thttpd -D
 /thttpd: unknown user - 'nobody'
 </code></pre>
-<p>A little <code>strace</code> will show us what's going on:</p>
+<p>A little <code>strace</code> will show us what&rsquo;s going on:</p>
 <pre><code>$ sudo strace chroot $PWD /thttpd -D
 [...]
 open(&quot;/etc/nsswitch.conf&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
 open(&quot;/lib64/libnss_compat.so.2&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
 [...]    
 </code></pre>
-<p>It's looking for an <a href="https://en.wikipedia.org/wiki/Name_Service_Switch">NSS</a> configuration and related libraries.  So
-let's give it what it wants:</p>
+<p>It&rsquo;s looking for an <a href="https://en.wikipedia.org/wiki/Name_Service_Switch">NSS</a> configuration and related libraries.  So
+let&rsquo;s give it what it wants:</p>
 <pre><code>$ mkdir etc
 $ cat &gt; etc/nsswitch.conf &lt;&lt;EOF
 passwd: files
@@ -203,7 +203,7 @@ root@1e126269241c:/# exit
 <pre><code>$ file thttpd
 thttpd: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, for GNU/Linux 2.6.24, BuildID[sha1]=bb211a88e9e1d51fa2e937b2b7ea892d87a287d5, not stripped
 </code></pre>
-<p>Let's rebuild our <code>chroot</code> environment:</p>
+<p>Let&rsquo;s rebuild our <code>chroot</code> environment:</p>
 <pre><code>$ rm -rf thttpd-root
 $ mkdir thttpd-root thttpd-root/lib64
 $ cp thttpd thttpd-root/
@@ -215,7 +215,7 @@ $ cd thttpd-root
 </code></pre>
 <p>Bummer.  It looks like the NSS libraries are still biting us, and it
 looks as if statically compiling code that uses NSS <a href="https://stackoverflow.com/questions/3430400/linux-static-linking-is-dead">may be tricky</a>.
-Fortunately, it's relatively simple to patch out the parts of the
+Fortunately, it&rsquo;s relatively simple to patch out the parts of the
 <code>thttpd</code> code that are trying to switch to another uid/gid.  The
 following <a href="https://github.com/larsks/docker-image-thttpd/blob/master/builder/thttpd-runasroot.patch">patch</a> will do the trick:</p>
 <pre><code>diff --git a/thttpd.c b/thttpd.c

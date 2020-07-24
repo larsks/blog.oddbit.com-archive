@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>A systemd unit for ucarp &middot; The Odd Bit</title>
-        <meta name="description" content="In Fedora 17 there are still a number of services that either have not been ported over to systemd or that do not take full advantage of systemd. I&#39;ve been investigating some IP failover solutions recently, including ucarp, which includes only a System-V style init script.
-I&#39;ve created a template service for ucarp that will let you start a specific virtual ip like this:
+        <meta name="description" content="In Fedora 17 there are still a number of services that either have not been ported over to systemd or that do not take full advantage of systemd. I&rsquo;ve been investigating some IP failover solutions recently, including ucarp, which includes only a System-V style init script.
+I&rsquo;ve created a template service for ucarp that will let you start a specific virtual ip like this:
 systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/vip-001.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -121,10 +121,10 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
 
     <p>In Fedora 17 there are still a number of services that either have not
 been ported over to <code>systemd</code> or that do not take full advantage of
-<code>systemd</code>.  I've been investigating some IP failover solutions
+<code>systemd</code>.  I&rsquo;ve been investigating some IP failover solutions
 recently, including <a href="http://www.pureftpd.org/project/ucarp">ucarp</a>, which includes only a System-V style
 init script.</p>
-<p>I've created a <a href="http://0pointer.de/blog/projects/instances.html">template service</a> for ucarp that will let
+<p>I&rsquo;ve created a <a href="http://0pointer.de/blog/projects/instances.html">template service</a> for ucarp that will let
 you start a specific virtual ip like this:</p>
 <pre><code>systemctl start ucarp@001
 </code></pre>

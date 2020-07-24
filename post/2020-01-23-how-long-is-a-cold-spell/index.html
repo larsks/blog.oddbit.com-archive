@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>How long is a cold spell in Boston? &middot; The Odd Bit</title>
-        <meta name="description" content="We&#39;ve had some wacky weather recently. In the space of a week, the temperature went from a high of about 75°F to a low around 15°F. This got me to thinking about what constitutes &ldquo;normal&rdquo; weather here in the Boston area, and in particular, how common it is to have a string of consecutive days in which the high temperature stays below freezing. While this was an interesting question in itself, it also seemed like a great opportunity to learn a little about Pandas, the Python data analysis framework.">
+        <meta name="description" content="We&rsquo;ve had some wacky weather recently. In the space of a week, the temperature went from a high of about 75°F to a low around 15°F. This got me to thinking about what constitutes &ldquo;normal&rdquo; weather here in the Boston area, and in particular, how common it is to have a string of consecutive days in which the high temperature stays below freezing. While this was an interesting question in itself, it also seemed like a great opportunity to learn a little about Pandas, the Python data analysis framework.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -117,9 +117,9 @@
 
     
 
-    <p>We've had some wacky weather recently. In the space of a week, the temperature went from a high of about 75°F to a low around 15°F. This got me to thinking about what constitutes &ldquo;normal&rdquo; weather here in the Boston area, and in particular, how common it is to have a string of consecutive days in which the high temperature stays below freezing. While this was an interesting question in itself, it also seemed like a great opportunity to learn a little about <a href="https://pandas.pydata.org">Pandas</a>, the Python data analysis framework.</p>
+    <p>We&rsquo;ve had some wacky weather recently. In the space of a week, the temperature went from a high of about 75°F to a low around 15°F. This got me to thinking about what constitutes &ldquo;normal&rdquo; weather here in the Boston area, and in particular, how common it is to have a string of consecutive days in which the high temperature stays below freezing. While this was an interesting question in itself, it also seemed like a great opportunity to learn a little about <a href="https://pandas.pydata.org">Pandas</a>, the Python data analysis framework.</p>
 <p>The first step was finding an appropriate dataset. <a href="https://www.noaa.gov/">NOAA</a> provides a <a href="https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND">daily summaries</a> dataset that includes daily high and low temperature; for Boston, this data extends back to about 1936.</p>
-<p>The next step was figuring how to solve the problem. To be explicit, the question I'm trying to answer is:</p>
+<p>The next step was figuring how to solve the problem. To be explicit, the question I&rsquo;m trying to answer is:</p>
 <blockquote>
 <p>For any given winter, what was the longest consecutive string of days in which the temperature stayed below freezing?</p>
 </blockquote>
@@ -129,13 +129,13 @@
 <pre><code>df = pandas.read_csv('boston.csv')
 </code></pre><p>This assumes of course that we have previously <code>import</code>ed the Pandas library:</p>
 <pre><code>import pandas
-</code></pre><p>Now we have a dataframe in <code>df</code>, but it's using a positional index (i.e., the first item is at index <code>0</code>, the second at <code>1</code>, etc), whereas we want it to use a date-based index. The data has a <code>DATE</code> column that we can turn into an appropriate index like this:</p>
+</code></pre><p>Now we have a dataframe in <code>df</code>, but it&rsquo;s using a positional index (i.e., the first item is at index <code>0</code>, the second at <code>1</code>, etc), whereas we want it to use a date-based index. The data has a <code>DATE</code> column that we can turn into an appropriate index like this:</p>
 <pre><code>df['DATE'] = pandas.to_datetime(df['DATE'])
 df.set_index(df['DATE'], inplace=True)
 </code></pre><h2 id="which-winter">Which winter?</h2>
 <p>I need to be able to group the data by &ldquo;winter&rdquo;. For example, dates from December 21, 2018 through March 20, 2019 would all be associated with &ldquo;winter 2018&rdquo;. It would be easy to group the data by <em>year</em> using Pandas&rsquo; <code>groupby</code> method:</p>
 <pre><code>df.groupby(df['DATE'].dt.year)...
-</code></pre><p>But what's the equivalent for grouping by winter? My first attempt was a naive iterative solution:</p>
+</code></pre><p>But what&rsquo;s the equivalent for grouping by winter? My first attempt was a naive iterative solution:</p>
 <pre><code>def get_winter_start(val):
     if (val.month == 10 and val.day &gt;= 20) or val.month &gt; 10:
         winter = val.year
@@ -147,7 +147,7 @@ df.set_index(df['DATE'], inplace=True)
     return winter
 
 df['winter_start'] = df['DATE'].apply(get_winter_start)
-</code></pre><p>This works, but it's not particular graceful and doesn't take advantage of any of the vector operations supported by Pandas. I eventually came up with a different solution. First, create a boolean series that indicates whether a given date is in winter or not:</p>
+</code></pre><p>This works, but it&rsquo;s not particular graceful and doesn&rsquo;t take advantage of any of the vector operations supported by Pandas. I eventually came up with a different solution. First, create a boolean series that indicates whether a given date is in winter or not:</p>
 <pre><code>df['winter'] = (
     ((df['DATE'].dt.month == 12) &amp; (df['DATE'].dt.day &gt;= 20)) |
     (df['DATE'].dt.month &lt; 3) |
@@ -157,7 +157,7 @@ df['winter_start'] = df['DATE'].apply(get_winter_start)
 <pre><code>winter = df[df['winter']].copy()
 winter['winter_start'] = (
     winter['DATE'].dt.year - (winter['DATE'].dt.month &lt;= 3))
-</code></pre><p>This seems to do the job. You'll note that in the above expression I'm subtracting a boolean from an integer, which is in fact totally legal and I talk about that in more detail <a href="#bool">later on</a> in this article.</p>
+</code></pre><p>This seems to do the job. You&rsquo;ll note that in the above expression I&rsquo;m subtracting a boolean from an integer, which is in fact totally legal and I talk about that in more detail <a href="#bool">later on</a> in this article.</p>
 <h2 id="finding-a-sequence-of-consecutive-days-an-iterative-solution">Finding a sequence of consecutive days: an iterative solution</h2>
 <p>To find the longest sequence of days below freezing, I again started with an iterative solution:</p>
 <pre><code>def max_dbf(val):
@@ -177,7 +177,7 @@ winter['winter_start'] = (
     return max(acc)
 </code></pre><p>Which I applied using Pandas&rsquo; <code>apply</code> method:</p>
 <pre><code>res = winter.groupby('winter_start').apply(max_dbf)
-</code></pre><p>This time it's not just ugly, but it's also noticeably slow. I started doing some research to figure out how to make it faster.</p>
+</code></pre><p>This time it&rsquo;s not just ugly, but it&rsquo;s also noticeably slow. I started doing some research to figure out how to make it faster.</p>
 <h2 id="finding-a-sequence-of-consecutive-days-a-pandas-solution">Finding a sequence of consecutive days: a Pandas solution</h2>
 <p>In an answer to <a href="https://stackoverflow.com/questions/27626542/counting-consecutive-positive-value-in-python-array">this question</a> on Stack Overflow, user <a href="https://stackoverflow.com/users/487339/dsm">DSM</a> suggests that given a series, you can find the longest sequence of consecutive items matching a condition by first creating a boolean series <code>y</code> that is <code>True</code> (or <code>1</code>) for items that match the condition (and <code>False</code> or <code>0</code> otherwise), and then running:</p>
 <pre><code>result = y * (y.groupby((y != y.shift()).cumsum()).cumcount() + 1)
@@ -186,9 +186,9 @@ winter['winter_start'] = (
     y = val['TMAX'] &lt;= 32
     res = y * (y.groupby((y != y.shift()).cumsum()).cumcount() + 1)
     return max(res)
-</code></pre><p>&hellip;and you know what, it works! But what exactly is going on there?  There's a reasonable explanation in <a href="https://stackoverflow.com/a/27626699/147356">the answer</a>, but I'm new enough to Pandas that I wanted to work it out for myself.</p>
+</code></pre><p>&hellip;and you know what, it works! But what exactly is going on there?  There&rsquo;s a reasonable explanation in <a href="https://stackoverflow.com/a/27626699/147356">the answer</a>, but I&rsquo;m new enough to Pandas that I wanted to work it out for myself.</p>
 <h2 id="setting-the-stage">Setting the stage</h2>
-<p>In order to explore the operation of this expression, let's start with some sample data. This is the value of <code>TMAX</code> for the month of Janurary, 2018:</p>
+<p>In order to explore the operation of this expression, let&rsquo;s start with some sample data. This is the value of <code>TMAX</code> for the month of Janurary, 2018:</p>
 <pre><code>data = [
   ['2018-01-01', 13],
   ['2018-01-02', 19],
@@ -393,7 +393,7 @@ df = pandas.DataFrame({'DATE': data_unzipped[0], 'TMAX': data_unzipped[1]})
 </tbody>
 </table>
 <h3 id="step-1">Step 1</h3>
-<p>We first need to create a boolean series indicating whether or not the temperature is below freezing. We'll put this into the dataframe as series <code>freezing</code>:</p>
+<p>We first need to create a boolean series indicating whether or not the temperature is below freezing. We&rsquo;ll put this into the dataframe as series <code>freezing</code>:</p>
 <pre><code>df['freezing'] = df['TMAX'] &lt;= 32
 </code></pre><p>Our dataframe now looks like this:</p>
 <table>
@@ -597,7 +597,7 @@ df = pandas.DataFrame({'DATE': data_unzipped[0], 'TMAX': data_unzipped[1]})
 <h3 id="step-2">Step 2</h3>
 <p>Now we start looking at the various components in our expression of interest. In this step, we are looking at the highlighted part below:</p>
 <pre>res = y * (y.groupby(<strong>(y != y.shift()</strong>).cumsum()).cumcount() + 1)</pre>
-<p>Instead of <code>y</code>, we're operating on the result of the previous step, <code>df['freezing']</code>. We'll place the result of this step into a new series named <code>step2</code> in the dataframe:</p>
+<p>Instead of <code>y</code>, we&rsquo;re operating on the result of the previous step, <code>df['freezing']</code>. We&rsquo;ll place the result of this step into a new series named <code>step2</code> in the dataframe:</p>
 <pre><code>df['step2'] = df['freezing'] != df['freezing'].shift()
 </code></pre><p>This gives us the following:</p>
 <table>
@@ -1099,7 +1099,7 @@ df = pandas.DataFrame({'DATE': data_unzipped[0], 'TMAX': data_unzipped[1]})
 </tbody>
 </table>
 <p><a name="bool"></a></p>
-<p>We're applying the <code>cumsum</code> method to a boolean series. By doing so, we're taking advantage of the fact that in Python <a href="https://docs.python.org/release/3.0.1/reference/datamodel.html#the-standard-type-hierarchy">we can treat boolean values as integers</a>: a <code>True</code> value evaluates to <code>1</code>, and a <code>False</code> value to <code>0</code>. What we get with this operation is effectively a &ldquo;sequence id&rdquo;: because <code>step2</code> is only <code>True</code> when the value of <code>freezing</code> changes, the value calculated in this step only increments when we start a new sequence of values for which <code>freezing</code> has the same value.</p>
+<p>We&rsquo;re applying the <code>cumsum</code> method to a boolean series. By doing so, we&rsquo;re taking advantage of the fact that in Python <a href="https://docs.python.org/release/3.0.1/reference/datamodel.html#the-standard-type-hierarchy">we can treat boolean values as integers</a>: a <code>True</code> value evaluates to <code>1</code>, and a <code>False</code> value to <code>0</code>. What we get with this operation is effectively a &ldquo;sequence id&rdquo;: because <code>step2</code> is only <code>True</code> when the value of <code>freezing</code> changes, the value calculated in this step only increments when we start a new sequence of values for which <code>freezing</code> has the same value.</p>
 <h3 id="step-4">Step 4</h3>
 <pre>res = y * (<strong>y.groupby((y != y.shift()).cumsum()).cumcount() + 1</strong>)</pre>
 <p>In the previous step, we calculated what I called a &ldquo;sequence id&rdquo;. We can take advantage of this to group the data into consecutive stretches for which the temperature was either below freezing or not by using the value as an argument to Pandas&rsquo; <code>groupby</code> method, and then applying the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.GroupBy.cumcount.html">cumcount</a> method:</p>

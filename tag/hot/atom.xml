@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>hot on The Odd Bit</title>
+  <title>The Odd Bit</title>
 
   
   <link rel="self" href="https://blog.oddbit.com/tag/hot/atom.xml"/>
@@ -8,7 +8,6 @@
 
   <updated>2016-08-11T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/hot/</id>
-  
   <entry>
     <title>Exploring YAQL Expressions</title>
     <author>
@@ -18,7 +17,7 @@
     <id>https://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/</id>
     <published>2016-08-11T00:00:00Z</published>
     <updated>2016-08-11T00:00:00Z</updated>
-    <summary type="html">The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&#39;s more advanced features.
+    <summary type="html">The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&amp;rsquo;s more advanced features.
 I am working on a Fluentd composable service for TripleO. I want to allow each service to specify a logging source configuration fragment, for example:
 parameters: NovaAPILoggingSource: type: json description: Fluentd logging configuration for nova-api.</summary>
   </entry>

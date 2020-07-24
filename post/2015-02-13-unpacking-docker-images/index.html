@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Unpacking Docker images with Undocker &middot; The Odd Bit</title>
-        <meta name="description" content="In some ways, the most exciting thing about Docker isn&#39;t the ability to start containers. That&#39;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
-I was taking a closer at the systemd-nspawn command, which it seems has been developing it&#39;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.">
+        <meta name="description" content="In some ways, the most exciting thing about Docker isn&rsquo;t the ability to start containers. That&rsquo;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
+I was taking a closer at the systemd-nspawn command, which it seems has been developing it&rsquo;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,20 +118,20 @@ I was taking a closer at the systemd-nspawn command, which it seems has been dev
 
     
 
-    <p>In some ways, the most exciting thing about <a href="http://docker.com/">Docker</a> isn't the ability
-to start containers.  That's been around for a long time in various
+    <p>In some ways, the most exciting thing about <a href="http://docker.com/">Docker</a> isn&rsquo;t the ability
+to start containers.  That&rsquo;s been around for a long time in various
 forms, such as <a href="https://linuxcontainers.org/">LXC</a> or <a href="http://openvz.org/Main_Page">OpenVZ</a>.  What Docker brought to the
 party was a convenient method of building and distributing the
 filesystems necessary for running containers.  Suddenly, it was easy
 to build a containerized service <em>and</em> to share it with other people.</p>
 <p>I was taking a closer at the <a href="http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html">systemd-nspawn</a> command, which it
-seems has been developing it's own set of container-related
+seems has been developing it&rsquo;s own set of container-related
 superpowers recently, including a number of options for setting up the
 network environment of a container.  Like Docker, <code>systemd-nspawn</code>
 needs a filesystem on which to operate, but <em>unlike</em> Docker, there is
 no convenient distribution mechanism and no ecosystem of existing
 images.  In fact, the official documentation seems to assume that
-you'll be building your own from scratch.  Ain't nobody got time for
+you&rsquo;ll be building your own from scratch.  Ain&rsquo;t nobody got time for
 that&hellip;</p>
 <p>&hellip;but with that attracting Docker image ecosystem sitting right next
 door, surely there was something we can do?</p>
@@ -206,15 +206,15 @@ ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2
 INFO:undocker:extracting image busybox (4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125)
 INFO:undocker:extracting layer ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2
 </code></pre>
-<p>I'm using the <code>-i</code> (<code>--ignore-errors</code>) option here because this layer
+<p>I&rsquo;m using the <code>-i</code> (<code>--ignore-errors</code>) option here because this layer
 contains a device node (<code>/dev/console</code>), and I am running this as an
 unprivileged user.  Without the <code>-i</code> option, we would see:</p>
 <pre><code>OSError: [Errno 1] Operation not permitted
 </code></pre>
 <p>A Docker image archive can actually contain multiple images, each with
 multiple tags.  For a single image, <code>undocker</code> will default to
-extracting the <code>latest</code> tag.  If the <code>latest</code> tag doesn't exist,
-you'll see:</p>
+extracting the <code>latest</code> tag.  If the <code>latest</code> tag doesn&rsquo;t exist,
+you&rsquo;ll see:</p>
 <pre><code># docker pull fedora:20
 # docker save fedora:20 | undocker -o fedora
 ERROR:undocker:failed to find image fedora with tag latest
@@ -223,7 +223,7 @@ ERROR:undocker:failed to find image fedora with tag latest
 Docker:</p>
 <pre><code># docker save fedora:20 | undocker -o fedora fedora:20
 </code></pre>
-<p>If an archive contains multiple images, you'll get a different error:</p>
+<p>If an archive contains multiple images, you&rsquo;ll get a different error:</p>
 <pre><code># docker save busybox larsks/thttpd | undocker -o busybox
 ERROR:undocker:No image name specified and multiple images contained in archive
 </code></pre>

@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Parsing Libvirt XML with xmllint &middot; The Odd Bit</title>
-        <meta name="description" content="I&#39;ve been playing around with the LXC support in libvirt recently, and I&#39;m trying to use a model where each LXC instance is backed by a dedicated LVM volume. This means that the process of starting an instance is:
- mount the instance root filesystem if necessary start the instance  It&#39;s annoying to have to do this by hand. I could simply add all the LXC filesystems to /etc/fstab, but this would mean and extra step when creating and deleting each instance.">
+        <meta name="description" content="I&rsquo;ve been playing around with the LXC support in libvirt recently, and I&rsquo;m trying to use a model where each LXC instance is backed by a dedicated LVM volume. This means that the process of starting an instance is:
+ mount the instance root filesystem if necessary start the instance  It&rsquo;s annoying to have to do this by hand. I could simply add all the LXC filesystems to /etc/fstab, but this would mean and extra step when creating and deleting each instance.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.62.0" />
+        <meta name="generator" content="Hugo 0.74.3" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -118,27 +118,27 @@
 
     
 
-    <p>I've been playing around with the <a href="http://lxc.sourceforge.net/">LXC</a> support in libvirt recently,
-and I'm trying to use a model where each LXC instance is backed by a
+    <p>I&rsquo;ve been playing around with the <a href="http://lxc.sourceforge.net/">LXC</a> support in libvirt recently,
+and I&rsquo;m trying to use a model where each LXC instance is backed by a
 dedicated LVM volume.  This means that the process of starting an
 instance is:</p>
 <ul>
 <li>mount the instance root filesystem if necessary</li>
 <li>start the instance</li>
 </ul>
-<p>It's annoying to have to do this by hand.  I could simply add all the
+<p>It&rsquo;s annoying to have to do this by hand.  I could simply add all the
 LXC filesystems to <code>/etc/fstab</code>, but this would mean and extra step
 when creating and deleting each instance.</p>
 <p>I thought about creating a wrapper script to handle the mounting (and
 unmounting, perhaps) for me, but this leads to another problem: I need
 a way to figure out which backing device corresponding to the virtual
-instance I'm trying to boot.</p>
+instance I&rsquo;m trying to boot.</p>
 <p>I could just adopt a strict naming scheme, so that for a given
 instance &ldquo;foo&rdquo; the backing store would be
-<code>/dev/vg_something/domain-foo</code>, but that's too easy!  In order to make
+<code>/dev/vg_something/domain-foo</code>, but that&rsquo;s too easy!  In order to make
 life interesting:</p>
 <ul>
-<li>I've added some namespace-prefixed metadata to the instance XML
+<li>I&rsquo;ve added some namespace-prefixed metadata to the instance XML
 description, and</li>
 <li>Written a shell script to extract this data (and more) using
 <code>xmllint</code>.</li>
@@ -164,8 +164,8 @@ storage device for my domain, it might look like this:</p>
 <h2 id="extracting-metadata-with-xmllint">Extracting metadata with xmllint</h2>
 <p>The <code>xmllint</code> tool, part of <a href="http://www.xmlsoft.org/">libxml</a>, can extract nodes from an XML
 document using <a href="https://en.wikipedia.org/wiki/XPath">xpath</a> expressions.  Unfortunately, while <code>xmllint</code>
-does have namespace support, it's not particularly convenient.  Using
-the <code>--shell</code> mode there's a helpful <code>setns</code> command:</p>
+does have namespace support, it&rsquo;s not particularly convenient.  Using
+the <code>--shell</code> mode there&rsquo;s a helpful <code>setns</code> command:</p>
 <pre><code>$ xmllint --shell domain.xml
 / &gt; setns x=http://oddbit.com/ns/libvirt/1
 / &gt; xpath //x:device
@@ -173,7 +173,7 @@ Object is a Node Set :
 Set contains 1 nodes:
 1  ELEMENT ob:device
 </code></pre>
-<p>But that's not available from the command line.  We can use the
+<p>But that&rsquo;s not available from the command line.  We can use the
 <code>namespace-uri()</code> and <code>local-name()</code> xpath functions to get to the
 same place, albeit more verbosely.  An equivalent to the above shell
 session would be:</p>
@@ -216,7 +216,7 @@ done
 </code></pre>
 </li>
 </ul>
-<p>I'm not actually planning on using this in practice.  I'll
+<p>I&rsquo;m not actually planning on using this in practice.  I&rsquo;ll
 probably go the naming scheme route.  But this was fun to figure out.</p>
 
 </div>
