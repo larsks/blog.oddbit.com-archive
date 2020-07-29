@@ -6,8 +6,56 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2020-06-07T00:00:00Z</updated>
+  <updated>2020-07-28T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>coronavirus</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/coronavirus/"/>
+    <id>https://blog.oddbit.com/tag/coronavirus/</id>
+    <published>2020-07-28T00:00:00Z</published>
+    <updated>2020-07-28T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>covid19</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/covid19/"/>
+    <id>https://blog.oddbit.com/tag/covid19/</id>
+    <published>2020-07-28T00:00:00Z</published>
+    <updated>2020-07-28T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>masks</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/masks/"/>
+    <id>https://blog.oddbit.com/tag/masks/</id>
+    <published>2020-07-28T00:00:00Z</published>
+    <updated>2020-07-28T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>medical</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/medical/"/>
+    <id>https://blog.oddbit.com/tag/medical/</id>
+    <published>2020-07-28T00:00:00Z</published>
+    <updated>2020-07-28T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>arduino</title>
     <author>
@@ -137,54 +185,6 @@
     <id>https://blog.oddbit.com/tag/networking/</id>
     <published>2020-02-15T00:00:00Z</published>
     <updated>2020-02-15T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>NetworkManager</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/networkmanager/"/>
-    <id>https://blog.oddbit.com/tag/networkmanager/</id>
-    <published>2020-02-15T00:00:00Z</published>
-    <updated>2020-02-15T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>nmcli</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/nmcli/"/>
-    <id>https://blog.oddbit.com/tag/nmcli/</id>
-    <published>2020-02-15T00:00:00Z</published>
-    <updated>2020-02-15T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>openvswitch</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/openvswitch/"/>
-    <id>https://blog.oddbit.com/tag/openvswitch/</id>
-    <published>2020-02-15T00:00:00Z</published>
-    <updated>2020-02-15T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>climate</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/climate/"/>
-    <id>https://blog.oddbit.com/tag/climate/</id>
-    <published>2020-01-23T00:00:00Z</published>
-    <updated>2020-01-23T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   

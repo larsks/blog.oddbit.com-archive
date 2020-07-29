@@ -1,0 +1,25 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>The Odd Bit</title>
+
+  
+  <link rel="self" href="https://blog.oddbit.com/tag/covid19/atom.xml"/>
+  
+  <link href="https://blog.oddbit.com/tag/covid19/" rel="alternate"></link>
+
+  <updated>2020-07-28T00:00:00Z</updated>
+  <id>https://blog.oddbit.com/tag/covid19/</id>
+  <entry>
+    <title>You can&#39;t get an N95 mask: Now what?</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-07-28-you-cant-get-an-n95-mask-now-w/"/>
+    <id>https://blog.oddbit.com/post/2020-07-28-you-cant-get-an-n95-mask-now-w/</id>
+    <published>2020-07-28T00:00:00Z</published>
+    <updated>2020-07-28T00:00:00Z</updated>
+    <summary type="html">[This is a guest post by my partner Alexandra van Geel.]
+Disclaimer: I am not an expert, just a private individual summarizing available information. Please correct me if I&amp;rsquo;ve gotten something wrong.
+TL;DR   I suggest: (a) the Vog valveless mask or (b) the O2 Canada Curve Respirator. If (b), make sure you cut some an extra filter into two small circles and put the material in the respirator to cover the exhale valves.</summary>
+  </entry>
+  
+</feed>

@@ -104,6 +104,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Using wait conditions with Heat</h4>
+        <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This post accompanies my article on the Docker plugin for Heat.
+In order for WaitCondition resources to operate correctly in Heat, you will need to make sure that that you have:
+ Created the necessary Heat domain and administrative user in Keystone, Configured appropriate values in heat.conf for stack_user_domain, stack_domain_admin, and stack_domain_admin_password. Configured an appropriate value in heat.conf for heat_waitcondition_server_url. On a single-system install this will often be pointed by default at 127.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">nova-docker and environment variables</h4>
         <time class="post-stub-date" datetime="2014-08-28">Published Thu, Aug 28, 2014</time>
@@ -306,31 +330,6 @@ This started as a simple attempt to set up external connectivity on an all-in-on
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Solved: Open vSwitch and persistent MAC addresses</h4>
-        <time class="post-stub-date" datetime="2014-05-23">Published Fri, May 23, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &ldquo;don&rsquo;t use ip link set ...&rdquo; for this purpose.
-You can set the bridge MAC address via ovs-vsctl like this:
-ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&rsquo;ve updated my ifconfig-br-ex to look like this:
-DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPINTERFACES=eth0 MACADDR=fa:16:3e:ef:91:ec OVS_EXTRA=&quot;set bridge br-ex other-config:hwaddr=$MACADDR&quot;  The OVS_EXTRA parameter gets passed to the add-br call like this:
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/">(Read more...)</a>
     </p>
     
     

@@ -105,6 +105,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2012-12-15-get-vm-ip/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Getting the IP address of a libvirt domain</h4>
+        <time class="post-stub-date" datetime="2012-12-15">Published Sat, Dec 15, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    If you are starting virtual machines via libvirt, and you have attached them to the default network, there is a very simple method you can use to determine the address assigned to your running instance:
+ Libvirt runs dnsmasq for the default network, and saves leases in a local file (/var/lib/libvirt/dnsmasq/default.leases under RHEL). You can get the MAC address assigned to a virtual machine by querying the domain XML description.  Putting this together gets us something along the lines of:
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2012-12-15-get-vm-ip/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2012-12-10-archlinux/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">A first look at Arch Linux</h4>
         <time class="post-stub-date" datetime="2012-12-10">Published Mon, Dec 10, 2012</time>
@@ -306,29 +329,6 @@ Motivations Like many organizations, we have a mix of Linux and Windows in our e
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2012-11-04-openstack-windows-config-part1/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Generating random passwords in PowerShell</h4>
-        <time class="post-stub-date" datetime="2012-11-04">Published Sun, Nov 4, 2012</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I was looking for PowerShell solutions for generating a random password (in order to set the Administrator password on a Windows instance provisioned in OpenStack), and found several solutions using the GeneratePassword method of System.Web.Security.Membership (documentation here), along the lines of this:
-Function New-RandomComplexPassword ($length=8) { $Assembly = Add-Type -AssemblyName System.Web $password = [System.Web.Security.Membership]::GeneratePassword($length,2) return $password }  While this works, I was unhappy with the generated passwords: they were difficult to type or transcribe because they make heavy use of punctuation.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2012-11-04-powershell-random-passwords/">(Read more...)</a>
     </p>
     
     

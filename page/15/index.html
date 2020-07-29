@@ -105,6 +105,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Interrupt driven GPIO with Python</h4>
+        <time class="post-stub-date" datetime="2013-03-08">Published Fri, Mar 8, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    There are several Python libraries out there for interacting with the GPIO pins on a Raspberry Pi:
+ RPi.GPIO The WiringPi bindings for Python, and The Quick2Wire Python API (which depends on Python 3)  All of them are reasonably easy to use, but the Quick2Wire API provides a uniquely useful feature: epoll-enabled GPIO interrupts. This makes it trivial to write code that efficiently waits for and responds to things like button presses.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-03-07-controlling-a-servo/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Controlling a servo with your Arduino</h4>
         <time class="post-stub-date" datetime="2013-03-07">Published Thu, Mar 7, 2013</time>
@@ -310,29 +333,6 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2012-12-15-get-vm-ip/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Getting the IP address of a libvirt domain</h4>
-        <time class="post-stub-date" datetime="2012-12-15">Published Sat, Dec 15, 2012</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    If you are starting virtual machines via libvirt, and you have attached them to the default network, there is a very simple method you can use to determine the address assigned to your running instance:
- Libvirt runs dnsmasq for the default network, and saves leases in a local file (/var/lib/libvirt/dnsmasq/default.leases under RHEL). You can get the MAC address assigned to a virtual machine by querying the domain XML description.  Putting this together gets us something along the lines of:
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2012-12-15-get-vm-ip/">(Read more...)</a>
     </p>
     
     
