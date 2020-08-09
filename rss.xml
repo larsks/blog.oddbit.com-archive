@@ -2033,7 +2033,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Docker does not see all disks - No space left on device docker dockerfile docker-build df  How to load pickle files securely? python security pickle machine-learning-model bandit  I want to print docker run environment variables inside my container docker shell ubuntu dockerfile  Replace substrings in a string using re.sub? python-3.x re  Unable to Parse XML in Shell xml shell xpath xmllint  Ansible merge different size list which has key value pairs list merge ansible  Can I render ansible templates to a variable vs.</description>
+      <description>How do I configure `hub create` SSH credentials? git authentication ssh  ansible conditional statements should not include jinja2 templating delimiters ansible  Docker does not see all disks - No space left on device docker dockerfile docker-build df  How to load pickle files securely? python security pickle machine-learning-model bandit  I want to print docker run environment variables inside my container docker shell ubuntu dockerfile  Replace substrings in a string using re.</description>
     </item>
     
   </channel>
