@@ -18,7 +18,7 @@
     <published>2020-08-10T00:00:00Z</published>
     <updated>2020-08-10T00:00:00Z</updated>
     <summary type="html">This is part of a series of posts about my experience working with OpenShift and CNV. In this post, I&amp;rsquo;ll look at how the recently released CNV 2.4 resolves some issues in managing virtual machines that are attached directly to local layer 2 networks
-In [an earlier post][part 2] of this series, I discussed some issues around the management of virtual machine MAC addresses in CNV 2.3: in particular, that virtual machines are assigned a random MAC address not just at creation time but every time they boot.</summary>
+In an earlier post, I discussed some issues around the management of virtual machine MAC addresses in CNV 2.3: in particular, that virtual machines are assigned a random MAC address not just at creation time but every time they boot.</summary>
   </entry>
   
   <entry>

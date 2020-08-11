@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>OpenShift and CNV: MAC address management in CNV 2.4 &middot; The Odd Bit</title>
         <meta name="description" content="This is part of a series of posts about my experience working with OpenShift and CNV. In this post, I&rsquo;ll look at how the recently released CNV 2.4 resolves some issues in managing virtual machines that are attached directly to local layer 2 networks
-In [an earlier post][part 2] of this series, I discussed some issues around the management of virtual machine MAC addresses in CNV 2.3: in particular, that virtual machines are assigned a random MAC address not just at creation time but every time they boot.">
+In an earlier post, I discussed some issues around the management of virtual machine MAC addresses in CNV 2.3: in particular, that virtual machines are assigned a random MAC address not just at creation time but every time they boot.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.74.3" />
@@ -122,11 +122,11 @@ In [an earlier post][part 2] of this series, I discussed some issues around the 
 <a href="https://www.openshift.com/">OpenShift</a> and <a href="https://www.redhat.com/en/topics/containers/what-is-container-native-virtualization">CNV</a>.  In this post, I&rsquo;ll look at how the
 recently released CNV 2.4 resolves some issues in managing virtual
 machines that are attached directly to local layer 2 networks</p>
-<p>In [an earlier post][part 2] of this series, I discussed some issues around the
+<p>In <a href="https://blog.oddbit.com/post/2020-07-30-openshift-and-cnv-part-2-expos/">an earlier post</a>, I discussed some issues around the
 management of virtual machine MAC addresses in CNV 2.3: in particular,
 that virtual machines are assigned a random MAC address not just at
-creation time but every time they boot. CNV 2.4 (re-)introduces [MAC
-address pools][] to alleviate these issues. The high level description
+creation time but every time they boot. CNV 2.4 (re-)introduces <a href="https://docs.openshift.com/container-platform/4.5/virt/virtual_machines/vm_networking/virt-using-mac-address-pool-for-vms.html">MAC
+address pools</a> to alleviate these issues. The high level description
 reads:</p>
 <blockquote>
 <p>The KubeMacPool component provides a MAC address pool service for
