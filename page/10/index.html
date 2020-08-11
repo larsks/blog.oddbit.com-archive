@@ -105,6 +105,75 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Cloud-init and the case of the changing hostname</h4>
+        <time class="post-stub-date" datetime="2014-12-10">Published Wed, Dec 10, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Starting systemd services without blocking</h4>
+        <time class="post-stub-date" datetime="2014-12-02">Published Tue, Dec 2, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Recently, I&rsquo;ve been playing around with Fedora Atomic and Kubernetes. I ran into a frustrating problem in which I would attempt to start a service from within a script launched by cloud-init, only to have have systemctl block indefinitely because the service I was attempting to start was dependent on cloud-init finishing first.
+It turns out that systemctl has a flag meant exactly for this situation:
+ --no-block Do not synchronously wait for the requested operation to finish.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Fedora Atomic, OpenStack, and Kubernetes (oh my)</h4>
+        <time class="post-stub-date" datetime="2014-11-24">Published Mon, Nov 24, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    While experimenting with Fedora Atomic, I was looking for an elegant way to automatically deploy Atomic into an OpenStack environment and then automatically schedule some Docker containers on the Atomic host. This post describes my solution.
+Like many other cloud-targeted distributions, Fedora Atomic runs cloud-init when the system boots. We can take advantage of this to configure the system at first boot by providing a user-data blob to Nova when we boot the instance.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Creating a Windows image for OpenStack</h4>
         <time class="post-stub-date" datetime="2014-11-15">Published Sat, Nov 15, 2014</time>
@@ -264,88 +333,6 @@ If you have any questions about the presentation, please feel free to ping me on
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-09-02-visualizing-heat-stacks/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Docker plugin bugs</h4>
-        <time class="post-stub-date" datetime="2014-09-01">Published Mon, Sep 1, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    This is a companion to my article on the Docker plugin for Heat.
-While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&rsquo;ve submitted patches for most of the issues I encountered:
-Bugs in the Heat plugin   https://bugs.launchpad.net/heat/+bug/1364017
-docker plugin fails to delete a container resource in CREATE_FAILED state.
-  https://bugs.launchpad.net/heat/+bug/1364041
-docker plugin volumes_from parameter should be a list.
-  https://bugs.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Annotated documentation for DockerInc::Docker::Container</h4>
-        <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    This is a companion to my article on the Docker plugin for Heat.
-DockerInc::Docker::Container Properties   cmd : List
-Command to run after spawning the container.
-Optional property.
-Example:
- cmd: [ 'thttpd', '-C', '/etc/thttpd.conf', '-D', '-c', '*.cgi']    dns : List
-Set custom DNS servers.
-Example:
- dns: - 8.8.8.8 - 8.8.4.4    docker_endopint : String
-Docker daemon endpoint. By default the local Docker daemon will be used.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Docker plugin for OpenStack Heat</h4>
-        <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
-The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/">(Read more...)</a>
     </p>
     
     

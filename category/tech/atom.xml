@@ -6,8 +6,46 @@
   
   <link href="https://blog.oddbit.com/category/tech/" rel="alternate"></link>
 
-  <updated>2020-06-07T00:00:00Z</updated>
+  <updated>2020-08-10T00:00:00Z</updated>
   <id>https://blog.oddbit.com/category/tech/</id>
+  <entry>
+    <title>OpenShift and CNV: MAC address management in CNV 2.4</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-08-10-mac-address-management-in-cnv/"/>
+    <id>https://blog.oddbit.com/post/2020-08-10-mac-address-management-in-cnv/</id>
+    <published>2020-08-10T00:00:00Z</published>
+    <updated>2020-08-10T00:00:00Z</updated>
+    <summary type="html">This is part of a series of posts about my experience working with OpenShift and CNV. In this post, I&amp;rsquo;ll look at how the recently released CNV 2.4 resolves some issues in managing virtual machines that are attached directly to local layer 2 networks
+In [an earlier post][part 2] of this series, I discussed some issues around the management of virtual machine MAC addresses in CNV 2.3: in particular, that virtual machines are assigned a random MAC address not just at creation time but every time they boot.</summary>
+  </entry>
+  
+  <entry>
+    <title>OpenShift and CNV: Exposing virtualized services</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-07-30-openshift-and-cnv-part-2-expos/"/>
+    <id>https://blog.oddbit.com/post/2020-07-30-openshift-and-cnv-part-2-expos/</id>
+    <published>2020-07-30T01:00:00Z</published>
+    <updated>2020-07-30T01:00:00Z</updated>
+    <summary type="html">This is the second in a series of posts about my experience working with OpenShift and CNV. In this post, I&amp;rsquo;ll be taking a look at how to expose services on a virtual machine once you&amp;rsquo;ve git it up and running.
+ TL;DR Overview Connectivity options Direct attachment Using an OpenShift Service  Exposing services on NodePorts Exposing services on cluster external IPso Exposing services using a LoadBalancer     TL;DR Networking seems to be a weak area for CNV right now.</summary>
+  </entry>
+  
+  <entry>
+    <title>OpenShift and CNV: Installer network requirements</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-07-30-openshift-and-cnv-part-1-worki/"/>
+    <id>https://blog.oddbit.com/post/2020-07-30-openshift-and-cnv-part-1-worki/</id>
+    <published>2020-07-30T00:00:00Z</published>
+    <updated>2020-07-30T00:00:00Z</updated>
+    <summary type="html">This is the first in a series of posts about my experience working with OpenShift and CNV (&amp;ldquo;Container Native Virtualization&amp;rdquo;, a technology that allows you to use OpenShift to manage virtualized workloads in addition to the containerized workloads for which OpenShift is known). In this post, I&amp;rsquo;ll be taking a look at the installation experience, and in particular at how restrictions in our local environment interacted with the network requirements of the installer.</summary>
+  </entry>
+  
   <entry>
     <title>Grove Beginner Kit for Arduino (part 2): First look</title>
     <author>
@@ -156,43 +194,6 @@ Activate the serial port Raspbian automatically starts a getty on the serial por
     <updated>2019-06-14T00:00:00Z</updated>
     <summary type="html">Always work on a branch (never commit on master) When working with an upstream codebase, always make your changes on a feature branch rather than your local master branch. This will make it easier to keep your local master branch current with respect to upstream, and can help avoid situations in which you accidentally overwrite your local changes or introduce unnecessary merge commits into your history.
 Rebase instead of merge If you need to incorporate changes from the upstream master branch in the feature branch on which you are currently doing, bring in those changes using git rebase rather than git merge.</summary>
-  </entry>
-  
-  <entry>
-    <title>Running Keystone with Docker Compose</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/"/>
-    <id>https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/</id>
-    <published>2019-06-07T00:00:00Z</published>
-    <updated>2019-06-07T00:00:00Z</updated>
-    <summary type="html">In this article, we will look at what is necessary to run OpenStack&amp;rsquo;s Keystone service (and the requisite database server) in containers using Docker Compose.
-Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&amp;rsquo;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:</summary>
-  </entry>
-  
-  <entry>
-    <title>A DIY CPAP Battery Box</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2019-05-14-a-diy-cpap-battery-box/"/>
-    <id>https://blog.oddbit.com/post/2019-05-14-a-diy-cpap-battery-box/</id>
-    <published>2019-05-14T00:00:00Z</published>
-    <updated>2019-05-14T00:00:00Z</updated>
-    <summary type="html">A year or so ago I was diagnosed with sleep apnea, and since them I&amp;rsquo;ve been sleeping with a CPAP. This past weekend, I joined my daughter on a scout camping trip to a campground without readily accessible electricity. This would be the first time I found myself in this situation, and as the date approached, I realized I was going to have to build or buy some sort of battery solution for my CPAP.</summary>
-  </entry>
-  
-  <entry>
-    <title>Unpacking a Python regular expression</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/"/>
-    <id>https://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</id>
-    <published>2019-05-07T10:00:00Z</published>
-    <updated>2019-05-07T10:00:00Z</updated>
-    <summary type="html">I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &amp;ndash; which I claim to be functional, but probably not optimal &amp;ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&amp;rsquo;t really seem the write place for that: so, here we are.</summary>
   </entry>
   
 </feed>

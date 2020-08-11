@@ -104,6 +104,78 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Ansible 2.0: New OpenStack modules</h4>
+        <time class="post-stub-date" datetime="2015-10-26">Published Mon, Oct 26, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is the second in a loose sequence of articles looking at new features in Ansible 2.0. In the previous article I looked at the Docker connection driver. In this article, I would like to provide an overview of the new-and-much-improved suite of modules for interacting with an OpenStack environment, and provide a few examples of their use.
+In versions of Ansible prior to 2.0, there was a small collection of OpenStack modules.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-10-19-automatic-git-cache/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Automatic git cache</h4>
+        <time class="post-stub-date" datetime="2015-10-19">Published Mon, Oct 19, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This post is in response to a comment someone made on irc earlier today:
+ [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&rsquo;re available
+ In this post I present a proof-of-concept solution to this request. Please note that thisand isn&rsquo;t something that has actually been used or tested anywhere!
+If you access a git repository via ssh, it&rsquo;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-10-19-automatic-git-cache/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Stupid Ansible Tricks: Running a role from the command line</h4>
+        <time class="post-stub-date" datetime="2015-10-19">Published Mon, Oct 19, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    When writing Ansible roles I occasionally want a way to just run a role from the command line, without having to muck about with a playbook. I&rsquo;ve seen similar requests on the mailing lists and on irc.
+I&rsquo;ve thrown together a quick wrapper that will allow you (and me!) to do exactly that, called ansible-role. The --help output looks like this:
+usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTRA_VARS] [-i INVENTORY] [--hosts HOSTS] [--sudo] [--become] [--user USER] role positional arguments: role optional arguments: -h, --help show this help message and exit --verbose, -v --gather, -g --no-gather, -G --extra-vars EXTRA_VARS, -e EXTRA_VARS Inventory: -i INVENTORY, --inventory INVENTORY --hosts HOSTS, -H HOSTS Identity: --sudo, -s --become, -b --user USER, -u USER  Example If you have a role roles/testrole that contains the following in tasks/main.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Bootstrapping Ansible on Fedora 23</h4>
         <time class="post-stub-date" datetime="2015-10-15">Published Thu, Oct 15, 2015</time>
@@ -261,75 +333,6 @@ nova-manage db migrate_flavor_data --max_number 100  And that says:
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">OpenStack Networking without DHCP</h4>
-        <time class="post-stub-date" datetime="2015-06-26">Published Fri, Jun 26, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    In an OpenStack environment, cloud-init generally fetches information from the metadata service provided by Nova. It also has support for reading this information from a configuration drive, which under OpenStack means a virtual CD-ROM device attached to your instance containing the same information that would normally be available via the metadata service.
-It is possible to generate your network configuration from this configuration drive, rather than relying on the DHCP server provided by your OpenStack environment.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Heat-kubernetes Demo with Autoscaling</h4>
-        <time class="post-stub-date" datetime="2015-06-19">Published Fri, Jun 19, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Next week is the Red Hat Summit in Boston, and I&rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
-As part of that presentation, I&rsquo;ve put together a short demonstration video:
- This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Teach git about GIT_SSL_CIPHER_LIST</h4>
-        <time class="post-stub-date" datetime="2015-05-08">Published Fri, May 8, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Someone named hithard on StackOverflow was trying to clone a git repository via https, and was running into an odd error: &ldquo;Cannot communicate securely with peer: no common encryption algorithm(s).&rdquo;. This was due to the fact that the server (openhatch.org) was configured to use a cipher suite that was not supported by default in the underlying SSL library (which could be either OpenSSL or NSS, depending on how git was built).
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-05-08-git-ssl-cipher-list/">(Read more...)</a>
     </p>
     
     

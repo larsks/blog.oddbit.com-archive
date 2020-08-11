@@ -104,6 +104,74 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-07-16-split-concatenated-c/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Split concatenated certificates with awk</h4>
+        <time class="post-stub-date" datetime="2013-07-16">Published Tue, Jul 16, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is a short script that takes a list of concatenated certificates as input (such as a collection of CA certificates) and produces a collection of numbered files, each containing a single certificate.
+#!/bin/awk -f # This script expects a list of concatenated certificates on input and # produces a collection of individual numbered files each containing # a single certificate. BEGIN {incert=0} /-----BEGIN( TRUSTED)? CERTIFICATE-----/ { certno++ certfile=sprintf(&quot;cert-%d.crt&quot;, certno) incert=1 } /-----END( TRUSTED)?
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-07-16-split-concatenated-c/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Did Arch Linux eat your KVM?</h4>
+        <time class="post-stub-date" datetime="2013-04-08">Published Mon, Apr 8, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    A recent update to Arch Linux replaced the qemu-kvm package with an updated version of qemu. A side effect of this change is that the qemu-kvm binary is no longer available, and any libvirt guests on your system utilizing that binary will no longer operate. As is typical with Arch, there is no announcement about this incompatible change, and queries to #archlinux will be met with the knowledge, grace and decorum you would expect of that channel:
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">I2C on the Raspberry Pi</h4>
+        <time class="post-stub-date" datetime="2013-03-12">Published Tue, Mar 12, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
+The design of the I2C bus is such that the only device driving a voltage on the bus is the master (in this case, the Raspberry Pi), via pull-up resistors.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Interrupt driven GPIO with Python</h4>
         <time class="post-stub-date" datetime="2013-03-08">Published Fri, Mar 8, 2013</time>
@@ -262,76 +330,6 @@ When you boot an LXC container, the console appears to be attached to a pts devi
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-01-28-net-with-no-net/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Systemd and the case of the missing network</h4>
-        <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I was intrigued by this post on socket activated containers with systemd. The basic premise is:
- systemd opens a socket on the host and listens for connections. When a client connections, systemd spawns a new container. The host systemd passes the connected socket to the container systemd. Services in the container receive these sockets from the container systemd.  This is a very neat idea, since it delegates all the socket listening to the host and only spins up container and service resources when necessary.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-01-28-net-with-no-net/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-01-25-archlinux-second-look/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">A second look at Arch Linux</h4>
-        <time class="post-stub-date" datetime="2013-01-25">Published Fri, Jan 25, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    This is a followup to an earlier post about Arch Linux.
-I&rsquo;ve since spent a little more time working with Arch, and these are the things I like:
-  The base system is very small and has a very short boot time. I replaced Ubuntu on my old Eee PC with Arch and suddenly the boot time is reasonable (&lt; 10 seconds to a text prompt, &lt; 30 seconds to a full GUI login).
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-01-25-archlinux-second-look/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Parsing Libvirt XML with xmllint</h4>
-        <time class="post-stub-date" datetime="2012-12-21">Published Fri, Dec 21, 2012</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I&rsquo;ve been playing around with the LXC support in libvirt recently, and I&rsquo;m trying to use a model where each LXC instance is backed by a dedicated LVM volume. This means that the process of starting an instance is:
- mount the instance root filesystem if necessary start the instance  It&rsquo;s annoying to have to do this by hand. I could simply add all the LXC filesystems to /etc/fstab, but this would mean and extra step when creating and deleting each instance.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/">(Read more...)</a>
     </p>
     
     

@@ -6,10 +6,20 @@
     <description>Recent content in virtualization on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Oct 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tag/virtualization/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OpenShift and CNV: MAC address management in CNV 2.4</title>
+      <link>https://blog.oddbit.com/post/2020-08-10-mac-address-management-in-cnv/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2020-08-10-mac-address-management-in-cnv/</guid>
+      <description>This is part of a series of posts about my experience working with OpenShift and CNV. In this post, I&amp;rsquo;ll look at how the recently released CNV 2.4 resolves some issues in managing virtual machines that are attached directly to local layer 2 networks
+In [an earlier post][part 2] of this series, I discussed some issues around the management of virtual machine MAC addresses in CNV 2.3: in particular, that virtual machines are assigned a random MAC address not just at creation time but every time they boot.</description>
+    </item>
     
     <item>
       <title>Automatic hostname entries for libvirt domains</title>

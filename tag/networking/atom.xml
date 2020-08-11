@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/networking/" rel="alternate"></link>
 
-  <updated>2020-02-15T00:00:00Z</updated>
+  <updated>2020-07-30T01:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/networking/</id>
+  <entry>
+    <title>OpenShift and CNV: Exposing virtualized services</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-07-30-openshift-and-cnv-part-2-expos/"/>
+    <id>https://blog.oddbit.com/post/2020-07-30-openshift-and-cnv-part-2-expos/</id>
+    <published>2020-07-30T01:00:00Z</published>
+    <updated>2020-07-30T01:00:00Z</updated>
+    <summary type="html">This is the second in a series of posts about my experience working with OpenShift and CNV. In this post, I&amp;rsquo;ll be taking a look at how to expose services on a virtual machine once you&amp;rsquo;ve git it up and running.
+ TL;DR Overview Connectivity options Direct attachment Using an OpenShift Service  Exposing services on NodePorts Exposing services on cluster external IPso Exposing services using a LoadBalancer     TL;DR Networking seems to be a weak area for CNV right now.</summary>
+  </entry>
+  
   <entry>
     <title>Configuring Open vSwitch with nmcli</title>
     <author>
@@ -192,20 +205,6 @@ DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPI
     <summary type="html">I run OpenStack on my laptop, and I&amp;rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
 This is the network configuration file for br-ex on my system:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</summary>
-  </entry>
-  
-  <entry>
-    <title>Firewalld, NetworkManager, and OpenStack</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/"/>
-    <id>https://blog.oddbit.com/post/2014-05-20-firewalld-and-openstack/</id>
-    <published>2014-05-20T00:00:00Z</published>
-    <updated>2014-05-20T00:00:00Z</updated>
-    <summary type="html">These are my notes on making OpenStack play well with firewalld and NetworkManager.
-NetworkManager By default, NetworkManager attempts to start a DHCP client on every new available interface. Since booting a single instance in OpenStack can result in the creation of several virtual interfaces, this results in a lot of:
-May 19 11:58:24 pk115wp-lkellogg NetworkManager[1357]: &amp;lt;info&amp;gt; Activation (qvb512640bd-ee) starting connection &#39;Wired connection 2&#39;  You can disable this behavior by adding the following to /etc/NetworkManager/NetworkManager.</summary>
   </entry>
   
 </feed>

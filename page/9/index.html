@@ -105,6 +105,76 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-02-13-unpacking-docker-images/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Unpacking Docker images with Undocker</h4>
+        <time class="post-stub-date" datetime="2015-02-13">Published Fri, Feb 13, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    In some ways, the most exciting thing about Docker isn&rsquo;t the ability to start containers. That&rsquo;s been around for a long time in various forms, such as LXC or OpenVZ. What Docker brought to the party was a convenient method of building and distributing the filesystems necessary for running containers. Suddenly, it was easy to build a containerized service and to share it with other people.
+I was taking a closer at the systemd-nspawn command, which it seems has been developing it&rsquo;s own set of container-related superpowers recently, including a number of options for setting up the network environment of a container.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-02-13-unpacking-docker-images/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Installing nova-docker with devstack</h4>
+        <time class="post-stub-date" datetime="2015-02-11">Published Wed, Feb 11, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is a long-form response to this question, and describes how to get the nova-docker driver up running with devstack under Ubuntu 14.04 (Trusty). I wrote a similar post for Fedora 21, although that one was using the RDO Juno packages, while this one is using devstack and the upstream sources.
+Getting started We&rsquo;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
+First, let&rsquo;s install a few prerequisites:
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">External networking for Kubernetes services</h4>
+        <time class="post-stub-date" datetime="2015-02-10">Published Tue, Feb 10, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I have recently started running some &ldquo;real&rdquo; services (that is, &ldquo;services being consumed by someone other than myself&rdquo;) on top of Kubernetes (running on bare metal), which means I suddenly had to confront the question of how to provide external access to Kubernetes hosted services. Kubernetes provides two solutions to this problem, neither of which is particularly attractive out of the box:
+  There is a field createExternalLoadBalancer that can be set in a service description.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Installing nova-docker on Fedora 21/RDO Juno</h4>
         <time class="post-stub-date" datetime="2015-02-06">Published Fri, Feb 6, 2015</time>
@@ -260,75 +330,6 @@ Configuring serial console support In previous release of OpenStack, read-only a
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Cloud-init and the case of the changing hostname</h4>
-        <time class="post-stub-date" datetime="2014-12-10">Published Wed, Dec 10, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Starting systemd services without blocking</h4>
-        <time class="post-stub-date" datetime="2014-12-02">Published Tue, Dec 2, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Recently, I&rsquo;ve been playing around with Fedora Atomic and Kubernetes. I ran into a frustrating problem in which I would attempt to start a service from within a script launched by cloud-init, only to have have systemctl block indefinitely because the service I was attempting to start was dependent on cloud-init finishing first.
-It turns out that systemctl has a flag meant exactly for this situation:
- --no-block Do not synchronously wait for the requested operation to finish.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-12-02-starting-systemd-services-without-blocking/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Fedora Atomic, OpenStack, and Kubernetes (oh my)</h4>
-        <time class="post-stub-date" datetime="2014-11-24">Published Mon, Nov 24, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    While experimenting with Fedora Atomic, I was looking for an elegant way to automatically deploy Atomic into an OpenStack environment and then automatically schedule some Docker containers on the Atomic host. This post describes my solution.
-Like many other cloud-targeted distributions, Fedora Atomic runs cloud-init when the system boots. We can take advantage of this to configure the system at first boot by providing a user-data blob to Nova when we boot the instance.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/">(Read more...)</a>
     </p>
     
     

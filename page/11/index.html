@@ -105,6 +105,88 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Docker plugin bugs</h4>
+        <time class="post-stub-date" datetime="2014-09-01">Published Mon, Sep 1, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is a companion to my article on the Docker plugin for Heat.
+While writing that article, I encountered a number of bugs in the Docker plugin and elsewhere. I&rsquo;ve submitted patches for most of the issues I encountered:
+Bugs in the Heat plugin   https://bugs.launchpad.net/heat/+bug/1364017
+docker plugin fails to delete a container resource in CREATE_FAILED state.
+  https://bugs.launchpad.net/heat/+bug/1364041
+docker plugin volumes_from parameter should be a list.
+  https://bugs.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-09-01-docker-plugin-bugs/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Annotated documentation for DockerInc::Docker::Container</h4>
+        <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is a companion to my article on the Docker plugin for Heat.
+DockerInc::Docker::Container Properties   cmd : List
+Command to run after spawning the container.
+Optional property.
+Example:
+ cmd: [ 'thttpd', '-C', '/etc/thttpd.conf', '-D', '-c', '*.cgi']    dns : List
+Set custom DNS servers.
+Example:
+ dns: - 8.8.8.8 - 8.8.4.4    docker_endopint : String
+Docker daemon endpoint. By default the local Docker daemon will be used.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Docker plugin for OpenStack Heat</h4>
+        <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I have been looking at both Docker and OpenStack recently. In my last post I talked a little about the Docker driver for Nova; in this post I&rsquo;ll be taking an in-depth look at the Docker plugin for Heat, which has been available since the Icehouse release but is surprisingly under-documented.
+The release announcement on the Docker blog includes an example Heat template, but it is unfortunately grossly inaccurate and has led many people astray.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-08-30-docker-plugin-for-openstack-he/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-08-30-using-wait-conditions-with-hea/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Using wait conditions with Heat</h4>
         <time class="post-stub-date" datetime="2014-08-30">Published Sat, Aug 30, 2014</time>
@@ -261,76 +343,6 @@ Assumptions This article assumes that the following resources exist:
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Multiple external networks with a single L3 agent</h4>
-        <time class="post-stub-date" datetime="2014-05-28">Published Wed, May 28, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    In the old days (so, like, last year), Neutron supported a single external network per L3 agent. You would run something like this&hellip;
-$ neutron net-create external --router:external=true  &hellip;and neutron would map this to the bridge defined in external_network_bridge in /etc/neutron/l3_agent.ini. If you wanted to support more than a single external network, you would need to run multiple L3 agents, each with a unique value for external_network_bridge.
-There is now a better option available.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-05-28-multiple-external-networks-wit/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Video: Configuring OpenStack&#39;s external bridge on a single-interface system</h4>
-        <time class="post-stub-date" datetime="2014-05-27">Published Tue, May 27, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I&rsquo;ve just put a video on Youtube that looks at the steps required to set up the external bridge (br-ex) on a single-interface system:
- 
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-05-27-configuring-openstacks-externa/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Open vSwitch and persistent MAC addresses</h4>
-        <time class="post-stub-date" datetime="2014-05-23">Published Fri, May 23, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Normally I like to post solutions, but today&rsquo;s post is about a vexing problem to which I have not been able to find a solution.
-This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-05-23-open-vswitch-and-persistent-ma/">(Read more...)</a>
     </p>
     
     

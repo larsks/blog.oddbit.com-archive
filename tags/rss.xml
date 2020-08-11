@@ -6,10 +6,55 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>openshift</title>
+      <link>https://blog.oddbit.com/tag/openshift/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/openshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openshift-and-cnv</title>
+      <link>https://blog.oddbit.com/tag/openshift-and-cnv/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/openshift-and-cnv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>virtualization</title>
+      <link>https://blog.oddbit.com/tag/virtualization/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/virtualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cnv</title>
+      <link>https://blog.oddbit.com/tag/cnv/</link>
+      <pubDate>Thu, 30 Jul 2020 01:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/cnv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>networking</title>
+      <link>https://blog.oddbit.com/tag/networking/</link>
+      <pubDate>Thu, 30 Jul 2020 01:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/networking/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>coronavirus</title>
@@ -134,15 +179,6 @@
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/serial/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>networking</title>
-      <link>https://blog.oddbit.com/tag/networking/</link>
-      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/networking/</guid>
       <description></description>
     </item>
     
@@ -1083,15 +1119,6 @@
     </item>
     
     <item>
-      <title>openshift</title>
-      <link>https://blog.oddbit.com/tag/openshift/</link>
-      <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/openshift/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>zeromq</title>
       <link>https://blog.oddbit.com/tag/zeromq/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
@@ -1133,15 +1160,6 @@
       <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/libvirt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>virtualization</title>
-      <link>https://blog.oddbit.com/tag/virtualization/</link>
-      <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/virtualization/</guid>
       <description></description>
     </item>
     

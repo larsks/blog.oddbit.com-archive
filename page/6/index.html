@@ -105,6 +105,78 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Exploring YAQL Expressions</h4>
+        <time class="post-stub-date" datetime="2016-08-11">Published Thu, Aug 11, 2016</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&rsquo;s more advanced features.
+I am working on a Fluentd composable service for TripleO. I want to allow each service to specify a logging source configuration fragment, for example:
+parameters: NovaAPILoggingSource: type: json description: Fluentd logging configuration for nova-api.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Connecting another vm to your tripleo-quickstart deployment</h4>
+        <time class="post-stub-date" datetime="2016-05-19">Published Thu, May 19, 2016</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Let&rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &ldquo;external&rdquo; connectivity (&ldquo;external&rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
+For a concrete example, let&rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">A collection of git tips</h4>
+        <time class="post-stub-date" datetime="2016-02-19">Published Fri, Feb 19, 2016</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is a small collection of simple git tips and tricks I use to make my life easier.
+Quickly amend an existing commit with new files I have this alias in place that will amend the current commit while automatically re-using the existing commit message:
+alias.fix=commit --amend -C HEAD  With this in place, fixing a review becomes:
+$ vim some/file/somewhere $ git add -u $ git fix  Which I find much more convenient than git commit --amend, following by saving the commit message.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2016-02-19-a-collection-of-git-tips/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Deploying an HA OpenStack development environment with tripleo-quickstart
 </h4>
@@ -260,78 +332,6 @@ CFLAGS=-I/usr/include pip install pyspatialite  At this point, you should be abl
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Ansible 2.0: New OpenStack modules</h4>
-        <time class="post-stub-date" datetime="2015-10-26">Published Mon, Oct 26, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    This is the second in a loose sequence of articles looking at new features in Ansible 2.0. In the previous article I looked at the Docker connection driver. In this article, I would like to provide an overview of the new-and-much-improved suite of modules for interacting with an OpenStack environment, and provide a few examples of their use.
-In versions of Ansible prior to 2.0, there was a small collection of OpenStack modules.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-10-19-automatic-git-cache/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Automatic git cache</h4>
-        <time class="post-stub-date" datetime="2015-10-19">Published Mon, Oct 19, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    This post is in response to a comment someone made on irc earlier today:
- [I] would really like a git lookaside cache which operated on an upstream repo, but pulled objects locally when they&rsquo;re available
- In this post I present a proof-of-concept solution to this request. Please note that thisand isn&rsquo;t something that has actually been used or tested anywhere!
-If you access a git repository via ssh, it&rsquo;s easy to provide a wrapper for git operations via the command= option in an authorized_keys file.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-10-19-automatic-git-cache/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Stupid Ansible Tricks: Running a role from the command line</h4>
-        <time class="post-stub-date" datetime="2015-10-19">Published Mon, Oct 19, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    When writing Ansible roles I occasionally want a way to just run a role from the command line, without having to muck about with a playbook. I&rsquo;ve seen similar requests on the mailing lists and on irc.
-I&rsquo;ve thrown together a quick wrapper that will allow you (and me!) to do exactly that, called ansible-role. The --help output looks like this:
-usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTRA_VARS] [-i INVENTORY] [--hosts HOSTS] [--sudo] [--become] [--user USER] role positional arguments: role optional arguments: -h, --help show this help message and exit --verbose, -v --gather, -g --no-gather, -G --extra-vars EXTRA_VARS, -e EXTRA_VARS Inventory: -i INVENTORY, --inventory INVENTORY --hosts HOSTS, -H HOSTS Identity: --sudo, -s --become, -b --user USER, -u USER  Example If you have a role roles/testrole that contains the following in tasks/main.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-a-role-from-the-command-line/">(Read more...)</a>
     </p>
     
     

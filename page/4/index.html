@@ -105,6 +105,79 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Debugging attiny85 code, part 3: Tracing with simavr</h4>
+        <time class="post-stub-date" datetime="2019-01-22">Published Tue, Jan 22, 2019</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is the third of three posts about using gdb and simavr to debug AVR code. The complete series is:
+  Part 1: Using GDB
+A walkthrough of using GDB to manually inspect the behavior of our code.
+  Part 2: Automating GDB with scripts
+Creating GDB scripts to automatically test the behavior of our code.
+  Part 3: Tracing with simavr
+Using simavr to collect information about the state of microcontroller pins while our code is running.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">PiPower: A Raspberry Pi UPS</h4>
+        <time class="post-stub-date" datetime="2019-01-19">Published Sat, Jan 19, 2019</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I have a Raspberry Pi running RetroPie hooked up to a television. It&rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&rsquo;re pulling the plug on the Pi. While there haven&rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Integrating Bitwarden with Ansible</h4>
+        <time class="post-stub-date" datetime="2018-10-19">Published Fri, Oct 19, 2018</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Bitwarden is a password management service (like LastPass or 1Password). It&rsquo;s unique in that it is built entirely on open source software. In addition to the the web UI and mobile apps that you would expect, Bitwarden also provides a command-line tool for interacting with the your password store.
+At $WORK(-ish) we&rsquo;re looking into Bitwarden because we want a password sharing and management solution that was better than dropping files into directories on remote hosts or sharing things over Slack.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Systemd unit for managing USB gadgets</h4>
         <time class="post-stub-date" datetime="2018-10-19">Published Fri, Oct 19, 2018</time>
@@ -259,76 +332,6 @@ Environment I&rsquo;m working with an OpenStack &ldquo;Pike&rdquo; deployment, w
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Listing iptables rules with line numbers</h4>
-        <time class="post-stub-date" datetime="2018-02-08">Published Thu, Feb 8, 2018</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.
-You can augment the output from these commands with rule numbers with the following awk script:
-#!/bin/awk -f state == 0 &amp;&amp; /^-A/ {state=1; chain=$2; counter=1; printf &quot;\n&quot;} state == 1 &amp;&amp; $2 !
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2018-01-26-administrivia/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Pelican and theme update</h4>
-        <time class="post-stub-date" datetime="2018-01-26">Published Fri, Jan 26, 2018</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I&rsquo;ve just refreshed the version of Pelican used to generate this blog, along with the associated themes and plugins. It all seems to be working, but if you spot a problem feel free to drop me a line.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2018-01-26-administrivia/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Fun with devicemapper snapshots</h4>
-        <time class="post-stub-date" datetime="2018-01-25">Published Thu, Jan 25, 2018</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I find myself working with Raspbian disk images fairly often. A typical workflow is:
- Download the disk image. Mount the filesystem somewhere to check something. Make some changes or install packages just to check something else. Crap I&rsquo;ve made changes.  &hellip;at which point I need to fetch a new copy of the image next time I want to start fresh.
-Sure, I could just make a copy of the image and work from there, but what fun is that?
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/">(Read more...)</a>
     </p>
     
     
