@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How do I replicate a docker macvlan network with podman? cni podman macvlan  Loop over Ansible variable array in Jinja2 template to create nested dictionary json ansible jinja2 ansible-2.x ansible-template  How do I configure `hub create` SSH credentials? git authentication ssh  ansible conditional statements should not include jinja2 templating delimiters ansible  Docker does not see all disks - No space left on device docker dockerfile docker-build df  How to load pickle files securely?</description>
+      <description>Ansible local_action example how does it work ansible  How do I replicate a docker macvlan network with podman? cni podman macvlan  Loop over Ansible variable array in Jinja2 template to create nested dictionary json ansible jinja2 ansible-2.x ansible-template  How do I configure `hub create` SSH credentials? git authentication ssh  ansible conditional statements should not include jinja2 templating delimiters ansible  Docker does not see all disks - No space left on device docker dockerfile docker-build df  How to load pickle files securely?</description>
     </item>
     
   </channel>
