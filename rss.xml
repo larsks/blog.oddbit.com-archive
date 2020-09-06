@@ -2062,7 +2062,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Ansible: Convert a comma- or space-delimited sting to dictionary ansible  Make a line in an Ansible playbook optional ansible f5  Run ansible-lint through subdirectories within a gitlab role ansible gitlab-ci lint ansible-lint  MQTT paho not receiving messages when put into class python networking mqtt paho  ansible using hostname as a condition ansible  How to convert day name to lowercase in bash script? bash lowercase parameter-expansion  Gnupg not out-puting encrypted file python  Get a value from xml file inside a war file without extracting linux bash unix grep war  Docker pull Django image and run container django docker  cloud-init: Can I install from RPM using cloud-config?</description>
+      <description>using symbols in json in python python json symbols  How to scrape website with content-encoding using Python? python python-3.x web-scraping python-requests  zipping files in python without folder structure python zip zipfile  Ansible Handler and when condition ansible  Ansible: Convert a comma- or space-delimited sting to dictionary ansible  Make a line in an Ansible playbook optional ansible f5  Run ansible-lint through subdirectories within a gitlab role ansible gitlab-ci lint ansible-lint  MQTT paho not receiving messages when put into class python networking mqtt paho  ansible using hostname as a condition ansible  How to convert day name to lowercase in bash script?</description>
     </item>
     
   </channel>
