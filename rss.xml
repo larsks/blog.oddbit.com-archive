@@ -2062,7 +2062,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>using symbols in json in python python json symbols  How to scrape website with content-encoding using Python? python python-3.x web-scraping python-requests  zipping files in python without folder structure python zip zipfile  Ansible Handler and when condition ansible  Ansible: Convert a comma- or space-delimited sting to dictionary ansible  Make a line in an Ansible playbook optional ansible f5  Run ansible-lint through subdirectories within a gitlab role ansible gitlab-ci lint ansible-lint  MQTT paho not receiving messages when put into class python networking mqtt paho  ansible using hostname as a condition ansible  How to convert day name to lowercase in bash script?</description>
+      <description>Docker ERROR: only one instance of &amp;#34;host&amp;#34; network is allowed docker docker-compose centos7 docker-swarm  Docker Django GPIO Rasbian buster docker gpio  Python multi-command CLI with common options python command-line-interface argparse python-click  What is the most efficient (in terms of speed and number of lines) way to replace a file content by another file content in Bash? bash  using symbols in json in python python json symbols  How to scrape website with content-encoding using Python?</description>
     </item>
     
   </channel>
