@@ -2062,7 +2062,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Docker ERROR: only one instance of &amp;#34;host&amp;#34; network is allowed docker docker-compose centos7 docker-swarm  Docker Django GPIO Rasbian buster docker gpio  Python multi-command CLI with common options python command-line-interface argparse python-click  What is the most efficient (in terms of speed and number of lines) way to replace a file content by another file content in Bash? bash  using symbols in json in python python json symbols  How to scrape website with content-encoding using Python?</description>
+      <description>Docker Django GPIO Rasbian buster docker gpio  Ansible Playbook with Loopback IP specific per host ansible  How to cast left side value in Ansible/Jinja selectattr filter condition ansible jinja2  How to find out which Linux is installed inside docker image? linux docker dockerfile  Docker ERROR: only one instance of &amp;#34;host&amp;#34; network is allowed docker docker-compose centos7 docker-swarm  Python multi-command CLI with common options python command-line-interface argparse python-click  What is the most efficient (in terms of speed and number of lines) way to replace a file content by another file content in Bash?</description>
     </item>
     
   </channel>
