@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Docker connect to remote daemon via ssh - Permission denied (publickey) docker ssh docker-engine  How to expose a container&amp;#39;s mount point to the host? docker  How to iterate through three lists in parallel in Yaml file yaml jinja2  Merging Ansible dictionaries dictionary merge ansible jinja2  User authentication in Flask - how to implement in functions? python authentication flask  Accessing hosts in metagroup children from Ansible Playbook ansible ansible-2.</description>
+      <description>Why does Docker prevent attaching a container to both host and user defined bridge network? docker docker-compose  HOT template for cinder volume with or without volume_type openstack openstack-heat openstack-cinder  Creating YAML using Python: Cloudformation Template python python-3.x amazon-web-services  Docker connect to remote daemon via ssh - Permission denied (publickey) docker ssh docker-engine  How to expose a container&amp;#39;s mount point to the host? docker  How to iterate through three lists in parallel in Yaml file yaml jinja2  Merging Ansible dictionaries dictionary merge ansible jinja2  User authentication in Flask - how to implement in functions?</description>
     </item>
     
   </channel>
