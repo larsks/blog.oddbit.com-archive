@@ -2062,7 +2062,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Can&amp;#39;t use a css selector to get data in python python web-crawler selector  Docker connection error for PostGIS and Django django postgresql docker docker-compose postgis  how to commafy numbers in jinja? jinja2  How dangerous is using sudo pip? python security beautifulsoup  I can&amp;#39;t connect to my Bottle server on external devices python server bottle  Docker multi stage build with flask and postgressql python docker flask containers devops  Why does Docker prevent attaching a container to both host and user defined bridge network?</description>
+      <description>How to print the attribute value from xml using xmlstarlet? shell xmlstarlet  Ansible create list with &amp;#39;with_items&amp;#39; ansible  Can&amp;#39;t use a css selector to get data in python python web-crawler selector  How to fetch a href link under p using BeautifulSoup python python-3.x  Docker connection error for PostGIS and Django django postgresql docker docker-compose postgis  how to commafy numbers in jinja? jinja2  How dangerous is using sudo pip?</description>
     </item>
     
   </channel>
