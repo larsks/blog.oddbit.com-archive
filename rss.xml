@@ -2062,7 +2062,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How do scripts like elasticsearch docker entrypoint manage vairable names with special characters bash sh  How to find latest entry for specific value in a dict? python dictionary  How to print the attribute value from xml using xmlstarlet? shell xmlstarlet  Ansible create list with &amp;#39;with_items&amp;#39; ansible  Can&amp;#39;t use a css selector to get data in python python web-crawler selector  How to fetch a href link under p using BeautifulSoup python python-3.</description>
+      <description>Is there a way to make `docker` output the HTTP requests sent to the daemon, just like it&amp;#39;s possible with `kubectl` and the API server? docker kubernetes kubectl  How do scripts like elasticsearch docker entrypoint manage vairable names with special characters bash sh  How to find latest entry for specific value in a dict? python dictionary  How to print the attribute value from xml using xmlstarlet? shell xmlstarlet  Ansible create list with &amp;#39;with_items&amp;#39; ansible  Can&amp;#39;t use a css selector to get data in python python web-crawler selector  How to fetch a href link under p using BeautifulSoup python python-3.</description>
     </item>
     
   </channel>
