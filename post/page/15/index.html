@@ -104,6 +104,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-07-22-generating-a-membero/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Generating a memberOf attribute for posixGroups</h4>
+        <time class="post-stub-date" datetime="2013-07-22">Published Mon, Jul 22, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This showed up on #openstack earlier today:
+2013-07-22T13:56:10 &lt;m0zes&gt; hello, all. I am looking to setup keystone with an ldap backend. I need to filter users based on group membership, in this case a non-rfc2307 posixGroup. This means that memberOf doesn't show up, and that the memberUid in the group is not a dn. any thoughts on how to accomplish this?  It turns out that this is a not uncommon question, so I spent some time today working out a solution using the dynlist overlay for OpenLDAP.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-07-22-generating-a-membero/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-07-16-split-concatenated-c/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Split concatenated certificates with awk</h4>
         <time class="post-stub-date" datetime="2013-07-16">Published Tue, Jul 16, 2013</time>
@@ -306,30 +329,6 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-01-28-lxc-cant-remove-cgroup/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">How do I LXC console?</h4>
-        <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    It took me an unreasonably long time to boot an LXC container with working console access. For the record:
-When you boot an LXC container, the console appears to be attached to a pts device. For example, when booting with the console attached to your current terminal:
-# lxc-start -n node0 ... node0 login: root Last login: Mon Jan 28 16:35:19 on tty1 [root@node0 ~]# tty /dev/console [root@node0 ~]# ls -l /dev/console crw------- 1 root tty 136, 12 Jan 28 16:36 /dev/console  This is also true when you attach to a container using lxc-console:
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/">(Read more...)</a>
     </p>
     
     

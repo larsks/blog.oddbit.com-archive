@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2020-08-10T00:00:00Z</updated>
+  <updated>2020-09-25T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  <entry>
+    <title>Building multi-architecture images with GitHub Actions</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-09-25-building-multi-architecture-im/"/>
+    <id>https://blog.oddbit.com/post/2020-09-25-building-multi-architecture-im/</id>
+    <published>2020-09-25T00:00:00Z</published>
+    <updated>2020-09-25T00:00:00Z</updated>
+    <summary type="html">At work we have a cluster of IBM Power 9 systems running OpenShift. The problem with this environment is that nobody runs Power 9 on their desktop, and Docker Hub only offers automatic build support for the x86 architecture. This means there&amp;rsquo;s no convenient options for building Power 9 Docker images&amp;hellip;or so I thought.
+It turns out that Docker provides GitHub actions that make the process of producing multi-architecture images quite simple.</summary>
+  </entry>
+  
   <entry>
     <title>OpenShift and CNV: MAC address management in CNV 2.4</title>
     <author>
@@ -182,19 +195,6 @@ Activate the serial port Raspbian automatically starts a getty on the serial por
     <published>2019-10-03T00:00:00Z</published>
     <updated>2019-10-03T00:00:00Z</updated>
     <summary type="html">I recently acquired my Technician amateur radio license, and like many folks my first radio purchase was a Baofeng UV-5R. Due to its low cost, this is a very popular radio, and there is excellent open source software available for programming it in the form of the CHIRP project. After futzing around with the UV-5R for a while, I wanted to get something a little nicer for use at home, so I purchased a Kenwood TM-V71A.</summary>
-  </entry>
-  
-  <entry>
-    <title>Avoid rebase hell: squashing without rebasing</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2019-06-17-avoid-rebase-hell-squashing-wi/"/>
-    <id>https://blog.oddbit.com/post/2019-06-17-avoid-rebase-hell-squashing-wi/</id>
-    <published>2019-06-17T00:00:00Z</published>
-    <updated>2019-06-17T00:00:00Z</updated>
-    <summary type="html">You&amp;rsquo;re working on a pull request. You&amp;rsquo;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&amp;rsquo;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I&amp;rsquo;ve marked merge commits with the text [merge]):
-7e181479 Adds methods for widget sales 0487162 [merge] Merge remote-tracking branch &#39;origin/master&#39; into my_feature 76ee81c [merge] Merge branch &#39;my_feature&#39; of https://github.</summary>
   </entry>
   
 </feed>

@@ -6,8 +6,20 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2020-08-10T00:00:00Z</updated>
+  <updated>2020-09-25T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>docker</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/docker/"/>
+    <id>https://blog.oddbit.com/tag/docker/</id>
+    <published>2020-09-25T00:00:00Z</published>
+    <updated>2020-09-25T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>openshift</title>
     <author>
@@ -171,18 +183,6 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/esp8266/"/>
     <id>https://blog.oddbit.com/tag/esp8266/</id>
-    <published>2020-03-20T00:00:00Z</published>
-    <updated>2020-03-20T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>micropython</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/micropython/"/>
-    <id>https://blog.oddbit.com/tag/micropython/</id>
     <published>2020-03-20T00:00:00Z</published>
     <updated>2020-03-20T00:00:00Z</updated>
     <summary type="html"></summary>

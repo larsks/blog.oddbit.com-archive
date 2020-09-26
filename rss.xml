@@ -6,10 +6,20 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building multi-architecture images with GitHub Actions</title>
+      <link>https://blog.oddbit.com/post/2020-09-25-building-multi-architecture-im/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2020-09-25-building-multi-architecture-im/</guid>
+      <description>At work we have a cluster of IBM Power 9 systems running OpenShift. The problem with this environment is that nobody runs Power 9 on their desktop, and Docker Hub only offers automatic build support for the x86 architecture. This means there&amp;rsquo;s no convenient options for building Power 9 Docker images&amp;hellip;or so I thought.
+It turns out that Docker provides GitHub actions that make the process of producing multi-architecture images quite simple.</description>
+    </item>
     
     <item>
       <title>OpenShift and CNV: MAC address management in CNV 2.4</title>

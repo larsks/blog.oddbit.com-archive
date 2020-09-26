@@ -104,6 +104,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Stupid Pacemaker XML tricks</h4>
+        <time class="post-stub-date" datetime="2015-02-19">Published Thu, Feb 19, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
+Check if there are any inactive resources pcs status xml | xmllint --xpath '//resource[@active=&quot;false&quot;]' - &gt;&amp;/dev/null &amp;&amp; echo &quot;There are inactive resources&quot;  This selects any resource (//resource) in the output of pcs status xml that has the attribute active set to false.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-02-13-unpacking-docker-images/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Unpacking Docker images with Undocker</h4>
         <time class="post-stub-date" datetime="2015-02-13">Published Fri, Feb 13, 2015</time>
@@ -306,29 +329,6 @@ Building thttpd My go-to minimal webserver is thttpd.
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Accessing the serial console of your Nova servers</h4>
-        <time class="post-stub-date" datetime="2014-12-22">Published Mon, Dec 22, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    One of the new features available in the Juno release of OpenStack is support for serial console access to your Nova servers. This post looks into how to configure the serial console feature and then how to access the serial consoles of your Nova servers.
-Configuring serial console support In previous release of OpenStack, read-only access to the serial console of your servers was available through the os-getConsoleOutput server action (exposed via nova console-log on the command line).
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/">(Read more...)</a>
     </p>
     
     

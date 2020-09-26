@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/docker/" rel="alternate"></link>
 
-  <updated>2019-06-07T00:00:00Z</updated>
+  <updated>2020-09-25T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/docker/</id>
+  <entry>
+    <title>Building multi-architecture images with GitHub Actions</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-09-25-building-multi-architecture-im/"/>
+    <id>https://blog.oddbit.com/post/2020-09-25-building-multi-architecture-im/</id>
+    <published>2020-09-25T00:00:00Z</published>
+    <updated>2020-09-25T00:00:00Z</updated>
+    <summary type="html">At work we have a cluster of IBM Power 9 systems running OpenShift. The problem with this environment is that nobody runs Power 9 on their desktop, and Docker Hub only offers automatic build support for the x86 architecture. This means there&amp;rsquo;s no convenient options for building Power 9 Docker images&amp;hellip;or so I thought.
+It turns out that Docker provides GitHub actions that make the process of producing multi-architecture images quite simple.</summary>
+  </entry>
+  
   <entry>
     <title>Running Keystone with Docker Compose</title>
     <author>
@@ -192,19 +205,6 @@ FROM fedora RUN yum -y install tcpdump  And while this will work, you end up con
     <updated>2015-01-18T00:00:00Z</updated>
     <summary type="html">While working with Docker the other day, I ran into an undesirable interaction between Docker and systemd services that utilize the PrivateTmp directive.
 The PrivateTmp directive, if true, &amp;ldquo;sets up a new file system namespace for the executed processes and mounts private /tmp and /var/tmp directories inside it that is not shared by processes outside of the namespace&amp;rdquo;. This is a great idea from a security perspective, but can cause some unanticipated consequences.</summary>
-  </entry>
-  
-  <entry>
-    <title>Running nova-libvirt and nova-docker on the same host</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/"/>
-    <id>https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</id>
-    <published>2015-01-17T00:00:00Z</published>
-    <updated>2015-01-17T00:00:00Z</updated>
-    <summary type="html">I regularly use OpenStack on my laptop with libvirt as my hypervisor. I was interested in experimenting with recent versions of the nova-docker driver, but I didn&amp;rsquo;t have a spare system available on which to run the driver, and I use my regular nova-compute service often enough that I didn&amp;rsquo;t want to simply disable it temporarily in favor of nova-docker.
- NB As pointed out by gustavo in the comments, running two neutron-openvswitch-agents on the same host &amp;ndash; as suggested in this article &amp;ndash; is going to lead to nothing but sadness and doom.</summary>
   </entry>
   
 </feed>
