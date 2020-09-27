@@ -6,10 +6,20 @@
     <description>Recent content in hardware on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tag/hardware/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vortex Core Keyboard Review</title>
+      <link>https://blog.oddbit.com/post/2020-09-26-vortex-core-keyboard-review/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2020-09-26-vortex-core-keyboard-review/</guid>
+      <description>I&amp;rsquo;ve had my eye on the Vortex Core keyboard for a few months now, and this past week I finally broke down and bought one (with Cherry MX Brown switches). The Vortex Core is a 40% keyboard, which means it consists primarily of letter keys, a few lonely bits of punctuation, and several modifier keys to activate different layers on the keyboard.
+  Physical impressions It&amp;rsquo;s a really cute keyboard.</description>
+    </item>
     
     <item>
       <title>Multiple 1-Wire Buses on the Raspberry Pi</title>

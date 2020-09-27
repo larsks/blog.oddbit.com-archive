@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/category/tech/" rel="alternate"></link>
 
-  <updated>2020-09-25T00:00:00Z</updated>
+  <updated>2020-09-26T00:00:00Z</updated>
   <id>https://blog.oddbit.com/category/tech/</id>
+  <entry>
+    <title>Vortex Core Keyboard Review</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-09-26-vortex-core-keyboard-review/"/>
+    <id>https://blog.oddbit.com/post/2020-09-26-vortex-core-keyboard-review/</id>
+    <published>2020-09-26T00:00:00Z</published>
+    <updated>2020-09-26T00:00:00Z</updated>
+    <summary type="html">I&amp;rsquo;ve had my eye on the Vortex Core keyboard for a few months now, and this past week I finally broke down and bought one (with Cherry MX Brown switches). The Vortex Core is a 40% keyboard, which means it consists primarily of letter keys, a few lonely bits of punctuation, and several modifier keys to activate different layers on the keyboard.
+  Physical impressions It&amp;rsquo;s a really cute keyboard.</summary>
+  </entry>
+  
   <entry>
     <title>Building multi-architecture images with GitHub Actions</title>
     <author>
@@ -181,19 +194,6 @@ Activate the serial port Raspbian automatically starts a getty on the serial por
     <published>2019-10-03T00:00:00Z</published>
     <updated>2019-10-03T00:00:00Z</updated>
     <summary type="html">I recently acquired my Technician amateur radio license, and like many folks my first radio purchase was a Baofeng UV-5R. Due to its low cost, this is a very popular radio, and there is excellent open source software available for programming it in the form of the CHIRP project. After futzing around with the UV-5R for a while, I wanted to get something a little nicer for use at home, so I purchased a Kenwood TM-V71A.</summary>
-  </entry>
-  
-  <entry>
-    <title>Avoid rebase hell: squashing without rebasing</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2019-06-17-avoid-rebase-hell-squashing-wi/"/>
-    <id>https://blog.oddbit.com/post/2019-06-17-avoid-rebase-hell-squashing-wi/</id>
-    <published>2019-06-17T00:00:00Z</published>
-    <updated>2019-06-17T00:00:00Z</updated>
-    <summary type="html">You&amp;rsquo;re working on a pull request. You&amp;rsquo;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&amp;rsquo;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I&amp;rsquo;ve marked merge commits with the text [merge]):
-7e181479 Adds methods for widget sales 0487162 [merge] Merge remote-tracking branch &#39;origin/master&#39; into my_feature 76ee81c [merge] Merge branch &#39;my_feature&#39; of https://github.</summary>
   </entry>
   
 </feed>

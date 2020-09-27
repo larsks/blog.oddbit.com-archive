@@ -104,6 +104,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Sockets on OpenShift</h4>
+        <time class="post-stub-date" datetime="2013-11-23">Published Sat, Nov 23, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    In this article, a followup to my previous post regarding long-poll servers and Python, we investigate the code changes that were necessary to make the code work when deployed on OpenShift.
+In the previous post, we implemented IO polling to watch for client disconnects at the same time we were waiting for messages on a message bus:
+poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.POLLIN) events = dict(poll.poll()) . . .  If you were to try this at home, you would find that everything worked as described&hellip;but if you were to deploy the same code to OpenShift, you would find that the problem we were trying to solve (the server holding file descriptors open after a client disconnected) would still exist.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-11-22-a-unified-cli-for-op/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">A unified CLI for OpenStack</h4>
         <time class="post-stub-date" datetime="2013-11-22">Published Fri, Nov 22, 2013</time>
@@ -307,29 +331,6 @@ $ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Interrupts on the PiFace</h4>
-        <time class="post-stub-date" datetime="2013-08-05">Published Mon, Aug 5, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I recently acquired both a Raspberry Pi and a PiFace IO board. I had a rough time finding examples of how to read the input ports via interrupts (rather than periodically polling for values), especially for the newer versions of the PiFace python libraries.
-After a little research, here&rsquo;s some simple code that will print out pin names as you press the input buttons. Button 3 will cause the code to exit:
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/">(Read more...)</a>
     </p>
     
     
