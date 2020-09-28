@@ -6,10 +6,19 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Installing metallb on OpenShift with Kustomize</title>
+      <link>https://blog.oddbit.com/post/2020-09-27-installing-metallb-on-openshif/</link>
+      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2020-09-27-installing-metallb-on-openshif/</guid>
+      <description>Out of the box, OpenShift (4.x) on bare metal doesn&amp;rsquo;t come with any integrated load balancer support (when installed in a cloud environment, OpenShift typically makes use of the load balancing features available from the cloud provider). Fortunately, there are third party solutions available that are designed to work in bare metal environments. MetalLB is a popular choice, but requires some minor fiddling to get it to run properly on OpenShift.</description>
+    </item>
     
     <item>
       <title>Vortex Core Keyboard Review</title>
@@ -2082,7 +2091,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>git hooks : is there a clone hook? git githooks git-clone  How do I pass multiple arguments to a shell script into `kubectl exec`? bash kubernetes kubectl positional-parameter  Using xargs to copy files from local system into docker container linux docker xargs  ansible: I am not getting the entire error message for task ansible  How can I read english.pickle file from nltk module? python nlp pickle  How can I get the ansible facts of my local machine in a json?</description>
+      <description>Creating a network which allows communication between containers but no internet access docker testcontainers  git hooks : is there a clone hook? git githooks git-clone  How do I pass multiple arguments to a shell script into `kubectl exec`? bash kubernetes kubectl positional-parameter  Using xargs to copy files from local system into docker container linux docker xargs  ansible: I am not getting the entire error message for task ansible  How can I read english.</description>
     </item>
     
   </channel>

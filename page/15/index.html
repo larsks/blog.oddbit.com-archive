@@ -105,6 +105,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Automatic hostname entries for libvirt domains</h4>
+        <time class="post-stub-date" datetime="2013-10-04">Published Fri, Oct 4, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Have you ever wished that you could use libvirt domain names as hostnames? So that you could do something like this:
+$ virt-install -n anewhost ... $ ssh clouduser@anewhost  Since this is something that would certainly make my life convenient, I put together a small script called virt-hosts that makes this possible. You can find virt-hosts in my virt-utils GitHub repository:
+ https://raw.github.com/larsks/virt-utils/master/virt-hosts  Run by itself, with no options, virt-hosts will scan through your running domains for interfaces on the libvirt default network, look up those MAC addresses up in the corresponding default.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Interrupts on the PiFace</h4>
         <time class="post-stub-date" datetime="2013-08-05">Published Mon, Aug 5, 2013</time>
@@ -306,29 +330,6 @@ systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-02-21-ucarp-unit-for-systemd/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Running dhcpcd under LXC</h4>
-        <time class="post-stub-date" datetime="2013-02-01">Published Fri, Feb 1, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I&rsquo;ve been working with Arch Linux recently, which uses dhcpcd as its default DHCP agent. If you try booting Arch inside an LXC container, you will find that dhcpcd is unable to configure your network interfaces. Running it by hand you will first see the following error:
-# dhcpcd eth0 dhcpcd[492]: version 5.6.4 starting dhcpcd[492]: eth0: if_init: Read-only file system dhcpcd[492]: eth0: interface not found or invalid  This happens because dhcpcd is trying to modify a sysctl value.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/">(Read more...)</a>
     </p>
     
     

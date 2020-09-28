@@ -1,0 +1,23 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>The Odd Bit</title>
+
+  
+  <link rel="self" href="https://blog.oddbit.com/tag/kustomize/atom.xml"/>
+  
+  <link href="https://blog.oddbit.com/tag/kustomize/" rel="alternate"></link>
+
+  <updated>2020-09-27T00:00:00Z</updated>
+  <id>https://blog.oddbit.com/tag/kustomize/</id>
+  <entry>
+    <title>Installing metallb on OpenShift with Kustomize</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-09-27-installing-metallb-on-openshif/"/>
+    <id>https://blog.oddbit.com/post/2020-09-27-installing-metallb-on-openshif/</id>
+    <published>2020-09-27T00:00:00Z</published>
+    <updated>2020-09-27T00:00:00Z</updated>
+    <summary type="html">Out of the box, OpenShift (4.x) on bare metal doesn&amp;rsquo;t come with any integrated load balancer support (when installed in a cloud environment, OpenShift typically makes use of the load balancing features available from the cloud provider). Fortunately, there are third party solutions available that are designed to work in bare metal environments. MetalLB is a popular choice, but requires some minor fiddling to get it to run properly on OpenShift.</summary>
+  </entry>
+  
+</feed>

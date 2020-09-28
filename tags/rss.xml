@@ -6,10 +6,37 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>kustomize</title>
+      <link>https://blog.oddbit.com/tag/kustomize/</link>
+      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/kustomize/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>metallb</title>
+      <link>https://blog.oddbit.com/tag/metallb/</link>
+      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/metallb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openshift</title>
+      <link>https://blog.oddbit.com/tag/openshift/</link>
+      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/openshift/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hardware</title>
@@ -35,15 +62,6 @@
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>openshift</title>
-      <link>https://blog.oddbit.com/tag/openshift/</link>
-      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/openshift/</guid>
       <description></description>
     </item>
     

@@ -105,6 +105,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Running dhcpcd under LXC</h4>
+        <time class="post-stub-date" datetime="2013-02-01">Published Fri, Feb 1, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve been working with Arch Linux recently, which uses dhcpcd as its default DHCP agent. If you try booting Arch inside an LXC container, you will find that dhcpcd is unable to configure your network interfaces. Running it by hand you will first see the following error:
+# dhcpcd eth0 dhcpcd[492]: version 5.6.4 starting dhcpcd[492]: eth0: if_init: Read-only file system dhcpcd[492]: eth0: interface not found or invalid  This happens because dhcpcd is trying to modify a sysctl value.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-01-28-lxc-cant-remove-cgroup/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Cleaning up LXC cgroups</h4>
         <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
@@ -309,28 +332,6 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2012-11-26-using-oracle-jdk/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2012-11-08-popfile-document-classification/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Document classification with POPFile</h4>
-        <time class="post-stub-date" datetime="2012-11-08">Published Thu, Nov 8, 2012</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I recently embarked upon a quest to categorize a year&rsquo;s worth of trouble tickets (around 15000 documents total). We wanted to see what sort of things are generating the most work for our helpdesk staff so that we can identify areas in which improvements would have the biggest impact. One of my colleagues took a first pass at the data by manually categorizing the tickets based on their subject. This resulted in some useful data, but in the end just over 40% of the tickets are still uncategorized.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2012-11-08-popfile-document-classification/">(Read more...)</a>
     </p>
     
     

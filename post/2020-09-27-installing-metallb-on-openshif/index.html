@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Installing metallb on OpenShift with Kustomize &middot; The Odd Bit</title>
+        <meta name="description" content="Out of the box, OpenShift (4.x) on bare metal doesn&rsquo;t come with any integrated load balancer support (when installed in a cloud environment, OpenShift typically makes use of the load balancing features available from the cloud provider). Fortunately, there are third party solutions available that are designed to work in bare metal environments. MetalLB is a popular choice, but requires some minor fiddling to get it to run properly on OpenShift.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Installing metallb on OpenShift with Kustomize</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-09-27" itemprop="datePublished">Sun, Sep 27, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+    <p>Out of the box, OpenShift (4.x) on bare metal doesn&rsquo;t come with any
+integrated load balancer support (when installed in a cloud environment,
+OpenShift typically makes use of the load balancing features available from
+the cloud provider). Fortunately, there are third party solutions available
+that are designed to work in bare metal environments. <a href="https://metallb.universe.tf/">MetalLB</a> is a
+popular choice, but requires some minor fiddling to get it to run properly
+on OpenShift.</p>
+<p>If you read through the <a href="https://metallb.universe.tf/installation/">installation instructions</a>, you will see <a href="https://metallb.universe.tf/installation/clouds/#metallb-on-openshift-ocp">this
+note</a> about installation on OpenShift:</p>
+<blockquote>
+<p>To run MetalLB on Openshift, two changes are required: changing the pod
+UIDs, and granting MetalLB additional networking privileges.</p>
+<p>Pods get UIDs automatically assigned based on an OpenShift-managed UID
+range, so you have to remove the hardcoded unprivileged UID from the
+MetalLB manifests. You can do this by removing the
+spec.template.spec.securityContext.runAsUser field from both the
+controller Deployment and the speaker DaemonSet.</p>
+<p>Additionally, you have to grant the speaker DaemonSet elevated
+privileges, so that it can do the raw networking required to make
+LoadBalancers work. You can do this with:</p>
+</blockquote>
+<p>The docs here suggest some manual changes you can make, but it&rsquo;s possible
+to get everything installed correctly using <a href="https://github.com/kubernetes-sigs/kustomize">Kustomize</a> (which makes
+sense especially given that the MetalLB docs already include instructions
+<a href="https://metallb.universe.tf/installation/#installation-with-kustomize">on using Kustomize</a>).</p>
+<p>A vanilla installation of MetalLB with Kustomize uses a <code>kustomization.yml</code>
+file that looks like this:</p>
+<pre><code>namespace: metallb-system
+
+resources:
+  - github.com/metallb/metallb//manifests?ref=v0.9.3
+  - configmap.yml
+  - secret.yml
+</code></pre><p>(Where <code>configmap.yml</code> and <code>secret.yml</code> are files you create locally
+containing, respectively, the MetalLB configuration and a secret used to
+authenticate cluster members.)</p>
+<h2 id="fixing-the-security-context">Fixing the security context</h2>
+<p>In order to remove the <code>runAsUser</code> directive form the template
+<code>securityContext</code> setting, we can use the <a href="https://kubectl.docs.kubernetes.io/pages/reference/kustomize.html#patchesstrategicmerge">patchesStrategicMerge</a>
+feature. In our <code>kustomization.yml</code> file we add:</p>
+<pre><code>patches:
+  - |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: controller
+        namespace: metallb-system
+      spec:
+        template:
+          spec:
+            securityContext:
+              $patch: replace
+              runAsNonRoot: true
+</code></pre><p>This instructs <code>kustomize</code> to replace the contents of the <code>securityContext</code>
+key with the value included in the patch (without the <code>$patch: replace</code>
+directive, the default behavior is to merge the contents, which in this
+situation would effectively be a no-op).</p>
+<p>We can accomplish the same thing using <a href="https://tools.ietf.org/html/rfc6902">jsonpatch</a> syntax. In this case,
+we would write:</p>
+<pre><code>patches:
+  - target:
+      kind: Deployment
+      name: controller
+      namespace: metallb-system
+    patch: |-
+      - op: remove
+        path: /spec/template/spec/securityContext/runAsUser
+</code></pre><p>With either solution, the final output includes a <code>securityContext</code> setting
+that looks like this:</p>
+<pre><code>spec:
+  template:
+    spec:
+      securityContext:
+        runAsNonRoot: true
+</code></pre><h2 id="granting-elevated-privileges">Granting elevated privileges</h2>
+<p>The MetaLB docs suggest running:</p>
+<pre><code>oc adm policy add-scc-to-user privileged -n metallb-system -z speaker
+</code></pre><p>But we can configure the same privilege level by setting up an appropriate
+role binding as part of our Kustomize manifests.</p>
+<p>First, we create an <code>allow-privileged</code> cluster role by adding the following
+manifest in <code>clusterrole.yml</code>:</p>
+<pre><code>---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: allow-privileged
+rules:
+  - apiGroups:
+      - security.openshift.io
+    resourceNames:
+      - privileged
+    resources:
+      - securitycontextconstraints
+    verbs:
+      - use
+</code></pre><p>Then we bind the <code>speaker</code> service account to the <code>allow-privileged</code> role
+by adding a <code>ClusterRoleBinding</code> in <code>rolebinding.yml</code>:</p>
+<pre><code>---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: metallb-allow-privileged
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: allow-privileged
+subjects:
+  - kind: ServiceAccount
+    name: speaker
+    namespace: metallb-system
+</code></pre><p>You will need to add these new manifests to your <code>kustomization.yml</code>, which
+should now look like:</p>
+<pre><code>namespace: metallb-system
+
+resources:
+  - github.com/metallb/metallb//manifests?ref=v0.9.3
+  - configmap.yml
+  - secret.yml
+  - clusterole.yml
+  - rolebinding.yml
+
+patches:
+  - target:
+      kind: Deployment
+      name: controller
+      namespace: metallb-system
+    patch: |-
+      - op: remove
+        path: /spec/template/spec/securityContext/runAsUser
+</code></pre><h2 id="conclusion">Conclusion</h2>
+<p>The changes described here will result in a successful MetalLB deployment
+into your OpenShift environment.</p>
+
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/openshift/">openshift</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/kustomize/">kustomize</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/metallb/">metallb</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Installing%20metallb%20on%20OpenShift%20with%20Kustomize&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2020-09-27-installing-metallb-on-openshif%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2020 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+
