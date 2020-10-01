@@ -2091,7 +2091,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to get an env var inside a jinja2 template in ansible bash ansible jinja2 ansible-template  ansible adding data to empty list from variable list loops ansible  docker image build fails at RUN pip install -r requirements.txt in a Flask app python docker pip  Creating a network which allows communication between containers but no internet access docker testcontainers  git hooks : is there a clone hook?</description>
+      <description>&amp;#34;No such file or directory&amp;#34; when using find with -exec option linux  How to get an env var inside a jinja2 template in ansible bash ansible jinja2 ansible-template  ansible adding data to empty list from variable list loops ansible  docker image build fails at RUN pip install -r requirements.txt in a Flask app python docker pip  Creating a network which allows communication between containers but no internet access docker testcontainers  git hooks : is there a clone hook?</description>
     </item>
     
   </channel>
