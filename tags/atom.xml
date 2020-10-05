@@ -6,8 +6,32 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2020-09-27T00:00:00Z</updated>
+  <updated>2020-10-05T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>encryption</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/encryption/"/>
+    <id>https://blog.oddbit.com/tag/encryption/</id>
+    <published>2020-10-05T00:00:00Z</published>
+    <updated>2020-10-05T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>gpg</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/gpg/"/>
+    <id>https://blog.oddbit.com/tag/gpg/</id>
+    <published>2020-10-05T00:00:00Z</published>
+    <updated>2020-10-05T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>kustomize</title>
     <author>
@@ -161,30 +185,6 @@
     <id>https://blog.oddbit.com/tag/masks/</id>
     <published>2020-07-28T00:00:00Z</published>
     <updated>2020-07-28T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>medical</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/medical/"/>
-    <id>https://blog.oddbit.com/tag/medical/</id>
-    <published>2020-07-28T00:00:00Z</published>
-    <updated>2020-07-28T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>arduino</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/arduino/"/>
-    <id>https://blog.oddbit.com/tag/arduino/</id>
-    <published>2020-06-07T00:00:00Z</published>
-    <updated>2020-06-07T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   

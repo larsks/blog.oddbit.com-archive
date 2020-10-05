@@ -104,6 +104,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">AVR micro-optimization: Avr-gcc and --short-enums</h4>
+        <time class="post-stub-date" datetime="2019-01-28">Published Mon, Jan 28, 2019</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    How big is an enum? I noticed something odd while browsing through the assembly output of some AVR C code I wrote recently. In the code, I have the following expression:
+int main() { setup(); while (state != STATE_QUIT) { loop(); } }  Here, state is a variable of type enum STATE, which looks something like this (not exactly like this; there are actually 19 possible values but I didn&rsquo;t want to clutter this post with unnecessary code listings):
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2019-01-28-avr-gcc-short-enums/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2019-01-28-losing-malloc/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">AVR micro-optimization: Losing malloc</h4>
         <time class="post-stub-date" datetime="2019-01-28">Published Mon, Jan 28, 2019</time>
@@ -316,28 +339,6 @@ I had previously been using Mike Causer&rsquo;s micropython-tm1637 for MicroPyth
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2018-05-03-using-a-tm-led-module-with-cir/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Multiple 1-Wire Buses on the Raspberry Pi</h4>
-        <time class="post-stub-date" datetime="2018-03-27">Published Tue, Mar 27, 2018</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    The DS18B20 is a popular temperature sensor that uses the 1-Wire protocol for communication. Recent versions of the Linux kernel include a kernel driver for this protocol, making it relatively convenient to connect one or more of these devices to a Raspberry Pi or similar device. 1-Wire devices can be daisy chained, so it is possible to connect several devices to your Pi using only a single GPIO pin, and you&rsquo;ll find many articles out there that describe how to do so.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/">(Read more...)</a>
     </p>
     
     

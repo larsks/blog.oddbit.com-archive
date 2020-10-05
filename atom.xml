@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2020-09-27T00:00:00Z</updated>
+  <updated>2020-10-05T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  <entry>
+    <title>A note about running gpgv</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-10-05-a-note-about-running-gpgv/"/>
+    <id>https://blog.oddbit.com/post/2020-10-05-a-note-about-running-gpgv/</id>
+    <published>2020-10-05T00:00:00Z</published>
+    <updated>2020-10-05T00:00:00Z</updated>
+    <summary type="html">I found the following error from gpgv to be a little opaque:
+gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock resource &#39;/home/lars/.gnupg/trustedkeys.kbx&#39;: General error gpgv: Can&#39;t check signature: No public key It turns out that&amp;rsquo;s gpg-speak for &amp;ldquo;your trustedkeys.kbx keyring doesn&amp;rsquo;t exist. That took longer to figure out than I care to admit. To get a key from your regular public keyring into your trusted keyring, you can run something like the following:</summary>
+  </entry>
+  
   <entry>
     <title>Installing metallb on OpenShift with Kustomize</title>
     <author>
@@ -184,18 +197,6 @@ Activate the serial port Raspbian automatically starts a getty on the serial por
     <published>2020-01-23T00:00:00Z</published>
     <updated>2020-01-23T00:00:00Z</updated>
     <summary type="html">We&amp;rsquo;ve had some wacky weather recently. In the space of a week, the temperature went from a high of about 75°F to a low around 15°F. This got me to thinking about what constitutes &amp;ldquo;normal&amp;rdquo; weather here in the Boston area, and in particular, how common it is to have a string of consecutive days in which the high temperature stays below freezing. While this was an interesting question in itself, it also seemed like a great opportunity to learn a little about Pandas, the Python data analysis framework.</summary>
-  </entry>
-  
-  <entry>
-    <title>Snarl: A tool for literate blogging</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-01-15-snarl-a-tool-for-literate-blog/"/>
-    <id>https://blog.oddbit.com/post/2020-01-15-snarl-a-tool-for-literate-blog/</id>
-    <published>2020-01-15T00:00:00Z</published>
-    <updated>2020-01-15T00:00:00Z</updated>
-    <summary type="html">Literate programming is a programming paradigm introduced by Donald Knuth in which a program is combined with its documentation to form a single document. Tools are then used to extract the documentation for viewing or typesetting or to extract the program code so it can be compiled and/or run. While I have never been very enthusiastic about literate programming as a development methodology, I was recently inspired to explore these ideas as they relate to the sort of technical writing I do for this blog.</summary>
   </entry>
   
 </feed>
