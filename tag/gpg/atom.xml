@@ -18,7 +18,7 @@
     <published>2020-10-05T00:00:00Z</published>
     <updated>2020-10-05T00:00:00Z</updated>
     <summary type="html">I found the following error from gpgv to be a little opaque:
-gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock resource &#39;/home/lars/.gnupg/trustedkeys.kbx&#39;: General error gpgv: Can&#39;t check signature: No public key It turns out that&amp;rsquo;s gpg-speak for &amp;ldquo;your trustedkeys.kbx keyring doesn&amp;rsquo;t exist. That took longer to figure out than I care to admit. To get a key from your regular public keyring into your trusted keyring, you can run something like the following:</summary>
+gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock resource &#39;/home/lars/.gnupg/trustedkeys.kbx&#39;: General error gpgv: Can&#39;t check signature: No public key It turns out that&amp;rsquo;s gpg-speak for &amp;ldquo;your trustedkeys.kbx keyring doesn&amp;rsquo;t exist&amp;rdquo;. That took longer to figure out than I care to admit. To get a key from your regular public keyring into your trusted keyring, you can run something like the following:</summary>
   </entry>
   
 </feed>

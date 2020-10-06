@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>A note about running gpgv &middot; The Odd Bit</title>
         <meta name="description" content="I found the following error from gpgv to be a little opaque:
-gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock resource &#39;/home/lars/.gnupg/trustedkeys.kbx&#39;: General error gpgv: Can&#39;t check signature: No public key It turns out that&rsquo;s gpg-speak for &ldquo;your trustedkeys.kbx keyring doesn&rsquo;t exist. That took longer to figure out than I care to admit. To get a key from your regular public keyring into your trusted keyring, you can run something like the following:">
+gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock resource &#39;/home/lars/.gnupg/trustedkeys.kbx&#39;: General error gpgv: Can&#39;t check signature: No public key It turns out that&rsquo;s gpg-speak for &ldquo;your trustedkeys.kbx keyring doesn&rsquo;t exist&rdquo;. That took longer to figure out than I care to admit. To get a key from your regular public keyring into your trusted keyring, you can run something like the following:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.74.3" />
@@ -123,7 +123,7 @@ gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock reso
 gpgv: keyblock resource '/home/lars/.gnupg/trustedkeys.kbx': General error
 gpgv: Can't check signature: No public key
 </code></pre><p>It turns out that&rsquo;s gpg-speak for &ldquo;your <code>trustedkeys.kbx</code> keyring doesn&rsquo;t
-exist. That took longer to figure out than I care to admit.  To get a key
+exist&rdquo;. That took longer to figure out than I care to admit.  To get a key
 from your regular public keyring into your trusted keyring, you can run
 something like the following:</p>
 <pre><code>gpg --export -a lars@oddbit.com |
