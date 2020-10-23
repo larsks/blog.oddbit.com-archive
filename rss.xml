@@ -2101,7 +2101,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>python-ldap: How to fix b&amp;#39;ldapadd: invalid format (line 1) entry: &amp;#34;&amp;#34;\n&amp;#39; python testing ldap python-ldap ldif  How to associate a unique identifier with a PostgreSQL connection from a Python app? python postgresql psycopg2  Dockerfile set environment variable with script docker dockerfile  Docker: Why are my RestAPI and webAPP not communicating? docker networking containers  how to unbind a role/cluster role from a service account in k8s kubernetes devops rbac  docker-entrypoint.</description>
+      <description>Why bash consider every character as a number bash shell  python-ldap: How to fix b&amp;#39;ldapadd: invalid format (line 1) entry: &amp;#34;&amp;#34;\n&amp;#39; python testing ldap python-ldap ldif  How to associate a unique identifier with a PostgreSQL connection from a Python app? python postgresql psycopg2  Dockerfile set environment variable with script docker dockerfile  Docker: Why are my RestAPI and webAPP not communicating? docker networking containers  how to unbind a role/cluster role from a service account in k8s kubernetes devops rbac  docker-entrypoint.</description>
     </item>
     
   </channel>
