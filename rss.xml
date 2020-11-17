@@ -2101,7 +2101,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to enter docker container use shell script and do something? linux docker shell containers  How to search OpenStack users case insensitive? python openstack  Send mail with mutt in shell script file shell mutt  Setting globals in pytest class methods python python-3.x unit-testing testing pytest  Why does commenting out seemingly-unrelated code in this simple shell script throw an error? bash shell zsh macos-catalina  Ansible creates directory in the control machine even if delegate_to set to remote when running the playbook with local connection ansible  Make Directories Using Variables From Array (in Bash) bash  Docker is not able to translate service name to IP address internally mongodb docker docker-compose next.</description>
+      <description>Re-using environment variables in docker-compose.yml docker docker-compose environment-variables  Why Docker doesn&amp;#39;t recognize its network? postgresql docker  How to enter docker container use shell script and do something? linux docker shell containers  How to search OpenStack users case insensitive? python openstack  Send mail with mutt in shell script file shell mutt  Setting globals in pytest class methods python python-3.x unit-testing testing pytest  Why does commenting out seemingly-unrelated code in this simple shell script throw an error?</description>
     </item>
     
   </channel>
