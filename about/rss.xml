@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to make bash throw an error if -eq is used with non-numeric arguments inside [[ ... ]]? bash conditional-statements arithmetic-expressions  docker run only displays last CMD? docker  Ansible: how to replace hosts at one place ansible  With a container running MongoDB, how can I run a setup script on start? mongodb bash docker  s3 multiple files download using ansible amazon-web-services amazon-s3 ansible  Modify json using Ansible json dictionary ansible  Re-using environment variables in docker-compose.</description>
+      <description>Python read() returns empty results python linux python-2.7  JSONDecodeError for geojson file python json geojson folium jsondecoder  How to make bash throw an error if -eq is used with non-numeric arguments inside [[ ... ]]? bash conditional-statements arithmetic-expressions  docker run only displays last CMD? docker  Ansible: how to replace hosts at one place ansible  With a container running MongoDB, how can I run a setup script on start?</description>
     </item>
     
   </channel>
