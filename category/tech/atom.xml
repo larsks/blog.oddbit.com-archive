@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/category/tech/" rel="alternate"></link>
 
-  <updated>2020-10-05T00:00:00Z</updated>
+  <updated>2020-12-12T00:00:00Z</updated>
   <id>https://blog.oddbit.com/category/tech/</id>
+  <entry>
+    <title>Postgres and permissions in OpenShift</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-12-12-postgres-and-permissions-in-op/"/>
+    <id>https://blog.oddbit.com/post/2020-12-12-postgres-and-permissions-in-op/</id>
+    <published>2020-12-12T00:00:00Z</published>
+    <updated>2020-12-12T00:00:00Z</updated>
+    <summary type="html">Folks running the official postgres image in OpenShift will often encounter a problem when first trying to boot a Postgres container in OpenShift. Given a pod description something like this:
+apiVersion: v1 kind: Pod metadata: name: postgres spec: containers: - name: postgres image: postgres:13 ports: - containerPort: 5432 volumeMounts: - mountPath: /var/lib/postgresql/data name: postgres-data envFrom: - secretRef: name: postgres-secret volumes: - name: postgres-data persistentVolumeClaim: claimName: postgres-data-pvc The container will fail to start and the logs will show the following error:</summary>
+  </entry>
+  
   <entry>
     <title>A note about running gpgv</title>
     <author>
@@ -183,18 +196,6 @@ Activate the serial port Raspbian automatically starts a getty on the serial por
     <published>2020-01-23T00:00:00Z</published>
     <updated>2020-01-23T00:00:00Z</updated>
     <summary type="html">We&amp;rsquo;ve had some wacky weather recently. In the space of a week, the temperature went from a high of about 75°F to a low around 15°F. This got me to thinking about what constitutes &amp;ldquo;normal&amp;rdquo; weather here in the Boston area, and in particular, how common it is to have a string of consecutive days in which the high temperature stays below freezing. While this was an interesting question in itself, it also seemed like a great opportunity to learn a little about Pandas, the Python data analysis framework.</summary>
-  </entry>
-  
-  <entry>
-    <title>Snarl: A tool for literate blogging</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-01-15-snarl-a-tool-for-literate-blog/"/>
-    <id>https://blog.oddbit.com/post/2020-01-15-snarl-a-tool-for-literate-blog/</id>
-    <published>2020-01-15T00:00:00Z</published>
-    <updated>2020-01-15T00:00:00Z</updated>
-    <summary type="html">Literate programming is a programming paradigm introduced by Donald Knuth in which a program is combined with its documentation to form a single document. Tools are then used to extract the documentation for viewing or typesetting or to extract the program code so it can be compiled and/or run. While I have never been very enthusiastic about literate programming as a development methodology, I was recently inspired to explore these ideas as they relate to the sort of technical writing I do for this blog.</summary>
   </entry>
   
 </feed>

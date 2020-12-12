@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2020-10-05T00:00:00Z</updated>
+  <updated>2020-12-12T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  <entry>
+    <title>Postgres and permissions in OpenShift</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-12-12-postgres-and-permissions-in-op/"/>
+    <id>https://blog.oddbit.com/post/2020-12-12-postgres-and-permissions-in-op/</id>
+    <published>2020-12-12T00:00:00Z</published>
+    <updated>2020-12-12T00:00:00Z</updated>
+    <summary type="html">Folks running the official postgres image in OpenShift will often encounter a problem when first trying to boot a Postgres container in OpenShift. Given a pod description something like this:
+apiVersion: v1 kind: Pod metadata: name: postgres spec: containers: - name: postgres image: postgres:13 ports: - containerPort: 5432 volumeMounts: - mountPath: /var/lib/postgresql/data name: postgres-data envFrom: - secretRef: name: postgres-secret volumes: - name: postgres-data persistentVolumeClaim: claimName: postgres-data-pvc The container will fail to start and the logs will show the following error:</summary>
+  </entry>
+  
   <entry>
     <title>A note about running gpgv</title>
     <author>
@@ -185,18 +198,6 @@ Activate the serial port Raspbian automatically starts a getty on the serial por
     <published>2020-02-15T00:00:00Z</published>
     <updated>2020-02-15T00:00:00Z</updated>
     <summary type="html">I recently acquired a managed switch for my home office in order to segment a few devices off onto their own isolated vlan. As part of this, I want to expose these vlans on my desktop using Open vSwitch (OVS), and I wanted to implement the configuration using NetworkManager rather than either relying on the legacy /etc/sysconfig/network-scripts scripts or rolling my own set of services. These are my notes in case I ever have to do this again.</summary>
-  </entry>
-  
-  <entry>
-    <title>How long is a cold spell in Boston?</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-01-23-how-long-is-a-cold-spell/"/>
-    <id>https://blog.oddbit.com/post/2020-01-23-how-long-is-a-cold-spell/</id>
-    <published>2020-01-23T00:00:00Z</published>
-    <updated>2020-01-23T00:00:00Z</updated>
-    <summary type="html">We&amp;rsquo;ve had some wacky weather recently. In the space of a week, the temperature went from a high of about 75°F to a low around 15°F. This got me to thinking about what constitutes &amp;ldquo;normal&amp;rdquo; weather here in the Boston area, and in particular, how common it is to have a string of consecutive days in which the high temperature stays below freezing. While this was an interesting question in itself, it also seemed like a great opportunity to learn a little about Pandas, the Python data analysis framework.</summary>
   </entry>
   
 </feed>

@@ -105,6 +105,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Running NTP in a Container</h4>
+        <time class="post-stub-date" datetime="2015-10-09">Published Fri, Oct 9, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Someone asked on IRC about running ntpd in a container on Atomic, so I&rsquo;ve put together a small example. We&rsquo;ll start with a very simple Dockerfile:
+FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&quot;ntpd&quot;]  I&rsquo;m using the alpine image as my starting point because it&rsquo;s very small, which makes this whole process go a little faster. I&rsquo;m installing the openntpd package, which provides the ntpd binary.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Migrating Cinder volumes between OpenStack environments using shared NFS storage</h4>
         <time class="post-stub-date" datetime="2015-09-29">Published Tue, Sep 29, 2015</time>
@@ -311,29 +334,6 @@ And now your boss knows why the TPS reports are late.
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Booting cloud images with libvirt</h4>
-        <time class="post-stub-date" datetime="2015-03-10">Published Tue, Mar 10, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Most major distributions now provide &ldquo;cloud-enabled&rdquo; images designed for use in cloud environments like OpenStack and AWS. These images are usually differentiated by (a) being relatively small, and (b) running cloud-init at boot to perform initial system configuration tasks using metadata provided by the cloud environment.
-Because of their small size and support for automatic configuration (including such useful tasks as provisioning ssh keys), these images are attractive for use outside of a cloud environment.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/">(Read more...)</a>
     </p>
     
     

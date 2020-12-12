@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/openshift/" rel="alternate"></link>
 
-  <updated>2020-09-27T00:00:00Z</updated>
+  <updated>2020-12-12T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/openshift/</id>
+  <entry>
+    <title>Postgres and permissions in OpenShift</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-12-12-postgres-and-permissions-in-op/"/>
+    <id>https://blog.oddbit.com/post/2020-12-12-postgres-and-permissions-in-op/</id>
+    <published>2020-12-12T00:00:00Z</published>
+    <updated>2020-12-12T00:00:00Z</updated>
+    <summary type="html">Folks running the official postgres image in OpenShift will often encounter a problem when first trying to boot a Postgres container in OpenShift. Given a pod description something like this:
+apiVersion: v1 kind: Pod metadata: name: postgres spec: containers: - name: postgres image: postgres:13 ports: - containerPort: 5432 volumeMounts: - mountPath: /var/lib/postgresql/data name: postgres-data envFrom: - secretRef: name: postgres-secret volumes: - name: postgres-data persistentVolumeClaim: claimName: postgres-data-pvc The container will fail to start and the logs will show the following error:</summary>
+  </entry>
+  
   <entry>
     <title>Installing metallb on OpenShift with Kustomize</title>
     <author>

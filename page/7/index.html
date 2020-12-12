@@ -105,6 +105,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Gruf, a Gerrit command line utility</h4>
+        <time class="post-stub-date" datetime="2016-02-16">Published Tue, Feb 16, 2016</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    (See also the followup to this article.)
+I&rsquo;ve recently started spending more time interacting with Gerrit, the code review tool used both by OpenStack, at review.openstack.org, and by a variety of other open source projects at GerritForge&rsquo;s GitHub-linked review.gerrithub.io. I went looking for command line tools and was largely disappointed with what I found. Many of the solutions out there assume that you&rsquo;re regularly interacting with a single Gerrit instance, and that&rsquo;s seldom the case: more often, the Gerrit server in use varies from project to project.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">A systemd-nspawn connection driver for Ansible</h4>
         <time class="post-stub-date" datetime="2016-02-08">Published Mon, Feb 8, 2016</time>
@@ -308,29 +331,6 @@ A &ldquo;connection driver&rdquo; is the mechanism by which Ansible connects to 
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connection-driver/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Running NTP in a Container</h4>
-        <time class="post-stub-date" datetime="2015-10-09">Published Fri, Oct 9, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Someone asked on IRC about running ntpd in a container on Atomic, so I&rsquo;ve put together a small example. We&rsquo;ll start with a very simple Dockerfile:
-FROM alpine RUN apk update RUN apk add openntpd ENTRYPOINT [&quot;ntpd&quot;]  I&rsquo;m using the alpine image as my starting point because it&rsquo;s very small, which makes this whole process go a little faster. I&rsquo;m installing the openntpd package, which provides the ntpd binary.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-10-09-running-ntp-in-a-container/">(Read more...)</a>
     </p>
     
     
