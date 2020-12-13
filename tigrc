@@ -1,0 +1,2 @@
+bind refs       M       ?sh -c 'git checkout master && git merge %(branch)'
+bind refs       !       !git branch -D %(branch)
