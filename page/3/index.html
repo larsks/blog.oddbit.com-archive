@@ -105,6 +105,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2019-06-17-avoid-rebase-hell-squashing-wi/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Avoid rebase hell: squashing without rebasing</h4>
+        <time class="post-stub-date" datetime="2019-06-17">Published Mon, Jun 17, 2019</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    You&rsquo;re working on a pull request. You&rsquo;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&rsquo;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I&rsquo;ve marked merge commits with the text [merge]):
+7e181479 Adds methods for widget sales 0487162 [merge] Merge remote-tracking branch 'origin/master' into my_feature 76ee81c [merge] Merge branch 'my_feature' of https://github.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2019-06-17-avoid-rebase-hell-squashing-wi/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2019-06-14-git-etiquette-commit-messages/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Git Etiquette: Commit messages and pull requests</h4>
         <time class="post-stub-date" datetime="2019-06-14">Published Fri, Jun 14, 2019</time>
@@ -308,37 +331,13 @@ That means that comments will finally be stored in the same place as the blog co
 
 
         
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">In which I PEBKAC so you don&#39;t have to</h4>
-        <time class="post-stub-date" datetime="2019-02-11">Published Mon, Feb 11, 2019</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Say you have a simple bit of code:
-#include &lt;avr/io.h&gt; #include &lt;util/delay.h&gt; #define LED_BUILTIN _BV(PORTB5) int main(void) { DDRB |= LED_BUILTIN; while (1) { PORTB |= LED_BUILTIN; // turn on led _delay_ms(1000); // delay 1s PORTB &amp;= ~LED_BUILTIN; // turn off led _delay_ms(1000); // delay 1s } }  You have a Makefile that compiles that into an object (.o) file like this:
-avr-gcc -mmcu=atmega328p -DF_CPU=16000000 -Os -c blink.c  If you were to forget to set the device type when compiling your .
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
     </ol>
 
     <div class="post-navigation">
         
 
     <nav class="pagination" role="navigation">
-        <span class="page-number">Page 3 of 20</span>
+        <span class="page-number">Page 3 of 21</span>
         
             <a class="newer-posts" href="/page/2/">&larr; Newer Posts</a>
         

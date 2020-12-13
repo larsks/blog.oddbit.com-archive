@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/gis/" rel="alternate"></link>
 
-  <updated>2015-11-17T00:00:00Z</updated>
+  <updated>2020-12-13T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/gis/</id>
+  <entry>
+    <title>Animating a map of Covid in the Northeast US</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2020-12-13-animating-a-map-of-covid-in-th/"/>
+    <id>https://blog.oddbit.com/post/2020-12-13-animating-a-map-of-covid-in-th/</id>
+    <published>2020-12-13T00:00:00Z</published>
+    <updated>2020-12-13T00:00:00Z</updated>
+    <summary type="html">I recently put together a short animation showing the spread of Covid throughout the Northeast United States:
+  I thought it might be interesting to walk through the process I used to create the video. The steps described in this article aren&amp;rsquo;t exactly what I used (I was dealing with data in a PostGIS database, and in the interests of simplicity I wanted instructions that can be accomplished with just QGIS), but they end up in the same place.</summary>
+  </entry>
+  
   <entry>
     <title>Installing pyspatialite on Fedora</title>
     <author>

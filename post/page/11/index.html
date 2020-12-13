@@ -104,6 +104,31 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Building Docker images with Puppet</h4>
+        <time class="post-stub-date" datetime="2014-10-22">Published Wed, Oct 22, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I like Docker, but I&rsquo;m not a huge fan of using shell scripts for complex system configuration&hellip;and Dockerfiles are basically giant shell scripts.
+I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
+I started with a manifest like this (in puppet/node.pp):
+class { 'ssh': }  And a Dockerfile like this:
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-10-06-docker-networking-with-dedicat/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Docker networking with dedicated network containers</h4>
         <time class="post-stub-date" datetime="2014-10-06">Published Mon, Oct 6, 2014</time>
@@ -327,36 +352,13 @@ In order for WaitCondition resources to operate correctly in Heat, you will need
 
 
         
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">nova-docker and environment variables</h4>
-        <time class="post-stub-date" datetime="2014-08-28">Published Thu, Aug 28, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I&rsquo;ve been playing with Docker a bit recently, and decided to take a look at the nova-docker driver for OpenStack.
-The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker containers instead of hypervisor-based servers. For certain workloads, this leads to better resource utilization than you would get with a hypervisor-based solution, while at the same time givin you better support for multi-tenancy and flexible networking than you get with Docker by itself.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-08-28-novadocker-and-environment-var/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
     </ol>
 
     <div class="post-navigation">
         
 
     <nav class="pagination" role="navigation">
-        <span class="page-number">Page 11 of 20</span>
+        <span class="page-number">Page 11 of 21</span>
         
             <a class="newer-posts" href="/post/page/10/">&larr; Newer Posts</a>
         

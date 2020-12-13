@@ -6,10 +6,20 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Animating a map of Covid in the Northeast US</title>
+      <link>https://blog.oddbit.com/post/2020-12-13-animating-a-map-of-covid-in-th/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2020-12-13-animating-a-map-of-covid-in-th/</guid>
+      <description>I recently put together a short animation showing the spread of Covid throughout the Northeast United States:
+  I thought it might be interesting to walk through the process I used to create the video. The steps described in this article aren&amp;rsquo;t exactly what I used (I was dealing with data in a PostGIS database, and in the interests of simplicity I wanted instructions that can be accomplished with just QGIS), but they end up in the same place.</description>
+    </item>
     
     <item>
       <title>Postgres and permissions in OpenShift</title>
