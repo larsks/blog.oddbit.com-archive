@@ -258,11 +258,11 @@ Layer-&gt;Add Delimited Text Layer&hellip;&rdquo;, find the
 doesn&rsquo;t have any geographic data of its own; we need to associate it
 with one of our other layers in order to make use of it. We can this
 by using a <a href="https://www.qgistutorials.com/en/docs/3/performing_table_joins.html">table join</a>.</p>
-<p>In order to perform a table join, we need a single field in each table
-that corresponds to a field value in the other table. The counties
+<p>In order to perform a table join, we need a single field in each layer
+that corresponds to a field value in the other layer. The counties
 dataset has a <code>GEOID</code> field that combines the state and county <a href="https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt">FIPS
 codes</a>, but the population dataset has only individual state and
-county codes. We can create a new virtual field in the population
+county codes. We can create a new <a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html#creating-a-virtual-field">virtual field</a> in the population
 layer that combines these two values in order to provide an
 appropriate target field for the table join.</p>
 <p>Open the attribute table for population layer, and click on the &ldquo;Open

@@ -43,21 +43,6 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/tag/kubernetes/</loc>
-    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/openshift/</loc>
-    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/post/2020-12-12-postgres-and-permissions-in-op/</loc>
-    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.oddbit.com/post/2020-10-05-a-note-about-running-gpgv/</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url>
@@ -84,6 +69,11 @@
   
   <url>
     <loc>https://blog.oddbit.com/tag/metallb/</loc>
+    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/openshift/</loc>
     <lastmod>2020-09-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -924,6 +914,11 @@
   
   <url>
     <loc>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</loc>
+    <lastmod>2015-06-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/kubernetes/</loc>
     <lastmod>2015-06-19T00:00:00+00:00</lastmod>
   </url>
   

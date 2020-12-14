@@ -105,30 +105,6 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Creating minimal Docker images from dynamically linked ELF binaries</h4>
-        <time class="post-stub-date" datetime="2015-02-05">Published Thu, Feb 5, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    In this post, we&rsquo;ll look at a method for building minimal Docker images for dynamically linked ELF binaries, and then at a tool for automating this process.
-It is tempting, when creating a simple Docker image, to start with one of the images provided by the major distributions. For example, if you need an image that provides tcpdump for use on your Atomic host, you might do something like:
-FROM fedora RUN yum -y install tcpdump  And while this will work, you end up consuming 250MB for tcpdump.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-02-05-creating-minimal-docker-images/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Filtering libvirt XML in Nova</h4>
         <time class="post-stub-date" datetime="2015-02-05">Published Thu, Feb 5, 2015</time>
@@ -336,13 +312,38 @@ The CloudBase repository is an excellent source of information, but I wanted to 
 
 
         
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Building Docker images with Puppet</h4>
+        <time class="post-stub-date" datetime="2014-10-22">Published Wed, Oct 22, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I like Docker, but I&rsquo;m not a huge fan of using shell scripts for complex system configuration&hellip;and Dockerfiles are basically giant shell scripts.
+I was curious whether or not it would be possible to use Puppet during the docker build process. As a test case, I used the ssh module included in the openstack-puppet-modules package.
+I started with a manifest like this (in puppet/node.pp):
+class { 'ssh': }  And a Dockerfile like this:
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-10-22-building-docker-images-with-pu/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
     </ol>
 
     <div class="post-navigation">
         
 
     <nav class="pagination" role="navigation">
-        <span class="page-number">Page 10 of 21</span>
+        <span class="page-number">Page 10 of 20</span>
         
             <a class="newer-posts" href="/post/page/9/">&larr; Newer Posts</a>
         

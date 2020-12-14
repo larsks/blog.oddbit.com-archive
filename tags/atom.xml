@@ -33,30 +33,6 @@
   </entry>
   
   <entry>
-    <title>kubernetes</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/kubernetes/"/>
-    <id>https://blog.oddbit.com/tag/kubernetes/</id>
-    <published>2020-12-12T00:00:00Z</published>
-    <updated>2020-12-12T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>openshift</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/openshift/"/>
-    <id>https://blog.oddbit.com/tag/openshift/</id>
-    <published>2020-12-12T00:00:00Z</published>
-    <updated>2020-12-12T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
     <title>encryption</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
@@ -99,6 +75,18 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/metallb/"/>
     <id>https://blog.oddbit.com/tag/metallb/</id>
+    <published>2020-09-27T00:00:00Z</published>
+    <updated>2020-09-27T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>openshift</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/openshift/"/>
+    <id>https://blog.oddbit.com/tag/openshift/</id>
     <published>2020-09-27T00:00:00Z</published>
     <updated>2020-09-27T00:00:00Z</updated>
     <summary type="html"></summary>
@@ -185,6 +173,18 @@
     <id>https://blog.oddbit.com/tag/networking/</id>
     <published>2020-07-30T01:00:00Z</published>
     <updated>2020-07-30T01:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>coronavirus</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/coronavirus/"/>
+    <id>https://blog.oddbit.com/tag/coronavirus/</id>
+    <published>2020-07-28T00:00:00Z</published>
+    <updated>2020-07-28T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   
