@@ -6,10 +6,21 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>To sleep or not to sleep?</title>
+      <link>https://blog.oddbit.com/post/2020-12-18-to-sleep-or-not-to-sleep/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2020-12-18-to-sleep-or-not-to-sleep/</guid>
+      <description>Let&amp;rsquo;s say you have a couple of sensors attached to an ESP8266 running MicroPython. You&amp;rsquo;d like to sample them at different frequencies (say, one every 60 seconds and one every five minutes), and you&amp;rsquo;d like to do it as efficiently as possible in terms of power consumption. What are your options?
+If we don&amp;rsquo;t care about power efficiency, the simplest solution is probably a loop like this:
+import machine lastrun_1 = 0 lastrun_2 = 0 while True: now = time.</description>
+    </item>
     
     <item>
       <title>Animating a map of Covid in the Northeast US</title>
@@ -2111,7 +2122,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Access variable from one role in another role in an Ansible playbook with multiple hosts ansible  How do you merge the master branch into a feature branch with GitPython? python git gitpython  How include second awk to avoid awk | awk bash awk  How to add thousands of local releases to GitHub? git github  Multiple inputs using subprocess.run in Python 3.7&amp;#43; python python-3.x input subprocess  GIT Commit Message for a PR git github git-commit pull-request  Python read() returns empty results python linux python-2.</description>
+      <description>run ssh commands on vxworks with ansible ansible  Access variable from one role in another role in an Ansible playbook with multiple hosts ansible  How do you merge the master branch into a feature branch with GitPython? python git gitpython  How include second awk to avoid awk | awk bash awk  How to add thousands of local releases to GitHub? git github  Multiple inputs using subprocess.</description>
     </item>
     
   </channel>

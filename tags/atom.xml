@@ -6,8 +6,44 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2020-12-13T00:00:00Z</updated>
+  <updated>2020-12-18T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>esp8266</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/esp8266/"/>
+    <id>https://blog.oddbit.com/tag/esp8266/</id>
+    <published>2020-12-18T00:00:00Z</published>
+    <updated>2020-12-18T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>micropython</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/micropython/"/>
+    <id>https://blog.oddbit.com/tag/micropython/</id>
+    <published>2020-12-18T00:00:00Z</published>
+    <updated>2020-12-18T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>python</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/python/"/>
+    <id>https://blog.oddbit.com/tag/python/</id>
+    <published>2020-12-18T00:00:00Z</published>
+    <updated>2020-12-18T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>covid</title>
     <author>
@@ -149,42 +185,6 @@
     <id>https://blog.oddbit.com/tag/virtualization/</id>
     <published>2020-08-10T00:00:00Z</published>
     <updated>2020-08-10T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>cnv</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/cnv/"/>
-    <id>https://blog.oddbit.com/tag/cnv/</id>
-    <published>2020-07-30T01:00:00Z</published>
-    <updated>2020-07-30T01:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>networking</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/networking/"/>
-    <id>https://blog.oddbit.com/tag/networking/</id>
-    <published>2020-07-30T01:00:00Z</published>
-    <updated>2020-07-30T01:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>coronavirus</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/coronavirus/"/>
-    <id>https://blog.oddbit.com/tag/coronavirus/</id>
-    <published>2020-07-28T00:00:00Z</published>
-    <updated>2020-07-28T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   

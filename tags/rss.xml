@@ -6,10 +6,37 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>esp8266</title>
+      <link>https://blog.oddbit.com/tag/esp8266/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/esp8266/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>micropython</title>
+      <link>https://blog.oddbit.com/tag/micropython/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/micropython/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://blog.oddbit.com/tag/python/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>covid</title>
@@ -197,33 +224,6 @@
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/sponsored/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>esp8266</title>
-      <link>https://blog.oddbit.com/tag/esp8266/</link>
-      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/esp8266/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>micropython</title>
-      <link>https://blog.oddbit.com/tag/micropython/</link>
-      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/micropython/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://blog.oddbit.com/tag/python/</link>
-      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/python/</guid>
       <description></description>
     </item>
     
