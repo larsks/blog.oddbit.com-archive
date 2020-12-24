@@ -2122,7 +2122,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to get System IP from a Dot net Core application running inside a Docker container docker .net-core amazon-ec2  How to use k8s Ansible module without quotes? kubernetes ansible  Read and use attributes from XML file using python python xml xml-parsing elementtree xml-namespaces  reach docker over remote using SSHTunnelForwarder python docker ssh-tunnel  Python not seeing environment variables on GitHub Actions python pytest github-actions tox  How to run a script within a package python  Unstable Micropython on ESP8266 python microcontroller esp8266 micropython  Docker how to pass a relative path as an argument docker  run ssh commands on vxworks with ansible ansible  Access variable from one role in another role in an Ansible playbook with multiple hosts ansible   (last refreshed at 2020-12-23 22:40 UTC )</description>
+      <description>Why can&amp;#39;t I import and use machine.SoftI2C in Micropython v.1.13 on ESP32? i2c esp32 micropython  Fetch port from elastic search supervisord file python  Ansible variable manipulation within vars ansible  Best Vim alternative to VSCode&amp;#39;s Ctrl&amp;#43;D vim  Git - list files by creation date git shell  Postgres Docker container does not run create SQL script postgresql docker docker-compose postgresql-9.3  Are Ansible patterns a feature of YAML?</description>
     </item>
     
   </channel>
