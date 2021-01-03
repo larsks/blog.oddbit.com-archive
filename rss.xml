@@ -2122,7 +2122,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Can we have a single container with multiple image like nginx &amp;#43; Redis &amp;#43; alpine? docker kubernetes pod  Why can&amp;#39;t I import and use machine.SoftI2C in Micropython v.1.13 on ESP32? i2c esp32 micropython  Fetch port from elastic search supervisord file python  Ansible variable manipulation within vars ansible  Best Vim alternative to VSCode&amp;#39;s Ctrl&amp;#43;D vim  How to list files by when it was first added to a Git repo?</description>
+      <description>Can we have a single container with multiple image like nginx &amp;#43; Redis &amp;#43; alpine? docker kubernetes  Why can&amp;#39;t I import and use machine.SoftI2C in Micropython v.1.13 on ESP32? i2c esp32 micropython  Fetch port from elastic search supervisord file python  Ansible variable manipulation within vars ansible  Best Vim alternative to VSCode&amp;#39;s Ctrl&amp;#43;D vim  How to list files by when it was first added to a Git repo?</description>
     </item>
     
   </channel>
