@@ -2122,7 +2122,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>what does forward slash do in this django settings.py python list? python django  ansible How escape comma while passing as a list ansible  listen to keystrokes on an ssh terminal python ssh pynput  Python Mock patch ldap3 search response python unit-testing python-unittest python-unittest.mock ldap3  Get network address of connected interface with Python python python-3.x networking scapy  Ansible Loops with Lists loops ansible nested  Restore VM after loosing base files virtual-machine openstack kvm data-recovery  telnetlib execution not responding and timing out python telnet telnetlib  Should we use supervisors to keeping processes running in Docker containers?</description>
+      <description>Is there a way to erase all duplicates in a file and count how many duplicates there are while keeping original order of file linux shell text command-line archlinux  Ansible to get the dict like values from a file to the playbook or loop ansible yaml jason  Create service in docker-compose.yml base on running container docker  what does forward slash do in this django settings.py python list?</description>
     </item>
     
   </channel>
