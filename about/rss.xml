@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Testing Asyncio with Pytest: How to test a try-except block by mocking the event loop? python pytest python-asyncio monkeypatching pytest-asyncio  Raspberry pi: Associate &amp;#34;screen&amp;#34; and Systemd to auto-start a minecraft server at pi&amp;#39;s start linux raspberry-pi systemd raspberry-pi4 minecraft-forge  pip install inside running docker container python docker  How to replace Image with jq in Kubernetes Deployment? kubernetes yaml jq  Is there a way to use galaxy roles without downloading them?</description>
+      <description>ruamel.yaml - how to output null instead of !!null &amp;#39;&amp;#39; when default_flow_style=None python yaml ruamel.yaml  Testing Asyncio with Pytest: How to test a try-except block by mocking the event loop? python pytest python-asyncio monkeypatching pytest-asyncio  Raspberry pi: Associate &amp;#34;screen&amp;#34; and Systemd to auto-start a minecraft server at pi&amp;#39;s start linux raspberry-pi systemd raspberry-pi4 minecraft-forge  pip install inside running docker container python docker  How to replace Image with jq in Kubernetes Deployment?</description>
     </item>
     
   </channel>
