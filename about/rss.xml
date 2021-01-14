@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How can I specify a column for a variable in a Jinja2 template? jinja2 ansible-template  ruamel.yaml - how to output null instead of !!null &amp;#39;&amp;#39; when default_flow_style=None python yaml ruamel.yaml  Testing Asyncio with Pytest: How to test a try-except block by mocking the event loop? python pytest python-asyncio monkeypatching pytest-asyncio  Raspberry pi: Associate &amp;#34;screen&amp;#34; and Systemd to auto-start a minecraft server at pi&amp;#39;s start linux raspberry-pi systemd raspberry-pi4 minecraft-forge  pip install inside running docker container python docker  How to replace Image with jq in Kubernetes Deployment?</description>
+      <description>ansible-inventory --list host groups command line ansible ansible-inventory  How to run docker with current host user, when users are managed with Linux NIS (Network Information Service) linux docker ubuntu nis  AttributeError: &amp;#39;AttributeError&amp;#39; object has no attribute &amp;#39;To&amp;#39; python  How can I specify a column for a variable in a Jinja2 template? jinja2 ansible-template  ruamel.yaml - how to output null instead of !!null &amp;#39;&amp;#39; when default_flow_style=None python yaml ruamel.</description>
     </item>
     
   </channel>
