@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Accessing a struct defined in another c file? c abstract-class abstract-data-type  Ansible use to_datetime filter and produce time in UTC ansible jinja2  ansible gathering facts fails to retrieve ansible_distribution_release (&amp;#34;module invocation has junk after the json data&amp;#34;) ansible ubuntu-20.04  Lost my openshift console (&amp;#34;Application is not available&amp;#34;) oauth openshift  Why a service configured with only `expose` is able to communicate with internet? docker networking docker-compose  Why &amp;#34;[Errno 61] Connection refused&amp;#34; when program is listening on correct port, socket is bound to all interfaces?</description>
+      <description>Trying to run a simple docker container with a crontab and a simple python script docker cron dockerfile containers  ansible from MAC to a remote DataDomain which has special filesystem macos ansible  Git and SHA-256 git sha256  How to POST Json file with arguments using Ansible json ansible  How to use variable substitution in a when condition? ansible ansible-template  Accessing a struct defined in another c file?</description>
     </item>
     
   </channel>
