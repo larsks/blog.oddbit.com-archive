@@ -2122,7 +2122,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>updating raspberry pi with docker containers running docker raspberry-pi raspbian  Same command sent locally works, but not when sent remotely? python linux ssh graph  Invalid ENTRYPOINT error occurs while deploying example on google cloud run docker google-cloud-platform dockerfile google-cloud-run  Inspecting a Docker image that isn&amp;#39;t fully extracted due to storage restrictions docker  Iterating through pairs of files with glob bash  docker RUN mkdir does not work when folder exist in prev image linux image docker centos  How to list non-empty directories with the command find or ls?</description>
+      <description>zsh: bad CPU type in executable: kubectl (macOS Big Sur) macos kubernetes zsh kubectl  How to read and create a new list without duplicate words in Python? python list  updating raspberry pi with docker containers running docker raspberry-pi raspbian  Same command sent locally works, but not when sent remotely? python linux ssh graph  Invalid ENTRYPOINT error occurs while deploying example on google cloud run docker google-cloud-platform dockerfile google-cloud-run  Inspecting a Docker image that isn&amp;#39;t fully extracted due to storage restrictions docker  Iterating through pairs of files with glob bash  docker RUN mkdir does not work when folder exist in prev image linux image docker centos  How to list non-empty directories with the command find or ls?</description>
     </item>
     
   </channel>
