@@ -6,10 +6,20 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>symtool: a tool for interacting with your SYM-1</title>
+      <link>https://blog.oddbit.com/post/2021-02-06-symtool-a-tool-for-interacting/</link>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2021-02-06-symtool-a-tool-for-interacting/</guid>
+      <description>The SYM-1 is a 6502-based single-board computer produced by Synertek Systems Corp in the mid 1970&amp;rsquo;s. I&amp;rsquo;ve had one floating around in a box for many, many years, and after a recent foray into the world of 6502 assembly language programming I decided to pull it out, dust it off, and see if it still works.
+The board I have has a whopping 8KB of memory, and in addition to the standard SUPERMON monitor it has the expansion ROMs for the Synertek BASIC interpreter (yet another Microsoft BASIC) and RAE (the &amp;ldquo;Resident Assembler Editor&amp;rdquo;).</description>
+    </item>
     
     <item>
       <title>To sleep or not to sleep?</title>
@@ -2122,7 +2132,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to test if an item exists in XML file with beautiful soup? python xml csv beautifulsoup  docker sh vs bash variable ${@} expansion - ${@} doesn&amp;#39;t work in sh bash docker ash  Lost my openshift console (&amp;#34;Application is not available&amp;#34;) oauth openshift  Docker-compose with podman? docker docker-compose dockerfile podman  Dockerfile COPY command copies file as a directory docker dockerfile docker-copy  How does NGINX resolve the Docker DNS hostnames?</description>
+      <description>How may I develop two features simultaneously with Git branching? git git-branch  How to make sure my git pre-commit script won&amp;#39;t get fooled? git hook pre-commit-hook  How to test if an item exists in XML file with beautiful soup? python xml csv beautifulsoup  docker sh vs bash variable ${@} expansion - ${@} doesn&amp;#39;t work in sh bash docker ash  Lost my openshift console (&amp;#34;Application is not available&amp;#34;) oauth openshift  Docker-compose with podman?</description>
     </item>
     
   </channel>

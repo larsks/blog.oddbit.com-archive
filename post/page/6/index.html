@@ -105,6 +105,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Safely restarting an OpenStack server with Ansible</h4>
+        <time class="post-stub-date" datetime="2018-01-24">Published Wed, Jan 24, 2018</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    The other day on #ansible, someone was looking for a way to safely shut down a Nova server, wait for it to stop, and then start it up again using the openstack cli. The first part seemed easy:
+- hosts: myserver tasks: - name: shut down the server command: poweroff become: true  &hellip;but that will actually fail with the following result:
+TASK [shut down server] ************************************* fatal: [myserver]: UNREACHABLE! =&gt; {&quot;changed&quot;: false, &quot;msg&quot;: &quot;Failed to connect to the host via ssh: Shared connection to 10.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2017-09-26-some-notes-on-pwm-on-the-raspberry-pi/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Some notes on PWM on the Raspberry Pi</h4>
         <time class="post-stub-date" datetime="2017-09-26">Published Tue, Sep 26, 2017</time>
@@ -313,30 +337,6 @@ $ vim some/file/somewhere $ git add -u $ git fix  Which I find much more conveni
 
 
         
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Deploying an HA OpenStack development environment with tripleo-quickstart
-</h4>
-        <time class="post-stub-date" datetime="2016-02-19">Published Fri, Feb 19, 2016</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    In this article I would like to introduce tripleo-quickstart, a tool that will automatically provision a virtual environment and then use TripleO to deploy an HA OpenStack on top of it.
-Introducing Tripleo-Quickstart The goal of the Tripleo-Quickstart project is to replace the instack-virt-setup tool for quickly setting up virtual TripleO environments, and to ultimately become the tool used by both developers and upstream CI for this purpose. The project is a set of Ansible playbooks that will take care of:
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
     </ol>
 
     <div class="post-navigation">
@@ -370,7 +370,7 @@ Introducing Tripleo-Quickstart The goal of the Tripleo-Quickstart project is to 
                 </div>
 
                 <p class="footer-copyright">
-                    <span>&copy; 2020 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
                 </p>
                 <p class="footer-copyright">
                     <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>

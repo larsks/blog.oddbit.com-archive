@@ -6,10 +6,37 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>6502</title>
+      <link>https://blog.oddbit.com/tag/6502/</link>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/6502/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://blog.oddbit.com/tag/python/</link>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>retrocomputing</title>
+      <link>https://blog.oddbit.com/tag/retrocomputing/</link>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/retrocomputing/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>esp8266</title>
@@ -26,15 +53,6 @@
       <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/micropython/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://blog.oddbit.com/tag/python/</link>
-      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/python/</guid>
       <description></description>
     </item>
     

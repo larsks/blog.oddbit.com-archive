@@ -6,8 +6,44 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2020-12-18T00:00:00Z</updated>
+  <updated>2021-02-06T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>6502</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/6502/"/>
+    <id>https://blog.oddbit.com/tag/6502/</id>
+    <published>2021-02-06T00:00:00Z</published>
+    <updated>2021-02-06T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>python</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/python/"/>
+    <id>https://blog.oddbit.com/tag/python/</id>
+    <published>2021-02-06T00:00:00Z</published>
+    <updated>2021-02-06T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>retrocomputing</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/retrocomputing/"/>
+    <id>https://blog.oddbit.com/tag/retrocomputing/</id>
+    <published>2021-02-06T00:00:00Z</published>
+    <updated>2021-02-06T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>esp8266</title>
     <author>
@@ -27,18 +63,6 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/micropython/"/>
     <id>https://blog.oddbit.com/tag/micropython/</id>
-    <published>2020-12-18T00:00:00Z</published>
-    <updated>2020-12-18T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>python</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/python/"/>
-    <id>https://blog.oddbit.com/tag/python/</id>
     <published>2020-12-18T00:00:00Z</published>
     <updated>2020-12-18T00:00:00Z</updated>
     <summary type="html"></summary>
@@ -161,30 +185,6 @@
     <id>https://blog.oddbit.com/tag/docker/</id>
     <published>2020-09-25T00:00:00Z</published>
     <updated>2020-09-25T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>openshift-and-cnv</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/openshift-and-cnv/"/>
-    <id>https://blog.oddbit.com/tag/openshift-and-cnv/</id>
-    <published>2020-08-10T00:00:00Z</published>
-    <updated>2020-08-10T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>virtualization</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/virtualization/"/>
-    <id>https://blog.oddbit.com/tag/virtualization/</id>
-    <published>2020-08-10T00:00:00Z</published>
-    <updated>2020-08-10T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   
