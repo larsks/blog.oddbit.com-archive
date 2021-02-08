@@ -6,10 +6,20 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Remediating poor PyPi performance with DevPi</title>
+      <link>https://blog.oddbit.com/post/2021-02-08-remediating-poor-pypi-performa/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2021-02-08-remediating-poor-pypi-performa/</guid>
+      <description>Performance of the primary PyPi service has become so bad lately that it&amp;rsquo;s become very disruptive. Tasks that used to take a few seconds will now churn along for 15-20 minutes or longer before completing, which is incredibly frustrating.
+I first went looking to see if there was a PyPi mirror infrastructure, like we see with CPAN for Perl or CTAN for Tex (and similarly for most Linux distributions). There is apparently no such beast,</description>
+    </item>
     
     <item>
       <title>symtool: a tool for interacting with your SYM-1</title>
@@ -2132,7 +2142,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Ansible pipe lookup to generate encrypted password using interpreter python python-3.x ansible  How may I develop two features simultaneously with Git branching? git git-branch  How to make sure my git pre-commit script won&amp;#39;t get fooled? git hook pre-commit-hook  How to test if an item exists in XML file with beautiful soup? python xml csv beautifulsoup  docker sh vs bash variable ${@} expansion - ${@} doesn&amp;#39;t work in sh bash docker ash  Lost my openshift console (&amp;#34;Application is not available&amp;#34;) oauth openshift  Docker-compose with podman?</description>
+      <description>How to parse python code and only get variables with no indentation? python python-3.x variables abstract-syntax-tree  Ansible pipe lookup to generate encrypted password using interpreter python python-3.x ansible  How may I develop two features simultaneously with Git branching? git git-branch  How to make sure my git pre-commit script won&amp;#39;t get fooled? git hook pre-commit-hook  How to test if an item exists in XML file with beautiful soup?</description>
     </item>
     
   </channel>

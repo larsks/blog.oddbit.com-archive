@@ -106,6 +106,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Direct access to Nova metadata</h4>
+        <time class="post-stub-date" datetime="2014-01-14">Published Tue, Jan 14, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    When you boot a virtual instance under OpenStack, your instance has access to certain instance metadata via the Nova metadata service, which is canonically available at http://169.254.169.254/.
+In an environment running Neutron, a request from your instance must traverse a number of steps:
+ From the instance to a router, Through a NAT rule in the router namespace, To an instance of the neutron-ns-metadata-proxy, To the actual Nova metadata service  When there are problem accessing the metadata, it can be helpful to verify that the metadata service itself is configured correctly and returning meaningful information.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-01-14-direct-access-to-nova-metadata/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-01-13-rdo-bug-triage/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">RDO Bug Triage</h4>
         <time class="post-stub-date" datetime="2014-01-13">Published Mon, Jan 13, 2014</time>
@@ -309,30 +333,6 @@ This tool solves two problems I&rsquo;ve encountered in the past:
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-11-18-enabled-comments/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-11-17-json-tools/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">json-tools: cli for generating and filtering json</h4>
-        <time class="post-stub-date" datetime="2013-11-17">Published Sun, Nov 17, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Interacting with JSON-based APIs from the command line can be difficult, and OpenStack is filled with REST APIs that consume or produce JSON. I&rsquo;ve just put pair of tools for generating and filtering JSON on the command line, called collectively json-tools.
-Both make use of the Python dpath module to populate or filter JSON objects.
-The jsong command generates JSON on stdout. You provide /-delimited paths on the command line to represent the JSON structure.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-11-17-json-tools/">(Read more...)</a>
     </p>
     
     
