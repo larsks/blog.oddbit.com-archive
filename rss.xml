@@ -2142,7 +2142,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to parse python code and only get variables with no indentation? python python-3.x variables abstract-syntax-tree  Ansible pipe lookup to generate encrypted password using interpreter python python-3.x ansible  How may I develop two features simultaneously with Git branching? git git-branch  How to make sure my git pre-commit script won&amp;#39;t get fooled? git hook pre-commit-hook  How to test if an item exists in XML file with beautiful soup?</description>
+      <description>Problems with Jinja not executing python code within a block python flask jinja2  ansible is trowing a Syntax Error while loading YAML. did not find expected key ansible  Can Ansible be configured to try multiple SSH keys? ssh ansible  What is -include in GNU Make and how it works? makefile gnu-make  How to get rid of cryptography build error? python-3.x docker  open the most recent file in a Linux folder linux bash  Why is this not in the Dockerfile?</description>
     </item>
     
   </channel>
