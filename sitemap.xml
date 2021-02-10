@@ -4,12 +4,52 @@
   
   <url>
     <loc>https://blog.oddbit.com/categories/</loc>
-    <lastmod>2021-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2021-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/kubernetes/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2021-02-10-object-storage-with-openshift/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/openshift/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/openshift-ocs/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/s3/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/category/tech/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -29,21 +69,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/post/2021-02-08-remediating-poor-pypi-performa/</loc>
-    <lastmod>2021-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2021-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/category/tech/</loc>
-    <lastmod>2021-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/</loc>
     <lastmod>2021-02-08T00:00:00+00:00</lastmod>
   </url>
   
@@ -119,11 +144,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/tag/metallb/</loc>
-    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/openshift/</loc>
     <lastmod>2020-09-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -949,11 +969,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</loc>
-    <lastmod>2015-06-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/kubernetes/</loc>
     <lastmod>2015-06-19T00:00:00+00:00</lastmod>
   </url>
   

@@ -106,6 +106,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Adding support for privilege escalation to Ansible&#39;s docker connection driver</h4>
+        <time class="post-stub-date" datetime="2019-04-26">Published Fri, Apr 26, 2019</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Update 2019-05-09 Pull request #55816 has merged, so you can now use sudo with the docker connection driver even when sudo is configured to require a password.
+ I often use Docker to test out Ansible playbooks. While normally that works great, I recently ran into an unexpected problem with privilege escalation. Given a simple playbook like this:
+--- - hosts: all gather_facts: false become: true tasks: - ping:  And an inventory like this:
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2019-04-26-adding-support-for-privilege-e/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2019-04-25-writing-ansible-filter-plugins/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Writing Ansible filter plugins</h4>
         <time class="post-stub-date" datetime="2019-04-25">Published Thu, Apr 25, 2019</time>
@@ -317,28 +341,6 @@ Using simavr to collect information about the state of microcontroller pins whil
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">PiPower: A Raspberry Pi UPS</h4>
-        <time class="post-stub-date" datetime="2019-01-19">Published Sat, Jan 19, 2019</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I have a Raspberry Pi running RetroPie hooked up to a television. It&rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&rsquo;re pulling the plug on the Pi. While there haven&rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/">(Read more...)</a>
     </p>
     
     

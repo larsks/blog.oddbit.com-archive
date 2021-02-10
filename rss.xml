@@ -6,10 +6,20 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Object storage with OpenShift Container Storage</title>
+      <link>https://blog.oddbit.com/post/2021-02-10-object-storage-with-openshift/</link>
+      <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2021-02-10-object-storage-with-openshift/</guid>
+      <description>OpenShift Container Storage (OCS) from Red Hat deploys Ceph in your OpenShift cluster (or allows you to integrate with an external Ceph cluster). In addition to the file- and block- based volume services provided by Ceph, OCS includes two S3-api compatible object storage implementations.
+The first option is the Ceph Object Gateway (radosgw), Ceph&amp;rsquo;s native object storage interface. The second option called the &amp;ldquo;Multicloud Object Gateway&amp;rdquo;, which is in fact a piece of software named Noobaa, a storage abstraction layer that was acquired by Red Hat in 2018.</description>
+    </item>
     
     <item>
       <title>Remediating poor PyPi performance with DevPi</title>
@@ -2142,7 +2152,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Problems with Jinja not executing python code within a block python flask jinja2  ansible is trowing a Syntax Error while loading YAML. did not find expected key ansible  Can Ansible be configured to try multiple SSH keys? ssh ansible  What is -include in GNU Make and how it works? makefile gnu-make  How to get rid of cryptography build error? python-3.x docker  open the most recent file in a Linux folder linux bash  Why is this not in the Dockerfile?</description>
+      <description>How to write ini-files without sections? python python-2.7 ini configparser  Ansible ignores condition in playbook ansible  Unable to run these two loops simultaneously python process  Why is bash mistaking the git checkout parameter as a command in this script? bash git  Problems with Jinja not executing python code within a block python flask jinja2  ansible is trowing a Syntax Error while loading YAML. did not find expected key ansible  Can Ansible be configured to try multiple SSH keys?</description>
     </item>
     
   </channel>

@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2021-02-08T00:00:00Z</updated>
+  <updated>2021-02-10T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  <entry>
+    <title>Object storage with OpenShift Container Storage</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-02-10-object-storage-with-openshift/"/>
+    <id>https://blog.oddbit.com/post/2021-02-10-object-storage-with-openshift/</id>
+    <published>2021-02-10T00:00:00Z</published>
+    <updated>2021-02-10T00:00:00Z</updated>
+    <summary type="html">OpenShift Container Storage (OCS) from Red Hat deploys Ceph in your OpenShift cluster (or allows you to integrate with an external Ceph cluster). In addition to the file- and block- based volume services provided by Ceph, OCS includes two S3-api compatible object storage implementations.
+The first option is the Ceph Object Gateway (radosgw), Ceph&amp;rsquo;s native object storage interface. The second option called the &amp;ldquo;Multicloud Object Gateway&amp;rdquo;, which is in fact a piece of software named Noobaa, a storage abstraction layer that was acquired by Red Hat in 2018.</summary>
+  </entry>
+  
   <entry>
     <title>Remediating poor PyPi performance with DevPi</title>
     <author>
@@ -187,18 +200,6 @@ The Grove Beginner Kit for Arduino (henceforth &amp;ldquo;the Kit&amp;rdquo;, be
     <published>2020-04-15T00:00:00Z</published>
     <updated>2020-04-15T00:00:00Z</updated>
     <summary type="html">The folks at Seeed Studio have just released the Grove Beginner Kit for Arduino, and they asked if I would be willing to take a look at it in exchange for a free kit. At first glance it reminds me of the Radio Shack (remember when they were cool?) electronics kit I had when I was a kid &amp;ndash; but somewhat more advanced. I&amp;rsquo;m excited to take a closer look, but given shipping these days means it&amp;rsquo;s probably a month away at least.</summary>
-  </entry>
-  
-  <entry>
-    <title>Some thoughts on Mechanical Keyboards</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-04-15-some-thoughts-on-mechanical-ke/"/>
-    <id>https://blog.oddbit.com/post/2020-04-15-some-thoughts-on-mechanical-ke/</id>
-    <published>2020-04-15T00:00:00Z</published>
-    <updated>2020-04-15T00:00:00Z</updated>
-    <summary type="html">Since we&amp;rsquo;re all stuck in the house and working from home these days, I&amp;rsquo;ve had to make some changes to my home office. One change in particular was requested by my wife, who now shares our rather small home office space with me: after a week or so of calls with me clattering away on my old Das Keyboard 3 Professional in the background, she asked if I could get something that was maybe a little bit quieter.</summary>
   </entry>
   
 </feed>

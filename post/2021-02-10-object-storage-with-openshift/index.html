@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Object storage with OpenShift Container Storage &middot; The Odd Bit</title>
+        <meta name="description" content="OpenShift Container Storage (OCS) from Red Hat deploys Ceph in your OpenShift cluster (or allows you to integrate with an external Ceph cluster). In addition to the file- and block- based volume services provided by Ceph, OCS includes two S3-api compatible object storage implementations.
+The first option is the Ceph Object Gateway (radosgw), Ceph&rsquo;s native object storage interface. The second option called the &ldquo;Multicloud Object Gateway&rdquo;, which is in fact a piece of software named Noobaa, a storage abstraction layer that was acquired by Red Hat in 2018.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/oddbit.css">
+<link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Object storage with OpenShift Container Storage</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2021-02-10" itemprop="datePublished">Wed, Feb 10, 2021</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+    <p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift-container-storage">OpenShift Container Storage</a> (OCS) from Red Hat deploys Ceph in your
+OpenShift cluster (or allows you to integrate with an external Ceph
+cluster). In addition to the file- and block- based volume services
+provided by Ceph, OCS includes two S3-api compatible object storage
+implementations.</p>
+<p>The first option is the <a href="https://docs.ceph.com/en/latest/radosgw/">Ceph Object Gateway</a> (radosgw),
+Ceph&rsquo;s native object storage interface. The second option called the
+&ldquo;<a href="https://www.openshift.com/blog/introducing-multi-cloud-object-gateway-for-openshift">Multicloud Object Gateway</a>&rdquo;, which is in fact a piece of software
+named <a href="https://www.noobaa.io/">Noobaa</a>, a storage abstraction layer that was <a href="https://www.redhat.com/en/blog/faq-red-hat-acquires-noobaa">acquired by
+Red Hat</a> in 2018.  In this article I&rsquo;d like to demonstrate how to
+take advantage of these storage options.</p>
+<h2 id="what-is-object-storage">What is object storage?</h2>
+<p>The storage we interact with regularly on our local computers is
+block storage: data is stored as a collection of blocks on some sort
+of storage device. Additional layers &ndash; such as a filesystem driver &ndash;
+are responsible for assembling those blocks into something useful.</p>
+<p>Object storage, on the other hand, manages data as objects: a single
+unit of data and associated metadata (such as access policies). An
+object is identified by some sort of unique id. Object storage
+generally provides an API that is largely independent of the physical
+storage layer; data may live on a variety of devices attached to a
+variety of systems, and you don&rsquo;t need to know any of those details in
+order to access the data.</p>
+<p>The most well known example of object storage service Amazon&rsquo;s
+<a href="https://aws.amazon.com/s3/">S3</a> service (&ldquo;Simple Storage Service&rdquo;), first introduced in 2006.
+The S3 API has become a de-facto standard for object storage
+implementations. The two services we&rsquo;ll be discussing in this article
+provide S3-compatible APIs.</p>
+<h2 id="creating-buckets">Creating buckets</h2>
+<p>The fundamental unit of object storage is called a &ldquo;bucket&rdquo;.</p>
+<p>Creating a bucket with OCS works a bit like creating a <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/">persistent
+volume</a>, although instead of starting with a <code>PersistentVolumeClaim</code>
+you instead start with an <code>ObjectBucketClaim</code> (&ldquo;<code>OBC</code>&rdquo;). An <code>OBC</code>
+looks something like this when using RGW:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>objectbucket.io/v1alpha1<span class="w">
+</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>ObjectBucketClaim<span class="w">
+</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>example-rgw<span class="w">
+</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">generateBucketName</span><span class="p">:</span><span class="w"> </span>example-rgw<span class="w">
+</span><span class="w">  </span><span class="k">storageClassName</span><span class="p">:</span><span class="w"> </span>ocs-storagecluster-ceph-rgw<span class="w">
+</span></code></pre></div><p>Or like this when using Noobaa (note the different value for
+<code>storageClassName</code>):</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>objectbucket.io/v1alpha1<span class="w">
+</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>ObjectBucketClaim<span class="w">
+</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>example-noobaa<span class="w">
+</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">generateBucketName</span><span class="p">:</span><span class="w"> </span>example-noobaa<span class="w">
+</span><span class="w">  </span><span class="k">storageClassName</span><span class="p">:</span><span class="w"> </span>openshift-storage.noobaa.io<span class="w">
+</span></code></pre></div><p>With OCS 4.5, your out-of-the-box choices for <code>storageClassName</code> will be
+<code>ocs-storagecluster-ceph-rgw</code>, if you choose to use Ceph Radosgw, or
+<code>openshift-storage.noobaa.io</code>, if you choose to use the Noobaa S3 endpoint.</p>
+<p>Before we continue, I&rsquo;m going to go ahead and create these resources
+in my OpenShift environment. To do so, I&rsquo;m going to use <a href="https://kustomize.io/">Kustomize</a>
+to deploy the resources described in the following <code>kustomization.yml</code>
+file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">namespace</span><span class="p">:</span><span class="w"> </span>oddbit-ocs-example<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">resources</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- obc-noobaa.yml<span class="w">
+</span><span class="w">  </span>- obc-rgw.yml<span class="w">
+</span></code></pre></div><p>Running <code>kustomize build | oc apply -f-</code> from the directory containing
+this file populates the specified namespace with the two
+<code>ObjectBucketClaims</code> mentioned above:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ kustomize build <span class="p">|</span> oc apply -f-
+objectbucketclaim.objectbucket.io/example-noobaa created
+objectbucketclaim.objectbucket.io/example-rgw created
+
+</code></pre></div><p>Verifying that things seem healthy:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ oc get objectbucketclaim
+NAME             STORAGE-CLASS                 PHASE   AGE
+example-noobaa   openshift-storage.noobaa.io   Bound   2m59s
+example-rgw      ocs-storagecluster-ceph-rgw   Bound   2m59s
+
+</code></pre></div><p>Each <code>ObjectBucketClaim</code> will result in a OpenShift creating a new
+<code>ObjectBucket</code> resource (which, like <code>PersistentVolume</code> resources, are
+not namespaced). The <code>ObjectBucket</code> resource will be named
+<code>obc-&lt;namespace-name&gt;-&lt;objectbucketclaim-name&gt;</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ oc get objectbucket obc-oddbit-ocs-example-example-rgw obc-oddbit-ocs-example-example-noobaa
+NAME                                    STORAGE-CLASS                 CLAIM-NAMESPACE      CLAIM-NAME       RECLAIM-POLICY   PHASE   AGE
+obc-oddbit-ocs-example-example-rgw      ocs-storagecluster-ceph-rgw   oddbit-ocs-example   example-rgw      Delete           Bound   67m
+obc-oddbit-ocs-example-example-noobaa   openshift-storage.noobaa.io   oddbit-ocs-example   example-noobaa   Delete           Bound   67m
+</code></pre></div><p>Each <code>ObjectBucket</code> resource corresponds to a bucket in the selected
+object storage backend.</p>
+<p>Because buckets exist in a flat namespace, the OCS documentation
+recommends always using <code>generateName</code> in the claim, rather than
+explicitly setting <code>bucketName</code>, in order to avoid unexpected
+conflicts. This means that the generated buckets will have a named
+prefixed by the value in <code>generateName</code>, followed by a random string:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ oc get objectbucketclaim example-rgw -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.spec.bucketName}&#39;</span>
+example-rgw-425d7193-ae3a-41d9-98e3-9d07b82c9661
+
+$ oc get objectbucketclaim example-noobaa -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.spec.bucketName}&#39;</span>
+example-noobaa-2e087028-b3a4-475b-ae83-a4fa80d9e3ef
+
+</code></pre></div><p>Along with the bucket itself, OpenShift will create a <code>Secret</code> and a
+<code>ConfigMap</code> resource &ndash; named after your <code>OBC</code> &ndash; with the metadata
+necessary to access the bucket.</p>
+<p>The <code>Secret</code> contains AWS-style credentials for authenticating to the
+S3 API:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ oc get secret example-rgw -o yaml <span class="p">|</span> oc neat
+apiVersion: v1
+data:
+  AWS_ACCESS_KEY_ID: ...
+  AWS_SECRET_ACCESS_KEY: ...
+kind: Secret
+metadata:
+  labels:
+    bucket-provisioner: openshift-storage.ceph.rook.io-bucket
+  name: example-rgw
+  namespace: oddbit-ocs-example
+type: Opaque
+
+</code></pre></div><p>(I&rsquo;m using the <a href="https://github.com/itaysk/kubectl-neat">neat</a> filter here to remove extraneous metadata that
+OpenShift returns when you request a resource.)</p>
+<p>The <code>ConfigMap</code> contains a number of keys that provide you (or your code)
+with the information necessary to access the bucket. For the RGW
+bucket:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ oc get configmap example-rgw -o yaml <span class="p">|</span> oc neat
+apiVersion: v1
+data:
+  BUCKET_HOST: rook-ceph-rgw-ocs-storagecluster-cephobjectstore.openshift-storage.svc.cluster.local
+  BUCKET_NAME: example-rgw-425d7193-ae3a-41d9-98e3-9d07b82c9661
+  BUCKET_PORT: <span class="s2">&#34;80&#34;</span>
+  BUCKET_REGION: us-east-1
+kind: ConfigMap
+metadata:
+  labels:
+    bucket-provisioner: openshift-storage.ceph.rook.io-bucket
+  name: example-rgw
+  namespace: oddbit-ocs-example
+</code></pre></div><p>And for the Noobaa bucket:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ oc get configmap example-noobaa -o yaml <span class="p">|</span> oc neat
+apiVersion: v1
+data:
+  BUCKET_HOST: s3.openshift-storage.svc
+  BUCKET_NAME: example-noobaa-2e087028-b3a4-475b-ae83-a4fa80d9e3ef
+  BUCKET_PORT: <span class="s2">&#34;443&#34;</span>
+kind: ConfigMap
+metadata:
+  labels:
+    app: noobaa
+    bucket-provisioner: openshift-storage.noobaa.io-obc
+    noobaa-domain: openshift-storage.noobaa.io
+  name: example-noobaa
+  namespace: oddbit-ocs-example
+
+</code></pre></div><p>Note that <code>BUCKET_HOST</code> contains the internal S3 API endpoint. You won&rsquo;t be
+able to reach this from outside the cluster. We&rsquo;ll tackle that in just a
+bit.</p>
+<h2 id="accessing-a-bucket-from-a-pod">Accessing a bucket from a pod</h2>
+<p>The easiest way to expose the credentials in a pod is to map the keys
+from both the <code>ConfigMap</code> and <code>Secret</code> as environment variables using
+the <code>envFrom</code> directive, like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
+</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>Pod<span class="w">
+</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>bucket-example<span class="w">
+</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">containers</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="k">image</span><span class="p">:</span><span class="w"> </span>myimage<span class="w">
+</span><span class="w">      </span><span class="k">env</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>AWS_CA_BUNDLE<span class="w">
+</span><span class="w">          </span><span class="k">value</span><span class="p">:</span><span class="w"> </span>/run/secrets/kubernetes.io/serviceaccount/service-ca.crt<span class="w">
+</span><span class="w">      </span><span class="k">envFrom</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="k">configMapRef</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>example-rgw<span class="w">
+</span><span class="w">        </span>- <span class="k">secretRef</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>example-rgw<span class="w">
+</span><span class="w">      </span><span class="p">[</span>...<span class="p">]</span><span class="w">
+</span></code></pre></div><p>Note that we&rsquo;re also setting <code>AWS_CA_BUNDLE</code> here, which you&rsquo;ll need
+if the internal endpoint referenced by <code>$BUCKET_HOST</code> is using SSL.</p>
+<p>Inside the pod, we can run, for example, <code>aws</code> commands as long as we
+provide an appropriate s3 endpoint. We can inspect the value of
+<code>BUCKET_PORT</code> to determine if we need <code>http</code> or <code>https</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$BUCKET_PORT</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="m">80</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">schema</span><span class="o">=</span>http <span class="o">||</span> <span class="nv">schema</span><span class="o">=</span>https
+$ aws s3 --endpoint <span class="nv">$schema</span>://<span class="nv">$BUCKET_HOST</span> ls
+2021-02-10 04:30:31 example-rgw-8710aa46-a47a-4a8b-8edd-7dabb7d55469
+
+</code></pre></div><p>Python&rsquo;s <code>boto3</code> module can also make use of the same environment
+variables:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">boto3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">bucket_host</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;BUCKET_HOST&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">schema</span> <span class="o">=</span> <span class="s1">&#39;http&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;BUCKET_PORT&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;80&#39;</span> <span class="k">else</span> <span class="s1">&#39;https&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">,</span> <span class="n">endpoint_url</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;{schema}://{bucket_host}&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s3</span><span class="o">.</span><span class="n">list_buckets</span><span class="p">()[</span><span class="s1">&#39;Buckets&#39;</span><span class="p">]</span>
+<span class="p">[{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;example-noobaa-...&#39;</span><span class="p">,</span> <span class="s1">&#39;CreationDate&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="o">...</span><span class="p">)}]</span>
+
+</code></pre></div><h2 id="external-connections-to-s3-endpoints">External connections to S3 endpoints</h2>
+<p>External access to services in OpenShift is often managed via
+<a href="https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/routes.html">routes</a>.  If you look at the routes available in your
+<code>openshift-storage</code> namespace, you&rsquo;ll find the following:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ oc -n openshift-storage get route
+NAME          HOST/PORT                                               PATH   SERVICES                                           PORT         TERMINATION   WILDCARD
+noobaa-mgmt   noobaa-mgmt-openshift-storage.apps.example.com          noobaa-mgmt                                        mgmt-https   reencrypt     None
+s3            s3-openshift-storage.apps.example.com                   s3                                                 s3-https     reencrypt     None
+
+</code></pre></div><p>The <code>s3</code> route provides external access to your Noobaa S3 endpoint.
+You&rsquo;ll note that in the list above there is no route registered for
+radosgw<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. There is a service registered for Radosgw named
+<code>rook-ceph-rgw-ocs-storagecluster-cephobjectstore</code>, so we
+can expose that service to create an external route by running
+something like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">oc create route edge rgw --service rook-ceph-rgw-ocs-storagecluster-cephobjectstore
+</code></pre></div><p>This will create a route with &ldquo;edge&rdquo; encryption (TLS termination is
+handled by the default ingress router):</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ oc -n openshift storage get route
+NAME          HOST/PORT                                               PATH   SERVICES                                           PORT         TERMINATION   WILDCARD
+noobaa-mgmt   noobaa-mgmt-openshift-storage.apps.example.com          noobaa-mgmt                                        mgmt-https   reencrypt     None
+rgw           rgw-openshift-storage.apps.example.com                  rook-ceph-rgw-ocs-storagecluster-cephobjectstore   http         edge          None
+s3            s3-openshift-storage.apps.example.com                   s3                                                 s3-https     reencrypt     None
+
+</code></pre></div><h2 id="accessing-a-bucket-from-outside-the-cluster">Accessing a bucket from outside the cluster</h2>
+<p>Once we know the <code>Route</code> to our S3 endpoint, we can use the
+information in the <code>Secret</code> and <code>ConfigMap</code> created for us when we
+provisioned the storage. We just need to replace the <code>BUCKET_HOST</code>
+with the hostname in the route, and we need to use SSL over port 443
+regardless of what <code>BUCKET_PORT</code> tells us.</p>
+<p>We can extract the values into variables using something like the
+following shell script, which takes care of getting the appropriate
+route from the <code>openshift-storage</code> namespace, base64-decoding the values
+in the <code>Secret</code>, and replacing the <code>BUCKET_HOST</code> value:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
+</span><span class="cp"></span>
+<span class="nv">bucket_host</span><span class="o">=</span><span class="k">$(</span>oc get configmap <span class="nv">$1</span> -o json <span class="p">|</span> jq -r .data.BUCKET_HOST<span class="k">)</span>
+<span class="nv">service_name</span><span class="o">=</span><span class="k">$(</span>cut -f1 -d. <span class="o">&lt;&lt;&lt;</span><span class="nv">$bucket_host</span><span class="k">)</span>
+<span class="nv">service_ns</span><span class="o">=</span><span class="k">$(</span>cut -f2 -d. <span class="o">&lt;&lt;&lt;</span><span class="nv">$bucket_host</span><span class="k">)</span>
+
+<span class="c1"># get the externally visible hostname provided by the route</span>
+<span class="nv">public_bucket_host</span><span class="o">=</span><span class="k">$(</span>
+  oc -n <span class="nv">$service_ns</span> get route -o json <span class="p">|</span>
+    jq -r  <span class="s1">&#39;.items[]|select(.spec.to.name==&#34;&#39;</span><span class="s2">&#34;</span><span class="nv">$service_name</span><span class="s2">&#34;</span><span class="s1">&#39;&#34;)|.spec.host&#39;</span>
+<span class="k">)</span>
+
+<span class="c1"># dump configmap and secret as shell variables, replacing the</span>
+<span class="c1"># value of BUCKET_HOST in the process.</span>
+<span class="o">(</span>
+  oc get configmap <span class="nv">$1</span> -o json <span class="p">|</span>
+    jq -r <span class="s1">&#39;.data as $data|.data|keys[]|&#34;\(.)=\($data[.])&#34;&#39;</span>
+  oc get secret <span class="nv">$1</span> -o json <span class="p">|</span>
+    jq -r <span class="s1">&#39;.data as $data|.data|keys[]|&#34;\(.)=\($data[.]|@base64d)&#34;&#39;</span>
+<span class="o">)</span> <span class="p">|</span> sed -e <span class="s1">&#39;s/^/export /&#39;</span> -e <span class="s1">&#39;/BUCKET_HOST/ s/=.*/=&#39;</span><span class="nv">$public_bucket_host</span><span class="s1">&#39;/&#39;</span>
+</code></pre></div><p>If we call the script <code>getenv.sh</code> and run it like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ sh getenv.sh example-rgw
+</code></pre></div><p>It will produce output like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">BUCKET_HOST</span><span class="o">=</span><span class="s2">&#34;s3-openshift-storage.apps.cnv.massopen.cloud&#34;</span>
+<span class="nb">export</span> <span class="nv">BUCKET_NAME</span><span class="o">=</span><span class="s2">&#34;example-noobaa-2e1bca2f-ff49-431a-99b8-d7d63a8168b0&#34;</span>
+<span class="nb">export</span> <span class="nv">BUCKET_PORT</span><span class="o">=</span><span class="s2">&#34;443&#34;</span>
+<span class="nb">export</span> <span class="nv">BUCKET_REGION</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="nb">export</span> <span class="nv">BUCKET_SUBREGION</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="nb">export</span> <span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span><span class="s2">&#34;...&#34;</span>
+<span class="nb">export</span> <span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="s2">&#34;...&#34;</span>
+</code></pre></div><p>We could accomplish something similar in Python with the following,
+which shows how to use the OpenShift dynamic client to interact with
+OpenShift:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="kn">import</span> <span class="nn">kubernetes</span>
+<span class="kn">import</span> <span class="nn">openshift.dynamic</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">():</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--namespace&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;obcname&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+
+<span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">()</span>
+<span class="n">k8s_client</span> <span class="o">=</span> <span class="n">kubernetes</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">new_client_from_config</span><span class="p">()</span>
+<span class="n">dyn_client</span> <span class="o">=</span> <span class="n">openshift</span><span class="o">.</span><span class="n">dynamic</span><span class="o">.</span><span class="n">DynamicClient</span><span class="p">(</span><span class="n">k8s_client</span><span class="p">)</span>
+
+<span class="n">v1_configmap</span> <span class="o">=</span> <span class="n">dyn_client</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">api_version</span><span class="o">=</span><span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;ConfigMap&#39;</span><span class="p">)</span>
+<span class="n">v1_secret</span> <span class="o">=</span> <span class="n">dyn_client</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">api_version</span><span class="o">=</span><span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;Secret&#39;</span><span class="p">)</span>
+<span class="n">v1_service</span> <span class="o">=</span> <span class="n">dyn_client</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">api_version</span><span class="o">=</span><span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;Service&#39;</span><span class="p">)</span>
+<span class="n">v1_route</span> <span class="o">=</span> <span class="n">dyn_client</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">api_version</span><span class="o">=</span><span class="s1">&#39;route.openshift.io/v1&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;Route&#39;</span><span class="p">)</span>
+
+<span class="n">configmap</span> <span class="o">=</span> <span class="n">v1_configmap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">obcname</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">namespace</span><span class="p">)</span>
+<span class="n">secret</span> <span class="o">=</span> <span class="n">v1_secret</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">obcname</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">namespace</span><span class="p">)</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">configmap</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">secret</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
+
+<span class="n">svc_name</span><span class="p">,</span> <span class="n">svc_ns</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">&#39;BUCKET_HOST&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">routes</span> <span class="o">=</span> <span class="n">v1_route</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">namespace</span><span class="o">=</span><span class="n">svc_ns</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="n">routes</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">svc_name</span><span class="p">:</span>
+        <span class="k">break</span>
+
+<span class="n">env</span><span class="p">[</span><span class="s1">&#39;BUCKET_PORT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">443</span>
+<span class="n">env</span><span class="p">[</span><span class="s1">&#39;BUCKET_HOST&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">route</span><span class="p">[</span><span class="s1">&#39;spec&#39;</span><span class="p">][</span><span class="s1">&#39;host&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;export {k}=&#34;{v}&#34;&#39;</span><span class="p">)</span>
+</code></pre></div><p>If we run it like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">python genenv.py -n oddbit-ocs-example example-noobaa
+</code></pre></div><p>It will produce output largely identical to what we saw above with the
+shell script.</p>
+<p>If we load those variables into the environment:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">eval</span> <span class="k">$(</span>sh getenv.sh example-rgw<span class="k">)</span>
+</code></pre></div><p>We can perform the same operations we executed earlier from inside the
+pod:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ aws s3 --endpoint https://<span class="nv">$BUCKET_HOST</span> ls
+2021-02-10 14:34:12 example-rgw-425d7193-ae3a-41d9-98e3-9d07b82c9661
+
+</code></pre></div><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>note that this may have changed in the recent OCS 4.6
+release <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/openshift/">openshift</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/openshift-ocs/">openshift-ocs</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/s3/">s3</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/kubernetes/">kubernetes</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Object%20storage%20with%20OpenShift%20Container%20Storage&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2021-02-10-object-storage-with-openshift%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+
