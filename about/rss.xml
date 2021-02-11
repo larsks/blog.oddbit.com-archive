@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to write ini-files without sections? python python-2.7 ini configparser  Ansible ignores condition in playbook ansible  Unable to run these two loops simultaneously python process  Why is bash mistaking the git checkout parameter as a command in this script? bash git  Problems with Jinja not executing python code within a block python flask jinja2  ansible is trowing a Syntax Error while loading YAML. did not find expected key ansible  Can Ansible be configured to try multiple SSH keys?</description>
+      <description>I have used register variable to store output values of task so i&amp;#39;m using same value in when condition from ansible role ansible ansible-role  How to write ini-files without sections? python python-2.7 ini configparser  Ansible ignores condition in playbook ansible  Unable to run these two loops simultaneously python process  Why is bash mistaking the git checkout parameter as a command in this script? bash git  Problems with Jinja not executing python code within a block python flask jinja2  ansible is trowing a Syntax Error while loading YAML.</description>
     </item>
     
   </channel>
