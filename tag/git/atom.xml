@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/git/" rel="alternate"></link>
 
-  <updated>2019-06-17T00:00:00Z</updated>
+  <updated>2021-02-18T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/git/</id>
+  <entry>
+    <title>Editing a commit message without git rebase</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-02-18-editing-a-commit-message-witho/"/>
+    <id>https://blog.oddbit.com/post/2021-02-18-editing-a-commit-message-witho/</id>
+    <published>2021-02-18T00:00:00Z</published>
+    <updated>2021-02-18T00:00:00Z</updated>
+    <summary type="html">While working on a pull request I will make liberal use of git rebase to clean up a series of commits: squashing typos, re-ordering changes for logical clarity, and so forth. But there are some times when all I want to do is change a commit message somewhere down the stack, and I was wondering if I had any options for doing that without reaching for git rebase.
+It turns out the answer is &amp;ldquo;yes&amp;rdquo;, as long as you have a linear history.</summary>
+  </entry>
+  
   <entry>
     <title>Avoid rebase hell: squashing without rebasing</title>
     <author>

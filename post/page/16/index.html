@@ -105,6 +105,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-07-16-split-concatenated-c/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Split concatenated certificates with awk</h4>
+        <time class="post-stub-date" datetime="2013-07-16">Published Tue, Jul 16, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is a short script that takes a list of concatenated certificates as input (such as a collection of CA certificates) and produces a collection of numbered files, each containing a single certificate.
+#!/bin/awk -f # This script expects a list of concatenated certificates on input and # produces a collection of individual numbered files each containing # a single certificate. BEGIN {incert=0} /-----BEGIN( TRUSTED)? CERTIFICATE-----/ { certno++ certfile=sprintf(&quot;cert-%d.crt&quot;, certno) incert=1 } /-----END( TRUSTED)?
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-07-16-split-concatenated-c/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-04-08-did-archlinux-eat-yo/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Did Arch Linux eat your KVM?</h4>
         <time class="post-stub-date" datetime="2013-04-08">Published Mon, Apr 8, 2013</time>
@@ -308,29 +331,6 @@ When you boot an LXC container, the console appears to be attached to a pts devi
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-01-28-net-with-no-net/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Systemd and the case of the missing network</h4>
-        <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I was intrigued by this post on socket activated containers with systemd. The basic premise is:
- systemd opens a socket on the host and listens for connections. When a client connections, systemd spawns a new container. The host systemd passes the connected socket to the container systemd. Services in the container receive these sockets from the container systemd.  This is a very neat idea, since it delegates all the socket listening to the host and only spins up container and service resources when necessary.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-01-28-net-with-no-net/">(Read more...)</a>
     </p>
     
     

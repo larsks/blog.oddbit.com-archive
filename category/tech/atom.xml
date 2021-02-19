@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/category/tech/" rel="alternate"></link>
 
-  <updated>2021-02-10T00:00:00Z</updated>
+  <updated>2021-02-18T00:00:00Z</updated>
   <id>https://blog.oddbit.com/category/tech/</id>
+  <entry>
+    <title>Editing a commit message without git rebase</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-02-18-editing-a-commit-message-witho/"/>
+    <id>https://blog.oddbit.com/post/2021-02-18-editing-a-commit-message-witho/</id>
+    <published>2021-02-18T00:00:00Z</published>
+    <updated>2021-02-18T00:00:00Z</updated>
+    <summary type="html">While working on a pull request I will make liberal use of git rebase to clean up a series of commits: squashing typos, re-ordering changes for logical clarity, and so forth. But there are some times when all I want to do is change a commit message somewhere down the stack, and I was wondering if I had any options for doing that without reaching for git rebase.
+It turns out the answer is &amp;ldquo;yes&amp;rdquo;, as long as you have a linear history.</summary>
+  </entry>
+  
   <entry>
     <title>Object storage with OpenShift Container Storage</title>
     <author>
@@ -186,18 +199,6 @@ The Grove Beginner Kit for Arduino (henceforth &amp;ldquo;the Kit&amp;rdquo;, be
     <published>2020-04-15T00:00:00Z</published>
     <updated>2020-04-15T00:00:00Z</updated>
     <summary type="html">The folks at Seeed Studio have just released the Grove Beginner Kit for Arduino, and they asked if I would be willing to take a look at it in exchange for a free kit. At first glance it reminds me of the Radio Shack (remember when they were cool?) electronics kit I had when I was a kid &amp;ndash; but somewhat more advanced. I&amp;rsquo;m excited to take a closer look, but given shipping these days means it&amp;rsquo;s probably a month away at least.</summary>
-  </entry>
-  
-  <entry>
-    <title>Some thoughts on Mechanical Keyboards</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-04-15-some-thoughts-on-mechanical-ke/"/>
-    <id>https://blog.oddbit.com/post/2020-04-15-some-thoughts-on-mechanical-ke/</id>
-    <published>2020-04-15T00:00:00Z</published>
-    <updated>2020-04-15T00:00:00Z</updated>
-    <summary type="html">Since we&amp;rsquo;re all stuck in the house and working from home these days, I&amp;rsquo;ve had to make some changes to my home office. One change in particular was requested by my wife, who now shares our rather small home office space with me: after a week or so of calls with me clattering away on my old Das Keyboard 3 Professional in the background, she asked if I could get something that was maybe a little bit quieter.</summary>
   </entry>
   
 </feed>

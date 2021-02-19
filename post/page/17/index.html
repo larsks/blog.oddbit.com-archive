@@ -105,6 +105,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-01-28-net-with-no-net/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Systemd and the case of the missing network</h4>
+        <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I was intrigued by this post on socket activated containers with systemd. The basic premise is:
+ systemd opens a socket on the host and listens for connections. When a client connections, systemd spawns a new container. The host systemd passes the connected socket to the container systemd. Services in the container receive these sockets from the container systemd.  This is a very neat idea, since it delegates all the socket listening to the host and only spins up container and service resources when necessary.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-01-28-net-with-no-net/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-01-25-archlinux-second-look/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">A second look at Arch Linux</h4>
         <time class="post-stub-date" datetime="2013-01-25">Published Fri, Jan 25, 2013</time>
@@ -306,30 +329,6 @@ If you came here from Google and found a broken link, try starting at the archiv
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2012-11-06-moving-from-blogger/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2012-11-05-posting-via-api/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Posting to Scriptogr.am using the API</h4>
-        <time class="post-stub-date" datetime="2012-11-05">Published Mon, Nov 5, 2012</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Scriptogr.am has a very simple api that allows one to POST and DELETE articles. POSTing an article will place it in the appropriate Dropbox directory and make it available on your blog all in one step.
-Here is how you could use this API via Curl:
-curl \ -d app_key=$APP_KEY \ -d user_id=$USER_ID \ -d name=&quot;${title:-$1}&quot; \ --data-urlencode text@$tmpfile \ \ http://scriptogr.am/api/article/post/  This assumes that you&rsquo;ve registered for an application key and that you have configured the value into $APP_KEY and your Scriptogr.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2012-11-05-posting-via-api/">(Read more...)</a>
     </p>
     
     

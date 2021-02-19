@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2021-02-10T00:00:00Z</updated>
+  <updated>2021-02-18T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  <entry>
+    <title>Editing a commit message without git rebase</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-02-18-editing-a-commit-message-witho/"/>
+    <id>https://blog.oddbit.com/post/2021-02-18-editing-a-commit-message-witho/</id>
+    <published>2021-02-18T00:00:00Z</published>
+    <updated>2021-02-18T00:00:00Z</updated>
+    <summary type="html">While working on a pull request I will make liberal use of git rebase to clean up a series of commits: squashing typos, re-ordering changes for logical clarity, and so forth. But there are some times when all I want to do is change a commit message somewhere down the stack, and I was wondering if I had any options for doing that without reaching for git rebase.
+It turns out the answer is &amp;ldquo;yes&amp;rdquo;, as long as you have a linear history.</summary>
+  </entry>
+  
   <entry>
     <title>Object storage with OpenShift Container Storage</title>
     <author>
@@ -188,18 +201,6 @@ TL;DR   I suggest: (a) the Vogmask valveless mask or (b) the O2 Canada Curve Res
     <updated>2020-06-07T00:00:00Z</updated>
     <summary type="html">The folks at Seeed Studio were kind enough to send me a Grove Beginner Kit for Arduino for review. That&amp;rsquo;s a mouthful of a name for a compact little kit!
 The Grove Beginner Kit for Arduino (henceforth &amp;ldquo;the Kit&amp;rdquo;, because ain&amp;rsquo;t nobody got time to type that out more than a few times in a single article) is about 8.5 x 5 x 1 inches. Closed, you could fit two of them on a piece of 8.</summary>
-  </entry>
-  
-  <entry>
-    <title>Grove Beginner Kit for Arduino (part 1)</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-04-15-grove-beginner-kit-for-arduino/"/>
-    <id>https://blog.oddbit.com/post/2020-04-15-grove-beginner-kit-for-arduino/</id>
-    <published>2020-04-15T00:00:00Z</published>
-    <updated>2020-04-15T00:00:00Z</updated>
-    <summary type="html">The folks at Seeed Studio have just released the Grove Beginner Kit for Arduino, and they asked if I would be willing to take a look at it in exchange for a free kit. At first glance it reminds me of the Radio Shack (remember when they were cool?) electronics kit I had when I was a kid &amp;ndash; but somewhat more advanced. I&amp;rsquo;m excited to take a closer look, but given shipping these days means it&amp;rsquo;s probably a month away at least.</summary>
   </entry>
   
 </feed>

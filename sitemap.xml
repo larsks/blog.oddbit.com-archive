@@ -4,12 +4,37 @@
   
   <url>
     <loc>https://blog.oddbit.com/categories/</loc>
-    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2021-02-18-editing-a-commit-message-witho/</loc>
+    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/git/</loc>
+    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/category/tech/</loc>
+    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/</loc>
+    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -34,21 +59,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/tag/s3/</loc>
-    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/category/tech/</loc>
-    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/</loc>
     <lastmod>2021-02-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -379,11 +389,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/post/2019-06-17-avoid-rebase-hell-squashing-wi/</loc>
-    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/git/</loc>
     <lastmod>2019-06-17T00:00:00+00:00</lastmod>
   </url>
   

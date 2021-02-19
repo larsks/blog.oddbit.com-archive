@@ -105,6 +105,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2012-11-05-posting-via-api/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Posting to Scriptogr.am using the API</h4>
+        <time class="post-stub-date" datetime="2012-11-05">Published Mon, Nov 5, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Scriptogr.am has a very simple api that allows one to POST and DELETE articles. POSTing an article will place it in the appropriate Dropbox directory and make it available on your blog all in one step.
+Here is how you could use this API via Curl:
+curl \ -d app_key=$APP_KEY \ -d user_id=$USER_ID \ -d name=&quot;${title:-$1}&quot; \ --data-urlencode text@$tmpfile \ \ http://scriptogr.am/api/article/post/  This assumes that you&rsquo;ve registered for an application key and that you have configured the value into $APP_KEY and your Scriptogr.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2012-11-05-posting-via-api/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2012-11-05-fedora-private-tmp/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Private /tmp directories in Fedora</h4>
         <time class="post-stub-date" datetime="2012-11-05">Published Mon, Nov 5, 2012</time>
@@ -309,29 +333,6 @@ $ git fetch --tags $ git fetch  What’s the difference?
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2012-02-22-capturing-envoy-data/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Capturing Envoy Data</h4>
-        <time class="post-stub-date" datetime="2012-02-22">Published Wed, Feb 22, 2012</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Pursuant to my last post, I&rsquo;ve written a simple man-in-the-middle proxy to intercept communication between the Envoy and the Enphase servers. The code is available here.
-What it does As I detailed in my previous post, the Envoy sends data to Enphase via http POST requests. The proxy intercepts these requests, extracts the XML data from the request, and writes it to a local file (by default in /var/spool/envoy). It then forwards the request on to Enphase, and returns the reply to your Envoy.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2012-02-22-capturing-envoy-data/">(Read more...)</a>
     </p>
     
     

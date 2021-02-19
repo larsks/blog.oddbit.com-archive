@@ -6,10 +6,20 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Editing a commit message without git rebase</title>
+      <link>https://blog.oddbit.com/post/2021-02-18-editing-a-commit-message-witho/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2021-02-18-editing-a-commit-message-witho/</guid>
+      <description>While working on a pull request I will make liberal use of git rebase to clean up a series of commits: squashing typos, re-ordering changes for logical clarity, and so forth. But there are some times when all I want to do is change a commit message somewhere down the stack, and I was wondering if I had any options for doing that without reaching for git rebase.
+It turns out the answer is &amp;ldquo;yes&amp;rdquo;, as long as you have a linear history.</description>
+    </item>
     
     <item>
       <title>Object storage with OpenShift Container Storage</title>

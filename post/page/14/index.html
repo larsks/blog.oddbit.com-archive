@@ -105,6 +105,31 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-01-19-show-ovs-externalids/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Show OVS external-ids</h4>
+        <time class="post-stub-date" datetime="2014-01-19">Published Sun, Jan 19, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is just here as a reminder for me:
+An OVS interface has a variety of attributes associated with it, including an external-id field that can be used to associate resources outside of OpenVSwitch with the interface. You can view this field with the following command:
+$ ovs-vsctl --columns=name,external-ids list Interface  Which on my system, with a single virtual instance, looks like this:
+# ovs-vsctl --columns=name,external-ids list Interface . .
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-01-19-show-ovs-externalids/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-01-16-stupid-openstack-tricks/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Stupid OpenStack Tricks</h4>
         <time class="post-stub-date" datetime="2014-01-16">Published Thu, Jan 16, 2014</time>
@@ -311,28 +336,6 @@ This tool solves two problems I&rsquo;ve encountered in the past:
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-11-22-a-unified-cli-for-op/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Automatic maintenance of tag feeds</h4>
-        <time class="post-stub-date" datetime="2013-11-22">Published Fri, Nov 22, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&rsquo;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&rsquo;s the perfect place to insert generated content that must be kept in sync with posts on the blog.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/">(Read more...)</a>
     </p>
     
     
