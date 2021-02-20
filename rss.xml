@@ -2162,7 +2162,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Dependency check when scripts are triggered in background bash linux bash shell  Automated way to create multiple kubernetes Job manifests kubernetes automation manifest kustomize yq  Force linear layout of nodes in graphviz? git graphviz  Why does shell=True eat my subprocess.Popen stdout? python subprocess pipe popen  How can I clone up to a specific tag in a git repository and not include history or commits following that tag?</description>
+      <description>Dependency check when scripts are triggered in background bash linux bash shell  How can I move the centos user&amp;#39;s homedir using ansible? ansible centos  Automated way to create multiple kubernetes Job manifests kubernetes automation manifest kustomize yq  Force linear layout of nodes in graphviz? git graphviz  Why does shell=True eat my subprocess.Popen stdout? python subprocess pipe popen  How can I clone up to a specific tag in a git repository and not include history or commits following that tag?</description>
     </item>
     
   </channel>
