@@ -42,10 +42,10 @@ Environment I&amp;rsquo;m working with an OpenStack &amp;ldquo;Pike&amp;rdquo; d
     
     <item>
       <title>Safely restarting an OpenStack server with Ansible</title>
-      <link>https://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/</link>
+      <link>https://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack/</link>
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack-server-wi/</guid>
+      <guid>https://blog.oddbit.com/post/2018-01-24-safely-restarting-an-openstack/</guid>
       <description>The other day on #ansible, someone was looking for a way to safely shut down a Nova server, wait for it to stop, and then start it up again using the openstack cli. The first part seemed easy:
 - hosts: myserver tasks: - name: shut down the server command: poweroff become: true  &amp;hellip;but that will actually fail with the following result:
 TASK [shut down server] ************************************* fatal: [myserver]: UNREACHABLE! =&amp;gt; {&amp;quot;changed&amp;quot;: false, &amp;quot;msg&amp;quot;: &amp;quot;Failed to connect to the host via ssh: Shared connection to 10.</description>
@@ -53,19 +53,19 @@ TASK [shut down server] ************************************* fatal: [myserver]:
     
     <item>
       <title>Ansible for Infrastructure Testing</title>
-      <link>https://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</link>
+      <link>https://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-tes/</link>
       <pubDate>Wed, 02 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-testing/</guid>
+      <guid>https://blog.oddbit.com/post/2017-08-02-ansible-for-infrastructure-tes/</guid>
       <description>At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&amp;ldquo;your clocks aren&amp;rsquo;t in sync&amp;rdquo; or &amp;ldquo;your filesystem is full&amp;rdquo; or &amp;ldquo;you haven&amp;rsquo;t installed a critical update&amp;rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues. Fundamentally, we want something that acts like a typical code test suite, but for infrastructure.</description>
     </item>
     
     <item>
       <title>OpenStack, Containers, and Logging</title>
-      <link>https://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</link>
+      <link>https://blog.oddbit.com/post/2017-06-14-openstack-containers-and-loggi/</link>
       <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2017-06-14-openstack-containers-and-logging/</guid>
+      <guid>https://blog.oddbit.com/post/2017-06-14-openstack-containers-and-loggi/</guid>
       <description>I&amp;rsquo;ve been thinking about logging in the context of OpenStack and containerized service deployments. I&amp;rsquo;d like to lay out some of my thoughts on this topic and see if people think I am talking crazy or not.
 There are effectively three different mechanisms that an application can use to emit log messages:
  Via some logging-specific API, such as the legacy syslog API By writing a byte stream to stdout/stderr By writing a byte stream to a file  A substantial advantage to the first mechanism (using a logging API) is that the application is logging messages rather than bytes.</description>
@@ -73,10 +73,10 @@ There are effectively three different mechanisms that an application can use to 
     
     <item>
       <title>Making sure your Gerrit changes aren&#39;t broken</title>
-      <link>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</link>
+      <link>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-change/</link>
       <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</guid>
+      <guid>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-change/</guid>
       <description>It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
 In many cases you can alleviate this through the use of the git pre-commit hook, which will run every time you commit changes locally.</description>
     </item>
@@ -94,10 +94,10 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
     
     <item>
       <title>Connecting another vm to your tripleo-quickstart deployment</title>
-      <link>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</link>
+      <link>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</guid>
+      <guid>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-/</guid>
       <description>Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
 For a concrete example, let&amp;rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:</description>
     </item>
@@ -105,49 +105,49 @@ For a concrete example, let&amp;rsquo;s presume you have deployed an environment
     <item>
       <title>Deploying an HA OpenStack development environment with tripleo-quickstart
 </title>
-      <link>https://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</link>
+      <link>https://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-develop/</link>
       <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-development-envir/</guid>
+      <guid>https://blog.oddbit.com/post/2016-02-19-deploy-an-ha-openstack-develop/</guid>
       <description>In this article I would like to introduce tripleo-quickstart, a tool that will automatically provision a virtual environment and then use TripleO to deploy an HA OpenStack on top of it.
 Introducing Tripleo-Quickstart The goal of the Tripleo-Quickstart project is to replace the instack-virt-setup tool for quickly setting up virtual TripleO environments, and to ultimately become the tool used by both developers and upstream CI for this purpose. The project is a set of Ansible playbooks that will take care of:</description>
     </item>
     
     <item>
       <title>Ansible 2.0: New OpenStack modules</title>
-      <link>https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</link>
+      <link>https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modul/</link>
       <pubDate>Mon, 26 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</guid>
+      <guid>https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modul/</guid>
       <description>This is the second in a loose sequence of articles looking at new features in Ansible 2.0. In the previous article I looked at the Docker connection driver. In this article, I would like to provide an overview of the new-and-much-improved suite of modules for interacting with an OpenStack environment, and provide a few examples of their use.
 In versions of Ansible prior to 2.0, there was a small collection of OpenStack modules.</description>
     </item>
     
     <item>
       <title>Migrating Cinder volumes between OpenStack environments using shared NFS storage</title>
-      <link>https://blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/</link>
+      <link>https://blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-betwe/</link>
       <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-between-openstack-environments/</guid>
+      <guid>https://blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-betwe/</guid>
       <description>Many of the upgrade guides for OpenStack focus on in-place upgrades to your OpenStack environment. Some organizations may opt for a less risky (but more hardware intensive) option of setting up a parallel environment, and then migrating data into the new environment. In this article, we look at how to use Cinder backups with a shared NFS volume to facilitate the migration of Cinder volumes between two different OpenStack environments.</description>
     </item>
     
     <item>
       <title>Provider external networks (in an appropriate amount of detail)</title>
-      <link>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</link>
+      <link>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-det/</link>
       <pubDate>Thu, 13 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</guid>
+      <guid>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-det/</guid>
       <description>In Quantum in Too Much Detail, I discussed the architecture of a Neutron deployment in detail. Since that article was published, Neutron gained the ability to handle multiple external networks with a single L3 agent. While I wrote about that back in 2014, I covered the configuration side of it in much more detail than I discussed the underlying network architecture. This post addresses the architecture side.
 The players This document describes the architecture that results from a particular OpenStack configuration, specifically:</description>
     </item>
     
     <item>
       <title>In which we are amazed it doesn&#39;t all fall apart</title>
-      <link>https://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</link>
+      <link>https://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-does/</link>
       <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-doesnt-all-fall-apart/</guid>
+      <guid>https://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-does/</guid>
       <description>So, the Kilo release notes say:
 nova-manage migrate-flavor-data  But nova-manage says:
 nova-manage db migrate_flavor_data  But that says:
@@ -160,20 +160,20 @@ nova-manage db migrate_flavor_data --max_number 100  And that says:</description
     
     <item>
       <title>OpenStack Networking without DHCP</title>
-      <link>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</link>
+      <link>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-d/</link>
       <pubDate>Fri, 26 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</guid>
+      <guid>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-d/</guid>
       <description>In an OpenStack environment, cloud-init generally fetches information from the metadata service provided by Nova. It also has support for reading this information from a configuration drive, which under OpenStack means a virtual CD-ROM device attached to your instance containing the same information that would normally be available via the metadata service.
 It is possible to generate your network configuration from this configuration drive, rather than relying on the DHCP server provided by your OpenStack environment.</description>
     </item>
     
     <item>
       <title>Heat-kubernetes Demo with Autoscaling</title>
-      <link>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</link>
+      <link>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autos/</link>
       <pubDate>Fri, 19 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</guid>
+      <guid>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autos/</guid>
       <description>Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
 As part of that presentation, I&amp;rsquo;ve put together a short demonstration video:
  This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</description>
@@ -181,20 +181,20 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
     
     <item>
       <title>Diagnosing problems with an OpenStack deployment</title>
-      <link>https://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/</link>
+      <link>https://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-op/</link>
       <pubDate>Mon, 09 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-openstack-deplo/</guid>
+      <guid>https://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-op/</guid>
       <description>I recently had the chance to help a colleague debug some problems in his OpenStack installation. The environment was unique because it was booting virtualized aarch64 instances, which at the time did not have any PCI bus support&amp;hellip;which in turn precluded things like graphic consoles (i.e., VNC or SPICE consoles) for the Nova instances.
 This post began life as an email summarizing the various configuration changes we made on the systems to get things up and running.</description>
     </item>
     
     <item>
       <title>Installing nova-docker with devstack</title>
-      <link>https://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/</link>
+      <link>https://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-dev/</link>
       <pubDate>Wed, 11 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-devstack/</guid>
+      <guid>https://blog.oddbit.com/post/2015-02-11-installing-novadocker-with-dev/</guid>
       <description>This is a long-form response to this question, and describes how to get the nova-docker driver up running with devstack under Ubuntu 14.04 (Trusty). I wrote a similar post for Fedora 21, although that one was using the RDO Juno packages, while this one is using devstack and the upstream sources.
 Getting started We&amp;rsquo;ll be using the Ubuntu 14.04 cloud image (because my test environment runs on OpenStack).
 First, let&amp;rsquo;s install a few prerequisites:</description>
@@ -202,10 +202,10 @@ First, let&amp;rsquo;s install a few prerequisites:</description>
     
     <item>
       <title>Installing nova-docker on Fedora 21/RDO Juno</title>
-      <link>https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</link>
+      <link>https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedo/</link>
       <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</guid>
+      <guid>https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedo/</guid>
       <description>This post comes about indirectly by a request on IRC in #rdo for help getting nova-docker installed on Fedora 21. I ran through the process from start to finish and decided to write everything down for posterity.
 Getting started I started with the Fedora 21 Cloud Image, because I&amp;rsquo;m installing onto OpenStack and the cloud images include some features that are useful in this environment.
 We&amp;rsquo;ll be using OpenStack packages from the RDO Juno repository.</description>
@@ -223,49 +223,49 @@ We&amp;rsquo;ll be using OpenStack packages from the RDO Juno repository.</descr
     
     <item>
       <title>Running nova-libvirt and nova-docker on the same host</title>
-      <link>https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</link>
+      <link>https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novado/</link>
       <pubDate>Sat, 17 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novadocker-on-the-same-host/</guid>
+      <guid>https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novado/</guid>
       <description>I regularly use OpenStack on my laptop with libvirt as my hypervisor. I was interested in experimenting with recent versions of the nova-docker driver, but I didn&amp;rsquo;t have a spare system available on which to run the driver, and I use my regular nova-compute service often enough that I didn&amp;rsquo;t want to simply disable it temporarily in favor of nova-docker.
  NB As pointed out by gustavo in the comments, running two neutron-openvswitch-agents on the same host &amp;ndash; as suggested in this article &amp;ndash; is going to lead to nothing but sadness and doom.</description>
     </item>
     
     <item>
       <title>Accessing the serial console of your Nova servers</title>
-      <link>https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</link>
+      <link>https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-o/</link>
       <pubDate>Mon, 22 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</guid>
+      <guid>https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-o/</guid>
       <description>One of the new features available in the Juno release of OpenStack is support for serial console access to your Nova servers. This post looks into how to configure the serial console feature and then how to access the serial consoles of your Nova servers.
 Configuring serial console support In previous release of OpenStack, read-only access to the serial console of your servers was available through the os-getConsoleOutput server action (exposed via nova console-log on the command line).</description>
     </item>
     
     <item>
       <title>Cloud-init and the case of the changing hostname</title>
-      <link>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</link>
+      <link>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/</link>
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</guid>
+      <guid>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/</guid>
       <description>Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.</description>
     </item>
     
     <item>
       <title>Fedora Atomic, OpenStack, and Kubernetes (oh my)</title>
-      <link>https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</link>
+      <link>https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-ku/</link>
       <pubDate>Mon, 24 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</guid>
+      <guid>https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-ku/</guid>
       <description>While experimenting with Fedora Atomic, I was looking for an elegant way to automatically deploy Atomic into an OpenStack environment and then automatically schedule some Docker containers on the Atomic host. This post describes my solution.
 Like many other cloud-targeted distributions, Fedora Atomic runs cloud-init when the system boots. We can take advantage of this to configure the system at first boot by providing a user-data blob to Nova when we boot the instance.</description>
     </item>
     
     <item>
       <title>Creating a Windows image for OpenStack</title>
-      <link>https://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</link>
+      <link>https://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-o/</link>
       <pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-openstack/</guid>
+      <guid>https://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-o/</guid>
       <description>If you want to build a Windows image for use in your OpenStack environment, you can follow the example in the official documentation, or you can grab a Windows 2012r2 evaluation pre-built image from the nice folks at CloudBase.
 The CloudBase-provided image is built using a set of scripts and configuration files that CloudBase has made available on GitHub.
 The CloudBase repository is an excellent source of information, but I wanted to understand the process myself.</description>
@@ -511,10 +511,10 @@ Feel free to drop by on #rdo and help out or ask questions.</description>
     
     <item>
       <title>Visualizing Neutron Networking with GraphViz</title>
-      <link>https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</link>
+      <link>https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graph/</link>
       <pubDate>Mon, 23 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</guid>
+      <guid>https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graph/</guid>
       <description>I&amp;rsquo;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
 In this post I&amp;rsquo;m going to look at a tool that will help you visualize the connectivity of network devices on your system.
 mk-network-dot There are a lot of devices involved in your Neutron network configuration.</description>
@@ -522,10 +522,10 @@ mk-network-dot There are a lot of devices involved in your Neutron network confi
     
     <item>
       <title>An introduction to OpenStack Heat</title>
-      <link>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</link>
+      <link>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-h/</link>
       <pubDate>Fri, 06 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</guid>
+      <guid>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-h/</guid>
       <description>Heat is a template-based orchestration mechanism for use with OpenStack. With Heat, you can deploy collections of resources &amp;ndash; networks, servers, storage, and more &amp;ndash; all from a single, parameterized template.
 In this article I will introduce Heat templates and the heat command line client.
 Writing templates Because Heat began life as an analog of AWS CloudFormation, it supports the template formats used by the CloudFormation (CFN) tools. It also supports its own native template format, called HOT (&amp;ldquo;Heat Orchestration Templates&amp;rdquo;).</description>
@@ -598,10 +598,10 @@ Motivations Like many organizations, we have a mix of Linux and Windows in our e
     
     <item>
       <title>Chasing OpenStack idle connection timeouts</title>
-      <link>https://blog.oddbit.com/post/2012-07-30-openstack-idle-connection-timeouts/</link>
+      <link>https://blog.oddbit.com/post/2012-07-30-openstack-idle-connection-time/</link>
       <pubDate>Mon, 30 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2012-07-30-openstack-idle-connection-timeouts/</guid>
+      <guid>https://blog.oddbit.com/post/2012-07-30-openstack-idle-connection-time/</guid>
       <description>The original problem I&amp;rsquo;ve recently spent some time working on an OpenStack deployment. I ran into a problem in which the compute service would frequently stop communicating with the AMQP message broker (qpidd).
 In order to gather some data on the problem, I ran the following simple test:
  Wait n minutes Run nova boot ... to create an instance Wait a minute and see if the new instance becomes ACTIVE If it works, delete the instance, set n = 2n and repeat  This demonstrated that communication was failing after about an hour, which correlates rather nicely with the idle connection timeout on the firewall.</description>

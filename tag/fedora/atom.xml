@@ -13,8 +13,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/"/>
-    <id>https://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fed/"/>
+    <id>https://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fed/</id>
     <published>2015-11-17T00:00:00Z</published>
     <updated>2015-11-17T00:00:00Z</updated>
     <summary type="html">If you should find yourself wanting to install pyspatialite on Fedora &amp;ndash; perhaps because you want to use the Processing plugin for QGIS &amp;ndash; you will first need to install the following dependencies:
@@ -27,8 +27,8 @@ CFLAGS=-I/usr/include pip install pyspatialite  At this point, you should be abl
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/"/>
-    <id>https://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedora-23/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedor/"/>
+    <id>https://blog.oddbit.com/post/2015-10-15-bootstrapping-ansible-on-fedor/</id>
     <published>2015-10-15T00:00:00Z</published>
     <updated>2015-10-15T00:00:00Z</updated>
     <summary type="html">If you&amp;rsquo;ve tried running Ansible against a Fedora 23 system, you may have run into the following problem:
@@ -40,8 +40,8 @@ fatal: [myserver]: FAILED! =&amp;gt; {&amp;quot;changed&amp;quot;: false, &amp;q
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/"/>
-    <id>https://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libv/"/>
+    <id>https://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libv/</id>
     <published>2015-03-10T00:00:00Z</published>
     <updated>2015-03-10T00:00:00Z</updated>
     <summary type="html">Most major distributions now provide &amp;ldquo;cloud-enabled&amp;rdquo; images designed for use in cloud environments like OpenStack and AWS. These images are usually differentiated by (a) being relatively small, and (b) running cloud-init at boot to perform initial system configuration tasks using metadata provided by the cloud environment.
@@ -53,8 +53,8 @@ Because of their small size and support for automatic configuration (including s
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/"/>
-    <id>https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-ku/"/>
+    <id>https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-ku/</id>
     <published>2014-11-24T00:00:00Z</published>
     <updated>2014-11-24T00:00:00Z</updated>
     <summary type="html">While experimenting with Fedora Atomic, I was looking for an elegant way to automatically deploy Atomic into an OpenStack environment and then automatically schedule some Docker containers on the Atomic host. This post describes my solution.

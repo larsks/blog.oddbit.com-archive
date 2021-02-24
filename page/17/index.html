@@ -106,6 +106,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">How do I LXC console?</h4>
+        <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    It took me an unreasonably long time to boot an LXC container with working console access. For the record:
+When you boot an LXC container, the console appears to be attached to a pts device. For example, when booting with the console attached to your current terminal:
+# lxc-start -n node0 ... node0 login: root Last login: Mon Jan 28 16:35:19 on tty1 [root@node0 ~]# tty /dev/console [root@node0 ~]# ls -l /dev/console crw------- 1 root tty 136, 12 Jan 28 16:36 /dev/console  This is also true when you attach to a container using lxc-console:
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-01-28-how-do-i-lxc-console/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-01-28-net-with-no-net/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Systemd and the case of the missing network</h4>
         <time class="post-stub-date" datetime="2013-01-28">Published Mon, Jan 28, 2013</time>
@@ -270,7 +294,7 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
 
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2012-11-08-popfile-document-classification/" itemprop="url" title="Go to post detail">
+    <a href="https://blog.oddbit.com/post/2012-11-08-popfile-document-classificatio/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Document classification with POPFile</h4>
         <time class="post-stub-date" datetime="2012-11-08">Published Thu, Nov 8, 2012</time>
         
@@ -283,7 +307,7 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
 
     
     <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2012-11-08-popfile-document-classification/">(Read more...)</a>
+      <a href="https://blog.oddbit.com/post/2012-11-08-popfile-document-classificatio/">(Read more...)</a>
     </p>
     
     
@@ -307,29 +331,6 @@ alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --sla
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2012-11-06-convert-html-to-markdown/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2012-11-06-moving-from-blogger/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Relocating from Blogger</h4>
-        <time class="post-stub-date" datetime="2012-11-06">Published Tue, Nov 6, 2012</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I&rsquo;m in the process of porting over content from Blogger. This may lead to odd formatting or broken links here and there. If you spot something, please let me know.
-If you came here from Google and found a broken link, try starting at the archive and see if you can spot what you were looking for.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2012-11-06-moving-from-blogger/">(Read more...)</a>
     </p>
     
     

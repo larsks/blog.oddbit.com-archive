@@ -24,10 +24,10 @@ If one is temtped to use SSH keys as authentication credentials outside of ssh, 
     
     <item>
       <title>LDAP redundancy through proxy servers</title>
-      <link>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</link>
+      <link>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-/</link>
       <pubDate>Wed, 24 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</guid>
+      <guid>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-/</guid>
       <description>Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.
 A solution We can provide a level of redundancy by passing the LDAP connections through a load balancing proxy. While this makes the proxy a single point of failure, it is (a) a very simple tool and thus less prone to complex failure modes, (b) running on the same host as the web application, and (c) is completely under our control.</description>
     </item>

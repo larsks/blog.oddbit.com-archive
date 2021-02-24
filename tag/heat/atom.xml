@@ -27,8 +27,8 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/"/>
-    <id>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autos/"/>
+    <id>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autos/</id>
     <published>2015-06-19T00:00:00Z</published>
     <updated>2015-06-19T00:00:00Z</updated>
     <summary type="html">Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
@@ -134,8 +134,8 @@ In order for WaitCondition resources to operate correctly in Heat, you will need
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/"/>
-    <id>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-h/"/>
+    <id>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-h/</id>
     <published>2013-12-06T00:00:00Z</published>
     <updated>2013-12-06T00:00:00Z</updated>
     <summary type="html">Heat is a template-based orchestration mechanism for use with OpenStack. With Heat, you can deploy collections of resources &amp;ndash; networks, servers, storage, and more &amp;ndash; all from a single, parameterized template.

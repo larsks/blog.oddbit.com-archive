@@ -23,10 +23,10 @@ Caching Gruf will now by default cache results for five minutes. This avoids rep
     
     <item>
       <title>Gruf, a Gerrit command line utility</title>
-      <link>https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</link>
+      <link>https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-uti/</link>
       <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</guid>
+      <guid>https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-uti/</guid>
       <description>(See also the followup to this article.)
 I&amp;rsquo;ve recently started spending more time interacting with Gerrit, the code review tool used both by OpenStack, at review.openstack.org, and by a variety of other open source projects at GerritForge&amp;rsquo;s GitHub-linked review.gerrithub.io. I went looking for command line tools and was largely disappointed with what I found. Many of the solutions out there assume that you&amp;rsquo;re regularly interacting with a single Gerrit instance, and that&amp;rsquo;s seldom the case: more often, the Gerrit server in use varies from project to project.</description>
     </item>

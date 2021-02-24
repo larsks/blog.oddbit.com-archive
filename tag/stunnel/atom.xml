@@ -13,8 +13,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/"/>
-    <id>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-servers/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-/"/>
+    <id>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-/</id>
     <published>2010-02-24T00:00:00Z</published>
     <updated>2010-02-24T00:00:00Z</updated>
     <summary type="html">Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.

@@ -13,8 +13,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/"/>
-    <id>https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshot/"/>
+    <id>https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshot/</id>
     <published>2018-01-25T00:00:00Z</published>
     <updated>2018-01-25T00:00:00Z</updated>
     <summary type="html">I find myself working with Raspbian disk images fairly often. A typical workflow is:
@@ -40,8 +40,8 @@ Sure, I could just make a copy of the image and work from there, but what fun is
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/"/>
-    <id>https://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-fre/"/>
+    <id>https://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-fre/</id>
     <published>2011-05-22T00:00:00Z</published>
     <updated>2011-05-22T00:00:00Z</updated>
     <summary type="html">This articles describes how I got CrashPlan running on my FreeBSD 8(-STABLE) system. These instructions by Kim Scarborough were my starting point, but as these were for FreeBSD 7 there were some additional steps necessary to get things working.

@@ -6,8 +6,20 @@
   
   <link href="https://blog.oddbit.com/tag/administrivia/" rel="alternate"></link>
 
-  <updated>2019-05-07T09:00:00Z</updated>
+  <updated>2021-02-24T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/administrivia/</id>
+  <entry>
+    <title>File reorganization</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-02-24-administrivia/"/>
+    <id>https://blog.oddbit.com/post/2021-02-24-administrivia/</id>
+    <published>2021-02-24T00:00:00Z</published>
+    <updated>2021-02-24T00:00:00Z</updated>
+    <summary type="html">This is just a note that I&amp;rsquo;ve substantially changed how the post sources are organized. I&amp;rsquo;ve tried to ensure that I preserve all the existing links, but if you spot something missing please feel free to leave a comment on this post.</summary>
+  </entry>
+  
   <entry>
     <title>New comment system</title>
     <author>

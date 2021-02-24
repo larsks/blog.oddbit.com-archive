@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ansible 2.0: New OpenStack modules &middot; The Odd Bit</title>
+        <meta name="description" content="This is the second in a loose sequence of articles looking at new features in Ansible 2.0. In the previous article I looked at the Docker connection driver. In this article, I would like to provide an overview of the new-and-much-improved suite of modules for interacting with an OpenStack environment, and provide a few examples of their use.
+In versions of Ansible prior to 2.0, there was a small collection of OpenStack modules.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/oddbit.css">
+<link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Ansible 2.0: New OpenStack modules</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2015-10-26" itemprop="datePublished">Mon, Oct 26, 2015</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+    <p>This is the second in a loose sequence of articles looking at new
+features in Ansible 2.0.  In the previous article I looked at the
+<a href="https://blog.oddbit.com/post/2015-10-13-ansible-20-the-docker-connecti/">Docker connection driver</a>.  In this article, I would like to
+provide an overview of the new-and-much-improved suite of modules for
+interacting with an <a href="http://www.openstack.org/">OpenStack</a> environment, and provide a few
+examples of their use.</p>
+<p>In versions of Ansible prior to 2.0, there was a small collection of
+OpenStack modules.  There was the minimum necessary to boot a Nova
+instance:</p>
+<ul>
+<li><code>glance_image.py</code></li>
+<li><code>keystone_user.py</code></li>
+<li><code>nova_compute.py</code></li>
+<li><code>nova_keypair.py</code></li>
+</ul>
+<p>And a collection of modules for interacting with <a href="https://wiki.openstack.org/wiki/Neutron">Neutron</a> (previously
+Quantum):</p>
+<ul>
+<li><code>quantum_floating_ip_associate.py</code></li>
+<li><code>quantum_floating_ip.py</code></li>
+<li><code>quantum_network.py</code></li>
+<li><code>quantum_router_gateway.py</code></li>
+<li><code>quantum_router_interface.py</code></li>
+<li><code>quantum_router.py</code></li>
+<li><code>quantum_subnet.py</code></li>
+</ul>
+<p>While functional, these modules did not provide very comprehensive
+coverage of even basic OpenStack services, and they suffered from
+having a great deal of duplicated code (which made ensuring
+consistent behavior across all the modules more difficult).  The
+behavior of these modules was not always what you would expect (e.g.,
+the <code>nova_compute</code> module would return information in different forms
+depending on whether it had to create an instance or not).</p>
+<h2 id="throwing-shade">Throwing Shade</h2>
+<p>The situation is much improved in Ansible 2.0, which introduces a new
+suite of OpenStack modules in which the common code has been factored
+out into the <a href="https://pypi.python.org/pypi/shade">Shade</a> project, a Python package that provides a
+simpler interface to OpenStack than is available using the native
+clients.  Collecting this code in one place will help ensure both that
+these Ansible modules share consistent behavior and that they are
+easier to maintain.</p>
+<p>There are modules for managing Keystone:</p>
+<ul>
+<li><code>os_auth.py</code></li>
+<li><code>os_user_group.py</code></li>
+<li><code>os_user.py</code></li>
+</ul>
+<p>Glance:</p>
+<ul>
+<li><code>os_image_facts.py</code></li>
+<li><code>os_image.py</code></li>
+</ul>
+<p>Cinder:</p>
+<ul>
+<li><code>os_server_volume.py</code></li>
+<li><code>os_volume.py</code></li>
+</ul>
+<p>Nova:</p>
+<ul>
+<li><code>os_keypair.py</code></li>
+<li><code>os_nova_flavor.py</code></li>
+<li><code>os_server_actions.py</code></li>
+<li><code>os_server_facts.py</code></li>
+<li><code>os_server.py</code></li>
+</ul>
+<p>Ironic:</p>
+<ul>
+<li><code>os_ironic_node.py</code></li>
+<li><code>os_ironic.py</code></li>
+</ul>
+<p>Neutron and Nova Networking:</p>
+<ul>
+<li><code>os_floating_ip.py</code></li>
+<li><code>os_network.py</code></li>
+<li><code>os_networks_facts.py</code></li>
+<li><code>os_port.py</code></li>
+<li><code>os_router.py</code></li>
+<li><code>os_security_group.py</code></li>
+<li><code>os_security_group_rule.py</code></li>
+<li><code>os_subnet.py</code></li>
+<li><code>os_subnets_facts.py</code></li>
+</ul>
+<p>and Swift:</p>
+<ul>
+<li><code>os_object.py</code></li>
+</ul>
+<h2 id="authentication">Authentication</h2>
+<p>Shade uses the <a href="https://pypi.python.org/pypi/os-client-config/">os-client-config</a> library to configure
+authentication credentials for  your OpenStack environment.</p>
+<p>In the absence of any authentication information provided in your
+Ansible playbook, these modules will attempt to use the standard suite
+of <code>OS_*</code> variables (<code>OS_USERNAME</code>, <code>OS_PASSWORD</code>, etc).  This is fine
+for testing, but you usually want to provide some sort of
+authentication configuration in your Ansible environment.</p>
+<p>You can provide credentials directly in your plays by providing an
+<code>auth</code> argument to any of the modules.  For example:</p>
+<pre><code>- os_image:
+    auth:
+      auth_url: http://openstack.local:5000/v2.0
+      username: admin
+      password: secret
+      project_name: admin
+    [...]
+</code></pre>
+<p>But that can get complicated, especially if you are maintaining
+multiple sets of credentials.  The <code>shade</code> library allows you to
+manage credentials in a file named (by default) <code>clouds.yml</code>, which
+<code>shade</code> searches for in:</p>
+<ul>
+<li>The current directory</li>
+<li><code>$HOME/.config/openstack/</code></li>
+<li><code>/etc/xdg/openstack/</code></li>
+<li><code>/etc/openstack</code></li>
+</ul>
+<p>This file may contain credentials for one or more cloud environments,
+for example:</p>
+<pre><code>clouds:
+  testing:
+    auth:
+      auth_url: http://openstack.local:5000/v2.0
+      username: admin
+      password: secret
+      project_name: admin
+</code></pre>
+<p>If you have the above in <code>clouds.yml</code> along with your playbook, the
+above <code>os_image</code> example can be rewritten as:</p>
+<pre><code>- os_image:
+    cloud: testing
+    [...]
+</code></pre>
+<h2 id="return-values">Return values</h2>
+<p>The new modules all return useful information about the objects they
+have created.  For example, if you create a network using
+<a href="http://docs.ansible.com/ansible/os_network_module.html">os_network</a> and register that result:</p>
+<pre><code>- os_network:
+    cloud: testing
+    name: mynetwork
+  register: mynetwork
+</code></pre>
+<p>You&rsquo;ll get back a dictionary containing a top-level <code>id</code> attribute,
+which is the UUID of the created network, along with a <code>network</code>
+attribute containing a dictionary of information about the created
+object.  The <a href="http://docs.ansible.com/ansible/debug_module.html">debug</a> module is an excellent tool for exploring these
+return values.  If we put the following in our playbook immediately
+after the above task:</p>
+<pre><code>- debug:
+    var: mynetwork
+</code></pre>
+<p>We would get output that looks something like:</p>
+<pre><code>ok: [localhost] =&gt; {
+    &quot;changed&quot;: false, 
+    &quot;mynetwork&quot;: {
+        &quot;changed&quot;: true, 
+        &quot;id&quot;: &quot;02b77e32-794a-4102-ab1b-1b90e6d4d92f&quot;, 
+        &quot;invocation&quot;: {
+            &quot;module_args&quot;: {
+                &quot;cloud&quot;: &quot;testing&quot;, 
+                &quot;name&quot;: &quot;mynetwork&quot;
+            }, 
+            &quot;module_name&quot;: &quot;os_network&quot;
+        }, 
+        &quot;network&quot;: {
+            &quot;admin_state_up&quot;: true, 
+            &quot;id&quot;: &quot;02b77e32-794a-4102-ab1b-1b90e6d4d92f&quot;, 
+            &quot;mtu&quot;: 0, 
+            &quot;name&quot;: &quot;mynetwork&quot;, 
+            &quot;provider:network_type&quot;: &quot;vxlan&quot;, 
+            &quot;provider:physical_network&quot;: null, 
+            &quot;provider:segmentation_id&quot;: 79, 
+            &quot;router:external&quot;: false, 
+            &quot;shared&quot;: false, 
+            &quot;status&quot;: &quot;ACTIVE&quot;, 
+            &quot;subnets&quot;: [], 
+            &quot;tenant_id&quot;: &quot;349a8b95c5ad4a3383149f65f8c44cff&quot;
+        }
+    }
+}
+</code></pre>
+<h2 id="examples">Examples</h2>
+<p>I have written a set of basic <a href="https://github.com/ansible/ansible/pull/12875">integration tests</a> for these modules.
+I hope the pull request is merged, but even if not it provides an
+example of how to make use of many of these new modules.</p>
+<p>I&rsquo;d like to present a few brief examples here to give you a sense of
+what working with the new modules is like.</p>
+<h3 id="uploading-an-image-to-glance">Uploading an image to Glance</h3>
+<p>The <a href="http://docs.ansible.com/ansible/os_image_module.html">os_image</a> module is used to upload an image to Glance.  Assuming
+that you have file named <code>cirros.qcow2</code> available locally, this will
+create an image named <code>cirros</code> in Glance:</p>
+<pre><code>- os_image:
+    cloud: testing
+    name: cirros
+    state: present
+    disk_format: qcow2
+    container_format: bare
+    filename: cirros.qcow2
+</code></pre>
+<h3 id="booting-a-nova-server">Booting a Nova server</h3>
+<p>The <a href="http://docs.ansible.com/ansible/os_server_module.html">os_server</a> module, which is used for booting virtual servers
+(&ldquo;instances&rdquo;) in Nova, replaces the <a href="http://docs.ansible.com/ansible/nova_compute_module.html">nova_compute</a> module available
+in Ansible versions before 2.0:</p>
+<pre><code>- name: create a nova server
+  os_server:
+    cloud: testing
+    name: myserver
+    state: present
+    nics:
+      - net-name: private
+    image: cirros
+    flavor: m1.small
+    key_name: my_ssh_key
+</code></pre>
+<p>The <code>nics</code> parameter can accept net names, net ids, port names, and
+port ids.  So you could also do this (assuming you were attaching your
+server to two different tenant networks):</p>
+<pre><code>nics:
+  - net-id: c875770c-a20b-45b5-a9da-5aca97153053
+  - net-name: private
+</code></pre>
+<p>The above examples are using a YAML list of dictionaries to provide
+the information.  You can also pass in a comma-delimited key=value
+string, like this:</p>
+<pre><code>nics: net-name=private,net-name=database
+</code></pre>
+<p>This syntax is particular useful if you are running ad-hoc commands on
+the command line:</p>
+<pre><code>ansible localhost -m os_server -a '
+  cloud=testing name=myserver nics=net-name=private
+  image=cirros flavor=m1.small key_name=my_ssh_key'
+</code></pre>
+<h3 id="adding-a-nova-server-to-your-ansible-inventory">Adding a Nova server to your Ansible inventory</h3>
+<p>I&rsquo;d like to conclude this post with a longer example, that
+demonstrates how you can use the <a href="http://docs.ansible.com/ansible/add_host_module.html">add_host</a> module to add a freshly
+created server to your inventory, and then target that new server in
+your playbook.  I&rsquo;ve split up this playbook with commentary; in
+practice, the pre-formatted text in this section would all be in a
+single playbook (like <a href="/assets/2015/10/26/playbook.yml">this</a>).</p>
+<pre><code>- hosts: localhost
+  tasks:                                                                    
+</code></pre>
+<p>This first task boots the server. The values for <code>image</code>, <code>nics</code>, and
+`key_name will need to be adjusted for your environment.</p>
+<pre><code>    - os_server:
+        cloud: testing
+        name: myserver
+        image: centos-7-atomic
+        nics:
+          - net-name: private
+        flavor: m1.small
+        key_name: lars
+        auto_ip: true
+      register: myserver
+</code></pre>
+<p>This <code>debug</code> entry simply shows us what values were returned in the
+<code>myserver</code> variable.</p>
+<pre><code>    - debug:
+        var: myserver
+</code></pre>
+<p>Now we add the new host to our Ansible inventory.  For this to work,
+you need to have assigned a floating ip to the server (either using
+<code>auto_ip</code>, as in this example, or by assigning one explicitly), and
+you need to be running this playbook somewhere that has a route to the
+floating ip address.</p>
+<pre><code>    - add_host:
+        name: myserver
+        groups: openstack
+        ansible_host: &quot;{{myserver.server.public_v4}}&quot;
+        ansible_user: centos
+        ansible_become: true
+</code></pre>
+<p>Note that in the above play you can&rsquo;t use information from the
+inventory because that new host won&rsquo;t exist in the inventory until
+<em>after</em> this play completes.</p>
+<p>We&rsquo;ll need to wait for the server to finish booting and provisioning
+before we are able to target it with ansible.  A typical cloud image
+is configured to run <a href="https://cloudinit.readthedocs.org/en/latest/">cloud-init</a> when it boots, which will take
+care of a number of initial configuration tasks, including
+provisioning the ssh key we configured using <code>os_server</code>.  Until this
+process is complete, we won&rsquo;t have remote access to the server.</p>
+<p>We can&rsquo;t use the <code>wait_for</code> module because that will only
+check for an open port. Instead, we use a <a href="http://docs.ansible.com/ansible/playbooks_loops.html#do-until-loops">do-until loop</a> to
+wait until we are able to successfully run a command on the server via
+ssh.</p>
+<pre><code>    - command: &gt;
+        ssh -o BatchMode=yes
+        centos@{{myserver.server.public_v4}} true
+      register: result
+      until: result|success
+      retries: 300
+      delay: 5
+</code></pre>
+<p>Now that we have added the new server to our inventory
+we can target it in subsequent plays (such as this one):</p>
+<pre><code>- hosts: myserver
+  tasks:
+
+    - service:
+        name: docker
+        state: running
+        enabled: true
+</code></pre>
+
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/ansible/">ansible</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/openstack/">openstack</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/ansible_20_series/">ansible_20_series</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/pull-request/">pull-request</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Ansible%202.0%3a%20New%20OpenStack%20modules&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2015-10-26-ansible-20-new-openstack-modul%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

@@ -13,8 +13,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/"/>
-    <id>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-change/"/>
+    <id>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-change/</id>
     <published>2017-01-22T00:00:00Z</published>
     <updated>2017-01-22T00:00:00Z</updated>
     <summary type="html">It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
@@ -39,8 +39,8 @@ Caching Gruf will now by default cache results for five minutes. This avoids rep
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/"/>
-    <id>https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-uti/"/>
+    <id>https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-uti/</id>
     <published>2016-02-16T00:00:00Z</published>
     <updated>2016-02-16T00:00:00Z</updated>
     <summary type="html">(See also the followup to this article.)

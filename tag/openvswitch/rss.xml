@@ -31,20 +31,20 @@
     
     <item>
       <title>Connecting another vm to your tripleo-quickstart deployment</title>
-      <link>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</link>
+      <link>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-tripleo-qu/</guid>
+      <guid>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-/</guid>
       <description>Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
 For a concrete example, let&amp;rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:</description>
     </item>
     
     <item>
       <title>Provider external networks (in an appropriate amount of detail)</title>
-      <link>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</link>
+      <link>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-det/</link>
       <pubDate>Thu, 13 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</guid>
+      <guid>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-det/</guid>
       <description>In Quantum in Too Much Detail, I discussed the architecture of a Neutron deployment in detail. Since that article was published, Neutron gained the ability to handle multiple external networks with a single L3 agent. While I wrote about that back in 2014, I covered the configuration side of it in much more detail than I discussed the underlying network architecture. This post addresses the architecture side.
 The players This document describes the architecture that results from a particular OpenStack configuration, specifically:</description>
     </item>

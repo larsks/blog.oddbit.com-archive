@@ -6,8 +6,20 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2021-02-18T00:00:00Z</updated>
+  <updated>2021-02-24T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>administrivia</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/administrivia/"/>
+    <id>https://blog.oddbit.com/tag/administrivia/</id>
+    <published>2021-02-24T00:00:00Z</published>
+    <updated>2021-02-24T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>git</title>
     <author>
@@ -173,18 +185,6 @@
     <id>https://blog.oddbit.com/tag/gis/</id>
     <published>2020-12-13T00:00:00Z</published>
     <updated>2020-12-13T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>encryption</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/encryption/"/>
-    <id>https://blog.oddbit.com/tag/encryption/</id>
-    <published>2020-10-05T00:00:00Z</published>
-    <updated>2020-10-05T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   

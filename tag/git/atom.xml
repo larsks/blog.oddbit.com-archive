@@ -52,8 +52,8 @@ Rebase instead of merge If you need to incorporate changes from the upstream mas
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/"/>
-    <id>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-change/"/>
+    <id>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-change/</id>
     <published>2017-01-22T00:00:00Z</published>
     <updated>2017-01-22T00:00:00Z</updated>
     <summary type="html">It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
@@ -108,8 +108,8 @@ If you access a git repository via ssh, it&amp;rsquo;s easy to provide a wrapper
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/"/>
-    <id>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git/"/>
+    <id>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git/</id>
     <published>2015-04-10T00:00:00Z</published>
     <updated>2015-04-10T00:00:00Z</updated>
     <summary type="html">This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!
@@ -163,8 +163,8 @@ $ git fetch --tags $ git fetch  What’s the difference?</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/"/>
-    <id>https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subv/"/>
+    <id>https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subv/</id>
     <published>2010-05-11T00:00:00Z</published>
     <updated>2010-05-11T00:00:00Z</updated>
     <summary type="html">I recently set up a git repository server (using gitosis and gitweb). Among the required features of the system was the ability to publish the git repository to a read-only Subversion repository. This sounds simple in principle but in practice proved to be a bit tricky.
@@ -176,8 +176,8 @@ Git makes an excellent Subversion client. You can use the git svn &amp;hellip; s
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/"/>
-    <id>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-gi/"/>
+    <id>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-gi/</id>
     <published>2010-01-29T00:00:00Z</published>
     <updated>2010-01-29T00:00:00Z</updated>
     <summary type="html">Overview At my office, we have a crufty Subversion repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.

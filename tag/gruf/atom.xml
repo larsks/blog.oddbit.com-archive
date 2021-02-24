@@ -26,8 +26,8 @@ Caching Gruf will now by default cache results for five minutes. This avoids rep
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/"/>
-    <id>https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-utility/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-uti/"/>
+    <id>https://blog.oddbit.com/post/2016-02-16-gruf-a-gerrit-command-line-uti/</id>
     <published>2016-02-16T00:00:00Z</published>
     <updated>2016-02-16T00:00:00Z</updated>
     <summary type="html">(See also the followup to this article.)

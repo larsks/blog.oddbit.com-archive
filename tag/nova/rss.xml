@@ -13,20 +13,20 @@
     
     <item>
       <title>OpenStack Networking without DHCP</title>
-      <link>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</link>
+      <link>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-d/</link>
       <pubDate>Fri, 26 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</guid>
+      <guid>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-d/</guid>
       <description>In an OpenStack environment, cloud-init generally fetches information from the metadata service provided by Nova. It also has support for reading this information from a configuration drive, which under OpenStack means a virtual CD-ROM device attached to your instance containing the same information that would normally be available via the metadata service.
 It is possible to generate your network configuration from this configuration drive, rather than relying on the DHCP server provided by your OpenStack environment.</description>
     </item>
     
     <item>
       <title>Installing nova-docker on Fedora 21/RDO Juno</title>
-      <link>https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</link>
+      <link>https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedo/</link>
       <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedora-21/</guid>
+      <guid>https://blog.oddbit.com/post/2015-02-06-installing-nova-docker-on-fedo/</guid>
       <description>This post comes about indirectly by a request on IRC in #rdo for help getting nova-docker installed on Fedora 21. I ran through the process from start to finish and decided to write everything down for posterity.
 Getting started I started with the Fedora 21 Cloud Image, because I&amp;rsquo;m installing onto OpenStack and the cloud images include some features that are useful in this environment.
 We&amp;rsquo;ll be using OpenStack packages from the RDO Juno repository.</description>
@@ -44,10 +44,10 @@ We&amp;rsquo;ll be using OpenStack packages from the RDO Juno repository.</descr
     
     <item>
       <title>Accessing the serial console of your Nova servers</title>
-      <link>https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</link>
+      <link>https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-o/</link>
       <pubDate>Mon, 22 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-of-your-nova-servers/</guid>
+      <guid>https://blog.oddbit.com/post/2014-12-22-accessing-the-serial-console-o/</guid>
       <description>One of the new features available in the Juno release of OpenStack is support for serial console access to your Nova servers. This post looks into how to configure the serial console feature and then how to access the serial consoles of your Nova servers.
 Configuring serial console support In previous release of OpenStack, read-only access to the serial console of your servers was available through the os-getConsoleOutput server action (exposed via nova console-log on the command line).</description>
     </item>

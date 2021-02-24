@@ -14,10 +14,10 @@
     <item>
       <title>Using tools badly: time shifting git commits with Workinghours
 </title>
-      <link>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</link>
+      <link>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git/</link>
       <pubDate>Fri, 10 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</guid>
+      <guid>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git/</guid>
       <description>This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!
 You are working on a wonderful open source project&amp;hellip;but you are not supposed to be working on that project! You&amp;rsquo;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
 And now your boss knows why the TPS reports are late.</description>

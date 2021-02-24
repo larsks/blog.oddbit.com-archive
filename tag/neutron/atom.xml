@@ -13,8 +13,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/"/>
-    <id>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-details/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-08-13-provider-external-networks-det/"/>
+    <id>https://blog.oddbit.com/post/2015-08-13-provider-external-networks-det/</id>
     <published>2015-08-13T00:00:00Z</published>
     <updated>2015-08-13T00:00:00Z</updated>
     <summary type="html">In Quantum in Too Much Detail, I discussed the architecture of a Neutron deployment in detail. Since that article was published, Neutron gained the ability to handle multiple external networks with a single L3 agent. While I wrote about that back in 2014, I covered the configuration side of it in much more detail than I discussed the underlying network architecture. This post addresses the architecture side.
@@ -26,8 +26,8 @@ The players This document describes the architecture that results from a particu
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/"/>
-    <id>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-d/"/>
+    <id>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-d/</id>
     <published>2015-06-26T00:00:00Z</published>
     <updated>2015-06-26T00:00:00Z</updated>
     <summary type="html">In an OpenStack environment, cloud-init generally fetches information from the metadata service provided by Nova. It also has support for reading this information from a configuration drive, which under OpenStack means a virtual CD-ROM device attached to your instance containing the same information that would normally be available via the metadata service.
@@ -39,8 +39,8 @@ It is possible to generate your network configuration from this configuration dr
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/"/>
-    <id>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-changing-hostname/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/"/>
+    <id>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/</id>
     <published>2014-12-10T00:00:00Z</published>
     <updated>2014-12-10T00:00:00Z</updated>
     <summary type="html">Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.</summary>
@@ -93,8 +93,8 @@ neutron net-create external -- --router:external=true \ --provider:network_type=
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/"/>
-    <id>https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graphviz/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graph/"/>
+    <id>https://blog.oddbit.com/post/2013-12-23-visualizing-network-with-graph/</id>
     <published>2013-12-23T00:00:00Z</published>
     <updated>2013-12-23T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve put together a few tools to help gather information about your Neutron and network configuration and visualize it in different ways. All of these tools are available as part of my neutron-diag repository on GitHub.
@@ -107,8 +107,8 @@ mk-network-dot There are a lot of devices involved in your Neutron network confi
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/"/>
-    <id>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-h/"/>
+    <id>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-h/</id>
     <published>2013-12-06T00:00:00Z</published>
     <updated>2013-12-06T00:00:00Z</updated>
     <summary type="html">Heat is a template-based orchestration mechanism for use with OpenStack. With Heat, you can deploy collections of resources &amp;ndash; networks, servers, storage, and more &amp;ndash; all from a single, parameterized template.

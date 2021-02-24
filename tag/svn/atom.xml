@@ -13,8 +13,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/"/>
-    <id>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-gi/"/>
+    <id>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-gi/</id>
     <published>2010-01-29T00:00:00Z</published>
     <updated>2010-01-29T00:00:00Z</updated>
     <summary type="html">Overview At my office, we have a crufty Subversion repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.

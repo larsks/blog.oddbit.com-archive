@@ -26,8 +26,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/"/>
-    <id>https://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fedora/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fed/"/>
+    <id>https://blog.oddbit.com/post/2015-11-17-installing-pyspatialite-on-fed/</id>
     <published>2015-11-17T00:00:00Z</published>
     <updated>2015-11-17T00:00:00Z</updated>
     <summary type="html">If you should find yourself wanting to install pyspatialite on Fedora &amp;ndash; perhaps because you want to use the Processing plugin for QGIS &amp;ndash; you will first need to install the following dependencies:

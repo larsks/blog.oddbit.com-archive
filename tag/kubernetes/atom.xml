@@ -26,8 +26,8 @@ The first option is the Ceph Object Gateway (radosgw), Ceph&amp;rsquo;s native o
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/"/>
-    <id>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autos/"/>
+    <id>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autos/</id>
     <published>2015-06-19T00:00:00Z</published>
     <updated>2015-06-19T00:00:00Z</updated>
     <summary type="html">Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
@@ -40,8 +40,8 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/"/>
-    <id>https://blog.oddbit.com/post/2015-02-10-external-networking-for-kubernetes-services/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-02-10-external-networking-for-kubern/"/>
+    <id>https://blog.oddbit.com/post/2015-02-10-external-networking-for-kubern/</id>
     <published>2015-02-10T00:00:00Z</published>
     <updated>2015-02-10T00:00:00Z</updated>
     <summary type="html">I have recently started running some &amp;ldquo;real&amp;rdquo; services (that is, &amp;ldquo;services being consumed by someone other than myself&amp;rdquo;) on top of Kubernetes (running on bare metal), which means I suddenly had to confront the question of how to provide external access to Kubernetes hosted services. Kubernetes provides two solutions to this problem, neither of which is particularly attractive out of the box:
@@ -53,8 +53,8 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/"/>
-    <id>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-for-testing-kubernetes/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-/"/>
+    <id>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-/</id>
     <published>2015-01-04T00:00:00Z</published>
     <updated>2015-01-04T00:00:00Z</updated>
     <summary type="html">I have recently been doing some work with Kubernetes, and wanted to put together a minimal image with which I could test service and pod deployment. Size in this case was critical: I wanted something that would download quickly when initially deployed, because I am often setting up and tearing down Kubernetes as part of my testing (and some of my test environments have poor external bandwidth).
@@ -66,8 +66,8 @@ Building thttpd My go-to minimal webserver is thttpd.</summary>
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/"/>
-    <id>https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-kubernetes-oh-my/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-ku/"/>
+    <id>https://blog.oddbit.com/post/2014-11-24-fedora-atomic-openstack-and-ku/</id>
     <published>2014-11-24T00:00:00Z</published>
     <updated>2014-11-24T00:00:00Z</updated>
     <summary type="html">While experimenting with Fedora Atomic, I was looking for an elegant way to automatically deploy Atomic into an OpenStack environment and then automatically schedule some Docker containers on the Atomic host. This post describes my solution.

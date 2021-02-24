@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fedora Atomic, OpenStack, and Kubernetes (oh my) &middot; The Odd Bit</title>
+        <meta name="description" content="While experimenting with Fedora Atomic, I was looking for an elegant way to automatically deploy Atomic into an OpenStack environment and then automatically schedule some Docker containers on the Atomic host. This post describes my solution.
+Like many other cloud-targeted distributions, Fedora Atomic runs cloud-init when the system boots. We can take advantage of this to configure the system at first boot by providing a user-data blob to Nova when we boot the instance.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/oddbit.css">
+<link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Fedora Atomic, OpenStack, and Kubernetes (oh my)</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2014-11-24" itemprop="datePublished">Mon, Nov 24, 2014</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+    <p>While experimenting with <a href="http://www.projectatomic.io/">Fedora Atomic</a>, I was looking for an
+elegant way to automatically deploy Atomic into an <a href="http://openstack.org/">OpenStack</a>
+environment and then automatically schedule some <a href="http://docker.com/">Docker</a> containers
+on the Atomic host.  This post describes my solution.</p>
+<!-- more -->
+<p>Like many other cloud-targeted distributions, Fedora Atomic runs
+<a href="http://cloudinit.readthedocs.org/">cloud-init</a> when the system boots.  We can take advantage of this
+to configure the system at first boot by providing a <code>user-data</code> blob
+to Nova when we boot the instance.  A <code>user-data</code> blob can be as
+simple as a shell script, and while we could arguably mash everything
+into a single script it wouldn&rsquo;t be particularly maintainable or
+flexible in the face of different pod/service/etc descriptions.</p>
+<p>In order to build a more flexible solution, we&rsquo;re going to take
+advantage of the following features:</p>
+<ul>
+<li>
+<p>Support for <a href="http://cloudinit.readthedocs.org/en/latest/topics/format.html#mime-multi-part-archive">multipart MIME archives</a>.</p>
+<p>Cloud-init allows you to pass in multiple files via <code>user-data</code> by
+encoding them as a multipart MIME archive.</p>
+</li>
+<li>
+<p>Support for a <a href="http://cloudinit.readthedocs.org/en/latest/topics/format.html#part-handler">custom part handler</a>.</p>
+<p>Cloud-init recognizes a number of specific MIME types (such as
+<code>text/cloud-config</code> or <code>text/x-shellscript</code>).  We can provide a
+custom part handler that will be used to handle MIME types not
+intrinsincally supported by <code>cloud-init</code>.</p>
+</li>
+</ul>
+<h2 id="a-custom-part-handler-for-kubernetes-configurations">A custom part handler for Kubernetes configurations</h2>
+<p>I have written a <a href="https://github.com/larsks/atomic-kubernetes-tools/blob/master/kube-part-handler.py">custom part handler</a> that knows
+about the following MIME types:</p>
+<ul>
+<li><code>text/x-kube-pod</code></li>
+<li><code>text/x-kube-service</code></li>
+<li><code>text/x-kube-replica</code></li>
+</ul>
+<p>When the part handler is first initialized it will ensure the
+Kubernetes is started.  If it is provided with a document matching one
+of the above MIME types, it will pass it to the appropriate <code>kubecfg</code>
+command to create the objects in Kubernetes.</p>
+<h2 id="creating-multipart-mime-archives">Creating multipart MIME archives</h2>
+<p>I have also created a <a href="https://github.com/larsks/atomic-kubernetes-tools/blob/master/write-mime-multipart.py">modified version</a> of the standard
+<code>write-multipart-mime.py</code> Python script.  This script will inspect the
+first lines of files to determine their content type; in addition to
+the standard <code>cloud-init</code> types (like <code>#cloud-config</code> for a
+<code>text/cloud-config</code> type file), this script recognizes:</p>
+<ul>
+<li><code>#kube-pod</code> for <code>text/x-kube-pod</code></li>
+<li><code>#kube-service</code> for <code>text/x-kube-service</code></li>
+<li><code>#kube-replica</code> for <code>text/x-kube-replca</code></li>
+</ul>
+<p>That is, a simple pod description might look something like:</p>
+<pre><code>#kube-pod
+id: dbserver
+desiredState:
+  manifest:
+    version: v1beta1
+    id: dbserver
+    containers:
+    - image: mysql
+      name: dbserver
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: secret
+</code></pre>
+<h2 id="putting-it-all-together">Putting it all together</h2>
+<p>Assuming that the pod description presented in the previous section is
+stored in a file named <code>dbserver.yaml</code>, we can bundle that file up
+with our custom part handler like this:</p>
+<pre><code>$ write-mime-multipart.py \
+  kube-part-handler.py dbserver.yaml &gt; userdata
+</code></pre>
+<p>We would then launch a Nova instance using the <code>nova boot</code> command,
+providing the generated <code>userdata</code> file as an argument to the
+<code>user-data</code> command:</p>
+<pre><code>$ nova boot --image fedora-atomic --key-name mykey \
+  --flavor m1.small --user-data userdata my-atomic-server
+</code></pre>
+<p>You would obviously need to substitute values for <code>--image</code> and
+<code>--key-name</code> that are appropriate for your environment.</p>
+<h2 id="details-details">Details, details</h2>
+<p>If you are experimenting with Fedora Atomic 21, you may find out that
+the above example doesn&rsquo;t work &ndash; the official <code>mysql</code> image generates
+an selinux error.  We can switch selinux to permissive mode by putting
+the following into a file called <code>disable-selinux.sh</code>:</p>
+<pre><code>#!/bin/sh
+
+setenforce 0
+sed -i '/^SELINUX=/ s/=.*/=permissive/' /etc/selinux/config
+</code></pre>
+<p>And then including that in our MIME archive:</p>
+<pre><code>$ write-mime-multipart.py \
+  kube-part-handler.py disable-selinux.sh dbserver.yaml &gt; userdata
+</code></pre>
+<h2 id="a-brief-demonstration">A brief demonstration</h2>
+<p>If we launch an instance as described in the previous section and then
+log in, we should find that the pod has already been scheduled:</p>
+<pre><code># kubecfg list pods
+ID                  Image(s)            Host                Labels              Status
+----------          ----------          ----------          ----------          ----------
+dbserver            mysql               /                                       Waiting
+</code></pre>
+<p>At this point, <code>docker</code> needs to pull the <code>mysql</code> image locally, so
+this step can take a bit depending on the state of your local internet
+connection.</p>
+<p>Running <code>docker ps</code> at this point will yield:</p>
+<pre><code># docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS              PORTS               NAMES
+3561e39f198c        kubernetes/pause:latest   &quot;/pause&quot;            46 seconds ago      Up 43 seconds                           k8s--net.d96a64a9--dbserver.etcd--3d30eac0_-_745c_-_11e4_-_b32a_-_fa163e6e92ce--d872be51   
+</code></pre>
+<p>The <code>pause</code> image here is a Kubernetes detail that is used to
+configure the networking for a pod (in the Kubernetes world, a pod is
+a group of linked containers that share a common network namespace).</p>
+<p>After a few minutes, you should eventually see:</p>
+<pre><code># docker ps
+CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS              PORTS               NAMES
+644c8fc5a79c        mysql:latest              &quot;/entrypoint.sh mysq   3 minutes ago       Up 3 minutes                            k8s--dbserver.fd48803d--dbserver.etcd--3d30eac0_-_745c_-_11e4_-_b32a_-_fa163e6e92ce--58794467   
+3561e39f198c        kubernetes/pause:latest   &quot;/pause&quot;               5 minutes ago       Up 5 minutes                            k8s--net.d96a64a9--dbserver.etcd--3d30eac0_-_745c_-_11e4_-_b32a_-_fa163e6e92ce--d872be51        
+</code></pre>
+<p>And <code>kubecfg</code> should show the pod as running:</p>
+<pre><code># kubecfg list pods
+ID                  Image(s)            Host                Labels              Status
+----------          ----------          ----------          ----------          ----------
+dbserver            mysql               127.0.0.1/                              Running
+</code></pre>
+<h2 id="problems-problems">Problems, problems</h2>
+<p>This works and is I think a relatively elegant solution.  However,
+there are some drawbacks.  In particular, the custom part handler
+runs fairly early in the <code>cloud-init</code> process, which means that it
+cannot depend on changes implemented by <code>user-data</code> scripts (because
+these run much later).</p>
+<p>A better solution might be to have the custom part handler simply
+write the Kubernetes configs into a directory somewhere, and then
+install a service that launches after Kubernetes and (a) watches that
+directory for files, then (b) passes the configuration to Kubernetes
+and deletes (or relocates) the file.</p>
+
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/openstack/">openstack</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/kubernetes/">kubernetes</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/fedora/">fedora</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/atomic/">atomic</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Fedora%20Atomic%2c%20OpenStack%2c%20and%20Kubernetes%20%28oh%20my%29&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2014-11-24-fedora-atomic-openstack-and-ku%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

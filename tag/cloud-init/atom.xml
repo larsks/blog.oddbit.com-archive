@@ -13,8 +13,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/"/>
-    <id>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-dhcp/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-d/"/>
+    <id>https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-d/</id>
     <published>2015-06-26T00:00:00Z</published>
     <updated>2015-06-26T00:00:00Z</updated>
     <summary type="html">In an OpenStack environment, cloud-init generally fetches information from the metadata service provided by Nova. It also has support for reading this information from a configuration drive, which under OpenStack means a virtual CD-ROM device attached to your instance containing the same information that would normally be available via the metadata service.
@@ -26,8 +26,8 @@ It is possible to generate your network configuration from this configuration dr
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/"/>
-    <id>https://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libvirt/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libv/"/>
+    <id>https://blog.oddbit.com/post/2015-03-10-booting-cloud-images-with-libv/</id>
     <published>2015-03-10T00:00:00Z</published>
     <updated>2015-03-10T00:00:00Z</updated>
     <summary type="html">Most major distributions now provide &amp;ldquo;cloud-enabled&amp;rdquo; images designed for use in cloud environments like OpenStack and AWS. These images are usually differentiated by (a) being relatively small, and (b) running cloud-init at boot to perform initial system configuration tasks using metadata provided by the cloud environment.

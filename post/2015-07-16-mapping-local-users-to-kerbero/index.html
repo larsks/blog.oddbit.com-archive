@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Mapping local users to Kerberos principals with SSSD &middot; The Odd Bit</title>
+        <meta name="description" content="I work for an organization that follows the common model of assigning people systematically generated user ids. Like most technically inclined employees of this organization, I have local accounts on my workstation that don&rsquo;t bear any relation to the generated account ids. For the most part this isn&rsquo;t a problem, except that our organization uses Kerberos to authenticate access to a variety of resources (such as the mailserver and a variety of web applications).">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/oddbit.css">
+<link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Mapping local users to Kerberos principals with SSSD</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2015-07-16" itemprop="datePublished">Thu, Jul 16, 2015</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+    <p>I work for an organization that follows the common model of assigning
+people systematically generated user ids.  Like most technically
+inclined employees of this organization, I have local accounts on my
+workstation that don&rsquo;t bear any relation to the generated account ids.
+For the most part this isn&rsquo;t a problem, except that our organization
+uses Kerberos to authenticate access to a variety of resources (such
+as the mailserver and a variety of web applications).</p>
+<p>In the past, I&rsquo;ve gotten along by running an explicit <code>kinit lkellogg@EXAMPLE.COM</code> on the command line once in a while, and that
+works, but it&rsquo;s not particularly graceful.</p>
+<p>I&rsquo;m running Fedora, which of course ships with <a href="https://fedorahosted.org/sssd/">SSSD</a>.  Two of the
+neat features available through SSSD are (a) you can have it acquire a
+token for you automatically when you authenticate and (b) renew that
+token periodically, assuming that you have a renewable token.</p>
+<p>There are two problems that were preventing me from taking advantage
+of this service.</p>
+<h2 id="combining-kerberos-with-local-accounts">Combining Kerberos with local accounts</h2>
+<p>The first problem is that there is a general assumption that if you&rsquo;re
+using Kerberos for authentication, you are also using some sort of
+enterprise-wide identity service like LDAP.  The practical evidence of
+this in SSSD is that you can&rsquo;t use Kerberos as an <code>auth_provider</code> if
+you are using the <code>local</code> <code>id_provider</code>.  If you attempt a naive
+configuration that includes the following:</p>
+<pre><code>[domain/local]
+id_provider = local
+auth_provider = krb5
+</code></pre>
+<p>You&rsquo;ll get:</p>
+<pre><code>(Thu Jul 16 22:19:44:802460 2015) [sssd] [confdb_get_domain_internal]
+(0x0010): Local ID provider does not support [krb5] as an AUTH provider.
+</code></pre>
+<p>It turns out that you can work around this limitation with a &ldquo;proxy&rdquo;
+identity provider.  With this method, SSSD <em>proxies</em> identity requests
+to an existing NSS library.  This can, for example, be used to get
+SSSD to interoperate with a legacy NIS environment, as in <a href="http://docs.fedoraproject.org/en-US/Fedora/15/html/Deployment_Guide/sect-SSSD_User_Guide-Domain_Configuration_Options-Configuring_a_Proxy_Domain.html#sect-SSSD-proxy-krb5">this
+example</a>:</p>
+<pre><code>[domain/PROXY_KRB5]
+auth_provider = krb5
+krb5_server = 192.168.1.1
+krb5_realm = EXAMPLE.COM
+
+id_provider = proxy
+proxy_lib_name = nis
+enumerate = true
+cache_credentials = true
+</code></pre>
+<p>The <code>proxy_lib_name</code> setting identifies the particular NSS provider to
+use for identity information.  This would make use of the <code>nis</code> NSS
+module (<code>libnss_nis.so.2</code>) for identity information while using
+Kerberos for authentication.</p>
+<p>For my own use case I want to use my local accounts for identity
+information, which means I need to use the <code>files</code> NSS provider:</p>
+<pre><code>[domain/example.com]
+id_provider = proxy
+proxy_lib_name = files
+auth_provider = krb5
+</code></pre>
+<h2 id="mapping-a-local-username-to-a-kerberos-principal">Mapping a local username to a Kerberos principal</h2>
+<p>The second problem I had been struggling with was how to map my local
+username (<code>lars</code>) to the organizational Kerberos principal
+(<code>lkellogg@EXAMPLE.COM</code>).  I had originally been looking at solutions
+involving <code>kinit</code>, but despite promising verbage in the
+<a href="http://web.mit.edu/kerberos/krb5-1.12/doc/user/user_config/k5identity.html">k5identity(5</a> man page, I wasn&rsquo;t meeting with much success.</p>
+<p>It turns out that SSSD has the <code>krb5_map_user</code> option for exactly this
+purpose; the syntax looks like:</p>
+<pre><code>krb5_map_user = &lt;local name&gt;:&lt;principal name&gt;
+</code></pre>
+<p>So, for me:</p>
+<pre><code>krb5_map_user = lars:lkellogg
+</code></pre>
+<h2 id="automatic-ticket-renewal">Automatic ticket renewal</h2>
+<p>SSSD is able to automatically renew your Kerberos tickets for you,
+provided that you&rsquo;re able to acquire a renewable ticket.  You can
+check for this by running <code>klist</code> and seeing if your ticket has a
+<code>renew until</code> date in the future, as in the following example:</p>
+<pre><code>Ticket cache: KEYRING:persistent:1000:krb_ccache_rOS6mR8
+Default principal: lkellogg@REDHAT.COM
+
+Valid starting       Expires              Service principal
+07/17/2015 11:02:31  07/17/2015 21:02:31  krbtgt/REDHAT.COM@REDHAT.COM
+  renew until 07/24/2015 11:02:31
+</code></pre>
+<p>If you meet this criteria, then you can add the following
+configuration options to your domain configuration:</p>
+<pre><code>krb5_renewable_lifetime = 7d
+krb5_renew_interval = 30m
+</code></pre>
+<p>The first (<code>krb5_renewable_lifetime</code>) specifies the renewable lifetime
+to request when requesting a ticket, and the second (<code>krb5_renew_interval</code>) indicates how often SSSD should check to see if the ticket should be renewed.</p>
+<h2 id="an-example-configuration">An example configuration</h2>
+<p>This is approximately (names of been changed to protect the innocent)
+configuration that I am currently using with SSSD:</p>
+<pre><code>[domain/default]
+cache_credentials = True
+
+[sssd]
+config_file_version = 2
+reconnection_retries = 3
+sbus_timeout = 30
+services = nss, pam
+domains = example.com
+
+[nss]
+filter_groups = root
+filter_users = root
+reconnection_retries = 3
+
+[pam]
+reconnection_retries = 3
+
+[domain/example.com]
+id_provider = proxy
+proxy_lib_name = files
+enumerate = True
+auth_provider = krb5
+krb5_server = kerberos.example.com
+krb5_realm = EXAMPLE.COM
+cache_credentials = True
+krb5_store_password_if_offline = True
+krb5_map_user = lars:lkellogg
+chpass_provider = krb5
+krb5_kpasswd = kerberos.example.com
+offline_credentials_expiration = 0
+krb5_renewable_lifetime = 7d
+krb5_renew_interval = 30m
+</code></pre>
+<h2 id="configuring-pam">Configuring PAM</h2>
+<p>You&rsquo;re not done yet!  Once you have SSSD configured correctly, you
+need to configure your system to make use of it for authentication.
+First, you&rsquo;ll want to ensure that your <code>/etc/nsswitch.conf</code> file is
+configured to use SSSD.  You&rsquo;ll want at least the <code>passwd</code>, <code>shadow</code>,
+and <code>group</code> databases configured to use SSSD:</p>
+<pre><code>passwd:     files sss
+shadow:     files sss
+group:      files sss
+</code></pre>
+<p>Next, you&rsquo;ll want configure PAM.  On my system, I need to change two
+configuration files:</p>
+<ul>
+<li><code>/etc/pam.d/system-auth</code>, which is the default for many services,
+and</li>
+<li><code>/etc/pam.d/password-auth</code>, which provides defaults for other
+services, including <code>sshd</code>.</li>
+</ul>
+<p>In my case, both files actually end up having identical content, which
+looks like this (largely cribbed from <a href="http://docs.fedoraproject.org/en-US/Fedora/15/html/Deployment_Guide/chap-SSSD_User_Guide-Setting_Up_SSSD.html">the Fedora documentation</a>):</p>
+<pre><code>#%PAM-1.0
+# This file is auto-generated.
+# User changes will be destroyed the next time authconfig is run.
+auth        required      pam_env.so
+auth        sufficient    pam_unix.so nullok try_first_pass
+auth        requisite     pam_succeed_if.so uid &gt;= 1000 quiet_success
+auth        sufficient    pam_sss.so use_first_pass
+auth        required      pam_deny.so
+
+account     required      pam_unix.so
+account     sufficient    pam_localuser.so
+account     sufficient    pam_succeed_if.so uid &lt; 1000 quiet
+account     [default=bad success=ok user_unknown=ignore] pam_sss.so
+account     required      pam_permit.so
+
+password    requisite     pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type=
+password    sufficient    pam_unix.so sha512 shadow nullok try_first_pass use_authtok
+password    sufficient    pam_sss.so use_authtok
+password    required      pam_deny.so
+
+session     optional      pam_keyinit.so revoke
+session     required      pam_limits.so
+-session     optional      pam_systemd.so
+session     [success=1 default=ignore] pam_succeed_if.so service in crond quiet use_uid
+session     optional      pam_sss.so
+session     required      pam_unix.so
+</code></pre>
+<p>Note the entries for <code>pam_sss.so</code> in each stanza.</p>
+<h2 id="the-proof-in-the-pudding">The proof in the pudding</h2>
+<p>I start on my local system with no Kerberos tickets:</p>
+<pre><code>$ klist
+klist: Credentials cache keyring 'persistent:1000:krb_ccache_Pzo4C6u' not found
+</code></pre>
+<p>Then I lock my screen and unlock it using my Kerberos password, and
+now:</p>
+<pre><code>$ klist
+Ticket cache: KEYRING:persistent:1000:krb_ccache_rOS6mR8
+Default principal: lkellogg@EXAMPLE.COM
+
+Valid starting       Expires              Service principal
+07/16/2015 22:45:43  07/17/2015 08:45:43  krbtgt/EXAMPLE.COM@EXAMPLE.COM
+  renew until 07/23/2015 22:45:43
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>I found the easiest way to troubleshoot SSSD was to stop the service:</p>
+<pre><code># systemctl stop sssd
+</code></pre>
+<p>And then run <code>sssd</code> on the command line in debug mode:</p>
+<pre><code># sssd -d 5 -i
+</code></pre>
+<p>This generates logs on <code>stderr</code> and helped me identity problems in my
+configuration.</p>
+<h2 id="kudos">Kudos</h2>
+<p>Thanks to Jakub Hrozek for suggesting the use of the a proxy identity
+provider to overcome the limitation on combining Kerberos with the
+<code>local</code> provider.</p>
+
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/sssd/">sssd</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/kerberos/">kerberos</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Mapping%20local%20users%20to%20Kerberos%20principals%20with%20SSSD&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2015-07-16-mapping-local-users-to-kerbero%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

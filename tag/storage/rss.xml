@@ -13,10 +13,10 @@
     
     <item>
       <title>Fun with devicemapper snapshots</title>
-      <link>https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</link>
+      <link>https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshot/</link>
       <pubDate>Thu, 25 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshots/</guid>
+      <guid>https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshot/</guid>
       <description>I find myself working with Raspbian disk images fairly often. A typical workflow is:
  Download the disk image. Mount the filesystem somewhere to check something. Make some changes or install packages just to check something else. Crap I&amp;rsquo;ve made changes.  &amp;hellip;at which point I need to fetch a new copy of the image next time I want to start fresh.
 Sure, I could just make a copy of the image and work from there, but what fun is that?</description>
@@ -34,10 +34,10 @@ Sure, I could just make a copy of the image and work from there, but what fun is
     
     <item>
       <title>Installing CrashPlan under FreeBSD 8</title>
-      <link>https://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</link>
+      <link>https://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-fre/</link>
       <pubDate>Sun, 22 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-freebsd-8/</guid>
+      <guid>https://blog.oddbit.com/post/2011-05-22-installing-crashplan-under-fre/</guid>
       <description>This articles describes how I got CrashPlan running on my FreeBSD 8(-STABLE) system. These instructions by Kim Scarborough were my starting point, but as these were for FreeBSD 7 there were some additional steps necessary to get things working.
 Install Java I had originally thought that it might be possible to run the CrashPlan client &amp;ldquo;natively&amp;rdquo; under FreeBSD. CrashPlan is a Java application, so this seemed like a possible solution. Unfortunately, Java under FreeBSD 8 seems to be a lost cause.</description>
     </item>

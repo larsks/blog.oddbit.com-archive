@@ -34,30 +34,30 @@ At $WORK(-ish) we&amp;rsquo;re looking into Bitwarden because we want a password
     
     <item>
       <title>A systemd-nspawn connection driver for Ansible</title>
-      <link>https://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</link>
+      <link>https://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-dr/</link>
       <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-driver-for-a/</guid>
+      <guid>https://blog.oddbit.com/post/2016-02-08-a-systemd-nspawn-connection-dr/</guid>
       <description>I wrote earlier about systemd-nspawn, and how it can take much of the fiddly work out of setting up functional chroot environments. I&amp;rsquo;m a regular Ansible user, and I wanted to be able to apply some of those techniques to my playbooks.
 Ansible already has a chroot module, of course, but for some situations &amp;ndash; such as targeting an emulated chroot environment &amp;ndash; that just means a lot of extra work.</description>
     </item>
     
     <item>
       <title>Folding long lines in Ansible inventory files</title>
-      <link>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</link>
+      <link>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-/</link>
       <pubDate>Sun, 07 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-inventory-/</guid>
+      <guid>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-/</guid>
       <description>If you have an Ansible inventory file that includes lots of per host variables, it&amp;rsquo;s not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
 I&amp;rsquo;ve just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.</description>
     </item>
     
     <item>
       <title>Ansible 2.0: New OpenStack modules</title>
-      <link>https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</link>
+      <link>https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modul/</link>
       <pubDate>Mon, 26 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modules/</guid>
+      <guid>https://blog.oddbit.com/post/2015-10-26-ansible-20-new-openstack-modul/</guid>
       <description>This is the second in a loose sequence of articles looking at new features in Ansible 2.0. In the previous article I looked at the Docker connection driver. In this article, I would like to provide an overview of the new-and-much-improved suite of modules for interacting with an OpenStack environment, and provide a few examples of their use.
 In versions of Ansible prior to 2.0, there was a small collection of OpenStack modules.</description>
     </item>

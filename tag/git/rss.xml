@@ -43,10 +43,10 @@ Rebase instead of merge If you need to incorporate changes from the upstream mas
     
     <item>
       <title>Making sure your Gerrit changes aren&#39;t broken</title>
-      <link>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</link>
+      <link>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-change/</link>
       <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-changes-aren-t-b/</guid>
+      <guid>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-change/</guid>
       <description>It&amp;rsquo;s a bit of an embarrassment when you submit a review to Gerrit only to have it fail CI checks immediately because of something as simple as a syntax error or pep8 failure that you should have caught yourself before submitting&amp;hellip;but you forgot to run your validations before submitting the change.
 In many cases you can alleviate this through the use of the git pre-commit hook, which will run every time you commit changes locally.</description>
     </item>
@@ -87,10 +87,10 @@ If you access a git repository via ssh, it&amp;rsquo;s easy to provide a wrapper
     <item>
       <title>Using tools badly: time shifting git commits with Workinghours
 </title>
-      <link>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</link>
+      <link>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git/</link>
       <pubDate>Fri, 10 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git-commits/</guid>
+      <guid>https://blog.oddbit.com/post/2015-04-10-workinghours-time-shifting-git/</guid>
       <description>This is a terrible hack. If you are easily offended by bad ideas implemented poorly, move along!
 You are working on a wonderful open source project&amp;hellip;but you are not supposed to be working on that project! You&amp;rsquo;re supposed to be doing your real work! Unfortunately, your extra-curricular activity is well documented in the git history of your project for all to see:
 And now your boss knows why the TPS reports are late.</description>
@@ -130,20 +130,20 @@ $ git fetch --tags $ git fetch  What’s the difference?</description>
     
     <item>
       <title>Pushing a Git repository to Subversion</title>
-      <link>https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</link>
+      <link>https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subv/</link>
       <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subversion/</guid>
+      <guid>https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subv/</guid>
       <description>I recently set up a git repository server (using gitosis and gitweb). Among the required features of the system was the ability to publish the git repository to a read-only Subversion repository. This sounds simple in principle but in practice proved to be a bit tricky.
 Git makes an excellent Subversion client. You can use the git svn &amp;hellip; series of commands to pull a remote Subversion repository into a local git working tree and then have all the local advantages of git forcing the central code repository to change version control software.</description>
     </item>
     
     <item>
       <title>Cleaning up Subversion with Git</title>
-      <link>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</link>
+      <link>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-gi/</link>
       <pubDate>Fri, 29 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-git/</guid>
+      <guid>https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-gi/</guid>
       <description>Overview At my office, we have a crufty Subversion repository (dating back to early 2006) that contains a jumble of unrelated projects. We would like to split this single repository up into a number of smaller repositories, each following the recommended trunk/tags/branches repository organization.
 What we want to do is move a project from a path that looks like this:
 .../projects/some-project-name  To a new repository using the recommended Subversion repository layout, like this:</description>

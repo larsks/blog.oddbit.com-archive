@@ -24,10 +24,10 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
     
     <item>
       <title>Heat-kubernetes Demo with Autoscaling</title>
-      <link>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</link>
+      <link>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autos/</link>
       <pubDate>Fri, 19 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autoscaling/</guid>
+      <guid>https://blog.oddbit.com/post/2015-06-19-heatkubernetes-demo-with-autos/</guid>
       <description>Next week is the Red Hat Summit in Boston, and I&amp;rsquo;ll be taking part in a Project Atomic presentation in which I will discuss various (well, two) options for deploying Atomic into an OpenStack environment, focusing on my heat-kubernetes templates.
 As part of that presentation, I&amp;rsquo;ve put together a short demonstration video:
  This shows off the autoscaling behavior available with recent versions of these templates (and also serves as a very brief introduction to working with Kubernetes).</description>
@@ -110,10 +110,10 @@ In order for WaitCondition resources to operate correctly in Heat, you will need
     
     <item>
       <title>An introduction to OpenStack Heat</title>
-      <link>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</link>
+      <link>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-h/</link>
       <pubDate>Fri, 06 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-heat/</guid>
+      <guid>https://blog.oddbit.com/post/2013-12-06-an-introduction-to-openstack-h/</guid>
       <description>Heat is a template-based orchestration mechanism for use with OpenStack. With Heat, you can deploy collections of resources &amp;ndash; networks, servers, storage, and more &amp;ndash; all from a single, parameterized template.
 In this article I will introduce Heat templates and the heat command line client.
 Writing templates Because Heat began life as an analog of AWS CloudFormation, it supports the template formats used by the CloudFormation (CFN) tools. It also supports its own native template format, called HOT (&amp;ldquo;Heat Orchestration Templates&amp;rdquo;).</description>

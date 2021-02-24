@@ -202,7 +202,7 @@ to something smaller; I chose New York and New England.</p>
 <p>We start by adding the <code>cb_2018_us_state_5m</code> map to QGIS. This gives
 us all 50 states (and a few territories):</p>
 <figure>
-    <img src="/assets/2020/12/13/states-unfiltered.png" width="800"/> 
+    <img src="states-unfiltered.png" width="800"/> 
 </figure>
 
 <p>To limit this to our target geography, we can select &ldquo;Filter&hellip;&rdquo; from
@@ -218,14 +218,14 @@ the layer context menu and apply the following filter:</p>
 )
 </code></pre><p>This gives us:</p>
 <figure>
-    <img src="/assets/2020/12/13/states-filtered.png" width="800"/> 
+    <img src="states-filtered.png" width="800"/> 
 </figure>
 
 <p>Next, we need to load in the county outlines that cover the same
 geographic area. We start by adding the <code>cb_2018_us_county_5m</code>
 dataset to QGIS, which gets us:</p>
 <figure>
-    <img src="/assets/2020/12/13/counties-unfiltered.png" width="800"/> 
+    <img src="counties-unfiltered.png" width="800"/> 
 </figure>
 
 <p>There are several ways we could limit the counties to just those in
@@ -243,7 +243,7 @@ in in the resulting dialog as follows:</p>
 <code>Clipped</code>. Hide the original <code>cb_2018_us_county_5m</code> layer, and rename
 <code>Clipped</code> to <code>cb_2018_us_county_5m_clipped</code>. This gives us:</p>
 <figure>
-    <img src="/assets/2020/12/13/counties-clipped.png" width="800"/> 
+    <img src="counties-clipped.png" width="800"/> 
 </figure>
 
 <p>Instead of using the &ldquo;Clip&hellip;&rdquo; algorithm, we could have created a
@@ -271,7 +271,7 @@ the field name, select the &ldquo;Create virtual field&rdquo; checkbox, and sele
 &ldquo;Text (string)&rdquo; for the field type. In the &ldquo;Expression&rdquo; field, enter:</p>
 <pre><code>lpad(to_string(&quot;STATE&quot;), 2, '0') || lpad(to_string(&quot;COUNTY&quot;), 3, '0')
 </code></pre><figure>
-    <img src="/assets/2020/12/13/create-virtual-field.png" width="400"/> 
+    <img src="create-virtual-field.png" width="400"/> 
 </figure>
 
 <p>When you return the to attribute table, you will see a new <code>geoid</code>
@@ -284,7 +284,7 @@ For &ldquo;Join layer&rdquo;, select <code>co-est2019-alldata</code>. Select <co
 field name prefix&rdquo; checkbox and enter <code>pop_</code> in the field, then click
 &ldquo;OK&rdquo;.</p>
 <figure>
-    <img src="/assets/2020/12/13/county-join-population.png" width="400"/> 
+    <img src="county-join-population.png" width="400"/> 
 </figure>
 
 <p>If you examine the attribute table for the layer, you will see the
@@ -314,7 +314,7 @@ in the &ldquo;Joined field prefix [optional]&rdquo; field (this will cause the
 fields in the resulting layer to have names like <code>covid_date</code>,
 <code>covid_cases</code>, etc). Click the &ldquo;Run&rdquo; button to create the new layer.</p>
 <figure>
-    <img src="/assets/2020/12/13/county-join-covid.png" width="400"/> 
+    <img src="county-join-covid.png" width="400"/> 
 </figure>
 
 <p>You will end up with a new layer named &ldquo;Joined layer&rdquo;. I suggest
@@ -325,7 +325,7 @@ feature count&rdquo; checkbox for your layers, you will see that while the
 for each county, there are around 320 data points tracking Covid cases
 (etc) over time.</p>
 <figure>
-    <img src="/assets/2020/12/13/layers-feature-count.png" width="400"/> 
+    <img src="layers-feature-count.png" width="400"/> 
 </figure>
 
 <h2 id="styling">Styling</h2>
@@ -359,7 +359,7 @@ panel, and check the &ldquo;Draw text buffer&rdquo; checkbox.</p>
 <p>If you hide the the Covid layer, your map should look like this (don&rsquo;t
 forget to unhide the Covid layer for the next step):</p>
 <figure>
-    <img src="/assets/2020/12/13/map-outlines.png" width="400"/> 
+    <img src="map-outlines.png" width="400"/> 
 </figure>
 
 <h3 id="creating-graduated-colors">Creating graduated colors</h3>
@@ -374,12 +374,12 @@ ramp&rdquo;.</p>
 set &ldquo;Classes&rdquo; to 15. This will give a set of graduated categories that
 looks like this:</p>
 <figure>
-    <img src="/assets/2020/12/13/graduated-categories.png" width="400"/> 
+    <img src="graduated-categories.png" width="400"/> 
 </figure>
 
 <p>Close the properties window. Your map should look something like this:</p>
 <figure>
-    <img src="/assets/2020/12/13/map-graduated-1.png" width="400"/> 
+    <img src="map-graduated-1.png" width="400"/> 
 </figure>
 
 <p>That&rsquo;s not very exciting yet, is it? Let&rsquo;s move on to the final
@@ -394,7 +394,7 @@ and ensure both that TimeManager is installed and that it is enabled
 &ldquo;Plugins-&gt;TimeManager-&gt;Toggle visbility&rdquo;. This will display the
 following panel below the map:</p>
 <figure>
-    <img src="/assets/2020/12/13/timemanager-panel-initial.png" width="600"/> 
+    <img src="timemanager-panel-initial.png" width="600"/> 
 </figure>
 
 <p>Make sure that the &ldquo;Time frame size&rdquo; is set to &ldquo;1 days&rdquo;.</p>
@@ -405,7 +405,7 @@ the <code>covid_date</code> column in the &ldquo;Start time&rdquo; menu. Leave a
 values at their defaults and click &ldquo;OK&rdquo; to return to the TimeManager
 settings.</p>
 <figure>
-    <img src="/assets/2020/12/13/timemanager-add-layer.png" width="600"/> 
+    <img src="timemanager-add-layer.png" width="600"/> 
 </figure>
 
 <p>You will see the layer we just added listed in the &ldquo;Layers&rdquo; list. Look
@@ -413,7 +413,7 @@ for the &ldquo;Time Format&rdquo; column in this list, which will say &ldquo;TO 
 INFERRED&rdquo;. Click in this column and change the value to <code>%Y-%m-%d</code> to
 match the format of the dates in the <code>covid_date</code> field.</p>
 <figure>
-    <img src="/assets/2020/12/13/timemanager-settings-final.png" width="600"/> 
+    <img src="timemanager-settings-final.png" width="600"/> 
 </figure>
 
 <p>You may want to change &ldquo;Show frame for&rdquo; setting from the default to
@@ -424,24 +424,24 @@ button&rdquo; in the TimeManager panel. TimeManager is enabled when the
 power button is green.</p>
 <p>Disabled:</p>
 <figure>
-    <img src="/assets/2020/12/13/timemanager-disabled.png"/> 
+    <img src="timemanager-disabled.png"/> 
 </figure>
 
 <p>Enabled:</p>
 <figure>
-    <img src="/assets/2020/12/13/timemanager-enabled.png"/> 
+    <img src="timemanager-enabled.png"/> 
 </figure>
 
 <p>Once TimeManager is enabled, you should be able to use the slider to
 view the map at different times. For example, here&rsquo;s the map in early
 May:</p>
 <figure>
-    <img src="/assets/2020/12/13/timemanager-early-may.png"/> 
+    <img src="timemanager-early-may.png"/> 
 </figure>
 
 <p>And here it is in early November:</p>
 <figure>
-    <img src="/assets/2020/12/13/timemanager-early-november.png"/> 
+    <img src="timemanager-early-november.png"/> 
 </figure>
 
 <p>To animate the map, click the play button in the bottom left of the
