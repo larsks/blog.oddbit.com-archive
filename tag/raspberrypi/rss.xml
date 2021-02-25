@@ -22,10 +22,10 @@
     
     <item>
       <title>Systemd unit for managing USB gadgets</title>
-      <link>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</link>
+      <link>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb/</link>
       <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</guid>
+      <guid>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb/</guid>
       <description>The Pi Zero (and Zero W) have support for acting as a USB gadget: that means that they can be configured to act as a USB device &amp;ndash; like a serial port, an ethernet interface, a mass storage device, etc.
 There are two different ways of configuring this support. The first only allows you to configure a single type of gadget at a time, and boils down to:
  Enable the dwc2 overlay in /boot/config.</description>

@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Pelican and theme update &middot; The Odd Bit</title>
-        <meta name="description" content="I&rsquo;ve just refreshed the version of Pelican used to generate this blog, along with the associated themes and plugins. It all seems to be working, but if you spot a problem feel free to drop me a line.">
+        <title>Multiple 1-Wire Buses on the Raspberry Pi &middot; The Odd Bit</title>
+        <meta name="description" content="The DS18B20 is a popular temperature sensor that uses the 1-Wire protocol for communication. Recent versions of the Linux kernel include a kernel driver for this protocol, making it relatively convenient to connect one or more of these devices to a Raspberry Pi or similar device. 1-Wire devices can be daisy chained, so it is possible to connect several devices to your Pi using only a single GPIO pin, and you&rsquo;ll find many articles out there that describe how to do so.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.74.3" />
@@ -99,10 +99,10 @@
 <div class="container">
     <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Pelican and theme update</h1>
+    <h1 class="post-title" itemprop="name headline">Multiple 1-Wire Buses on the Raspberry Pi</h1>
     
     <p class="post-date post-line">
-        <span>Published <time datetime="2018-01-26" itemprop="datePublished">Fri, Jan 26, 2018</time></span>
+        <span>Published <time datetime="2018-03-27" itemprop="datePublished">Tue, Mar 27, 2018</time></span>
         <span>by</span>
         <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
             <span itemprop="name">
@@ -118,9 +118,59 @@
 
     
 
-    <p>I&rsquo;ve just refreshed the version of <a href="https://github.com/getpelican/pelican">Pelican</a> used to generate this
-blog, along with the associated themes and plugins. It all seems to be
-working, but if you spot a problem feel free to <a href="https://github.com/larsks/blog.oddbit.com/issues">drop me a line</a>.</p>
+    <figure><a href="/assets/2018/03/27/onewire.jpg">
+    <img src="/assets/2018/03/27/onewire.jpg" width="800"/> </a>
+</figure>
+
+<p>The DS18B20 is a popular temperature sensor that uses the <a href="https://en.wikipedia.org/wiki/1-Wire">1-Wire</a>
+protocol for communication. Recent versions of the Linux kernel
+include a kernel driver for this protocol, making it relatively
+convenient to connect one or more of these devices to a Raspberry Pi
+or similar device.  1-Wire devices can be daisy chained, so it is
+possible to connect several devices to your Pi using only a single
+GPIO pin, and you&rsquo;ll find many articles out there that describe how to
+do so.</p>
+<p>Occasionally, it may be necessary to have more than a single chain of
+connected devices.  For example, you may have reached the limits on
+the size of your 1-Wire network, or you may simply need to route your
+cables in a way that makes a single chain difficult.  You can enable
+<em>multiple</em> 1-Wire buses on your Raspberry Pi to handle these
+situations.</p>
+<p>For a single 1-Wire bus, you add the following to <code>/boot/config.txt</code>:</p>
+<pre><code>dtoverlay=w1-gpio
+</code></pre>
+<p>This will enable the 1-Wire bus on GPIO 4.  To enable <em>multiple</em>
+1-Wire buses, you will use multiple <code>dtoverlay</code> statements and the
+<code>gpiopin</code> parameter to the <code>w1-gpio</code> overlay.  For example, to enable
+1-Wire buses on GPIO 4 and GPIO 17, you would use:</p>
+<pre><code>dtoverlay=w1-gpio,gpiopin=4
+dtoverlay=w1-gpio,gpiopin=17
+</code></pre>
+<p>In the picture at the top of this post, there are four DS18B20
+sensors.  Three are connected to the 1-Wire bus on GPIO 4, and one is
+connected to the 1-Wire bus on GPIO 17.  Looking in
+<code>/sys/bus/w1/devices</code>, I see two w1_bus_master devices (and the four
+temperature sensors):</p>
+<pre><code>$ ls /sys/bus/w1/devices/
+28-041722cbacff  28-0417231547ff  w1_bus_master1
+28-041722ce24ff  28-04172318c0ff  w1_bus_master2
+</code></pre>
+<p>I can check the temperature on all four devices like this:</p>
+<pre><code>$ cat /sys/bus/w1/devices/28-*/w1_slave
+50 01 4b 46 7f ff 0c 10 e8 : crc=e8 YES
+50 01 4b 46 7f ff 0c 10 e8 t=21000
+50 01 4b 46 7f ff 0c 10 e8 : crc=e8 YES
+50 01 4b 46 7f ff 0c 10 e8 t=21000
+57 01 4b 46 7f ff 0c 10 38 : crc=38 YES
+57 01 4b 46 7f ff 0c 10 38 t=21437
+57 01 4b 46 7f ff 0c 10 38 : crc=38 YES
+57 01 4b 46 7f ff 0c 10 38 t=21437
+</code></pre>
+<p>You may have noted that there is also a DHT22 sensor in the picture.
+Much like the 1-Wire overlay, the kernel driver for the DHT22 can be
+associated with an arbitrary GPIO pin like this:</p>
+<pre><code>dtoverlay=dht11,gpiopin=27
+</code></pre>
 
 </div>
 
@@ -133,7 +183,17 @@ working, but if you spot a problem feel free to <a href="https://github.com/lars
             
               
               
-              <a href="https://blog.oddbit.com/tag/administrivia/">administrivia</a>
+              <a href="https://blog.oddbit.com/tag/hardware/">hardware</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/raspiberrypi/">raspiberrypi</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/iot/">iot</a>
               
             
         </p>
@@ -141,7 +201,7 @@ working, but if you spot a problem feel free to <a href="https://github.com/lars
 
     <div class="share">
         
-            <a class="icon-twitter" href="https://twitter.com/share?text=Pelican%20and%20theme%20update&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2018-01-26-administrivia%2f"
+            <a class="icon-twitter" href="https://twitter.com/share?text=Multiple%201-Wire%20Buses%20on%20the%20Raspberry%20Pi&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2018-03-27-multiple-1-wire-buses-on-the%2f"
                 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="fa fa-twitter"></i>
                 <span class="hidden">Twitter</span>

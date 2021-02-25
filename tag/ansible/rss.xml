@@ -84,10 +84,10 @@ Ansible already has a chroot module, of course, but for some situations &amp;nda
     
     <item>
       <title>Folding long lines in Ansible inventory files</title>
-      <link>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-/</link>
+      <link>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible/</link>
       <pubDate>Sun, 07 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-/</guid>
+      <guid>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible/</guid>
       <description>If you have an Ansible inventory file that includes lots of per host variables, it&amp;rsquo;s not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
 I&amp;rsquo;ve just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.</description>
     </item>
@@ -104,10 +104,10 @@ In versions of Ansible prior to 2.0, there was a small collection of OpenStack m
     
     <item>
       <title>Stupid Ansible Tricks: Running a role from the command line</title>
-      <link>https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-/</link>
+      <link>https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-/</guid>
+      <guid>https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running/</guid>
       <description>When writing Ansible roles I occasionally want a way to just run a role from the command line, without having to muck about with a playbook. I&amp;rsquo;ve seen similar requests on the mailing lists and on irc.
 I&amp;rsquo;ve thrown together a quick wrapper that will allow you (and me!) to do exactly that, called ansible-role. The --help output looks like this:
 usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTRA_VARS] [-i INVENTORY] [--hosts HOSTS] [--sudo] [--become] [--user USER] role positional arguments: role optional arguments: -h, --help show this help message and exit --verbose, -v --gather, -g --no-gather, -G --extra-vars EXTRA_VARS, -e EXTRA_VARS Inventory: -i INVENTORY, --inventory INVENTORY --hosts HOSTS, -H HOSTS Identity: --sudo, -s --become, -b --user USER, -u USER  Example If you have a role roles/testrole that contains the following in tasks/main.</description>

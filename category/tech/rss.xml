@@ -13,10 +13,10 @@
     
     <item>
       <title>File reorganization</title>
-      <link>https://blog.oddbit.com/post/2021-02-24-administrivia/</link>
+      <link>https://blog.oddbit.com/post/2021-02-24-file-reorganization/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2021-02-24-administrivia/</guid>
+      <guid>https://blog.oddbit.com/post/2021-02-24-file-reorganization/</guid>
       <description>This is just a note that I&amp;rsquo;ve substantially changed how the post sources are organized. I&amp;rsquo;ve tried to ensure that I preserve all the existing links, but if you spot something missing please feel free to leave a comment on this post.</description>
     </item>
     
@@ -342,10 +342,10 @@ That means that comments will finally be stored in the same place as the blog co
     
     <item>
       <title>In which I PEBKAC so you don&#39;t have to</title>
-      <link>https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</link>
+      <link>https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</guid>
+      <guid>https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont/</guid>
       <description>Say you have a simple bit of code:
 #include &amp;lt;avr/io.h&amp;gt; #include &amp;lt;util/delay.h&amp;gt; #define LED_BUILTIN _BV(PORTB5) int main(void) { DDRB |= LED_BUILTIN; while (1) { PORTB |= LED_BUILTIN; // turn on led _delay_ms(1000); // delay 1s PORTB &amp;amp;= ~LED_BUILTIN; // turn off led _delay_ms(1000); // delay 1s } }  You have a Makefile that compiles that into an object (.o) file like this:
 avr-gcc -mmcu=atmega328p -DF_CPU=16000000 -Os -c blink.c  If you were to forget to set the device type when compiling your .</description>
@@ -444,10 +444,10 @@ At $WORK(-ish) we&amp;rsquo;re looking into Bitwarden because we want a password
     
     <item>
       <title>Systemd unit for managing USB gadgets</title>
-      <link>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</link>
+      <link>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb/</link>
       <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</guid>
+      <guid>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb/</guid>
       <description>The Pi Zero (and Zero W) have support for acting as a USB gadget: that means that they can be configured to act as a USB device &amp;ndash; like a serial port, an ethernet interface, a mass storage device, etc.
 There are two different ways of configuring this support. The first only allows you to configure a single type of gadget at a time, and boils down to:
  Enable the dwc2 overlay in /boot/config.</description>
@@ -477,10 +477,10 @@ I had previously been using Mike Causer&amp;rsquo;s micropython-tm1637 for Micro
     
     <item>
       <title>Multiple 1-Wire Buses on the Raspberry Pi</title>
-      <link>https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</link>
+      <link>https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</guid>
+      <guid>https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the/</guid>
       <description>The DS18B20 is a popular temperature sensor that uses the 1-Wire protocol for communication. Recent versions of the Linux kernel include a kernel driver for this protocol, making it relatively convenient to connect one or more of these devices to a Raspberry Pi or similar device. 1-Wire devices can be daisy chained, so it is possible to connect several devices to your Pi using only a single GPIO pin, and you&amp;rsquo;ll find many articles out there that describe how to do so.</description>
     </item>
     
@@ -526,10 +526,10 @@ You can augment the output from these commands with rule numbers with the follow
     
     <item>
       <title>Pelican and theme update</title>
-      <link>https://blog.oddbit.com/post/2018-01-26-administrivia/</link>
+      <link>https://blog.oddbit.com/post/2018-01-26-pelican-theme-update/</link>
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2018-01-26-administrivia/</guid>
+      <guid>https://blog.oddbit.com/post/2018-01-26-pelican-theme-update/</guid>
       <description>I&amp;rsquo;ve just refreshed the version of Pelican used to generate this blog, along with the associated themes and plugins. It all seems to be working, but if you spot a problem feel free to drop me a line.</description>
     </item>
     
@@ -627,10 +627,10 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
     
     <item>
       <title>Connecting another vm to your tripleo-quickstart deployment</title>
-      <link>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-/</link>
+      <link>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-/</guid>
+      <guid>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your/</guid>
       <description>Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
 For a concrete example, let&amp;rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:</description>
     </item>
@@ -690,10 +690,10 @@ Ansible already has a chroot module, of course, but for some situations &amp;nda
     
     <item>
       <title>Folding long lines in Ansible inventory files</title>
-      <link>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-/</link>
+      <link>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible/</link>
       <pubDate>Sun, 07 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-/</guid>
+      <guid>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible/</guid>
       <description>If you have an Ansible inventory file that includes lots of per host variables, it&amp;rsquo;s not unusual for lines to get long enough that they become unwieldly, particularly if you want to discuss them in an email or write about them in some context (e.g., a blog post).
 I&amp;rsquo;ve just submitted pull request #14359 to Ansible which implements support for folding long lines using the INI-format convention of using indent to mark extended logical lines.</description>
     </item>
@@ -743,10 +743,10 @@ If you access a git repository via ssh, it&amp;rsquo;s easy to provide a wrapper
     
     <item>
       <title>Stupid Ansible Tricks: Running a role from the command line</title>
-      <link>https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-/</link>
+      <link>https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-/</guid>
+      <guid>https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running/</guid>
       <description>When writing Ansible roles I occasionally want a way to just run a role from the command line, without having to muck about with a playbook. I&amp;rsquo;ve seen similar requests on the mailing lists and on irc.
 I&amp;rsquo;ve thrown together a quick wrapper that will allow you (and me!) to do exactly that, called ansible-role. The --help output looks like this:
 usage: ansible-role [-h] [--verbose] [--gather] [--no-gather] [--extra-vars EXTRA_VARS] [-i INVENTORY] [--hosts HOSTS] [--sudo] [--become] [--user USER] role positional arguments: role optional arguments: -h, --help show this help message and exit --verbose, -v --gather, -g --no-gather, -G --extra-vars EXTRA_VARS, -e EXTRA_VARS Inventory: -i INVENTORY, --inventory INVENTORY --hosts HOSTS, -H HOSTS Identity: --sudo, -s --become, -b --user USER, -u USER  Example If you have a role roles/testrole that contains the following in tasks/main.</description>
@@ -1016,10 +1016,10 @@ The PrivateTmp directive, if true, &amp;ldquo;sets up a new file system namespac
     
     <item>
       <title>Building a minimal web server for testing Kubernetes</title>
-      <link>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-/</link>
+      <link>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server/</link>
       <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-/</guid>
+      <guid>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server/</guid>
       <description>I have recently been doing some work with Kubernetes, and wanted to put together a minimal image with which I could test service and pod deployment. Size in this case was critical: I wanted something that would download quickly when initially deployed, because I am often setting up and tearing down Kubernetes as part of my testing (and some of my test environments have poor external bandwidth).
 Building thttpd My go-to minimal webserver is thttpd.</description>
     </item>
@@ -1036,10 +1036,10 @@ Configuring serial console support In previous release of OpenStack, read-only a
     
     <item>
       <title>Cloud-init and the case of the changing hostname</title>
-      <link>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/</link>
+      <link>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the/</link>
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/</guid>
+      <guid>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the/</guid>
       <description>Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.</description>
     </item>
     
@@ -1157,10 +1157,10 @@ docker plugin volumes_from parameter should be a list.
     
     <item>
       <title>Annotated documentation for DockerInc::Docker::Container</title>
-      <link>https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</link>
+      <link>https://blog.oddbit.com/post/2014-08-30-docker-contain-doc/</link>
       <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</guid>
+      <guid>https://blog.oddbit.com/post/2014-08-30-docker-contain-doc/</guid>
       <description>This is a companion to my article on the Docker plugin for Heat.
 DockerInc::Docker::Container Properties   cmd : List
 Command to run after spawning the container.
@@ -1984,10 +1984,10 @@ For this example, we&amp;rsquo;ll write a wrapper for the standard statvfs(2) fu
     
     <item>
       <title>Importing vCard contacts into an LG 420G</title>
-      <link>https://blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into-/</link>
+      <link>https://blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into/</link>
       <pubDate>Fri, 06 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into-/</guid>
+      <guid>https://blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into/</guid>
       <description>Alix recently acquired an LG 420G from TracFone. She was interested in getting all of her contacts onto the phone, which at first seemed like a simple task &amp;ndash; transfer a vCard (.vcf) file to the phone via Bluetooth, and the phone would import all the contacts. This turned out to be a great idea in theory, but in practice there was a fatal flaw &amp;ndash; while the phone did indeed import the contacts, it only imported names and the occasional note or email address.</description>
     </item>
     
@@ -2023,10 +2023,10 @@ Git makes an excellent Subversion client. You can use the git svn &amp;hellip; s
     
     <item>
       <title>LDAP redundancy through proxy servers</title>
-      <link>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-/</link>
+      <link>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy/</link>
       <pubDate>Wed, 24 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-/</guid>
+      <guid>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy/</guid>
       <description>Problem 1: Failover The problem Many applications only allow you to configure a single LDAP server. This can lead to unnecessary service outages if your directory service infrastructure is highly available (e.g., you are running Active Directory) and your application cannot take advantage of this fact.
 A solution We can provide a level of redundancy by passing the LDAP connections through a load balancing proxy. While this makes the proxy a single point of failure, it is (a) a very simple tool and thus less prone to complex failure modes, (b) running on the same host as the web application, and (c) is completely under our control.</description>
     </item>

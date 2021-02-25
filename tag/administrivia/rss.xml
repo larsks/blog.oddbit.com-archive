@@ -13,10 +13,10 @@
     
     <item>
       <title>File reorganization</title>
-      <link>https://blog.oddbit.com/post/2021-02-24-administrivia/</link>
+      <link>https://blog.oddbit.com/post/2021-02-24-file-reorganization/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2021-02-24-administrivia/</guid>
+      <guid>https://blog.oddbit.com/post/2021-02-24-file-reorganization/</guid>
       <description>This is just a note that I&amp;rsquo;ve substantially changed how the post sources are organized. I&amp;rsquo;ve tried to ensure that I preserve all the existing links, but if you spot something missing please feel free to leave a comment on this post.</description>
     </item>
     
@@ -41,10 +41,10 @@ That means that comments will finally be stored in the same place as the blog co
     
     <item>
       <title>Pelican and theme update</title>
-      <link>https://blog.oddbit.com/post/2018-01-26-administrivia/</link>
+      <link>https://blog.oddbit.com/post/2018-01-26-pelican-theme-update/</link>
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2018-01-26-administrivia/</guid>
+      <guid>https://blog.oddbit.com/post/2018-01-26-pelican-theme-update/</guid>
       <description>I&amp;rsquo;ve just refreshed the version of Pelican used to generate this blog, along with the associated themes and plugins. It all seems to be working, but if you spot a problem feel free to drop me a line.</description>
     </item>
     

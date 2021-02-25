@@ -33,10 +33,10 @@ It is possible to generate your network configuration from this configuration dr
     
     <item>
       <title>Cloud-init and the case of the changing hostname</title>
-      <link>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/</link>
+      <link>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the/</link>
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/</guid>
+      <guid>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the/</guid>
       <description>Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.</description>
     </item>
     

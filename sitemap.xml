@@ -18,7 +18,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2021-02-24-administrivia/</loc>
+    <loc>https://blog.oddbit.com/post/2021-02-24-file-reorganization/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -528,7 +528,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont-/</loc>
+    <loc>https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont/</loc>
     <lastmod>2019-02-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -613,7 +613,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</loc>
+    <loc>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb/</loc>
     <lastmod>2018-10-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -648,7 +648,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the-/</loc>
+    <loc>https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -693,7 +693,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2018-01-26-administrivia/</loc>
+    <loc>https://blog.oddbit.com/post/2018-01-26-pelican-theme-update/</loc>
     <lastmod>2018-01-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -803,7 +803,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-/</loc>
+    <loc>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your/</loc>
     <lastmod>2016-05-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -853,7 +853,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible-/</loc>
+    <loc>https://blog.oddbit.com/post/2016-02-07-folding-long-lines-in-ansible/</loc>
     <lastmod>2016-02-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -893,7 +893,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running-/</loc>
+    <loc>https://blog.oddbit.com/post/2015-10-19-stupid-ansible-tricks-running/</loc>
     <lastmod>2015-10-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -1108,7 +1108,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-/</loc>
+    <loc>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server/</loc>
     <lastmod>2015-01-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -1118,7 +1118,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/</loc>
+    <loc>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the/</loc>
     <lastmod>2014-12-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -1188,7 +1188,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</loc>
+    <loc>https://blog.oddbit.com/post/2014-08-30-docker-contain-doc/</loc>
     <lastmod>2014-08-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -1813,7 +1813,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into-/</loc>
+    <loc>https://blog.oddbit.com/post/2010-08-06-importing-vcard-contacts-into/</loc>
     <lastmod>2010-08-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -1888,7 +1888,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy-/</loc>
+    <loc>https://blog.oddbit.com/post/2010-02-24-ldap-redundancy-through-proxy/</loc>
     <lastmod>2010-02-24T00:00:00+00:00</lastmod>
   </url>
   

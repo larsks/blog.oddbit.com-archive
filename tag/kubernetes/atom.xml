@@ -53,8 +53,8 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-/"/>
-    <id>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server/"/>
+    <id>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server/</id>
     <published>2015-01-04T00:00:00Z</published>
     <updated>2015-01-04T00:00:00Z</updated>
     <summary type="html">I have recently been doing some work with Kubernetes, and wanted to put together a minimal image with which I could test service and pod deployment. Size in this case was critical: I wanted something that would download quickly when initially deployed, because I am often setting up and tearing down Kubernetes as part of my testing (and some of my test environments have poor external bandwidth).

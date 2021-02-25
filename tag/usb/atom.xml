@@ -13,8 +13,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/"/>
-    <id>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb-/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb/"/>
+    <id>https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb/</id>
     <published>2018-10-19T00:00:00Z</published>
     <updated>2018-10-19T00:00:00Z</updated>
     <summary type="html">The Pi Zero (and Zero W) have support for acting as a USB gadget: that means that they can be configured to act as a USB device &amp;ndash; like a serial port, an ethernet interface, a mass storage device, etc.

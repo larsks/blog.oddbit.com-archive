@@ -86,8 +86,8 @@ docker plugin volumes_from parameter should be a list.
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/"/>
-    <id>https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-08-30-docker-contain-doc/"/>
+    <id>https://blog.oddbit.com/post/2014-08-30-docker-contain-doc/</id>
     <published>2014-08-30T00:00:00Z</published>
     <updated>2014-08-30T00:00:00Z</updated>
     <summary type="html">This is a companion to my article on the Docker plugin for Heat.

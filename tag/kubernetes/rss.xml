@@ -44,10 +44,10 @@ As part of that presentation, I&amp;rsquo;ve put together a short demonstration 
     
     <item>
       <title>Building a minimal web server for testing Kubernetes</title>
-      <link>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-/</link>
+      <link>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server/</link>
       <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server-/</guid>
+      <guid>https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server/</guid>
       <description>I have recently been doing some work with Kubernetes, and wanted to put together a minimal image with which I could test service and pod deployment. Size in this case was critical: I wanted something that would download quickly when initially deployed, because I am often setting up and tearing down Kubernetes as part of my testing (and some of my test environments have poor external bandwidth).
 Building thttpd My go-to minimal webserver is thttpd.</description>
     </item>

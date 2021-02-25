@@ -39,8 +39,8 @@ It is possible to generate your network configuration from this configuration dr
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/"/>
-    <id>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the/"/>
+    <id>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the/</id>
     <published>2014-12-10T00:00:00Z</published>
     <updated>2014-12-10T00:00:00Z</updated>
     <summary type="html">Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.</summary>

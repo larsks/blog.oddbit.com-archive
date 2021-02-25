@@ -37,8 +37,8 @@
     <author>
       <name>Lars Kellogg-Stedman</name>
     </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-/"/>
-    <id>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-/</id>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your/"/>
+    <id>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your/</id>
     <published>2016-05-19T00:00:00Z</published>
     <updated>2016-05-19T00:00:00Z</updated>
     <summary type="html">Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?

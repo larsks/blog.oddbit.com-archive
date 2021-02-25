@@ -94,10 +94,10 @@ parameters: NovaAPILoggingSource: type: json description: Fluentd logging config
     
     <item>
       <title>Connecting another vm to your tripleo-quickstart deployment</title>
-      <link>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-/</link>
+      <link>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your-/</guid>
+      <guid>https://blog.oddbit.com/post/2016-05-19-connecting-another-vm-to-your/</guid>
       <description>Let&amp;rsquo;s say that you have set up an environment using tripleo-quickstart and you would like to add another virtual machine to the mix that has both &amp;ldquo;external&amp;rdquo; connectivity (&amp;ldquo;external&amp;rdquo; in quotes because I am using it in the same way as the quickstart does w/r/t the undercloud) and connectivity to the overcloud nodes. How would you go about setting that up?
 For a concrete example, let&amp;rsquo;s presume you have deployed an environment using the default tripleo-quickstart configuration, which looks like this:</description>
     </item>
@@ -243,10 +243,10 @@ Configuring serial console support In previous release of OpenStack, read-only a
     
     <item>
       <title>Cloud-init and the case of the changing hostname</title>
-      <link>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/</link>
+      <link>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the/</link>
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the-/</guid>
+      <guid>https://blog.oddbit.com/post/2014-12-10-cloudinit-and-the-case-of-the/</guid>
       <description>Setting the stage I ran into a problem earlier this week deploying RDO Icehouse under RHEL 6. My target systems were a set of libvirt guests deployed from the RHEL 6 KVM guest image, which includes cloud-init in order to support automatic configuration in cloud environments. I take advantage of this when using libvirt by attaching a configuration drive so that I can pass in ssh keys and a user-data script.</description>
     </item>
     
@@ -320,10 +320,10 @@ docker plugin volumes_from parameter should be a list.
     
     <item>
       <title>Annotated documentation for DockerInc::Docker::Container</title>
-      <link>https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</link>
+      <link>https://blog.oddbit.com/post/2014-08-30-docker-contain-doc/</link>
       <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.oddbit.com/post/2014-08-31-docker-contain-doc/</guid>
+      <guid>https://blog.oddbit.com/post/2014-08-30-docker-contain-doc/</guid>
       <description>This is a companion to my article on the Docker plugin for Heat.
 DockerInc::Docker::Container Properties   cmd : List
 Command to run after spawning the container.

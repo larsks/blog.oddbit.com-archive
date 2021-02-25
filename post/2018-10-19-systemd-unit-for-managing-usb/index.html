@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>File reorganization &middot; The Odd Bit</title>
-        <meta name="description" content="This is just a note that I&rsquo;ve substantially changed how the post sources are organized. I&rsquo;ve tried to ensure that I preserve all the existing links, but if you spot something missing please feel free to leave a comment on this post.">
+        <title>Systemd unit for managing USB gadgets &middot; The Odd Bit</title>
+        <meta name="description" content="The Pi Zero (and Zero W) have support for acting as a USB gadget: that means that they can be configured to act as a USB device &ndash; like a serial port, an ethernet interface, a mass storage device, etc.
+There are two different ways of configuring this support. The first only allows you to configure a single type of gadget at a time, and boils down to:
+ Enable the dwc2 overlay in /boot/config.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.74.3" />
@@ -99,10 +101,10 @@
 <div class="container">
     <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">File reorganization</h1>
+    <h1 class="post-title" itemprop="name headline">Systemd unit for managing USB gadgets</h1>
     
     <p class="post-date post-line">
-        <span>Published <time datetime="2021-02-24" itemprop="datePublished">Wed, Feb 24, 2021</time></span>
+        <span>Published <time datetime="2018-10-19" itemprop="datePublished">Fri, Oct 19, 2018</time></span>
         <span>by</span>
         <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
             <span itemprop="name">
@@ -118,10 +120,46 @@
 
     
 
-    <p>This is just a note that I&rsquo;ve <a href="https://github.com/larsks/blog.oddbit.com-posts/pull/2">substantially changed</a> how the post
-sources are organized. I&rsquo;ve tried to ensure that I preserve all the
-existing links, but if you spot something missing please feel free to
-leave a comment on this post.</p>
+    <p>The Pi Zero (and Zero W) have support for acting as a USB <a href="http://www.linux-usb.org/gadget/">gadget</a>:
+that means that they can be configured to act as a USB device &ndash; like
+a serial port, an ethernet interface, a mass storage device, etc.</p>
+<p>There are two different ways of configuring this support.  The first
+only allows you to configure a single type of gadget at a time, and
+boils down to:</p>
+<ol>
+<li>Enable the dwc2 overlay in <code>/boot/config.txt</code></li>
+<li>Reboot.</li>
+<li><code>modprobe g_serial</code></li>
+</ol>
+<p>This process is more fully documented <a href="https://learn.adafruit.com/turning-your-raspberry-pi-zero-into-a-usb-gadget/overview">here</a>.</p>
+<p>The second mechanism makes use of the <code>libcomposite</code> driver to create
+multifunction gadgets.  The manual procedure is documented in <a href="https://www.kernel.org/doc/Documentation/usb/gadget_configfs.txt">the
+kernel documentation</a>. While it&rsquo;s a useful feature, the
+configuration process requires several steps and if you only do it
+infrequently it can be easy to forget.</p>
+<p>In order to make this easier for me to manage, I&rsquo;ve wrapped the
+process up in a <a href="https://fedoramagazine.org/systemd-template-unit-files/">systemd template unit</a> that takes care of the
+various steps necessary to both create and remove a multifunction USB
+gadget.</p>
+<p>Once installed, creating a gadget that offers both a serial interface
+and a network interface is as simple as:</p>
+<ol>
+<li>
+<p>Create a file <code>/etc/gadget/g0.conf</code> containing:</p>
+<pre><code> USB_FUNCTIONS=&quot;rndis.usb0 acm.usb0&quot;
+</code></pre>
+</li>
+<li>
+<p>Run <code>systemctl start usb-gadget@g0</code>.</p>
+</li>
+</ol>
+<p>You can remove the gadget by running <code>systemctl stop usb-gadget@g0</code>.
+As with any systemd service, you can mark the unit to start
+automatically when your system boots by running <code>systemctl enable usb-gadget@g0</code>.</p>
+<p>The <a href="https://github.com/larsks/systemd-usb-gadget">systemd-usb-gadget</a> project can be found at:</p>
+<ul>
+<li><a href="https://github.com/larsks/systemd-usb-gadget">https://github.com/larsks/systemd-usb-gadget</a></li>
+</ul>
 
 </div>
 
@@ -134,7 +172,12 @@ leave a comment on this post.</p>
             
               
               
-              <a href="https://blog.oddbit.com/tag/administrivia/">administrivia</a>
+              <a href="https://blog.oddbit.com/tag/raspberrypi/">raspberrypi</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/usb/">usb</a>
               
             
         </p>
@@ -142,7 +185,7 @@ leave a comment on this post.</p>
 
     <div class="share">
         
-            <a class="icon-twitter" href="https://twitter.com/share?text=File%20reorganization&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2021-02-24-administrivia%2f"
+            <a class="icon-twitter" href="https://twitter.com/share?text=Systemd%20unit%20for%20managing%20USB%20gadgets&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2018-10-19-systemd-unit-for-managing-usb%2f"
                 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="fa fa-twitter"></i>
                 <span class="hidden">Twitter</span>
