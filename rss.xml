@@ -2171,7 +2171,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Target Ansible nested children groups in hosts file ansible ansible-inventory  How to create mult-container pods using --dry-run=client? kubernetes podspec sidecar dry-run  Ansible is not accepting customer fail module ansible devops  Ansible - Registered variable missing iteration python ansible ansible-2.x  Iterate through asyncio loop python-asyncio event-loop  Jinja2 case switch for dynamic variable changes python jinja2  Extra &amp;amp;/ampersand in json.dumps with python requests package GET Request python json python-requests  Why is my if-elif-else statement always returning the same answer?</description>
+      <description>Ansible shell module variable (Tcl&amp;#39;s quoting mechanism:) ansible tcl  How UID can be determined without running the container? podman mounted-volumes rootless  Suppress Assert output in Ansible ansible  Ansible remove \ and brackets from output debugging kubernetes ansible output  Cannot find WORKDIR in the container docker  docker isn&amp;#39;t able to add local files to container docker dockerfile ubuntu-20.04  How can I run ansible-playbook on docker container to execute commands on an AWS EC2 Ubuntu instance?</description>
     </item>
     
   </channel>
