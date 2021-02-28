@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/git/" rel="alternate"></link>
 
-  <updated>2021-02-18T00:00:00Z</updated>
+  <updated>2021-02-27T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/git/</id>
+  <entry>
+    <title>Tools for writing about Git</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-02-27-git-doc-tools/"/>
+    <id>https://blog.oddbit.com/post/2021-02-27-git-doc-tools/</id>
+    <published>2021-02-27T00:00:00Z</published>
+    <updated>2021-02-27T00:00:00Z</updated>
+    <summary type="html">I sometimes find myself writing articles or documentation about git, so I put together a couple of terrible hacks for generating reproducible histories and pretty graphs of those histories.
+git synth The git synth command reads a YAML description of a repository and executes the necessary commands to reproduce that history. It allows you set the name and email address of the author and committer as well as static date, so you every time you generate the repository you can identical commit ids.</summary>
+  </entry>
+  
   <entry>
     <title>Editing a commit message without git rebase</title>
     <author>

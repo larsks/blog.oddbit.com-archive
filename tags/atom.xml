@@ -6,8 +6,32 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2021-02-24T00:00:00Z</updated>
+  <updated>2021-02-27T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>git</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/git/"/>
+    <id>https://blog.oddbit.com/tag/git/</id>
+    <published>2021-02-27T00:00:00Z</published>
+    <updated>2021-02-27T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>graphviz</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/graphviz/"/>
+    <id>https://blog.oddbit.com/tag/graphviz/</id>
+    <published>2021-02-27T00:00:00Z</published>
+    <updated>2021-02-27T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>administrivia</title>
     <author>
@@ -17,18 +41,6 @@
     <id>https://blog.oddbit.com/tag/administrivia/</id>
     <published>2021-02-24T00:00:00Z</published>
     <updated>2021-02-24T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>git</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/git/"/>
-    <id>https://blog.oddbit.com/tag/git/</id>
-    <published>2021-02-18T00:00:00Z</published>
-    <updated>2021-02-18T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   
@@ -171,18 +183,6 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/covid/"/>
     <id>https://blog.oddbit.com/tag/covid/</id>
-    <published>2020-12-13T00:00:00Z</published>
-    <updated>2020-12-13T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>gis</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/gis/"/>
-    <id>https://blog.oddbit.com/tag/gis/</id>
     <published>2020-12-13T00:00:00Z</published>
     <updated>2020-12-13T00:00:00Z</updated>
     <summary type="html"></summary>

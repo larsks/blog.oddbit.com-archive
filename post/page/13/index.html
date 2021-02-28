@@ -105,6 +105,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Tracking down a kernel bug with git bisect</h4>
+        <time class="post-stub-date" datetime="2014-07-21">Published Mon, Jul 21, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    After a recent upgrade of my Fedora 20 system to kernel 3.15.mumble, I started running into a problem (BZ 1121345) with my Docker containers. Operations such as su or runuser would fail with the singularly unhelpful System error message:
+$ docker run -ti fedora /bin/bash bash-4.2# su -c 'uptime' su: System error  Hooking up something (like, say, socat unix-listen:/dev/log -) to /dev/log revealed that the system was logging:
+Jul 19 14:31:18 su: PAM audit_log_acct_message() failed: Operation not permitted  Downgrading the kernel to 3.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-05-28-booting-an-instance-with-multi/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Booting an instance with multiple fixed addresses</h4>
         <time class="post-stub-date" datetime="2014-05-28">Published Wed, May 28, 2014</time>
@@ -311,29 +335,6 @@ neutron net-create external -- --router:external=true \ --provider:network_type=
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Extending Puppet</h4>
-        <time class="post-stub-date" datetime="2014-04-16">Published Wed, Apr 16, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I wanted to learn about writing custom Puppet types and providers. The official documentation is a little sparse, but I finally stumbled upon the following series of articles by Gary Larizza that provide a great deal of insight into the process and a bunch of example code:
- Fun With Puppet Providers Who Abstracted My Ruby? Seriously, What Is This Provider Doing?  
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/">(Read more...)</a>
     </p>
     
     

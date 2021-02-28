@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2021-02-24T00:00:00Z</updated>
+  <updated>2021-02-27T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  <entry>
+    <title>Tools for writing about Git</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-02-27-git-doc-tools/"/>
+    <id>https://blog.oddbit.com/post/2021-02-27-git-doc-tools/</id>
+    <published>2021-02-27T00:00:00Z</published>
+    <updated>2021-02-27T00:00:00Z</updated>
+    <summary type="html">I sometimes find myself writing articles or documentation about git, so I put together a couple of terrible hacks for generating reproducible histories and pretty graphs of those histories.
+git synth The git synth command reads a YAML description of a repository and executes the necessary commands to reproduce that history. It allows you set the name and email address of the author and committer as well as static date, so you every time you generate the repository you can identical commit ids.</summary>
+  </entry>
+  
   <entry>
     <title>File reorganization</title>
     <author>
@@ -186,20 +199,6 @@ In an earlier post, I discussed some issues around the management of virtual mac
     <published>2020-07-30T00:00:00Z</published>
     <updated>2020-07-30T00:00:00Z</updated>
     <summary type="html">This is the first in a series of posts about my experience working with OpenShift and CNV (&amp;ldquo;Container Native Virtualization&amp;rdquo;, a technology that allows you to use OpenShift to manage virtualized workloads in addition to the containerized workloads for which OpenShift is known). In this post, I&amp;rsquo;ll be taking a look at the installation experience, and in particular at how restrictions in our local environment interacted with the network requirements of the installer.</summary>
-  </entry>
-  
-  <entry>
-    <title>You can&#39;t get an N95 mask: Now what?</title>
-    <author>
-      <name>Alexandra van Geel</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-07-28-you-cant-get-an-n95-mask-now-w/"/>
-    <id>https://blog.oddbit.com/post/2020-07-28-you-cant-get-an-n95-mask-now-w/</id>
-    <published>2020-07-28T00:00:00Z</published>
-    <updated>2020-07-28T00:00:00Z</updated>
-    <summary type="html">[This is a guest post by my partner Alexandra van Geel.]
- TL;DR Hello everyone! The Basics: Masks vs. Respirators Question: What makes a good mask? Commercially available options  The O2 Canada Curve Respirator The Vogmask valveless mask   Some tips about comfort References   Disclaimer: I am not an expert, just a private individual summarizing available information. Please correct me if I&amp;rsquo;ve gotten something wrong.
-TL;DR   I suggest: (a) the Vogmask valveless mask or (b) the O2 Canada Curve Respirator.</summary>
   </entry>
   
 </feed>

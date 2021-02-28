@@ -106,6 +106,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Extending Puppet</h4>
+        <time class="post-stub-date" datetime="2014-04-16">Published Wed, Apr 16, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I wanted to learn about writing custom Puppet types and providers. The official documentation is a little sparse, but I finally stumbled upon the following series of articles by Gary Larizza that provide a great deal of insight into the process and a bunch of example code:
+ Fun With Puppet Providers Who Abstracted My Ruby? Seriously, What Is This Provider Doing?  
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-02-27-multinode/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Multinode OpenStack with Packstack</h4>
         <time class="post-stub-date" datetime="2014-02-27">Published Thu, Feb 27, 2014</time>
@@ -313,30 +336,6 @@ My pubsub_example repository on GitHub has a complete project that implements th
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Sockets on OpenShift</h4>
-        <time class="post-stub-date" datetime="2013-11-23">Published Sat, Nov 23, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    In this article, a followup to my previous post regarding long-poll servers and Python, we investigate the code changes that were necessary to make the code work when deployed on OpenShift.
-In the previous post, we implemented IO polling to watch for client disconnects at the same time we were waiting for messages on a message bus:
-poll = zmq.Poller() poll.register(subsock, zmq.POLLIN) poll.register(rfile, zmq.POLLIN) events = dict(poll.poll()) . . .  If you were to try this at home, you would find that everything worked as described&hellip;but if you were to deploy the same code to OpenShift, you would find that the problem we were trying to solve (the server holding file descriptors open after a client disconnected) would still exist.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-11-23-openshift-socket-pro/">(Read more...)</a>
     </p>
     
     

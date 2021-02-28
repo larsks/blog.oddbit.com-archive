@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Tools for writing about Git &middot; The Odd Bit</title>
+        <meta name="description" content="I sometimes find myself writing articles or documentation about git, so I put together a couple of terrible hacks for generating reproducible histories and pretty graphs of those histories.
+git synth The git synth command reads a YAML description of a repository and executes the necessary commands to reproduce that history. It allows you set the name and email address of the author and committer as well as static date, so you every time you generate the repository you can identical commit ids.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/oddbit.css">
+<link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Tools for writing about Git</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2021-02-27" itemprop="datePublished">Sat, Feb 27, 2021</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+    <p>I sometimes find myself writing articles or documentation about
+<a href="https://git-scm.org">git</a>, so I put together a couple of terrible hacks for generating
+reproducible histories and pretty graphs of those histories.</p>
+<h2 id="git-synth">git synth</h2>
+<p>The <a href="https://github.com/larsks/git-snippets/blob/master/git-synth"><code>git synth</code></a> command reads a <a href="https://yaml.org/">YAML</a> description of a
+repository and executes the necessary commands to reproduce that
+history. It allows you set the name and email address of the author
+and committer as well as static date, so you every time you generate
+the repository you can identical commit ids.</p>
+<h2 id="git-dot">git dot</h2>
+<p>The <a href="https://github.com/larsks/git-snippets/blob/master/git-dot"><code>git dot</code></a> command generates a representation of a repository
+history in the <a href="https://en.wikipedia.org/wiki/DOT_(graph_description_language)">dot</a> language, and uses <a href="https://graphviz.org/">Graphviz</a> to render those
+into diagrams.</p>
+<h2 id="putting-it-together">Putting it together</h2>
+<p>For example, the following history specification:</p>
+<pre><code>- set:
+    date: &quot;2021-01-01&quot;
+    name: Fake Person
+    email: fake@example.com
+- branch:
+    name: master
+    actions:
+      - commit:
+          message: A
+      - commit:
+          message: B
+      - commit:
+          message: C
+      - branch:
+          name: topic1
+          actions:
+            - commit:
+                message: D
+            - commit:
+                message: E
+            - branch:
+                name: topic2
+                actions:
+                  - commit:
+                      message: F
+                  - commit:
+                      message: G
+      - commit:
+          message: H
+
+</code></pre><p>When applied with <code>git synth</code>:</p>
+<pre><code>$ git synth -r examplerepo examplerepo.yml
+</code></pre><p>Will generate the following repository:</p>
+<pre><code>$ git -C examplerepo log --graph --all --decorate --oneline
+* 28f7b38 (HEAD -&gt; master) H
+| * 93e1d18 (topic2) G
+| * 3ef811d F
+| * 973437c (topic1) E
+| * 2c0bd1c D
+|/  
+* cabdedf C
+* a5cbd99 B
+* d98f949 A
+</code></pre><p>We can run this <code>git dot</code> command line:</p>
+<pre><code>$ git -C examplerepo dot -m -g branch --rankdir=RL
+</code></pre><p>To produce the following <code>dot</code> description of the history:</p>
+<pre><code>digraph git {
+	graph [rankdir=RL]
+	node [shape=circle]
+	{
+		node [group=master_commits]
+		&quot;28f7b382a5&quot; [label=H tooltip=&quot;28f7b382a52ac53f86314e5d608ebafd66de6c44&quot;]
+		cabdedff95 [label=C tooltip=cabdedff957f7dec15f365e7c29eaead9930d618]
+		a5cbd99954 [label=B tooltip=a5cbd999545aeabc2e102a845aeb0466f01454a2]
+		d98f949840 [label=A tooltip=d98f94984057d760066ba0b300ab4930497bcba6]
+	}
+	{
+		node [group=topic1_commits]
+		&quot;973437cb00&quot; [label=E tooltip=&quot;973437cb007d2a69d6564fd7b30f3e8c347073c2&quot;]
+		&quot;2c0bd1c1df&quot; [label=D tooltip=&quot;2c0bd1c1dfe9f76cd18b37bb0bc995e449e0094b&quot;]
+	}
+	{
+		node [group=topic2_commits]
+		&quot;93e1d18862&quot; [label=G tooltip=&quot;93e1d18862102e044a4ec46bb189f5bca9ba0e05&quot;]
+		&quot;3ef811d426&quot; [label=F tooltip=&quot;3ef811d426c09be792a0ff6564eca82a7bd105a9&quot;]
+	}
+	{
+		node [color=black fontcolor=white group=heads shape=box style=filled]
+		master
+		topic1
+		topic2
+	}
+	{
+		edge [style=dashed]
+		topic2 -&gt; &quot;93e1d18862&quot;
+		topic1 -&gt; &quot;973437cb00&quot;
+		master -&gt; &quot;28f7b382a5&quot;
+	}
+	a5cbd99954 -&gt; d98f949840
+	&quot;3ef811d426&quot; -&gt; &quot;973437cb00&quot;
+	&quot;973437cb00&quot; -&gt; &quot;2c0bd1c1df&quot;
+	cabdedff95 -&gt; a5cbd99954
+	&quot;28f7b382a5&quot; -&gt; cabdedff95
+	&quot;2c0bd1c1df&quot; -&gt; cabdedff95
+	&quot;93e1d18862&quot; -&gt; &quot;3ef811d426&quot;
+}
+</code></pre><p>Running that through the <code>dot</code> utility (<code>dot -Tsvg -o repo.svg repo.dot</code>) results in the following diagram:</p>
+<figure><a href="gen-094ef3d69a7692db2cdee8e04869e8f98bdd237b.txt">
+    <img src="gen-094ef3d69a7692db2cdee8e04869e8f98bdd237b.svg"/> </a>
+</figure>
+
+<h2 id="where-are-these-wonders">Where are these wonders?</h2>
+<p>Both tools live in my <a href="https://github.com/larsks/git-snippets">git-snippets</a> repository, which is a motley
+collection of shells scripts, python programs, and other utilities for
+interacting with <code>git</code>.</p>
+<p>It&rsquo;s all undocumented and uninstallable, but if there&rsquo;s interest in
+either of these tools I can probably find the time to polish them up a
+bit.</p>
+
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/git/">git</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/graphviz/">graphviz</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Tools%20for%20writing%20about%20Git&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2021-02-27-git-doc-tools%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+
