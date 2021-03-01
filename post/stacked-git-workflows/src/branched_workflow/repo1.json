@@ -1,0 +1,13 @@
+- set:
+    date: "2021-01-01"
+    name: Fake Person
+    email: fake@example.com
+- branch:
+    name: master
+    actions:
+      - commit:
+          message: A
+      - commit:
+          message: B
+      - commit:
+          message: C

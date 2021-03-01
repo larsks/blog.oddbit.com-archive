@@ -6,11 +6,7 @@
     <description>Recent content in cinder on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Sep 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.oddbit.com/tag/cinder/rss.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 29 Sep 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/cinder/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Migrating Cinder volumes between OpenStack environments using shared NFS storage</title>
       <link>https://blog.oddbit.com/post/2015-09-29-migrating-cinder-volumes-betwe/</link>

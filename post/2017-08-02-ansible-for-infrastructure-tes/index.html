@@ -7,7 +7,7 @@
         <meta name="description" content="At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&ldquo;your clocks aren&rsquo;t in sync&rdquo; or &ldquo;your filesystem is full&rdquo; or &ldquo;you haven&rsquo;t installed a critical update&rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues. Fundamentally, we want something that acts like a typical code test suite, but for infrastructure.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="generator" content="Hugo 0.81.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -62,6 +62,12 @@
                         
                         
                     </div>
+
+                    <div class="donate">
+  If you find something here useful or interesting, you can
+  <a href="https://www.buymeacoffee.com/oddbit">buy me a coffee</a>!
+</div>
+
 
                     <ul class="site-nav">
                         
@@ -161,21 +167,21 @@ behavior more useful for infrastructure testing.</p>
 <h2 id="a-simple-example">A simple example</h2>
 <p>Ansible&rsquo;s native <code>assert</code> plugin will trigger a task failure when an
 assertion evaluates to <code>false</code>.  Consider the following example:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="k">hosts</span><span class="p">:</span><span class="w"> </span>localhost<span class="w">
-</span><span class="w">  </span><span class="k">vars</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">fruits</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- oranges<span class="w">
-</span><span class="w">      </span>- lemons<span class="w">
-</span><span class="w">  </span><span class="k">tasks</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="k">assert</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">that</span><span class="p">:</span><span class="w"> </span>&gt;<span class="sd">-
-</span><span class="sd">          &#39;apples&#39; in fruits</span><span class="w">
-</span><span class="w">        </span><span class="k">msg</span><span class="p">:</span><span class="w"> </span>you<span class="w"> </span>have<span class="w"> </span>no<span class="w"> </span>apples<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">localhost</span><span class="w">
+</span><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">fruits</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">oranges</span><span class="w">
+</span><span class="w">      </span>- <span class="l">lemons</span><span class="w">
+</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">assert</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">that</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;-</span><span class="sd">
+</span><span class="sd">          </span><span class="w">          </span><span class="s1">&#39;apples&#39;</span><span class="w"> </span><span class="l">in fruits</span><span class="w">
+</span><span class="w">        </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="l">you have no apples</span><span class="w">
 </span><span class="w">
-</span><span class="w">    </span>- <span class="k">assert</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">that</span><span class="p">:</span><span class="w"> </span>&gt;<span class="sd">-
-</span><span class="sd">          &#39;lemons&#39; in fruits</span><span class="w">
-</span><span class="w">        </span><span class="k">msg</span><span class="p">:</span><span class="w"> </span>you<span class="w"> </span>have<span class="w"> </span>no<span class="w"> </span>lemons<span class="w">
+</span><span class="w">    </span>- <span class="nt">assert</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">that</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;-</span><span class="sd">
+</span><span class="sd">          </span><span class="w">          </span><span class="s1">&#39;lemons&#39;</span><span class="w"> </span><span class="l">in fruits</span><span class="w">
+</span><span class="w">        </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="l">you have no lemons</span><span class="w">
 </span></code></pre></div><p>If we run this in a stock Ansible environment, we will see the
 following:</p>
 <pre><code>PLAY [localhost] ***************************************************************
@@ -292,41 +298,41 @@ this information by adding the following to your <code>ansible.cfg</code>:</p>
 results = testresult.yml
 </code></pre>
 <p>After running our playbook, this file would contain:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">groups</span><span class="p">:</span><span class="w">
-</span><span class="w"></span>- <span class="k">hosts</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">localhost</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="k">stats</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">assertions</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
-</span><span class="w">        </span><span class="k">assertions_failed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">        </span><span class="k">assertions_passed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">        </span><span class="k">assertions_skipped</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
-</span><span class="w">      </span><span class="k">tests</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="k">assertions</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="k">test</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;&#39;apples&#39;&#39; in fruits&#39;</span><span class="w">
-</span><span class="w">          </span><span class="k">testresult</span><span class="p">:</span><span class="w"> </span>failed<span class="w">
-</span><span class="w">        </span><span class="k">msg</span><span class="p">:</span><span class="w"> </span>you<span class="w"> </span>have<span class="w"> </span>no<span class="w"> </span>apples<span class="w">
-</span><span class="w">        </span><span class="k">testresult</span><span class="p">:</span><span class="w"> </span>failed<span class="w">
-</span><span class="w">        </span><span class="k">testtime</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:58.624789&#39;</span><span class="w">
-</span><span class="w">      </span>- <span class="k">assertions</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="k">test</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;&#39;lemons&#39;&#39; in fruits&#39;</span><span class="w">
-</span><span class="w">          </span><span class="k">testresult</span><span class="p">:</span><span class="w"> </span>passed<span class="w">
-</span><span class="w">        </span><span class="k">msg</span><span class="p">:</span><span class="w"> </span>All<span class="w"> </span>assertions<span class="w"> </span>passed<span class="w">
-</span><span class="w">        </span><span class="k">testresult</span><span class="p">:</span><span class="w"> </span>passed<span class="w">
-</span><span class="w">        </span><span class="k">testtime</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:58.669144&#39;</span><span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>localhost<span class="w">
-</span><span class="w">  </span><span class="k">stats</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">assertions</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
-</span><span class="w">    </span><span class="k">assertions_failed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">    </span><span class="k">assertions_passed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">    </span><span class="k">assertions_skipped</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
-</span><span class="w"></span><span class="k">stats</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">assertions</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
-</span><span class="w">  </span><span class="k">assertions_failed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">  </span><span class="k">assertions_passed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">  </span><span class="k">assertions_skipped</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
-</span><span class="w"></span><span class="k">timing</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">test_finished_at</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:58.670802&#39;</span><span class="w">
-</span><span class="w">  </span><span class="k">test_started_at</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:57.918412&#39;</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">groups</span><span class="p">:</span><span class="w">
+</span><span class="w"></span>- <span class="nt">hosts</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">localhost</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">stats</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">assertions</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="w">        </span><span class="nt">assertions_failed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">        </span><span class="nt">assertions_passed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">        </span><span class="nt">assertions_skipped</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="w">      </span><span class="nt">tests</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">assertions</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;&#39;apples&#39;&#39; in fruits&#39;</span><span class="w">
+</span><span class="w">          </span><span class="nt">testresult</span><span class="p">:</span><span class="w"> </span><span class="l">failed</span><span class="w">
+</span><span class="w">        </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="l">you have no apples</span><span class="w">
+</span><span class="w">        </span><span class="nt">testresult</span><span class="p">:</span><span class="w"> </span><span class="l">failed</span><span class="w">
+</span><span class="w">        </span><span class="nt">testtime</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:58.624789&#39;</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">assertions</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;&#39;lemons&#39;&#39; in fruits&#39;</span><span class="w">
+</span><span class="w">          </span><span class="nt">testresult</span><span class="p">:</span><span class="w"> </span><span class="l">passed</span><span class="w">
+</span><span class="w">        </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="l">All assertions passed</span><span class="w">
+</span><span class="w">        </span><span class="nt">testresult</span><span class="p">:</span><span class="w"> </span><span class="l">passed</span><span class="w">
+</span><span class="w">        </span><span class="nt">testtime</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:58.669144&#39;</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">localhost</span><span class="w">
+</span><span class="w">  </span><span class="nt">stats</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">assertions</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="w">    </span><span class="nt">assertions_failed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">    </span><span class="nt">assertions_passed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">    </span><span class="nt">assertions_skipped</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="w"></span><span class="nt">stats</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">assertions</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="w">  </span><span class="nt">assertions_failed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">  </span><span class="nt">assertions_passed</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">  </span><span class="nt">assertions_skipped</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="w"></span><span class="nt">timing</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">test_finished_at</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:58.670802&#39;</span><span class="w">
+</span><span class="w">  </span><span class="nt">test_started_at</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2017-08-04T21:20:57.918412&#39;</span><span class="w">
 </span></code></pre></div><p>With these tools it becomes much easier to design playbooks for
 testing your infrastructure.</p>
 

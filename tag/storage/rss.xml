@@ -6,11 +6,7 @@
     <description>Recent content in storage on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jan 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.oddbit.com/tag/storage/rss.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 25 Jan 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/storage/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fun with devicemapper snapshots</title>
       <link>https://blog.oddbit.com/post/2018-01-25-fun-with-devicemapper-snapshot/</link>

@@ -6,11 +6,7 @@
     <description>Recent content in cnv on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Jul 2020 01:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.oddbit.com/tag/cnv/rss.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 30 Jul 2020 01:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/cnv/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenShift and CNV: Exposing virtualized services</title>
       <link>https://blog.oddbit.com/post/2020-07-30-openshift-and-cnv-part-2-expos/</link>

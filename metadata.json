@@ -1,8 +1,8 @@
 {
-    "config": "cff23df77146bcf680c248afd88483f93681b01b",
-    "content": "73b2522b63e2c4f98b5b4c666429c0694d86792b",
-    "date": "2021-02-28T21:51:52Z",
+    "config": "475d15ab947eec364d8f469e754b42bf5e4bc11a",
+    "content": "6b7627c91309f7cc5400f7ff2bdf08841fa4d82e",
+    "date": "2021-03-01T02:05:36Z",
     "submodules": {
-        "themes/ghostwriter": "6ce1aaa8ecde4120eded11249adfdd91976150f4"
+        "themes/ghostwriter": "38136743e585792c15c7a1ee881ff10d066feb9d"
     }
 }
