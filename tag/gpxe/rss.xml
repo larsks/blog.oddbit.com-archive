@@ -6,7 +6,11 @@
     <description>Recent content in gpxe on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Jul 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/gpxe/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jul 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/gpxe/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Patch to gPXE dhcp command</title>
       <link>https://blog.oddbit.com/post/2010-07-22-patch-to-gpxe-dhcp-command/</link>

@@ -6,7 +6,11 @@
     <description>Recent content in tech on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/category/tech/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/category/tech/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Tools for writing about Git</title>
       <link>https://blog.oddbit.com/post/2021-02-27-git-doc-tools/</link>
@@ -1217,7 +1221,7 @@ The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker co
       
       <guid>https://blog.oddbit.com/post/2014-08-16-lvcache-a-tool-for-managing-lv/</guid>
       <description>Until recently I had a bcache based setup on my laptop, but when forced by circumstance to reinstall everything I spent some time looking for alternatives that were less disruptive to configure on an existing system.
-I came across Richard Jones&#39; article discussing the recent work to integrate dm-cache into LVM. Unlike bcache and unlike using dm-cache directly, the integration with LVM makes it easy to associate devices with an existing logical volume.</description>
+I came across Richard Jones&amp;rsquo; article discussing the recent work to integrate dm-cache into LVM. Unlike bcache and unlike using dm-cache directly, the integration with LVM makes it easy to associate devices with an existing logical volume.</description>
     </item>
     
     <item>

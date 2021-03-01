@@ -6,7 +6,11 @@
     <description>Recent content in 6502 on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/6502/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/6502/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>symtool: a tool for interacting with your SYM-1</title>
       <link>https://blog.oddbit.com/post/2021-02-06-symtool-a-tool-for-interacting/</link>

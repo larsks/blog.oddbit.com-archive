@@ -6,7 +6,11 @@
     <description>Recent content in administrivia on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/administrivia/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/administrivia/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>File reorganization</title>
       <link>https://blog.oddbit.com/post/2021-02-24-file-reorganization/</link>

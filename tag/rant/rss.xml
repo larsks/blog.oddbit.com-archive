@@ -6,7 +6,11 @@
     <description>Recent content in rant on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jul 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/rant/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jul 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/rant/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>In which we are amazed it doesn&#39;t all fall apart</title>
       <link>https://blog.oddbit.com/post/2015-07-26-in-which-we-are-amazed-it-does/</link>

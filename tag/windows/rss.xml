@@ -6,7 +6,11 @@
     <description>Recent content in windows on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Nov 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/windows/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Nov 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/windows/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Creating a Windows image for OpenStack</title>
       <link>https://blog.oddbit.com/post/2014-11-15-creating-a-windows-image-for-o/</link>

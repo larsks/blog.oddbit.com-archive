@@ -6,7 +6,11 @@
     <description>Recent content in raspberrypi on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/raspberrypi/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/raspberrypi/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>PiPower: A Raspberry Pi UPS</title>
       <link>https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/</link>

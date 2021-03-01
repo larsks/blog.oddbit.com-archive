@@ -6,7 +6,11 @@
     <description>Recent content in stackexchange on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 May 2019 10:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/stackexchange/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 May 2019 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/stackexchange/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Unpacking a Python regular expression</title>
       <link>https://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</link>
