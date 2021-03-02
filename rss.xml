@@ -2181,7 +2181,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to move some parts of a project into Git branches without losing their history? git  Ansible - How to include answer from previous prompt into next prompt ansible prompt  How to use gpiozero button methods to check when a button is pressed at a certain time python-3.x raspberry-pi gpio raspberry-pi4 gpiozero  Can I notify a handler on another host? ansible handler  parsing a json response in python with regex python json regex parsing  Ansible shell module variable (Tcl&amp;#39;s quoting mechanism:) ansible tcl  How UID can be determined without running the container?</description>
+      <description>How to use git to reproduce the steps of a tutorial git  Ansible cant run any command or shell ansible  Why am I able to access my webapp publicly even when blocking the port in my Linode? docker security firewall traefik linode  Is Git commit and Git Push Branch Specific git github branch  Getting error - Ansible debug message using jinja2 - template error while templating string: Expected an expression, got end of statement block ansible jinja2  Is it possible to create a fuzzy controller with micropython?</description>
     </item>
     
   </channel>
