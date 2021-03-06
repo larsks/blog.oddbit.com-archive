@@ -2181,7 +2181,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Right way to use secret flag in docker buildkit docker docker-buildkit  How to use git to reproduce the steps of a tutorial git  Ansible cant run any command or shell ansible  Why am I able to access my webapp publicly even when blocking the port in my Linode? docker security firewall traefik linode  Is Git commit and Git Push Branch Specific git github branch  Getting error - Ansible debug message using jinja2 - template error while templating string: Expected an expression, got end of statement block ansible jinja2  Is it possible to create a fuzzy controller with micropython?</description>
+      <description>Ansible podman deploy ansible podman podman-compose  Are the problems with using a big Docker container for multiple tasks? docker  Why is my simple makefile only printing the rule? c makefile  Include yaml object as child object with Ansible ansible yaml  Right way to use secret flag in docker buildkit docker docker-buildkit  How to use git to reproduce the steps of a tutorial git  Ansible cant run any command or shell ansible  Why am I able to access my webapp publicly even when blocking the port in my Linode?</description>
     </item>
     
   </channel>
