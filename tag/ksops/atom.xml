@@ -2,12 +2,12 @@
   <title>The Odd Bit</title>
 
   
-  <link rel="self" href="https://blog.oddbit.com/tag/gpg/atom.xml"/>
+  <link rel="self" href="https://blog.oddbit.com/tag/ksops/atom.xml"/>
   
-  <link href="https://blog.oddbit.com/tag/gpg/" rel="alternate"></link>
+  <link href="https://blog.oddbit.com/tag/ksops/" rel="alternate"></link>
 
   <updated>2021-03-09T00:00:00Z</updated>
-  <id>https://blog.oddbit.com/tag/gpg/</id>
+  <id>https://blog.oddbit.com/tag/ksops/</id>
   <entry>
     <title>Getting started with KSOPS</title>
     <author>
@@ -20,19 +20,6 @@
     <summary type="html">Kustomize is a tool for assembling Kubernetes manifests from a collection of files. We&amp;rsquo;re making extensive use of Kustomize in the operate-first project. In order to keep secrets stored in our configuration repositories, we&amp;rsquo;re using the KSOPS plugin, which enables Kustomize to use sops to encrypt/files using GPG.
 In this post, I&amp;rsquo;d like to walk through the steps necessary to get everything up and running.
 Set up GPG We encrypt files using GPG, so the first step is making sure that you have a GPG keypair and that your public key is published where other people can find it.</summary>
-  </entry>
-  
-  <entry>
-    <title>A note about running gpgv</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-10-05-a-note-about-running-gpgv/"/>
-    <id>https://blog.oddbit.com/post/2020-10-05-a-note-about-running-gpgv/</id>
-    <published>2020-10-05T00:00:00Z</published>
-    <updated>2020-10-05T00:00:00Z</updated>
-    <summary type="html">I found the following error from gpgv to be a little opaque:
-gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock resource &#39;/home/lars/.gnupg/trustedkeys.kbx&#39;: General error gpgv: Can&#39;t check signature: No public key It turns out that&amp;rsquo;s gpg-speak for &amp;ldquo;your trustedkeys.kbx keyring doesn&amp;rsquo;t exist&amp;rdquo;. That took longer to figure out than I care to admit. To get a key from your regular public keyring into your trusted keyring, you can run something like the following:</summary>
   </entry>
   
 </feed>

@@ -112,6 +112,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novado/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Running nova-libvirt and nova-docker on the same host</h4>
+        <time class="post-stub-date" datetime="2015-01-17">Published Sat, Jan 17, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I regularly use OpenStack on my laptop with libvirt as my hypervisor. I was interested in experimenting with recent versions of the nova-docker driver, but I didn&rsquo;t have a spare system available on which to run the driver, and I use my regular nova-compute service often enough that I didn&rsquo;t want to simply disable it temporarily in favor of nova-docker.
+ NB As pointed out by gustavo in the comments, running two neutron-openvswitch-agents on the same host &ndash; as suggested in this article &ndash; is going to lead to nothing but sadness and doom.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novado/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Building a minimal web server for testing Kubernetes</h4>
         <time class="post-stub-date" datetime="2015-01-04">Published Sun, Jan 4, 2015</time>
@@ -315,30 +338,6 @@ What&rsquo;s a hook? A Nova &ldquo;hook&rdquo; is a mechanism that allows you to
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2014-09-27-integrating-custom-code-with-n/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-scree/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Stupid command line tricks: Quickly share screen captures</h4>
-        <time class="post-stub-date" datetime="2014-09-23">Published Tue, Sep 23, 2014</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Sometimes you want to quickly share a screenshot with someone. Here&rsquo;s my favorite mechanism, which assumes you have installed both curl and the ImageMagick suite.
-$ import png:- | curl -T- -s chunk.io http://chunk.io/f/76ea98ea081748e19de4507fde3c2c65  When you run this command, you cursor will change into crosshairs. Click on a window, and this will grab a png image of that window and send it to chunk.io using curl.
-You&rsquo;ll get back a URL that you can use to share the image with people.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2014-09-23-stupid-cli-quickly-share-scree/">(Read more...)</a>
     </p>
     
     

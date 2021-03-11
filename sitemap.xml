@@ -4,12 +4,52 @@
   
   <url>
     <loc>https://blog.oddbit.com/categories/</loc>
-    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/post/2021-03-09-getting-started-with-ksops/</loc>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/gpg/</loc>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/ksops/</loc>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/kubernetes/</loc>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tag/openshift/</loc>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/category/tech/</loc>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.oddbit.com/</loc>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -19,21 +59,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/tag/graphviz/</loc>
-    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/category/tech/</loc>
-    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -58,17 +83,7 @@
   </url>
   
   <url>
-    <loc>https://blog.oddbit.com/tag/kubernetes/</loc>
-    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.oddbit.com/post/2021-02-10-object-storage-with-openshift/</loc>
-    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/openshift/</loc>
     <lastmod>2021-02-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -154,11 +169,6 @@
   
   <url>
     <loc>https://blog.oddbit.com/tag/encryption/</loc>
-    <lastmod>2020-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.oddbit.com/tag/gpg/</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url>
   

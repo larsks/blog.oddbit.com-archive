@@ -112,6 +112,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2019-01-28-losing-malloc/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">AVR micro-optimization: Losing malloc</h4>
+        <time class="post-stub-date" datetime="2019-01-28">Published Mon, Jan 28, 2019</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Pssst! Hey&hellip;hey, buddy, wanna get an extra KB for cheap?
+When I write OO-style code in C, I usually start with something like the following, in which I use malloc() to allocate memory for a variable of a particular type, perform some initialization actions, and then return it to the caller:
+Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&rsquo;s exactly what I did.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2019-01-28-losing-malloc/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-1/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Debugging attiny85 code, part 1: simavr and gdb</h4>
         <time class="post-stub-date" datetime="2019-01-22">Published Tue, Jan 22, 2019</time>
@@ -322,28 +346,6 @@ I had previously been using Mike Causer&rsquo;s micropython-tm1637 for MicroPyth
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2018-03-27-multiple-1-wire-buses-on-the/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Using Docker macvlan networks</h4>
-        <time class="post-stub-date" datetime="2018-03-12">Published Mon, Mar 12, 2018</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    A question that crops up regularly on #docker is &ldquo;How do I attach a container directly to my local network?&rdquo; One possible answer to that question is the macvlan network type, which lets you create &ldquo;clones&rdquo; of a physical interface on your host and use that to attach containers directly to your local network. For the most part it works great, but it does come with some minor caveats and limitations.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/">(Read more...)</a>
     </p>
     
     

@@ -6,10 +6,46 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gpg</title>
+      <link>https://blog.oddbit.com/tag/gpg/</link>
+      <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ksops</title>
+      <link>https://blog.oddbit.com/tag/ksops/</link>
+      <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/ksops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://blog.oddbit.com/tag/kubernetes/</link>
+      <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openshift</title>
+      <link>https://blog.oddbit.com/tag/openshift/</link>
+      <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/openshift/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>git</title>
@@ -35,24 +71,6 @@
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/administrivia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://blog.oddbit.com/tag/kubernetes/</link>
-      <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>openshift</title>
-      <link>https://blog.oddbit.com/tag/openshift/</link>
-      <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/openshift/</guid>
       <description></description>
     </item>
     
@@ -161,15 +179,6 @@
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/encryption/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gpg</title>
-      <link>https://blog.oddbit.com/tag/gpg/</link>
-      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/gpg/</guid>
       <description></description>
     </item>
     
