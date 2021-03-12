@@ -6,11 +6,7 @@
     <description>Recent content in visualization on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Feb 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.oddbit.com/tag/visualization/rss.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 24 Feb 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/visualization/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Visualizing Pacemaker resource constraints</title>
       <link>https://blog.oddbit.com/post/2015-02-24-visualizing-pacemaker-constrai/</link>

@@ -6,11 +6,7 @@
     <description>Recent content in i2c on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Mar 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.oddbit.com/tag/i2c/rss.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 12 Mar 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/i2c/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>I2C on the Raspberry Pi</title>
       <link>https://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/</link>

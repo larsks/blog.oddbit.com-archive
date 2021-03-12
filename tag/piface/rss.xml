@@ -6,11 +6,7 @@
     <description>Recent content in piface on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Aug 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.oddbit.com/tag/piface/rss.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 05 Aug 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/piface/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Interrupts on the PiFace</title>
       <link>https://blog.oddbit.com/post/2013-08-05-interrupts-on-the-pi/</link>

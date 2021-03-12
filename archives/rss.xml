@@ -5,10 +5,6 @@
     <link>https://blog.oddbit.com/archives/</link>
     <description>Recent content in Archives on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://blog.oddbit.com/archives/rss.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://blog.oddbit.com/archives/rss.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

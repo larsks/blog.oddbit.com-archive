@@ -8,7 +8,7 @@
 The first option is the Ceph Object Gateway (radosgw), Ceph&rsquo;s native object storage interface. The second option called the &ldquo;Multicloud Object Gateway&rdquo;, which is in fact a piece of software named Noobaa, a storage abstraction layer that was acquired by Red Hat in 2018.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="generator" content="Hugo 0.81.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -157,24 +157,24 @@ provide S3-compatible APIs.</p>
 <p>The fundamental unit of object storage is called a &ldquo;bucket&rdquo;.</p>
 <p>Creating a bucket with OCS works a bit like creating a <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/">persistent
 volume</a>, although instead of starting with a <code>PersistentVolumeClaim</code>
-you instead start with an <code>ObjectBucketClaim</code> (&ldquo;<code>OBC</code>&rdquo;). An <code>OBC</code>
+you instead start with an <code>ObjectBucketClaim</code> (&quot;<code>OBC</code>&quot;). An <code>OBC</code>
 looks something like this when using RGW:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>objectbucket.io/v1alpha1<span class="w">
-</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>ObjectBucketClaim<span class="w">
-</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>example-rgw<span class="w">
-</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">generateBucketName</span><span class="p">:</span><span class="w"> </span>example-rgw<span class="w">
-</span><span class="w">  </span><span class="k">storageClassName</span><span class="p">:</span><span class="w"> </span>ocs-storagecluster-ceph-rgw<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">objectbucket.io/v1alpha1</span><span class="w">
+</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ObjectBucketClaim</span><span class="w">
+</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">example-rgw</span><span class="w">
+</span><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">generateBucketName</span><span class="p">:</span><span class="w"> </span><span class="l">example-rgw</span><span class="w">
+</span><span class="w">  </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l">ocs-storagecluster-ceph-rgw</span><span class="w">
 </span></code></pre></div><p>Or like this when using Noobaa (note the different value for
 <code>storageClassName</code>):</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>objectbucket.io/v1alpha1<span class="w">
-</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>ObjectBucketClaim<span class="w">
-</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>example-noobaa<span class="w">
-</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">generateBucketName</span><span class="p">:</span><span class="w"> </span>example-noobaa<span class="w">
-</span><span class="w">  </span><span class="k">storageClassName</span><span class="p">:</span><span class="w"> </span>openshift-storage.noobaa.io<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">objectbucket.io/v1alpha1</span><span class="w">
+</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ObjectBucketClaim</span><span class="w">
+</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">example-noobaa</span><span class="w">
+</span><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">generateBucketName</span><span class="p">:</span><span class="w"> </span><span class="l">example-noobaa</span><span class="w">
+</span><span class="w">  </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l">openshift-storage.noobaa.io</span><span class="w">
 </span></code></pre></div><p>With OCS 4.5, your out-of-the-box choices for <code>storageClassName</code> will be
 <code>ocs-storagecluster-ceph-rgw</code>, if you choose to use Ceph Radosgw, or
 <code>openshift-storage.noobaa.io</code>, if you choose to use the Noobaa S3 endpoint.</p>
@@ -182,11 +182,11 @@ looks something like this when using RGW:</p>
 in my OpenShift environment. To do so, I&rsquo;m going to use <a href="https://kustomize.io/">Kustomize</a>
 to deploy the resources described in the following <code>kustomization.yml</code>
 file:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">namespace</span><span class="p">:</span><span class="w"> </span>oddbit-ocs-example<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">oddbit-ocs-example</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span><span class="k">resources</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span>- obc-noobaa.yml<span class="w">
-</span><span class="w">  </span>- obc-rgw.yml<span class="w">
+</span><span class="w"></span><span class="nt">resources</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="l">obc-noobaa.yml</span><span class="w">
+</span><span class="w">  </span>- <span class="l">obc-rgw.yml</span><span class="w">
 </span></code></pre></div><p>Running <code>kustomize build | oc apply -f-</code> from the directory containing
 this file populates the specified namespace with the two
 <code>ObjectBucketClaims</code> mentioned above:</p>
@@ -280,22 +280,22 @@ bit.</p>
 <p>The easiest way to expose the credentials in a pod is to map the keys
 from both the <code>ConfigMap</code> and <code>Secret</code> as environment variables using
 the <code>envFrom</code> directive, like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
-</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>Pod<span class="w">
-</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>bucket-example<span class="w">
-</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">containers</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="k">image</span><span class="p">:</span><span class="w"> </span>myimage<span class="w">
-</span><span class="w">      </span><span class="k">env</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>AWS_CA_BUNDLE<span class="w">
-</span><span class="w">          </span><span class="k">value</span><span class="p">:</span><span class="w"> </span>/run/secrets/kubernetes.io/serviceaccount/service-ca.crt<span class="w">
-</span><span class="w">      </span><span class="k">envFrom</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="k">configMapRef</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>example-rgw<span class="w">
-</span><span class="w">        </span>- <span class="k">secretRef</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>example-rgw<span class="w">
-</span><span class="w">      </span><span class="p">[</span>...<span class="p">]</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Pod</span><span class="w">
+</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">bucket-example</span><span class="w">
+</span><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">containers</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">myimage</span><span class="w">
+</span><span class="w">      </span><span class="nt">env</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">AWS_CA_BUNDLE</span><span class="w">
+</span><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l">/run/secrets/kubernetes.io/serviceaccount/service-ca.crt</span><span class="w">
+</span><span class="w">      </span><span class="nt">envFrom</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">configMapRef</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">example-rgw</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">secretRef</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">example-rgw</span><span class="w">
+</span><span class="w">      </span><span class="p">[</span><span class="l">...]</span><span class="w">
 </span></code></pre></div><p>Note that we&rsquo;re also setting <code>AWS_CA_BUNDLE</code> here, which you&rsquo;ll need
 if the internal endpoint referenced by <code>$BUCKET_HOST</code> is using SSL.</p>
 <p>Inside the pod, we can run, for example, <code>aws</code> commands as long as we

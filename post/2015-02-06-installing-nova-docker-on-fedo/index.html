@@ -9,7 +9,7 @@ Getting started I started with the Fedora 21 Cloud Image, because I&rsquo;m inst
 We&rsquo;ll be using OpenStack packages from the RDO Juno repository.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="generator" content="Hugo 0.81.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -183,7 +183,7 @@ srw-rw----. 1 root root 0 Feb  1 12:43 /var/run/docker.sock
 <p>The <code>nova-compute</code> service runs as the <code>nova</code> user and will not have
 access to that socket.  There are a few ways of resolving this; an
 expedient method is simply to make this socket owned by the <code>nova</code>
-group, which we can do with <code>docker</code>'s <code>-G</code> option.</p>
+group, which we can do with <code>docker</code>&rsquo;s <code>-G</code> option.</p>
 <p>Edit <code>/etc/sysconfig/docker</code>, and modify the <code>OPTIONS=</code> line to look
 like:</p>
 <pre><code>OPTIONS='--selinux-enabled -G nova'
