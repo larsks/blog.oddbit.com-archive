@@ -210,25 +210,24 @@ sub   rsa3072 2021-03-11 [E]
 <p>You need to publish your GPG key so that others can find it. You&rsquo;ll
 need your key id, which you can get by running <code>gpg -k --fingerprint</code>
 like this (using your email address rather than mine):</p>
-<pre><code>$ gpg -k --fingerprint lars@redhat.com
+<pre><code>$ gpg -k --fingerprint lars@oddbit.com
 </code></pre><p>The output will look like the following:</p>
-<pre><code>pub   rsa4096/0x7BF065CD97112F06 2013-09-12 [SC] [expires: 2022-10-04]
-      Key fingerprint = 5B2E 9490 ED4F 7BB3 79EC  93C1 7BF0 65CD 9711 2F06
-uid                   [ultimate] Lars Kellogg-Stedman &lt;lars@redhat.com&gt;
-uid                   [ultimate] Lars Kellogg-Stedman &lt;lkellogg@redhat.com&gt;
-uid                   [ultimate] Lars Kellogg-Stedman &lt;larsks@redhat.com&gt;
-sub   rsa4096/0x2CDCB13F055186A4 2013-09-12 [E]
-sub   rsa4096/0xE4D8B2B13F5F9E29 2013-09-12 [S] [expires: 2022-10-04]
-sub   rsa4096/0xB4FDC7573F885287 2013-09-12 [A] [expires: 2022-10-04]
+<pre><code>pub   rsa2048/0x362D63A80853D4CF 2013-06-21 [SC]
+      Key fingerprint = 3E70 A502 BB52 55B6 BB8E  86BE 362D 63A8 0853 D4CF
+uid                   [ultimate] Lars Kellogg-Stedman &lt;lars@oddbit.com&gt;
+uid                   [ultimate] keybase.io/larsks &lt;larsks@keybase.io&gt;
+sub   rsa2048/0x042DF6CF74E4B84C 2013-06-21 [S] [expires: 2023-07-01]
+sub   rsa2048/0x426D9382DFD6A7A9 2013-06-21 [E]
+sub   rsa2048/0xEE1A8B9F9369CC85 2013-06-21 [A]
 </code></pre><p>Look for the <code>Key fingerprint</code> line, you want the value after the <code>=</code>.
 Use this to publish your key to <code>keys.openpgp.org</code>:</p>
 <pre><code>gpg --keyserver keys.opengpg.org \
-  --send-keys '5B2E 9490 ED4F 7BB3 79EC 93C1 7BF0 65CD 9711 2F06'
+  --send-keys '3E70 A502 BB52 55B6 BB8E  86BE 362D 63A8 0853 D4CF'
 </code></pre><p>You will shortly receive an email to the address in your key asking
 you to approve it. Once you have approved the key, it will be
 published on <a href="https://keys.openpgp.org">https://keys.openpgp.org</a> and people will be able to look
 it up by address or key id.  For example, you can find my public key
-at <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/5B2E9490ED4F7BB379EC93C17BF065CD97112F06">https://keys.openpgp.org/vks/v1/by-fingerprint/5B2E9490ED4F7BB379EC93C17BF065CD97112F06</a>.</p>
+at <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/3E70A502BB5255B6BB8E86BE362D63A80853D4CF">https://keys.openpgp.org/vks/v1/by-fingerprint/3E70A502BB5255B6BB8E86BE362D63A80853D4CF</a>.</p>
 <h2 id="installing-the-tools">Installing the Tools</h2>
 <p>In this section, we&rsquo;ll get all the necessary tools installed on your
 system in order to interact with a repository using Kustomize and
@@ -317,44 +316,26 @@ stringData:
 that it contains a mix of encrypted and unencrypted content. When
 encrypted with my private key, it looks like this:</p>
 <pre><code>$ cat example-secret.enc.yaml
-apiVersion: v1
-kind: Secret
-metadata:
-    name: example-secret
-type: Opaque
-stringData:
-    message: ENC[AES256_GCM,data:yOb7WAVQMU/m2d5ON2M=,iv:g4R9QPPjV59s7UTCc0tuwMVDYZmxcxXkFM4T/7E3sIY=,tag:vmmJrRF5G3cNatofb+MdqA==,type:str]
-sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    lastmodified: '2021-03-11T17:15:02Z'
-    mac: ENC[AES256_GCM,data:g9eFG6A1qSpjYUxt3w98jPn4eEPmDN1AdX+5OYik8Al6O0WlO1vRF/2BhQN+t26VBccaYOyxDCay+Qrm1Im0DxjdIFqg6thYyl+hvdSsNZXpHWwK7mcnhfAqFa9rVeQBS0DBJvGtxn0R9QBydxlb3bdnfT6KvpUgo2799cJkujI=,iv:BIrocTilbkyEdcneaX9cBuu+MPSJkkF0ZOcsS3D54MM=,tag:RT5Wv6BfpoCR5mUEJ/lfiQ==,type:str]
-    pgp:
-    -   created_at: '2021-03-11T17:13:40Z'
-        enc: |-
-            -----BEGIN PGP MESSAGE-----
-
-            wcFMAyzcsT8FUYakARAAkkjoaHZ5HR1CYduoHyF5YlJOTKlNQWnZ5JiDDHWKM3Ef
-            cD++XC8P4tpNzBSqwOswjdp0ENYEcLIU5tT2TO1FJf+NSHSGVYx3BM39eTbFRaKI
-            s/vmHM9Q7iE1ms7S7x+3cZkckHcxrsF0YOBEYaIeAxXNx95B1Q2PPYjHgnVrOs/f
-            MCxWZF1G8wUcFGB1Sz3rK7mP1B5Bl6S6ZY7DrppVrN9xfSYpk+qHp4O8nO3OB8AG
-            saGlKuEY44JofoCyHTWDSFyrLcc3njLZw72vXDUnXVYPGCOZsUTGhmIxKrcgbLky
-            xXSHromwNjVbbfXDYaIGw2ZSaKw5fXDycuTuH/EyDNEtO17/X69aILcqSZaw/Hdj
-            PGnMLhxhzc7ZH7CW2aNcpb+NfpNOP2q9WXI3zeqbSuGiLQMMCKFH6EIIXR6boRdU
-            xDHczYIwDtiTmhidCqYsiRj0R5tlAW6VEvX2ecLGJ3Bh1rdFjRMJQ7/dXY/2y+3B
-            NitNU9hmHjZuduNnUu9cDPJNV/j1YQk936pmLqlSettWuQvk8LRQyz1Dq+Xh2liS
-            qVbxFYnmciKThWdEoVo0q8bwo6lchINvA8THqFHSHk95apFAhxOiv+yxalDG+a+Y
-            dSK6xY6T3rcGzyhNZxw2tuvD83LPwralo/eIj5f7o57h+3YIQ8+ORAL2+X6qGFnS
-            4AHkfiCrp5zM0Wuwe0shHcef0uH7+eDs4NbhshDgB+KtHzoF4JPlDujhm9j3gqi9
-            dCN4cRPG010hzKQ84ZKeMvYYShz+np7gPeTsTlLP4hKgjUd3nQaCejJ64vGG5k3h
-            T5YA
-            =b7Aw
-            -----END PGP MESSAGE-----
-        fp: 5B2E9490ED4F7BB379EC93C17BF065CD97112F06
-    encrypted_regex: ^(users|data|stringData)$
-    version: 3.6.1
+{
+	&quot;data&quot;: &quot;ENC[AES256_GCM,data:wZvEylsvhfU29nfFW1PbGqyk82x8+Vm/3p2Y89B8a1A26wa5iUTr1hEjDYrQIGQq4rvDyK4Bevxb/PrTzdOoTrYIhaerEWk13g9UrteLoaW0FpfGv9bqk0c12OwTrzS+5qCW2mIlfzQpMH5+7xxeruUXO7w=,iv:H4i1/Znp6WXrMmmP9YVkz+xKOX0XBH7kPFaa36DtTxs=,tag:bZhSzkM74wqayo7McV/VNQ==,type:str]&quot;,
+	&quot;sops&quot;: {
+		&quot;kms&quot;: null,
+		&quot;gcp_kms&quot;: null,
+		&quot;azure_kv&quot;: null,
+		&quot;hc_vault&quot;: null,
+		&quot;lastmodified&quot;: &quot;2021-03-12T03:11:46Z&quot;,
+		&quot;mac&quot;: &quot;ENC[AES256_GCM,data:2NrsF6iLA3zHeupD314Clg/WyBA8mwCn5SHHI5P9tsOt6472Tevdamv6ARD+xqfrSVWz+Wy4PtWPoeqZrFJwnL/qCR4sdjt/CRzLmcBistUeAnlqoWIwbtMxBqaFg9GxTd7f5q0iHr9QNWGSVV3JMeZZ1jeWyeQohAPpPufsuPQ=,iv:FJvZz8SV+xsy4MC1W9z1Vn0s4Dzw9Gya4v+rSpwZLrw=,tag:pfW8r5856c7qetCNgXMyeA==,type:str]&quot;,
+		&quot;pgp&quot;: [
+			{
+				&quot;created_at&quot;: &quot;2021-03-12T03:11:45Z&quot;,
+				&quot;enc&quot;: &quot;-----BEGIN PGP MESSAGE-----\n\nwcBMA0Jtk4Lf1qepAQgAGKwk6zDMPUYbUscky07v/7r3fsws3pTVRMgpEdhTra6x\nDxiMaLnjTKJi9fsB7sQuh/PTGWhXGuHtHg0YBtxRkuZY0Kl6xKXTXGBIBhI/Ahgw\n4BSz/rE7gbz1h6X4EFml3e1NeUTvGntA3HjY0o42YN9uwsi9wvMbiR4OLQfwY1gG\np9/v57KJx5ipEKSgt+81KwzOhuW79ttXd2Tvi9rjuAfvmLBU9q/YKMT8miuNhjet\nktNwXNJNpglHJta431YUhPZ6q41LpgvQPMX4bIZm7i7NuR470njYLQPe7xiGqqeT\nBcuF7KkNXGcDu9/RnIyxK4W5Bo9NEa06TqUGTHLEENLgAeSzHdQdUwx/pLLD6OPa\nv/U34YJU4JngqOGqTuDu4orgwLDg++XysBwVsmFp1t/nHvTkwj57wAuxJ4/It/9l\narvRHlCx6uA05IXukmCTvYMPRV3kY/81B+biHcka7uFUOQA=\n=x+7S\n-----END PGP MESSAGE-----&quot;,
+				&quot;fp&quot;: &quot;3E70A502BB5255B6BB8E86BE362D63A80853D4CF&quot;
+			}
+		],
+		&quot;encrypted_regex&quot;: &quot;^(users|data|stringData)$&quot;,
+		&quot;version&quot;: &quot;3.6.1&quot;
+	}
+}
 </code></pre><p>Finally, attempt to render the project with Kustomize by running:</p>
 <pre><code>kustomize build --enable-alpha-plugins
 </code></pre><p>This should produce on stdout the unencrypted content of your secret:</p>
