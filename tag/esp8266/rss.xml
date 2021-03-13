@@ -6,7 +6,11 @@
     <description>Recent content in esp8266 on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/esp8266/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/esp8266/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>To sleep or not to sleep?</title>
       <link>https://blog.oddbit.com/post/2020-12-18-to-sleep-or-not-to-sleep/</link>

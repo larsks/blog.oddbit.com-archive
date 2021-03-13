@@ -6,7 +6,11 @@
     <description>Recent content in docker-compose on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/docker-compose/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/docker-compose/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Running Keystone with Docker Compose</title>
       <link>https://blog.oddbit.com/post/2019-06-07-running-keystone-with-docker-c/</link>

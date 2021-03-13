@@ -5,7 +5,11 @@
     <link>https://blog.oddbit.com/about/</link>
     <description>Recent content in Abouts on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://blog.oddbit.com/about/rss.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    
+	<atom:link href="https://blog.oddbit.com/about/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>GPG</title>
       <link>https://blog.oddbit.com/about/gpg/</link>
@@ -21,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Ansible - How to manage Large list of small tasks ansible roles  Merge git repo into branch of another repo git  Ansible task template with output_encoding: base64 throws unknown encoding python ansible  Copy file from Docker container to Github repository docker github github-actions docker-container building-github-actions  Bash Scripting - Variable Concatenation bash shell  In MicroPython: How to identify which instance of a library class is passed?</description>
+      <description>I have this error when trying to install wire-server/ansible kubernetes ansible  Ansible - How to manage Large list of small tasks ansible roles  Merge git repo into branch of another repo git  Ansible task template with output_encoding: base64 throws unknown encoding python ansible  Copy file from Docker container to Github repository docker github github-actions docker-container building-github-actions  Bash Scripting - Variable Concatenation bash shell  In MicroPython: How to identify which instance of a library class is passed?</description>
     </item>
     
   </channel>

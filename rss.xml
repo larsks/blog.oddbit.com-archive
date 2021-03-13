@@ -6,7 +6,11 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Mar 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Getting started with KSOPS</title>
       <link>https://blog.oddbit.com/post/2021-03-09-getting-started-with-ksops/</link>
@@ -1239,7 +1243,7 @@ The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker co
       
       <guid>https://blog.oddbit.com/post/2014-08-16-lvcache-a-tool-for-managing-lv/</guid>
       <description>Until recently I had a bcache based setup on my laptop, but when forced by circumstance to reinstall everything I spent some time looking for alternatives that were less disruptive to configure on an existing system.
-I came across Richard Jones&#39; article discussing the recent work to integrate dm-cache into LVM. Unlike bcache and unlike using dm-cache directly, the integration with LVM makes it easy to associate devices with an existing logical volume.</description>
+I came across Richard Jones&amp;rsquo; article discussing the recent work to integrate dm-cache into LVM. Unlike bcache and unlike using dm-cache directly, the integration with LVM makes it easy to associate devices with an existing logical volume.</description>
     </item>
     
     <item>
@@ -2188,7 +2192,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Ansible - How to manage Large list of small tasks ansible roles  Merge git repo into branch of another repo git  Ansible task template with output_encoding: base64 throws unknown encoding python ansible  Copy file from Docker container to Github repository docker github github-actions docker-container building-github-actions  Bash Scripting - Variable Concatenation bash shell  In MicroPython: How to identify which instance of a library class is passed?</description>
+      <description>I have this error when trying to install wire-server/ansible kubernetes ansible  Ansible - How to manage Large list of small tasks ansible roles  Merge git repo into branch of another repo git  Ansible task template with output_encoding: base64 throws unknown encoding python ansible  Copy file from Docker container to Github repository docker github github-actions docker-container building-github-actions  Bash Scripting - Variable Concatenation bash shell  In MicroPython: How to identify which instance of a library class is passed?</description>
     </item>
     
   </channel>

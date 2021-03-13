@@ -6,7 +6,11 @@
     <description>Recent content in libvirt on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Oct 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/libvirt/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Oct 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.oddbit.com/tag/libvirt/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Automatic hostname entries for libvirt domains</title>
       <link>https://blog.oddbit.com/post/2013-10-04-automatic-dns-entrie/</link>
