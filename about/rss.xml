@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Create nested dictionary with same keys from a file python list dictionary  Cloning from master/main or cloning from fork? git github  Docker-compose with nginx templates to pass global variables. Adding a command to my compose breaks this function docker nginx docker-compose  Ansible Filter/Parse output to json python regex ansible jmespath  Problem interacting with a webpage with selenium and Python python selenium-webdriver  How to access host port from docker container docker docker-container  Passing sequence of commands to a running container linux bash kubernetes  How to setup a Dockerfile with your git repo?</description>
+      <description>Ansible Xml Module - Get xml value with namespace from a register xml xpath ansible xml-parsing  How to ensure all task are executed using asyncio.gather? python python-asyncio  Accessing items in nested dicts and lists in Jinja2 jinja2  Add a file to `/docker-entrypoint.d/` as part of a app.conf.template file to swap global variables into nginx set up docker nginx docker-compose  Create nested dictionary with same keys from a file python list dictionary  Cloning from master/main or cloning from fork?</description>
     </item>
     
   </channel>
