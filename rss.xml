@@ -2192,7 +2192,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>How to use bash for http request? bash http tcp  how to print only primary uid of a gpg key in bash? shell gnupg  Ansible Xml Module - Get xml value with namespace from a register xml xpath ansible xml-parsing  How to ensure all task are executed using asyncio.gather? python python-asyncio  Accessing items in nested dicts and lists in Jinja2 jinja2  Add a file to `/docker-entrypoint.</description>
+      <description>Detaching volumes (for a fresh restart) when shutting down Docker docker docker-compose docker-volume  How to clone a deployment or application from existing project to a newly created project in openshift openshift devops  Docker-compose volumes working with Doockerfile : Device or resource busy docker docker-compose  Ansible replacing a value in sshd_config ansible  How to use bash for http request? bash http tcp  how to print only primary uid of a gpg key in bash?</description>
     </item>
     
   </channel>
