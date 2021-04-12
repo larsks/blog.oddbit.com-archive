@@ -2192,7 +2192,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Split csv file into multiple files bash unix split  Ansible how to select hosts based on certain attributes and use their ip addresses to create a list at runtime ansible jinja2 ansible-inventory ansible-facts ansible-filter  How to resolve &amp;#34;could not locate file in lookup&amp;#34; reading id_rsa.pub? ansible ansible-2.x  How do I parse timestamp strings which contain BST (British Summer Time) into a timezone aware datetime timestamp? python python-3.</description>
+      <description>ansible restrict role execution based on when condition ansible  jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag &amp;#39;do&amp;#39; python-3.x jinja2  Cannot cherry-pick commit changing not-existing file git cherry-pick git-merge-conflict  Create a model instance when using peewee PostgresqlExtDatabase JSONField python json postgresql psycopg2 peewee  In bash, how can I recursively rename each file to the name of its parent folder, retaining the original extension? bash freebsd  Split csv file into multiple files bash unix split  Ansible how to select hosts based on certain attributes and use their ip addresses to create a list at runtime ansible jinja2 ansible-inventory ansible-facts ansible-filter  How to resolve &amp;#34;could not locate file in lookup&amp;#34; reading id_rsa.</description>
     </item>
     
   </channel>
