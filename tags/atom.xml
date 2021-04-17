@@ -6,8 +6,56 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2021-03-09T00:00:00Z</updated>
+  <updated>2021-04-17T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>networking</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/networking/"/>
+    <id>https://blog.oddbit.com/tag/networking/</id>
+    <published>2021-04-17T00:00:00Z</published>
+    <updated>2021-04-17T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>openvswitch</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/openvswitch/"/>
+    <id>https://blog.oddbit.com/tag/openvswitch/</id>
+    <published>2021-04-17T00:00:00Z</published>
+    <updated>2021-04-17T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>virtualization</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/virtualization/"/>
+    <id>https://blog.oddbit.com/tag/virtualization/</id>
+    <published>2021-04-17T00:00:00Z</published>
+    <updated>2021-04-17T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>vxlan</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/vxlan/"/>
+    <id>https://blog.oddbit.com/tag/vxlan/</id>
+    <published>2021-04-17T00:00:00Z</published>
+    <updated>2021-04-17T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>gpg</title>
     <author>
@@ -137,54 +185,6 @@
     <id>https://blog.oddbit.com/tag/pypi/</id>
     <published>2021-02-08T00:00:00Z</published>
     <updated>2021-02-08T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>python</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/python/"/>
-    <id>https://blog.oddbit.com/tag/python/</id>
-    <published>2021-02-08T00:00:00Z</published>
-    <updated>2021-02-08T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>6502</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/6502/"/>
-    <id>https://blog.oddbit.com/tag/6502/</id>
-    <published>2021-02-06T00:00:00Z</published>
-    <updated>2021-02-06T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>retrocomputing</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/retrocomputing/"/>
-    <id>https://blog.oddbit.com/tag/retrocomputing/</id>
-    <published>2021-02-06T00:00:00Z</published>
-    <updated>2021-02-06T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>esp8266</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/esp8266/"/>
-    <id>https://blog.oddbit.com/tag/esp8266/</id>
-    <published>2020-12-18T00:00:00Z</published>
-    <updated>2020-12-18T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   

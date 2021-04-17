@@ -111,6 +111,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-02-21-ucarp-unit-for-systemd/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">A systemd unit for ucarp</h4>
+        <time class="post-stub-date" datetime="2013-02-21">Published Thu, Feb 21, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    In Fedora 17 there are still a number of services that either have not been ported over to systemd or that do not take full advantage of systemd. I&rsquo;ve been investigating some IP failover solutions recently, including ucarp, which includes only a System-V style init script.
+I&rsquo;ve created a template service for ucarp that will let you start a specific virtual ip like this:
+systemctl start ucarp@001  This will start ucarp using settings from /etc/ucarp/vip-001.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-02-21-ucarp-unit-for-systemd/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-02-01-dhcpcd-under-lxc/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Running dhcpcd under LXC</h4>
         <time class="post-stub-date" datetime="2013-02-01">Published Fri, Feb 1, 2013</time>
@@ -314,30 +338,6 @@ Update: As far as I can tell, the syslinux-install_update command doesn&rsquo;t 
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2012-11-27-avahi-service-discovery/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2012-11-26-using-oracle-jdk/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Using Oracle JDK under CentOS</h4>
-        <time class="post-stub-date" datetime="2012-11-26">Published Mon, Nov 26, 2012</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I needed to replace the native OpenJDK based Java VM with the Oracle Java distribution on one of our CentOS servers. In order to do it cleanly I wanted to set up the alternatives system to handle it, but it took a while to figure out the exact syntax.
-For the record (and because I will probably forget):
-alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2000 \ --slave /usr/bin/keytool keytool /usr/java/latest/bin/keytool \ --slave /usr/bin/rmiregistry rmiregistry /usr/java/latest/bin/rmiregistry  
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2012-11-26-using-oracle-jdk/">(Read more...)</a>
     </p>
     
     

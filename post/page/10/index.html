@@ -111,6 +111,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-op/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Diagnosing problems with an OpenStack deployment</h4>
+        <time class="post-stub-date" datetime="2015-03-09">Published Mon, Mar 9, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I recently had the chance to help a colleague debug some problems in his OpenStack installation. The environment was unique because it was booting virtualized aarch64 instances, which at the time did not have any PCI bus support&hellip;which in turn precluded things like graphic consoles (i.e., VNC or SPICE consoles) for the Nova instances.
+This post began life as an email summarizing the various configuration changes we made on the systems to get things up and running.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-03-09-diagnosing-problems-with-an-op/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-03-08-converting-hexadecimal-ip-addr/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Converting hexadecimal ip addresses to dotted quads with Bash</h4>
         <time class="post-stub-date" datetime="2015-03-08">Published Sun, Mar 8, 2015</time>
@@ -315,29 +338,6 @@ FROM fedora RUN yum -y install tcpdump  And while this will work, you end up con
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2015-02-05-filtering-libvirt-xml-in-nova/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Docker vs. PrivateTmp</h4>
-        <time class="post-stub-date" datetime="2015-01-18">Published Sun, Jan 18, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    While working with Docker the other day, I ran into an undesirable interaction between Docker and systemd services that utilize the PrivateTmp directive.
-The PrivateTmp directive, if true, &ldquo;sets up a new file system namespace for the executed processes and mounts private /tmp and /var/tmp directories inside it that is not shared by processes outside of the namespace&rdquo;. This is a great idea from a security perspective, but can cause some unanticipated consequences.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/">(Read more...)</a>
     </p>
     
     

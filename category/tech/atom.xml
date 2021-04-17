@@ -6,8 +6,22 @@
   
   <link href="https://blog.oddbit.com/category/tech/" rel="alternate"></link>
 
-  <updated>2021-03-09T00:00:00Z</updated>
+  <updated>2021-04-17T00:00:00Z</updated>
   <id>https://blog.oddbit.com/category/tech/</id>
+  <entry>
+    <title>Creating a VXLAN overlay network with Open vSwitch</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-04-17-vm-ovs-vxlan/"/>
+    <id>https://blog.oddbit.com/post/2021-04-17-vm-ovs-vxlan/</id>
+    <published>2021-04-17T00:00:00Z</published>
+    <updated>2021-04-17T00:00:00Z</updated>
+    <summary type="html">In this post, we&amp;rsquo;ll walk through the process of getting virtual machines on two different hosts to communicate over an overlay network created using the support for VXLAN in Open vSwitch (or OVS).
+The test environment For this post, I&amp;rsquo;ll be working with two systems:
+ node0.ovs.virt at address 192.168.122.107 node1.ovs.virt at address 192.168.122.174  These hosts are running CentOS 8, although once we get past the package installs the instructions will be similar for other distributions.</summary>
+  </entry>
+  
   <entry>
     <title>Getting started with KSOPS</title>
     <author>
@@ -188,19 +202,6 @@ It turns out that Docker provides GitHub actions that make the process of produc
     <updated>2020-08-10T00:00:00Z</updated>
     <summary type="html">This is part of a series of posts about my experience working with OpenShift and CNV. In this post, I&amp;rsquo;ll look at how the recently released CNV 2.4 resolves some issues in managing virtual machines that are attached directly to local layer 2 networks
 In an earlier post, I discussed some issues around the management of virtual machine MAC addresses in CNV 2.3: in particular, that virtual machines are assigned a random MAC address not just at creation time but every time they boot.</summary>
-  </entry>
-  
-  <entry>
-    <title>OpenShift and CNV: Exposing virtualized services</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-07-30-openshift-and-cnv-part-2-expos/"/>
-    <id>https://blog.oddbit.com/post/2020-07-30-openshift-and-cnv-part-2-expos/</id>
-    <published>2020-07-30T01:00:00Z</published>
-    <updated>2020-07-30T01:00:00Z</updated>
-    <summary type="html">This is the second in a series of posts about my experience working with OpenShift and CNV. In this post, I&amp;rsquo;ll be taking a look at how to expose services on a virtual machine once you&amp;rsquo;ve git it up and running.
- TL;DR Overview Connectivity options Direct attachment Using an OpenShift Service  Exposing services on NodePorts Exposing services on cluster external IPso Exposing services using a LoadBalancer     TL;DR Networking seems to be a weak area for CNV right now.</summary>
   </entry>
   
 </feed>

@@ -6,8 +6,22 @@
   
   <link href="https://blog.oddbit.com/tag/networking/" rel="alternate"></link>
 
-  <updated>2020-07-30T01:00:00Z</updated>
+  <updated>2021-04-17T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/networking/</id>
+  <entry>
+    <title>Creating a VXLAN overlay network with Open vSwitch</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-04-17-vm-ovs-vxlan/"/>
+    <id>https://blog.oddbit.com/post/2021-04-17-vm-ovs-vxlan/</id>
+    <published>2021-04-17T00:00:00Z</published>
+    <updated>2021-04-17T00:00:00Z</updated>
+    <summary type="html">In this post, we&amp;rsquo;ll walk through the process of getting virtual machines on two different hosts to communicate over an overlay network created using the support for VXLAN in Open vSwitch (or OVS).
+The test environment For this post, I&amp;rsquo;ll be working with two systems:
+ node0.ovs.virt at address 192.168.122.107 node1.ovs.virt at address 192.168.122.174  These hosts are running CentOS 8, although once we get past the package installs the instructions will be similar for other distributions.</summary>
+  </entry>
+  
   <entry>
     <title>OpenShift and CNV: Exposing virtualized services</title>
     <author>
@@ -191,20 +205,6 @@ This started as a simple attempt to set up external connectivity on an all-in-on
 You can set the bridge MAC address via ovs-vsctl like this:
 ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&amp;rsquo;ve updated my ifconfig-br-ex to look like this:
 DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPINTERFACES=eth0 MACADDR=fa:16:3e:ef:91:ec OVS_EXTRA=&amp;quot;set bridge br-ex other-config:hwaddr=$MACADDR&amp;quot;  The OVS_EXTRA parameter gets passed to the add-br call like this:</summary>
-  </entry>
-  
-  <entry>
-    <title>Fedora and OVS Bridge Interfaces</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/"/>
-    <id>https://blog.oddbit.com/post/2014-05-20-fedora-and-ovs-bridge-interfac/</id>
-    <published>2014-05-20T00:00:00Z</published>
-    <updated>2014-05-20T00:00:00Z</updated>
-    <summary type="html">I run OpenStack on my laptop, and I&amp;rsquo;ve been chasing down a pernicious problem with OVS bridge interfaces under both F19 and F20. My OpenStack environment relies on an OVS bridge device named br-ex for external connectivity and for making services available to OpenStack instances, but after rebooting, br-ex was consistently unconfigured, which caused a variety of problems.
-This is the network configuration file for br-ex on my system:
-DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge BOOTPROT=static IPADDR=192.</summary>
   </entry>
   
 </feed>

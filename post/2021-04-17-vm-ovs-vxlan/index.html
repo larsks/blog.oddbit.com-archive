@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Creating a VXLAN overlay network with Open vSwitch &middot; The Odd Bit</title>
+        <meta name="description" content="In this post, we&rsquo;ll walk through the process of getting virtual machines on two different hosts to communicate over an overlay network created using the support for VXLAN in Open vSwitch (or OVS).
+The test environment For this post, I&rsquo;ll be working with two systems:
+ node0.ovs.virt at address 192.168.122.107 node1.ovs.virt at address 192.168.122.174  These hosts are running CentOS 8, although once we get past the package installs the instructions will be similar for other distributions.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/oddbit.css">
+<link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <div class="donate">
+  If you find something here useful or interesting, you can
+  <a href="https://www.buymeacoffee.com/oddbit">buy me a coffee</a>!
+</div>
+
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Creating a VXLAN overlay network with Open vSwitch</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2021-04-17" itemprop="datePublished">Sat, Apr 17, 2021</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+    <p>In this post, we&rsquo;ll walk through the process of getting virtual
+machines on two different hosts to communicate over an overlay network
+created using the support for VXLAN in <a href="https://www.openvswitch.org/">Open vSwitch</a> (or OVS).</p>
+<h2 id="the-test-environment">The test environment</h2>
+<p>For this post, I&rsquo;ll be working with two systems:</p>
+<ul>
+<li><code>node0.ovs.virt</code> at address 192.168.122.107</li>
+<li><code>node1.ovs.virt</code> at address 192.168.122.174</li>
+</ul>
+<p>These hosts are running CentOS 8, although once we get past the
+package installs the instructions will be similar for other
+distributions.</p>
+<p>While reading through this post, remember that unless otherwise
+specified we&rsquo;re going to be running the indicated commands on <em>both</em>
+hosts.</p>
+<h2 id="install-packages">Install packages</h2>
+<p>Before we can get started configuring things we&rsquo;ll need to install OVS
+and <a href="https://libvirt.org/">libvirt</a>. While <code>libvirt</code> is included with the base CentOS
+distribution, for OVS we&rsquo;ll need to add both the <a href="https://fedoraproject.org/wiki/EPEL">EPEL</a> repository
+as well as a recent CentOS <a href="https://www.openstack.org/">OpenStack</a> repository (OVS is included
+in the CentOS OpenStack repositories because it is required by
+OpenStack&rsquo;s networking service):</p>
+<pre><code>yum -y install epel-release centos-release-openstack-victoria
+</code></pre><p>With these additional repositories enabled we can now install the
+required packages:</p>
+<pre><code>yum -y install \
+  libguestfs-tools-c \
+  libvirt \
+  libvirt-daemon-kvm \
+  openvswitch2.15 \
+  tcpdump \
+  virt-install
+</code></pre><h2 id="enable-services">Enable services</h2>
+<p>We need to start both the <code>libvirtd</code> and <code>openvswitch</code> services:</p>
+<pre><code>systemctl enable --now openvswitch libvirtd
+</code></pre><p>This command will (a) mark the services to start automatically when
+the system boots and (b) immediately start the service.</p>
+<h2 id="configure-libvirt">Configure libvirt</h2>
+<p>When <code>libvirt</code> is first installed it doesn&rsquo;t have any configured
+storage pools. Let&rsquo;s create one in the default location,
+<code>/var/lib/libvirt/images</code>:</p>
+<pre><code>virsh pool-define-as default --type dir --target /var/lib/libvirt/images
+</code></pre><p>We need to mark the pool active, and we might as well configure it to
+activate automatically next time the system boots:</p>
+<pre><code>virsh pool-start default
+virsh pool-autostart default
+</code></pre><h2 id="configure-open-vswitch">Configure Open vSwitch</h2>
+<h3 id="create-the-bridge">Create the bridge</h3>
+<p>With all the prerequisites out of the way we can finally start working
+with Open vSwitch. Our first task is to create the OVS bridge that
+will host our VXLAN tunnels. To create a bridge named <code>br0</code>, we run:</p>
+<pre><code>ovs-vsctl add-br br0
+</code></pre><p>We can inspect the OVS configuration by running <code>ovs-vsctl show</code>,
+which should output something like:</p>
+<pre><code>cc1e7217-e393-4e21-97c1-92324d47946d
+    Bridge br0
+        Port br0
+            Interface br0
+                type: internal
+    ovs_version: &quot;2.15.1&quot;
+</code></pre><p>Let&rsquo;s not forget to mark the interface &ldquo;up&rdquo;:</p>
+<pre><code>ip link set br0 up
+</code></pre><h3 id="create-the-vxlan-tunnels">Create the VXLAN tunnels</h3>
+<p>Up until this point we&rsquo;ve been running identical commands on both
+<code>node0</code> and <code>node1</code>. In order to create our VXLAN tunnels, we need to
+provide a remote endpoint for the VXLAN connection, which is going to
+be &ldquo;the other host&rdquo;. On <code>node0</code>, we run:</p>
+<pre><code>ovs-vsctl add-port br0 vx_node1 -- set interface vx_node1 \
+  type=vxlan options:remote_ip=192.168.122.174
+</code></pre><p>This creates a VXLAN interface named <code>vx_node1</code> (named that way
+because the remote endpoint is <code>node1</code>). The OVS configuration now
+looks like:</p>
+<pre><code>cc1e7217-e393-4e21-97c1-92324d47946d
+    Bridge br0
+        Port vx_node1
+            Interface vx_node1
+                type: vxlan
+                options: {remote_ip=&quot;192.168.122.174&quot;}
+        Port br0
+            Interface br0
+                type: internal
+    ovs_version: &quot;2.15.1&quot;
+</code></pre><p>On <code>node1</code> we will run:</p>
+<pre><code>ovs-vsctl add-port br0 vx_node0 -- set interface vx_node0 \
+  type=vxlan options:remote_ip=192.168.122.107
+</code></pre><p>Which results in:</p>
+<pre><code>58451994-e0d1-4bf1-8f91-7253ddf4c016
+    Bridge br0
+        Port br0
+            Interface br0
+                type: internal
+        Port vx_node0
+            Interface vx_node0
+                type: vxlan
+                options: {remote_ip=&quot;192.168.122.107&quot;}
+    ovs_version: &quot;2.15.1&quot;
+</code></pre><p>At this point, we have a functional overlay network: anything attached
+to <code>br0</code> on either system will appear to share the same layer 2
+network. Let&rsquo;s take advantage of this to connect a pair of virtual
+machines.</p>
+<h2 id="create-virtual-machines">Create virtual machines</h2>
+<h3 id="download-a-base-image">Download a base image</h3>
+<p>We&rsquo;ll need a base image for our virtual machines. I&rsquo;m going to use the
+CentOS 8 Stream image, which we can download to our storage directory
+like this:</p>
+<pre><code>curl -L -o /var/lib/libvirt/images/centos-8-stream.qcow2 \
+  https://cloud.centos.org/centos/8-stream/x86_64/images/CentOS-Stream-GenericCloud-8-20210210.0.x86_64.qcow2
+</code></pre><p>We need to make sure <code>libvirt</code> is aware of the new image:</p>
+<pre><code>virsh pool-refresh default
+</code></pre><p>Lastly, we&rsquo;ll want to set a root password on the image so that we can
+log in to our virtual machines:</p>
+<pre><code>virt-customize -a /var/lib/libvirt/images/centos-8-stream.qcow2 \
+  --root-password password:secret
+</code></pre><h3 id="create-the-virtual-machine">Create the virtual machine</h3>
+<p>We&rsquo;re going to create a pair of virtual machines (one on each host).
+We&rsquo;ll be creating each vm with two network interfaces:</p>
+<ul>
+<li>One will be attached to the libvirt <code>default</code> network; this will
+allow us to <code>ssh</code> into the vm in order to configure things.</li>
+<li>The second will be attached to the OVS bridge</li>
+</ul>
+<p>To create a virtual machine on <code>node0</code> named <code>vm0.0</code>, run the
+following command:</p>
+<pre><code>virt-install \
+  -r 3000 \
+  --network network=default \
+  --network bridge=br0,virtualport.type=openvswitch \
+  --os-variant centos8 \
+  --disk pool=default,size=10,backing_store=centos-8-stream.qcow2,backing_format=qcow2 \
+  --import \
+  --noautoconsole \
+  -n vm0.0
+</code></pre><p>The most interesting option in the above command line is probably the
+one used to create the virtual disk:</p>
+<pre><code>--disk pool=default,size=10,backing_store=centos-8-stream.qcow2,backing_format=qcow2 \
+</code></pre><p>This creates a 10GB &ldquo;<a href="https://en.wikipedia.org/wiki/Copy-on-write">copy-on-write</a>&rdquo; disk that uses
+<code>centos-8-stream.qcow2</code> as a backing store. That means that reads will
+generally come from the <code>centos-8-stream.qcow2</code> image, but writes will
+be stored in the new image. This makes it easy for us to quickly
+create multiple virtual machines from the same base image.</p>
+<p>On <code>node1</code> we would run a similar command, although here we&rsquo;re naming
+the virtual machine <code>vm1.0</code>:</p>
+<pre><code>virt-install \
+  -r 3000 \
+  --network network=default \
+  --network bridge=br0,virtualport.type=openvswitch \
+  --os-variant centos8 \
+  --disk pool=default,size=10,backing_store=centos-8-stream.qcow2,backing_format=qcow2 \
+  --import \
+  --noautoconsole \
+  -n vm1.0
+</code></pre><h3 id="configure-networking-for-vm00">Configure networking for vm0.0</h3>
+<p>On <code>node0</code>, get the address of the new virtual machine on the default
+network using the <code>virsh domifaddr</code> command:</p>
+<pre><code>[root@node0 ~]# virsh domifaddr vm0.0
+ Name       MAC address          Protocol     Address
+-------------------------------------------------------------------------------
+ vnet2      52:54:00:21:6e:4f    ipv4         192.168.124.83/24
+</code></pre><p>Connect to the vm using <code>ssh</code>:</p>
+<pre><code>[root@node0 ~]# ssh 192.168.124.83
+root@192.168.124.83's password:
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Last login: Sat Apr 17 14:08:17 2021 from 192.168.124.1
+[root@localhost ~]#
+</code></pre><p>(Recall that the <code>root</code> password is <code>secret</code>.)</p>
+<p>Configure interface <code>eth1</code> with an address. For this post, we&rsquo;ll use
+the <code>10.0.0.0/24</code> range for our overlay network. To assign this vm the
+address <code>10.0.0.10</code>, we can run:</p>
+<pre><code>ip addr add 10.0.0.10/24 dev eth1
+ip link set eth1 up
+</code></pre><h3 id="configure-networking-for-vm10">Configure networking for vm1.0</h3>
+<p>We need to repeat the process for <code>vm1.0</code> on <code>node1</code>:</p>
+<pre><code>[root@node1 ~]# virsh domifaddr vm1.0
+ Name       MAC address          Protocol     Address
+-------------------------------------------------------------------------------
+ vnet0      52:54:00:e9:6e:43    ipv4         192.168.124.69/24
+</code></pre><p>Connect to the vm using <code>ssh</code>:</p>
+<pre><code>[root@node0 ~]# ssh 192.168.124.69
+root@192.168.124.69's password:
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Last login: Sat Apr 17 14:08:17 2021 from 192.168.124.1
+[root@localhost ~]#
+</code></pre><p>We&rsquo;ll use address 10.0.0.11 for this system:</p>
+<pre><code>ip addr add 10.0.0.11/24 dev eth1
+ip link set eth1 up
+</code></pre><h3 id="verify-connectivity">Verify connectivity</h3>
+<p>At this point, our setup is complete. On <code>vm0.0</code>, we can connect to
+<code>vm1.1</code> over the overlay network. For example, we can ping the remote
+host:</p>
+<pre><code>[root@localhost ~]# ping -c2 10.0.0.11
+PING 10.0.0.11 (10.0.0.11) 56(84) bytes of data.
+64 bytes from 10.0.0.11: icmp_seq=1 ttl=64 time=1.79 ms
+64 bytes from 10.0.0.11: icmp_seq=2 ttl=64 time=0.719 ms
+
+--- 10.0.0.11 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 0.719/1.252/1.785/0.533 ms
+</code></pre><p>Or connect to it using <code>ssh</code>:</p>
+<pre><code>[root@localhost ~]# ssh 10.0.0.11 uptime
+root@10.0.0.11's password:
+ 14:21:33 up  1:18,  1 user,  load average: 0.00, 0.00, 0.00
+</code></pre><p>Using <code>tcpdump</code>, we can verify that these connections are going over
+the overlay network. Let&rsquo;s watch for VXLAN traffic on <code>node1</code> by
+running the following command (VXLAN is a UDP protocol running on port
+4789)</p>
+<pre><code>tcpdump -i eth0 -n port 4789
+</code></pre><p>When we run <code>ping -c2 10.0.0.11</code> on <code>vm0.0</code>, we see the following:</p>
+<pre><code>14:23:50.312574 IP 192.168.122.107.52595 &gt; 192.168.122.174.vxlan: VXLAN, flags [I] (0x08), vni 0
+IP 10.0.0.10 &gt; 10.0.0.11: ICMP echo request, id 4915, seq 1, length 64
+14:23:50.314896 IP 192.168.122.174.59510 &gt; 192.168.122.107.vxlan: VXLAN, flags [I] (0x08), vni 0
+IP 10.0.0.11 &gt; 10.0.0.10: ICMP echo reply, id 4915, seq 1, length 64
+14:23:51.314080 IP 192.168.122.107.52595 &gt; 192.168.122.174.vxlan: VXLAN, flags [I] (0x08), vni 0
+IP 10.0.0.10 &gt; 10.0.0.11: ICMP echo request, id 4915, seq 2, length 64
+14:23:51.314259 IP 192.168.122.174.59510 &gt; 192.168.122.107.vxlan: VXLAN, flags [I] (0x08), vni 0
+IP 10.0.0.11 &gt; 10.0.0.10: ICMP echo reply, id 4915, seq 2, length 64
+</code></pre><p>In the output above, we see that each packet in the transaction
+results in two lines of output from <code>tcpdump</code>:</p>
+<pre><code>14:23:50.312574 IP 192.168.122.107.52595 &gt; 192.168.122.174.vxlan: VXLAN, flags [I] (0x08), vni 0
+IP 10.0.0.10 &gt; 10.0.0.11: ICMP echo request, id 4915, seq 1, length 64
+</code></pre><p>The first line shows the contents of the VXLAN packet, while the
+second lines shows the data that was encapsulated in the VXLAN packet.</p>
+<h2 id="thats-all-folks">That&rsquo;s all folks</h2>
+<p>We&rsquo;ve achieved our goal: we have two virtual machines on two different
+hosts communicating over a VXLAN overlay network. If you were to do
+this &ldquo;for real&rdquo;, you would probably want to make a number of changes:
+for example, the network configuration we&rsquo;ve applied in many cases
+will not persist across a reboot; handling persistent network
+configuration is still very distribution dependent, so I&rsquo;ve left it
+out of this post.</p>
+
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/virtualization/">virtualization</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/networking/">networking</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/openvswitch/">openvswitch</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/vxlan/">vxlan</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Creating%20a%20VXLAN%20overlay%20network%20with%20Open%20vSwitch&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2021-04-17-vm-ovs-vxlan%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+
