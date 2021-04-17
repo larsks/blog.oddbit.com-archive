@@ -223,7 +223,7 @@ EOF
 reachable from anywhere. If we were to run <code>git log</code> at this point,
 everything would look the same as when we started. We need to walk
 back up the tree, starting with the immediate descendant of our target
-commit, replacing parent points as we go along.</p>
+commit, replacing parent pointers as we go along.</p>
 <p>The first thing we need is a list of revisions from our target commit
 up to the current <code>HEAD</code>. We can get that with <code>git rev-list</code>:</p>
 <pre><code>$ git rev-list 519636..HEAD
