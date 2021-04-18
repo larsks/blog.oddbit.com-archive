@@ -244,7 +244,7 @@ LISTEN    0         10                 0.0.0.0:6642             0.0.0.0:*       
   external_ids:ovn-encap-type=geneve \
   external_ids:system-id=$(hostname)
 </code></pre><p>This points <code>ovn-remote</code> at the address of the controller, sets <code>ovn-encap-ip</code> to the address of <code>eth0</code> on the local host, sets <code>systemd-id</code> to the local hostname, and selects <a href="https://tools.ietf.org/html/draft-ietf-nvo3-geneve-08">geneve</a> encapsulation for tunnels (see <a href="https://blog.russellbryant.net/2017/05/30/ovn-geneve-vs-vxlan-does-it-matter/">this post</a> for information on why OVN prefers Geneve encapsulation).</p>
-<p>We can verify these settings by using the <code>ovn-vsctl list</code> command:</p>
+<p>We can verify these settings by using the <code>ovs-vsctl list</code> command:</p>
 <pre><code>[root@ovn1 ~]# ovs-vsctl --columns external_ids list open_vswitch
 external_ids        : {hostname=&quot;ovn1.virt&quot;, ovn-encap-ip=&quot;192.168.122.101&quot;, ovn-encap-type=geneve, ovn-remote=&quot;192.168.122.100&quot;, rundir=&quot;/var/run/openvswitch&quot;, system-id=&quot;ovn1&quot;}
 </code></pre><p>After running the above commands, each node should now have tunnels interfaces connecting to the other nodes in the test environment. For example, running <code>ovs-vsctl show</code> on node <code>ovn1</code> looks like this:</p>
