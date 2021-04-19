@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>In a ROOTLESS podman setup, how to communicate between containers in different pods containers podman redhat-containers podman-compose  Ansible community.general.ssh_config: ModuleNotFoundError: No module named &amp;#39;storm&amp;#39; python ssh pip ansible  Migrate Git repository from GCP to AWS git amazon-web-services google-cloud-platform  Dockerfile entrypoint in Kubernetes not executed reactjs docker kubernetes  os.system() vs. os.popen() when using bash process substitution: ls: cannot access &amp;#39;/dev/fd/63&amp;#39;: No such file or directory python  Delete Element from XML file using python python xml lxml elementtree  Getting html page using get http request and sockets in C c sockets http  Defining local variable in Makefile target makefile gnu-make makefile-errors  python - ldap3 lib: How to add multiple values to attribute python python-3.</description>
+      <description>Can&amp;#39;t run a task file based on a condition to avoid loop on block in ansible ansible ansible-facts ansible-template  Access Micropython REPL on UART(0) not USB esp8266 pyserial uart micropython nvidia-jetson-nano  Using credentials securely in ansible inventory ansible ansible-vault  ansible nested loop fileglob ansible dictionary with_nested loops dictionary ansible jinja2  In a ROOTLESS podman setup, how to communicate between containers in different pods containers podman redhat-containers podman-compose  Ansible community.</description>
     </item>
     
   </channel>
