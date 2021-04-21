@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Git: compare differences across two repositories git  Can&amp;#39;t run a task file based on a condition to avoid loop on block in ansible ansible ansible-facts ansible-template  Access Micropython REPL on UART(0) not USB esp8266 pyserial uart micropython nvidia-jetson-nano  Using credentials securely in ansible inventory ansible ansible-vault  ansible nested loop fileglob ansible dictionary with_nested loops dictionary ansible jinja2  In a ROOTLESS podman setup, how to communicate between containers in different pods containers podman redhat-containers podman-compose  Ansible community.</description>
+      <description>How do you run several commands in docker containers in parallel, then wait for them all to complete? docker  Git: compare differences across two repositories git  Can&amp;#39;t run a task file based on a condition to avoid loop on block in ansible ansible ansible-facts ansible-template  Access Micropython REPL on UART(0) not USB esp8266 pyserial uart micropython nvidia-jetson-nano  Using credentials securely in ansible inventory ansible ansible-vault  ansible nested loop fileglob ansible dictionary with_nested loops dictionary ansible jinja2  In a ROOTLESS podman setup, how to communicate between containers in different pods containers podman redhat-containers podman-compose  Ansible community.</description>
     </item>
     
   </channel>
