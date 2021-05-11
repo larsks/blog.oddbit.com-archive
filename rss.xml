@@ -2203,7 +2203,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Saving a file in a text delimiter format in Micropython python micropython  Building on Docker Hub ignores context path when copying files django docker dockerhub  OpenStack Swift List Columns openstack openstack-swift  Parsing of xml in Python python xml  &amp;#39;exec user process caused: exec format error&amp;#39; in AWS Fargate Service node.js amazon-web-services docker amazon-ecs aws-fargate  Kubernetes Simple Declarative Management kubernetes kubectl  Ansible / jinja2 output ansible yaml jinja2  Pytest Stops Running After First Failure pytest  How to get all the link with BeautifulSoup python python-3.</description>
+      <description>In linux, how can I zip specific sub directories into their own zip files named parent directory name and output them all into a single directory? linux bash zip  Micropython: How to use utime.mktime() without knowing the weekday/yearday? time micropython  Saving a file in a text delimiter format in Micropython python micropython  Building on Docker Hub ignores context path when copying files django docker dockerhub  OpenStack Swift List Columns openstack openstack-swift  Parsing of xml in Python python xml  &amp;#39;exec user process caused: exec format error&amp;#39; in AWS Fargate Service node.</description>
     </item>
     
   </channel>
