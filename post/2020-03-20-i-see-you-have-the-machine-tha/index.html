@@ -7,13 +7,13 @@
         <meta name="description" content="We&rsquo;re all looking for ways to keep ourselves occupied these days, and for me that means leaping at the chance to turn a small problem into a slightly ridiculous electronics project. For reasons that I won&rsquo;t go into here I wanted to generate an alert when a certain WiFi BSSID becomes visible. A simple solution to this problem would have been a few lines of shell script to send me an email&hellip;but this article isn&rsquo;t about simple solutions!">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="generator" content="Hugo 0.86.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
         
-        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.81747fa30e7c939c160ea84909a818dc1b99d7e662edf55326bd32a4510c9eb5.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -198,7 +198,7 @@ programmatic interaction with the device. The API supports the
 following endpoints:</p>
 <ul>
 <li><code>GET /api/target</code> &ndash; get a list of targets</li>
-<li>`POST /api/target&rsquo; &ndash; add a BSSID to the list of targets</li>
+<li>`POST /api/target' &ndash; add a BSSID to the list of targets</li>
 <li><code>DELETE /api/target/&lt;bssid&gt;</code> &ndash; remove a BSSID from the list of
 targets</li>
 <li><code>GET /api/status</code> &ndash; get the current alarm status and whether or not
@@ -259,14 +259,12 @@ this project.</p>
 into an old shoe box. On the outside, you can see the three LEDs (for
 the ACTIVE, SILENT, and ALARM signals), the SILENT switch, and the
 doorbell itself:</p>
-<figure>
-    <img src="detector-outside-labelled.png"/> 
+<figure><img src="detector-outside-labelled.png"/>
 </figure>
 
 <p>On the inside, you&rsquo;ll find the Arduino Uno, the Wemos D1 mini, the
 relay, and a step-down converter:</p>
-<figure>
-    <img src="detector-inside-labelled.png"/> 
+<figure><img src="detector-inside-labelled.png"/>
 </figure>
 
 <p>The step-down converter isn&rsquo;t actually necessary: when I put things

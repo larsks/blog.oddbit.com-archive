@@ -6,11 +6,7 @@
     <description>Recent content in kustomize on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.oddbit.com/tag/kustomize/rss.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/kustomize/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installing metallb on OpenShift with Kustomize</title>
       <link>https://blog.oddbit.com/post/2020-09-27-installing-metallb-on-openshif/</link>

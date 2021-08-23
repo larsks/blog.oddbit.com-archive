@@ -8,13 +8,13 @@
 I had previously been using Mike Causer&rsquo;s micropython-tm1637 for MicroPython to drive a 4 digit LED display. I was hoping to get the same code working under CircuitPython, but when I tried to build an image that included the tm1637 module I ran into:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="generator" content="Hugo 0.86.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
         
-        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.81747fa30e7c939c160ea84909a818dc1b99d7e662edf55326bd32a4510c9eb5.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -134,18 +134,18 @@ on a <a href="https://wiki.wemos.cc/products:d1:d1_mini">Wemos D1 mini</a>, whic
 MicroPython to drive a <a href="http://a.co/gQVPtPr">4 digit LED display</a>.  I was hoping to
 get the same code working under CircuitPython, but when I tried to
 build an image that included the <code>tm1637</code> module I ran into:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">tm1637</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">tm1637</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s2">&#34;&lt;stdin&gt;&#34;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
   <span class="n">File</span> <span class="s2">&#34;tm1637.py&#34;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">6</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">ImportError</span><span class="p">:</span> <span class="n">cannot</span> <span class="kn">import</span> <span class="nn">name</span> <span class="nn">sleep_us</span>
+<span class="ne">ImportError</span><span class="p">:</span> <span class="n">cannot</span> <span class="kn">import</span> <span class="nn">name</span> <span class="n">sleep_us</span>
 </code></pre></div><p>One of CircuitPython&rsquo;s goals is to be as close to CPython as possible.
 This means that in many cases that the CircuitPython folks have
 re-implemented MicroPython modules to have syntax that is more a
 strict subset of the CPython equivalent, and the MicroPython <code>time</code>
 module as impacted by this change.  With stock MicroPython, the <code>time</code>
 module has:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">time</span><span class="p">)))</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">time</span><span class="p">)))</span>
 <span class="vm">__class__</span>
 <span class="vm">__name__</span>
 <span class="n">localtime</span>
@@ -160,7 +160,7 @@ module has:</p>
 <span class="n">ticks_us</span>
 <span class="n">time</span>
 </code></pre></div><p>But the corresponding CircuitPython module has:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">time</span><span class="p">)))</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">time</span><span class="p">)))</span>
 <span class="vm">__name__</span>
 <span class="n">monotonic</span>
 <span class="n">sleep</span>
@@ -191,7 +191,7 @@ modutime.c:109:50: error: 'MP_QSTR_utime' undeclared here (not in a function)
 </code></pre><p>The <code>MP_QSTR_</code> macros are sort of magical: they are generated during
 the build process by scanning for references of the form
 <code>MP_QSTR_utime</code> and creating definitions that look like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">QDEF</span><span class="p">(</span><span class="n">MP_QSTR_utime</span><span class="p">,</span> <span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span><span class="p">)</span><span class="s">&#34;</span><span class="se">\xe5\x9d\x05</span><span class="s">&#34;</span> <span class="s">&#34;utime&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">QDEF</span><span class="p">(</span><span class="n">MP_QSTR_utime</span><span class="p">,</span> <span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span><span class="p">)</span><span class="s">&#34;</span><span class="se">\xe5\x9d\x05</span><span class="s">&#34;</span> <span class="s">&#34;utime&#34;</span><span class="p">)</span>
 </code></pre></div><p>But&hellip;and this is the immediate problem&hellip;this generation only happens
 with a clean build.  Running <code>make clean</code> and then re-running the
 build yields:</p>
@@ -204,34 +204,34 @@ build/modutime.o:(.rodata.time_time_obj+0x0): first defined here
 </code></pre><p>The above errors show a conflict between the structures defined in
 <code>utime</code>, which have just activated, and the existing <code>time</code>
 module.  A simple rename will take care of that problem; instead of:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN</span><span class="p">(</span><span class="n">time_localtime_obj</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">time_localtime</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN</span><span class="p">(</span><span class="n">time_localtime_obj</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">time_localtime</span><span class="p">);</span>
 </code></pre></div><p>We want:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN</span><span class="p">(</span><span class="n">utime_localtime_obj</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">time_localtime</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN</span><span class="p">(</span><span class="n">utime_localtime_obj</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">time_localtime</span><span class="p">);</span>
 </code></pre></div><p>And so forth.  At this point, everything builds correctly, but if we
 deploy the image to our board and try to import the <code>utime</code> module, we
 see:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">utime</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">utime</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s2">&#34;&lt;stdin&gt;&#34;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">ImportError</span><span class="p">:</span> <span class="n">no</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;utime&#39;</span>
 </code></pre></div><p>The final piece of this puzzle is that there is a list of built-in
 modules defined in <code>mpconfigport.h</code>.  We need to add our <code>utime</code>
 module to that list:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define MICROPY_PORT_BUILTIN_MODULES \
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define MICROPY_PORT_BUILTIN_MODULES \
 </span><span class="cp">    [...]
 </span><span class="cp"></span>    <span class="p">{</span> <span class="n">MP_ROM_QSTR</span><span class="p">(</span><span class="n">MP_QSTR_utime</span><span class="p">),</span> <span class="n">MP_ROM_PTR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">utime_module</span><span class="p">)</span> <span class="p">},</span> \
     <span class="p">[...]</span>
 </code></pre></div><p>If we build and deploy our image, we&rsquo;re now able to use the methods
 from the <code>utime</code> module:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Adafruit</span> <span class="n">CircuitPython</span> <span class="mf">3.0</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">alpha</span><span class="o">.</span><span class="mi">6</span><span class="o">-</span><span class="mi">42</span><span class="o">-</span><span class="n">gb46567004</span> <span class="n">on</span> <span class="mi">2018</span><span class="o">-</span><span class="mo">05</span><span class="o">-</span><span class="mo">06</span><span class="p">;</span> <span class="n">ESP</span> <span class="n">module</span> <span class="k">with</span> <span class="n">ESP8266</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">Adafruit</span> <span class="n">CircuitPython</span> <span class="mf">3.0.0</span><span class="o">-</span><span class="n">alpha</span><span class="mf">.6</span><span class="o">-</span><span class="mi">42</span><span class="o">-</span><span class="n">gb46567004</span> <span class="n">on</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span><span class="p">;</span> <span class="n">ESP</span> <span class="n">module</span> <span class="k">with</span> <span class="n">ESP8266</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">utime</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div><p>We need to make one final change to the <code>tm1637</code> module, since as
 written it imports methods from the <code>time</code> module.  Instead of:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep_us</span><span class="p">,</span> <span class="n">sleep_ms</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep_us</span><span class="p">,</span> <span class="n">sleep_ms</span>
 </code></pre></div><p>We have to modify it to read:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep_us</span><span class="p">,</span> <span class="n">sleep_ms</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">utime</span> <span class="kn">import</span> <span class="n">sleep_us</span><span class="p">,</span> <span class="n">sleep_ms</span>

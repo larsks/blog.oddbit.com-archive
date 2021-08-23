@@ -13,13 +13,13 @@ Creating GDB scripts to automatically test the behavior of our code.
 Using simavr to collect information about the state of microcontroller pins while our code is running.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="generator" content="Hugo 0.86.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
         
-        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.81747fa30e7c939c160ea84909a818dc1b99d7e662edf55326bd32a4510c9eb5.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -130,8 +130,7 @@ Using simavr to collect information about the state of microcontroller pins whil
 
     
 
-    <figure><a href="pipower_trace.png">
-    <img src="pipower_trace.png" width="800"/> </a>
+    <figure><a href="pipower_trace.png"><img src="pipower_trace.png" width="800"/></a>
 </figure>
 
 <p>This is the third of three posts about using <code>gdb</code> and <code>simavr</code> to debug AVR code. The complete series is:</p>
@@ -212,30 +211,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
 <pre><code>gtkwave gtkwave_trace.vcd
 </code></pre>
 <p>This will bring up the main <code>gtkwave</code> window, which look like this:</p>
-<figure><a href="gtkwave-1.png">
-    <img src="gtkwave-1.png" width="800"/> </a>
+<figure><a href="gtkwave-1.png"><img src="gtkwave-1.png" width="800"/></a>
 </figure>
 
 <p>Select <code>logic</code> in the SST (&ldquo;Signal Search Tree&rdquo;) pane.  This will display the available signals in the next pane down.  Select all the signals (click on the top one, then shift-click on the last one) and select &ldquo;Append&rdquo;.  You should end up with a display that looks like this:</p>
-<figure><a href="gtkwave-2.png">
-    <img src="gtkwave-2.png" width="800"/> </a>
+<figure><a href="gtkwave-2.png"><img src="gtkwave-2.png" width="800"/></a>
 </figure>
 
 <p>The graph is displaying our collected signal data, but the initial time scale isn&rsquo;t particularly useful.  Select &ldquo;Time -&gt; Zoom -&gt; Zoom Best Fit&rdquo;; you should end up with something that looks like:</p>
-<figure><a href="gtkwave-3.png">
-    <img src="gtkwave-3.png" width="800"/> </a>
+<figure><a href="gtkwave-3.png"><img src="gtkwave-3.png" width="800"/></a>
 </figure>
 
 <p>(Note that any time you resize the window you&rsquo;ll need to manually adjust the zoom level.  You can use the menu item, or just press <code>CTRL</code>-<code>ALT</code>-<code>F</code>.)</p>
 <p>You can now see a graph of how the various pins changed over the runtime of the program. This is a useful way to verify that the code is behaving as expected.  In this case, I think the section just past the 1 second mark is interesting; you can see the power button press, followed by <code>PIN_SHUTDOWN</code> going high, then <code>PIN_BOOT</code> going high, and finally <code>PIN_EN</code> disabling power output after the 1 second timer expiry.</p>
 <p>You&rsquo;ll note that the <code>state</code> information is displayed numerically, which isn&rsquo;t particularly helpful.  We can fix that by setting up a &ldquo;Translate Filter File&rdquo;.  Right click on the <code>STATE[7:0]</code> label in the &ldquo;Signals&rdquo; pane, then select &ldquo;Data Format -&gt; Translate Filter File -&gt; Enable and Select&rdquo;.  In the &ldquo;Select Signal Filter&rdquo; window that pops up&hellip;</p>
-<figure><a href="gtkwave-4.png">
-    <img src="gtkwave-4.png" width="800"/> </a>
+<figure><a href="gtkwave-4.png"><img src="gtkwave-4.png" width="800"/></a>
 </figure>
 
 <p>&hellip;select &ldquo;Add Filter to List&rdquo;.  Browse to the <code>sim</code> directory of the <code>pipower</code> project, and select <code>state_filter.txt</code>. Now select that same file in the &ldquo;Filter Select&rdquo; list, then click OK. You should now see state names displayed in the graph:</p>
-<figure><a href="gtkwave-5.png">
-    <img src="gtkwave-5.png" width="800"/> </a>
+<figure><a href="gtkwave-5.png"><img src="gtkwave-5.png" width="800"/></a>
 </figure>
 
 <hr>

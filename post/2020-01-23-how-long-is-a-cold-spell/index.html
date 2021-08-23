@@ -7,13 +7,13 @@
         <meta name="description" content="We&rsquo;ve had some wacky weather recently. In the space of a week, the temperature went from a high of about 75°F to a low around 15°F. This got me to thinking about what constitutes &ldquo;normal&rdquo; weather here in the Boston area, and in particular, how common it is to have a string of consecutive days in which the high temperature stays below freezing. While this was an interesting question in itself, it also seemed like a great opportunity to learn a little about Pandas, the Python data analysis framework.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="generator" content="Hugo 0.86.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
         
-        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.81747fa30e7c939c160ea84909a818dc1b99d7e662edf55326bd32a4510c9eb5.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -132,7 +132,7 @@
 </blockquote>
 <p>There are several parts to this problem.</p>
 <h2 id="reading-the-data">Reading the data</h2>
-<p>We can read the data using Pandas&rsquo; <code>read_csv</code> method:</p>
+<p>We can read the data using Pandas' <code>read_csv</code> method:</p>
 <pre><code>df = pandas.read_csv('boston.csv')
 </code></pre><p>This assumes of course that we have previously <code>import</code>ed the Pandas library:</p>
 <pre><code>import pandas
@@ -140,7 +140,7 @@
 <pre><code>df['DATE'] = pandas.to_datetime(df['DATE'])
 df.set_index(df['DATE'], inplace=True)
 </code></pre><h2 id="which-winter">Which winter?</h2>
-<p>I need to be able to group the data by &ldquo;winter&rdquo;. For example, dates from December 21, 2018 through March 20, 2019 would all be associated with &ldquo;winter 2018&rdquo;. It would be easy to group the data by <em>year</em> using Pandas&rsquo; <code>groupby</code> method:</p>
+<p>I need to be able to group the data by &ldquo;winter&rdquo;. For example, dates from December 21, 2018 through March 20, 2019 would all be associated with &ldquo;winter 2018&rdquo;. It would be easy to group the data by <em>year</em> using Pandas' <code>groupby</code> method:</p>
 <pre><code>df.groupby(df['DATE'].dt.year)...
 </code></pre><p>But what&rsquo;s the equivalent for grouping by winter? My first attempt was a naive iterative solution:</p>
 <pre><code>def get_winter_start(val):
@@ -182,7 +182,7 @@ winter['winter_start'] = (
         acc.append(cur)
 
     return max(acc)
-</code></pre><p>Which I applied using Pandas&rsquo; <code>apply</code> method:</p>
+</code></pre><p>Which I applied using Pandas' <code>apply</code> method:</p>
 <pre><code>res = winter.groupby('winter_start').apply(max_dbf)
 </code></pre><p>This time it&rsquo;s not just ugly, but it&rsquo;s also noticeably slow. I started doing some research to figure out how to make it faster.</p>
 <h2 id="finding-a-sequence-of-consecutive-days-a-pandas-solution">Finding a sequence of consecutive days: a Pandas solution</h2>
@@ -1109,7 +1109,7 @@ df = pandas.DataFrame({'DATE': data_unzipped[0], 'TMAX': data_unzipped[1]})
 <p>We&rsquo;re applying the <code>cumsum</code> method to a boolean series. By doing so, we&rsquo;re taking advantage of the fact that in Python <a href="https://docs.python.org/release/3.0.1/reference/datamodel.html#the-standard-type-hierarchy">we can treat boolean values as integers</a>: a <code>True</code> value evaluates to <code>1</code>, and a <code>False</code> value to <code>0</code>. What we get with this operation is effectively a &ldquo;sequence id&rdquo;: because <code>step2</code> is only <code>True</code> when the value of <code>freezing</code> changes, the value calculated in this step only increments when we start a new sequence of values for which <code>freezing</code> has the same value.</p>
 <h3 id="step-4">Step 4</h3>
 <pre>res = y * (<strong>y.groupby((y != y.shift()).cumsum()).cumcount() + 1</strong>)</pre>
-<p>In the previous step, we calculated what I called a &ldquo;sequence id&rdquo;. We can take advantage of this to group the data into consecutive stretches for which the temperature was either below freezing or not by using the value as an argument to Pandas&rsquo; <code>groupby</code> method, and then applying the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.GroupBy.cumcount.html">cumcount</a> method:</p>
+<p>In the previous step, we calculated what I called a &ldquo;sequence id&rdquo;. We can take advantage of this to group the data into consecutive stretches for which the temperature was either below freezing or not by using the value as an argument to Pandas' <code>groupby</code> method, and then applying the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.GroupBy.cumcount.html">cumcount</a> method:</p>
 <pre><code>df['step4'] = df['freezing'].groupby(df['step3']).cumcount() + 1
 </code></pre><p>The <code>cumcount</code> method simply numbers the items in each group, starting at 0. This gives us:</p>
 <table>
@@ -1744,8 +1744,7 @@ df = pandas.DataFrame({'DATE': data_unzipped[0], 'TMAX': data_unzipped[1]})
 <pre><code>assert max_consecutive_dbf == 7
 </code></pre><h2 id="results">Results</h2>
 <p>If we look at the results for the past 20 years, we see the following:</p>
-<figure>
-    <img src="sample-results.png"/> 
+<figure><img src="sample-results.png"/>
 </figure>
 
 <p>For data used in the above chart, the average stretch in which the temperature stays below freezing is 6.45 days (the average for the entire dataset is 6.33 days).</p>

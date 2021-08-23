@@ -1,0 +1,24 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>The Odd Bit</title>
+
+  
+  <link rel="self" href="https://blog.oddbit.com/tag/ceph/atom.xml"/>
+  
+  <link href="https://blog.oddbit.com/tag/ceph/" rel="alternate"></link>
+
+  <updated>2021-08-23T00:00:00Z</updated>
+  <id>https://blog.oddbit.com/tag/ceph/</id>
+  <entry>
+    <title>Connecting OpenShift to an External Ceph Cluster</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-08-23-external-ocs/"/>
+    <id>https://blog.oddbit.com/post/2021-08-23-external-ocs/</id>
+    <published>2021-08-23T00:00:00Z</published>
+    <updated>2021-08-23T00:00:00Z</updated>
+    <summary type="html">Red Hat&amp;rsquo;s [OpenShift Data Foundation][ocs] (formerly &amp;ldquo;OpenShift Container Storage&amp;rdquo;, or &amp;ldquo;OCS&amp;rdquo;) allows you to either (a) automatically set up a Ceph cluster as an application running on your OpenShift cluster, or (b) connect your OpenShift cluster to an externally managed Ceph cluster. While setting up Ceph as an OpenShift application is a relatively polished experienced, connecting to an external cluster still has some rough edges.
+NB I am not a Ceph expert.</summary>
+  </entry>
+  
+</feed>

@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2021-04-17T00:00:00Z</updated>
+  <updated>2021-08-23T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  <entry>
+    <title>Connecting OpenShift to an External Ceph Cluster</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-08-23-external-ocs/"/>
+    <id>https://blog.oddbit.com/post/2021-08-23-external-ocs/</id>
+    <published>2021-08-23T00:00:00Z</published>
+    <updated>2021-08-23T00:00:00Z</updated>
+    <summary type="html">Red Hat&amp;rsquo;s [OpenShift Data Foundation][ocs] (formerly &amp;ldquo;OpenShift Container Storage&amp;rdquo;, or &amp;ldquo;OCS&amp;rdquo;) allows you to either (a) automatically set up a Ceph cluster as an application running on your OpenShift cluster, or (b) connect your OpenShift cluster to an externally managed Ceph cluster. While setting up Ceph as an OpenShift application is a relatively polished experienced, connecting to an external cluster still has some rough edges.
+NB I am not a Ceph expert.</summary>
+  </entry>
+  
   <entry>
     <title>Creating a VXLAN overlay network with Open vSwitch</title>
     <author>
@@ -175,7 +188,7 @@ gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock reso
     <published>2020-09-26T00:00:00Z</published>
     <updated>2020-09-26T00:00:00Z</updated>
     <summary type="html">I&amp;rsquo;ve had my eye on the Vortex Core keyboard for a few months now, and this past week I finally broke down and bought one (with Cherry MX Brown switches). The Vortex Core is a 40% keyboard, which means it consists primarily of letter keys, a few lonely bits of punctuation, and several modifier keys to activate different layers on the keyboard.
-  Physical impressions It&amp;rsquo;s a really cute keyboard.</summary>
+ Physical impressions It&amp;rsquo;s a really cute keyboard. I&amp;rsquo;m a big fan of MX brown switches, and this keyboard is really a joy to type on, at least when you&amp;rsquo;re working primarily with the alpha keys.</summary>
   </entry>
   
   <entry>
@@ -189,19 +202,6 @@ gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock reso
     <updated>2020-09-25T00:00:00Z</updated>
     <summary type="html">At work we have a cluster of IBM Power 9 systems running OpenShift. The problem with this environment is that nobody runs Power 9 on their desktop, and Docker Hub only offers automatic build support for the x86 architecture. This means there&amp;rsquo;s no convenient options for building Power 9 Docker images&amp;hellip;or so I thought.
 It turns out that Docker provides GitHub actions that make the process of producing multi-architecture images quite simple.</summary>
-  </entry>
-  
-  <entry>
-    <title>OpenShift and CNV: MAC address management in CNV 2.4</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-08-10-mac-address-management-in-cnv/"/>
-    <id>https://blog.oddbit.com/post/2020-08-10-mac-address-management-in-cnv/</id>
-    <published>2020-08-10T00:00:00Z</published>
-    <updated>2020-08-10T00:00:00Z</updated>
-    <summary type="html">This is part of a series of posts about my experience working with OpenShift and CNV. In this post, I&amp;rsquo;ll look at how the recently released CNV 2.4 resolves some issues in managing virtual machines that are attached directly to local layer 2 networks
-In an earlier post, I discussed some issues around the management of virtual machine MAC addresses in CNV 2.3: in particular, that virtual machines are assigned a random MAC address not just at creation time but every time they boot.</summary>
   </entry>
   
 </feed>

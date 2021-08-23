@@ -6,10 +6,60 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ceph</title>
+      <link>https://blog.oddbit.com/tag/ceph/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/ceph/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kubernetes</title>
+      <link>https://blog.oddbit.com/tag/kubernetes/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/kubernetes/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>ocs</title>
+      <link>https://blog.oddbit.com/tag/ocs/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/ocs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>odf</title>
+      <link>https://blog.oddbit.com/tag/odf/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/odf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openshift</title>
+      <link>https://blog.oddbit.com/tag/openshift/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/openshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storage</title>
+      <link>https://blog.oddbit.com/tag/storage/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/storage/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>networking</title>
@@ -62,24 +112,6 @@
       <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/ksops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://blog.oddbit.com/tag/kubernetes/</link>
-      <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>openshift</title>
-      <link>https://blog.oddbit.com/tag/openshift/</link>
-      <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/openshift/</guid>
       <description></description>
     </item>
     
@@ -764,15 +796,6 @@
       <pubDate>Thu, 25 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/devicemapper/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>storage</title>
-      <link>https://blog.oddbit.com/tag/storage/</link>
-      <pubDate>Thu, 25 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/storage/</guid>
       <description></description>
     </item>
     

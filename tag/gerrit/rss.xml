@@ -6,11 +6,7 @@
     <description>Recent content in gerrit on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.oddbit.com/tag/gerrit/rss.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 22 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/gerrit/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Making sure your Gerrit changes aren&#39;t broken</title>
       <link>https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-change/</link>

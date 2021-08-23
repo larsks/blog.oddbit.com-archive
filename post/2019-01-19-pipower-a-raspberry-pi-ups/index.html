@@ -7,13 +7,13 @@
         <meta name="description" content="I have a Raspberry Pi running RetroPie hooked up to a television. It&rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&rsquo;re pulling the plug on the Pi. While there haven&rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point. I started looking into UPS options to alleviate this issue.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="generator" content="Hugo 0.86.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
         
-        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.81747fa30e7c939c160ea84909a818dc1b99d7e662edf55326bd32a4510c9eb5.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -124,8 +124,7 @@
 
     
 
-    <figure><a href="pipower-top.jpg">
-    <img src="pipower-top.jpg" width="400"/> </a>
+    <figure><a href="pipower-top.jpg"><img src="pipower-top.jpg" width="400"/></a>
 </figure>
 
 <p>I have a Raspberry Pi running <a href="https://retropie.org.uk/">RetroPie</a> hooked up to a television.  It&rsquo;s powered from a USB port on the TV, which is convenient, but it means that whenever we shut off the TV we&rsquo;re pulling the plug on the Pi. While there haven&rsquo;t been any problems so far, this is a classic recipe for filesystem problems or data loss at some point.  I started looking into UPS options to alleviate this issue. I wanted something with the following features:</p>
@@ -136,8 +135,7 @@
 </ul>
 <p>There are several Pi UPS solutions out there, but most of them are designed for a different purpose: they will run your Pi from battery for as long as possible, and will notify your Pi when the battery level goes low.  That&rsquo;s great if you want a portable device, but isn&rsquo;t the right solution for my situation.  One notable exception is the <a href="https://juice4halt.com/">juice4halt</a> product, which is a super-capacitor based unit that does pretty much exactly when I want. Unfortunately, it is somewhat pricey.</p>
 <p>While looking at various solutions, I found the Adafruit <a href="https://www.adafruit.com/product/2465">PowerBoost 1000c</a>. When external power is available, this device will charge a LIPO battery and provide power to your Pi at the same time. When external power is removed, this device will power your Pi from the battery.  By itself it doesn&rsquo;t have any facilities for communicating with your Pi, but it does provide several control lines which suggested some interesting possibilities.</p>
-<figure><a href="powerboost1000c.png">
-    <img src="powerboost1000c.png" width="300"/> </a>
+<figure><a href="powerboost1000c.png"><img src="powerboost1000c.png" width="300"/></a>
 </figure>
 
 <p>Getting the Powerboost talking to the Pi seemed like a good job for a small microcontroller. I happen to have a few <a href="https://www.microchip.com/wwwproducts/en/ATtiny85">attiny85</a>s kicking about, so I decided to use one of those.</p>
@@ -211,12 +209,10 @@ WantedBy=multi-user.target
 <p>If you stop either of the systemd units, your Pi will either shutdown (if you <code>systemctl stop pipower-down</code>) or will simply lose power (if you <code>systemctl stop pipower-up</code>).  You can inhibit the <code>ExecStop*</code> actions of both units by creating the file <code>/run/pipower/inhibit</code>.</p>
 <h2 id="todo">TODO</h2>
 <p>With a few more pins available &ndash; maybe an <a href="https://www.microchip.com/wwwproducts/en/ATtiny84">attiny84</a> &ndash; it might be fun to provide battery voltage and current measurements to the Pi via an i2c interface. I would probably also add a status LED to show the current state of the controller code.</p>
-<figure><a href="pipower-eth-left.jpg">
-    <img src="pipower-eth-left.jpg" width="400"/> </a>
+<figure><a href="pipower-eth-left.jpg"><img src="pipower-eth-left.jpg" width="400"/></a>
 </figure>
 
-<figure><a href="pipower-eth-right.jpg">
-    <img src="pipower-eth-right.jpg" width="400"/> </a>
+<figure><a href="pipower-eth-right.jpg"><img src="pipower-eth-right.jpg" width="400"/></a>
 </figure>
 
 

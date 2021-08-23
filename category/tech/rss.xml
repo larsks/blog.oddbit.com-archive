@@ -6,10 +6,16 @@
     <description>Recent content in tech on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Apr 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.oddbit.com/category/tech/rss.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/category/tech/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connecting OpenShift to an External Ceph Cluster</title>
+      <link>https://blog.oddbit.com/post/2021-08-23-external-ocs/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2021-08-23-external-ocs/</guid>
+      <description>Red Hat&amp;rsquo;s [OpenShift Data Foundation][ocs] (formerly &amp;ldquo;OpenShift Container Storage&amp;rdquo;, or &amp;ldquo;OCS&amp;rdquo;) allows you to either (a) automatically set up a Ceph cluster as an application running on your OpenShift cluster, or (b) connect your OpenShift cluster to an externally managed Ceph cluster. While setting up Ceph as an OpenShift application is a relatively polished experienced, connecting to an external cluster still has some rough edges.
+NB I am not a Ceph expert.</description>
+    </item>
     
     <item>
       <title>Creating a VXLAN overlay network with Open vSwitch</title>
@@ -139,7 +145,7 @@ gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock reso
       
       <guid>https://blog.oddbit.com/post/2020-09-26-vortex-core-keyboard-review/</guid>
       <description>I&amp;rsquo;ve had my eye on the Vortex Core keyboard for a few months now, and this past week I finally broke down and bought one (with Cherry MX Brown switches). The Vortex Core is a 40% keyboard, which means it consists primarily of letter keys, a few lonely bits of punctuation, and several modifier keys to activate different layers on the keyboard.
-  Physical impressions It&amp;rsquo;s a really cute keyboard.</description>
+ Physical impressions It&amp;rsquo;s a really cute keyboard. I&amp;rsquo;m a big fan of MX brown switches, and this keyboard is really a joy to type on, at least when you&amp;rsquo;re working primarily with the alpha keys.</description>
     </item>
     
     <item>
@@ -1243,7 +1249,7 @@ The nova-docker driver lets Nova, the OpenStack Compute service, spawn Docker co
       
       <guid>https://blog.oddbit.com/post/2014-08-16-lvcache-a-tool-for-managing-lv/</guid>
       <description>Until recently I had a bcache based setup on my laptop, but when forced by circumstance to reinstall everything I spent some time looking for alternatives that were less disruptive to configure on an existing system.
-I came across Richard Jones&amp;rsquo; article discussing the recent work to integrate dm-cache into LVM. Unlike bcache and unlike using dm-cache directly, the integration with LVM makes it easy to associate devices with an existing logical volume.</description>
+I came across Richard Jones&#39; article discussing the recent work to integrate dm-cache into LVM. Unlike bcache and unlike using dm-cache directly, the integration with LVM makes it easy to associate devices with an existing logical volume.</description>
     </item>
     
     <item>

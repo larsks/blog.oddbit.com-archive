@@ -7,13 +7,13 @@
         <meta name="description" content="I recently acquired my Technician amateur radio license, and like many folks my first radio purchase was a Baofeng UV-5R. Due to its low cost, this is a very popular radio, and there is excellent open source software available for programming it in the form of the CHIRP project. After futzing around with the UV-5R for a while, I wanted to get something a little nicer for use at home, so I purchased a Kenwood TM-V71A.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="generator" content="Hugo 0.86.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
         
-        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.81747fa30e7c939c160ea84909a818dc1b99d7e662edf55326bd32a4510c9eb5.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -139,7 +139,7 @@
 <p>The way the MCP-2A program interacts with the TM-V71 is via a memory dump and restore process (which is much like how CHIRP interacts with Baofeng radios). This makes use of the radio&rsquo;s &ldquo;programming mode&rdquo;, and support for that in Hamlib doesn&rsquo;t exist.  In fact, while the control commands for the radio have been documented in various places (such as LA3QMA&rsquo;s <a href="https://github.com/LA3QMA/TM-V71_TM-D710-Kenwood/blob/master/commands/MR.md">TM-V71_TM-D710-Kenwood repository</a>), I was not able to find any documentation that described how to interact with the radio in programming mode.  In order to figure out how things work, I would need to trace the interaction between MCP-2A and the radio.</p>
 <p>I run MCP-2A in a Windows 10 guest on my Linux host. Normally, when configuring the radio, I expose the USB serial adapter to the Windows guest using the USB redirection feature offered by libvirt.  In order to trace the interaction between the software and the radio, I need to stick something in between that will log the data being sent back and forth.</p>
 <p>I started by configuring a serial port on the Windows guest that was connected to a Unix socket:</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;serial</span> <span class="na">type=</span><span class="s">&#39;unix&#39;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;serial</span> <span class="na">type=</span><span class="s">&#39;unix&#39;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;source</span> <span class="na">mode=</span><span class="s">&#39;bind&#39;</span> <span class="na">path=</span><span class="s">&#39;/tmp/win10-serial&#39;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;target</span> <span class="na">type=</span><span class="s">&#39;isa-serial&#39;</span> <span class="na">port=</span><span class="s">&#39;1&#39;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;model</span> <span class="na">name=</span><span class="s">&#39;isa-serial&#39;</span><span class="nt">/&gt;</span>

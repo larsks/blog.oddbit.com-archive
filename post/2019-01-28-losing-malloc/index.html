@@ -9,13 +9,13 @@ When I write OO-style code in C, I usually start with something like the followi
 Button *button_new(uint8_t pin, uint8_t poll_freq) { Button *button = (Button *)malloc(sizeof(Button)); // do some initialization stuff return button; }  And when initially writing pipower, that&rsquo;s exactly what I did.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.74.3" />
+        <meta name="generator" content="Hugo 0.86.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
         
-        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.a5232d2ce0dc44278414dddefd21794a5d389a3979a43b61f62d75b3ad9a5a3b.css">
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.81747fa30e7c939c160ea84909a818dc1b99d7e662edf55326bd32a4510c9eb5.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
@@ -168,7 +168,7 @@ Data:         29 bytes (5.7% Full)
 <pre><code>evaluation of this expression requires the program to have a function &quot;malloc&quot;.
 </code></pre>
 <p>This will happen if you ask <code>gdb</code> to do something that requires allocating memory for e.g., a string buffer.  The solution is to ensure that <code>malloc()</code> is linked into your code when you build for debugging. I use something like the following:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#ifdef DEBUG
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#ifdef DEBUG
 </span><span class="cp"></span><span class="n">__attribute__</span><span class="p">((</span><span class="n">optimize</span><span class="p">(</span><span class="s">&#34;O0&#34;</span><span class="p">)))</span>
 <span class="kt">void</span> <span class="n">_force_malloc</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">malloc</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>

@@ -5,11 +5,7 @@
     <link>https://blog.oddbit.com/about/</link>
     <description>Recent content in Abouts on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://blog.oddbit.com/about/rss.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://blog.oddbit.com/about/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GPG</title>
       <link>https://blog.oddbit.com/about/gpg/</link>
@@ -25,7 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>In linux, how can I zip specific sub directories into their own zip files named parent directory name and output them all into a single directory? linux bash zip  Micropython: How to use utime.mktime() without knowing the weekday/yearday? time micropython  Saving a file in a text delimiter format in Micropython python micropython  Building on Docker Hub ignores context path when copying files django docker dockerhub  OpenStack Swift List Columns openstack openstack-swift  Parsing of xml in Python python xml  &amp;#39;exec user process caused: exec format error&amp;#39; in AWS Fargate Service node.</description>
+      <description>How can I embed hidden file in Go? go  how to list all pull request with count of files changed git github version-control commit pull-request  ansible returns with &amp;#34;Failed to import the required Python library (Docker SDK for Python: docker (Python &amp;gt;= 2.7) or docker-py (Python 2.6)) ansible ansible-2.x ansible-inventory ansible-facts  Fiona not seeing .shp file as a recognised format python github-actions shapefile geopandas fiona  How to receive Redis publish message in Go go redis publish-subscribe redigo  Container link with other container docker docker-compose  What is purpose of the switch --containerd in command dockerd?</description>
     </item>
     
   </channel>
