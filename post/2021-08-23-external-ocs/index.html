@@ -249,7 +249,6 @@ here by <code>${clustername}</code>).</p>
 <p>The RBD pool is named <code>${clustername}-rbd</code>. I create it like this:</p>
 <pre><code>  ceph osd pool create ${clustername}-rbd
   ceph osd pool application enable ${clustername}-rbd rbd
-  rbd pool init ${clustername}-rbd
 </code></pre></li>
 <li>
 <p>The CephFS filesystem (if required) is named
@@ -555,7 +554,21 @@ provide:</p>
     }
   }
 ]
-</code></pre>
+</code></pre><h2 id="associated-bugs">Associated Bugs</h2>
+<p>I&rsquo;ve opened several bug reports to see about adressing some of these
+issues:</p>
+<ul>
+<li><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1996833">#1996833</a>
+&ldquo;ceph-external-cluster-details-exporter.py should have a read-only
+mode&rdquo;</li>
+<li><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1996830">#1996830</a> &ldquo;OCS
+external mode should allow specifying names for all Ceph auth
+principals&rdquo;</li>
+<li><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1996829">#1996829</a>
+&ldquo;Permissions assigned to ceph auth principals when using external
+storage are too broad&rdquo;</li>
+</ul>
+
 </div>
 
 
