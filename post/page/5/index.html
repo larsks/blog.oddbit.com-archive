@@ -111,6 +111,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">In which I PEBKAC so you don&#39;t have to</h4>
+        <time class="post-stub-date" datetime="2019-02-11">Published Mon, Feb 11, 2019</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Say you have a simple bit of code:
+#include &lt;avr/io.h&gt; #include &lt;util/delay.h&gt; #define LED_BUILTIN _BV(PORTB5) int main(void) { DDRB |= LED_BUILTIN; while (1) { PORTB |= LED_BUILTIN; // turn on led _delay_ms(1000); // delay 1s PORTB &amp;= ~LED_BUILTIN; // turn off led _delay_ms(1000); // delay 1s } }  You have a Makefile that compiles that into an object (.o) file like this:
+avr-gcc -mmcu=atmega328p -DF_CPU=16000000 -Os -c blink.c  If you were to forget to set the device type when compiling your .
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2019-02-01-atomicblock-magic-in-avrlibc/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">ATOMIC_BLOCK magic in avr-libc</h4>
         <time class="post-stub-date" datetime="2019-02-01">Published Fri, Feb 1, 2019</time>
@@ -329,38 +353,13 @@ There are two different ways of configuring this support. The first only allows 
 
 
         
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2018-06-14-configuring-a-static-address-f/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Configuring a static address for wlan0 on Raspbian Stretch</h4>
-        <time class="post-stub-date" datetime="2018-06-14">Published Thu, Jun 14, 2018</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Recent releases of Raspbian have adopted the use of dhcpcd to manage both dynamic and static interface configuration. If you would prefer to use the traditional /etc/network/interfaces mechanism instead, follow these steps.
-  First, disable dhcpcd and wpa_supplicant.
- systemctl disable --now dhdpcd wpa_supplicant    You will need a wpa_supplicant configuration for wlan0 in /etc/wpa_supplicant/wpa_supplicant-wlan0.conf.
-If you already have an appropriate configuration in /etc/wpa_supplicant/wpa_supplicant.conf, you can just symlink the file:
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2018-06-14-configuring-a-static-address-f/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
     </ol>
 
     <div class="post-navigation">
         
 
     <nav class="pagination" role="navigation">
-        <span class="page-number">Page 5 of 21</span>
+        <span class="page-number">Page 5 of 22</span>
         
             <a class="newer-posts" href="/post/page/4/">&larr; Newer Posts</a>
         

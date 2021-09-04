@@ -112,6 +112,31 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Waiting for networking using PowerShell</h4>
+        <time class="post-stub-date" datetime="2012-11-04">Published Sun, Nov 4, 2012</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve recently been exploring the world of Windows scripting, and I ran into a small problem: I was running a script at system startup, and the script was running before the network interface (which was using DHCP) was configured.
+There are a number of common solutions proposed to this problem:
+  Just wait for some period of time.
+This can work but it&rsquo;s ugly, and because it doesn&rsquo;t actually verify the network state it can result in things breaking if some problem prevents Windows from pulling a valid DHCP lease.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2012-11-04-powershell-wait-for-networking/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2012-10-24-resizing-virtual-disk/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Growing a filesystem on a virtual disk</h4>
         <time class="post-stub-date" datetime="2012-10-24">Published Wed, Oct 24, 2012</time>
@@ -323,36 +348,13 @@ class bar inherits foo { file { '/tmp/myfile': } }  It will be created with mode
 
 
         
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2011-07-26-fixing-rpm-with-evil-magic/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Fixing RPM with evil magic</h4>
-        <time class="post-stub-date" datetime="2011-07-26">Published Tue, Jul 26, 2011</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Fixing rpmsign with evil magic At my office we are developing a deployment mechanism for RPM packages. The general workflow looks like this:
- You build a source rpm on your own machine. You sign the rpm with your GPG key. You submit the source RPM to our buildserver. The buildserver validates your signature and then builds the package. The buildserver signs the package using a master signing key.  The last step in that sequence represents a problem, because the rpmsign command will always, always prompt for a password and read the response from /dev/tty.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2011-07-26-fixing-rpm-with-evil-magic/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
     </ol>
 
     <div class="post-navigation">
         
 
     <nav class="pagination" role="navigation">
-        <span class="page-number">Page 19 of 21</span>
+        <span class="page-number">Page 19 of 22</span>
         
             <a class="newer-posts" href="/page/18/">&larr; Newer Posts</a>
         

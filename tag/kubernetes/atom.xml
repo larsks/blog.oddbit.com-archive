@@ -6,8 +6,20 @@
   
   <link href="https://blog.oddbit.com/tag/kubernetes/" rel="alternate"></link>
 
-  <updated>2021-08-23T00:00:00Z</updated>
+  <updated>2021-08-29T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/kubernetes/</id>
+  <entry>
+    <title>Kubernetes External Secrets</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-08-29-kubernetes-external-secrets/"/>
+    <id>https://blog.oddbit.com/post/2021-08-29-kubernetes-external-secrets/</id>
+    <published>2021-08-29T00:00:00Z</published>
+    <updated>2021-08-29T00:00:00Z</updated>
+    <summary type="html">At $JOB we maintain the configuration for our OpenShift clusters in a public git repository. Changes in the git repository are applied automatically using ArgoCD and Kustomize. This works great, but the public nature of the repository means we need to find a secure solution for managing secrets (such as passwords and other credentials necessary for authenticating to external services). In particular, we need a solution that permits our public repository to be the source of truth for our cluster configuration, without compromising our credentials.</summary>
+  </entry>
+  
   <entry>
     <title>Connecting OpenShift to an External Ceph Cluster</title>
     <author>

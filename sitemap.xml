@@ -3,18 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.oddbit.com/categories/</loc>
-    <lastmod>2021-08-23T00:00:00+00:00</lastmod>
+    <lastmod>2021-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2021-08-23T00:00:00+00:00</lastmod>
+    <lastmod>2021-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/kubernetes/</loc>
+    <lastmod>2021-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/post/2021-08-29-kubernetes-external-secrets/</loc>
+    <lastmod>2021-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/openshift/</loc>
+    <lastmod>2021-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/secrets/</loc>
+    <lastmod>2021-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2021-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/category/tech/</loc>
+    <lastmod>2021-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/</loc>
+    <lastmod>2021-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/ceph/</loc>
     <lastmod>2021-08-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2021-08-23-external-ocs/</loc>
-    <lastmod>2021-08-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tag/kubernetes/</loc>
     <lastmod>2021-08-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/ocs/</loc>
@@ -23,19 +41,7 @@
     <loc>https://blog.oddbit.com/tag/odf/</loc>
     <lastmod>2021-08-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.oddbit.com/tag/openshift/</loc>
-    <lastmod>2021-08-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.oddbit.com/tag/storage/</loc>
-    <lastmod>2021-08-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2021-08-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/category/tech/</loc>
-    <lastmod>2021-08-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/</loc>
     <lastmod>2021-08-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2021-04-17-vm-ovs-vxlan/</loc>
@@ -339,9 +345,6 @@
     <lastmod>2019-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/</loc>
-    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tag/secrets/</loc>
     <lastmod>2019-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/avr/</loc>
