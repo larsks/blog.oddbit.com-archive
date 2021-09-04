@@ -7,7 +7,7 @@
         <meta name="description" content="At $JOB we often find ourselves at customer sites where we see the same set of basic problems that we have previously encountered elsewhere (&ldquo;your clocks aren&rsquo;t in sync&rdquo; or &ldquo;your filesystem is full&rdquo; or &ldquo;you haven&rsquo;t installed a critical update&rdquo;, etc). We would like a simple tool that could be run either by the customer or by our own engineers to test for and report on these common issues. Fundamentally, we want something that acts like a typical code test suite, but for infrastructure.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -184,7 +184,7 @@ assertion evaluates to <code>false</code>.  Consider the following example:</p>
 </span><span class="w">        </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="l">you have no lemons</span><span class="w">
 </span></code></pre></div><p>If we run this in a stock Ansible environment, we will see the
 following:</p>
-<pre><code>PLAY [localhost] ***************************************************************
+<pre tabindex="0"><code>PLAY [localhost] ***************************************************************
 
 TASK [Gathering Facts] *********************************************************
 ok: [localhost]
@@ -213,7 +213,7 @@ action_plugins = ./ansible-assertive/action_plugins
 </code></pre>
 <p>Now when we re-run the playbook we see that a failed assertion now
 registers as <code>changed</code> rather than <code>failed</code>:</p>
-<pre><code>PLAY [localhost] ***************************************************************
+<pre tabindex="0"><code>PLAY [localhost] ***************************************************************
 
 TASK [Gathering Facts] *********************************************************
 ok: [localhost]
@@ -231,7 +231,7 @@ interest going on here.  The first is that the <code>assert</code> plugin
 provides detailed information about the assertions specified in the
 task; if we were to <code>register</code> the result of the failed assertion and
 display it in a <code>debug</code> task, it would look like:</p>
-<pre><code>TASK [debug] *******************************************************************
+<pre tabindex="0"><code>TASK [debug] *******************************************************************
 ok: [localhost] =&gt; {
     &quot;apples&quot;: {
         &quot;ansible_stats&quot;: {
@@ -259,9 +259,9 @@ tests and their results.  The <code>ansible_stats</code> key contains metadata
 that will be consumed by the custom statistics support in recent
 versions of Ansible.  If you have Ansible 2.3.0.0 or later, add
 the following to the <code>defaults</code> section of your <code>ansible.cfg</code>:</p>
-<pre><code>show_custom_stats = yes
+<pre tabindex="0"><code>show_custom_stats = yes
 </code></pre><p>With this feature enabled, your playbook run will conclude with:</p>
-<pre><code>CUSTOM STATS: ******************************************************************
+<pre tabindex="0"><code>CUSTOM STATS: ******************************************************************
 	localhost: { &quot;assertions&quot;: 2,  &quot;assertions_failed&quot;: 1,  &quot;assertions_passed&quot;: 1}
 </code></pre><h2 id="a-callback-plugin-for-better-output">A callback plugin for better output</h2>
 <p>The <code>assertive</code> callback plugin provided by the <a href="https://github.com/larsks/ansible-assertive/">ansible-assertive</a>
@@ -272,7 +272,7 @@ failed assertions.  We activate it by adding the following to our
 stdout_callback = assertive
 </code></pre>
 <p>Now when we run our playbook we see:</p>
-<pre><code>PLAY [localhost] ***************************************************************
+<pre tabindex="0"><code>PLAY [localhost] ***************************************************************
 
 TASK [Gathering Facts] *********************************************************
 ok: [localhost]

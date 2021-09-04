@@ -7,7 +7,7 @@
         <meta name="description" content="I recently answered a question from Harsha Nalore on StackOverflow that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &ndash; which I claim to be functional, but probably not optimal &ndash; involved writing an Ansible filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&rsquo;t really seem the write place for that: so, here we are.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -126,7 +126,7 @@
 
     <p>I recently answered <a href="https://stackoverflow.com/q/55965819/147356">a question</a> from <a href="https://stackoverflow.com/users/7738974/harsha-nalore">Harsha Nalore</a> on <a href="https://stackoverflow.com/">StackOverflow</a> that involved using Ansible to extract the output of a command sent to a BigIP device of some sort. My solution &ndash; which I claim to be functional, but probably not optimal &ndash; involved writing an <a href="https://ansible.com/">Ansible</a> filter module to parse the output. That filter made use of a complex-looking regular expression. Harsha asked for some details on that regular expression works, and the existing StackOverflow answer didn&rsquo;t really seem the write place for that: so, here we are.</p>
 <p>The output in question looks like this:</p>
-<pre><code>gtm wideip a wideip {
+<pre tabindex="0"><code>gtm wideip a wideip {
     description wideip
     pool-lb-mode topology
     pools {

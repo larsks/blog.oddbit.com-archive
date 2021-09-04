@@ -7,7 +7,7 @@
         <meta name="description" content="We&rsquo;ve had some wacky weather recently. In the space of a week, the temperature went from a high of about 75°F to a low around 15°F. This got me to thinking about what constitutes &ldquo;normal&rdquo; weather here in the Boston area, and in particular, how common it is to have a string of consecutive days in which the high temperature stays below freezing. While this was an interesting question in itself, it also seemed like a great opportunity to learn a little about Pandas, the Python data analysis framework.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -133,17 +133,17 @@
 <p>There are several parts to this problem.</p>
 <h2 id="reading-the-data">Reading the data</h2>
 <p>We can read the data using Pandas' <code>read_csv</code> method:</p>
-<pre><code>df = pandas.read_csv('boston.csv')
+<pre tabindex="0"><code>df = pandas.read_csv('boston.csv')
 </code></pre><p>This assumes of course that we have previously <code>import</code>ed the Pandas library:</p>
-<pre><code>import pandas
+<pre tabindex="0"><code>import pandas
 </code></pre><p>Now we have a dataframe in <code>df</code>, but it&rsquo;s using a positional index (i.e., the first item is at index <code>0</code>, the second at <code>1</code>, etc), whereas we want it to use a date-based index. The data has a <code>DATE</code> column that we can turn into an appropriate index like this:</p>
-<pre><code>df['DATE'] = pandas.to_datetime(df['DATE'])
+<pre tabindex="0"><code>df['DATE'] = pandas.to_datetime(df['DATE'])
 df.set_index(df['DATE'], inplace=True)
 </code></pre><h2 id="which-winter">Which winter?</h2>
 <p>I need to be able to group the data by &ldquo;winter&rdquo;. For example, dates from December 21, 2018 through March 20, 2019 would all be associated with &ldquo;winter 2018&rdquo;. It would be easy to group the data by <em>year</em> using Pandas' <code>groupby</code> method:</p>
-<pre><code>df.groupby(df['DATE'].dt.year)...
+<pre tabindex="0"><code>df.groupby(df['DATE'].dt.year)...
 </code></pre><p>But what&rsquo;s the equivalent for grouping by winter? My first attempt was a naive iterative solution:</p>
-<pre><code>def get_winter_start(val):
+<pre tabindex="0"><code>def get_winter_start(val):
     if (val.month == 10 and val.day &gt;= 20) or val.month &gt; 10:
         winter = val.year
     elif (val.month == 3 and val.day &lt;= 20) or val.month &lt; 3:
@@ -155,19 +155,19 @@ df.set_index(df['DATE'], inplace=True)
 
 df['winter_start'] = df['DATE'].apply(get_winter_start)
 </code></pre><p>This works, but it&rsquo;s not particular graceful and doesn&rsquo;t take advantage of any of the vector operations supported by Pandas. I eventually came up with a different solution. First, create a boolean series that indicates whether a given date is in winter or not:</p>
-<pre><code>df['winter'] = (
+<pre tabindex="0"><code>df['winter'] = (
     ((df['DATE'].dt.month == 12) &amp; (df['DATE'].dt.day &gt;= 20)) |
     (df['DATE'].dt.month &lt; 3) |
     ((df['DATE'].dt.month == 3) &amp; (df['DATE'].dt.day &lt;= 20))
 )
 </code></pre><p>Next, use this boolean series to create a new dataframe that contains <em>only</em> dates in winter. Given this new data, the winter year is the current year for the month of December, or (the current year - 1) for months in Janurary, February, and March:</p>
-<pre><code>winter = df[df['winter']].copy()
+<pre tabindex="0"><code>winter = df[df['winter']].copy()
 winter['winter_start'] = (
     winter['DATE'].dt.year - (winter['DATE'].dt.month &lt;= 3))
 </code></pre><p>This seems to do the job. You&rsquo;ll note that in the above expression I&rsquo;m subtracting a boolean from an integer, which is in fact totally legal and I talk about that in more detail <a href="#bool">later on</a> in this article.</p>
 <h2 id="finding-a-sequence-of-consecutive-days-an-iterative-solution">Finding a sequence of consecutive days: an iterative solution</h2>
 <p>To find the longest sequence of days below freezing, I again started with an iterative solution:</p>
-<pre><code>def max_dbf(val):
+<pre tabindex="0"><code>def max_dbf(val):
     acc = []
     cur = 0
 
@@ -183,20 +183,20 @@ winter['winter_start'] = (
 
     return max(acc)
 </code></pre><p>Which I applied using Pandas' <code>apply</code> method:</p>
-<pre><code>res = winter.groupby('winter_start').apply(max_dbf)
+<pre tabindex="0"><code>res = winter.groupby('winter_start').apply(max_dbf)
 </code></pre><p>This time it&rsquo;s not just ugly, but it&rsquo;s also noticeably slow. I started doing some research to figure out how to make it faster.</p>
 <h2 id="finding-a-sequence-of-consecutive-days-a-pandas-solution">Finding a sequence of consecutive days: a Pandas solution</h2>
 <p>In an answer to <a href="https://stackoverflow.com/questions/27626542/counting-consecutive-positive-value-in-python-array">this question</a> on Stack Overflow, user <a href="https://stackoverflow.com/users/487339/dsm">DSM</a> suggests that given a series, you can find the longest sequence of consecutive items matching a condition by first creating a boolean series <code>y</code> that is <code>True</code> (or <code>1</code>) for items that match the condition (and <code>False</code> or <code>0</code> otherwise), and then running:</p>
-<pre><code>result = y * (y.groupby((y != y.shift()).cumsum()).cumcount() + 1)
+<pre tabindex="0"><code>result = y * (y.groupby((y != y.shift()).cumsum()).cumcount() + 1)
 </code></pre><p>Using that suggestion, I rewrote the <code>max_dbf</code> method to look like this:</p>
-<pre><code>def max_dbf(val):
+<pre tabindex="0"><code>def max_dbf(val):
     y = val['TMAX'] &lt;= 32
     res = y * (y.groupby((y != y.shift()).cumsum()).cumcount() + 1)
     return max(res)
 </code></pre><p>&hellip;and you know what, it works! But what exactly is going on there?  There&rsquo;s a reasonable explanation in <a href="https://stackoverflow.com/a/27626699/147356">the answer</a>, but I&rsquo;m new enough to Pandas that I wanted to work it out for myself.</p>
 <h2 id="setting-the-stage">Setting the stage</h2>
 <p>In order to explore the operation of this expression, let&rsquo;s start with some sample data. This is the value of <code>TMAX</code> for the month of Janurary, 2018:</p>
-<pre><code>data = [
+<pre tabindex="0"><code>data = [
   ['2018-01-01', 13],
   ['2018-01-02', 19],
   ['2018-01-03', 29],
@@ -401,7 +401,7 @@ df = pandas.DataFrame({'DATE': data_unzipped[0], 'TMAX': data_unzipped[1]})
 </table>
 <h3 id="step-1">Step 1</h3>
 <p>We first need to create a boolean series indicating whether or not the temperature is below freezing. We&rsquo;ll put this into the dataframe as series <code>freezing</code>:</p>
-<pre><code>df['freezing'] = df['TMAX'] &lt;= 32
+<pre tabindex="0"><code>df['freezing'] = df['TMAX'] &lt;= 32
 </code></pre><p>Our dataframe now looks like this:</p>
 <table>
 <thead>
@@ -605,7 +605,7 @@ df = pandas.DataFrame({'DATE': data_unzipped[0], 'TMAX': data_unzipped[1]})
 <p>Now we start looking at the various components in our expression of interest. In this step, we are looking at the highlighted part below:</p>
 <pre>res = y * (y.groupby(<strong>(y != y.shift()</strong>).cumsum()).cumcount() + 1)</pre>
 <p>Instead of <code>y</code>, we&rsquo;re operating on the result of the previous step, <code>df['freezing']</code>. We&rsquo;ll place the result of this step into a new series named <code>step2</code> in the dataframe:</p>
-<pre><code>df['step2'] = df['freezing'] != df['freezing'].shift()
+<pre tabindex="0"><code>df['step2'] = df['freezing'] != df['freezing'].shift()
 </code></pre><p>This gives us the following:</p>
 <table>
 <thead>
@@ -841,7 +841,7 @@ df = pandas.DataFrame({'DATE': data_unzipped[0], 'TMAX': data_unzipped[1]})
 <h3 id="step-3">Step 3</h3>
 <pre>res = y * (y.groupby(<strong>(y != y.shift()).cumsum()</strong>).cumcount() + 1)</pre>
 <p>In this step, we apply the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cumsum.html">cumsum</a> method (&ldquo;cumulative sum&rdquo;) to the result of step 2.  We store the result in a new series <code>step3</code> in the dataframe:</p>
-<pre><code>df['step3'] = df['step2'].cumsum()
+<pre tabindex="0"><code>df['step3'] = df['step2'].cumsum()
 </code></pre><p>The result looks like this:</p>
 <table>
 <thead>
@@ -1110,7 +1110,7 @@ df = pandas.DataFrame({'DATE': data_unzipped[0], 'TMAX': data_unzipped[1]})
 <h3 id="step-4">Step 4</h3>
 <pre>res = y * (<strong>y.groupby((y != y.shift()).cumsum()).cumcount() + 1</strong>)</pre>
 <p>In the previous step, we calculated what I called a &ldquo;sequence id&rdquo;. We can take advantage of this to group the data into consecutive stretches for which the temperature was either below freezing or not by using the value as an argument to Pandas' <code>groupby</code> method, and then applying the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.GroupBy.cumcount.html">cumcount</a> method:</p>
-<pre><code>df['step4'] = df['freezing'].groupby(df['step3']).cumcount() + 1
+<pre tabindex="0"><code>df['step4'] = df['freezing'].groupby(df['step3']).cumcount() + 1
 </code></pre><p>The <code>cumcount</code> method simply numbers the items in each group, starting at 0. This gives us:</p>
 <table>
 <thead>
@@ -1409,7 +1409,7 @@ df = pandas.DataFrame({'DATE': data_unzipped[0], 'TMAX': data_unzipped[1]})
 <h3 id="step-5">Step 5</h3>
 <pre>res = <strong>y * (y.groupby((y != y.shift()).cumsum()).cumcount() + 1)</strong></pre>
 <p>Looking at the results of the previous step, we can see the simply asking for <code>df['step5'].max()</code> would give us the longest sequence of days for which the value of <code>freezing</code> remained constant. How do we limit that to only consider sequences in which <code>freezing</code> is <code>True</code>? We again take advantage of the fact that a boolean is just an integer, and we multiply the result of the previous step by the value of the <code>freezing</code> series:</p>
-<pre><code>df['step5'] = df['freezing'] * df['step4']
+<pre tabindex="0"><code>df['step5'] = df['freezing'] * df['step4']
 </code></pre><p>This will zero out all the values from the previous step in which <code>freezing</code> is <code>False</code>, because <code>False * x</code> is the same as <code>0 * x</code>. This gives us our final result:</p>
 <table>
 <thead>
@@ -1739,9 +1739,9 @@ df = pandas.DataFrame({'DATE': data_unzipped[0], 'TMAX': data_unzipped[1]})
 </table>
 <h3 id="step-6">Step 6</h3>
 <p>Now the answer to our question is as simple as asking for the maximum value from the previous step:</p>
-<pre><code>max_consecutive_dbf = df['step5'].max()
+<pre tabindex="0"><code>max_consecutive_dbf = df['step5'].max()
 </code></pre><p>And if everything worked as expected, we should find that the longest consecutive sequence of days on which the temperature stayed below freezing was 7 days, from 2018-01-01 through 2018-01-07:</p>
-<pre><code>assert max_consecutive_dbf == 7
+<pre tabindex="0"><code>assert max_consecutive_dbf == 7
 </code></pre><h2 id="results">Results</h2>
 <p>If we look at the results for the past 20 years, we see the following:</p>
 <figure><img src="sample-results.png"/>

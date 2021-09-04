@@ -1,3 +1,0 @@
-curl -s -u ironic-user:hpd1xmPOQnVdMtrH 127.0.0.1:6385/v1/nodes/  |
-jq --arg instance_uuid '0a8814f4-6ac4-4df1-9f68-b1df898a94fb' \
-  '.nodes[]|select(.instance_uuid == $instance_uuid)'

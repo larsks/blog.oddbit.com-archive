@@ -7,7 +7,7 @@
         <meta name="description" content="I recently acquired my Technician amateur radio license, and like many folks my first radio purchase was a Baofeng UV-5R. Due to its low cost, this is a very popular radio, and there is excellent open source software available for programming it in the form of the CHIRP project. After futzing around with the UV-5R for a while, I wanted to get something a little nicer for use at home, so I purchased a Kenwood TM-V71A.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -146,11 +146,11 @@
   <span class="nt">&lt;/target&gt;</span>
 <span class="nt">&lt;/serial&gt;</span>
 </code></pre></div><p>This exposes a Unix socket at <code>/tmp/win10-serial</code> when the guest is running. On the host, I use <a href="http://www.dest-unreach.org/socat/">socat</a> as a proxy between that socket and the actual serial port. I ended up running <code>socat</code> like this:</p>
-<pre><code>socat -x -v \
+<pre tabindex="0"><code>socat -x -v \
         /dev/ttyUSB1,b57600,crtscts=1,raw,echo=0 \
         unix-connect:/tmp/win10-serial
 </code></pre><p>The <code>-x</code> and <code>-v</code> options instruct <code>socat</code> to log on stdout data passing through the proxy, in both raw and hexadecimal format. With the proxy running, I started MCP-2A on the Windows guest and performed a &ldquo;Read data from the transceiver&rdquo; operation.  This resulted in a log that looks like the following:</p>
-<pre><code>&lt; 2019/09/28 14:42:32.732010  length=1 from=0 to=0
+<pre tabindex="0"><code>&lt; 2019/09/28 14:42:32.732010  length=1 from=0 to=0
  49                                               I
 --
 &lt; 2019/09/28 14:42:32.834799  length=1 from=1 to=1
@@ -163,7 +163,7 @@
  49 44 20 54 4d 2d 56 37 31 0d                    ID TM-V71.
 [...]
 </code></pre><p>In this output, chunks marked with <code>&lt;</code> represent data sent FROM the software TO the radio, and chunks marked with <code>&gt;</code> represent data sent FROM the radio TO the software.  The information we need is there, but the output is a little too cluttered, making it hard to interpret. I wrote a quick script to clean it up; after processing, the beginning of the transaction look like this (where <code>&lt;&lt;&lt;</code> represents date being sent to the radio, and <code>&gt;&gt;&gt;</code> represents data received from the radio):</p>
-<pre><code>&lt;&lt;&lt; 00000000: 49                                                I
+<pre tabindex="0"><code>&lt;&lt;&lt; 00000000: 49                                                I
 &lt;&lt;&lt; 00000000: 44                                                D
 &lt;&lt;&lt; 00000000: 0D                                                .
 &gt;&gt;&gt; 00000000: 49 44 20 54 4D 2D 56 37  31 0D                    ID TM-V71.
@@ -206,7 +206,7 @@
 &gt;&gt;&gt; 00000000: 57 01 00 00 FF FF FF FF  FF FF FF FF FF FF FF FF  W...............
 [...]
 </code></pre><p>And the end of the transaction looks like this:</p>
-<pre><code>[...]
+<pre tabindex="0"><code>[...]
 &lt;&lt;&lt; 00000000: 52 7E 00                                          R~.
 &lt;&lt;&lt; 00000000: 00                                                .
 &gt;&gt;&gt; 00000000: 57 7E 00 00 FF FF FF FF  FF FF FF FF FF FF FF FF  W~..............
@@ -238,7 +238,7 @@
 <li><code>FV 0</code> to get the firmware version</li>
 </ul>
 <p>And then enters programming mode by sending <code>0M PROGRAM</code>. Inspecting the remainder of the dump  shows us that the software makes a series of read requests that look like:</p>
-<pre><code>&lt;&lt;&lt; 00000000: 52 00                                             R.
+<pre tabindex="0"><code>&lt;&lt;&lt; 00000000: 52 00                                             R.
 &lt;&lt;&lt; 00000000: 00 00                                             ..
 </code></pre><p>That is, a four byte request of the form:</p>
 <ol>
@@ -248,7 +248,7 @@
 </ol>
 <p>When a read request has a size of <code>0</code>, that means <code>read 256 bytes</code>.</p>
 <p>The response to a read request looks like:</p>
-<pre><code>&gt;&gt;&gt; 00000000: 57 00 00 00 00 4B 01 FF  FF FF FF FF FF FF FF FF  W....K..........
+<pre tabindex="0"><code>&gt;&gt;&gt; 00000000: 57 00 00 00 00 4B 01 FF  FF FF FF FF FF FF FF FF  W....K..........
 &gt;&gt;&gt; 00000000: FF 00 FF FF 00 00 39 31  35 01 00 00 00 00 01 01  ......915.......
 &gt;&gt;&gt; ...
 </code></pre><p>That is:</p>
@@ -259,7 +259,7 @@
 <li><code>&lt;Size&gt;</code> bytes of data</li>
 </ol>
 <p>It turns out that the response to the read request is exactly the syntax used to perform a write request. The log of the write operation starts like this:</p>
-<pre><code>&lt;&lt;&lt; 00000000: 54 43 20                                          TC 
+<pre tabindex="0"><code>&lt;&lt;&lt; 00000000: 54 43 20                                          TC 
 &lt;&lt;&lt; 00000000: 31 0D                                             1.
 &gt;&gt;&gt; 00000000: 3F 0D                                             ?.
 &lt;&lt;&lt; 00000000: 49                                                I
@@ -303,7 +303,7 @@
 &gt;&gt;&gt; 00000000: 06                                                .
 [...]
 </code></pre><p>And concludes with:</p>
-<pre><code>[...]
+<pre tabindex="0"><code>[...]
 &lt;&lt;&lt; 00000000: 57 00                                             W.
 &lt;&lt;&lt; 00000000: 00 04 00 4B 01 FF                                 ...K..
 &gt;&gt;&gt; 00000000: 06                                                .
@@ -311,12 +311,12 @@
 &gt;&gt;&gt; 00000000: 06 0D                                             ..
 &gt;&gt;&gt; 00000000: 00                                                .
 </code></pre><p>In this log, we see a series of write requests; for example:</p>
-<pre><code>&lt;&lt;&lt; 00000000: 57 00                                             W.
+<pre tabindex="0"><code>&lt;&lt;&lt; 00000000: 57 00                                             W.
 &lt;&lt;&lt; 00000000: 00 01 FF                                          ...
 &gt;&gt;&gt; 00000000: 06                                                .
 </code></pre><p>In the above trace, the software is first writing one byte (<code>0xFF</code>) to address <code>0x0</code>. The radio acknowledges a write request with a response byte (<code>0x06</code>).</p>
 <p>By experimenting a bit, it seems as if writing <code>0xFF</code> to <code>0x0</code>, will cause the radio to reset to defaults when you exit programming mode. That&rsquo;s why at the conclusion of the write operation, we see the following:</p>
-<pre><code>&lt;&lt;&lt; 00000000: 57 00                                             W.
+<pre tabindex="0"><code>&lt;&lt;&lt; 00000000: 57 00                                             W.
 &lt;&lt;&lt; 00000000: 00 04 00 4B 01 FF                                 ...K..
 &gt;&gt;&gt; 00000000: 06                                                .
 </code></pre><p>That is, the software is rewriting the first four bytes of memory with their original contents.</p>

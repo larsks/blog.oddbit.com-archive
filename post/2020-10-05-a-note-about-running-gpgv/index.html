@@ -8,7 +8,7 @@
 gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock resource &#39;/home/lars/.gnupg/trustedkeys.kbx&#39;: General error gpgv: Can&#39;t check signature: No public key It turns out that&rsquo;s gpg-speak for &ldquo;your trustedkeys.kbx keyring doesn&rsquo;t exist&rdquo;. That took longer to figure out than I care to admit. To get a key from your regular public keyring into your trusted keyring, you can run something like the following:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -126,17 +126,17 @@ gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock reso
     
 
     <p>I found the following error from <code>gpgv</code> to be a little opaque:</p>
-<pre><code>gpgv: unknown type of key resource 'trustedkeys.kbx'
+<pre tabindex="0"><code>gpgv: unknown type of key resource 'trustedkeys.kbx'
 gpgv: keyblock resource '/home/lars/.gnupg/trustedkeys.kbx': General error
 gpgv: Can't check signature: No public key
 </code></pre><p>It turns out that&rsquo;s gpg-speak for &ldquo;your <code>trustedkeys.kbx</code> keyring doesn&rsquo;t
 exist&rdquo;. That took longer to figure out than I care to admit.  To get a key
 from your regular public keyring into your trusted keyring, you can run
 something like the following:</p>
-<pre><code>gpg --export -a lars@oddbit.com |
+<pre tabindex="0"><code>gpg --export -a lars@oddbit.com |
 gpg --no-default-keyring --keyring ~/.gnupg/trustedkeys.kbx --import
 </code></pre><p>After which <code>gpgv</code> works as expected:</p>
-<pre><code>$ echo hello world | gpg -s -u lars@oddbit.com | gpgv
+<pre tabindex="0"><code>$ echo hello world | gpg -s -u lars@oddbit.com | gpgv
 gpgv: Signature made Mon 05 Oct 2020 07:44:22 PM EDT
 gpgv:                using RSA key FDE8364F7FEA3848EF7AD3A6042DF6CF74E4B84C
 gpgv:                issuer &quot;lars@oddbit.com&quot;

@@ -8,7 +8,7 @@
 The board I have has a whopping 8KB of memory, and in addition to the standard SUPERMON monitor it has the expansion ROMs for the Synertek BASIC interpreter (yet another Microsoft BASIC) and RAE (the &ldquo;Resident Assembler Editor&rdquo;).">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -159,7 +159,7 @@ and execute code.</p>
 You can specify this using the <code>-d &lt;device&gt;</code> command line option, but
 this quickly gets old. To save typing, you can instead set the
 <code>SYMTOOL_DEVICE</code> environment variable:</p>
-<pre><code>$ export SYMTOOL_DEVICE=/dev/ttyUSB0
+<pre tabindex="0"><code>$ export SYMTOOL_DEVICE=/dev/ttyUSB0
 $ symtool load ...
 $ symtool dump ...
 </code></pre><p>The baud rate defaults to 4800bps. If for some reason you want to use
@@ -170,7 +170,7 @@ modems), you can use the <code>-s</code> command line option or the
 <p>After compiling your code (I&rsquo;ve included the examples from the SYM-1
 Technical Notes <a href="https://github.com/larsks/symtool/tree/master/asm">in the repository</a>), use the <code>load</code> command to
 load the code into the memory of the SYM-1:</p>
-<pre><code>$ make -C asm
+<pre tabindex="0"><code>$ make -C asm
 [...]
 $ symtool -v load 0x200 asm/countdown.bin
 INFO:symtool.symtool:using port /dev/ttyUSB0, speed 4800
@@ -190,12 +190,12 @@ We can use the <code>dump</code> command to examine memory. By default, <code>du
 produces binary output. We can use that to extract code from the SYM-1
 ROM or to verify that the code we just loaded was transferred
 correctly:</p>
-<pre><code>$ symtool dump 0x200 $(wc -c &lt; asm/countdown.bin) -o check.bin
+<pre tabindex="0"><code>$ symtool dump 0x200 $(wc -c &lt; asm/countdown.bin) -o check.bin
 $ sha1sum check.bin asm/countdown.bin
 5851c40bed8cc8b2a132163234b68a7fc0e434c0  check.bin
 5851c40bed8cc8b2a132163234b68a7fc0e434c0  asm/countdown.bin
 </code></pre><p>We can also produce a hexdump:</p>
-<pre><code>$ symtool dump 0x200 $(wc -c &lt; asm/countdown.bin) -h
+<pre tabindex="0"><code>$ symtool dump 0x200 $(wc -c &lt; asm/countdown.bin) -h
 00000000: 20 86 8B A9 20 85 03 A9  55 8D 7E A6 A9 02 8D 7F   ... ...U.~.....
 00000010: A6 A9 40 8D 0B AC A9 4E  8D 06 AC A9 C0 8D 0E AC  ..@....N........
 00000020: A9 00 85 02 A9 20 8D 05  AC 18 58 A9 00 8D 40 A6  ..... ....X...@.
@@ -211,7 +211,7 @@ $ sha1sum check.bin asm/countdown.bin
 000000C0: 06 89 20 06 89 A5 03 C9  00 D0 D1 A9 20 85 03 60  .. ......... ..`
 000000D0: 68 A8 68 AA 68 40                                 h.h.h@
 </code></pre><p>Or a disassembly:</p>
-<pre><code>$ symtool dump 0x200 $(wc -c &lt; asm/countdown.bin) -d
+<pre tabindex="0"><code>$ symtool dump 0x200 $(wc -c &lt; asm/countdown.bin) -d
 $0200   20 86 8b    JSR     $8B86
 $0203   a9 20       LDA     #$20
 $0205   85 03       STA     $03
@@ -316,14 +316,14 @@ $02d5   40          RTI
 <p>There are two ways to run your code using <code>symtool</code>. If you provide
 the <code>-g</code> option to the <code>load</code> command, <code>symtool</code> will execute your
 code as soon as the load has finished:</p>
-<pre><code>$ symtool load -g 0x200 asm/countdown.bin
+<pre tabindex="0"><code>$ symtool load -g 0x200 asm/countdown.bin
 </code></pre><p>Alternatively, you can use the <code>go</code> command to run code that has
 already been loaded onto the SYM-1:</p>
-<pre><code>$ symtool go 0x200
+<pre tabindex="0"><code>$ symtool go 0x200
 </code></pre><h3 id="examining-registers">Examining registers</h3>
 <p>The <code>registers</code> command allows you to examine the contents of the 6502
 registers:</p>
-<pre><code>$ symtool registers
+<pre tabindex="0"><code>$ symtool registers
 s ff (11111111)
 f b1 (10110001) +carry -zero -intr -dec -oflow +neg
 a 80 (10000000)
@@ -334,7 +334,7 @@ p b0ac (1011000010101100)
 <p>If you want to clear a block of memory, you can use the <code>fill</code>
 command. For example, to wipe out the code we loaded in the earlier
 example:</p>
-<pre><code>$ symtool fill 0x200 0 $(wc -c &lt; asm/countdown.bin)
+<pre tabindex="0"><code>$ symtool fill 0x200 0 $(wc -c &lt; asm/countdown.bin)
 $ symtool dump -h 0x200 $(wc -c &lt; asm/countdown.bin)
 00000000: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ................
 00000010: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ................

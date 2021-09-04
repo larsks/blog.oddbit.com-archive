@@ -9,7 +9,7 @@ In this post, I&rsquo;d like to walk through the steps necessary to get everythi
 Set up GPG We encrypt files using GPG, so the first step is making sure that you have a GPG keypair and that your public key is published where other people can find it.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -144,10 +144,10 @@ installed, you will need to figure out how to install it for your
 operating system.</p>
 <h3 id="create-a-key">Create a key</h3>
 <p>Run the following command to create a new GPG keypair:</p>
-<pre><code>gpg --full-generate-key
+<pre tabindex="0"><code>gpg --full-generate-key
 </code></pre><p>This will step you through a series of prompts. First, select a key
 type. You can just press <code>&lt;RETURN&gt;</code> for the default:</p>
-<pre><code>gpg (GnuPG) 2.2.25; Copyright (C) 2020 Free Software Foundation, Inc.
+<pre tabindex="0"><code>gpg (GnuPG) 2.2.25; Copyright (C) 2020 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 
@@ -159,7 +159,7 @@ Please select what kind of key you want:
   (14) Existing key from card
 Your selection?
 </code></pre><p>Next, select a key size. The default is fine:</p>
-<pre><code>RSA keys may be between 1024 and 4096 bits long.
+<pre tabindex="0"><code>RSA keys may be between 1024 and 4096 bits long.
 What keysize do you want? (3072)
 Requested keysize is 3072 bits
 </code></pre><p>You will next need to select an expiration date for your key.  The
@@ -172,7 +172,7 @@ detail, the following articles are worth reading:</p>
 </ul>
 <p>Setting an expiration date will require that you periodically update
 the expiration date (or generate a new key).</p>
-<pre><code>Please specify how long the key should be valid.
+<pre tabindex="0"><code>Please specify how long the key should be valid.
          0 = key does not expire
       &lt;n&gt;  = key expires in n days
       &lt;n&gt;w = key expires in n weeks
@@ -185,7 +185,7 @@ Is this correct? (y/N) y
 your email address, and a comment (which is generally left blank).
 Note that you&rsquo;ll need to enter <code>o</code> for <code>okay</code> to continue from this
 prompt.</p>
-<pre><code>GnuPG needs to construct a user ID to identify your key.
+<pre tabindex="0"><code>GnuPG needs to construct a user ID to identify your key.
 
 Real name: Your Name
 Email address: you@example.com
@@ -198,7 +198,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
 open a new window asking you for a passphrase. After you&rsquo;ve entered and
 confirmed the passphrase, you should see your key information on the
 console:</p>
-<pre><code>gpg: key 02E34E3304C8ADEB marked as ultimately trusted
+<pre tabindex="0"><code>gpg: key 02E34E3304C8ADEB marked as ultimately trusted
 gpg: revocation certificate stored as '/home/lars/tmp/gpgtmp/openpgp-revocs.d/9A4EB5B1F34B3041572937C002E34E3304C8ADEB.rev'
 public and secret key created and signed.
 
@@ -210,9 +210,9 @@ sub   rsa3072 2021-03-11 [E]
 <p>You need to publish your GPG key so that others can find it. You&rsquo;ll
 need your key id, which you can get by running <code>gpg -k --fingerprint</code>
 like this (using your email address rather than mine):</p>
-<pre><code>$ gpg -k --fingerprint lars@oddbit.com
+<pre tabindex="0"><code>$ gpg -k --fingerprint lars@oddbit.com
 </code></pre><p>The output will look like the following:</p>
-<pre><code>pub   rsa2048/0x362D63A80853D4CF 2013-06-21 [SC]
+<pre tabindex="0"><code>pub   rsa2048/0x362D63A80853D4CF 2013-06-21 [SC]
       Key fingerprint = 3E70 A502 BB52 55B6 BB8E  86BE 362D 63A8 0853 D4CF
 uid                   [ultimate] Lars Kellogg-Stedman &lt;lars@oddbit.com&gt;
 uid                   [ultimate] keybase.io/larsks &lt;larsks@keybase.io&gt;
@@ -221,7 +221,7 @@ sub   rsa2048/0x426D9382DFD6A7A9 2013-06-21 [E]
 sub   rsa2048/0xEE1A8B9F9369CC85 2013-06-21 [A]
 </code></pre><p>Look for the <code>Key fingerprint</code> line, you want the value after the <code>=</code>.
 Use this to publish your key to <code>keys.openpgp.org</code>:</p>
-<pre><code>gpg --keyserver keys.opengpg.org \
+<pre tabindex="0"><code>gpg --keyserver keys.opengpg.org \
   --send-keys '3E70 A502 BB52 55B6 BB8E  86BE 362D 63A8 0853 D4CF'
 </code></pre><p>You will shortly receive an email to the address in your key asking
 you to approve it. Once you have approved the key, it will be
@@ -241,9 +241,9 @@ would grab <a href="https://github.com/kubernetes-sigs/kustomize/releases/downlo
 <p>The tarball contains a single file. You need to extract this file and
 place it somwhere in your <code>$PATH</code>.  For example, if you use your
 <code>$HOME/bin</code> directory, you could run:</p>
-<pre><code>tar -C ~/bin -xf kustomize_v4.0.5_linux_amd64.tar.gz
+<pre tabindex="0"><code>tar -C ~/bin -xf kustomize_v4.0.5_linux_amd64.tar.gz
 </code></pre><p>Or to install into <code>/usr/local/bin</code>:</p>
-<pre><code>sudo tar -C /usr/local/bin -xf kustomize_v4.0.5_linux_amd64.tar.gz
+<pre tabindex="0"><code>sudo tar -C /usr/local/bin -xf kustomize_v4.0.5_linux_amd64.tar.gz
 </code></pre><p>Run <code>kustomize</code> with no arguments to verify the command has been
 installed correctly.</p>
 <h3 id="install-sops">Install sops</h3>
@@ -254,7 +254,7 @@ release is <a href="https://github.com/mozilla/sops/releases/tag/v3.6.1">v3.6.1<
 packages for a couple of different Linux distributions. For
 consistency with the rest of this post we&rsquo;re going to grab the <a href="https://github.com/mozilla/sops/releases/download/v3.6.1/sops-v3.6.1.linux">raw
 binary</a>. We can install that into <code>$HOME/bin</code> like this:</p>
-<pre><code>curl -o ~/bin/sops https://github.com/mozilla/sops/releases/download/v3.6.1/sops-v3.6.1.linux
+<pre tabindex="0"><code>curl -o ~/bin/sops https://github.com/mozilla/sops/releases/download/v3.6.1/sops-v3.6.1.linux
 chmod 755 ~/bin/sops
 </code></pre><h3 id="install-ksops">Install KSOPS</h3>
 <p>KSOPS is a Kustomize plugin. The <code>kustomize</code> command looks for plugins
@@ -266,23 +266,23 @@ will be looking for a plugin named <code>ksops</code> in the
 tarball. We&rsquo;ll start by downloading
 <a href="https://github.com/viaduct-ai/kustomize-sops/releases/download/v2.4.0/ksops_2.4.0_Linux_x86_64.tar.gz">ksops_2.4.0_Linux_x86_64.tar.gz</a>, which contains the following
 files:</p>
-<pre><code>LICENSE
+<pre tabindex="0"><code>LICENSE
 README.md
 ksops
 </code></pre><p>To extract the <code>ksops</code> command to <code>$HOME/bin</code>, you can run:</p>
-<pre><code>mkdir  -p ~/.config/kustomize/plugin/viaduct.ai/v1/ksops/
+<pre tabindex="0"><code>mkdir  -p ~/.config/kustomize/plugin/viaduct.ai/v1/ksops/
 tar -C ~/.config/kustomize/plugin/viaduct.ai/v1/ksops -xf ksops_2.4.0_Linux_x86_64.tar.gz ksops
 </code></pre><h2 id="test-it-out">Test it out</h2>
 <p>Let&rsquo;s create a simple Kustomize project to make sure everything is
 installed and functioning.</p>
 <p>Start by creating a new directory and changing into it:</p>
-<pre><code>mkdir kustomize-test
+<pre tabindex="0"><code>mkdir kustomize-test
 cd kustomize-test
 </code></pre><p>Create a <code>kustomization.yaml</code> file that looks like this:</p>
-<pre><code>generators:
+<pre tabindex="0"><code>generators:
   - secret-generator.yaml
 </code></pre><p>Put the following content in <code>secret-generator.yaml</code>:</p>
-<pre><code>---
+<pre tabindex="0"><code>---
 apiVersion: viaduct.ai/v1
 kind: ksops
 metadata:
@@ -294,7 +294,7 @@ from the file <code>example-secret.enc.yaml</code>.</p>
 <p>Configure <code>sops</code> to use your GPG key by default by creating a
 <code>.sops.yaml</code> (note the leading dot) similar to the following (you&rsquo;ll
 need to put your GPG key fingerprint in the right place):</p>
-<pre><code>creation_rules:
+<pre tabindex="0"><code>creation_rules:
   - encrypted_regex: &quot;^(users|data|stringData)$&quot;
     pgp: &lt;YOUR KEY FINGERPRINT HERE&gt;
 </code></pre><p>The <code>encrypted_regex</code> line tells <code>sops</code> which attributes in your YAML
@@ -302,10 +302,10 @@ files should be encrypted. The <code>pgp</code> line is a (comma delimited) list
 of keys to which data will be encrypted.</p>
 <p>Now, edit the file <code>example-secret.enc.yaml</code> using the <code>sops</code> command.
 Run:</p>
-<pre><code>sops example-secret.enc.yaml
+<pre tabindex="0"><code>sops example-secret.enc.yaml
 </code></pre><p>This will open up an editor with some default content. Replace the
 content with the following:</p>
-<pre><code>apiVersion: v1
+<pre tabindex="0"><code>apiVersion: v1
 kind: Secret
 metadata:
     name: example-secret
@@ -315,7 +315,7 @@ stringData:
 </code></pre><p>Save the file and exit your editor. Now examine the file; you will see
 that it contains a mix of encrypted and unencrypted content. When
 encrypted with my private key, it looks like this:</p>
-<pre><code>$ cat example-secret.enc.yaml
+<pre tabindex="0"><code>$ cat example-secret.enc.yaml
 {
 	&quot;data&quot;: &quot;ENC[AES256_GCM,data:wZvEylsvhfU29nfFW1PbGqyk82x8+Vm/3p2Y89B8a1A26wa5iUTr1hEjDYrQIGQq4rvDyK4Bevxb/PrTzdOoTrYIhaerEWk13g9UrteLoaW0FpfGv9bqk0c12OwTrzS+5qCW2mIlfzQpMH5+7xxeruUXO7w=,iv:H4i1/Znp6WXrMmmP9YVkz+xKOX0XBH7kPFaa36DtTxs=,tag:bZhSzkM74wqayo7McV/VNQ==,type:str]&quot;,
 	&quot;sops&quot;: {
@@ -337,9 +337,9 @@ encrypted with my private key, it looks like this:</p>
 	}
 }
 </code></pre><p>Finally, attempt to render the project with Kustomize by running:</p>
-<pre><code>kustomize build --enable-alpha-plugins
+<pre tabindex="0"><code>kustomize build --enable-alpha-plugins
 </code></pre><p>This should produce on stdout the unencrypted content of your secret:</p>
-<pre><code>apiVersion: v1
+<pre tabindex="0"><code>apiVersion: v1
 kind: Secret
 metadata:
     name: example-secret

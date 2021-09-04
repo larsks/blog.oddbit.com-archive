@@ -8,7 +8,7 @@
 Rebase instead of merge If you need to incorporate changes from the upstream master branch in the feature branch on which you are currently doing, bring in those changes using git rebase rather than git merge.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -129,10 +129,10 @@ Rebase instead of merge If you need to incorporate changes from the upstream mas
 <p>When working with an upstream codebase, always make your changes on a feature branch rather than your local <code>master</code> branch. This will make it easier to keep your local <code>master</code> branch current with respect to upstream, and can help avoid situations in which you accidentally overwrite your local changes or introduce unnecessary merge commits into your history.</p>
 <h2 id="rebase-instead-of-merge">Rebase instead of merge</h2>
 <p>If you need to incorporate changes from the upstream <code>master</code> branch in the feature branch on which you are currently doing, bring in those changes using <code>git rebase</code> rather than <code>git merge</code>.  This process will generally start by ensuring that your local copy of the upstream <code>master</code> is current:</p>
-<pre><code>git remote update
+<pre tabindex="0"><code>git remote update
 
 </code></pre><p>Followed by rebasing your changes on top of that branch:</p>
-<pre><code>git rebase origin/master
+<pre tabindex="0"><code>git rebase origin/master
 </code></pre><h2 id="make-your-commit-messages-meaningful">Make your commit messages meaningful</h2>
 <p>Your commit messages should follow common best practices, such as <a href="https://wiki.openstack.org/wiki/GitCommitMessages">those documented for OpenStack</a>.  In general, this means:</p>
 <ul>
@@ -153,22 +153,22 @@ Rebase instead of merge If you need to incorporate changes from the upstream mas
 <ol>
 <li>
 <p>This should probably have been squashed with the commit that introduced the typo:</p>
-<pre><code>Fixed a typo.
+<pre tabindex="0"><code>Fixed a typo.
 </code></pre></li>
 <li>
 <p>This doesn&rsquo;t provide sufficient details:</p>
-<pre><code>Trying that thing again
+<pre tabindex="0"><code>Trying that thing again
 </code></pre></li>
 <li>
 <p>Changes necessary to resolve merge conflicts should generally be squashed into the commits that introduce the conflict:</p>
-<pre><code>Fixing merge conflicts
+<pre tabindex="0"><code>Fixing merge conflicts
 </code></pre></li>
 </ol>
 <h3 id="example-of-good-commit-messages">Example of good commit messages</h3>
 <ol>
 <li>
 <p>A constructed example:</p>
-<pre><code>Support new &quot;description&quot; field on all widgets (TG-100)
+<pre tabindex="0"><code>Support new &quot;description&quot; field on all widgets (TG-100)
 
 Update both the database model and the web UI to support an extended
 &quot;description&quot; field on all objects. This allows us to generate more useful
@@ -176,7 +176,7 @@ product listings.
 </code></pre></li>
 <li>
 <p>from <a href="https://github.com/openstack/ironic/commit/6ca99d67302d7e1b639ad9b745631e65a4b2f25c:">https://github.com/openstack/ironic/commit/6ca99d67302d7e1b639ad9b745631e65a4b2f25c:</a></p>
-<pre><code>Add release note updating status of smartnics
+<pre tabindex="0"><code>Add release note updating status of smartnics
 
 Smartnic support merged into Neutron a few weeks ago,
 and as we downplayed the functionality during the Stein
@@ -187,7 +187,7 @@ Change-Id: I19372a0ede703f62940bbb2cc3a80618560ebc93
 </code></pre></li>
 <li>
 <p>from <a href="https://github.com/ansible/ansible/commit/88a1fc28d894575d48edc3817cc1a8ef4dca3cae:">https://github.com/ansible/ansible/commit/88a1fc28d894575d48edc3817cc1a8ef4dca3cae:</a></p>
-<pre><code>Clean up iosxr get_config_diff function (#57589)
+<pre tabindex="0"><code>Clean up iosxr get_config_diff function (#57589)
 
 This fixes an index error issue when running tests on zuul.ansible.com
 for iosxr. We can fix this by getting the last element in the list.
@@ -200,7 +200,7 @@ for iosxr. We can fix this by getting the last element in the list.
 <ol>
 <li>
 <p>Assuming that your branch is based on <code>origin/master</code>, run <code>git rebase -i origin/master</code>. This will bring up the &ldquo;pick list&rdquo;, which allows you to select among various actions for each commit between <code>origin/master</code> and your current branch. For example:</p>
-<pre><code>pick 6ca99d673 Add release note updating status of smartnics
+<pre tabindex="0"><code>pick 6ca99d673 Add release note updating status of smartnics
 pick c2ab34a8c Do not log an exception if Allocation is deleted during handling.
 pick 87464fbbc Change constraints opendev.org to release.openstack.org
 pick 43f7bf9f0 Fix :param: in docstring

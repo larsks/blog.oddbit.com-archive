@@ -8,7 +8,7 @@
 It turns out the answer is &ldquo;yes&rdquo;, as long as you have a linear history.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -134,11 +134,11 @@ that without reaching for <code>git rebase</code>.</p>
 <p>It turns out the answer is &ldquo;yes&rdquo;, as long as you have a linear
 history.</p>
 <p>Let&rsquo;s assume we have a git history that looks like this:</p>
-<pre><code>┌────────┐     ┌────────┐     ┌────────┐     ┌────────┐     ┌────────┐
+<pre tabindex="0"><code>┌────────┐     ┌────────┐     ┌────────┐     ┌────────┐     ┌────────┐
 │ 4be811 │ ◀── │ 519636 │ ◀── │ 38f6fe │ ◀── │ 2951ec │ ◀╴╴ │ master │
 └────────┘     └────────┘     └────────┘     └────────┘     └────────┘
 </code></pre><p>The corresponding <code>git log</code> looks like:</p>
-<pre><code>commit 2951ec3f54205580979d63614ef2751b61102c5d
+<pre tabindex="0"><code>commit 2951ec3f54205580979d63614ef2751b61102c5d
 Author: Alice User &lt;alice@example.com&gt;
 Date:   Mon Jan 1 00:00:00 2001 -0500
 
@@ -164,7 +164,7 @@ Date:   Mon Jan 1 00:00:00 2001 -0500
 </code></pre><h2 id="mucking-about-with-objects">Mucking about with objects</h2>
 <p>We would like to modify the message on commit <code>519636</code>.</p>
 <p>We start by extracting the <code>commit</code> object for that commit using <code>git cat-file</code>:</p>
-<pre><code>$ git cat-file -p 519636
+<pre tabindex="0"><code>$ git cat-file -p 519636
 tree 4b825dc642cb6eb9a060e54bf8d69288fbee4904
 parent 4be8115640821df1565c421d8ed848bad34666e5
 author Alice User &lt;alice@example.com&gt; 978325200 -0500
@@ -174,9 +174,9 @@ A very interesting change
 </code></pre><p>We want to produce a commit object that is identical except for an
 updated commit message. That sounds like a job for <code>sed</code>! We can strip
 the existing message out like this:</p>
-<pre><code>git cat-file -p 519636 | sed '/^$/q'
+<pre tabindex="0"><code>git cat-file -p 519636 | sed '/^$/q'
 </code></pre><p>And we can append a new commit message with the power of <code>cat</code>:</p>
-<pre><code>git cat-file -p 519636 | sed '/^$/q'; cat &lt;&lt;EOF
+<pre tabindex="0"><code>git cat-file -p 519636 | sed '/^$/q'; cat &lt;&lt;EOF
 A very interesting change
 
 Completely refactor the widget implementation to prevent
@@ -184,7 +184,7 @@ a tear in the time/space continuum when given invalid
 input.
 EOF
 </code></pre><p>This will give us:</p>
-<pre><code>tree 4b825dc642cb6eb9a060e54bf8d69288fbee4904
+<pre tabindex="0"><code>tree 4b825dc642cb6eb9a060e54bf8d69288fbee4904
 parent 4be8115640821df1565c421d8ed848bad34666e5
 author Alice User &lt;alice@example.com&gt; 978325200 -0500
 committer Alice User &lt;alice@example.com&gt; 978325200 -0500
@@ -196,7 +196,7 @@ a tear in the time/space continuum when given invalid
 input.
 </code></pre><p>We need to take this modified commit and store it back into the git
 object database. We do that using the <code>git hash-object</code> command:</p>
-<pre><code>(git cat-file -p 519636 | sed '/^$/q'; cat &lt;&lt;EOF) | git hash-object -t commit --stdin -w
+<pre tabindex="0"><code>(git cat-file -p 519636 | sed '/^$/q'; cat &lt;&lt;EOF) | git hash-object -t commit --stdin -w
 A very interesting change
 
 Completely refactor the widget implementation to prevent
@@ -210,7 +210,7 @@ write a new object to the object database, rather than just
 calculating the hash and printing it for us.</p>
 <p>This will print the hash of the new object on stdout. We can wrap
 everything in a <code>$(...)</code> expression to capture the output:</p>
-<pre><code>newref=$(
+<pre tabindex="0"><code>newref=$(
 (git cat-file -p 519636 | sed '/^$/q'; cat &lt;&lt;EOF) | git hash-object -t commit --stdin -w
 A very interesting change
 
@@ -226,16 +226,16 @@ back up the tree, starting with the immediate descendant of our target
 commit, replacing parent pointers as we go along.</p>
 <p>The first thing we need is a list of revisions from our target commit
 up to the current <code>HEAD</code>. We can get that with <code>git rev-list</code>:</p>
-<pre><code>$ git rev-list 519636..HEAD
+<pre tabindex="0"><code>$ git rev-list 519636..HEAD
 2951ec3f54205580979d63614ef2751b61102c5d
 38f6fe61ffd444f601ac01ecafcd524487c83394
 </code></pre><p>We&rsquo;ll process these in reverse order, so first we modify <code>38f6fe</code>:</p>
-<pre><code>oldref=51963667037ceb79aff8c772a009a5fbe4b8d7d9
+<pre tabindex="0"><code>oldref=51963667037ceb79aff8c772a009a5fbe4b8d7d9
 newref=$(git cat-file -p 38f6fe61ffd444f601ac01ecafcd524487c83394 |
   sed &quot;s/parent $oldref/parent $newref/&quot; |
   git hash-object -t commit --stdin -w)
 </code></pre><p>And then repeat that for the next commit up the tree:</p>
-<pre><code>oldref=38f6fe61ffd444f601ac01ecafcd524487c83394
+<pre tabindex="0"><code>oldref=38f6fe61ffd444f601ac01ecafcd524487c83394
 newref=$(git cat-file -p 2951ec3f54205580979d63614ef2751b61102c5d |
   sed &quot;s/parent $oldref/parent $newref/&quot; |
   git hash-object -t commit --stdin -w)
@@ -244,10 +244,10 @@ newref=$(git cat-file -p 2951ec3f54205580979d63614ef2751b61102c5d |
 need to do is update the branch point to point at the top of the
 modified tree. We do that using the <code>git update-ref</code> command. Assuming
 we&rsquo;re on the <code>master</code> branch, the command would look like this:</p>
-<pre><code>git update-ref refs/heads/master $newref
+<pre tabindex="0"><code>git update-ref refs/heads/master $newref
 </code></pre><p>And at this point, running <code>git log</code> show us our modified commit in
 all its glory:</p>
-<pre><code>commit 365bc25ee1fe365d5d63d2248b77196d95d9573a
+<pre tabindex="0"><code>commit 365bc25ee1fe365d5d63d2248b77196d95d9573a
 Author: Alice User &lt;alice@example.com&gt;
 Date:   Mon Jan 1 00:00:00 2001 -0500
 
@@ -275,12 +275,12 @@ Date:   Mon Jan 1 00:00:00 2001 -0500
 
     The beginning of time
 </code></pre><p>Giving us a modified history that looks like:</p>
-<pre><code>┌────────┐     ┌────────┐     ┌────────┐     ┌────────┐     ┌────────┐
+<pre tabindex="0"><code>┌────────┐     ┌────────┐     ┌────────┐     ┌────────┐     ┌────────┐
 │ 4be811 │ ◀── │ fb01f3 │ ◀── │ 09d620 │ ◀── │ 365bc2 │ ◀╴╴ │ master │
 └────────┘     └────────┘     └────────┘     └────────┘     └────────┘
 </code></pre><h2 id="automating-the-process">Automating the process</h2>
 <p>Now, that was a lot of manual work. Let&rsquo;s try to automate the process.</p>
-<pre><code>#!/bin/sh
+<pre tabindex="0"><code>#!/bin/sh
 
 # get the current branch name
 branch=$(git rev-parse --symbolic-full-name HEAD)
@@ -309,7 +309,7 @@ done
 git update-ref $branch $newref
 </code></pre><p>If we place the above script in <code>editmsg.sh</code> and restore our original
 revision history, we can run:</p>
-<pre><code>sh editmsg.sh :/interesting &lt;&lt;EOF
+<pre tabindex="0"><code>sh editmsg.sh :/interesting &lt;&lt;EOF
 A very interesting change
 
 Completely refactor the widget implementation to prevent
@@ -318,7 +318,7 @@ input.
 EOF
 </code></pre><p>And end up with a new history identical to the one we created
 manually:</p>
-<pre><code>commit 365bc25ee1fe365d5d63d2248b77196d95d9573a
+<pre tabindex="0"><code>commit 365bc25ee1fe365d5d63d2248b77196d95d9573a
 Author: Alice User &lt;alice@example.com&gt;
 Date:   Mon Jan 1 00:00:00 2001 -0500
 

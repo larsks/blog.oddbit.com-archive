@@ -8,7 +8,7 @@
 I had previously been using Mike Causer&rsquo;s micropython-tm1637 for MicroPython to drive a 4 digit LED display. I was hoping to get the same code working under CircuitPython, but when I tried to build an image that included the tm1637 module I ran into:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -173,7 +173,7 @@ module, which is implemented by <code>ports/esp8266/modutime.c</code>, but this
 module is not included in the CircuitPython build. How do we fix that?</p>
 <p>The most obvious change is to add <code>modutime.c</code> to the <code>SRC_C</code> variable
 in <code>ports/esp8266/Makefile</code>, which gets us:</p>
-<pre><code>SRC_C = \
+<pre tabindex="0"><code>SRC_C = \
         [...]
         modesp.c \
         modnetwork.c \
@@ -181,7 +181,7 @@ in <code>ports/esp8266/Makefile</code>, which gets us:</p>
         [...]
 </code></pre><p>After making this change and trying to build CircuitPython, I
 hit 70 or so lines like:</p>
-<pre><code>Generating build/genhdr/mpversion.h
+<pre tabindex="0"><code>Generating build/genhdr/mpversion.h
 In file included from ../../py/mpstate.h:35:0,
                  from ../../py/runtime.h:29,
                  from modutime.c:32:
@@ -195,7 +195,7 @@ the build process by scanning for references of the form
 </code></pre></div><p>But&hellip;and this is the immediate problem&hellip;this generation only happens
 with a clean build.  Running <code>make clean</code> and then re-running the
 build yields:</p>
-<pre><code>build/shared-bindings/time/__init__.o:(.rodata.time_localtime_obj+0x0): multiple definition of `time_localtime_obj'
+<pre tabindex="0"><code>build/shared-bindings/time/__init__.o:(.rodata.time_localtime_obj+0x0): multiple definition of `time_localtime_obj'
 build/modutime.o:(.rodata.time_localtime_obj+0x0): first defined here
 build/shared-bindings/time/__init__.o:(.rodata.time_mktime_obj+0x0): multiple definition of `time_mktime_obj'
 build/modutime.o:(.rodata.time_mktime_obj+0x0): first defined here

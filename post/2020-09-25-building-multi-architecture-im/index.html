@@ -8,7 +8,7 @@
 It turns out that Docker provides GitHub actions that make the process of producing multi-architecture images quite simple.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -164,7 +164,7 @@ configure GitHub actions. In this directory, create a file called
 make names descriptive).</p>
 <p>We&rsquo;ll first give this workflow a name and configure it to run for pushes on
 our <code>master</code> branch by adding the following to our <code>build_images.yml</code> file:</p>
-<pre><code>---
+<pre tabindex="0"><code>---
 name: 'build images'
 
 on:
@@ -191,20 +191,20 @@ which the jobs will run. In this example, we&rsquo;re using <code>ubuntu-latest<
 other options include some other Ubuntu variants, Windows, and MacOS (and
 you are able to host your own custom builders, but that&rsquo;s outside the scope
 of this article).</p>
-<pre><code>jobs:
+<pre tabindex="0"><code>jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
 </code></pre><h3 id="checking-out-the-repository">Checking out the repository</h3>
 <p>In our first step, we use the standard <a href="https://github.com/actions/checkout">actions/checkout</a>
 action to check out the repository:</p>
-<pre><code>      - name: Checkout
+<pre tabindex="0"><code>      - name: Checkout
         uses: actions/checkout@v2
 </code></pre><h3 id="preparing-parameters">Preparing parameters</h3>
 <p>The next step is a simple shell script that sets some output parameters we
 will be able to consume in subsequent steps. A script can set parameters by
 generating output in the form:</p>
-<pre><code>::set-output name=&lt;name&gt;::&lt;value&gt;
+<pre tabindex="0"><code>::set-output name=&lt;name&gt;::&lt;value&gt;
 </code></pre><p>In other steps, we can refer to these parameters using the syntax
 <code>${{ steps.&lt;step_name&gt;.output.&lt;name&gt; }}</code> (e.g. <code>${{ steps.prep.output.tags }}</code>).</p>
 <p>We&rsquo;re going to use this step to set things like the image name (using our
@@ -218,7 +218,7 @@ strip off that initial <code>v</code> to get a Docker tag that is just the versi
 number.</li>
 <li>We also tag the image with the short commit id</li>
 </ul>
-<pre><code>      - name: Prepare
+<pre tabindex="0"><code>      - name: Prepare
         id: prep
         run: |
           DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/${GITHUB_REPOSITORY#*/}
@@ -244,7 +244,7 @@ number.</li>
 </code></pre><h3 id="set-up-qemu">Set up QEMU</h3>
 <p>The <a href="https://github.com/docker/setup-qemu-action">docker/setup-qemu</a> action installs QEMU <a href="https://wiki.debian.org/QemuUserEmulation">static binaries</a>, which
 are used to run builders for architectures other than the host.</p>
-<pre><code>      - name: Set up QEMU
+<pre tabindex="0"><code>      - name: Set up QEMU
         uses: docker/setup-qemu-action@master
         with:
           platforms: all
@@ -253,7 +253,7 @@ are used to run builders for architectures other than the host.</p>
 CLI plugin that provides enhanced build capabilities. This is the
 infrastructure that the following step will use for actually building
 images.</p>
-<pre><code>      - name: Set up Docker Buildx
+<pre tabindex="0"><code>      - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@master
 </code></pre><h3 id="authenticate-to-docker-hub">Authenticate to Docker Hub</h3>
@@ -261,7 +261,7 @@ images.</p>
 action to authenticate. This uses the <code>DOCKER_USERNAME</code> and
 <code>DOCKER_PASSWORD</code> secrets we created earlier in order to establish
 credentials for use in subsequent steps.</p>
-<pre><code>      - name: Login to DockerHub
+<pre tabindex="0"><code>      - name: Login to DockerHub
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
         with:
@@ -272,7 +272,7 @@ credentials for use in subsequent steps.</p>
 and push them to Docker Hub using the tags we defined in the <code>prep</code> step.
 In this example, we&rsquo;re building images for <code>amd64</code>, <code>arm64</code>, and <code>ppc64le</code>
 architectures.</p>
-<pre><code>      - name: Build
+<pre tabindex="0"><code>      - name: Build
         uses: docker/build-push-action@v2
         with:
           builder: ${{ steps.buildx.outputs.name }}
@@ -283,7 +283,7 @@ architectures.</p>
           tags: ${{ steps.prep.outputs.tags }}
 </code></pre><h2 id="the-complete-workflow">The complete workflow</h2>
 <p>When we put all of the above together, we get:</p>
-<pre><code>---
+<pre tabindex="0"><code>---
 name: 'build images'
 
 on:
@@ -355,7 +355,7 @@ tagged both as <code>latest</code> and with the short git commit id.</p>
 <p>We can use the <code>docker manifest inspect</code> command to inspect the output of
 the build step. In the output below, you can see the images build for our
 three target architectures:</p>
-<pre><code>$ docker manifest inspect !$
+<pre tabindex="0"><code>$ docker manifest inspect !$
 docker manifest inspect larsks/hello-flask
 {
    &quot;schemaVersion&quot;: 2,

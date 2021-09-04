@@ -8,7 +8,7 @@
 NB I am not a Ceph expert.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -154,18 +154,18 @@ and associated capabilities:</p>
 <ul>
 <li>
 <p><code>client.csi-rbd-provisioner</code></p>
-<pre><code>caps mgr = &quot;allow rw&quot;
+<pre tabindex="0"><code>caps mgr = &quot;allow rw&quot;
 caps mon = &quot;profile rbd&quot;
 caps osd = &quot;profile rbd&quot;
 </code></pre></li>
 <li>
 <p><code>client.csi-rbd-node</code></p>
-<pre><code>caps mon = &quot;profile rbd&quot;
+<pre tabindex="0"><code>caps mon = &quot;profile rbd&quot;
 caps osd = &quot;profile rbd&quot;
 </code></pre></li>
 <li>
 <p><code>client.healthchecker</code></p>
-<pre><code>caps mgr = &quot;allow command config&quot;
+<pre tabindex="0"><code>caps mgr = &quot;allow command config&quot;
 caps mon = &quot;allow r, allow command quorum_status, allow command version&quot;
 caps osd = &quot;allow rwx pool=default.rgw.meta, allow r pool=.rgw.root, allow rw pool=default.rgw.control, allow rx pool=default.rgw.log, allow x pool=default.rgw.buckets.index&quot;
 </code></pre><p>This account is used to verify the health of the ceph cluster.</p>
@@ -176,13 +176,13 @@ will also create:</p>
 <ul>
 <li>
 <p><code>client.csi-cephfs-provisioner</code></p>
-<pre><code>caps mgr = &quot;allow rw&quot;
+<pre tabindex="0"><code>caps mgr = &quot;allow rw&quot;
 caps mon = &quot;allow r&quot;
 caps osd = &quot;allow rw tag cephfs metadata=*&quot;
 </code></pre></li>
 <li>
 <p><code>client.csi-cephfs-node</code></p>
-<pre><code>caps mds = &quot;allow rw&quot;
+<pre tabindex="0"><code>caps mds = &quot;allow rw&quot;
 caps mgr = &quot;allow rw&quot;
 caps mon = &quot;allow r&quot;
 caps osd = &quot;allow rw tag cephfs *=*&quot;
@@ -247,13 +247,13 @@ here by <code>${clustername}</code>).</p>
 </li>
 <li>
 <p>The RBD pool is named <code>${clustername}-rbd</code>. I create it like this:</p>
-<pre><code>  ceph osd pool create ${clustername}-rbd
+<pre tabindex="0"><code>  ceph osd pool create ${clustername}-rbd
   ceph osd pool application enable ${clustername}-rbd rbd
 </code></pre></li>
 <li>
 <p>The CephFS filesystem (if required) is named
 <code>${clustername}-fs</code>, and I create it like this:</p>
-<pre><code>  ceph fs volume create ${clustername}-fs
+<pre tabindex="0"><code>  ceph fs volume create ${clustername}-fs
 </code></pre><p>In addition to the filesystem, this creates two pools:</p>
 <ul>
 <li><code>cephfs.${clustername}-fs.meta</code></li>
@@ -267,7 +267,7 @@ pool named <code>${clustername}-rbd</code> and a CephFS filesystem named
 <code>${clustername}-fs</code>, the following set of <code>ceph auth add</code> commands
 should create an appropriate set of principals (with access limited to
 just those resources that belong to the named cluster):</p>
-<pre><code>ceph auth add client.healthchecker-${clustername} \
+<pre tabindex="0"><code>ceph auth add client.healthchecker-${clustername} \
         mgr &quot;allow command config&quot; \
         mon &quot;allow r, allow command quorum_status, allow command version&quot;
 
@@ -300,7 +300,7 @@ permissions on the RGW side.</p>
 installation UI. I use the following script which calls <code>ceph -s</code>,
 <code>ceph mon dump</code>, and <code>ceph auth get-key</code> to get the necessary
 information from the cluster:</p>
-<pre><code>#!/usr/bin/python3
+<pre tabindex="0"><code>#!/usr/bin/python3
 
 import argparse
 import json
@@ -451,7 +451,7 @@ necessary values yourself.  The JSON produced by the above script
 looks like the following, which is invalid JSON because I&rsquo;ve use
 inline comments to mark all the values which you would need to
 provide:</p>
-<pre><code>[
+<pre tabindex="0"><code>[
   {
     &quot;name&quot;: &quot;rook-ceph-mon-endpoints&quot;,
     &quot;kind&quot;: &quot;ConfigMap&quot;,

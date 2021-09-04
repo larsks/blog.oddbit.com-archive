@@ -8,7 +8,7 @@
 Running MariaDB The standard mariadb docker image can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&rsquo;t want to lose your data when you remove a container. A simple docker command line for starting MariaDB might look something like:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -128,14 +128,14 @@ Running MariaDB The standard mariadb docker image can be configured via a number
     <p>In this article, we will look at what is necessary to run OpenStack&rsquo;s <a href="https://docs.openstack.org/keystone/latest/">Keystone</a> service (and the requisite database server) in containers using <a href="https://docs.docker.com/compose/">Docker Compose</a>.</p>
 <h2 id="running-mariadb">Running MariaDB</h2>
 <p>The standard <a href="https://hub.docker.com/_/mariadb/">mariadb docker image</a> can be configured via a number of environment variables. It also benefits from persistent volume storage, since in most situations you don&rsquo;t want to lose your data when you remove a container. A simple <code>docker</code> command line for starting MariaDB might look something like:</p>
-<pre><code>docker run \
+<pre tabindex="0"><code>docker run \
   -v mariadb_data:/var/lib/mysql \
   -e MYSQL_ROOT_PASSWORD=secret.password
   mariadb
 </code></pre><p>The above assumes that we have previously created a Docker volume named <code>mariadb_data</code> by running:</p>
-<pre><code>docker volume create mariadb_data
+<pre tabindex="0"><code>docker volume create mariadb_data
 </code></pre><p>An equivalent <code>docker-compose.yml</code> would look like this:</p>
-<pre><code>version: 3
+<pre tabindex="0"><code>version: 3
 
 services:
   database:
@@ -148,11 +148,11 @@ services:
 volumes:
   mariadb_data:
 </code></pre><p>Now, rather than typing a long <code>docker run</code> command line (and possibly forgetting something), you can simply run:</p>
-<pre><code>docker-compose up
+<pre tabindex="0"><code>docker-compose up
 </code></pre><h3 id="pre-creating-a-database">Pre-creating a database</h3>
 <p>For the purposes of setting up Keystone in Docker, we will need to make a few changes. In particular, we will need to have the <code>mariadb</code> container create the <code>keystone</code> database (and user) for us, and as a matter of best practice we will want to specify an explicit tag for the <code>mariadb</code> image rather than relying on the default <code>latest</code>.</p>
 <p>We can have the <code>mariadb</code> image create a database for us at startup by setting the <code>MYSQL_DATABASE</code>, <code>MYSQL_USER</code>, and <code>MYSQL_PASSWORD</code> environment variables:</p>
-<pre><code>version: 3
+<pre tabindex="0"><code>version: 3
 
 services:
   database:
@@ -180,7 +180,7 @@ volumes:
 <pre><code>MY_VARIABLE=some_value
 </code></pre>
 <p>With the above in mind, we can restructure our example <code>docker-compose.yml</code> so that it looks like this:</p>
-<pre><code>version: 3
+<pre tabindex="0"><code>version: 3
 
 services:
   database:
@@ -209,7 +209,7 @@ volumes:
 </ul>
 <h3 id="keystone-wsgi-configuration">Keystone WSGI configuration</h3>
 <p>We need to configure Keystone as a WSGI service running on port 5000. We will do this with the following configuration file:</p>
-<pre><code>Listen 5000
+<pre tabindex="0"><code>Listen 5000
 ErrorLog &quot;/dev/stderr&quot;
 CustomLog &quot;/dev/stderr&quot; combined
 
@@ -233,13 +233,13 @@ CustomLog &quot;/dev/stderr&quot; combined
   WSGIPassAuthorization On
 &lt;/VirtualHost&gt;
 </code></pre><p>The easiest way to inject this custom configuration is to bake it into a custom image. Using the <code>tripleomaster/centos-binary-keystone</code> base image identified earlier, we can start with a custom <code>Dockerfile</code> that looks like this:</p>
-<pre><code>ARG KEYSTONE_IMAGE_TAG=current-tripleo
+<pre tabindex="0"><code>ARG KEYSTONE_IMAGE_TAG=current-tripleo
 FROM tripleomaster/centos-binary-keystone:${KEYSTONE_IMAGE_TAG}
 
 COPY keystone-wsgi-main.conf /etc/httpd/conf.d/keystone-wsgi-main.conf
 </code></pre><p>The <code>ARG</code> directive permits us to select an image tag via a build argument (but defaults to <code>current-tripleo</code>).</p>
 <p>We can ask <code>docker-compose</code> to build our custom image for us when we run <code>docker-compose up</code>. Instead of specifying an <code>image</code> as we did with the MariaDB container, we use the <code>build</code> directive:</p>
-<pre><code>[...]
+<pre tabindex="0"><code>[...]
   keystone:
     build:
       context: .
@@ -250,7 +250,7 @@ COPY keystone-wsgi-main.conf /etc/httpd/conf.d/keystone-wsgi-main.conf
 <h3 id="configuring-at-build-time-vs-run-time">Configuring at build time vs run time</h3>
 <p>In the previous section, we used a <code>Dockerfile</code> to build on a selected base image by adding custom content. Other sorts of configuration must happen when the container starts up (for example, we probably want to be able to set passwords at runtime). One way of solving this problem is to embed some scripts into our custom image and then run them when the container starts in order to perform any necessary initialization.</p>
 <p>I have placed some custom scripts and templates into the <code>runtime</code> directory and arranged to copy that directory into the custom image like this:</p>
-<pre><code>ARG KEYSTONE_IMAGE_TAG=current-tripleo
+<pre tabindex="0"><code>ARG KEYSTONE_IMAGE_TAG=current-tripleo
 FROM tripleomaster/centos-binary-keystone:${KEYSTONE_IMAGE_TAG}
 
 COPY keystone-wsgi-main.conf /etc/httpd/conf.d/keystone-wsgi-main.conf
@@ -270,7 +270,7 @@ CMD [&quot;/bin/sh&quot;, &quot;/runtime/startup.sh&quot;]
 <li>
 <p>Generates <code>/etc/keystone/keystone.conf</code> from <code>/runtime/keystone.j2.conf</code>.</p>
 <p>The file <code>/runtime/keystone.j2.conf</code> is a minimal Keystone configuration template. It ensures that Keystone logs to <code>stderr</code> (by setting <code>log_file</code> to an empty value) and configures the database connection using values from the environment.</p>
-<pre><code>[DEFAULT]
+<pre tabindex="0"><code>[DEFAULT]
 debug = {{ environ.KEYSTONE_DEBUG|default('false') }}
 log_file =
 
@@ -312,7 +312,7 @@ provider = fernet
 <h3 id="avoiding-race-conditions">Avoiding race conditions</h3>
 <p>When we run <code>docker-compose up</code>, it will bring up both the <code>keystone</code> container and the <code>database</code> container in parallel. This is going to cause problems if we try to initialize the Keystone database schema before the database server is actually up and running. There is a <code>depends_on</code> keyword that can be used to order the startup of containers in your <code>docker-compose.yml</code> file, but this isn&rsquo;t useful to us: this only delays the startup of the dependent container until the indicated container is <em>running</em>. It doesn&rsquo;t know anything about application startup, and so it would not wait for the database to be ready.</p>
 <p>We need to explicitly wait until we can successfully connect to the database before we can complete initializing the Keystone service. It turns out the easiest solution to this problem is to imply run the database schema initialization in a loop until it is successful, like this:</p>
-<pre><code>echo &quot;* initializing database schema&quot;
+<pre tabindex="0"><code>echo &quot;* initializing database schema&quot;
 while ! keystone-manage db_sync; do
   echo &quot;! database schema initialization failed; retrying in 5 seconds...&quot;
   sleep 5
@@ -320,7 +320,7 @@ done
 </code></pre><p>This will attempt the <code>db_sync</code> command every five seconds until it is sucessful.</p>
 <h2 id="the-final-docker-compose-file">The final docker-compose file</h2>
 <p>Taking all of the above into account, this is what the final <code>docker-compose.yml</code> file looks like:</p>
-<pre><code>---
+<pre tabindex="0"><code>---
 version: &quot;3&quot;
 
 services:
@@ -353,9 +353,9 @@ volumes:
   mysql:
 </code></pre><h2 id="interacting-with-keystone">Interacting with Keystone</h2>
 <p>Once Keystone is up and running, we can grab the generated <code>clouds.yaml</code> file like this:</p>
-<pre><code>docker-compose exec keystone cat /root/clouds.yaml &gt; clouds.yaml
+<pre tabindex="0"><code>docker-compose exec keystone cat /root/clouds.yaml &gt; clouds.yaml
 </code></pre><p>Now we can run the <code>openstack</code> command line client:</p>
-<pre><code>$ export OS_CLOUD=openstack-public
+<pre tabindex="0"><code>$ export OS_CLOUD=openstack-public
 $ openstack catalog list
 +----------+----------+-----------------------------------+
 | Name     | Type     | Endpoints                         |

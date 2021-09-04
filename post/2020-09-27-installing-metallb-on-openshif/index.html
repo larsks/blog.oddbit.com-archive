@@ -7,7 +7,7 @@
         <meta name="description" content="Out of the box, OpenShift (4.x) on bare metal doesn&rsquo;t come with any integrated load balancer support (when installed in a cloud environment, OpenShift typically makes use of the load balancing features available from the cloud provider). Fortunately, there are third party solutions available that are designed to work in bare metal environments. MetalLB is a popular choice, but requires some minor fiddling to get it to run properly on OpenShift.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -151,7 +151,7 @@ sense especially given that the MetalLB docs already include instructions
 <a href="https://metallb.universe.tf/installation/#installation-with-kustomize">on using Kustomize</a>).</p>
 <p>A vanilla installation of MetalLB with Kustomize uses a <code>kustomization.yml</code>
 file that looks like this:</p>
-<pre><code>namespace: metallb-system
+<pre tabindex="0"><code>namespace: metallb-system
 
 resources:
   - github.com/metallb/metallb//manifests?ref=v0.9.3
@@ -164,7 +164,7 @@ authenticate cluster members.)</p>
 <p>In order to remove the <code>runAsUser</code> directive form the template
 <code>securityContext</code> setting, we can use the <a href="https://kubectl.docs.kubernetes.io/pages/reference/kustomize.html#patchesstrategicmerge">patchesStrategicMerge</a>
 feature. In our <code>kustomization.yml</code> file we add:</p>
-<pre><code>patches:
+<pre tabindex="0"><code>patches:
   - |-
       apiVersion: apps/v1
       kind: Deployment
@@ -183,7 +183,7 @@ directive, the default behavior is to merge the contents, which in this
 situation would effectively be a no-op).</p>
 <p>We can accomplish the same thing using <a href="https://tools.ietf.org/html/rfc6902">jsonpatch</a> syntax. In this case,
 we would write:</p>
-<pre><code>patches:
+<pre tabindex="0"><code>patches:
   - target:
       kind: Deployment
       name: controller
@@ -193,19 +193,19 @@ we would write:</p>
         path: /spec/template/spec/securityContext/runAsUser
 </code></pre><p>With either solution, the final output includes a <code>securityContext</code> setting
 that looks like this:</p>
-<pre><code>spec:
+<pre tabindex="0"><code>spec:
   template:
     spec:
       securityContext:
         runAsNonRoot: true
 </code></pre><h2 id="granting-elevated-privileges">Granting elevated privileges</h2>
 <p>The MetaLB docs suggest running:</p>
-<pre><code>oc adm policy add-scc-to-user privileged -n metallb-system -z speaker
+<pre tabindex="0"><code>oc adm policy add-scc-to-user privileged -n metallb-system -z speaker
 </code></pre><p>But we can configure the same privilege level by setting up an appropriate
 role binding as part of our Kustomize manifests.</p>
 <p>First, we create an <code>allow-privileged</code> cluster role by adding the following
 manifest in <code>clusterrole.yml</code>:</p>
-<pre><code>---
+<pre tabindex="0"><code>---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -221,7 +221,7 @@ rules:
       - use
 </code></pre><p>Then we bind the <code>speaker</code> service account to the <code>allow-privileged</code> role
 by adding a <code>ClusterRoleBinding</code> in <code>rolebinding.yml</code>:</p>
-<pre><code>---
+<pre tabindex="0"><code>---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -236,7 +236,7 @@ subjects:
     namespace: metallb-system
 </code></pre><p>You will need to add these new manifests to your <code>kustomization.yml</code>, which
 should now look like:</p>
-<pre><code>namespace: metallb-system
+<pre tabindex="0"><code>namespace: metallb-system
 
 resources:
   - github.com/metallb/metallb//manifests?ref=v0.9.3

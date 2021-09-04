@@ -8,7 +8,7 @@
 In an earlier post, I discussed some issues around the management of virtual machine MAC addresses in CNV 2.3: in particular, that virtual machines are assigned a random MAC address not just at creation time but every time they boot.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -149,7 +149,7 @@ will persist across reboots.</p>
 machines attached to host networks.</p>
 <p>To enable MAC address pools for a given namespace, set the
 <code>mutatevirtualmachines.kubemacpool.io</code> label to <code>allocate</code>:</p>
-<pre><code>oc label namespace &lt;namespace&gt; mutatevirtualmachines.kubemacpool.io=allocate
+<pre tabindex="0"><code>oc label namespace &lt;namespace&gt; mutatevirtualmachines.kubemacpool.io=allocate
 </code></pre>
 </div>
 

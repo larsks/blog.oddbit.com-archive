@@ -8,7 +8,7 @@
  TL;DR Overview Connectivity options Direct attachment Using an OpenShift Service  Exposing services on NodePorts Exposing services on cluster external IPso Exposing services using a LoadBalancer     TL;DR Networking seems to be a weak area for CNV right now.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -190,7 +190,7 @@ the OpenShift documentation.</p>
 permit CNV managed virtual machines to attach to the network
 associated with interface <code>eth1</code>, we might submit the following
 configuration:</p>
-<pre><code>apiVersion: nmstate.io/v1alpha1
+<pre tabindex="0"><code>apiVersion: nmstate.io/v1alpha1
 kind: NodeNetworkConfigurationPolicy
 metadata:
   name: br-example-policy
@@ -216,7 +216,7 @@ spec:
 machines, we need to create a <code>NetworkAttachmentDefinition</code> (which can
 be abbreviated as <code>net-attach-def</code>, but not as <code>nad</code> for reasons that
 may be obvious to English speakers or readers of Urban Dictionary).</p>
-<pre><code>apiVersion: k8s.cni.cncf.io/v1
+<pre tabindex="0"><code>apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
 metadata:
   name: example
@@ -286,9 +286,9 @@ repositories</a> and install the <code>kubevirt-virtctl</code> package.</p>
 with the ip addresses of your OpenShift nodes.  If you have a virtual
 machine named <code>test-vm-1</code> and you want to access the SSH service on
 port 22, you can use the <code>virtctl</code> command like this:</p>
-<pre><code>virtctl expose vm test-vm-1 --port=22 --name=myvm-ssh-np --type=NodePort
+<pre tabindex="0"><code>virtctl expose vm test-vm-1 --port=22 --name=myvm-ssh-np --type=NodePort
 </code></pre><p>This will result in <code>Service</code> that looks like:</p>
-<pre><code>$ oc get service myvm-ssh-np
+<pre tabindex="0"><code>$ oc get service myvm-ssh-np
 NAME         TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
 myvm-ssh-np  NodePort   172.30.4.25   &lt;none&gt;        22:31424/TCP   42s
 </code></pre><p>The <code>CLUSTER-IP</code> in the above output is a cluster internal IP address
@@ -297,7 +297,7 @@ virtual machines. The <code>22:31424/TCP</code> entry tells us that port <code>3
 on our OpenShift hosts now maps to port <code>22</code> in our virtual machine.</p>
 <p>You can connect to your virtual machine with an <code>ssh</code> command line
 along the lines of:</p>
-<pre><code>ssh -p 31424 someuser@hostname.of.a.node
+<pre tabindex="0"><code>ssh -p 31424 someuser@hostname.of.a.node
 </code></pre><p>You can use the hostname of any node in your OpenShift cluster.</p>
 <p>This is fine for testing things out, but it doesn&rsquo;t allow you to
 expose services on a well known port, and the cluster administrator
@@ -306,9 +306,9 @@ cluster hosts.</p>
 <h3 id="exposing-services-on-cluster-external-ipso">Exposing services on cluster external IPso</h3>
 <p>It is possible to manually assign an external ip address to an
 OpenShift service.  For example:</p>
-<pre><code>virtctl expose vm test-vm-1 --port 22 --name myvm-ssh-ext --external-ip 192.168.185.18
+<pre tabindex="0"><code>virtctl expose vm test-vm-1 --port 22 --name myvm-ssh-ext --external-ip 192.168.185.18
 </code></pre><p>Which results in the follow service:</p>
-<pre><code>NAME           TYPE        CLUSTER-IP       EXTERNAL-IP     PORT(S)   AGE
+<pre tabindex="0"><code>NAME           TYPE        CLUSTER-IP       EXTERNAL-IP     PORT(S)   AGE
 myvm-ssh-ext   ClusterIP   172.30.224.127   192.168.185.18   22/TCP    47s
 </code></pre><p>While this sounds promising at first, there are several caveats:</p>
 <ul>
@@ -323,7 +323,7 @@ traffic to that address to arrive at the cluster.</li>
 </ul>
 <p>The practical impact of setting an external ip on a service is to
 instantiate netfilter rules equivalent to the following:</p>
-<pre><code>-d 192.168.185.18/32 -p tcp --dport 22 -j DNAT --to-destination 10.129.2.11:22
+<pre tabindex="0"><code>-d 192.168.185.18/32 -p tcp --dport 22 -j DNAT --to-destination 10.129.2.11:22
 </code></pre><p>If you configure the address <code>192.168.185.18</code> on a host interface (or
 otherwise arrange for traffic to that address to reach your host),
 these rules take care of directing the connection to your virtual
@@ -337,7 +337,7 @@ instruct the platform to (a) allocate an address, (b) create a load
 balancer, and (c) direct traffic from the load balancer to the target
 of your service.</p>
 <p>We can request a <code>LoadBalancer</code> using <code>virtctl</code> like this:</p>
-<pre><code>virtctl expose vm test-vm-1 --port=22 --name=myvm-ssh-np --type=LoadBalancer
+<pre tabindex="0"><code>virtctl expose vm test-vm-1 --port=22 --name=myvm-ssh-np --type=LoadBalancer
 </code></pre><p>Unfortunately, OpenShift for baremetal hosts does not include a load
 balancer out of the box. This is a shame, because the <code>LoadBalancer</code>
 solution hits just about all of our requirements:</p>

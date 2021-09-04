@@ -8,7 +8,7 @@
 7e181479 Adds methods for widget sales 0487162 [merge] Merge remote-tracking branch &#39;origin/master&#39; into my_feature 76ee81c [merge] Merge branch &#39;my_feature&#39; of https://github.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -126,7 +126,7 @@
     
 
     <p>You&rsquo;re working on a pull request. You&rsquo;ve been working on a pull request for a while, and due to lack of sleep or inebriation you&rsquo;ve been merging changes into your feature branch rather than rebasing. You now have a pull request that looks like this (I&rsquo;ve marked merge commits with the text <code>[merge]</code>):</p>
-<pre><code>7e181479 Adds methods for widget sales
+<pre tabindex="0"><code>7e181479 Adds methods for widget sales
 0487162 [merge] Merge remote-tracking branch 'origin/master' into my_feature
 76ee81c [merge] Merge branch 'my_feature' of https://github.com/my_user_name/widgets into my_feature
 981aab4 Adds api for the widget service.
@@ -148,31 +148,31 @@ deaa962 Adds all get methods for listing widgets
 <ol>
 <li>
 <p>Check out a new branch based on <code>master</code> (or the appropriate base branch if your feature branch isn&rsquo;t based on <code>master</code>):</p>
-<pre><code>git checkout -b work master
+<pre tabindex="0"><code>git checkout -b work master
 </code></pre><p>(This creates a new branch called <code>work</code> and makes that your current branch.)</p>
 </li>
 <li>
 <p>Bring in the changes from your messy pull request using <code>git merge --squash</code>:</p>
-<pre><code>git merge --squash my_feature
+<pre tabindex="0"><code>git merge --squash my_feature
 </code></pre><p>This brings in all the changes from your <code>my_feature</code> branch and stages them, but does not create <em>any</em> commits.</p>
 </li>
 <li>
 <p>Commit the changes with an appropriate commit message:</p>
-<pre><code>git commit
+<pre tabindex="0"><code>git commit
 </code></pre><p>At this point, your <code>work</code> branch should be identical to the original <code>my_feature</code> branch (running <code>git diff my_feature_branch</code> should not show any changes), but it will have only a single commit after <code>master</code>.</p>
 </li>
 <li>
 <p>Return to your feature branch and <code>reset</code> it to the squashed version:</p>
-<pre><code>git checkout my_feature
+<pre tabindex="0"><code>git checkout my_feature
 git reset --hard work
 </code></pre></li>
 <li>
 <p>Update your pull request:</p>
-<pre><code>git push -f
+<pre tabindex="0"><code>git push -f
 </code></pre></li>
 <li>
 <p>Optionally clean up your work branch:</p>
-<pre><code>git branch -D work
+<pre tabindex="0"><code>git branch -D work
 </code></pre></li>
 </ol>
 <h2 id="option-2-using-git-commit-tree">Option 2: Using <code>git commit-tree</code></h2>
@@ -180,20 +180,20 @@ git reset --hard work
 <ol>
 <li>
 <p>Use <code>git commit-tree</code> to create new commit that reproduces the current state of your <code>my_feature</code> branch but</p>
-<pre><code>git commit-tree -p master -m 'this implements my_feature' my_feature^{tree}
+<pre tabindex="0"><code>git commit-tree -p master -m 'this implements my_feature' my_feature^{tree}
 </code></pre><p>This uses the current state of the <code>my_feature</code> branch as the source of a new commit whose parent is <code>master</code>.  This will print out a commit hash:</p>
-<pre><code>1d3917a3b7c43f4585084e626303c9eeee59c6d6
+<pre tabindex="0"><code>1d3917a3b7c43f4585084e626303c9eeee59c6d6
 </code></pre></li>
 <li>
 <p>Reset your <code>my_feature</code> branch to this new commit hash:</p>
-<pre><code>git reset --hard 1d3917a3b7c43f4585084e626303c9eeee59c6d6
+<pre tabindex="0"><code>git reset --hard 1d3917a3b7c43f4585084e626303c9eeee59c6d6
 </code></pre></li>
 <li>
 <p>Consider editing your commit message to meet <a href="https://blog.oddbit.com/post/2019-06-14-git-etiquette-commit-messages/">best practices</a>.</p>
 </li>
 <li>
 <p>Update your pull request:</p>
-<pre><code>git push -f
+<pre tabindex="0"><code>git push -f
 </code></pre></li>
 </ol>
 

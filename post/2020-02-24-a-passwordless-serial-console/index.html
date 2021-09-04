@@ -10,7 +10,7 @@
 Activate the serial port Raspbian automatically starts a getty on the serial port if one is available. You should see an agetty process associated with your serial port when you run ps -ef.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -135,7 +135,7 @@ are 1200-8-N-1 Dont want login running, just straight to sh</p>
 <p>In this article, we&rsquo;ll walk through one way of implementing this configuration.</p>
 <h2 id="activate-the-serial-port">Activate the serial port</h2>
 <p>Raspbian automatically starts a getty on the serial port if one is available. You should see an <code>agetty</code> process associated with your serial port when you run <code>ps -ef</code>. For example:</p>
-<pre><code>root@raspberrypi:/etc/systemd/system# ps -fe | grep agetty | grep ttyS0
+<pre tabindex="0"><code>root@raspberrypi:/etc/systemd/system# ps -fe | grep agetty | grep ttyS0
 root      1138     1  0 00:24 ttyS0    00:00:00 /sbin/agetty -o -p -- \u --keep-baud 115200,38400,9600 ttyS0 vt220
 </code></pre><p>If you don&rsquo;t see this process and you&rsquo;re on a Raspberry Pi 3 (or later), you may need to <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=141195">explicitly enable the serial port</a> by adding <code>enable_uart=1</code> to <code>/boot/config.txt</code>. If you make this change, reboot your Pi before continuing, then repeat the above test to make sure things are working as expected.</p>
 <p>Note that your serial port may not always be named <code>ttyS0</code>. I&rsquo;m going to use the value <code>ttyS0</code> throughout this article to represent the appropriate device name. The correct device name is the penultimate argument in the above <code>agetty</code> command.</p>
@@ -146,33 +146,33 @@ root      1138     1  0 00:24 ttyS0    00:00:00 /sbin/agetty -o -p -- \u --keep-
 <p>Along with a unit file foo.service, a &ldquo;drop-in&rdquo; directory foo.service.d/ may exist. All files with the suffix &ldquo;.conf&rdquo; from this directory will be parsed after the unit file itself is parsed. This is useful to alter or add configuration settings for a unit, without having to modify unit files.</p>
 </blockquote>
 <p>The easiest way to creating a drop-in unit is with the <code>systemctl edit</code> command:</p>
-<pre><code>systemctl edit serial-getty@ttyS0
+<pre tabindex="0"><code>systemctl edit serial-getty@ttyS0
 </code></pre><p>This will bring up an editor (<code>nano</code> by default, unless you have set <code>VISUAL</code> in your environment to point at a different editor) in which you will create <code>/etc/systemd/system/serial-getty@ttyS0.d/override.conf</code>.</p>
 <p>Enter the following content:</p>
-<pre><code>[Service]
+<pre tabindex="0"><code>[Service]
 ExecStart=
 ExecStart=/sbin/agetty -o '-p -- \u' --keep-baud 115200,38400,9600 --noclear --autologin root ttyS0 vt220
 </code></pre><p>(That while the original request was for a getty running as 1200 bos, the above configuration is more generally useful. To allow connectoins at 1200 bps, modify the list of rates above to looking something like <code>115200,38400,9600,1200</code> (if you want to permit connections at higher speeds) or just <code>1200</code> (if you really want to permit only 1200 bps connections).</p>
 <p>Save the file, then reload <code>systemd</code> by running <code>systemctl daemon-reload</code>. This tells <code>systemd</code> to re-read its unit files.</p>
 <p>Finally, restart the <code>serial-getty@ttys0</code> service:</p>
-<pre><code>systemctl restart serial-getty@ttyS0
+<pre tabindex="0"><code>systemctl restart serial-getty@ttyS0
 </code></pre><h2 id="configure-passwordless-root-login-on-the-console">Configure passwordless root login on the console</h2>
 <p>With the above change to the service unit, <code>agetty</code> will attempt to log in the <code>root</code> user on the console but will prompt for a password. That looks like:</p>
-<pre><code>Raspbian GNU/Linux 10 raspberrypi ttyS0
+<pre tabindex="0"><code>Raspbian GNU/Linux 10 raspberrypi ttyS0
 
 raspberrypi login: root (automatic login)
 
 Password:
 </code></pre><p>We need to configure things such that the <code>root</code> user does not require a password when logging on the serial console. We&rsquo;ll do this by modifying the <a href="http://www.linux-pam.org/">PAM</a> configuration for the <code>login</code> program.</p>
 <p>Add the following to the top of <code>/etc/pam.d/login</code>:</p>
-<pre><code>auth sufficient pam_listfile.so item=tty sense=allow file=/etc/rootshelltty onerr=fail apply=root
+<pre tabindex="0"><code>auth sufficient pam_listfile.so item=tty sense=allow file=/etc/rootshelltty onerr=fail apply=root
 </code></pre><p>This configures <code>login</code> to permit a login for the <code>root</code> user if it finds the login tty in the file <code>/etc/rootshelltty</code>.</p>
 <p>Now, add the serial port device to <code>/etc/rootshelltty</code>:</p>
-<pre><code>root@raspberrypi:/etc# echo /dev/ttyS0 &gt; /etc/rootshelltty
+<pre tabindex="0"><code>root@raspberrypi:/etc# echo /dev/ttyS0 &gt; /etc/rootshelltty
 </code></pre><p>These changes will take affect as soon as <code>agetty</code> restarts. You can wait for the <code>Password:</code> prompt to timeout, or just restart the service by running <code>systemctl restart serial-getty@ttyS0</code>.</p>
 <hr>
 <p>With these changes, the Pi will now automatically start a <code>root</code> shell on the serial port without prompting for a password:</p>
-<pre><code>Raspbian GNU/Linux 10 raspberrypi ttyS0
+<pre tabindex="0"><code>Raspbian GNU/Linux 10 raspberrypi ttyS0
 
 raspberrypi login: root (automatic login)
 

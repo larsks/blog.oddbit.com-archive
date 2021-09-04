@@ -8,7 +8,7 @@
 git synth The git synth command reads a YAML description of a repository and executes the necessary commands to reproduce that history. It allows you set the name and email address of the author and committer as well as static date, so you every time you generate the repository you can identical commit ids.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -140,7 +140,7 @@ history in the <a href="https://en.wikipedia.org/wiki/DOT_(graph_description_lan
 into diagrams.</p>
 <h2 id="putting-it-together">Putting it together</h2>
 <p>For example, the following history specification:</p>
-<pre><code>- set:
+<pre tabindex="0"><code>- set:
     date: &quot;2021-01-01&quot;
     name: Fake Person
     email: fake@example.com
@@ -171,9 +171,9 @@ into diagrams.</p>
           message: H
 
 </code></pre><p>When applied with <code>git synth</code>:</p>
-<pre><code>$ git synth -r examplerepo examplerepo.yml
+<pre tabindex="0"><code>$ git synth -r examplerepo examplerepo.yml
 </code></pre><p>Will generate the following repository:</p>
-<pre><code>$ git -C examplerepo log --graph --all --decorate --oneline
+<pre tabindex="0"><code>$ git -C examplerepo log --graph --all --decorate --oneline
 * 28f7b38 (HEAD -&gt; master) H
 | * 93e1d18 (topic2) G
 | * 3ef811d F
@@ -184,9 +184,9 @@ into diagrams.</p>
 * a5cbd99 B
 * d98f949 A
 </code></pre><p>We can run this <code>git dot</code> command line:</p>
-<pre><code>$ git -C examplerepo dot -m -g branch --rankdir=RL
+<pre tabindex="0"><code>$ git -C examplerepo dot -m -g branch --rankdir=RL
 </code></pre><p>To produce the following <code>dot</code> description of the history:</p>
-<pre><code>digraph git {
+<pre tabindex="0"><code>digraph git {
 	graph [rankdir=RL]
 	node [shape=circle]
 	{

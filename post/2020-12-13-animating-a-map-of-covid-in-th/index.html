@@ -8,7 +8,7 @@
   I thought it might be interesting to walk through the process I used to create the video. The steps described in this article aren&rsquo;t exactly what I used (I was dealing with data in a PostGIS database, and in the interests of simplicity I wanted instructions that can be accomplished with just QGIS), but they end up in the same place.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -212,7 +212,7 @@ us all 50 states (and a few territories):</p>
 
 <p>To limit this to our target geography, we can select &ldquo;Filter&hellip;&rdquo; from
 the layer context menu and apply the following filter:</p>
-<pre><code>&quot;NAME&quot; in (
+<pre tabindex="0"><code>&quot;NAME&quot; in (
   'New York',
   'Massachusetts',
   'Rhode Island',
@@ -271,7 +271,7 @@ appropriate target field for the table join.</p>
 field calculator&rdquo; button (it looks like an abacus). Enter <code>geoid</code> for
 the field name, select the &ldquo;Create virtual field&rdquo; checkbox, and select
 &ldquo;Text (string)&rdquo; for the field type. In the &ldquo;Expression&rdquo; field, enter:</p>
-<pre><code>lpad(to_string(&quot;STATE&quot;), 2, '0') || lpad(to_string(&quot;COUNTY&quot;), 3, '0')
+<pre tabindex="0"><code>lpad(to_string(&quot;STATE&quot;), 2, '0') || lpad(to_string(&quot;COUNTY&quot;), 3, '0')
 </code></pre><figure><img src="create-virtual-field.png" width="400"/>
 </figure>
 
@@ -364,7 +364,7 @@ forget to unhide the Covid layer for the next step):</p>
 select the &ldquo;Symbology&rdquo; tab. At the top of the symbology panel is a
 menu currently set to &ldquo;Single Symbol&rdquo;. Set this to &ldquo;Graduated&rdquo;.</p>
 <p>Open the expression editor for the &ldquo;Value&rdquo; field, and set it to:</p>
-<pre><code>(to_int(&quot;cases&quot;) / &quot;pop_POPESTIMATE2019&quot;) * 1000000
+<pre tabindex="0"><code>(to_int(&quot;cases&quot;) / &quot;pop_POPESTIMATE2019&quot;) * 1000000
 </code></pre><p>Set the &ldquo;Color ramp&rdquo; to &ldquo;Spectral&rdquo;, and then select &ldquo;Invert color
 ramp&rdquo;.</p>
 <p>Ensure the &ldquo;Mode&rdquo; menu is set to &ldquo;Equal count (Quantile)&rdquo;, and then

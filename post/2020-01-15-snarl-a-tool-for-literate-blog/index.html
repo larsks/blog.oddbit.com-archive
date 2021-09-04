@@ -7,7 +7,7 @@
         <meta name="description" content="Literate programming is a programming paradigm introduced by Donald Knuth in which a program is combined with its documentation to form a single document. Tools are then used to extract the documentation for viewing or typesetting or to extract the program code so it can be compiled and/or run. While I have never been very enthusiastic about literate programming as a development methodology, I was recently inspired to explore these ideas as they relate to the sort of technical writing I do for this blog.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -255,7 +255,7 @@ ovs-vsctl set open_vswitch .  \
 ```
 </code></pre>
 <p>When running <code>snarl tangle</code> on that document, the above text renders as:</p>
-<pre><code>ovs-vsctl set open_vswitch .  \
+<pre tabindex="0"><code>ovs-vsctl set open_vswitch .  \
   external_ids:ovn-remote=tcp:${OVN0_ADDRESS}:6642 \
   external_ids:ovn-encap-ip=$(ip addr show eth0 | awk '$1 == &quot;inet&quot; {print $2}' | cut -f1 -d/) \
   external_ids:ovn-encap-type=geneve \
@@ -268,17 +268,17 @@ ovs-vsctl set open_vswitch .  \
 ```
 </code></pre>
 <p>This permits me to extract a subset of files. For example, to extract just the files tagged <code>setup</code>, I would run:</p>
-<pre><code>snarl tangle -t setup 2019-12-19-ovn-and-dhcp.snarl.md
+<pre tabindex="0"><code>snarl tangle -t setup 2019-12-19-ovn-and-dhcp.snarl.md
 </code></pre><h2 id="including-files">Including files</h2>
 <p>While the main focus of Snarl is extracting code from documentation, sometimes you want to go in the other direction. Snarl supports an <code>include</code> directive that will include the content of another file in the current document. The <code>include</code> directive is written as an HTML comment:</p>
-<pre><code>&lt;!-- include &lt;path&gt; [--escape-html] [--verbatim] --&gt;
+<pre tabindex="0"><code>&lt;!-- include &lt;path&gt; [--escape-html] [--verbatim] --&gt;
 </code></pre><p>A simple example might look like:</p>
-<pre><code>&lt;!-- include anotherfile.md --&gt;
+<pre tabindex="0"><code>&lt;!-- include anotherfile.md --&gt;
 </code></pre><p>By default, the file contents will be processed as if they were part of the existing document. That means that your included file may itself contain Snarl directives. This isn&rsquo;t always the behavior that you want, so there are a couple of options available that modify the behavior of <code>include</code>.</p>
 <p>In order to embed Snarl samples in this post, I am using the HTML <code>&lt;pre&gt;</code> element to wrap the sample text, which I am including in this document via the <code>include</code> directive. I don&rsquo;t want to interpret Snarl directives in these included files.  The <code>--verbatim</code> (or <code>-v</code>) option will include the literal content of the named file without looking for Snarl directives.</p>
 <p>An unfortunate side effect of using the <code>&lt;pre&gt;</code> element is that I have to escape any <code>&lt;</code> characters that appear in the included content. The <code>--escape-html</code> (or <code>-e</code>) option performs the necessary HTML escaping on the included file so that it will display as intended.</p>
 <p>For example, the example Snarl source presented earlier in this document was included using the following syntax:</p>
-<pre><code>&lt;!-- include hello.snarl.md -ve --&gt;
+<pre tabindex="0"><code>&lt;!-- include hello.snarl.md -ve --&gt;
 </code></pre><h2 id="to-infinity-and-beyond">To infinity and beyond</h2>
 <p>Being able to extract and verify code in technical articles is incredibly useful. There are other tools out there that will do something similar, but I&rsquo;m happy with how Snarl operates. I will absolutely be using this going forward to avoid unfortunate errors in my blogs posts, and I hope others will find it useful as well.</p>
 

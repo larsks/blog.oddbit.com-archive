@@ -9,7 +9,7 @@
 --- - hosts: all gather_facts: false become: true tasks: - ping:  And an inventory like this:">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.86.0" />
+        <meta name="generator" content="Hugo 0.88.0" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -152,7 +152,7 @@
       ansible_host: sudostuff_server3_1
 </code></pre>
 <p>And containers with <code>sudo</code> configured to require a password, Ansible would fail like this (note that I&rsquo;ve configured Ansible to use the <code>debug</code> plugin for <code>stdout_callback</code>):</p>
-<pre><code>fatal: [server1]: FAILED! =&gt; {
+<pre tabindex="0"><code>fatal: [server1]: FAILED! =&gt; {
     &quot;changed&quot;: false,
     &quot;rc&quot;: 1
 }
