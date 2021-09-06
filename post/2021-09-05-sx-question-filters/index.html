@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>A pair of userscripts for cleaning up Stack Exchange sites &middot; The Odd Bit</title>
+        <meta name="description" content="I&rsquo;ve been a regular visitor to Stack Overflow and other Stack Exchange sites over the years, and while I&rsquo;ve mostly enjoyed the experience, I&rsquo;ve been frustrated by the lack of control I have over what questions I see. I&rsquo;m not really interested in looking at questions that have already been closed, or that have a negative score, but there&rsquo;s no native facility for filtering questions like this.
+I finally spent the time learning just enough JavaScript to hurt myself to put together a pair of scripts that let me present the questions that way I want:">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.88.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.81747fa30e7c939c160ea84909a818dc1b99d7e662edf55326bd32a4510c9eb5.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/oddbit.css">
+<link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <div class="donate">
+  If you find something here useful or interesting, you can
+  <a href="https://www.buymeacoffee.com/oddbit">buy me a coffee</a>!
+</div>
+
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">A pair of userscripts for cleaning up Stack Exchange sites</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2021-09-05" itemprop="datePublished">Sun, Sep 5, 2021</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+    <p>I&rsquo;ve been a regular visitor to <a href="https://stackoverflow.com">Stack Overflow</a> and other <a href="https://stackexchange.com">Stack
+Exchange</a> sites over the years, and while I&rsquo;ve mostly enjoyed the
+experience, I&rsquo;ve been frustrated by the lack of control I have over
+what questions I see. I&rsquo;m not really interested in looking at
+questions that have already been closed, or that have a negative
+score, but there&rsquo;s no native facility for filtering questions like
+this.</p>
+<p>I finally spent the time learning just enough JavaScript <del><del>to hurt
+myself</del></del> to put together a pair of scripts that let me present the
+questions that way I want:</p>
+<h2 id="sx-hide-questions">sx-hide-questions</h2>
+<p>The <a href="https://github.com/larsks/sx-question-filter/raw/master/sx-hide-questions.user.js">sx-hide-questions</a> script will hide:</p>
+<ul>
+<li>Questions that are closed</li>
+<li>Questions that are marked as a duplicate</li>
+<li>Questions that have a score below 0</li>
+</ul>
+<p>Because I wanted it to be obvious that the script was actually doing
+something, hidden questions don&rsquo;t just disappear; they fade out.</p>
+<p>These behaviors (including the fading) can all be controlled
+individually by a set of global variables at the top of the script.</p>
+<figure><img src="fading.gif"/>
+</figure>
+
+<h2 id="sx-reorder-questions">sx-reorder questions</h2>
+<p>The <a href="https://github.com/larsks/sx-question-filter/raw/master/sx-reorder-questions.user.js">sx-reorder-questions</a> script will sort questions such that
+anything that has an answer will be at the bottom, and questions that
+have not yet been answered appear at the top.</p>
+<h2 id="installation">Installation</h2>
+<p>If you are using the <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en">Tampermonkey</a> extension, you should be able to
+click on the links to the script earlier in this post and be taken
+directly to the installation screen. If you&rsquo;re <em>not</em> running
+Tampermonkey, than either (a) install it, or (b) you&rsquo;re on your own.</p>
+<p>You can find both of these scripts in my <a href="https://github.com/larsks/sx-question-filter">sx-question-filter</a>
+repository.</p>
+<h2 id="caveats">Caveats</h2>
+<p>These scripts rely on the CSS classes and layout of the Stack Exchange
+websites. If these change, the scripts will need updating. If you
+notice that something no longer works as advertised, please feel free
+to submit pull request with the necessary corrections!</p>
+
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/stackexchange/">stackexchange</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/browser/">browser</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/javascript/">javascript</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/userscripts/">userscripts</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=A%20pair%20of%20userscripts%20for%20cleaning%20up%20Stack%20Exchange%20sites&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2021-09-05-sx-question-filters%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

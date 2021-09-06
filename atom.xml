@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2021-09-03T00:00:00Z</updated>
+  <updated>2021-09-05T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  <entry>
+    <title>A pair of userscripts for cleaning up Stack Exchange sites</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-09-05-sx-question-filters/"/>
+    <id>https://blog.oddbit.com/post/2021-09-05-sx-question-filters/</id>
+    <published>2021-09-05T00:00:00Z</published>
+    <updated>2021-09-05T00:00:00Z</updated>
+    <summary type="html">I&amp;rsquo;ve been a regular visitor to Stack Overflow and other Stack Exchange sites over the years, and while I&amp;rsquo;ve mostly enjoyed the experience, I&amp;rsquo;ve been frustrated by the lack of control I have over what questions I see. I&amp;rsquo;m not really interested in looking at questions that have already been closed, or that have a negative score, but there&amp;rsquo;s no native facility for filtering questions like this.
+I finally spent the time learning just enough JavaScript to hurt myself to put together a pair of scripts that let me present the questions that way I want:</summary>
+  </entry>
+  
   <entry>
     <title>Kubernetes External Secrets</title>
     <author>
@@ -188,19 +201,6 @@ gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock reso
     <published>2020-09-27T00:00:00Z</published>
     <updated>2020-09-27T00:00:00Z</updated>
     <summary type="html">Out of the box, OpenShift (4.x) on bare metal doesn&amp;rsquo;t come with any integrated load balancer support (when installed in a cloud environment, OpenShift typically makes use of the load balancing features available from the cloud provider). Fortunately, there are third party solutions available that are designed to work in bare metal environments. MetalLB is a popular choice, but requires some minor fiddling to get it to run properly on OpenShift.</summary>
-  </entry>
-  
-  <entry>
-    <title>Vortex Core Keyboard Review</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-09-26-vortex-core-keyboard-review/"/>
-    <id>https://blog.oddbit.com/post/2020-09-26-vortex-core-keyboard-review/</id>
-    <published>2020-09-26T00:00:00Z</published>
-    <updated>2020-09-26T00:00:00Z</updated>
-    <summary type="html">I&amp;rsquo;ve had my eye on the Vortex Core keyboard for a few months now, and this past week I finally broke down and bought one (with Cherry MX Brown switches). The Vortex Core is a 40% keyboard, which means it consists primarily of letter keys, a few lonely bits of punctuation, and several modifier keys to activate different layers on the keyboard.
- Physical impressions It&amp;rsquo;s a really cute keyboard. I&amp;rsquo;m a big fan of MX brown switches, and this keyboard is really a joy to type on, at least when you&amp;rsquo;re working primarily with the alpha keys.</summary>
   </entry>
   
 </feed>

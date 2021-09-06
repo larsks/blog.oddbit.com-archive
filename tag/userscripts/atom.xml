@@ -1,0 +1,24 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>The Odd Bit</title>
+
+  
+  <link rel="self" href="https://blog.oddbit.com/tag/userscripts/atom.xml"/>
+  
+  <link href="https://blog.oddbit.com/tag/userscripts/" rel="alternate"></link>
+
+  <updated>2021-09-05T00:00:00Z</updated>
+  <id>https://blog.oddbit.com/tag/userscripts/</id>
+  <entry>
+    <title>A pair of userscripts for cleaning up Stack Exchange sites</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2021-09-05-sx-question-filters/"/>
+    <id>https://blog.oddbit.com/post/2021-09-05-sx-question-filters/</id>
+    <published>2021-09-05T00:00:00Z</published>
+    <updated>2021-09-05T00:00:00Z</updated>
+    <summary type="html">I&amp;rsquo;ve been a regular visitor to Stack Overflow and other Stack Exchange sites over the years, and while I&amp;rsquo;ve mostly enjoyed the experience, I&amp;rsquo;ve been frustrated by the lack of control I have over what questions I see. I&amp;rsquo;m not really interested in looking at questions that have already been closed, or that have a negative score, but there&amp;rsquo;s no native facility for filtering questions like this.
+I finally spent the time learning just enough JavaScript to hurt myself to put together a pair of scripts that let me present the questions that way I want:</summary>
+  </entry>
+  
+</feed>

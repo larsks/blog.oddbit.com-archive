@@ -6,7 +6,43 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>browser</title>
+      <link>https://blog.oddbit.com/tag/browser/</link>
+      <pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/browser/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://blog.oddbit.com/tag/javascript/</link>
+      <pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stackexchange</title>
+      <link>https://blog.oddbit.com/tag/stackexchange/</link>
+      <pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/stackexchange/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>userscripts</title>
+      <link>https://blog.oddbit.com/tag/userscripts/</link>
+      <pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/userscripts/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>kubernetes</title>
       <link>https://blog.oddbit.com/tag/kubernetes/</link>
@@ -571,15 +607,6 @@
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/diy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stackexchange</title>
-      <link>https://blog.oddbit.com/tag/stackexchange/</link>
-      <pubDate>Tue, 07 May 2019 10:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/stackexchange/</guid>
       <description></description>
     </item>
     
@@ -1246,15 +1273,6 @@
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/gevent/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://blog.oddbit.com/tag/javascript/</link>
-      <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/javascript/</guid>
       <description></description>
     </item>
     

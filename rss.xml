@@ -6,7 +6,17 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A pair of userscripts for cleaning up Stack Exchange sites</title>
+      <link>https://blog.oddbit.com/post/2021-09-05-sx-question-filters/</link>
+      <pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2021-09-05-sx-question-filters/</guid>
+      <description>I&amp;rsquo;ve been a regular visitor to Stack Overflow and other Stack Exchange sites over the years, and while I&amp;rsquo;ve mostly enjoyed the experience, I&amp;rsquo;ve been frustrated by the lack of control I have over what questions I see. I&amp;rsquo;m not really interested in looking at questions that have already been closed, or that have a negative score, but there&amp;rsquo;s no native facility for filtering questions like this.
+I finally spent the time learning just enough JavaScript to hurt myself to put together a pair of scripts that let me present the questions that way I want:</description>
+    </item>
+    
     <item>
       <title>Kubernetes External Secrets</title>
       <link>https://blog.oddbit.com/post/2021-09-03-kubernetes-external-secrets/</link>
@@ -2218,7 +2228,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Ansible filter to extract specific keys from a dict into another dict dictionary ansible  Looping through memory using Zero Page indirect addressing on the 6502 loops 6502  400 Bad Request (practicing socket phyton) python sockets server bad-request  How to Start ssh-agent in Dockerfile bash docker ubuntu ssh dockerfile  Custom filter in jinja2 using in bottle python jinja2 bottle  How can I embed hidden file in Go?</description>
+      <description>Transform http.Response into array of bytes go tcp  Ansible filter to extract specific keys from a dict into another dict dictionary ansible  Looping through memory using Zero Page indirect addressing on the 6502 loops 6502  400 Bad Request (practicing socket phyton) python sockets server bad-request  How to Start ssh-agent in Dockerfile bash docker ubuntu ssh dockerfile  Custom filter in jinja2 using in bottle python jinja2 bottle  How can I embed hidden file in Go?</description>
     </item>
     
   </channel>

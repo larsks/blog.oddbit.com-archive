@@ -112,6 +112,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Docker build learns about secrets and ssh agent forwarding</h4>
+        <time class="post-stub-date" datetime="2019-02-24">Published Sun, Feb 24, 2019</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    A common problem for folks working with Docker is accessing resources which require authentication during the image build step. A particularly common use case is getting access to private git repositories using ssh key-based authentication. Until recently there hasn&rsquo;t been a great solution:
+ you can embed secrets in your image, but now you can&rsquo;t share the image with anybody. you can use build arguments, but this requires passing in an unenecrypted private key on the docker build command line, which is suboptimal for a number of reasons you can perform all the steps requiring authentication at runtime, but this can needlessly complicate your container startup process.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2019-02-24-docker-build-learns-about-secr/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2019-02-11-in-which-i-pebkac-so-you-dont/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">In which I PEBKAC so you don&#39;t have to</h4>
         <time class="post-stub-date" datetime="2019-02-11">Published Mon, Feb 11, 2019</time>
@@ -323,30 +346,6 @@ At $WORK(-ish) we&rsquo;re looking into Bitwarden because we want a password sha
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2018-10-19-integrating-bitwarden-with-ans/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Systemd unit for managing USB gadgets</h4>
-        <time class="post-stub-date" datetime="2018-10-19">Published Fri, Oct 19, 2018</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    The Pi Zero (and Zero W) have support for acting as a USB gadget: that means that they can be configured to act as a USB device &ndash; like a serial port, an ethernet interface, a mass storage device, etc.
-There are two different ways of configuring this support. The first only allows you to configure a single type of gadget at a time, and boils down to:
- Enable the dwc2 overlay in /boot/config.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2018-10-19-systemd-unit-for-managing-usb/">(Read more...)</a>
     </p>
     
     

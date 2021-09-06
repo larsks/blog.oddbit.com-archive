@@ -3,10 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.oddbit.com/categories/</loc>
-    <lastmod>2021-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2021-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/post/2021-09-05-sx-question-filters/</loc>
+    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/browser/</loc>
+    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/javascript/</loc>
+    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/stackexchange/</loc>
+    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/category/tech/</loc>
+    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/</loc>
+    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/userscripts/</loc>
+    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/kubernetes/</loc>
     <lastmod>2021-09-03T00:00:00+00:00</lastmod>
@@ -18,15 +42,6 @@
     <lastmod>2021-09-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/secrets/</loc>
-    <lastmod>2021-09-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2021-09-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/category/tech/</loc>
-    <lastmod>2021-09-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/</loc>
     <lastmod>2021-09-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/ceph/</loc>
@@ -310,9 +325,6 @@
   </url><url>
     <loc>https://blog.oddbit.com/tag/diy/</loc>
     <lastmod>2019-05-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tag/stackexchange/</loc>
-    <lastmod>2019-05-07T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2019-05-07-unpacking-a-python-regular-exp/</loc>
     <lastmod>2019-05-07T10:00:00+00:00</lastmod>
@@ -861,9 +873,6 @@
     <lastmod>2013-11-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/gevent/</loc>
-    <lastmod>2013-11-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tag/javascript/</loc>
     <lastmod>2013-11-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/jquery/</loc>
