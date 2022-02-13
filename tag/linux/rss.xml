@@ -6,7 +6,16 @@
     <description>Recent content in linux on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/linux/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tag/linux/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Udev rules for CH340 serial devices</title>
+      <link>https://blog.oddbit.com/post/2022-02-13-wemos-udev-rules/</link>
+      <pubDate>Sun, 13 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2022-02-13-wemos-udev-rules/</guid>
+      <description>I like to fiddle with Micropython, particularly on the Wemos D1 Mini, because these are such a neat form factor. Unfortunately, they have a cheap CH340 serial adapter on board, which means that from the perspective of Linux these devices are all functionally identical &amp;ndash; there&amp;rsquo;s no way to identify one device from another. This by itself would be a manageable problem, except that the device names assigned to these devices aren&amp;rsquo;t constant: depending on the order in which they get plugged in (and the order in which they are detected at boot), a device might be /dev/ttyUSB0 one day and /dev/ttyUSB2 another day.</description>
+    </item>
+    
     <item>
       <title>TM-V71A and Linux, part 1: Programming mode</title>
       <link>https://blog.oddbit.com/post/2019-10-03-tm-v71a-linux-part-1/</link>

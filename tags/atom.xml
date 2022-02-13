@@ -6,8 +6,44 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2021-09-05T00:00:00Z</updated>
+  <updated>2022-02-13T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>linux</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/linux/"/>
+    <id>https://blog.oddbit.com/tag/linux/</id>
+    <published>2022-02-13T00:00:00Z</published>
+    <updated>2022-02-13T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>micropython</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/micropython/"/>
+    <id>https://blog.oddbit.com/tag/micropython/</id>
+    <published>2022-02-13T00:00:00Z</published>
+    <updated>2022-02-13T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>udev</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/udev/"/>
+    <id>https://blog.oddbit.com/tag/udev/</id>
+    <published>2022-02-13T00:00:00Z</published>
+    <updated>2022-02-13T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>browser</title>
     <author>
@@ -147,42 +183,6 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/networking/"/>
     <id>https://blog.oddbit.com/tag/networking/</id>
-    <published>2021-04-17T00:00:00Z</published>
-    <updated>2021-04-17T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>openvswitch</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/openvswitch/"/>
-    <id>https://blog.oddbit.com/tag/openvswitch/</id>
-    <published>2021-04-17T00:00:00Z</published>
-    <updated>2021-04-17T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>virtualization</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/virtualization/"/>
-    <id>https://blog.oddbit.com/tag/virtualization/</id>
-    <published>2021-04-17T00:00:00Z</published>
-    <updated>2021-04-17T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>vxlan</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/vxlan/"/>
-    <id>https://blog.oddbit.com/tag/vxlan/</id>
     <published>2021-04-17T00:00:00Z</published>
     <updated>2021-04-17T00:00:00Z</updated>
     <summary type="html"></summary>

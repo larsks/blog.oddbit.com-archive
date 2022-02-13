@@ -111,6 +111,28 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2022-02-13-wemos-udev-rules/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Udev rules for CH340 serial devices</h4>
+        <time class="post-stub-date" datetime="2022-02-13">Published Sun, Feb 13, 2022</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I like to fiddle with Micropython, particularly on the Wemos D1 Mini, because these are such a neat form factor. Unfortunately, they have a cheap CH340 serial adapter on board, which means that from the perspective of Linux these devices are all functionally identical &ndash; there&rsquo;s no way to identify one device from another. This by itself would be a manageable problem, except that the device names assigned to these devices aren&rsquo;t constant: depending on the order in which they get plugged in (and the order in which they are detected at boot), a device might be /dev/ttyUSB0 one day and /dev/ttyUSB2 another day.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2022-02-13-wemos-udev-rules/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2021-09-05-sx-question-filters/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">A pair of userscripts for cleaning up Stack Exchange sites</h4>
         <time class="post-stub-date" datetime="2021-09-05">Published Sun, Sep 5, 2021</time>
@@ -317,29 +339,6 @@ The first option is the Ceph Object Gateway (radosgw), Ceph&rsquo;s native objec
 
 
         
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2021-02-08-remediating-poor-pypi-performa/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Remediating poor PyPi performance with DevPi</h4>
-        <time class="post-stub-date" datetime="2021-02-08">Published Mon, Feb 8, 2021</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    Performance of the primary PyPi service has been so bad lately that it&rsquo;s become very disruptive. Tasks that used to take a few seconds will now churn along for 15-20 minutes or longer before completing, which is incredibly frustrating.
-I first went looking to see if there was a PyPi mirror infrastructure, like we see with CPAN for Perl or CTAN for Tex (and similarly for most Linux distributions). There is apparently no such beast,
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2021-02-08-remediating-poor-pypi-performa/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
     </ol>
 
     <div class="post-navigation">
@@ -371,7 +370,7 @@ I first went looking to see if there was a PyPi mirror infrastructure, like we s
                 </div>
 
                 <p class="footer-copyright">
-                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                    <span>&copy; 2022 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
                 </p>
                 <p class="footer-copyright">
                     <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>

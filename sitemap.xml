@@ -3,10 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.oddbit.com/categories/</loc>
-    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/linux/</loc>
+    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/micropython/</loc>
+    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/category/tech/</loc>
+    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/</loc>
+    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/udev/</loc>
+    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/post/2022-02-13-wemos-udev-rules/</loc>
+    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2021-09-05-sx-question-filters/</loc>
     <lastmod>2021-09-05T00:00:00+00:00</lastmod>
@@ -18,15 +39,6 @@
     <lastmod>2021-09-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/stackexchange/</loc>
-    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/category/tech/</loc>
-    <lastmod>2021-09-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/</loc>
     <lastmod>2021-09-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/userscripts/</loc>
@@ -132,9 +144,6 @@
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/esp8266/</loc>
-    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tag/micropython/</loc>
     <lastmod>2020-12-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2020-12-18-to-sleep-or-not-to-sleep/</loc>
@@ -285,9 +294,6 @@
     <lastmod>2019-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/hamradio/</loc>
-    <lastmod>2019-10-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tag/linux/</loc>
     <lastmod>2019-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2019-10-03-tm-v71a-linux-part-1/</loc>

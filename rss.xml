@@ -6,7 +6,16 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Udev rules for CH340 serial devices</title>
+      <link>https://blog.oddbit.com/post/2022-02-13-wemos-udev-rules/</link>
+      <pubDate>Sun, 13 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2022-02-13-wemos-udev-rules/</guid>
+      <description>I like to fiddle with Micropython, particularly on the Wemos D1 Mini, because these are such a neat form factor. Unfortunately, they have a cheap CH340 serial adapter on board, which means that from the perspective of Linux these devices are all functionally identical &amp;ndash; there&amp;rsquo;s no way to identify one device from another. This by itself would be a manageable problem, except that the device names assigned to these devices aren&amp;rsquo;t constant: depending on the order in which they get plugged in (and the order in which they are detected at boot), a device might be /dev/ttyUSB0 one day and /dev/ttyUSB2 another day.</description>
+    </item>
+    
     <item>
       <title>A pair of userscripts for cleaning up Stack Exchange sites</title>
       <link>https://blog.oddbit.com/post/2021-09-05-sx-question-filters/</link>
@@ -2228,7 +2237,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Transform http.Response into array of bytes go tcp  Ansible filter to extract specific keys from a dict into another dict dictionary ansible  Looping through memory using Zero Page indirect addressing on the 6502 loops 6502  400 Bad Request (practicing socket phyton) python sockets server bad-request  How to Start ssh-agent in Dockerfile bash docker ubuntu ssh dockerfile  Custom filter in jinja2 using in bottle python jinja2 bottle  How can I embed hidden file in Go?</description>
+      <description>ansible cannot access key from included task ansible  cppcheck: error: unrecognized command line option: &amp;#34;--file-filter c cppcheck  Error installing specific python packages in jupyter notebook? python pip jupyter-notebook  Makefile target unexpectadly raising error makefile  How to replace path in file in docker container with perl or sed bash docker perl sed replace  How to git add all files excluding a certain folder, from anywhere in a repo?</description>
     </item>
     
   </channel>

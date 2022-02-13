@@ -111,6 +111,29 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">I2C on the Raspberry Pi</h4>
+        <time class="post-stub-date" datetime="2013-03-12">Published Tue, Mar 12, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I&rsquo;ve set up my Raspberry Pi to communicate with my Arduino via I2C. The Raspberry Pi is a 3.3v device and the Arduino is a 5v device. While in general this means that you need to use a level converter when connecting the two devices, you don&rsquo;t need to use a level converter when connecting the Arduino to the Raspberry Pi via I2C.
+The design of the I2C bus is such that the only device driving a voltage on the bus is the master (in this case, the Raspberry Pi), via pull-up resistors.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-03-12-i2c-on-the-raspberry/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-03-08-interrupt-driven-gpi/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Interrupt driven GPIO with Python</h4>
         <time class="post-stub-date" datetime="2013-03-08">Published Fri, Mar 8, 2013</time>
@@ -323,29 +346,6 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
 
 
         
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Parsing Libvirt XML with xmllint</h4>
-        <time class="post-stub-date" datetime="2012-12-21">Published Fri, Dec 21, 2012</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I&rsquo;ve been playing around with the LXC support in libvirt recently, and I&rsquo;m trying to use a model where each LXC instance is backed by a dedicated LVM volume. This means that the process of starting an instance is:
- mount the instance root filesystem if necessary start the instance  It&rsquo;s annoying to have to do this by hand. I could simply add all the LXC filesystems to /etc/fstab, but this would mean and extra step when creating and deleting each instance.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2012-12-21-parsing-libvirt-xml/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
     </ol>
 
     <div class="post-navigation">
@@ -379,7 +379,7 @@ I&rsquo;ve since spent a little more time working with Arch, and these are the t
                 </div>
 
                 <p class="footer-copyright">
-                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                    <span>&copy; 2022 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
                 </p>
                 <p class="footer-copyright">
                     <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
