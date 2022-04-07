@@ -2237,7 +2237,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>ansible cannot access key from included task ansible  cppcheck: error: unrecognized command line option: &amp;#34;--file-filter c cppcheck  Error installing specific python packages in jupyter notebook? python pip jupyter-notebook  Makefile target unexpectadly raising error makefile  How to replace path in file in docker container with perl or sed bash docker perl sed replace  How to git add all files excluding a certain folder, from anywhere in a repo?</description>
+      <description>kubectl returning cannot unmarshal string into Go value of type map[string]interface {} kubernetes kubectl  Istio CRD failed to install kubernetes terraform kubernetes-helm digital-ocean istio  Splitting python click options betwen functions python python-3.x python-click  Docker Compose Access Container From Another Machine spring-boot docker jenkins docker-compose  Map ConfigParser dictionary to a class constructor with correct value types python python-3.x dictionary configparser  Is there a better and cleaner way to remove strings using AWK bash awk script  How to export parsed json variables in docker entrypoint.</description>
     </item>
     
   </channel>
