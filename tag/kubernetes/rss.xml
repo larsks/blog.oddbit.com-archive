@@ -22,7 +22,7 @@
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/post/2021-08-23-external-ocs/</guid>
-      <description>Red Hat&amp;rsquo;s [OpenShift Data Foundation][ocs] (formerly &amp;ldquo;OpenShift Container Storage&amp;rdquo;, or &amp;ldquo;OCS&amp;rdquo;) allows you to either (a) automatically set up a Ceph cluster as an application running on your OpenShift cluster, or (b) connect your OpenShift cluster to an externally managed Ceph cluster. While setting up Ceph as an OpenShift application is a relatively polished experienced, connecting to an external cluster still has some rough edges.
+      <description>Red Hat&amp;rsquo;s OpenShift Data Foundation (formerly &amp;ldquo;OpenShift Container Storage&amp;rdquo;, or &amp;ldquo;OCS&amp;rdquo;) allows you to either (a) automatically set up a Ceph cluster as an application running on your OpenShift cluster, or (b) connect your OpenShift cluster to an externally managed Ceph cluster. While setting up Ceph as an OpenShift application is a relatively polished experienced, connecting to an external cluster still has some rough edges.
 NB I am not a Ceph expert.</description>
     </item>
     
