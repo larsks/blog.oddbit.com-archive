@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Directing different ports to different containers with Traefik &middot; The Odd Bit</title>
+        <meta name="description" content="This post is mostly for myself: I find the Traefik documentation hard to navigate, so having figured this out in response to a question on Stack Overflow, I&rsquo;m putting it here to help it stick in my head.
+The question asks essentially how to perform port-based routing of requests to containers, so that a request for http://example.com goes to one container while a request for http://example.com:9090 goes to a different container.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.88.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="stylesheet" href="https://blog.oddbit.com/dist/style.min.81747fa30e7c939c160ea84909a818dc1b99d7e662edf55326bd32a4510c9eb5.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<!-- alternate output formats -->
+
+
+        <link rel="stylesheet" href="/css/oddbit.css">
+<link rel="stylesheet" href="/css/sx.css">
+<link rel="stylesheet" href="/css/pull-request.css">
+<link rel="stylesheet" href="/css/archive.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://blog.oddbit.com/rss.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/larsks" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/larsks" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="https://stackoverflow.com/users/147356/larsks" rel="me">
+                                <i class="fa fa-stack-overflow"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <div class="donate">
+  If you find something here useful or interesting, you can
+  <a href="https://www.buymeacoffee.com/oddbit">buy me a coffee</a>!
+</div>
+
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Categories" href="/categories">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags">Tags</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Archives" href="/archives">Archives</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Answers" href="/about/stackoverflow/">Answers</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="GPG Key" href="/about/gpg/">GPG Key</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Directing different ports to different containers with Traefik</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2022-06-20" itemprop="datePublished">Mon, Jun 20, 2022</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+    <p>This post is mostly for myself: I find the <a href="https://traefik.io">Traefik</a> documentation hard to navigate, so having figured this out in response to <a href="https://stackoverflow.com/a/72694677/147356">a question on Stack Overflow</a>, I&rsquo;m putting it here to help it stick in my head.</p>
+<p>The question asks essentially how to perform port-based routing of requests to containers, so that a request for <code>http://example.com</code> goes to one container while a request for <code>http://example.com:9090</code> goes to a different container.</p>
+<h2 id="creating-entrypoints">Creating entrypoints</h2>
+<p>A default Traefik configuration will already have a listener on port 80, but if we want to accept connections on port 9090 we need to create a new listener: what Traefik calls an <a href="https://doc.traefik.io/traefik/routing/entrypoints/">entrypoint</a>. We do this using the <code>--entrypoints.&lt;name&gt;.address</code> option. For example, <code>--entrypoints.ep1.address=80</code> creates an entrypoint named <code>ep1</code> on port 80, while <code>--entrypoints.ep2.address=9090</code> creates an entrypoint  named <code>ep2</code> on port 9090. Those names are important because we&rsquo;ll use them for mapping containers to the appropriate listener later on.</p>
+<p>This gives us a Traefik configuration that looks something like:</p>
+<pre tabindex="0"><code>  proxy:
+    image: traefik:latest
+    command:
+      - --api.insecure=true
+      - --providers.docker
+      - --entrypoints.ep1.address=:80
+      - --entrypoints.ep2.address=:9090
+    ports:
+      - &quot;80:80&quot;
+      - &quot;127.0.0.1:8080:8080&quot;
+      - &quot;9090:9090&quot;
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+</code></pre><p>We need to publish ports <code>80</code> and <code>9090</code> on the host in order to accept connections. Port 8080 is by default the Traefik dashboard; in this configuration I have it bound to <code>localhost</code> because I don&rsquo;t want to provide external access to the dashboard.</p>
+<h2 id="routing-services">Routing services</h2>
+<p>Now we need to configure our services so that connections on ports 80 and 9090 will get routed to the appropriate containers. We do this using the <code>traefik.http.routers.&lt;name&gt;.entrypoints</code> label. Here&rsquo;s a simple example:</p>
+<pre tabindex="0"><code>app1:
+  image: docker.io/alpinelinux/darkhttpd:latest
+  labels:
+    - traefik.http.routers.app1.entrypoints=ep1
+    - traefik.http.routers.app1.rule=Host(`example.com`)
+</code></pre><p>In the above configuration, we&rsquo;re using the following labels:</p>
+<ul>
+<li>
+<p><code>traefik.http.routers.app1.entrypoints=ep1</code></p>
+<p>This binds our <code>app1</code> container to the <code>ep1</code> entrypoint.</p>
+</li>
+<li>
+<p><code>traefik.http.routers.app1.rule=Host(`example.com`)</code></p>
+<p>This matches requests with <code>Host: example.com</code>.</p>
+</li>
+</ul>
+<p>So in combination, these two rules say that any request on port 80 for <code>Host: example.com</code> will be routed to the <code>app1</code> container.</p>
+<p>To get port <code>9090</code> routed to a second container, we add:</p>
+<pre tabindex="0"><code>app2:
+  image: docker.io/alpinelinux/darkhttpd:latest
+  labels:
+    - traefik.http.routers.app2.rule=Host(`example.com`)
+    - traefik.http.routers.app2.entrypoints=ep2
+</code></pre><p>This is the same thing, except we use entrypoint <code>ep2</code>.</p>
+<p>With everything running, we can watch the logs from <code>docker-compose up</code> and see that a request on port 80:</p>
+<pre tabindex="0"><code>curl -H 'host: example.com' localhost
+</code></pre><p>Is serviced by <code>app1</code>:</p>
+<pre tabindex="0"><code>app1_1   | 172.20.0.2 - - [21/Jun/2022:02:44:11 +0000] &quot;GET / HTTP/1.1&quot; 200 354 &quot;&quot; &quot;curl/7.76.1&quot;
+</code></pre><p>And that request on port 9090:</p>
+<pre tabindex="0"><code>curl -H 'host: example.com' localhost:9090
+</code></pre><p>Is serviced by <code>app2</code>:</p>
+<pre tabindex="0"><code>app2_1   | 172.20.0.2 - - [21/Jun/2022:02:44:39 +0000] &quot;GET / HTTP/1.1&quot; 200 354 &quot;&quot; &quot;curl/7.76.1&quot;
+</code></pre><hr>
+<p>The complete <code>docker-compose.yaml</code> file from this post looks like:</p>
+<pre tabindex="0"><code>version: &quot;3&quot;
+
+services:
+  proxy:
+    image: traefik:latest
+    command:
+      - --api.insecure=true
+      - --providers.docker
+      - --entrypoints.ep1.address=:80
+      - --entrypoints.ep2.address=:9090
+    ports:
+      - &quot;80:80&quot;
+      - &quot;8080:8080&quot;
+      - &quot;9090:9090&quot;
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  app1:
+    image: docker.io/alpinelinux/darkhttpd:latest
+    labels:
+      - traefik.http.routers.app1.rule=Host(`example.com`)
+      - traefik.http.routers.app1.entrypoints=ep1
+
+  app2:
+    image: docker.io/alpinelinux/darkhttpd:latest
+    labels:
+      - traefik.http.routers.app2.rule=Host(`example.com`)
+      - traefik.http.routers.app2.entrypoints=ep2
+</code></pre>
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/containers/">containers</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/docker/">docker</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/traefik/">traefik</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Directing%20different%20ports%20to%20different%20containers%20with%20Traefik&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2022-06-20-traefik-multiple-listeners%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+
+        
+        
+    </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="The Odd Bit" href="https://blog.oddbit.com/">The Odd Bit</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2022 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://blog.oddbit.com/js/jquery-1.11.3.min.js"></script>
+        <script src="https://blog.oddbit.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://blog.oddbit.com/js/scripts.js"></script>
+    </body>
+</html>
+

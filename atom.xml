@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2022-02-13T00:00:00Z</updated>
+  <updated>2022-06-20T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  <entry>
+    <title>Directing different ports to different containers with Traefik</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2022-06-20-traefik-multiple-listeners/"/>
+    <id>https://blog.oddbit.com/post/2022-06-20-traefik-multiple-listeners/</id>
+    <published>2022-06-20T00:00:00Z</published>
+    <updated>2022-06-20T00:00:00Z</updated>
+    <summary type="html">This post is mostly for myself: I find the Traefik documentation hard to navigate, so having figured this out in response to a question on Stack Overflow, I&amp;rsquo;m putting it here to help it stick in my head.
+The question asks essentially how to perform port-based routing of requests to containers, so that a request for http://example.com goes to one container while a request for http://example.com:9090 goes to a different container.</summary>
+  </entry>
+  
   <entry>
     <title>Udev rules for CH340 serial devices</title>
     <author>
@@ -188,19 +201,6 @@ import machine lastrun_1 = 0 lastrun_2 = 0 while True: now = time.</summary>
     <updated>2020-12-13T00:00:00Z</updated>
     <summary type="html">I recently put together a short animation showing the spread of Covid throughout the Northeast United States:
   I thought it might be interesting to walk through the process I used to create the video. The steps described in this article aren&amp;rsquo;t exactly what I used (I was dealing with data in a PostGIS database, and in the interests of simplicity I wanted instructions that can be accomplished with just QGIS), but they end up in the same place.</summary>
-  </entry>
-  
-  <entry>
-    <title>A note about running gpgv</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-10-05-a-note-about-running-gpgv/"/>
-    <id>https://blog.oddbit.com/post/2020-10-05-a-note-about-running-gpgv/</id>
-    <published>2020-10-05T00:00:00Z</published>
-    <updated>2020-10-05T00:00:00Z</updated>
-    <summary type="html">I found the following error from gpgv to be a little opaque:
-gpgv: unknown type of key resource &#39;trustedkeys.kbx&#39; gpgv: keyblock resource &#39;/home/lars/.gnupg/trustedkeys.kbx&#39;: General error gpgv: Can&#39;t check signature: No public key It turns out that&amp;rsquo;s gpg-speak for &amp;ldquo;your trustedkeys.kbx keyring doesn&amp;rsquo;t exist&amp;rdquo;. That took longer to figure out than I care to admit. To get a key from your regular public keyring into your trusted keyring, you can run something like the following:</summary>
   </entry>
   
 </feed>

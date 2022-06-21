@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/containers/" rel="alternate"></link>
 
-  <updated>2016-02-07T00:00:00Z</updated>
+  <updated>2022-06-20T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/containers/</id>
+  <entry>
+    <title>Directing different ports to different containers with Traefik</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2022-06-20-traefik-multiple-listeners/"/>
+    <id>https://blog.oddbit.com/post/2022-06-20-traefik-multiple-listeners/</id>
+    <published>2022-06-20T00:00:00Z</published>
+    <updated>2022-06-20T00:00:00Z</updated>
+    <summary type="html">This post is mostly for myself: I find the Traefik documentation hard to navigate, so having figured this out in response to a question on Stack Overflow, I&amp;rsquo;m putting it here to help it stick in my head.
+The question asks essentially how to perform port-based routing of requests to containers, so that a request for http://example.com goes to one container while a request for http://example.com:9090 goes to a different container.</summary>
+  </entry>
+  
   <entry>
     <title>Systemd-nspawn for fun and...well, mostly for fun</title>
     <author>

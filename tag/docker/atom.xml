@@ -6,8 +6,21 @@
   
   <link href="https://blog.oddbit.com/tag/docker/" rel="alternate"></link>
 
-  <updated>2020-09-25T00:00:00Z</updated>
+  <updated>2022-06-20T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/docker/</id>
+  <entry>
+    <title>Directing different ports to different containers with Traefik</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2022-06-20-traefik-multiple-listeners/"/>
+    <id>https://blog.oddbit.com/post/2022-06-20-traefik-multiple-listeners/</id>
+    <published>2022-06-20T00:00:00Z</published>
+    <updated>2022-06-20T00:00:00Z</updated>
+    <summary type="html">This post is mostly for myself: I find the Traefik documentation hard to navigate, so having figured this out in response to a question on Stack Overflow, I&amp;rsquo;m putting it here to help it stick in my head.
+The question asks essentially how to perform port-based routing of requests to containers, so that a request for http://example.com goes to one container while a request for http://example.com:9090 goes to a different container.</summary>
+  </entry>
+  
   <entry>
     <title>Building multi-architecture images with GitHub Actions</title>
     <author>
@@ -192,19 +205,6 @@ We&amp;rsquo;ll be using OpenStack packages from the RDO Juno repository.</summa
     <summary type="html">In this post, we&amp;rsquo;ll look at a method for building minimal Docker images for dynamically linked ELF binaries, and then at a tool for automating this process.
 It is tempting, when creating a simple Docker image, to start with one of the images provided by the major distributions. For example, if you need an image that provides tcpdump for use on your Atomic host, you might do something like:
 FROM fedora RUN yum -y install tcpdump  And while this will work, you end up consuming 250MB for tcpdump.</summary>
-  </entry>
-  
-  <entry>
-    <title>Docker vs. PrivateTmp</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/"/>
-    <id>https://blog.oddbit.com/post/2015-01-18-docker-vs-privatetmp/</id>
-    <published>2015-01-18T00:00:00Z</published>
-    <updated>2015-01-18T00:00:00Z</updated>
-    <summary type="html">While working with Docker the other day, I ran into an undesirable interaction between Docker and systemd services that utilize the PrivateTmp directive.
-The PrivateTmp directive, if true, &amp;ldquo;sets up a new file system namespace for the executed processes and mounts private /tmp and /var/tmp directories inside it that is not shared by processes outside of the namespace&amp;rdquo;. This is a great idea from a security perspective, but can cause some unanticipated consequences.</summary>
   </entry>
   
 </feed>

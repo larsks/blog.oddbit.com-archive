@@ -6,8 +6,44 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2022-02-13T00:00:00Z</updated>
+  <updated>2022-06-20T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>containers</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/containers/"/>
+    <id>https://blog.oddbit.com/tag/containers/</id>
+    <published>2022-06-20T00:00:00Z</published>
+    <updated>2022-06-20T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>docker</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/docker/"/>
+    <id>https://blog.oddbit.com/tag/docker/</id>
+    <published>2022-06-20T00:00:00Z</published>
+    <updated>2022-06-20T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>traefik</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/traefik/"/>
+    <id>https://blog.oddbit.com/tag/traefik/</id>
+    <published>2022-06-20T00:00:00Z</published>
+    <updated>2022-06-20T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>linux</title>
     <author>
@@ -149,42 +185,6 @@
     <id>https://blog.oddbit.com/tag/ocs/</id>
     <published>2021-08-23T00:00:00Z</published>
     <updated>2021-08-23T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>odf</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/odf/"/>
-    <id>https://blog.oddbit.com/tag/odf/</id>
-    <published>2021-08-23T00:00:00Z</published>
-    <updated>2021-08-23T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>storage</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/storage/"/>
-    <id>https://blog.oddbit.com/tag/storage/</id>
-    <published>2021-08-23T00:00:00Z</published>
-    <updated>2021-08-23T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>networking</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/networking/"/>
-    <id>https://blog.oddbit.com/tag/networking/</id>
-    <published>2021-04-17T00:00:00Z</published>
-    <updated>2021-04-17T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   

@@ -6,7 +6,17 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Directing different ports to different containers with Traefik</title>
+      <link>https://blog.oddbit.com/post/2022-06-20-traefik-multiple-listeners/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2022-06-20-traefik-multiple-listeners/</guid>
+      <description>This post is mostly for myself: I find the Traefik documentation hard to navigate, so having figured this out in response to a question on Stack Overflow, I&amp;rsquo;m putting it here to help it stick in my head.
+The question asks essentially how to perform port-based routing of requests to containers, so that a request for http://example.com goes to one container while a request for http://example.com:9090 goes to a different container.</description>
+    </item>
+    
     <item>
       <title>Udev rules for CH340 serial devices</title>
       <link>https://blog.oddbit.com/post/2022-02-13-wemos-udev-rules/</link>
@@ -2237,7 +2247,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>kubectl returning cannot unmarshal string into Go value of type map[string]interface {} kubernetes kubectl  Istio CRD failed to install kubernetes terraform kubernetes-helm digital-ocean istio  Splitting python click options betwen functions python python-3.x python-click  Docker Compose Access Container From Another Machine spring-boot docker jenkins docker-compose  Map ConfigParser dictionary to a class constructor with correct value types python python-3.x dictionary configparser  Is there a better and cleaner way to remove strings using AWK bash awk script  How to export parsed json variables in docker entrypoint.</description>
+      <description>Traefik different ports for different Docker containers docker docker-compose traefik  git push can not find -o option git  Interact with podman docker via socket in Redhat 9 docker redhat podman  Capturing commented text in an XML python xml beautifulsoup xml-comments  How to execute a shell script as input on an interactive bash pod in Kubernetes? bash shell kubernetes  Docker : Opensearch refuses connection with the example in opensearch documentation in docker python-3.</description>
     </item>
     
   </channel>
