@@ -1,0 +1,23 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>The Odd Bit</title>
+
+  
+  <link rel="self" href="https://blog.oddbit.com/tag/labels/atom.xml"/>
+  
+  <link href="https://blog.oddbit.com/tag/labels/" rel="alternate"></link>
+
+  <updated>2022-09-10T00:00:00Z</updated>
+  <id>https://blog.oddbit.com/tag/labels/</id>
+  <entry>
+    <title>Investigating connection timeouts in a Kubernetes application</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2022-09-10-kubernetes-labels/"/>
+    <id>https://blog.oddbit.com/post/2022-09-10-kubernetes-labels/</id>
+    <published>2022-09-10T00:00:00Z</published>
+    <updated>2022-09-10T00:00:00Z</updated>
+    <summary type="html">We are working with an application that produces resource utilization reports for clients of our OpenShift-based cloud environments. The developers working with the application have been reporting mysterious issues concerning connection timeouts between the application and the database (a MariaDB instance). For a long time we had only high-level verbal descriptions of the problem (&amp;ldquo;I&amp;rsquo;m seeing a lot of connection timeouts!&amp;quot;) and a variety of unsubstantiated theories (from multiple sources) about the cause.</summary>
+  </entry>
+  
+</feed>

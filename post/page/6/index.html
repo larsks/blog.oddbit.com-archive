@@ -111,6 +111,34 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Debugging attiny85 code, part 3: Tracing with simavr</h4>
+        <time class="post-stub-date" datetime="2019-01-22">Published Tue, Jan 22, 2019</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    This is the third of three posts about using gdb and simavr to debug AVR code. The complete series is:
+  Part 1: Using GDB
+A walkthrough of using GDB to manually inspect the behavior of our code.
+  Part 2: Automating GDB with scripts
+Creating GDB scripts to automatically test the behavior of our code.
+  Part 3: Tracing with simavr
+Using simavr to collect information about the state of microcontroller pins while our code is running.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2019-01-22-debugging-attiny-code-pt-3/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2019-01-19-pipower-a-raspberry-pi-ups/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">PiPower: A Raspberry Pi UPS</h4>
         <time class="post-stub-date" datetime="2019-01-19">Published Sat, Jan 19, 2019</time>
@@ -310,30 +338,6 @@ Environment I&rsquo;m working with an OpenStack &ldquo;Pike&rdquo; deployment, w
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2018-02-26-grouping-aggregation-queries-i/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Listing iptables rules with line numbers</h4>
-        <time class="post-stub-date" datetime="2018-02-08">Published Thu, Feb 8, 2018</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.
-You can augment the output from these commands with rule numbers with the following awk script:
-#!/bin/awk -f state == 0 &amp;&amp; /^-A/ {state=1; chain=$2; counter=1; printf &quot;\n&quot;} state == 1 &amp;&amp; $2 !
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/">(Read more...)</a>
     </p>
     
     

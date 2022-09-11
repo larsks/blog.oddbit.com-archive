@@ -6,7 +6,16 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Investigating connection timeouts in a Kubernetes application</title>
+      <link>https://blog.oddbit.com/post/2022-09-10-kubernetes-labels/</link>
+      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2022-09-10-kubernetes-labels/</guid>
+      <description>We are working with an application that produces resource utilization reports for clients of our OpenShift-based cloud environments. The developers working with the application have been reporting mysterious issues concerning connection timeouts between the application and the database (a MariaDB instance). For a long time we had only high-level verbal descriptions of the problem (&amp;ldquo;I&amp;rsquo;m seeing a lot of connection timeouts!&amp;quot;) and a variety of unsubstantiated theories (from multiple sources) about the cause.</description>
+    </item>
+    
     <item>
       <title>Directing different ports to different containers with Traefik</title>
       <link>https://blog.oddbit.com/post/2022-06-20-traefik-multiple-listeners/</link>
@@ -2247,7 +2256,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Traefik different ports for different Docker containers docker docker-compose traefik  git push can not find -o option git  Interact with podman docker via socket in Redhat 9 docker redhat podman  Capturing commented text in an XML python xml beautifulsoup xml-comments  How to execute a shell script as input on an interactive bash pod in Kubernetes? bash shell kubernetes  Docker : Opensearch refuses connection with the example in opensearch documentation in docker python-3.</description>
+      <description>How to run postgres in docker as non-root user? postgresql docker  Extract IP addresses from a text file with other values ansible jinja2 ansible-template  k8s api coreV1 does not have requests.cpu for ResourceQuotas kubernetes  Syntax &amp;#34;if any() / if all() in object&amp;#34; in Jinja python python-3.x jinja2 pelican  Why docker image built locally and on github actions have different digest docker dockerfile github-actions amazon-ecr  Control the number of subprocesses using to call external commands in python python parallel-processing subprocess multiprocessing  Ansible - Compare dictionaries works but will not accept an addition ansible  Ubuntu Container Hangs On Every Command docker dockerfile  YAML using json_query to print specific value array with filter string contained dot ansible yaml  commit not found when syncing submodule git linux-kernel git-submodules   (last refreshed at 2022-09-11 02:06 UTC )</description>
     </item>
     
   </channel>

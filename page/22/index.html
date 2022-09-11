@@ -112,6 +112,31 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">NFS and the 16-group limit</h4>
+        <time class="post-stub-date" datetime="2010-02-02">Published Tue, Feb 2, 2010</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I learned something new today: it appears that the underlying authorization mechanism used by NFS limits your group membership to 16 groups. From http://bit.ly/cBhU8N:
+ NFS is built on ONC RPC (Sun RPC). NFS depends on RPC for authentication and identification of users. Most NFS deployments use an RPC authentication flavor called AUTH_SYS (originally called AUTH_UNIX, but renamed to AUTH_SYS).
+AUTH_SYS sends 3 important things:
+  A 32 bit numeric user identifier (what you&rsquo;d see in the UNIX /etc/passwd file) A 32 bit primary numeric group identifier (ditto) A variable length list of up to 16 32-bit numeric supplemental group identifiers (what&rsquo;d you see in the /etc/group file)    We ran into this today while diagnosing a weird permissions issue.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2010-02-02-nfs-and-16-group-limit/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-gi/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Cleaning up Subversion with Git</h4>
         <time class="post-stub-date" datetime="2010-01-29">Published Fri, Jan 29, 2010</time>

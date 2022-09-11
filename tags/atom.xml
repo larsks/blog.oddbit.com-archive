@@ -6,8 +6,56 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2022-06-20T00:00:00Z</updated>
+  <updated>2022-09-10T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>cloud</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/cloud/"/>
+    <id>https://blog.oddbit.com/tag/cloud/</id>
+    <published>2022-09-10T00:00:00Z</published>
+    <updated>2022-09-10T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>kubernetes</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/kubernetes/"/>
+    <id>https://blog.oddbit.com/tag/kubernetes/</id>
+    <published>2022-09-10T00:00:00Z</published>
+    <updated>2022-09-10T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>labels</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/labels/"/>
+    <id>https://blog.oddbit.com/tag/labels/</id>
+    <published>2022-09-10T00:00:00Z</published>
+    <updated>2022-09-10T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>openshift</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/openshift/"/>
+    <id>https://blog.oddbit.com/tag/openshift/</id>
+    <published>2022-09-10T00:00:00Z</published>
+    <updated>2022-09-10T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>containers</title>
     <author>
@@ -129,30 +177,6 @@
   </entry>
   
   <entry>
-    <title>kubernetes</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/kubernetes/"/>
-    <id>https://blog.oddbit.com/tag/kubernetes/</id>
-    <published>2021-09-03T00:00:00Z</published>
-    <updated>2021-09-03T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>openshift</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/openshift/"/>
-    <id>https://blog.oddbit.com/tag/openshift/</id>
-    <published>2021-09-03T00:00:00Z</published>
-    <updated>2021-09-03T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
     <title>secrets</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
@@ -161,30 +185,6 @@
     <id>https://blog.oddbit.com/tag/secrets/</id>
     <published>2021-09-03T00:00:00Z</published>
     <updated>2021-09-03T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>ceph</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/ceph/"/>
-    <id>https://blog.oddbit.com/tag/ceph/</id>
-    <published>2021-08-23T00:00:00Z</published>
-    <updated>2021-08-23T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>ocs</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/ocs/"/>
-    <id>https://blog.oddbit.com/tag/ocs/</id>
-    <published>2021-08-23T00:00:00Z</published>
-    <updated>2021-08-23T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   

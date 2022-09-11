@@ -111,6 +111,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Listing iptables rules with line numbers</h4>
+        <time class="post-stub-date" datetime="2018-02-08">Published Thu, Feb 8, 2018</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    You can list iptables rules with rule numbers using the --line-numbers option, but this only works in list (-L) mode. I find it much more convenient to view rules using the output from iptables -S or iptables-save.
+You can augment the output from these commands with rule numbers with the following awk script:
+#!/bin/awk -f state == 0 &amp;&amp; /^-A/ {state=1; chain=$2; counter=1; printf &quot;\n&quot;} state == 1 &amp;&amp; $2 !
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2018-02-08-listing-iptables-rules-with-li/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2018-01-26-pelican-theme-update/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Pelican and theme update</h4>
         <time class="post-stub-date" datetime="2018-01-26">Published Fri, Jan 26, 2018</time>
@@ -310,30 +334,6 @@ In many cases you can alleviate this through the use of the git pre-commit hook,
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2017-01-22-making-sure-your-gerrit-change/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Exploring YAQL Expressions</h4>
-        <time class="post-stub-date" datetime="2016-08-11">Published Thu, Aug 11, 2016</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    The Newton release of Heat adds support for a yaql intrinsic function, which allows you to evaluate yaql expressions in your Heat templates. Unfortunately, the existing yaql documentation is somewhat limited, and does not offer examples of many of yaql&rsquo;s more advanced features.
-I am working on a Fluentd composable service for TripleO. I want to allow each service to specify a logging source configuration fragment, for example:
-parameters: NovaAPILoggingSource: type: json description: Fluentd logging configuration for nova-api.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2016-08-11-exploring-yaql-expressions/">(Read more...)</a>
     </p>
     
     

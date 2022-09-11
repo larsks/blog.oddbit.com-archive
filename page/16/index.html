@@ -112,6 +112,28 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Automatic maintenance of tag feeds</h4>
+        <time class="post-stub-date" datetime="2013-11-22">Published Fri, Nov 22, 2013</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I recently added some scripts to automatically generate tag feeds for my blog when pushing new content. I&rsquo;m using GitHub Pages to publish everything, so it seemed easiest to make tag generation part of a pre-push hook (new in Git 1.8.2). This hook is run automatically as part of the git push operation, so it&rsquo;s the perfect place to insert generated content that must be kept in sync with posts on the blog.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2013-11-18-enabled-comments/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Enabled blog comments</h4>
         <time class="post-stub-date" datetime="2013-11-18">Published Mon, Nov 18, 2013</time>
@@ -314,29 +336,6 @@ After a little research, here&rsquo;s some simple code that will print out pin n
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-07-22-generating-a-membero/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-07-16-split-concatenated-c/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Split concatenated certificates with awk</h4>
-        <time class="post-stub-date" datetime="2013-07-16">Published Tue, Jul 16, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    This is a short script that takes a list of concatenated certificates as input (such as a collection of CA certificates) and produces a collection of numbered files, each containing a single certificate.
-#!/bin/awk -f # This script expects a list of concatenated certificates on input and # produces a collection of individual numbered files each containing # a single certificate. BEGIN {incert=0} /-----BEGIN( TRUSTED)? CERTIFICATE-----/ { certno++ certfile=sprintf(&quot;cert-%d.crt&quot;, certno) incert=1 } /-----END( TRUSTED)?
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-07-16-split-concatenated-c/">(Read more...)</a>
     </p>
     
     

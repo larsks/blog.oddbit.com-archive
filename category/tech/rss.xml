@@ -6,7 +6,16 @@
     <description>Recent content in tech on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/category/tech/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/category/tech/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Investigating connection timeouts in a Kubernetes application</title>
+      <link>https://blog.oddbit.com/post/2022-09-10-kubernetes-labels/</link>
+      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2022-09-10-kubernetes-labels/</guid>
+      <description>We are working with an application that produces resource utilization reports for clients of our OpenShift-based cloud environments. The developers working with the application have been reporting mysterious issues concerning connection timeouts between the application and the database (a MariaDB instance). For a long time we had only high-level verbal descriptions of the problem (&amp;ldquo;I&amp;rsquo;m seeing a lot of connection timeouts!&amp;quot;) and a variety of unsubstantiated theories (from multiple sources) about the cause.</description>
+    </item>
+    
     <item>
       <title>Directing different ports to different containers with Traefik</title>
       <link>https://blog.oddbit.com/post/2022-06-20-traefik-multiple-listeners/</link>
