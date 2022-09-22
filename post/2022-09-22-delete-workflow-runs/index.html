@@ -129,7 +129,9 @@ gh run list --json databaseId -q &#39;.">
     <p>Hello, future me. This is for you next time you want to do this.</p>
 <p>When setting up the CI for a project I will sometimes end up with a tremendous clutter of workflow runs. Sometimes they have embarrassing mistakes. Who wants to show that to people? I was trying to figure out how to bulk delete workflow runs from the CLI, and I came up with something that works:</p>
 <pre tabindex="0"><code>gh run list --json databaseId  -q '.[].databaseId' |
-  xargs -IID gh api repos/$(gh repo view --json nameWithOwner -q .nameWithOwner)/actions/runs/ID -X DELETE
+  xargs -IID gh api \
+    repos/$(gh repo view --json nameWithOwner -q .nameWithOwner)/actions/runs/ID \
+    -X DELETE
 </code></pre><p>This will delete <em>all</em> (well, up to 20, or whatever you set in <code>--limit</code>) your workflow runs. You can add flags to <code>gh run list</code> to filter runs by workflow or by triggering user.</p>
 
 </div>
