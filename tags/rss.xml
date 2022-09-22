@@ -17,6 +17,24 @@
     </item>
     
     <item>
+      <title>git</title>
+      <link>https://blog.oddbit.com/tag/git/</link>
+      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://blog.oddbit.com/tag/github/</link>
+      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>kubernetes</title>
       <link>https://blog.oddbit.com/tag/kubernetes/</link>
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
@@ -229,15 +247,6 @@
       <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/ksops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://blog.oddbit.com/tag/git/</link>
-      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/git/</guid>
       <description></description>
     </item>
     
@@ -589,15 +598,6 @@
       <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/hamradio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>https://blog.oddbit.com/tag/github/</link>
-      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/github/</guid>
       <description></description>
     </item>
     

@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>git &middot; The Odd Bit</title>
-        <meta name="description" content="One of these things is not like the others">
+        <title>Delete GitHub workflow runs using the gh cli &middot; The Odd Bit</title>
+        <meta name="description" content="Hello, future me. This is for you next time you want to do this.
+When setting up the CI for a project I will sometimes end up with a tremendous clutter of workflow runs. Sometimes they have embarrassing mistakes. Who wants to show that to people? I was trying to figure out how to bulk delete workflow runs from the CLI, and I came up with something that works:
+gh run list --json databaseId -q &#39;.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.88.0" />
@@ -19,8 +21,6 @@
         
 <!-- alternate output formats -->
 
-<link rel="alternate" type="application/rss+xml" href="https://blog.oddbit.com/tag/git/rss.xml" title="git" />
-<link rel="alternate" type="application/atom+xml" href="https://blog.oddbit.com/tag/git/atom.xml" title="git" />
 
         <link rel="stylesheet" href="/css/oddbit.css">
 <link rel="stylesheet" href="/css/sx.css">
@@ -104,67 +104,85 @@
             <div id="container">
 
 
-<div id="post-index" class="container">
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Delete GitHub workflow runs using the gh cli</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2022-09-10" itemprop="datePublished">Sat, Sep 10, 2022</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Lars Kellogg-Stedman</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
     
 
+    
 
-    <ol class="post-list">
-        
-        
-            <li class="post-stub">
-    <a href="https://blog.oddbit.com/post/2014-07-21-tracking-down-a-kernel-bug-wit/">
-        <h4 class="post-stub-title">Tracking down a kernel bug with git bisect</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="https://blog.oddbit.com/post/2013-11-22-automatic-maintenanc/">
-        <h4 class="post-stub-title">Automatic maintenance of tag feeds</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="https://blog.oddbit.com/post/2012-07-27-git-fetch-tags-et-al/">
-        <h4 class="post-stub-title">Git fetch, tags, remotes, and more</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="https://blog.oddbit.com/post/2010-05-11-pushing-git-repository-to-subv/">
-        <h4 class="post-stub-title">Pushing a Git repository to Subversion</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="https://blog.oddbit.com/post/2010-01-29-cleaning-up-subversion-with-gi/">
-        <h4 class="post-stub-title">Cleaning up Subversion with Git</h4>
-        
-        
-    </a>
-</li>
-        
-    </ol>
+    <p>Hello, future me. This is for you next time you want to do this.</p>
+<p>When setting up the CI for a project I will sometimes end up with a tremendous clutter of workflow runs. Sometimes they have embarrassing mistakes. Who wants to show that to people? I was trying to figure out how to bulk delete workflow runs from the CLI, and I came up with something that works:</p>
+<pre tabindex="0"><code>gh run list --json databaseId  -q '.[].databaseId' |
+  xargs -IID gh api repos/$(gh repo view --json nameWithOwner -q .nameWithOwner)/actions/runs/ID -X DELETE
+</code></pre><p>This will delete <em>all</em> (well, up to 20, or whatever you set in <code>--limit</code>) your workflow runs. You can add flags to <code>gh run list</code> to filter runs by workflow or by triggering user.</p>
 
-    <div class="post-navigation">
+</div>
+
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/git/">git</a>, 
+              
+            
+              
+              
+              <a href="https://blog.oddbit.com/tag/github/">github</a>
+              
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Delete%20GitHub%20workflow%20runs%20using%20the%20gh%20cli&url=https%3a%2f%2fblog.oddbit.com%2fpost%2f2022-09-10-delete-workflow-runs%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
         
 
-    <nav class="pagination" role="navigation">
-        <span class="page-number">Page 2 of 2</span>
         
-            <a class="newer-posts" href="/tag/git/">&larr; Newer Posts</a>
-        
-        
-    </nav>
 
+        
+        
     </div>
+</footer>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="larsks/blog.oddbit.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </article>
 </div>
 
             </div>
@@ -201,3 +219,4 @@
         <script src="https://blog.oddbit.com/js/scripts.js"></script>
     </body>
 </html>
+

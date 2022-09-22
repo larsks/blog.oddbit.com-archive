@@ -112,6 +112,28 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerbero/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Mapping local users to Kerberos principals with SSSD</h4>
+        <time class="post-stub-date" datetime="2015-07-16">Published Thu, Jul 16, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    I work for an organization that follows the common model of assigning people systematically generated user ids. Like most technically inclined employees of this organization, I have local accounts on my workstation that don&rsquo;t bear any relation to the generated account ids. For the most part this isn&rsquo;t a problem, except that our organization uses Kerberos to authenticate access to a variety of resources (such as the mailserver and a variety of web applications).
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerbero/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-06-26-openstack-networking-without-d/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">OpenStack Networking without DHCP</h4>
         <time class="post-stub-date" datetime="2015-06-26">Published Fri, Jun 26, 2015</time>
@@ -316,29 +338,6 @@ The graph-constraints.py script in that repository consumes the output of cibadm
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2015-02-24-visualizing-pacemaker-constrai/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Stupid Pacemaker XML tricks</h4>
-        <time class="post-stub-date" datetime="2015-02-19">Published Thu, Feb 19, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I&rsquo;ve recently spent some time working with Pacemaker, and ended up with an interesting collection of XPath snippets that I am publishing here for your use and/or amusement.
-Check if there are any inactive resources pcs status xml | xmllint --xpath '//resource[@active=&quot;false&quot;]' - &gt;&amp;/dev/null &amp;&amp; echo &quot;There are inactive resources&quot;  This selects any resource (//resource) in the output of pcs status xml that has the attribute active set to false.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/">(Read more...)</a>
     </p>
     
     

@@ -9,6 +9,20 @@
   <updated>2022-09-10T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
   <entry>
+    <title>Delete GitHub workflow runs using the gh cli</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2022-09-10-delete-workflow-runs/"/>
+    <id>https://blog.oddbit.com/post/2022-09-10-delete-workflow-runs/</id>
+    <published>2022-09-10T00:00:00Z</published>
+    <updated>2022-09-10T00:00:00Z</updated>
+    <summary type="html">Hello, future me. This is for you next time you want to do this.
+When setting up the CI for a project I will sometimes end up with a tremendous clutter of workflow runs. Sometimes they have embarrassing mistakes. Who wants to show that to people? I was trying to figure out how to bulk delete workflow runs from the CLI, and I came up with something that works:
+gh run list --json databaseId -q &#39;.</summary>
+  </entry>
+  
+  <entry>
     <title>Investigating connection timeouts in a Kubernetes application</title>
     <author>
       <name>Lars Kellogg-Stedman</name>
@@ -186,20 +200,6 @@ I first went looking to see if there was a PyPi mirror infrastructure, like we s
     <updated>2021-02-06T00:00:00Z</updated>
     <summary type="html">The SYM-1 is a 6502-based single-board computer produced by Synertek Systems Corp in the mid 1970&amp;rsquo;s. I&amp;rsquo;ve had one floating around in a box for many, many years, and after a recent foray into the world of 6502 assembly language programming I decided to pull it out, dust it off, and see if it still works.
 The board I have has a whopping 8KB of memory, and in addition to the standard SUPERMON monitor it has the expansion ROMs for the Synertek BASIC interpreter (yet another Microsoft BASIC) and RAE (the &amp;ldquo;Resident Assembler Editor&amp;rdquo;).</summary>
-  </entry>
-  
-  <entry>
-    <title>To sleep or not to sleep?</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2020-12-18-to-sleep-or-not-to-sleep/"/>
-    <id>https://blog.oddbit.com/post/2020-12-18-to-sleep-or-not-to-sleep/</id>
-    <published>2020-12-18T00:00:00Z</published>
-    <updated>2020-12-18T00:00:00Z</updated>
-    <summary type="html">Let&amp;rsquo;s say you have a couple of sensors attached to an ESP8266 running MicroPython. You&amp;rsquo;d like to sample them at different frequencies (say, one every 60 seconds and one every five minutes), and you&amp;rsquo;d like to do it as efficiently as possible in terms of power consumption. What are your options?
-If we don&amp;rsquo;t care about power efficiency, the simplest solution is probably a loop like this:
-import machine lastrun_1 = 0 lastrun_2 = 0 while True: now = time.</summary>
   </entry>
   
 </feed>
