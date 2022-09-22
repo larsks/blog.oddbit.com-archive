@@ -3,21 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.oddbit.com/categories/</loc>
-    <lastmod>2022-09-10T00:00:00+00:00</lastmod>
+    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2022-09-10T00:00:00+00:00</lastmod>
+    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.oddbit.com/tag/cloud/</loc>
-    <lastmod>2022-09-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/post/2022-09-10-delete-workflow-runs/</loc>
-    <lastmod>2022-09-10T00:00:00+00:00</lastmod>
+    <loc>https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/</loc>
+    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/git/</loc>
-    <lastmod>2022-09-10T00:00:00+00:00</lastmod>
+    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/github/</loc>
+    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/category/tech/</loc>
+    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/</loc>
+    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/cloud/</loc>
     <lastmod>2022-09-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2022-09-10-kubernetes-labels/</loc>
@@ -30,15 +39,6 @@
     <lastmod>2022-09-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/openshift/</loc>
-    <lastmod>2022-09-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2022-09-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/category/tech/</loc>
-    <lastmod>2022-09-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/</loc>
     <lastmod>2022-09-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/containers/</loc>

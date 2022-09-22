@@ -6,20 +6,8 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2022-09-10T00:00:00Z</updated>
+  <updated>2022-09-22T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
-  <entry>
-    <title>cloud</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/cloud/"/>
-    <id>https://blog.oddbit.com/tag/cloud/</id>
-    <published>2022-09-10T00:00:00Z</published>
-    <updated>2022-09-10T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
   <entry>
     <title>git</title>
     <author>
@@ -27,8 +15,8 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/git/"/>
     <id>https://blog.oddbit.com/tag/git/</id>
-    <published>2022-09-10T00:00:00Z</published>
-    <updated>2022-09-10T00:00:00Z</updated>
+    <published>2022-09-22T00:00:00Z</published>
+    <updated>2022-09-22T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   
@@ -39,6 +27,18 @@
     </author>
     <link rel="alternate" href="https://blog.oddbit.com/tag/github/"/>
     <id>https://blog.oddbit.com/tag/github/</id>
+    <published>2022-09-22T00:00:00Z</published>
+    <updated>2022-09-22T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>cloud</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/cloud/"/>
+    <id>https://blog.oddbit.com/tag/cloud/</id>
     <published>2022-09-10T00:00:00Z</published>
     <updated>2022-09-10T00:00:00Z</updated>
     <summary type="html"></summary>

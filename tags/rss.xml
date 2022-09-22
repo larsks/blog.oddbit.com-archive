@@ -6,20 +6,11 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>cloud</title>
-      <link>https://blog.oddbit.com/tag/cloud/</link>
-      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/cloud/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 22 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>git</title>
       <link>https://blog.oddbit.com/tag/git/</link>
-      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/git/</guid>
       <description></description>
@@ -28,9 +19,18 @@
     <item>
       <title>github</title>
       <link>https://blog.oddbit.com/tag/github/</link>
-      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloud</title>
+      <link>https://blog.oddbit.com/tag/cloud/</link>
+      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/cloud/</guid>
       <description></description>
     </item>
     
