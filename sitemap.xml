@@ -3,10 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.oddbit.com/categories/</loc>
-    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/gpg/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/keyoxide/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/mastodon/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/pgp/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/category/tech/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/post/2022-11-13-using-keyoxide/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/</loc>
     <lastmod>2022-09-22T00:00:00+00:00</lastmod>
@@ -15,15 +39,6 @@
     <lastmod>2022-09-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/github/</loc>
-    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/category/tech/</loc>
-    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/</loc>
     <lastmod>2022-09-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/cloud/</loc>
@@ -117,9 +132,6 @@
     <lastmod>2021-04-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2021-03-09-getting-started-with-ksops/</loc>
-    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tag/gpg/</loc>
     <lastmod>2021-03-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/ksops/</loc>

@@ -112,6 +112,31 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2015-02-24-visualizing-pacemaker-constrai/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Visualizing Pacemaker resource constraints</h4>
+        <time class="post-stub-date" datetime="2015-02-24">Published Tue, Feb 24, 2015</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    If a picture is worth a thousand words, then code that generates pictures from words is worth&hellip;uh, anyway, I wrote a script that produces dot output from Pacemaker start and colocation constraints:
+https://github.com/larsks/pacemaker-tools/
+You can pass this output to graphviz to create visualizations of your Pacemaker resource constraints.
+The graph-constraints.py script in that repository consumes the output of cibadmin -Q and can produce output for either start constraints (-S, the default) or colocation constraints (-C).
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2015-02-24-visualizing-pacemaker-constrai/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2015-02-19-stupid-pacemaker-xml-tricks/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Stupid Pacemaker XML tricks</h4>
         <time class="post-stub-date" datetime="2015-02-19">Published Thu, Feb 19, 2015</time>
@@ -314,29 +339,6 @@ The PrivateTmp directive, if true, &ldquo;sets up a new file system namespace fo
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2015-01-17-running-novalibvirt-and-novado/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Building a minimal web server for testing Kubernetes</h4>
-        <time class="post-stub-date" datetime="2015-01-04">Published Sun, Jan 4, 2015</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    I have recently been doing some work with Kubernetes, and wanted to put together a minimal image with which I could test service and pod deployment. Size in this case was critical: I wanted something that would download quickly when initially deployed, because I am often setting up and tearing down Kubernetes as part of my testing (and some of my test environments have poor external bandwidth).
-Building thttpd My go-to minimal webserver is thttpd.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2015-01-04-building-a-minimal-web-server/">(Read more...)</a>
     </p>
     
     

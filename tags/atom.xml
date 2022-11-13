@@ -6,8 +6,56 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2022-09-22T00:00:00Z</updated>
+  <updated>2022-11-13T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>gpg</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/gpg/"/>
+    <id>https://blog.oddbit.com/tag/gpg/</id>
+    <published>2022-11-13T00:00:00Z</published>
+    <updated>2022-11-13T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>keyoxide</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/keyoxide/"/>
+    <id>https://blog.oddbit.com/tag/keyoxide/</id>
+    <published>2022-11-13T00:00:00Z</published>
+    <updated>2022-11-13T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>mastodon</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/mastodon/"/>
+    <id>https://blog.oddbit.com/tag/mastodon/</id>
+    <published>2022-11-13T00:00:00Z</published>
+    <updated>2022-11-13T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>pgp</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/pgp/"/>
+    <id>https://blog.oddbit.com/tag/pgp/</id>
+    <published>2022-11-13T00:00:00Z</published>
+    <updated>2022-11-13T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>git</title>
     <author>
@@ -137,54 +185,6 @@
     <id>https://blog.oddbit.com/tag/micropython/</id>
     <published>2022-02-13T00:00:00Z</published>
     <updated>2022-02-13T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>udev</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/udev/"/>
-    <id>https://blog.oddbit.com/tag/udev/</id>
-    <published>2022-02-13T00:00:00Z</published>
-    <updated>2022-02-13T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>browser</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/browser/"/>
-    <id>https://blog.oddbit.com/tag/browser/</id>
-    <published>2021-09-05T00:00:00Z</published>
-    <updated>2021-09-05T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>javascript</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/javascript/"/>
-    <id>https://blog.oddbit.com/tag/javascript/</id>
-    <published>2021-09-05T00:00:00Z</published>
-    <updated>2021-09-05T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>stackexchange</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/stackexchange/"/>
-    <id>https://blog.oddbit.com/tag/stackexchange/</id>
-    <published>2021-09-05T00:00:00Z</published>
-    <updated>2021-09-05T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   

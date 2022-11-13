@@ -6,7 +6,43 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gpg</title>
+      <link>https://blog.oddbit.com/tag/gpg/</link>
+      <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>keyoxide</title>
+      <link>https://blog.oddbit.com/tag/keyoxide/</link>
+      <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/keyoxide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mastodon</title>
+      <link>https://blog.oddbit.com/tag/mastodon/</link>
+      <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/mastodon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pgp</title>
+      <link>https://blog.oddbit.com/tag/pgp/</link>
+      <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/pgp/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>git</title>
       <link>https://blog.oddbit.com/tag/git/</link>
@@ -229,15 +265,6 @@
       <pubDate>Sat, 17 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/vxlan/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gpg</title>
-      <link>https://blog.oddbit.com/tag/gpg/</link>
-      <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/gpg/</guid>
       <description></description>
     </item>
     

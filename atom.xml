@@ -6,8 +6,22 @@
   
   <link href="https://blog.oddbit.com/" rel="alternate"></link>
 
-  <updated>2022-09-22T00:00:00Z</updated>
+  <updated>2022-11-13T00:00:00Z</updated>
   <id>https://blog.oddbit.com/</id>
+  <entry>
+    <title>Using KeyOxide</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2022-11-13-using-keyoxide/"/>
+    <id>https://blog.oddbit.com/post/2022-11-13-using-keyoxide/</id>
+    <published>2022-11-13T00:00:00Z</published>
+    <updated>2022-11-13T00:00:00Z</updated>
+    <summary type="html">In today&amp;rsquo;s post, we look at KeyOxide, a service that allows you to cryptographically assert ownership of online resources using your GPG key. Some aspects of the service are less than obvious; in response to some questions I saw on Mastodon I though I would put together a short guide to making use of the service.
+We&amp;rsquo;re going to look at the following high-level tasks:
+  Create a GPG key</summary>
+  </entry>
+  
   <entry>
     <title>Delete GitHub workflow runs using the gh cli</title>
     <author>
@@ -187,19 +201,6 @@ The first option is the Ceph Object Gateway (radosgw), Ceph&amp;rsquo;s native o
     <updated>2021-02-08T00:00:00Z</updated>
     <summary type="html">Performance of the primary PyPi service has been so bad lately that it&amp;rsquo;s become very disruptive. Tasks that used to take a few seconds will now churn along for 15-20 minutes or longer before completing, which is incredibly frustrating.
 I first went looking to see if there was a PyPi mirror infrastructure, like we see with CPAN for Perl or CTAN for Tex (and similarly for most Linux distributions). There is apparently no such beast,</summary>
-  </entry>
-  
-  <entry>
-    <title>symtool: a tool for interacting with your SYM-1</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2021-02-06-symtool-a-tool-for-interacting/"/>
-    <id>https://blog.oddbit.com/post/2021-02-06-symtool-a-tool-for-interacting/</id>
-    <published>2021-02-06T00:00:00Z</published>
-    <updated>2021-02-06T00:00:00Z</updated>
-    <summary type="html">The SYM-1 is a 6502-based single-board computer produced by Synertek Systems Corp in the mid 1970&amp;rsquo;s. I&amp;rsquo;ve had one floating around in a box for many, many years, and after a recent foray into the world of 6502 assembly language programming I decided to pull it out, dust it off, and see if it still works.
-The board I have has a whopping 8KB of memory, and in addition to the standard SUPERMON monitor it has the expansion ROMs for the Synertek BASIC interpreter (yet another Microsoft BASIC) and RAE (the &amp;ldquo;Resident Assembler Editor&amp;rdquo;).</summary>
   </entry>
   
 </feed>

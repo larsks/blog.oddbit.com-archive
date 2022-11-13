@@ -6,8 +6,22 @@
   
   <link href="https://blog.oddbit.com/tag/gpg/" rel="alternate"></link>
 
-  <updated>2021-03-09T00:00:00Z</updated>
+  <updated>2022-11-13T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/gpg/</id>
+  <entry>
+    <title>Using KeyOxide</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2022-11-13-using-keyoxide/"/>
+    <id>https://blog.oddbit.com/post/2022-11-13-using-keyoxide/</id>
+    <published>2022-11-13T00:00:00Z</published>
+    <updated>2022-11-13T00:00:00Z</updated>
+    <summary type="html">In today&amp;rsquo;s post, we look at KeyOxide, a service that allows you to cryptographically assert ownership of online resources using your GPG key. Some aspects of the service are less than obvious; in response to some questions I saw on Mastodon I though I would put together a short guide to making use of the service.
+We&amp;rsquo;re going to look at the following high-level tasks:
+  Create a GPG key</summary>
+  </entry>
+  
   <entry>
     <title>Getting started with KSOPS</title>
     <author>

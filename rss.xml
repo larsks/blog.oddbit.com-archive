@@ -6,7 +6,18 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using KeyOxide</title>
+      <link>https://blog.oddbit.com/post/2022-11-13-using-keyoxide/</link>
+      <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2022-11-13-using-keyoxide/</guid>
+      <description>In today&amp;rsquo;s post, we look at KeyOxide, a service that allows you to cryptographically assert ownership of online resources using your GPG key. Some aspects of the service are less than obvious; in response to some questions I saw on Mastodon I though I would put together a short guide to making use of the service.
+We&amp;rsquo;re going to look at the following high-level tasks:
+  Create a GPG key</description>
+    </item>
+    
     <item>
       <title>Delete GitHub workflow runs using the gh cli</title>
       <link>https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/</link>
@@ -2267,7 +2278,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>postgres secure ldap authentication issues postgresql authentication ssl ldap starttls  Verify crontab works on container using slim-buster docker image? docker docker-compose cron  Monitoring the progress of specified pods with oc cli openshift openshift-client-tools  Nesting multiple repos under one repo git github  Εxecute commands with args and override entrypoint on docker run bash docker containers sh docker-entrypoint  Link docker.sock in /var/run docker sockets socat  Ansible - Iterate two lists but using index of first list loops ansible  Deploying Flask app with Gunicorn behind Nginx on Kubernetes cluster nginx flask kubernetes gunicorn  With an xml jinja2 template, how to explode an element based on text field into multiple elements?</description>
+      <description>Fixup commits are not squashed git  ZeroMQ: One to many, one-way communication without topics? zeromq pyzmq  Ansible: Can&amp;#39;t loop through variable in blockinfile module ansible output  How to access &amp;#39;map[string]interface {}&amp;#39; data from my yaml file go yaml  Python multiprocessing.Pool.apply_async() not executing class function python multiprocessing python-multiprocessing python-class  Trying to make a one hour loop in python python loops schedule notify  Get logs from all pods in namespace using xargs shell kubernetes kubectl  How to create lists by running functions in parallel in python python parallel-processing  Unable to parse arguments in Flask Restful for GET request python flask flask-restful  Installation of OpenStack fail on Fedora because of PyYAML openstack fedora pyyaml   (last refreshed at 2022-11-13 17:03 UTC )</description>
     </item>
     
   </channel>
