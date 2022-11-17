@@ -245,11 +245,7 @@ root@ubnt:~# ip6tables -S WANv6_LOCAL
 <pre tabindex="0"><code>set interfaces switch switch0 vif 10 ipv6 router-advert send-advert true
 set interfaces switch switch0 vif 10 ipv6 router-advert managed-flag true
 set interfaces switch switch0 vif 10 ipv6 router-advert prefix ::/110
-</code></pre><p>The <code>managed-flag</code> setting corresponds to the RADVD <code>AdvManagedFlag</code> configuration setting:</p>
-<blockquote>
-<p>When set, hosts use the administered (stateful) protocol for address autoconfiguration in addition to any addresses autoconfigured using stateless address autoconfiguration.</p>
-</blockquote>
-<p>Without this setting enabled my Linux system was unable to discover the default gateway.</p>
+</code></pre><p>The <code>managed-flag</code> setting corresponds to the RADVD <code>AdvManagedFlag</code> configuration setting, which instructs clients to use DHCPv6 for address autoconfiguration.</p>
 <h3 id="configure-the-dhcpv6-service">Configure the DHCPv6 service</h3>
 <p>While in theory it is possible for clients to assign IPv6 addresses without the use of a DHCP server using <a href="https://en.wikipedia.org/wiki/IPv6_address#Stateless_address_autoconfiguration">stateless address autoconfiguration</a>, I found that in practice I need to configure the DHCPv6 server for things to work correctly.</p>
 <pre tabindex="0"><code>set service dhcpv6-server shared-network-name VLAN10 subnet 2001:470:1237:1212::/110 address-range start 2001:470:1237:1212::10 stop 2001:470:1237:1212::3:ffff
