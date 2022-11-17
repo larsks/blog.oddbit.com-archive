@@ -117,6 +117,30 @@
         
         
             <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Flat networks with ML2 and OpenVSwitch</h4>
+        <time class="post-stub-date" datetime="2014-05-19">Published Mon, May 19, 2014</time>
+        
+    </a>
+
+    
+    <p class="post-stub-summary">
+    Due to an unfortunate incident involving sleep mode and an overheated backpack I had the &ldquo;opportunity&rdquo; to rebuild my laptop. Since this meant reinstalling OpenStack I used this as an excuse to finally move to the ML2 network plugin for Neutron.
+I was attempting to add an external network using the normal incantation:
+neutron net-create external -- --router:external=true \ --provider:network_type=flat \ --provider:physical_network=physnet1  While this command completed successfully, I was left without any connectivity between br-int and br-ex, despite having in my /etc/neutron/plugins/ml2/ml2_conf.
+    </p>
+
+    
+    <p class="post-stub-more">
+      <a href="https://blog.oddbit.com/post/2014-05-19-flat-networks-with-ml-and-open/">(Read more...)</a>
+    </p>
+    
+    
+</li>
+
+
+        
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
     <a href="https://blog.oddbit.com/post/2014-04-16-article-on-extending-puppet/" itemprop="url" title="Go to post detail">
         <h4 class="post-stub-title" itemprop="name">Extending Puppet</h4>
         <time class="post-stub-date" datetime="2014-04-16">Published Wed, Apr 16, 2014</time>
@@ -324,29 +348,6 @@ Writing templates Because Heat began life as an analog of AWS CloudFormation, it
     
     <p class="post-stub-more">
       <a href="https://blog.oddbit.com/post/2013-11-28-a-python-interface-to-signalfd/">(Read more...)</a>
-    </p>
-    
-    
-</li>
-
-
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="https://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Long polling with Javascript and Python</h4>
-        <time class="post-stub-date" datetime="2013-11-23">Published Sat, Nov 23, 2013</time>
-        
-    </a>
-
-    
-    <p class="post-stub-summary">
-    In this post I&rsquo;m going to step through an example web chat system implemented in Python (with Bottle and gevent) that uses long polling to implement a simple publish/subscribe mechanism for efficiently updating connected clients.
-My pubsub_example repository on GitHub has a complete project that implements the ideas discussed in this article. This project can be deployed directly on OpenShift if you want to try things out on your own. You can also try it out online at http://pubsub.
-    </p>
-
-    
-    <p class="post-stub-more">
-      <a href="https://blog.oddbit.com/post/2013-11-23-long-polling-with-ja/">(Read more...)</a>
     </p>
     
     

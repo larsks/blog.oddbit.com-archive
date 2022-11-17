@@ -6,7 +6,16 @@
     <description>Recent content on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up an IPv6 VLAN</title>
+      <link>https://blog.oddbit.com/post/2022-11-16-home-ipv6-vlan/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/post/2022-11-16-home-ipv6-vlan/</guid>
+      <description>My internet service provider (FIOS) doesn&amp;rsquo;t yet (sad face) offer IPv6 capable service, so I&amp;rsquo;ve set up an IPv6 tunnel using the Hurricane Electric tunnel broker. I want to provide IPv6 connectivity to multiple systems in my house, but not to all systems in my house 1. In order to meet those requirements, I&amp;rsquo;m going to set up the tunnel on the router, and then expose connectivity over an IPv6-only VLAN.</description>
+    </item>
+    
     <item>
       <title>Using KeyOxide</title>
       <link>https://blog.oddbit.com/post/2022-11-13-using-keyoxide/</link>
@@ -2278,7 +2287,7 @@ Given client, a gdata.blogger.client instance, and blog, a gdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/about/stackoverflow/</guid>
-      <description>Fixup commits are not squashed git  ZeroMQ: One to many, one-way communication without topics? zeromq pyzmq  Ansible: Can&amp;#39;t loop through variable in blockinfile module ansible output  How to access &amp;#39;map[string]interface {}&amp;#39; data from my yaml file go yaml  Python multiprocessing.Pool.apply_async() not executing class function python multiprocessing python-multiprocessing python-class  Trying to make a one hour loop in python python loops schedule notify  Get logs from all pods in namespace using xargs shell kubernetes kubectl  How to create lists by running functions in parallel in python python parallel-processing  Unable to parse arguments in Flask Restful for GET request python flask flask-restful  Installation of OpenStack fail on Fedora because of PyYAML openstack fedora pyyaml   (last refreshed at 2022-11-13 18:16 UTC )</description>
+      <description>Setting up env variables in github actions workflow yml python github-actions  How to use pdb correctly without executing the whole file first python pdb  Fixup commits are not squashed git  ZeroMQ: One to many, one-way communication without topics? zeromq pyzmq  Ansible: Can&amp;#39;t loop through variable in blockinfile module ansible output  How to access &amp;#39;map[string]interface {}&amp;#39; data from my yaml file go yaml  Python multiprocessing.</description>
     </item>
     
   </channel>

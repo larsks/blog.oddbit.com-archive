@@ -6,8 +6,20 @@
   
   <link href="https://blog.oddbit.com/tag/networking/" rel="alternate"></link>
 
-  <updated>2021-04-17T00:00:00Z</updated>
+  <updated>2022-11-16T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tag/networking/</id>
+  <entry>
+    <title>Setting up an IPv6 VLAN</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/post/2022-11-16-home-ipv6-vlan/"/>
+    <id>https://blog.oddbit.com/post/2022-11-16-home-ipv6-vlan/</id>
+    <published>2022-11-16T00:00:00Z</published>
+    <updated>2022-11-16T00:00:00Z</updated>
+    <summary type="html">My internet service provider (FIOS) doesn&amp;rsquo;t yet (sad face) offer IPv6 capable service, so I&amp;rsquo;ve set up an IPv6 tunnel using the Hurricane Electric tunnel broker. I want to provide IPv6 connectivity to multiple systems in my house, but not to all systems in my house 1. In order to meet those requirements, I&amp;rsquo;m going to set up the tunnel on the router, and then expose connectivity over an IPv6-only VLAN.</summary>
+  </entry>
+  
   <entry>
     <title>Creating a VXLAN overlay network with Open vSwitch</title>
     <author>
@@ -190,21 +202,6 @@ There is now a better option available.</summary>
     <updated>2014-05-23T00:00:00Z</updated>
     <summary type="html">Normally I like to post solutions, but today&amp;rsquo;s post is about a vexing problem to which I have not been able to find a solution.
 This started as a simple attempt to set up external connectivity on an all-in-one Icehouse install deployed on an OpenStack instance. I wanted to add eth0 to br-ex in order to model a typical method for providing external connectivity, but I ran into a very odd problem: the system would boot and work fine for a few seconds, but would then promptly lose network connectivity.</summary>
-  </entry>
-  
-  <entry>
-    <title>Solved: Open vSwitch and persistent MAC addresses</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/"/>
-    <id>https://blog.oddbit.com/post/2014-05-23-solved-open-vswitch-and-persis/</id>
-    <published>2014-05-23T00:00:00Z</published>
-    <updated>2014-05-23T00:00:00Z</updated>
-    <summary type="html">In my previous post I discussed a problem I was having setting a persistent MAC address on an OVS bridge device. It looks like the short answer is, &amp;ldquo;don&amp;rsquo;t use ip link set ...&amp;rdquo; for this purpose.
-You can set the bridge MAC address via ovs-vsctl like this:
-ovs-vsctl set bridge br-ex other-config:hwaddr=$MACADDR  So I&amp;rsquo;ve updated my ifconfig-br-ex to look like this:
-DEVICE=br-ex DEVICETYPE=ovs TYPE=OVSBridge ONBOOT=yes OVSBOOTPROTO=dhcp OVSDHCPINTERFACES=eth0 MACADDR=fa:16:3e:ef:91:ec OVS_EXTRA=&amp;quot;set bridge br-ex other-config:hwaddr=$MACADDR&amp;quot;  The OVS_EXTRA parameter gets passed to the add-br call like this:</summary>
   </entry>
   
 </feed>

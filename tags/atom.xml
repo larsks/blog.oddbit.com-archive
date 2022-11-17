@@ -6,8 +6,80 @@
   
   <link href="https://blog.oddbit.com/tags/" rel="alternate"></link>
 
-  <updated>2022-11-13T00:00:00Z</updated>
+  <updated>2022-11-16T00:00:00Z</updated>
   <id>https://blog.oddbit.com/tags/</id>
+  <entry>
+    <title>edgerouter</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/edgerouter/"/>
+    <id>https://blog.oddbit.com/tag/edgerouter/</id>
+    <published>2022-11-16T00:00:00Z</published>
+    <updated>2022-11-16T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>ipv6</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/ipv6/"/>
+    <id>https://blog.oddbit.com/tag/ipv6/</id>
+    <published>2022-11-16T00:00:00Z</published>
+    <updated>2022-11-16T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>networking</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/networking/"/>
+    <id>https://blog.oddbit.com/tag/networking/</id>
+    <published>2022-11-16T00:00:00Z</published>
+    <updated>2022-11-16T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>networkmanager</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/networkmanager/"/>
+    <id>https://blog.oddbit.com/tag/networkmanager/</id>
+    <published>2022-11-16T00:00:00Z</published>
+    <updated>2022-11-16T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>nmcli</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/nmcli/"/>
+    <id>https://blog.oddbit.com/tag/nmcli/</id>
+    <published>2022-11-16T00:00:00Z</published>
+    <updated>2022-11-16T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
+  <entry>
+    <title>vlan</title>
+    <author>
+      <name>Lars Kellogg-Stedman</name>
+    </author>
+    <link rel="alternate" href="https://blog.oddbit.com/tag/vlan/"/>
+    <id>https://blog.oddbit.com/tag/vlan/</id>
+    <published>2022-11-16T00:00:00Z</published>
+    <updated>2022-11-16T00:00:00Z</updated>
+    <summary type="html"></summary>
+  </entry>
+  
   <entry>
     <title>gpg</title>
     <author>
@@ -113,78 +185,6 @@
     <id>https://blog.oddbit.com/tag/labels/</id>
     <published>2022-09-10T00:00:00Z</published>
     <updated>2022-09-10T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>openshift</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/openshift/"/>
-    <id>https://blog.oddbit.com/tag/openshift/</id>
-    <published>2022-09-10T00:00:00Z</published>
-    <updated>2022-09-10T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>containers</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/containers/"/>
-    <id>https://blog.oddbit.com/tag/containers/</id>
-    <published>2022-06-20T00:00:00Z</published>
-    <updated>2022-06-20T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>docker</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/docker/"/>
-    <id>https://blog.oddbit.com/tag/docker/</id>
-    <published>2022-06-20T00:00:00Z</published>
-    <updated>2022-06-20T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>traefik</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/traefik/"/>
-    <id>https://blog.oddbit.com/tag/traefik/</id>
-    <published>2022-06-20T00:00:00Z</published>
-    <updated>2022-06-20T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>linux</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/linux/"/>
-    <id>https://blog.oddbit.com/tag/linux/</id>
-    <published>2022-02-13T00:00:00Z</published>
-    <updated>2022-02-13T00:00:00Z</updated>
-    <summary type="html"></summary>
-  </entry>
-  
-  <entry>
-    <title>micropython</title>
-    <author>
-      <name>Lars Kellogg-Stedman</name>
-    </author>
-    <link rel="alternate" href="https://blog.oddbit.com/tag/micropython/"/>
-    <id>https://blog.oddbit.com/tag/micropython/</id>
-    <published>2022-02-13T00:00:00Z</published>
-    <updated>2022-02-13T00:00:00Z</updated>
     <summary type="html"></summary>
   </entry>
   

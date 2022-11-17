@@ -6,7 +6,61 @@
     <description>Recent content in Tags on The Odd Bit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oddbit.com/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>edgerouter</title>
+      <link>https://blog.oddbit.com/tag/edgerouter/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/edgerouter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ipv6</title>
+      <link>https://blog.oddbit.com/tag/ipv6/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/ipv6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>networking</title>
+      <link>https://blog.oddbit.com/tag/networking/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>networkmanager</title>
+      <link>https://blog.oddbit.com/tag/networkmanager/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/networkmanager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nmcli</title>
+      <link>https://blog.oddbit.com/tag/nmcli/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/nmcli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vlan</title>
+      <link>https://blog.oddbit.com/tag/vlan/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.oddbit.com/tag/vlan/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>gpg</title>
       <link>https://blog.oddbit.com/tag/gpg/</link>
@@ -229,15 +283,6 @@
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/storage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>networking</title>
-      <link>https://blog.oddbit.com/tag/networking/</link>
-      <pubDate>Sat, 17 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/networking/</guid>
       <description></description>
     </item>
     
@@ -535,24 +580,6 @@
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oddbit.com/tag/serial/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>networkmanager</title>
-      <link>https://blog.oddbit.com/tag/networkmanager/</link>
-      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/networkmanager/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nmcli</title>
-      <link>https://blog.oddbit.com/tag/nmcli/</link>
-      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.oddbit.com/tag/nmcli/</guid>
       <description></description>
     </item>
     

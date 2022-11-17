@@ -3,10 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.oddbit.com/categories/</loc>
-    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/</loc>
-    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/edgerouter/</loc>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/ipv6/</loc>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/networking/</loc>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/networkmanager/</loc>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/nmcli/</loc>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/post/2022-11-16-home-ipv6-vlan/</loc>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tags/</loc>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/category/tech/</loc>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/</loc>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.oddbit.com/tag/vlan/</loc>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/gpg/</loc>
     <lastmod>2022-11-13T00:00:00+00:00</lastmod>
@@ -18,15 +48,6 @@
     <lastmod>2022-11-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/pgp/</loc>
-    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tags/</loc>
-    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/category/tech/</loc>
-    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/</loc>
     <lastmod>2022-11-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2022-11-13-using-keyoxide/</loc>
@@ -117,9 +138,6 @@
     <lastmod>2021-08-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2021-04-17-vm-ovs-vxlan/</loc>
-    <lastmod>2021-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tag/networking/</loc>
     <lastmod>2021-04-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/openvswitch/</loc>
@@ -291,12 +309,6 @@
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/post/2020-02-15-configuring-open-vswitch-with/</loc>
-    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tag/networkmanager/</loc>
-    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.oddbit.com/tag/nmcli/</loc>
     <lastmod>2020-02-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.oddbit.com/tag/climate/</loc>
