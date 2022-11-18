@@ -225,9 +225,9 @@ root@ubnt:~# ip6tables -S WANv6_LOCAL
 <h3 id="create-a-vlan-interface">Create a vlan interface</h3>
 <p>I need to create a network interface on the router that will be the default gateway for my local IPv6-only network. From the tunnel broker, I received the CIDR <code>2001:470:1237:1212::/64</code> for local use, so:</p>
 <ul>
-<li>
-<p>I&rsquo;ve decided to split this up into smaller networks (because a /64 has over 18 <em>quintillion</em> available addresses). I&rsquo;m using <code>/110</code> networks in this example, which means I will only ever be able to have 262,146 devices on each network.</p>
-</li>
+<li>I&rsquo;ve decided to split this up into smaller networks (because a /64 has over 18 <em>quintillion</em> available addresses). I&rsquo;m using <code>/110</code> networks in this example, which means I will only ever be able to have 262,146 devices on each network (note that the decision to use a smaller subnet impacts your choices for address autoconfiguration; see <a href="https://www.rfc-editor.org/rfc/rfc7421">RFC 7421</a> for the relevant discussion).</li>
+</ul>
+<ul>
 <li>
 <p>I&rsquo;m using the first <code>/110</code> network for this VLAN, which comprises addresses <code>2001:470:1237:1212::1</code> through <code>2001:470:1237:1212::3:ffff</code>. I&rsquo;ll use the first address as the router address.</p>
 </li>
@@ -247,7 +247,7 @@ set interfaces switch switch0 vif 10 ipv6 router-advert managed-flag true
 set interfaces switch switch0 vif 10 ipv6 router-advert prefix ::/110
 </code></pre><p>The <code>managed-flag</code> setting corresponds to the RADVD <code>AdvManagedFlag</code> configuration setting, which instructs clients to use DHCPv6 for address autoconfiguration.</p>
 <h3 id="configure-the-dhcpv6-service">Configure the DHCPv6 service</h3>
-<p>While in theory it is possible for clients to assign IPv6 addresses without the use of a DHCP server using <a href="https://en.wikipedia.org/wiki/IPv6_address#Stateless_address_autoconfiguration">stateless address autoconfiguration</a>, I found that in practice I need to configure the DHCPv6 server for things to work correctly.</p>
+<p>While in theory it is possible for clients to assign IPv6 addresses without the use of a DHCP server using <a href="https://en.wikipedia.org/wiki/IPv6_address#Stateless_address_autoconfiguration">stateless address autoconfiguration</a>, this requires that we&rsquo;re using a /64 subnet (see e.g. <a href="https://www.rfc-editor.org/rfc/rfc7421">RFC 7421</a>). There is no such limitation when using DHCPv6.</p>
 <pre tabindex="0"><code>set service dhcpv6-server shared-network-name VLAN10 subnet 2001:470:1237:1212::/110 address-range start 2001:470:1237:1212::10 stop 2001:470:1237:1212::3:ffff
 set service dhcpv6-server shared-network-name VLAN10 subnet 2001:470:1237:1212::/110 name-server 2001:470:1237:1212::1
 set service dhcpv6-server shared-network-name VLAN10 subnet 2001:470:1237:1212::/110 domain-search house
